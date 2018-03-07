@@ -1,0 +1,3 @@
+/home/vkurbatov/work/mediamixer/build/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mediamixer/build/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mediamixer/build/CMakeFiles/ol_rtp_lisener.dir
