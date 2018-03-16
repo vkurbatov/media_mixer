@@ -366,6 +366,32 @@ CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.cp
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/UniqueLock.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.cpp.o: /home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.cpp
 
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/DataTypes.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/ICollection.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/IQueue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/Packet.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/Queue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Functional/Caller.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/Client.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/Socket.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/SocketTypes.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/socket_wrp.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/Mutex.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/StdMutex.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/UniqueLock.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/Direction.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/IDirection.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/PacketQueue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o: /home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp
+
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/DataTypes.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/ICollection.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/IQueue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/Packet.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/Queue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/PacketQueue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o: /home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp
+
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Utils/Strings/StringUtils.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Utils/Time/TimeUtils.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.cpp.o: /home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.cpp
@@ -384,12 +410,18 @@ CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurb
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/IO/DeviceIO.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Logger/AbstractLoggerFactory.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Logger/Logger.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/AbstractChannel.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/Channel.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/Client.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/Connection.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/ConnectionString.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/IAsyncCall.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/IP4/IP4AbstractChannel.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/IP4/IP4ConnectionString.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/IP4/TcpClientChannel.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/IP4/TcpServerChannel.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/ISelect.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/Select.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/ServerDispatcher.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/Socket.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Sockets/SocketTypes.h
@@ -402,6 +434,15 @@ CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurb
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/ThreadTypes.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/OsnovaLab/../tests/test.h
 CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o: /home/vkurbatov/work/tests/test1.cpp
+
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/DataTypes.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/ICollection.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/IQueue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/Packet.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/Queue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/PacketQueue.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o: /home/vkurbatov/work/OsnovaLab/../tests/test.h
+CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o: /home/vkurbatov/work/tests/test2.cpp
 
 CMakeFiles/ol_rtp_lisener.dir/main.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Builder.h
 CMakeFiles/ol_rtp_lisener.dir/main.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Functional/Caller.h
@@ -434,5 +475,6 @@ CMakeFiles/ol_rtp_lisener.dir/main.cpp.o: /home/vkurbatov/work/OsnovaLab/../Osno
 CMakeFiles/ol_rtp_lisener.dir/main.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/TaskPool.h
 CMakeFiles/ol_rtp_lisener.dir/main.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/Thread.h
 CMakeFiles/ol_rtp_lisener.dir/main.cpp.o: /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/ThreadTypes.h
+CMakeFiles/ol_rtp_lisener.dir/main.cpp.o: /home/vkurbatov/work/OsnovaLab/../tests/test.h
 CMakeFiles/ol_rtp_lisener.dir/main.cpp.o: /home/vkurbatov/work/mediamixer/ol_rtp_lisener/main.cpp
 

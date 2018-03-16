@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/vkurbatov/work/OsnovaLab/OsnovaLab.cmake"
   "/home/vkurbatov/work/OsnovaLab/Sockets/Sockets.cmake"
   "/home/vkurbatov/work/OsnovaLab/Thread/Thread.cmake"
+  "/home/vkurbatov/work/OsnovaLab/Tools/Tools.cmake"
   "/home/vkurbatov/work/OsnovaLab/Utils/Utils.cmake"
   "CMakeFiles/3.5.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"

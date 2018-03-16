@@ -1176,6 +1176,60 @@ home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.cpp.s:
 	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.cpp.s
 .PHONY : home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.cpp.s
 
+home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.o: home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o
+
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.o
+
+# target to build an object file
+home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o
+
+home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.i: home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.i
+
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.i
+
+# target to preprocess a source file
+home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.i:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.i
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.i
+
+home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.s: home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.s
+
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.s
+
+# target to generate assembly for a file
+home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.s:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.s
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.s
+
+home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.o: home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o
+
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.o
+
+# target to build an object file
+home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o
+
+home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.i: home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.i
+
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.i
+
+# target to preprocess a source file
+home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.i:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.i
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.i
+
+home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.s: home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.s
+
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.s
+
+# target to generate assembly for a file
+home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.s:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.s
+.PHONY : home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.s
+
 home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.o: home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.cpp.o
 
 .PHONY : home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.o
@@ -1256,6 +1310,33 @@ home/vkurbatov/work/tests/test1.s: home/vkurbatov/work/tests/test1.cpp.s
 home/vkurbatov/work/tests/test1.cpp.s:
 	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.s
 .PHONY : home/vkurbatov/work/tests/test1.cpp.s
+
+home/vkurbatov/work/tests/test2.o: home/vkurbatov/work/tests/test2.cpp.o
+
+.PHONY : home/vkurbatov/work/tests/test2.o
+
+# target to build an object file
+home/vkurbatov/work/tests/test2.cpp.o:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o
+.PHONY : home/vkurbatov/work/tests/test2.cpp.o
+
+home/vkurbatov/work/tests/test2.i: home/vkurbatov/work/tests/test2.cpp.i
+
+.PHONY : home/vkurbatov/work/tests/test2.i
+
+# target to preprocess a source file
+home/vkurbatov/work/tests/test2.cpp.i:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.i
+.PHONY : home/vkurbatov/work/tests/test2.cpp.i
+
+home/vkurbatov/work/tests/test2.s: home/vkurbatov/work/tests/test2.cpp.s
+
+.PHONY : home/vkurbatov/work/tests/test2.s
+
+# target to generate assembly for a file
+home/vkurbatov/work/tests/test2.cpp.s:
+	$(MAKE) -f CMakeFiles/ol_rtp_lisener.dir/build.make CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.s
+.PHONY : home/vkurbatov/work/tests/test2.cpp.s
 
 main.o: main.cpp.o
 
@@ -1410,6 +1491,12 @@ help:
 	@echo "... home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.o"
 	@echo "... home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.i"
 	@echo "... home/vkurbatov/work/OsnovaLab/Thread/UniqueLock.s"
+	@echo "... home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.o"
+	@echo "... home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.i"
+	@echo "... home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.s"
+	@echo "... home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.o"
+	@echo "... home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.i"
+	@echo "... home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.s"
 	@echo "... home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.o"
 	@echo "... home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.i"
 	@echo "... home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.s"
@@ -1419,6 +1506,9 @@ help:
 	@echo "... home/vkurbatov/work/tests/test1.o"
 	@echo "... home/vkurbatov/work/tests/test1.i"
 	@echo "... home/vkurbatov/work/tests/test1.s"
+	@echo "... home/vkurbatov/work/tests/test2.o"
+	@echo "... home/vkurbatov/work/tests/test2.i"
+	@echo "... home/vkurbatov/work/tests/test2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

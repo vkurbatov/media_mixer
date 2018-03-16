@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ol_rtp_lisener.dir/main.cpp.o"
   "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test1.cpp.o"
+  "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/tests/test2.cpp.o"
   "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Builder.cpp.o"
   "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.cpp.o"
   "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Utils/Time/TimeUtils.cpp.o"
@@ -42,6 +43,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Sockets/IP4/TcpClientChannel.cpp.o"
   "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Sockets/IP4/TcpClientConnection.cpp.o"
   "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Sockets/IP4/TcpClient.cpp.o"
+  "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp.o"
+  "CMakeFiles/ol_rtp_lisener.dir/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp.o"
   "/home/vkurbatov/work/mediamixer/ol_rtp_lisener/build/DEBUG/ol_rtp_lisener.pdb"
   "/home/vkurbatov/work/mediamixer/ol_rtp_lisener/build/DEBUG/ol_rtp_lisener"
 )

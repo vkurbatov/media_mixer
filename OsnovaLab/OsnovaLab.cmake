@@ -120,3 +120,18 @@ foreach (socket ${OL_SOCKET_HEADERS})
 endforeach()
 
 #**************************************************
+
+#tools block
+include ( ${OL_DIR}/Tools/Tools.cmake )
+
+#tools sources
+foreach (tool ${OL_TOOLS_SOURCES})
+	LIST (APPEND OL_SOURCES ${tool})
+endforeach()
+
+#tools headers
+foreach (tool ${OL_TOOLS_HEADERS})
+	LIST (APPEND OL_HEADERS ${tool})
+endforeach()
+
+#**************************************************

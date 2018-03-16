@@ -23,6 +23,8 @@ OsnovaLab/Data/DataTypes.h
 /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/Packet.h
 memory
 -
+vector
+-
 OsnovaLab/Data/DataTypes.h
 /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Data/OsnovaLab/Data/DataTypes.h
 
@@ -400,6 +402,28 @@ OsnovaLab/Thread/ThreadTypes.h
 OsnovaLab/Thread/Mutex.h
 /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Thread/OsnovaLab/Thread/Mutex.h
 
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/Direction.h
+OsnovaLab/Tools/Net/IDirection.h
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/OsnovaLab/Tools/Net/IDirection.h
+OsnovaLab/Tools/Net/PacketQueue.h
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/OsnovaLab/Tools/Net/PacketQueue.h
+OsnovaLab/Thread/StdMutex.h
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/OsnovaLab/Thread/StdMutex.h
+OsnovaLab/Functional/Caller.h
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/OsnovaLab/Functional/Caller.h
+
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/IDirection.h
+OsnovaLab/Sockets/SocketTypes.h
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/OsnovaLab/Sockets/SocketTypes.h
+OsnovaLab/Sockets/Client.h
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/OsnovaLab/Sockets/Client.h
+
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/PacketQueue.h
+OsnovaLab/Data/Queue.h
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/OsnovaLab/Data/Queue.h
+OsnovaLab/Data/Packet.h
+/home/vkurbatov/work/OsnovaLab/../OsnovaLab/Tools/Net/OsnovaLab/Data/Packet.h
+
 /home/vkurbatov/work/OsnovaLab/../OsnovaLab/Utils/Strings/StringUtils.h
 string
 -
@@ -712,6 +736,16 @@ OsnovaLab/Thread/StdThread.h
 OsnovaLab/Thread/UniqueLock.h
 /home/vkurbatov/work/OsnovaLab/Thread/OsnovaLab/Thread/UniqueLock.h
 
+/home/vkurbatov/work/OsnovaLab/Tools/Net/Direction.cpp
+OsnovaLab/Tools/Net/Direction.h
+/home/vkurbatov/work/OsnovaLab/Tools/Net/OsnovaLab/Tools/Net/Direction.h
+OsnovaLab/Thread/UniqueLock.h
+/home/vkurbatov/work/OsnovaLab/Tools/Net/OsnovaLab/Thread/UniqueLock.h
+
+/home/vkurbatov/work/OsnovaLab/Tools/Net/PacketQueue.cpp
+OsnovaLab/Tools/Net/PacketQueue.h
+/home/vkurbatov/work/OsnovaLab/Tools/Net/OsnovaLab/Tools/Net/PacketQueue.h
+
 /home/vkurbatov/work/OsnovaLab/Utils/Strings/StringUtils.cpp
 cstdlib
 -
@@ -765,11 +799,15 @@ OsnovaLab/Sockets/IP4/TcpServerChannel.h
 /home/vkurbatov/work/mediamixer/ol_rtp_lisener/OsnovaLab/Sockets/IP4/TcpServerChannel.h
 OsnovaLab/Sockets/IP4/TcpClientChannel.h
 /home/vkurbatov/work/mediamixer/ol_rtp_lisener/OsnovaLab/Sockets/IP4/TcpClientChannel.h
+tests/test.h
+/home/vkurbatov/work/mediamixer/ol_rtp_lisener/tests/test.h
 
 /home/vkurbatov/work/tests/test1.cpp
 chrono
 -
 algorithm
+-
+thread
 -
 tests/test.h
 /home/vkurbatov/work/tests/tests/test.h
@@ -781,4 +819,20 @@ OsnovaLab/Thread/StdTaskPool.h
 /home/vkurbatov/work/tests/OsnovaLab/Thread/StdTaskPool.h
 OsnovaLab/Functional/StdCaller.h
 /home/vkurbatov/work/tests/OsnovaLab/Functional/StdCaller.h
+OsnovaLab/Sockets/Select.h
+/home/vkurbatov/work/tests/OsnovaLab/Sockets/Select.h
+OsnovaLab/Sockets/IP4/TcpServerChannel.h
+/home/vkurbatov/work/tests/OsnovaLab/Sockets/IP4/TcpServerChannel.h
+OsnovaLab/Sockets/IP4/TcpClientChannel.h
+/home/vkurbatov/work/tests/OsnovaLab/Sockets/IP4/TcpClientChannel.h
+OsnovaLab/Sockets/IP4/IP4ConnectionString.h
+/home/vkurbatov/work/tests/OsnovaLab/Sockets/IP4/IP4ConnectionString.h
+
+/home/vkurbatov/work/tests/test2.cpp
+iostream
+-
+tests/test.h
+/home/vkurbatov/work/tests/tests/test.h
+OsnovaLab/Tools/Net/PacketQueue.h
+/home/vkurbatov/work/tests/OsnovaLab/Tools/Net/PacketQueue.h
 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="ol_rtp_lisener" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\mmxlistener\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/vkurbatov/work/mmxprj/build/mmxlistener" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ol_rtp_lisener">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/build/DEBUG/ol_rtp_lisener" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/build/DEBUG" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/../mmxlib" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 ol_rtp_lisener" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ol_rtp_lisener/fast">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/build/DEBUG/ol_rtp_lisener" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/build/DEBUG" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/../mmxlib" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 ol_rtp_lisener/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/main.cpp">
+         <Option target="ol_rtp_lisener"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxlistener\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxlistener\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

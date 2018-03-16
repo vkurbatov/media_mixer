@@ -20,6 +20,8 @@ namespace OsnovaLab
 
 		socket_result_t Mode(native_socket_t socket, SocketBlocketType blocket_type);
 
+        //socket_result_t Bind_Connect_Listen();
+
 		namespace IP4
 		{
 			socket_result_t Bind(native_socket_t socket, const IP4Address address);

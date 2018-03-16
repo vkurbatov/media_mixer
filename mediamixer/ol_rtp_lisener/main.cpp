@@ -26,7 +26,7 @@ void thread_proc(int thread_id)
     g_mutex.Unlock();
 }
 
-void test1()
+void test1old()
 {
 
     OsnovaLab::Functional::StdCaller<> caller(thread_proc, 1);
@@ -371,17 +371,19 @@ void test3()
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
+#include "tests/test.h"
+
 int main()
 {
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     //std::cout << "rtp_listener" << std::endl;
     //auto log = OsnovaLab::Builder::CreateScreenLogger("main ");
     //log->PrintLn("Test log");
-    test3();
+    OsnovaLab::Tests::test2();
     //std::cout << "Hello World!" << std::endl;
     //log->PrintLn("Test log");
     std::cout << "rtp_listener" << std::endl;
-    std::cin.get();
+    //std::cin.get();
     return 0;
 }
 

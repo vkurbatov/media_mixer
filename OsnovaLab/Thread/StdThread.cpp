@@ -52,6 +52,7 @@ namespace OsnovaLab
 			auto id = thread_.get_id();
             //TODO:
 			return *(thread_id_type*)&id;
+
 		}
 	}
 }

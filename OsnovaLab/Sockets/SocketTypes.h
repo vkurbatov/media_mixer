@@ -75,6 +75,21 @@ namespace OsnovaLab
         //стартовая точка для кодировки сошибокк системных вызовов
         static const default_socket_result_t DEFAULT_E_SYSCALL		= -1000000;
 
+        using event_mask_t = socket_size_t;
+
+        static const event_mask_t EV_NONE		= 0;
+        static const event_mask_t EV_READ		= 1;
+        static const event_mask_t EV_WRITE		= EV_READ << 1;
+        static const event_mask_t EV_ERROR		= EV_WRITE << 1;
+
+        //TODO: Пока не реализованы
+        static const event_mask_t EV_ADD		= EV_ERROR << 1;
+        static const event_mask_t EV_REMOVE		= EV_ADD << 1;
+
+        static const event_mask_t EV_IO = EV_READ | EV_WRITE;
+        static const event_mask_t EV_IOE = EV_IO | EV_ERROR;
+        static const event_mask_t EV_ALL = EV_IOE | EV_ADD | EV_REMOVE;
+
 		enum SocketType : int
 		{
 			SOCKET_RAW = SOCK_RAW,

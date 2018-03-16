@@ -4,7 +4,7 @@ namespace OsnovaLab
 {
     namespace Sockets
     {
-        ServerHelper::ServerHelper(IChannel& channel,
+        ServerDispatcher::ServerDispatcher(IChannel& channel,
                      IConnectionString& serverString,
                      IAsyncCall& async,
                      ISelect& select) :
@@ -18,12 +18,12 @@ namespace OsnovaLab
 
         }
 
-        ServerHelper::~ServerHelper()
+        ServerDispatcher::~ServerDispatcher()
         {
 
         }
 
-        socket_result_t ServerHelper::Dispatch(socket_timeout_t timeout)
+        socket_result_t ServerDispatcher::Dispatch(socket_timeout_t timeout)
         {
             socket_result_t rc = DEFAULT_E_INVARG;
             switch(state_)
@@ -56,7 +56,7 @@ namespace OsnovaLab
             return rc;
         }
 
-        socket_result_t ServerHelper::init()
+        socket_result_t ServerDispatcher::init()
         {
             // тут нужно добавить очистку направлений и селектора
 
@@ -74,7 +74,7 @@ namespace OsnovaLab
             return DEFAULT_S_SUCCESS;
         }
 
-        socket_result_t ServerHelper::connect()
+        socket_result_t ServerDispatcher::connect()
         {
             if ((connection = channel_.Open(serverString_)) != nullptr)
             {
@@ -90,9 +90,30 @@ namespace OsnovaLab
             return DEFAULT_S_SUCCESS;
         }
 
-        socket_result_t ServerHelper::select(socket_timeout_t timeout)
+        socket_result_t ServerDispatcher::select(socket_timeout_t timeout)
         {
             socket_result_t rc = select_.Wait(timeout);
+
+            if (rc > 0)
+            {
+                if (select_[connection->GetHandle()] & EV_READ)
+                {
+                    build_direction();
+
+                }
+                else
+                {
+                    for (auto d : dirs_)
+                    {
+                        auto m = select_[d.second.client->GetHandle()];
+                        if (m & EV_IOE)
+                        {
+                            process_direction(d.second.client->GetHandle(), m);
+                        }
+                    }
+                }
+            }
+            /*
 
             if (rc > 0)
             {
@@ -118,10 +139,12 @@ namespace OsnovaLab
                     }
                 }
             }
+            */
+
             return rc;
         }
 
-        socket_result_t ServerHelper::shutdown()
+        socket_result_t ServerDispatcher::shutdown()
         {
             // сперва удалим все дескрипторы с наблюдения селектора
             for (auto& d : dirs_)
@@ -144,7 +167,7 @@ namespace OsnovaLab
             }
         }
 
-        socket_result_t ServerHelper::build_direction()
+        socket_result_t ServerDispatcher::build_direction()
         {
 
             if (connection != nullptr)
@@ -174,7 +197,7 @@ namespace OsnovaLab
 
         }
 
-        socket_result_t ServerHelper::destroy_direction(const SocketPtr& socket)
+        socket_result_t ServerDispatcher::destroy_direction(const SocketPtr& socket)
         {
 
             select_.SetEventMask(socket);
@@ -191,7 +214,7 @@ namespace OsnovaLab
 
         }
 
-        socket_result_t ServerHelper::process_direction(const SocketPtr& socket, event_mask_t eventMask)
+        socket_result_t ServerDispatcher::process_direction(const SocketPtr& socket, event_mask_t eventMask)
         {
 
             socket_result_t rc = DEFAULT_E_INVARG;
@@ -247,7 +270,7 @@ namespace OsnovaLab
 
                     else
                     {
-                        async_.CallRead(&client, r_buff, rc, nullptr);
+                        async_.CallRead(&client, r_buff, r_rc, nullptr);
                     }
 
                 }

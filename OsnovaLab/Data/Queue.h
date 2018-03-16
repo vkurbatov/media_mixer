@@ -35,6 +35,12 @@ namespace OsnovaLab
 				return queue_.size();
 			}
 
+            virtual collection_result_t Push(value_type&& data) override
+            {
+                queue_.push(std::move(data));
+                return queue_.size();
+            }
+
             virtual collection_result_t Pop(value_type* data) override
 			{
 				collection_result_t rc = -1;
@@ -51,6 +57,25 @@ namespace OsnovaLab
 
 				return rc;
 			}
+
+            collection_result_t Pop(value_type&& data) override
+            {
+                collection_result_t rc = -1;
+
+                if (!queue_.empty())
+                {
+                    data = std::move(queue_.front());
+                    queue_.pop();
+                    rc = queue_.size();
+                }
+
+                return rc;
+            }
+
+            value_type* Front() override
+            {
+                return queue_.size() > 0 ? &queue_.front() : nullptr;
+            }
 
 			//ICollection
             virtual void Clear() override

@@ -1,0 +1,8 @@
+/home/vkurbatov/work/mmxprj/build/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/mmxlistener/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/mmxlistener/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/mmxlistener/CMakeFiles/mmxlistener.dir
+/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir

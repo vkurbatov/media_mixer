@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp
+cstdio
+-
+cstdarg
+-
+ctime
+-
+cstring
+-
+mutex
+-
+logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/logs/log.h
+sys/time.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/create_sock.cpp
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/read_sock.cpp
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/sock_opt.cpp
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/write_sock.cpp
+

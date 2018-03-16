@@ -16,7 +16,7 @@ namespace OsnovaLab
     {
         //TODO: данную реализацию нужно декомпозировать как минимум на позкласс направления
         // также необходимо добавить обработку уточняющей ниформации конкретного протокола (IP:PORT)
-        class ServerHelper
+        class ServerDispatcher
         {
             enum DispatchState
             {
@@ -46,14 +46,14 @@ namespace OsnovaLab
 
         public:
 
-            ServerHelper(IChannel& channel,
+            ServerDispatcher(IChannel& channel,
                          IConnectionString& serverString,
                          IAsyncCall& async,
                          ISelect& select);
 
             socket_result_t Dispatch(socket_timeout_t timeout = TIMEOUT_INFINITE);
 
-            ~ServerHelper();
+            ~ServerDispatcher();
 
         protected:
 

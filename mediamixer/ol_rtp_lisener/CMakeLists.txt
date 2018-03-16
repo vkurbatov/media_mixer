@@ -41,6 +41,7 @@ set ( SOURCE_FILES
 
 set (OL_TESTS
 	test1
+	test2
 )
 
 foreach (test ${OL_TESTS})

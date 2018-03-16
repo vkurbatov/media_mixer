@@ -86,6 +86,7 @@ namespace OsnovaLab
 
 		socket_result_t Select::Wait(const socket_timeout_t& timeout)
 		{
+
 			socket_result_t rc = DEFAULT_E_INVARG;
 
 			fd_set fd_read;
@@ -164,48 +165,50 @@ namespace OsnovaLab
 			else
 			{
                 Thread::UniqueLock lock(mutex_);
+                rc = 0;
 				if (s_rc > 0)
-				{
+                {
 
-					for (const auto& s : sockets_)
+                    for (auto& s : sockets_)
 					{
-						SelectItem item;
-						item.socket_ptr = s.second.socket_ptr;
-						item.event_mask = EV_NONE;
+                        event_mask_t ev = EV_NONE;
 
-						if (sockets_.find(s.first) != sockets_.end())
-						{
+                        if (read_count > 0 && FD_ISSET(s.first, &fd_read))
+                        {
+                           ev |= EV_READ;
+                           read_count--;
+                           rc++;
+                        }
 
-							if (read_count > 0 && FD_ISSET(s.first, &fd_read))
-							{
-								item.event_mask |= EV_READ;
-							}
+                        if (write_count > 0 && FD_ISSET(s.first, &fd_write))
+                        {
+                            ev |= EV_WRITE;
+                            write_count--;
+                            rc++;
+                        }
 
-							if (write_count > 0 && FD_ISSET(s.first, &fd_write))
-							{
-								item.event_mask |= EV_WRITE;
-							}
+                        if (error_count > 0 && FD_ISSET(s.first, &fd_error))
+                        {
+                            ev |= EV_ERROR;
+                            error_count--;
+                            rc++;
+                        }
 
-							if (error_count > 0 && FD_ISSET(s.first, &fd_error))
-							{
-								item.event_mask |= EV_ERROR;
-							}
+                        s.second.active_mask |= ev;
 
-							if (item.event_mask | EV_IOE)
-							{
-								queue_.push(item);
+                        if (ev & EV_IOE)
+                        {
 
-								if (--s_rc == 0)
-								{
-									break;
-								}
-							}
 
-						}//if
+                            if (--s_rc == 0)
+                            {
+                                break;
+                            }
+                        }
 					}//for
 				}//if
 
-				rc = queue_.size();
+                //rc = queue_.size();
 			}
 
 			return rc;
@@ -213,6 +216,29 @@ namespace OsnovaLab
 			
 		}
 
+
+        const event_mask_t Select::operator[] (const SocketPtr& socket)
+        {
+            event_mask_t rc = EV_NONE;
+
+            if (socket->IsValid())
+            {
+                const native_socket_t& native_socket = *socket;
+
+                auto it = sockets_.find(native_socket);
+
+                if (it != sockets_.end())
+                {
+                    rc = it->second.active_mask;
+                    it->second.active_mask = EV_NONE;
+                }
+
+            }
+
+            return rc;
+        }
+
+        /*
 		socket_result_t Select::GetResult(SocketPtr& socket, event_mask_t& eventMask)
 		{
             Thread::UniqueLock lock(mutex_);
@@ -229,7 +255,7 @@ namespace OsnovaLab
 
 			return rc;
 		}
-
+*/
 		void Select::pulse()
 		{
 			if (waiting_)

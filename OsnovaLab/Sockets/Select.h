@@ -18,13 +18,14 @@ namespace OsnovaLab
 		{
 			SocketPtr			socket_ptr;
 			event_mask_t		event_mask;
-			socket_timeout_t	elapsed;
+            event_mask_t        active_mask;
+            //socket_timeout_t	elapsed;
 		};
 
 		class Select : public ISelect
 		{
 			std::map<native_socket_t, SelectItem>	sockets_;
-			std::queue<SelectItem>					queue_;
+            //std::queue<SelectItem>					queue_;
 			bool									waiting_;
 			bool									pulse_;
 
@@ -43,8 +44,11 @@ namespace OsnovaLab
             //virtual socket_result_t RemoveSocket(const SocketPtr& socket) override;
             virtual const event_mask_t GetEventMask(const SocketPtr& socket) const override;
             virtual socket_result_t SetEventMask(const SocketPtr& socket, const event_mask_t& eventMask = EV_NONE) override;
+            //virtual const event_mask_t GetActiveEvents(const SocketPtr& socket) const override;
+            virtual const event_mask_t operator[] (const SocketPtr& socket);
 			virtual socket_result_t Wait(const socket_timeout_t& timeout = TIMEOUT_INFINITE) override;
-			virtual socket_result_t GetResult(SocketPtr& socket, event_mask_t& eventMask) override;
+
+            //virtual socket_result_t GetResult(SocketPtr& socket, event_mask_t& eventMask) override;
 		private:
 			void pulse();
 		};
