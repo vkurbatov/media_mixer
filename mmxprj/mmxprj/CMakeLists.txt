@@ -1,14 +1,29 @@
 project(mmxprj)
 cmake_minimum_required(VERSION 2.8)
 INCLUDE_DIRECTORIES(
-		mmxlistener
+		mmxlst
+		mmxcore
+		mmxlib
+		mmxsrv
+		mmxtest
+)
+
+add_subdirectory(
+		mmxlst
+)
+
+add_subdirectory(
+		mmxcore
+)
+
+add_subdirectory(
 		mmxlib
 )
 
 add_subdirectory(
-		mmxlistener
+		mmxsrv
 )
 
 add_subdirectory(
-		mmxlib
+		mmxtest
 )

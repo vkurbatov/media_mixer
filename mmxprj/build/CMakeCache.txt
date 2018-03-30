@@ -178,6 +178,12 @@ mmx_LIB_DEPENDS:STATIC=general;pthread;
 mmx_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj/mmxlib
 
 //Value Computed by CMake
+mmxcore_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build/mmxcore
+
+//Value Computed by CMake
+mmxcore_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj/mmxcore
+
+//Value Computed by CMake
 mmxlib_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build/mmxlib
 
 //Dependencies for the target
@@ -187,16 +193,34 @@ mmxlib_LIB_DEPENDS:STATIC=general;pthread;
 mmxlib_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj/mmxlib
 
 //Value Computed by CMake
-mmxlistener_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build/mmxlistener
+mmxlistener_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build/mmxlst
 
 //Value Computed by CMake
-mmxlistener_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener
+mmxlistener_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj/mmxlst
+
+//Value Computed by CMake
+mmxlst_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build/mmxlst
+
+//Value Computed by CMake
+mmxlst_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj/mmxlst
 
 //Value Computed by CMake
 mmxprj_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build
 
 //Value Computed by CMake
 mmxprj_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj
+
+//Value Computed by CMake
+mmxsrv_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build/mmxsrv
+
+//Value Computed by CMake
+mmxsrv_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv
+
+//Value Computed by CMake
+mmxtest_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build/mmxtest
+
+//Value Computed by CMake
+mmxtest_SOURCE_DIR:STATIC=/home/vkurbatov/work/mmxprj/mmxprj/mmxtest
 
 //Value Computed by CMake
 ol_rtp_lisener_BINARY_DIR:STATIC=/home/vkurbatov/work/mmxprj/build/mmxlistener
@@ -303,7 +327,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

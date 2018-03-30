@@ -5,7 +5,7 @@
       <Option title="mmx" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\mmxlib\;CMake Files\mmxlistener\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\mmxlib\;CMake Files\mmxcore\;CMake Files\mmxlst\;CMake Files\mmxsrv\;CMake Files\mmxtest\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/vkurbatov/work/mmxprj/build/mmxlib" />
@@ -24,8 +24,11 @@
          <Option type="2" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
             <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
-            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/5" />
             <Add directory="/usr/include/c++/5/backward" />
@@ -49,8 +52,11 @@
          <Option type="2" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
             <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
-            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/5" />
             <Add directory="/usr/include/c++/5/backward" />
@@ -68,10 +74,31 @@
          </MakeCommands>
       </Target>
       </Build>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/msg.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/udp.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp">
@@ -83,22 +110,76 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/names.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/close_sock.cpp">
-         <Option target="mmx"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/create_sock.cpp">
-         <Option target="mmx"/>
-      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/net.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/read_sock.cpp">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/sock_opt.cpp">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/write_sock.cpp">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/datapacket.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/datapacket.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/ipstaffer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/ipstaffer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/istaffer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/mediapool.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/mediapool.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/packet.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/packet.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/udpstaffer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/udpstaffer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/adisp.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/adisp.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sockdisp.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sockdisp.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/CMakeLists.txt">
@@ -110,11 +191,29 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/CMakeLists.txt">
           <Option virtualFolder="CMake Files\mmxlib\" />
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/CMakeLists.txt">
-          <Option virtualFolder="CMake Files\mmxlistener\" />
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxcore\" />
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/CMakeLists.txt">
-          <Option virtualFolder="CMake Files\mmxlistener\" />
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxcore\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxlst\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxlst\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxsrv\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxsrv\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxtest\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxtest\" />
       </Unit>
    </Project>
 </CodeBlocks_project_file>

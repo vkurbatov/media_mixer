@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlib 
+CXX_INCLUDES = -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlst -I/home/vkurbatov/work/mmxprj/mmxprj/mmxcore -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlib -I/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv -I/home/vkurbatov/work/mmxprj/mmxprj/mmxtest 
 

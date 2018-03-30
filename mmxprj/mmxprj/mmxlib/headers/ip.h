@@ -18,11 +18,18 @@ namespace mmx
             unsigned char  ttl;
             unsigned char  protocol;
             unsigned short xsum;
-            unsigned long  src;
-            unsigned long  dest;
+            unsigned int  src;
+            unsigned int  dest;
             //unsigned short params[4];
             //unsigned char  data[0];
         }IP4HEADER, *PIP4HEADER;
+
+
+        typedef struct _IP4PACKET
+        {
+            IP4HEADER       header;
+            unsigned char   data[1];
+        }IP4PACKET, *PIP4PACKET;
 
 #pragma pack(pop)
     }

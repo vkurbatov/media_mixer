@@ -93,6 +93,7 @@ namespace mmx
                             state = 4;
                         }
 
+
                         break;
 
                     case 4:         // связывание с удаленным адресом
@@ -154,7 +155,7 @@ namespace mmx
 
                     }// switch(state...
 
-                    if (rc < 0)
+                    if (rc < 0 && state != 0)
                     {
                         state = -1;
                     }

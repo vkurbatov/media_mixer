@@ -5,7 +5,7 @@
       <Option title="mmxprj" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\mmxlib\;CMake Files\mmxlistener\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\mmxlib\;CMake Files\mmxcore\;CMake Files\mmxlst\;CMake Files\mmxsrv\;CMake Files\mmxtest\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/vkurbatov/work/mmxprj/build" />
@@ -37,16 +37,19 @@
             <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
-      <Target title="mmxlistener">
-         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/build/DEBUG/mmxlistener" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/build/DEBUG" />
+      <Target title="mmxlst">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
             <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
-            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener" />
-            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/.." />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/.." />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/5" />
             <Add directory="/usr/include/c++/5/backward" />
@@ -57,22 +60,25 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 mmxlistener" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlst/Makefile&quot;  VERBOSE=1 mmxlst" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlst/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlst/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlst/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
-      <Target title="mmxlistener/fast">
-         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/build/DEBUG/mmxlistener" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/build/DEBUG" />
+      <Target title="mmxlst/fast">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
             <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
-            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener" />
-            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/.." />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/.." />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/5" />
             <Add directory="/usr/include/c++/5/backward" />
@@ -83,10 +89,68 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 mmxlistener/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlistener/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlst/Makefile&quot;  VERBOSE=1 mmxlst/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlst/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlst/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlst/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="mmxcore">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/.." />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxcore/Makefile&quot;  VERBOSE=1 mmxcore" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxcore/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxcore/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxcore/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="mmxcore/fast">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/.." />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxcore/Makefile&quot;  VERBOSE=1 mmxcore/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxcore/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxcore/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxcore/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="mmx">
@@ -96,8 +160,11 @@
          <Option type="2" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
             <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
-            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/5" />
             <Add directory="/usr/include/c++/5/backward" />
@@ -121,8 +188,11 @@
          <Option type="2" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
             <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
-            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/5" />
             <Add directory="/usr/include/c++/5/backward" />
@@ -139,11 +209,151 @@
             <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxlib/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="mmxsrv">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/.." />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxsrv/Makefile&quot;  VERBOSE=1 mmxsrv" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxsrv/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxsrv/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxsrv/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="mmxsrv/fast">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/.." />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxsrv/Makefile&quot;  VERBOSE=1 mmxsrv/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxsrv/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxsrv/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxsrv/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="mmxtest">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/build/DEBUG/mmxtest" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/build/DEBUG" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/.." />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxtest/Makefile&quot;  VERBOSE=1 mmxtest" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="mmxtest/fast">
+         <Option output="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/build/DEBUG/mmxtest" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/build/DEBUG" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest" />
+            <Add directory="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/.." />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxtest/Makefile&quot;  VERBOSE=1 mmxtest/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/build/mmxtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       </Build>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/msg.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/udp.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp">
@@ -155,62 +365,122 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/names.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/close_sock.cpp">
-         <Option target="mmx"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/create_sock.cpp">
-         <Option target="mmx"/>
-      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/net.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/read_sock.cpp">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/sock_opt.cpp">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/write_sock.cpp">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.cpp">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/channel.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/channel.h">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.cpp">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/create_dir.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/defines.h">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/datapacket.cpp">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/destroy_dir.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/datapacket.h">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/direction.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/ipstaffer.cpp">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/direction.h">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/ipstaffer.h">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/dispatch.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/istaffer.h">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/listener.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/mediapool.cpp">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/main.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/mediapool.h">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/packet.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/packet.cpp">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/packet.h">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/packet.h">
+         <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/process_dir.cpp">
-         <Option target="mmxlistener"/>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/udpstaffer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/udpstaffer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/adisp.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/adisp.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sockdisp.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sockdisp.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/_listener.cpp">
+         <Option target="mmxlst"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h">
+         <Option target="mmxlst"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.cpp">
+         <Option target="mmxlst"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.h">
+         <Option target="mmxlst"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp">
+         <Option target="mmxlst"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h">
+         <Option target="mmxlst"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/main.cpp">
+         <Option target="mmxlst"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h">
+         <Option target="mmxsrv"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp">
+         <Option target="mmxsrv"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp">
+         <Option target="mmxsrv"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h">
+         <Option target="mmxtest"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/main.cpp">
+         <Option target="mmxtest"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test1.cpp">
+         <Option target="mmxtest"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test2.cpp">
+         <Option target="mmxtest"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test3.cpp">
+         <Option target="mmxtest"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
@@ -221,11 +491,29 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/CMakeLists.txt">
           <Option virtualFolder="CMake Files\mmxlib\" />
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/CMakeLists.txt">
-          <Option virtualFolder="CMake Files\mmxlistener\" />
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxcore\" />
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/CMakeLists.txt">
-          <Option virtualFolder="CMake Files\mmxlistener\" />
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxcore\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxlst\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxlst\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxsrv\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxsrv\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxtest\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\mmxtest\" />
       </Unit>
    </Project>
 </CodeBlocks_project_file>

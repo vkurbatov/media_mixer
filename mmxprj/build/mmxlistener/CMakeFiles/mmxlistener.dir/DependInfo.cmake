@@ -19,6 +19,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/.."
   )

@@ -24,6 +24,14 @@ namespace mmx
             UDPHEADER   udp_header;
         }UDPIP4,*PUDPIP4;
 
+        typedef struct _UDPPACKET
+        {
+            IP4HEADER	ip4_header;
+            UDPHEADER   udp_header;
+            unsigned char data[1];
+        }UDPPACKET,*PUDPPACKET;
+
+
 #pragma pack(pop)
     }
 }

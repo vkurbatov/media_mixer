@@ -11,8 +11,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeSystem.cmake"
   "/home/vkurbatov/work/mmxprj/mmxprj/CMakeLists.txt"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/CMakeLists.txt"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/CMakeLists.txt"
-  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlistener/CMakeLists.txt"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/CMakeLists.txt"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/CMakeLists.txt"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/CMakeLists.txt"
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCommonLanguageInclude.cmake"
@@ -41,12 +44,18 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "mmxlistener/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "mmxlst/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "mmxcore/CMakeFiles/CMakeDirectoryInformation.cmake"
   "mmxlib/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "mmxsrv/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "mmxtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "mmxlistener/CMakeFiles/mmxlistener.dir/DependInfo.cmake"
+  "mmxlst/CMakeFiles/mmxlst.dir/DependInfo.cmake"
+  "mmxcore/CMakeFiles/mmxcore.dir/DependInfo.cmake"
   "mmxlib/CMakeFiles/mmx.dir/DependInfo.cmake"
+  "mmxsrv/CMakeFiles/mmxsrv.dir/DependInfo.cmake"
+  "mmxtest/CMakeFiles/mmxtest.dir/DependInfo.cmake"
   )

@@ -125,6 +125,33 @@ mmx/fast:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/build
 .PHONY : mmx/fast
 
+ipc/pchannel.o: ipc/pchannel.cpp.o
+
+.PHONY : ipc/pchannel.o
+
+# target to build an object file
+ipc/pchannel.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o
+.PHONY : ipc/pchannel.cpp.o
+
+ipc/pchannel.i: ipc/pchannel.cpp.i
+
+.PHONY : ipc/pchannel.i
+
+# target to preprocess a source file
+ipc/pchannel.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.i
+.PHONY : ipc/pchannel.cpp.i
+
+ipc/pchannel.s: ipc/pchannel.cpp.s
+
+.PHONY : ipc/pchannel.s
+
+# target to generate assembly for a file
+ipc/pchannel.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.s
+.PHONY : ipc/pchannel.cpp.s
+
 logs/log.o: logs/log.cpp.o
 
 .PHONY : logs/log.o
@@ -152,140 +179,302 @@ logs/log.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.s
 .PHONY : logs/log.cpp.s
 
-net/close_sock.o: net/close_sock.cpp.o
+net/portset.o: net/portset.cpp.o
 
-.PHONY : net/close_sock.o
-
-# target to build an object file
-net/close_sock.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/close_sock.cpp.o
-.PHONY : net/close_sock.cpp.o
-
-net/close_sock.i: net/close_sock.cpp.i
-
-.PHONY : net/close_sock.i
-
-# target to preprocess a source file
-net/close_sock.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/close_sock.cpp.i
-.PHONY : net/close_sock.cpp.i
-
-net/close_sock.s: net/close_sock.cpp.s
-
-.PHONY : net/close_sock.s
-
-# target to generate assembly for a file
-net/close_sock.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/close_sock.cpp.s
-.PHONY : net/close_sock.cpp.s
-
-net/create_sock.o: net/create_sock.cpp.o
-
-.PHONY : net/create_sock.o
+.PHONY : net/portset.o
 
 # target to build an object file
-net/create_sock.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/create_sock.cpp.o
-.PHONY : net/create_sock.cpp.o
+net/portset.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o
+.PHONY : net/portset.cpp.o
 
-net/create_sock.i: net/create_sock.cpp.i
+net/portset.i: net/portset.cpp.i
 
-.PHONY : net/create_sock.i
+.PHONY : net/portset.i
 
 # target to preprocess a source file
-net/create_sock.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/create_sock.cpp.i
-.PHONY : net/create_sock.cpp.i
+net/portset.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.i
+.PHONY : net/portset.cpp.i
 
-net/create_sock.s: net/create_sock.cpp.s
+net/portset.s: net/portset.cpp.s
 
-.PHONY : net/create_sock.s
+.PHONY : net/portset.s
 
 # target to generate assembly for a file
-net/create_sock.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/create_sock.cpp.s
-.PHONY : net/create_sock.cpp.s
+net/portset.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.s
+.PHONY : net/portset.cpp.s
 
-net/read_sock.o: net/read_sock.cpp.o
+net/select.o: net/select.cpp.o
 
-.PHONY : net/read_sock.o
+.PHONY : net/select.o
 
 # target to build an object file
-net/read_sock.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/read_sock.cpp.o
-.PHONY : net/read_sock.cpp.o
+net/select.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o
+.PHONY : net/select.cpp.o
 
-net/read_sock.i: net/read_sock.cpp.i
+net/select.i: net/select.cpp.i
 
-.PHONY : net/read_sock.i
+.PHONY : net/select.i
 
 # target to preprocess a source file
-net/read_sock.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/read_sock.cpp.i
-.PHONY : net/read_sock.cpp.i
+net/select.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/select.cpp.i
+.PHONY : net/select.cpp.i
 
-net/read_sock.s: net/read_sock.cpp.s
+net/select.s: net/select.cpp.s
 
-.PHONY : net/read_sock.s
+.PHONY : net/select.s
 
 # target to generate assembly for a file
-net/read_sock.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/read_sock.cpp.s
-.PHONY : net/read_sock.cpp.s
+net/select.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/select.cpp.s
+.PHONY : net/select.cpp.s
 
-net/sock_opt.o: net/sock_opt.cpp.o
+net/socket.o: net/socket.cpp.o
 
-.PHONY : net/sock_opt.o
+.PHONY : net/socket.o
 
 # target to build an object file
-net/sock_opt.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/sock_opt.cpp.o
-.PHONY : net/sock_opt.cpp.o
+net/socket.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.o
+.PHONY : net/socket.cpp.o
 
-net/sock_opt.i: net/sock_opt.cpp.i
+net/socket.i: net/socket.cpp.i
 
-.PHONY : net/sock_opt.i
+.PHONY : net/socket.i
 
 # target to preprocess a source file
-net/sock_opt.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/sock_opt.cpp.i
-.PHONY : net/sock_opt.cpp.i
+net/socket.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.i
+.PHONY : net/socket.cpp.i
 
-net/sock_opt.s: net/sock_opt.cpp.s
+net/socket.s: net/socket.cpp.s
 
-.PHONY : net/sock_opt.s
+.PHONY : net/socket.s
 
 # target to generate assembly for a file
-net/sock_opt.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/sock_opt.cpp.s
-.PHONY : net/sock_opt.cpp.s
+net/socket.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.s
+.PHONY : net/socket.cpp.s
 
-net/write_sock.o: net/write_sock.cpp.o
+staff/datapacket.o: staff/datapacket.cpp.o
 
-.PHONY : net/write_sock.o
+.PHONY : staff/datapacket.o
 
 # target to build an object file
-net/write_sock.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/write_sock.cpp.o
-.PHONY : net/write_sock.cpp.o
+staff/datapacket.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/datapacket.cpp.o
+.PHONY : staff/datapacket.cpp.o
 
-net/write_sock.i: net/write_sock.cpp.i
+staff/datapacket.i: staff/datapacket.cpp.i
 
-.PHONY : net/write_sock.i
+.PHONY : staff/datapacket.i
 
 # target to preprocess a source file
-net/write_sock.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/write_sock.cpp.i
-.PHONY : net/write_sock.cpp.i
+staff/datapacket.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/datapacket.cpp.i
+.PHONY : staff/datapacket.cpp.i
 
-net/write_sock.s: net/write_sock.cpp.s
+staff/datapacket.s: staff/datapacket.cpp.s
 
-.PHONY : net/write_sock.s
+.PHONY : staff/datapacket.s
 
 # target to generate assembly for a file
-net/write_sock.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/write_sock.cpp.s
-.PHONY : net/write_sock.cpp.s
+staff/datapacket.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/datapacket.cpp.s
+.PHONY : staff/datapacket.cpp.s
+
+staff/ipstaffer.o: staff/ipstaffer.cpp.o
+
+.PHONY : staff/ipstaffer.o
+
+# target to build an object file
+staff/ipstaffer.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/ipstaffer.cpp.o
+.PHONY : staff/ipstaffer.cpp.o
+
+staff/ipstaffer.i: staff/ipstaffer.cpp.i
+
+.PHONY : staff/ipstaffer.i
+
+# target to preprocess a source file
+staff/ipstaffer.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/ipstaffer.cpp.i
+.PHONY : staff/ipstaffer.cpp.i
+
+staff/ipstaffer.s: staff/ipstaffer.cpp.s
+
+.PHONY : staff/ipstaffer.s
+
+# target to generate assembly for a file
+staff/ipstaffer.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/ipstaffer.cpp.s
+.PHONY : staff/ipstaffer.cpp.s
+
+staff/mediapool.o: staff/mediapool.cpp.o
+
+.PHONY : staff/mediapool.o
+
+# target to build an object file
+staff/mediapool.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/mediapool.cpp.o
+.PHONY : staff/mediapool.cpp.o
+
+staff/mediapool.i: staff/mediapool.cpp.i
+
+.PHONY : staff/mediapool.i
+
+# target to preprocess a source file
+staff/mediapool.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/mediapool.cpp.i
+.PHONY : staff/mediapool.cpp.i
+
+staff/mediapool.s: staff/mediapool.cpp.s
+
+.PHONY : staff/mediapool.s
+
+# target to generate assembly for a file
+staff/mediapool.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/mediapool.cpp.s
+.PHONY : staff/mediapool.cpp.s
+
+staff/packet.o: staff/packet.cpp.o
+
+.PHONY : staff/packet.o
+
+# target to build an object file
+staff/packet.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/packet.cpp.o
+.PHONY : staff/packet.cpp.o
+
+staff/packet.i: staff/packet.cpp.i
+
+.PHONY : staff/packet.i
+
+# target to preprocess a source file
+staff/packet.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/packet.cpp.i
+.PHONY : staff/packet.cpp.i
+
+staff/packet.s: staff/packet.cpp.s
+
+.PHONY : staff/packet.s
+
+# target to generate assembly for a file
+staff/packet.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/packet.cpp.s
+.PHONY : staff/packet.cpp.s
+
+staff/udpstaffer.o: staff/udpstaffer.cpp.o
+
+.PHONY : staff/udpstaffer.o
+
+# target to build an object file
+staff/udpstaffer.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/udpstaffer.cpp.o
+.PHONY : staff/udpstaffer.cpp.o
+
+staff/udpstaffer.i: staff/udpstaffer.cpp.i
+
+.PHONY : staff/udpstaffer.i
+
+# target to preprocess a source file
+staff/udpstaffer.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/udpstaffer.cpp.i
+.PHONY : staff/udpstaffer.cpp.i
+
+staff/udpstaffer.s: staff/udpstaffer.cpp.s
+
+.PHONY : staff/udpstaffer.s
+
+# target to generate assembly for a file
+staff/udpstaffer.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/udpstaffer.cpp.s
+.PHONY : staff/udpstaffer.cpp.s
+
+tools/adisp.o: tools/adisp.cpp.o
+
+.PHONY : tools/adisp.o
+
+# target to build an object file
+tools/adisp.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.o
+.PHONY : tools/adisp.cpp.o
+
+tools/adisp.i: tools/adisp.cpp.i
+
+.PHONY : tools/adisp.i
+
+# target to preprocess a source file
+tools/adisp.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.i
+.PHONY : tools/adisp.cpp.i
+
+tools/adisp.s: tools/adisp.cpp.s
+
+.PHONY : tools/adisp.s
+
+# target to generate assembly for a file
+tools/adisp.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.s
+.PHONY : tools/adisp.cpp.s
+
+tools/sockdisp.o: tools/sockdisp.cpp.o
+
+.PHONY : tools/sockdisp.o
+
+# target to build an object file
+tools/sockdisp.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sockdisp.cpp.o
+.PHONY : tools/sockdisp.cpp.o
+
+tools/sockdisp.i: tools/sockdisp.cpp.i
+
+.PHONY : tools/sockdisp.i
+
+# target to preprocess a source file
+tools/sockdisp.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sockdisp.cpp.i
+.PHONY : tools/sockdisp.cpp.i
+
+tools/sockdisp.s: tools/sockdisp.cpp.s
+
+.PHONY : tools/sockdisp.s
+
+# target to generate assembly for a file
+tools/sockdisp.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sockdisp.cpp.s
+.PHONY : tools/sockdisp.cpp.s
+
+tools/timer.o: tools/timer.cpp.o
+
+.PHONY : tools/timer.o
+
+# target to build an object file
+tools/timer.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o
+.PHONY : tools/timer.cpp.o
+
+tools/timer.i: tools/timer.cpp.i
+
+.PHONY : tools/timer.i
+
+# target to preprocess a source file
+tools/timer.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.i
+.PHONY : tools/timer.cpp.i
+
+tools/timer.s: tools/timer.cpp.s
+
+.PHONY : tools/timer.s
+
+# target to generate assembly for a file
+tools/timer.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.s
+.PHONY : tools/timer.cpp.s
 
 # Help Target
 help:
@@ -296,24 +485,45 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mmx"
+	@echo "... ipc/pchannel.o"
+	@echo "... ipc/pchannel.i"
+	@echo "... ipc/pchannel.s"
 	@echo "... logs/log.o"
 	@echo "... logs/log.i"
 	@echo "... logs/log.s"
-	@echo "... net/close_sock.o"
-	@echo "... net/close_sock.i"
-	@echo "... net/close_sock.s"
-	@echo "... net/create_sock.o"
-	@echo "... net/create_sock.i"
-	@echo "... net/create_sock.s"
-	@echo "... net/read_sock.o"
-	@echo "... net/read_sock.i"
-	@echo "... net/read_sock.s"
-	@echo "... net/sock_opt.o"
-	@echo "... net/sock_opt.i"
-	@echo "... net/sock_opt.s"
-	@echo "... net/write_sock.o"
-	@echo "... net/write_sock.i"
-	@echo "... net/write_sock.s"
+	@echo "... net/portset.o"
+	@echo "... net/portset.i"
+	@echo "... net/portset.s"
+	@echo "... net/select.o"
+	@echo "... net/select.i"
+	@echo "... net/select.s"
+	@echo "... net/socket.o"
+	@echo "... net/socket.i"
+	@echo "... net/socket.s"
+	@echo "... staff/datapacket.o"
+	@echo "... staff/datapacket.i"
+	@echo "... staff/datapacket.s"
+	@echo "... staff/ipstaffer.o"
+	@echo "... staff/ipstaffer.i"
+	@echo "... staff/ipstaffer.s"
+	@echo "... staff/mediapool.o"
+	@echo "... staff/mediapool.i"
+	@echo "... staff/mediapool.s"
+	@echo "... staff/packet.o"
+	@echo "... staff/packet.i"
+	@echo "... staff/packet.s"
+	@echo "... staff/udpstaffer.o"
+	@echo "... staff/udpstaffer.i"
+	@echo "... staff/udpstaffer.s"
+	@echo "... tools/adisp.o"
+	@echo "... tools/adisp.i"
+	@echo "... tools/adisp.s"
+	@echo "... tools/sockdisp.o"
+	@echo "... tools/sockdisp.i"
+	@echo "... tools/sockdisp.s"
+	@echo "... tools/timer.o"
+	@echo "... tools/timer.i"
+	@echo "... tools/timer.s"
 .PHONY : help
 
 

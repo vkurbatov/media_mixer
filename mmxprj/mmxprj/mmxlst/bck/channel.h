@@ -1,7 +1,7 @@
 #ifndef _MMXLST_CHANNEL_H
 #define _MMXLST_CHANNEL_H
 
-#include "packet.h"
+#include "mmxlib/staff/packet.h"
 
 #include <queue>
 
@@ -21,7 +21,7 @@ namespace mmxlst
         unsigned short port_;
         int total_size_;
 
-        std::queue<Packet > queue_;
+        std::queue<mmx::staff::Packet > queue_;
 
         //packet_data_t buff_[DEFAULT_BUFFER_SIZE];
 
@@ -31,10 +31,10 @@ namespace mmxlst
         Channel(Channel&& channel);
         ~Channel();
         //int Read(int sock);
-        int Push(Packet&& packet);
+        int Push(mmx::staff::Packet&& packet);
         int PacketCount() const;
         int TotalSize() const;
-        int Pop(Packet&& packet);
+        int Pop(mmx::staff::Packet&& packet);
         bool IsEmpty() const;
         unsigned short Port() const;
         int Id() const;

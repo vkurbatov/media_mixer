@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/headers/udp.h
+headers/ip.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/headers/headers/ip.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/logs/log.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/net.h
+sys/socket.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
+mmxlib/logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/logs/log.h
+mmxlib/net/net.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/net.h
+mmxlib/headers/udp.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/headers/udp.h
+netdb.h
+-
+fcntl.h
+-
+errno.h
+-
+cstdio
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/main.cpp
+mmxlib/logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/logs/log.h
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
+

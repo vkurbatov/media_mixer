@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mmxlistener
+# Target rules for targets named mmxlst
 
 # Build rule for target.
-mmxlistener: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mmxlistener
-.PHONY : mmxlistener
+mmxlst: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mmxlst
+.PHONY : mmxlst
 
 # fast build rule for target.
-mmxlistener/fast:
-	$(MAKE) -f mmxlistener/CMakeFiles/mmxlistener.dir/build.make mmxlistener/CMakeFiles/mmxlistener.dir/build
-.PHONY : mmxlistener/fast
+mmxlst/fast:
+	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/build
+.PHONY : mmxlst/fast
+
+#=============================================================================
+# Target rules for targets named mmxcore
+
+# Build rule for target.
+mmxcore: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mmxcore
+.PHONY : mmxcore
+
+# fast build rule for target.
+mmxcore/fast:
+	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/build
+.PHONY : mmxcore/fast
 
 #=============================================================================
 # Target rules for targets named mmx
@@ -136,6 +149,32 @@ mmx/fast:
 	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/build
 .PHONY : mmx/fast
 
+#=============================================================================
+# Target rules for targets named mmxsrv
+
+# Build rule for target.
+mmxsrv: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mmxsrv
+.PHONY : mmxsrv
+
+# fast build rule for target.
+mmxsrv/fast:
+	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/build
+.PHONY : mmxsrv/fast
+
+#=============================================================================
+# Target rules for targets named mmxtest
+
+# Build rule for target.
+mmxtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mmxtest
+.PHONY : mmxtest
+
+# fast build rule for target.
+mmxtest/fast:
+	$(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/build
+.PHONY : mmxtest/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -144,8 +183,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... mmxlistener"
+	@echo "... mmxlst"
+	@echo "... mmxcore"
 	@echo "... mmx"
+	@echo "... mmxsrv"
+	@echo "... mmxtest"
 .PHONY : help
 
 

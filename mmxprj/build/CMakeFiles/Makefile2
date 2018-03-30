@@ -60,57 +60,112 @@ CMAKE_SOURCE_DIR = /home/vkurbatov/work/mmxprj/mmxprj
 CMAKE_BINARY_DIR = /home/vkurbatov/work/mmxprj/build
 
 #=============================================================================
-# Directory level rules for directory mmxlistener
+# Directory level rules for directory mmxlst
 
 # Convenience name for "all" pass in the directory.
-mmxlistener/all: mmxlistener/CMakeFiles/mmxlistener.dir/all
+mmxlst/all: mmxlst/CMakeFiles/mmxlst.dir/all
 
-.PHONY : mmxlistener/all
+.PHONY : mmxlst/all
 
 # Convenience name for "clean" pass in the directory.
-mmxlistener/clean: mmxlistener/CMakeFiles/mmxlistener.dir/clean
+mmxlst/clean: mmxlst/CMakeFiles/mmxlst.dir/clean
 
-.PHONY : mmxlistener/clean
+.PHONY : mmxlst/clean
 
 # Convenience name for "preinstall" pass in the directory.
-mmxlistener/preinstall:
+mmxlst/preinstall:
 
-.PHONY : mmxlistener/preinstall
+.PHONY : mmxlst/preinstall
 
 #=============================================================================
-# Target rules for target mmxlistener/CMakeFiles/mmxlistener.dir
+# Target rules for target mmxlst/CMakeFiles/mmxlst.dir
 
 # All Build rule for target.
-mmxlistener/CMakeFiles/mmxlistener.dir/all: mmxlib/CMakeFiles/mmx.dir/all
-	$(MAKE) -f mmxlistener/CMakeFiles/mmxlistener.dir/build.make mmxlistener/CMakeFiles/mmxlistener.dir/depend
-	$(MAKE) -f mmxlistener/CMakeFiles/mmxlistener.dir/build.make mmxlistener/CMakeFiles/mmxlistener.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=8,9,10,11,12,13,14,15,16,17 "Built target mmxlistener"
-.PHONY : mmxlistener/CMakeFiles/mmxlistener.dir/all
+mmxlst/CMakeFiles/mmxlst.dir/all: mmxlib/CMakeFiles/mmx.dir/all
+	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/depend
+	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=17,18,19,20,21 "Built target mmxlst"
+.PHONY : mmxlst/CMakeFiles/mmxlst.dir/all
 
 # Include target in all.
-all: mmxlistener/CMakeFiles/mmxlistener.dir/all
+all: mmxlst/CMakeFiles/mmxlst.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-mmxlistener/CMakeFiles/mmxlistener.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 17
-	$(MAKE) -f CMakeFiles/Makefile2 mmxlistener/CMakeFiles/mmxlistener.dir/all
+mmxlst/CMakeFiles/mmxlst.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 19
+	$(MAKE) -f CMakeFiles/Makefile2 mmxlst/CMakeFiles/mmxlst.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
-.PHONY : mmxlistener/CMakeFiles/mmxlistener.dir/rule
+.PHONY : mmxlst/CMakeFiles/mmxlst.dir/rule
 
 # Convenience name for target.
-mmxlistener: mmxlistener/CMakeFiles/mmxlistener.dir/rule
+mmxlst: mmxlst/CMakeFiles/mmxlst.dir/rule
 
-.PHONY : mmxlistener
-
-# clean rule for target.
-mmxlistener/CMakeFiles/mmxlistener.dir/clean:
-	$(MAKE) -f mmxlistener/CMakeFiles/mmxlistener.dir/build.make mmxlistener/CMakeFiles/mmxlistener.dir/clean
-.PHONY : mmxlistener/CMakeFiles/mmxlistener.dir/clean
+.PHONY : mmxlst
 
 # clean rule for target.
-clean: mmxlistener/CMakeFiles/mmxlistener.dir/clean
+mmxlst/CMakeFiles/mmxlst.dir/clean:
+	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/clean
+.PHONY : mmxlst/CMakeFiles/mmxlst.dir/clean
+
+# clean rule for target.
+clean: mmxlst/CMakeFiles/mmxlst.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory mmxcore
+
+# Convenience name for "all" pass in the directory.
+mmxcore/all: mmxcore/CMakeFiles/mmxcore.dir/all
+
+.PHONY : mmxcore/all
+
+# Convenience name for "clean" pass in the directory.
+mmxcore/clean: mmxcore/CMakeFiles/mmxcore.dir/clean
+
+.PHONY : mmxcore/clean
+
+# Convenience name for "preinstall" pass in the directory.
+mmxcore/preinstall:
+
+.PHONY : mmxcore/preinstall
+
+#=============================================================================
+# Target rules for target mmxcore/CMakeFiles/mmxcore.dir
+
+# All Build rule for target.
+mmxcore/CMakeFiles/mmxcore.dir/all: mmxlib/CMakeFiles/mmx.dir/all
+	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/depend
+	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=15,16 "Built target mmxcore"
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/all
+
+# Include target in all.
+all: mmxcore/CMakeFiles/mmxcore.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+mmxcore/CMakeFiles/mmxcore.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 16
+	$(MAKE) -f CMakeFiles/Makefile2 mmxcore/CMakeFiles/mmxcore.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/rule
+
+# Convenience name for target.
+mmxcore: mmxcore/CMakeFiles/mmxcore.dir/rule
+
+.PHONY : mmxcore
+
+# clean rule for target.
+mmxcore/CMakeFiles/mmxcore.dir/clean:
+	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/clean
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/clean
+
+# clean rule for target.
+clean: mmxcore/CMakeFiles/mmxcore.dir/clean
 
 .PHONY : clean
 
@@ -139,7 +194,7 @@ mmxlib/preinstall:
 mmxlib/CMakeFiles/mmx.dir/all:
 	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/depend
 	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target mmx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target mmx"
 .PHONY : mmxlib/CMakeFiles/mmx.dir/all
 
 # Include target in all.
@@ -149,7 +204,7 @@ all: mmxlib/CMakeFiles/mmx.dir/all
 
 # Build rule for subdir invocation for target.
 mmxlib/CMakeFiles/mmx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 mmxlib/CMakeFiles/mmx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
 .PHONY : mmxlib/CMakeFiles/mmx.dir/rule
@@ -166,6 +221,116 @@ mmxlib/CMakeFiles/mmx.dir/clean:
 
 # clean rule for target.
 clean: mmxlib/CMakeFiles/mmx.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory mmxsrv
+
+# Convenience name for "all" pass in the directory.
+mmxsrv/all: mmxsrv/CMakeFiles/mmxsrv.dir/all
+
+.PHONY : mmxsrv/all
+
+# Convenience name for "clean" pass in the directory.
+mmxsrv/clean: mmxsrv/CMakeFiles/mmxsrv.dir/clean
+
+.PHONY : mmxsrv/clean
+
+# Convenience name for "preinstall" pass in the directory.
+mmxsrv/preinstall:
+
+.PHONY : mmxsrv/preinstall
+
+#=============================================================================
+# Target rules for target mmxsrv/CMakeFiles/mmxsrv.dir
+
+# All Build rule for target.
+mmxsrv/CMakeFiles/mmxsrv.dir/all: mmxlib/CMakeFiles/mmx.dir/all
+	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/depend
+	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=22,23,24 "Built target mmxsrv"
+.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/all
+
+# Include target in all.
+all: mmxsrv/CMakeFiles/mmxsrv.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+mmxsrv/CMakeFiles/mmxsrv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 17
+	$(MAKE) -f CMakeFiles/Makefile2 mmxsrv/CMakeFiles/mmxsrv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
+.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/rule
+
+# Convenience name for target.
+mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/rule
+
+.PHONY : mmxsrv
+
+# clean rule for target.
+mmxsrv/CMakeFiles/mmxsrv.dir/clean:
+	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/clean
+.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/clean
+
+# clean rule for target.
+clean: mmxsrv/CMakeFiles/mmxsrv.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory mmxtest
+
+# Convenience name for "all" pass in the directory.
+mmxtest/all: mmxtest/CMakeFiles/mmxtest.dir/all
+
+.PHONY : mmxtest/all
+
+# Convenience name for "clean" pass in the directory.
+mmxtest/clean: mmxtest/CMakeFiles/mmxtest.dir/clean
+
+.PHONY : mmxtest/clean
+
+# Convenience name for "preinstall" pass in the directory.
+mmxtest/preinstall:
+
+.PHONY : mmxtest/preinstall
+
+#=============================================================================
+# Target rules for target mmxtest/CMakeFiles/mmxtest.dir
+
+# All Build rule for target.
+mmxtest/CMakeFiles/mmxtest.dir/all: mmxlib/CMakeFiles/mmx.dir/all
+	$(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/depend
+	$(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=25,26,27,28,29 "Built target mmxtest"
+.PHONY : mmxtest/CMakeFiles/mmxtest.dir/all
+
+# Include target in all.
+all: mmxtest/CMakeFiles/mmxtest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+mmxtest/CMakeFiles/mmxtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 19
+	$(MAKE) -f CMakeFiles/Makefile2 mmxtest/CMakeFiles/mmxtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
+.PHONY : mmxtest/CMakeFiles/mmxtest.dir/rule
+
+# Convenience name for target.
+mmxtest: mmxtest/CMakeFiles/mmxtest.dir/rule
+
+.PHONY : mmxtest
+
+# clean rule for target.
+mmxtest/CMakeFiles/mmxtest.dir/clean:
+	$(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/clean
+.PHONY : mmxtest/CMakeFiles/mmxtest.dir/clean
+
+# clean rule for target.
+clean: mmxtest/CMakeFiles/mmxtest.dir/clean
 
 .PHONY : clean
 

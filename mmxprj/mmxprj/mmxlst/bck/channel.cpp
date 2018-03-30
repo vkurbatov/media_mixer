@@ -47,7 +47,7 @@ namespace mmxlst
     }
 
 
-    int Channel::Push(Packet&& packet)
+    int Channel::Push(mmx::staff::Packet&& packet)
     {
 
         auto sz = packet.Size();
@@ -89,7 +89,7 @@ namespace mmxlst
         return total_size_;
     }
 
-    int Channel::Pop(Packet&& packet)
+    int Channel::Pop(mmx::staff::Packet&& packet)
     {
         int rc = -ENODATA;
         if(!queue_.empty())

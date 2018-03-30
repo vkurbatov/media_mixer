@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # имя проекта
-project(mmxlistener)
+project(mmxlst)
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -16,21 +16,25 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE} )
 
 set ( SOURCE_FILES
     main.cpp
+#	_listener.cpp
 	listener.cpp
-	create_dir.cpp
-	destroy_dir.cpp
-	process_dir.cpp
-	dispatch.cpp
-	channel.cpp
 	direction.cpp
-	packet.cpp
+#	create_dir.cpp
+#	destroy_dir.cpp
+#	process_dir.cpp
+#	dispatch.cpp
+#	channel.cpp
+#	direction.cpp
+#	packet.cpp
 )
 
 set ( PRIVATE_HEADERS
 	defines.h
-	channel.h
 	direction.h
-	packet.h
+	listener.h
+#	channel.h
+#	direction.h
+#	packet.h
 )
 
 set ( PUBLIC_HEADERS

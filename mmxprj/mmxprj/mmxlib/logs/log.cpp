@@ -144,7 +144,7 @@ namespace mmx
 
             // тут храняться строковые представления уровней логов
 
-            static const char s_levels[] = {'D','I','W','E','C'};
+            static const char s_levels[] = {'T','D','I','W','E','C'};
 
             ::timeval tv;
 
@@ -201,7 +201,7 @@ namespace mmx
             }
         }
 
-        // функции обеертки для вывода форматируемых сообщений
+        // функции-обертки для вывода форматируемых сообщений
 
         void log(log_level_t level, const char* format, ...)
         {
@@ -209,6 +209,16 @@ namespace mmx
             va_start (vl, format);
 
             __logV(level, format, vl);
+
+            va_end(vl);
+        }
+
+        void logT(const char* format, ...)
+        {
+            va_list vl;
+            va_start (vl, format);
+
+            __logV(L_TRACE, format, vl);
 
             va_end(vl);
         }

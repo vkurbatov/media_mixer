@@ -3,36 +3,36 @@
 
 #include <vector>
 
-#include "channel.h"
+#include "mmxlib/staff/istaffer.h"
+#include "mmxlib/ipc/ichannel.h"
+#include "mmxlib/staff/datapacket.h"
+#include "mmxlib/net/portset.h"
+
+
 
 namespace mmxlst
 {
-    class Direction
+    class Direction : public mmx::staff::IStaffer
     {
-        static const int DEFAULT_BUFFER_SIZE = 1600; // MTU + запас
+        mmx::net::PortSet& ports_;
+        // std::vector<char> data_;
 
-        int direction_id_;
-        int port_;
-        int step_;
-        std::vector<Channel> channels_;
-
-        packet_data_t buff_[DEFAULT_BUFFER_SIZE];
-
-        //static std::vector<Direction*> s_directions_;
+        mmx::staff::DataPacket& data_;
 
 
-        Direction(unsigned short begin, unsigned short end, int step, int direction_id);
-        int port2idx(unsigned short port) const;
     public:
+        Direction(mmx::staff::DataPacket& datapack, mmx::net::PortSet& ports);
         ~Direction();
-        static int BuildDirection(unsigned short begin, unsigned short end, int step = 1);
-        static int DestroyDirection(int direction_id);
-        static Direction& GetDirection(int direction_id);
-        int Dispatch(int sock);
-        int Process(void(*call)(unsigned short, Packet&&, void*), void* context = nullptr);
-        int Count(unsigned short port) const;
-        int Pop(unsigned short port, Packet&& packet);
+
+        virtual int Dispatch(const char* stream, int size, mmx::staff::PPROTOCOL_INFO pinfo = nullptr);
+        virtual void Reset();
+
+        //mmx::headers::PDATA_PACK GetPacket();
+        //void Next();
+        //bool IsEmpty() const;
+
     };
 }
 
 #endif
+

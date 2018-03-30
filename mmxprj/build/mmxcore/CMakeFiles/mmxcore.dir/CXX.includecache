@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/datapack.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/ichannel.h
+io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/io.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/io.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/pchannel.h
+memory
+-
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/ichannel.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
+iostream
+-
+mmxlib/logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
+mmxlib/ipc/pchannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/ipc/pchannel.h
+mmxlib/headers/media.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/media.h
+mmxlib/headers/datapack.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/datapack.h
+fcntl.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/fcntl.h
+
