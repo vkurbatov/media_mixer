@@ -1,6 +1,7 @@
 #include "timer.h"
 
 #include <thread>
+#include <climits>
 
 namespace mmx
 {
@@ -10,6 +11,7 @@ namespace mmx
 
         Timer::Timer() :
             tout_(-1),
+            run_(false),
             start_(std::chrono::system_clock::now())
         {
 
@@ -17,22 +19,38 @@ namespace mmx
 
         void Timer::Start(timer_interval_t interval)
         {
-            if (interval >= 0)
-            {
 
                 tout_ = interval;
                 start_ = std::chrono::system_clock::now();
+                run_ = true;
 
-            }
-            else
-            {
-                tout_ = -1;
-            }
         }
 
         bool Timer::Stop()
         {
-            tout_ = -1;
+            run_ = false;
+        }
+
+        timer_interval_t Timer::Left() const
+        {
+            timer_interval_t rc  = 0;
+
+            if (IsStarted())
+            {
+                if (tout_ < 0)
+                {
+                    rc = LONG_MAX - Elapsed();
+                }
+                else
+                {
+                    if ((rc = tout_ - Elapsed()) < 0)
+                    {
+                        rc = 0;
+                    }
+                }
+            }
+
+            return rc;
         }
 
         timer_interval_t Timer::Elapsed() const
@@ -41,7 +59,7 @@ namespace mmx
 
             if (IsStarted())
             {
-                rc = tout_ - std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_).count();
+                rc = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_).count();
             }
 
             return rc;
@@ -49,12 +67,12 @@ namespace mmx
 
         bool Timer::IsEnable() const
         {
-            return IsStarted() && Elapsed() <= 0;
+            return run_ && Left() <= 0;
         }
 
         bool Timer::IsStarted() const
         {
-            return tout_ >= 0;
+            return run_;
         }
 
         void Timer::Sleep(timer_interval_t interval)

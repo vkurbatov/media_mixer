@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test1.cpp" "/home/vkurbatov/work/mmxprj/build/mmxtest/CMakeFiles/mmxtest.dir/test1.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test2.cpp" "/home/vkurbatov/work/mmxprj/build/mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test3.cpp" "/home/vkurbatov/work/mmxprj/build/mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test4.cpp" "/home/vkurbatov/work/mmxprj/build/mmxtest/CMakeFiles/mmxtest.dir/test4.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

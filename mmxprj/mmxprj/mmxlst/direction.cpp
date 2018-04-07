@@ -61,7 +61,6 @@ namespace mmxlst
                 media.header.port_dst = port_dst;
 
                 timeval tv;
-
                 gettimeofday(&tv, 0);
 
                 media.header.sec = tv.tv_sec;
@@ -77,6 +76,68 @@ namespace mmxlst
 
         return rc;
 
+    }
+
+    int Direction::Sniffer(const char* pyload, int size, const mmx::headers::IP4HEADER& ip_header)
+    {
+        int rc = -EINVAL;
+
+        if (pyload != nullptr && size >= sizeof(mmx::headers::UDPHEADER))
+        {
+            rc = -EPROTO;
+
+            if (ip_header.protocol == IPPROTO_UDP)
+            {
+                mmx::headers::UDPHEADER& udp = *(mmx::headers::PUDPHEADER)pyload;
+
+                unsigned short port_dst = ::htons(udp.port_dst);
+
+                rc = -EBADMSG;
+
+                if (::ntohs(udp.length) == size)
+                {
+                    pyload += sizeof(mmx::headers::UDPHEADER);
+                    size -= sizeof(mmx::headers::UDPHEADER);
+
+                    rc= -EADDRNOTAVAIL;
+
+                    if (ports_[port_dst])
+                    {
+                        rc = -ENOMEM;
+
+                        auto block = data_.QueryData(size + sizeof(mmx::headers::MEDIA_HEADER));
+
+                        if(block != nullptr)
+                        {
+                            mmx::headers::MEDIA_DATA& media =  *(mmx::headers::PMEDIA_DATA)block->data;
+
+                            media.header.magic = mmx::headers::MEDIA_MAGIC;
+                            media.header.length = size + sizeof(mmx::headers::MEDIA_HEADER);
+                            media.header.addr_src = ::htonl(ip_header.src);
+                            media.header.addr_dst = ::htonl(ip_header.dest);
+                            media.header.port_src = ::htons(udp.port_src);
+                            media.header.port_dst = port_dst;
+
+                            timeval tv;
+
+                            gettimeofday(&tv, 0);
+
+                            media.header.sec = tv.tv_sec;
+                            media.header.usec = tv.tv_usec;
+
+                            std::copy(pyload, pyload + size, media.media);
+
+                            rc = size;
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+        return rc;
     }
 
     void Direction::Reset()

@@ -24,6 +24,8 @@ ichannel.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/names.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
 iostream
 -
@@ -35,6 +37,8 @@ mmxlib/headers/media.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/media.h
 mmxlib/headers/datapack.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/datapack.h
+mmxlib/names.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/names.h
 fcntl.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/fcntl.h
 

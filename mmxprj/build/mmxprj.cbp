@@ -386,6 +386,42 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/datapacket.cpp">
          <Option target="mmx"/>
       </Unit>
@@ -425,10 +461,16 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/adisp.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sockdisp.cpp">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sockdisp.h">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp">
@@ -437,16 +479,7 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/_listener.cpp">
-         <Option target="mmxlst"/>
-      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h">
-         <Option target="mmxlst"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.cpp">
-         <Option target="mmxlst"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.h">
          <Option target="mmxlst"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp">
@@ -480,6 +513,9 @@
          <Option target="mmxtest"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test3.cpp">
+         <Option target="mmxtest"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test4.cpp">
          <Option target="mmxtest"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/CMakeLists.txt">

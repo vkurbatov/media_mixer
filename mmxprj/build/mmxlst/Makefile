@@ -125,60 +125,6 @@ mmxlst/fast:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/build
 .PHONY : mmxlst/fast
 
-_listener.o: _listener.cpp.o
-
-.PHONY : _listener.o
-
-# target to build an object file
-_listener.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o
-.PHONY : _listener.cpp.o
-
-_listener.i: _listener.cpp.i
-
-.PHONY : _listener.i
-
-# target to preprocess a source file
-_listener.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.i
-.PHONY : _listener.cpp.i
-
-_listener.s: _listener.cpp.s
-
-.PHONY : _listener.s
-
-# target to generate assembly for a file
-_listener.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.s
-.PHONY : _listener.cpp.s
-
-direction.o: direction.cpp.o
-
-.PHONY : direction.o
-
-# target to build an object file
-direction.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o
-.PHONY : direction.cpp.o
-
-direction.i: direction.cpp.i
-
-.PHONY : direction.i
-
-# target to preprocess a source file
-direction.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.i
-.PHONY : direction.cpp.i
-
-direction.s: direction.cpp.s
-
-.PHONY : direction.s
-
-# target to generate assembly for a file
-direction.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.s
-.PHONY : direction.cpp.s
-
 listener.o: listener.cpp.o
 
 .PHONY : listener.o
@@ -242,12 +188,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mmxlst"
-	@echo "... _listener.o"
-	@echo "... _listener.i"
-	@echo "... _listener.s"
-	@echo "... direction.o"
-	@echo "... direction.i"
-	@echo "... direction.s"
 	@echo "... listener.o"
 	@echo "... listener.i"
 	@echo "... listener.s"

@@ -4,11 +4,13 @@
 #include "mmxlib/ipc/pchannel.h"
 #include "mmxlib/headers/media.h"
 #include "mmxlib/headers/datapack.h"
+#include "mmxlib/names.h"
+
 #include "fcntl.h"
 
 #define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
 
-static char buff[1600];
+static char buff[1600 * 10];
 
 
 int main(int argc, char* argv[])
@@ -19,18 +21,27 @@ int main(int argc, char* argv[])
 
     mmx::ipc::PipeChannel channelOut;
 
-    channelIn.Open("/tmp/pmmxlst-1", O_RDWR, 0777);
-    channelOut.Open("/tmp/pmmxsrv-1", O_RDWR, 0777);
+    char in_channel_name[256];
+    char out_channel_name[256];
 
-    int rc = 0;
+    std::sprintf(in_channel_name, MMX_LISTENER_CHANNEL_PATTERN, 2);
+    std::sprintf(out_channel_name, MMX_SERVER_CHANNEL_PATTERN, 1);
 
-    mmx::headers::DATA_PACK &dpack = *(mmx::headers::PDATA_PACK)buff;
+    int rc = channelIn.Open(in_channel_name, O_RDWR, 0777);
+    rc = channelOut.Open(out_channel_name, O_RDWR, 0777);
+
 
     while ((rc = channelIn.Read(buff, sizeof(buff))) >= 0)
     {
         //mmx::logs::logD("Recieved %d bytes from pipe %s", rc, channel.Name());
 
-        std::cout << "Recieved " << rc << " bytes from pipe. Packet id = " << dpack.header.pack_id << ", length = " << dpack.header.length << std::endl;
+        mmx::headers::DATA_PACK &dpack = *(mmx::headers::PDATA_PACK)buff;
+
+        std::cout << "Recieved " << rc <<
+                     " bytes from pipe. Packet id = " << dpack.header.pack_id <<
+                     ", length = " << dpack.header.length <<
+                     ", blocks = " << dpack.header.block_count <<
+                     std::endl;
 
         //std::cout <<
 

@@ -9,9 +9,9 @@
 
 #include "mmxlib/tools/timer.h"
 
-#include "mmxlib/staff/ipstaffer.h"
-#include "mmxlib/staff/udpstaffer.h"
 #include "mmxlib/staff/datapacket.h"
+
+#include "mmxlib/sniffers/ipsniffer.h"
 
 #include "direction.h"
 
@@ -31,9 +31,9 @@ namespace mmxlst
         mmx::tools::Timer& pipe_timer_ = timers_[1];
 
         mmx::staff::DataPacket datapack_;
-        Direction direction_;
-        mmx::staff::UDPStaffer udp_sniffer_;
-        mmx::staff::IPStaffer ip_sniffer_;
+
+        mmx::sniffers::IPPacketPool packet_pool_;
+        mmx::sniffers::IPSniffer ip_sniffer__;
 
         mmx::net::timeout_t timeout_;
 
@@ -42,7 +42,7 @@ namespace mmxlst
 
         unsigned short pack_id_;
 
-        char buffer_[1600];
+        char buffer_[mmx::sniffers::DEFAULT_MTU_SIZE * 10];
 
 
     public:
@@ -51,6 +51,7 @@ namespace mmxlst
         ~Listener();
 
         int Execute();
+
 
     private:
         int initialization();
@@ -62,6 +63,8 @@ namespace mmxlst
         int readData();
         int writeData();
         int clear();
+
+        int putPacket(const mmx::sniffers::IIPPacket& packet);
 
     };
 }

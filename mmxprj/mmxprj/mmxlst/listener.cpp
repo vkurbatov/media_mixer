@@ -5,10 +5,12 @@
 #include <netdb.h>  // SOCK_RAW, IPPROTO_UDP
 #include <fcntl.h>  // O_NONBLOCK
 #include <errno.h>
+#include <sys/time.h>   // gettimeofday
 
 #include "mmxlib/logs/log.h"
+#include "mmxlib/headers/udp.h"
+#include "mmxlib/names.h"
 
-#define CHANNEL_PATTERN "/tmp/pmmxlst-%d"
 #define DEFAULT_TIMEOUT 2000
 
 namespace mmxlst
@@ -20,9 +22,7 @@ namespace mmxlst
         address_(address),
         channel_(channel),
         datapack_(0x10000),
-        direction_(datapack_, ports_),
-        udp_sniffer_(&direction_),
-        ip_sniffer_(&udp_sniffer_),
+        ip_sniffer__(packet_pool_),
         pack_id_(0)
     {
         mmx::logs::logD("[%p] Listener::Listener(%d, %d, [ports])", this, address, channel);
@@ -77,9 +77,9 @@ namespace mmxlst
     {
         int rc = 0;
 
-        char pipe_name_[sizeof(CHANNEL_PATTERN)+4];
+        char pipe_name_[sizeof(MMX_LISTENER_CHANNEL_PATTERN)+4];
 
-        std::sprintf(pipe_name_, CHANNEL_PATTERN, (int)channel_);
+        std::sprintf(pipe_name_, MMX_LISTENER_CHANNEL_PATTERN, (int)channel_);
 
         // проверка сокетного соединения
 
@@ -109,7 +109,7 @@ namespace mmxlst
         {
             if (pipe_timer_.IsEnable())
             {
-                rc = pipe_.Open(pipe_name_, O_RDWR);
+                rc = pipe_.Open(pipe_name_, O_RDWR, 0777);
 
                 if (rc >= 0)
                 {
@@ -137,26 +137,22 @@ namespace mmxlst
 
         if (socket_.Handle() < 0)
         {
-            auto elapse = sock_timer_.Elapsed();
-            if (sock_timer_.IsEnable())
+            auto left = sock_timer_.Left();
+
+            if (tout < 0 || tout > left)
             {
-                if (tout > elapse)
-                {
-                    tout = elapse < 0 ? 0 : elapse;
-                }
+                tout = left < 0 ? 0 : left;
             }
         }
 
 
         if (pipe_.Handle() < 0)
         {
-            auto elapse = pipe_timer_.Elapsed();
-            if (sock_timer_.IsEnable())
+            auto left = pipe_timer_.Left();
+
+            if (tout < 0 || tout > left)
             {
-                if (tout > elapse)
-                {
-                    tout = elapse < 0 ? 0 : elapse;
-                }
+                tout = left < 0 ? 0 : left;
             }
         }
 
@@ -238,7 +234,30 @@ namespace mmxlst
             }
             else
             {
-                ip_sniffer_.Dispatch(buffer_, rc);
+
+                int ret = rc;
+
+                while (ret > 0)
+                {
+
+                    ret = ip_sniffer__.PutStream(buffer_, ret);
+
+
+                    if (ip_sniffer__.IsComplete())
+                    {
+
+                        putPacket(*ip_sniffer__.GetPacket());
+
+                        ip_sniffer__.Next();
+
+                    }
+
+                    if (ret > 0)
+                    {
+                        ret = rc - ret;
+                    }
+
+                }
 
                 checkWrite();
 
@@ -318,5 +337,75 @@ namespace mmxlst
         select_.Reset();
         socket_.Close();
         pipe_.Close();
+    }
+
+    int Listener::putPacket(const mmx::sniffers::IIPPacket& packet)
+    {
+        int rc = -EINVAL;
+
+        if (packet.Header() != nullptr)
+        {
+            rc = -EPROTO;
+
+            auto& ip_header = *packet.Header();
+            auto pyload = (const char*)packet.Pyload();
+            auto size = packet.Size();
+
+            if (ip_header.protocol == IPPROTO_UDP)
+            {
+                mmx::headers::UDPHEADER& udp = *(mmx::headers::PUDPHEADER)pyload;
+
+                unsigned short port_dst = ::htons(udp.port_dst);
+
+                rc = -EBADMSG;
+
+                if (::ntohs(udp.length) == size)
+                {
+                    pyload += sizeof(mmx::headers::UDPHEADER);
+                    size -= sizeof(mmx::headers::UDPHEADER);
+
+                    rc= -EADDRNOTAVAIL;
+
+                    if (ports_[port_dst])
+                    {
+                        rc = -ENOMEM;
+
+                        auto block = datapack_.QueryData(size + sizeof(mmx::headers::MEDIA_HEADER));
+
+                        if(block != nullptr)
+                        {
+                            mmx::headers::MEDIA_DATA& media =  *(mmx::headers::PMEDIA_DATA)block->data;
+
+                            media.header.magic = mmx::headers::MEDIA_MAGIC;
+                            media.header.length = size + sizeof(mmx::headers::MEDIA_HEADER);
+                            media.header.addr_src = ::htonl(ip_header.src);
+                            media.header.addr_dst = ::htonl(ip_header.dest);
+                            media.header.port_src = ::htons(udp.port_src);
+                            media.header.port_dst = port_dst;
+
+                            timeval tv;
+
+                            gettimeofday(&tv, 0);
+
+                            media.header.sec = tv.tv_sec;
+                            media.header.usec = tv.tv_usec;
+
+                            std::copy(pyload, pyload + size, media.media);
+
+                            rc = size;
+
+                        }
+                        else
+                        {
+                            datapack_.Init(pack_id_);
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+        return rc;
     }
 }

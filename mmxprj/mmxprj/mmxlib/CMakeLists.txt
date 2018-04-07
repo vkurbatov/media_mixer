@@ -36,10 +36,16 @@ set ( SOURCE_FILES
 	staff/udpstaffer.cpp
 	staff/mediapool.cpp
 	staff/datapacket.cpp
+	sniffers/ipsniffer.cpp
+	sniffers/ippacket.cpp
+	sniffers/ippacketwrapper.cpp
+	sniffers/ippacketpool.cpp
+	sniffers/bitset.cpp
 #	плюшки
 	tools/adisp.cpp
-	tools/sockdisp.cpp
+	tools/deffwriter.cpp
 	tools/timer.cpp
+	tools/iosockadp.cpp
 )
 
 set ( PRIVATE_HEADERS
@@ -68,10 +74,18 @@ set ( PRIVATE_HEADERS
 	staff/udpstaffer.h
 	staff/mediapool.h
 	staff/datapacket.h
+	sniffers/istream.h
+	sniffers/iippacket.h
+	sniffers/ipsniffer.h
+	sniffers/ippacket.h
+	sniffers/ippacketwrapper.h
+	sniffers/ippacketpool.h
+	sniffers/bitset.h
 #	плюшки
 	tools/adisp.h
-	tools/sockdisp.h
+	tools/deffwriter.h
 	tools/timer.h
+	tools/iosockadp.h
 
 #	имена
 	names.h

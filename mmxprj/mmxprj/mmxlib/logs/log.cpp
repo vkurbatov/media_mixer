@@ -6,7 +6,7 @@
 
 #include "logs/log.h"
 
-#include <sys/time.h>   // получение миллисекунд
+#include <sys/time.h>   // получение миллисекунд   
 
 
 #define LOG_BUFFER_SIZE     8196L   // более чем достаточно
@@ -78,6 +78,10 @@ namespace mmx
 
                 if (filename != nullptr)
                 {
+                    // временно
+
+                    std::remove(g_filename);
+
                     std::strcpy(g_filename, filename);
 
                     g_mt = mt;
@@ -145,6 +149,15 @@ namespace mmx
             // тут храняться строковые представления уровней логов
 
             static const char s_levels[] = {'T','D','I','W','E','C'};
+
+            // временная схема (первый символ @ в форматной строке игнорирует уровень ведения логов)
+
+            if (*format == '@')
+            {
+                level = L_TRACE;
+
+                format++;
+            }
 
             ::timeval tv;
 

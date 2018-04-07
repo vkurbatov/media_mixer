@@ -13,6 +13,7 @@ namespace mmx
         class Timer
         {
             timer_interval_t tout_;
+            bool run_;
 
             std::chrono::time_point<std::chrono::system_clock> start_;
 
@@ -21,6 +22,7 @@ namespace mmx
             void Start(timer_interval_t interval);
             bool Stop();
             timer_interval_t Elapsed() const;
+            timer_interval_t Left() const;
             bool IsEnable() const;
             bool IsStarted() const;
 

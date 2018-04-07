@@ -1,6 +1,7 @@
 #include "portset.h"
 
 #include <cstring>  // memset
+#include <cstdlib>
 
 namespace mmx
 {
@@ -31,7 +32,59 @@ namespace mmx
             set_[port / 8] =  set_[port / 8] & ~((unsigned short)1 << (port % 8));
         }
 
-        bool PortSet::operator[] (unsigned short port)
+        int PortSet::SetRange(unsigned short begin, unsigned short end, short step)
+        {
+
+            int rc = 0;
+
+            step += (short)(step == 0);
+
+            step = std::abs(step);
+
+            step = begin <= end ? step : -step;
+
+            // swap begin и end не прокатит, мы должны в люблом случае установить порт begin
+
+            while (step > 0 ? begin <= end : begin >= end)
+            {
+                rc++;
+
+                Set(begin);
+
+                begin += step;
+            }
+
+            return rc;
+
+        }
+
+        int PortSet::ClrRange(unsigned short begin, unsigned short end, short step)
+        {
+
+            int rc = 0;
+
+            step += (short)(step == 0);
+
+            step = std::abs(step);
+
+            step = begin <= end ? step : -step;
+
+            // swap begin и end не прокатит, мы должны в люблом случае установить порт begin
+
+            while (step > 0 ? begin <= end : begin >= end)
+            {
+                rc++;
+
+                Clr(begin);
+
+                begin += step;
+            }
+
+            return rc;
+
+        }
+
+        bool PortSet::operator[] (unsigned short port) const
         {
             return (set_[port / 8] & 1 << (port % 8)) != 0;
         }

@@ -122,7 +122,7 @@ namespace mmx
 
                     if (access_ != 0)
                     {
-                        ::unlink(pipename_);
+                        //::unlink(pipename_);
                         access_ = 0;
                     }
                 }

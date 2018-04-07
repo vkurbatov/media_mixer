@@ -81,33 +81,9 @@ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.dir/m
 mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o
 
 
-mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o: mmxlst/CMakeFiles/mmxlst.dir/flags.make
-mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/_listener.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o"
-	cd /home/vkurbatov/work/mmxprj/build/mmxlst && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxlst.dir/_listener.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/_listener.cpp
-
-mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxlst.dir/_listener.cpp.i"
-	cd /home/vkurbatov/work/mmxprj/build/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/_listener.cpp > CMakeFiles/mmxlst.dir/_listener.cpp.i
-
-mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxlst.dir/_listener.cpp.s"
-	cd /home/vkurbatov/work/mmxprj/build/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/_listener.cpp -o CMakeFiles/mmxlst.dir/_listener.cpp.s
-
-mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o.requires:
-
-.PHONY : mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o.requires
-
-mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o.requires
-	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o.provides.build
-.PHONY : mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o.provides
-
-mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o
-
-
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: mmxlst/CMakeFiles/mmxlst.dir/flags.make
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlst && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxlst.dir/listener.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
 
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.i: cmake_force
@@ -129,48 +105,20 @@ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.d
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o
 
 
-mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o: mmxlst/CMakeFiles/mmxlst.dir/flags.make
-mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o"
-	cd /home/vkurbatov/work/mmxprj/build/mmxlst && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxlst.dir/direction.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.cpp
-
-mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxlst.dir/direction.cpp.i"
-	cd /home/vkurbatov/work/mmxprj/build/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.cpp > CMakeFiles/mmxlst.dir/direction.cpp.i
-
-mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxlst.dir/direction.cpp.s"
-	cd /home/vkurbatov/work/mmxprj/build/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.cpp -o CMakeFiles/mmxlst.dir/direction.cpp.s
-
-mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o.requires:
-
-.PHONY : mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o.requires
-
-mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o.requires
-	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o.provides.build
-.PHONY : mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o.provides
-
-mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o
-
-
 # Object files for target mmxlst
 mmxlst_OBJECTS = \
 "CMakeFiles/mmxlst.dir/main.cpp.o" \
-"CMakeFiles/mmxlst.dir/_listener.cpp.o" \
-"CMakeFiles/mmxlst.dir/listener.cpp.o" \
-"CMakeFiles/mmxlst.dir/direction.cpp.o"
+"CMakeFiles/mmxlst.dir/listener.cpp.o"
 
 # External object files for target mmxlst
 mmxlst_EXTERNAL_OBJECTS =
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlst && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmxlst.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -179,9 +127,7 @@ mmxlst/CMakeFiles/mmxlst.dir/build: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/bu
 .PHONY : mmxlst/CMakeFiles/mmxlst.dir/build
 
 mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o.requires
-mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/_listener.cpp.o.requires
 mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.requires
-mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/direction.cpp.o.requires
 
 .PHONY : mmxlst/CMakeFiles/mmxlst.dir/requires
 

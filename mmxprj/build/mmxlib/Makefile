@@ -260,6 +260,141 @@ net/socket.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.s
 .PHONY : net/socket.cpp.s
 
+sniffers/bitset.o: sniffers/bitset.cpp.o
+
+.PHONY : sniffers/bitset.o
+
+# target to build an object file
+sniffers/bitset.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o
+.PHONY : sniffers/bitset.cpp.o
+
+sniffers/bitset.i: sniffers/bitset.cpp.i
+
+.PHONY : sniffers/bitset.i
+
+# target to preprocess a source file
+sniffers/bitset.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.i
+.PHONY : sniffers/bitset.cpp.i
+
+sniffers/bitset.s: sniffers/bitset.cpp.s
+
+.PHONY : sniffers/bitset.s
+
+# target to generate assembly for a file
+sniffers/bitset.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.s
+.PHONY : sniffers/bitset.cpp.s
+
+sniffers/ippacket.o: sniffers/ippacket.cpp.o
+
+.PHONY : sniffers/ippacket.o
+
+# target to build an object file
+sniffers/ippacket.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o
+.PHONY : sniffers/ippacket.cpp.o
+
+sniffers/ippacket.i: sniffers/ippacket.cpp.i
+
+.PHONY : sniffers/ippacket.i
+
+# target to preprocess a source file
+sniffers/ippacket.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.i
+.PHONY : sniffers/ippacket.cpp.i
+
+sniffers/ippacket.s: sniffers/ippacket.cpp.s
+
+.PHONY : sniffers/ippacket.s
+
+# target to generate assembly for a file
+sniffers/ippacket.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.s
+.PHONY : sniffers/ippacket.cpp.s
+
+sniffers/ippacketpool.o: sniffers/ippacketpool.cpp.o
+
+.PHONY : sniffers/ippacketpool.o
+
+# target to build an object file
+sniffers/ippacketpool.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o
+.PHONY : sniffers/ippacketpool.cpp.o
+
+sniffers/ippacketpool.i: sniffers/ippacketpool.cpp.i
+
+.PHONY : sniffers/ippacketpool.i
+
+# target to preprocess a source file
+sniffers/ippacketpool.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.i
+.PHONY : sniffers/ippacketpool.cpp.i
+
+sniffers/ippacketpool.s: sniffers/ippacketpool.cpp.s
+
+.PHONY : sniffers/ippacketpool.s
+
+# target to generate assembly for a file
+sniffers/ippacketpool.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.s
+.PHONY : sniffers/ippacketpool.cpp.s
+
+sniffers/ippacketwrapper.o: sniffers/ippacketwrapper.cpp.o
+
+.PHONY : sniffers/ippacketwrapper.o
+
+# target to build an object file
+sniffers/ippacketwrapper.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o
+.PHONY : sniffers/ippacketwrapper.cpp.o
+
+sniffers/ippacketwrapper.i: sniffers/ippacketwrapper.cpp.i
+
+.PHONY : sniffers/ippacketwrapper.i
+
+# target to preprocess a source file
+sniffers/ippacketwrapper.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.i
+.PHONY : sniffers/ippacketwrapper.cpp.i
+
+sniffers/ippacketwrapper.s: sniffers/ippacketwrapper.cpp.s
+
+.PHONY : sniffers/ippacketwrapper.s
+
+# target to generate assembly for a file
+sniffers/ippacketwrapper.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.s
+.PHONY : sniffers/ippacketwrapper.cpp.s
+
+sniffers/ipsniffer.o: sniffers/ipsniffer.cpp.o
+
+.PHONY : sniffers/ipsniffer.o
+
+# target to build an object file
+sniffers/ipsniffer.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o
+.PHONY : sniffers/ipsniffer.cpp.o
+
+sniffers/ipsniffer.i: sniffers/ipsniffer.cpp.i
+
+.PHONY : sniffers/ipsniffer.i
+
+# target to preprocess a source file
+sniffers/ipsniffer.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.i
+.PHONY : sniffers/ipsniffer.cpp.i
+
+sniffers/ipsniffer.s: sniffers/ipsniffer.cpp.s
+
+.PHONY : sniffers/ipsniffer.s
+
+# target to generate assembly for a file
+sniffers/ipsniffer.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.s
+.PHONY : sniffers/ipsniffer.cpp.s
+
 staff/datapacket.o: staff/datapacket.cpp.o
 
 .PHONY : staff/datapacket.o
@@ -422,32 +557,59 @@ tools/adisp.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.s
 .PHONY : tools/adisp.cpp.s
 
-tools/sockdisp.o: tools/sockdisp.cpp.o
+tools/deffwriter.o: tools/deffwriter.cpp.o
 
-.PHONY : tools/sockdisp.o
+.PHONY : tools/deffwriter.o
 
 # target to build an object file
-tools/sockdisp.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sockdisp.cpp.o
-.PHONY : tools/sockdisp.cpp.o
+tools/deffwriter.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o
+.PHONY : tools/deffwriter.cpp.o
 
-tools/sockdisp.i: tools/sockdisp.cpp.i
+tools/deffwriter.i: tools/deffwriter.cpp.i
 
-.PHONY : tools/sockdisp.i
+.PHONY : tools/deffwriter.i
 
 # target to preprocess a source file
-tools/sockdisp.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sockdisp.cpp.i
-.PHONY : tools/sockdisp.cpp.i
+tools/deffwriter.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.i
+.PHONY : tools/deffwriter.cpp.i
 
-tools/sockdisp.s: tools/sockdisp.cpp.s
+tools/deffwriter.s: tools/deffwriter.cpp.s
 
-.PHONY : tools/sockdisp.s
+.PHONY : tools/deffwriter.s
 
 # target to generate assembly for a file
-tools/sockdisp.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sockdisp.cpp.s
-.PHONY : tools/sockdisp.cpp.s
+tools/deffwriter.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.s
+.PHONY : tools/deffwriter.cpp.s
+
+tools/iosockadp.o: tools/iosockadp.cpp.o
+
+.PHONY : tools/iosockadp.o
+
+# target to build an object file
+tools/iosockadp.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o
+.PHONY : tools/iosockadp.cpp.o
+
+tools/iosockadp.i: tools/iosockadp.cpp.i
+
+.PHONY : tools/iosockadp.i
+
+# target to preprocess a source file
+tools/iosockadp.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.i
+.PHONY : tools/iosockadp.cpp.i
+
+tools/iosockadp.s: tools/iosockadp.cpp.s
+
+.PHONY : tools/iosockadp.s
+
+# target to generate assembly for a file
+tools/iosockadp.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.s
+.PHONY : tools/iosockadp.cpp.s
 
 tools/timer.o: tools/timer.cpp.o
 
@@ -500,6 +662,21 @@ help:
 	@echo "... net/socket.o"
 	@echo "... net/socket.i"
 	@echo "... net/socket.s"
+	@echo "... sniffers/bitset.o"
+	@echo "... sniffers/bitset.i"
+	@echo "... sniffers/bitset.s"
+	@echo "... sniffers/ippacket.o"
+	@echo "... sniffers/ippacket.i"
+	@echo "... sniffers/ippacket.s"
+	@echo "... sniffers/ippacketpool.o"
+	@echo "... sniffers/ippacketpool.i"
+	@echo "... sniffers/ippacketpool.s"
+	@echo "... sniffers/ippacketwrapper.o"
+	@echo "... sniffers/ippacketwrapper.i"
+	@echo "... sniffers/ippacketwrapper.s"
+	@echo "... sniffers/ipsniffer.o"
+	@echo "... sniffers/ipsniffer.i"
+	@echo "... sniffers/ipsniffer.s"
 	@echo "... staff/datapacket.o"
 	@echo "... staff/datapacket.i"
 	@echo "... staff/datapacket.s"
@@ -518,9 +695,12 @@ help:
 	@echo "... tools/adisp.o"
 	@echo "... tools/adisp.i"
 	@echo "... tools/adisp.s"
-	@echo "... tools/sockdisp.o"
-	@echo "... tools/sockdisp.i"
-	@echo "... tools/sockdisp.s"
+	@echo "... tools/deffwriter.o"
+	@echo "... tools/deffwriter.i"
+	@echo "... tools/deffwriter.s"
+	@echo "... tools/iosockadp.o"
+	@echo "... tools/iosockadp.i"
+	@echo "... tools/iosockadp.s"
 	@echo "... tools/timer.o"
 	@echo "... tools/timer.i"
 	@echo "... tools/timer.s"

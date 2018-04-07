@@ -76,16 +76,7 @@
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/_listener.cpp">
-         <Option target="mmxlst"/>
-      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h">
-         <Option target="mmxlst"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.cpp">
-         <Option target="mmxlst"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.h">
          <Option target="mmxlst"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp">

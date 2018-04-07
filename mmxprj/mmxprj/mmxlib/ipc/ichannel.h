@@ -15,8 +15,6 @@ namespace mmx
             virtual ~IChannel() {};
             virtual int Open(const char*, int, int) = 0;
             virtual int Close() = 0;
-//            virtual int Write(const char*, int, int = 0) = 0;
- //           virtual int Read(char*, int, int = 0) = 0;
             virtual int Handle() const = 0;
             virtual const char* Name() const = 0;
             virtual int Mode() const = 0;

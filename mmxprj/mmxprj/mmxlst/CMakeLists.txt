@@ -18,7 +18,7 @@ set ( SOURCE_FILES
     main.cpp
 #	_listener.cpp
 	listener.cpp
-	direction.cpp
+#	direction.cpp
 #	create_dir.cpp
 #	destroy_dir.cpp
 #	process_dir.cpp
@@ -30,7 +30,7 @@ set ( SOURCE_FILES
 
 set ( PRIVATE_HEADERS
 	defines.h
-	direction.h
+#	direction.h
 	listener.h
 #	channel.h
 #	direction.h
