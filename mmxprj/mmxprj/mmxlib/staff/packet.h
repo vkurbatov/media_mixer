@@ -61,6 +61,7 @@ namespace mmx
 
             const packet_data_t* Data(int idx = 0) const;
             int Size() const;
+            int Position() const;
         };
     }
 }

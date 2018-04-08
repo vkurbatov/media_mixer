@@ -293,6 +293,20 @@ staff/packet.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/staff/packet.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp
+deffwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+cstring
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+vector
+-
+queue
+-
+ipc/io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ipc/io.h
+staff/packet.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/staff/packet.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 iosockadp.h

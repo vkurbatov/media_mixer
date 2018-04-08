@@ -186,3 +186,15 @@ mmxlib/sniffers/ipsniffer.h
 netdb.h
 -
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test5.cpp
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
+iostream
+-
+cstring
+-
+mmxlib/sniffers/ipsniffer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/sniffers/ipsniffer.h
+netdb.h
+-
+

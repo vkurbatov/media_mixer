@@ -98,10 +98,6 @@ namespace mmx
 
         void Packet::Seek(int idx)
         {
-            idx += idx_;
-
-            if (idx < 0)
-                idx = 0;
 
             if (idx < data_.size())
             {
@@ -146,6 +142,11 @@ namespace mmx
         int Packet::Size() const
         {
             return data_.size() - idx_;
+        }
+
+        int Packet::Position() const
+        {
+            return idx_;
         }
     }
 }

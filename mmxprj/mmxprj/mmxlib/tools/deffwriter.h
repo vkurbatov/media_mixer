@@ -19,6 +19,7 @@ namespace mmx
 
             ipc::IIO&                   io_;
             std::queue<staff::Packet>   q_write_;
+            std::queue<staff::Packet>   q_free_;
             int                         limit_;
 
             //std::vector<char>           rd_buff_;
@@ -34,7 +35,13 @@ namespace mmx
             bool IsEmpty() const;
             int Count() const;
 
-            void Drop(int count = 0);
+            int Drop(int count = 0);
+
+        private:
+
+            staff::Packet* getPacket(int size = 0);
+            void pushData(const char* data, int size);
+            void pop();
 
         };
     }

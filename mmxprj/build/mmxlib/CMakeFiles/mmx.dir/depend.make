@@ -86,7 +86,10 @@ mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/
 mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/adisp.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/adisp.h
 
+mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/staff/packet.h
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
 
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
