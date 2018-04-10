@@ -44,7 +44,7 @@ namespace mmx
         }
 
 
-        int IPSniffer::Next()
+        int IPSniffer::Drop()
         {
             int rc = saved_bytes_;
 
@@ -70,7 +70,7 @@ namespace mmx
         {
             int rc = packet_pool_.Count();
 
-            Next();
+            Drop();
 
             packet_pool_.Reset();
 
@@ -145,7 +145,7 @@ namespace mmx
 
                     else
                     {
-                        rc = -EINVAL;
+                        rc = -EBADMSG;
                     }
 
 
@@ -159,7 +159,7 @@ namespace mmx
 
         int IPSniffer::fragmentSniffer(void* stream, int size)
         {
-            int rc = -EINVAL;
+            int rc = 0;
 
             char *p_src = (char*)stream;
 
@@ -257,7 +257,7 @@ namespace mmx
                                     }
                                     else
                                     {
-                                        Next();
+                                        Drop();
                                     }
 
                                 }

@@ -129,7 +129,7 @@ namespace mmx
         }
 
 
-        int Socket::Send(int sock, const char* data, int size, int flags, address_t r_address, port_t r_port)
+        int Socket::Send(int sock, const void* data, int size, int flags, address_t r_address, port_t r_port)
         {
             int rc = -EINVAL;
 
@@ -160,7 +160,7 @@ namespace mmx
             return rc;
         }
 
-        int Socket::Recv(int sock, char* data, int size, int flags, address_t* r_address, port_t* r_port)
+        int Socket::Recv(int sock, void* data, int size, int flags, address_t* r_address, port_t* r_port)
         {
 
             int rc = -EINVAL;
@@ -620,12 +620,12 @@ namespace mmx
             return rc;
         }
 
-        int Socket::Send(const char* data, int size, int flags, address_t r_address, port_t r_port)
+        int Socket::Send(const void* data, int size, int flags, address_t r_address, port_t r_port)
         {
             return Send(handle_, data, size, flags, r_address, r_port);
         }
 
-        int Socket::Recv(char* data, int size, int flags, address_t* r_address, port_t* r_port)
+        int Socket::Recv(void* data, int size, int flags, address_t* r_address, port_t* r_port)
         {
             return Recv(handle_, data, size, flags, r_address, r_port);
         }

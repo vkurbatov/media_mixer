@@ -1,5 +1,5 @@
-#ifndef _MMX_STAFF_MEDIA_PACKET_H
-#define _MMX_STAFF_MEDIA_PACKET_H
+#ifndef _MMX_DATA_MEDIA_PACKET_H
+#define _MMX_DATA_MEDIA_PACKET_H
 
 #include "packet.h"
 #include "headers/media.h"
@@ -9,7 +9,7 @@
 
 namespace mmx
 {
-    namespace staff
+    namespace data
     {
         static const int MAX_PACK_SIZE = 0xFFFF;
 

@@ -24,9 +24,12 @@ mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test2.cpp
 
 mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
-mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
-mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/staff/datapacket.h
-mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/staff/packet.h
+mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/datapacket.h
+mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/dpreader.h
+mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/dpwriter.h
+mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/idpheader.h
+mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/idpreader.h
+mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/idpwriter.h
 mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/timer.h
 mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
 mmxtest/CMakeFiles/mmxtest.dir/test3.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test3.cpp
@@ -42,14 +45,22 @@ mmxtest/CMakeFiles/mmxtest.dir/test4.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxtest/CMakeFiles/mmxtest.dir/test4.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
 mmxtest/CMakeFiles/mmxtest.dir/test4.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test4.cpp
 
-mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
-mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/bitset.h
-mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/iippacket.h
-mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/ippacket.h
-mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/ippacketpool.h
-mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/ippacketwrapper.h
-mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/ipsniffer.h
-mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/istream.h
+mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/socket.h
+mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/deffwriter.h
+mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/iosockadp.h
 mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
 mmxtest/CMakeFiles/mmxtest.dir/test5.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test5.cpp
+
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/dpreader.h
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/dpwriter.h
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/idpreader.h
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/data/idpwriter.h
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/dpsniffer.h
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/istream.h
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
+mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test6.cpp
 

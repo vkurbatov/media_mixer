@@ -330,7 +330,7 @@ namespace mmx
             return rc;
         }
 
-        int IPPacket::Next()
+        int IPPacket::Drop()
         {
             int rc = saved_bytes_;
 

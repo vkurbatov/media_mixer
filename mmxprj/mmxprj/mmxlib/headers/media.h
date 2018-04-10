@@ -17,7 +17,7 @@ namespace mmx
             unsigned short	magic;          // сигнатура пакета
             unsigned short  packet_id;      // порядковый номер пакета
 
-            unsigned short	length;         // длина медиаданных + заголовок
+            unsigned short	length;         // длина медиаданных + размер заголовка
             unsigned char   ver;            // версия медиапакета
             unsigned char   reserved;       // зарезервировано
         	

@@ -2,7 +2,7 @@
 
 namespace mmx
 {
-    namespace staff
+    namespace data
     {
 
         DataPacket::DataPacket(Packet&& packet) :

@@ -9,9 +9,13 @@
 
 #include "mmxlib/logs/log.h"
 #include "mmxlib/headers/udp.h"
+#include "mmxlib/headers/media.h"
 #include "mmxlib/names.h"
 
-#define DEFAULT_TIMEOUT 2000
+
+
+#define MAX_DEFFERED_SIZE   100
+#define DEFAULT_TIMEOUT     2000
 
 namespace mmxlst
 {
@@ -22,8 +26,10 @@ namespace mmxlst
         address_(address),
         channel_(channel),
         datapack_(0x10000),
-        ip_sniffer__(packet_pool_),
-        pack_id_(0)
+        ip_sniffer_(packet_pool_),
+        pack_id_(0),
+        //sock_adp_(socket_),
+        deffered_writer_(pipe_, MAX_DEFFERED_SIZE)
     {
         mmx::logs::logD("[%p] Listener::Listener(%d, %d, [ports])", this, address, channel);
     }
@@ -64,7 +70,7 @@ namespace mmxlst
         mmx::logs::logD("[%p] Listener::initialization(begin)", this);
 
 
-        datapack_.Init(++pack_id_);
+        datapack_.BuildPacket(++pack_id_);
         sock_timer_.Start(0);
         pipe_timer_.Start(0);
 
@@ -109,7 +115,7 @@ namespace mmxlst
         {
             if (pipe_timer_.IsEnable())
             {
-                rc = pipe_.Open(pipe_name_, O_RDWR, 0777);
+                rc = pipe_.Open(pipe_name_, O_RDWR | O_NONBLOCK);
 
                 if (rc >= 0)
                 {
@@ -216,21 +222,29 @@ namespace mmxlst
 
             if (rc < 0)
             {
-                if (rc == EWOULDBLOCK || rc == EAGAIN)
+
+                switch(rc)
                 {
-                    // ситуация нормальная, но спорная! почему сработал select????
+                    case -EWOULDBLOCK:
 
-                    mmx::logs::logW("[%p] Listener::readData() non-blocket forced reading socket %d. rc = %d", this, socket_.Handle(), rc);
+                        mmx::logs::logW("[%p] Listener::readData() non-blocket forced reading socket %d. rc = %d", this, socket_.Handle(), rc);
+
+                        break;
+                    case -EINTR:
+
+                        mmx::logs::logE("[%p] Listener::readData() Reading socket %d interrupted. rc = %d", this, socket_.Handle(), rc);
+
+                        break;
+                    default:
+
+                        mmx::logs::logE("[%p] Listener::readData() socket =%d read error! rc = %d", this, socket_.Handle(), rc);
+
+                        select_.Set(socket_.Handle());
+                        socket_.Close();
+
+                        break;
                 }
-                else
-                {
 
-                    mmx::logs::logE("[%p] Listener::readData() socket =%d read error! rc = %d", this, socket_.Handle(), rc);
-
-                    select_.Set(socket_.Handle());
-
-                    socket_.Close();
-                }
             }
             else
             {
@@ -240,15 +254,15 @@ namespace mmxlst
                 while (ret > 0)
                 {
 
-                    ret = ip_sniffer__.PutStream(buffer_, ret);
+                    ret = ip_sniffer_.PutStream(buffer_, ret);
 
 
-                    if (ip_sniffer__.IsComplete())
+                    if (ip_sniffer_.IsComplete())
                     {
 
-                        putPacket(*ip_sniffer__.GetPacket());
+                        putPacket(*ip_sniffer_.GetPacket());
 
-                        ip_sniffer__.Next();
+                        ip_sniffer_.Drop();
 
                     }
 
@@ -285,31 +299,46 @@ namespace mmxlst
             }
             else
             {
-                auto pack = datapack_.Data();
+                auto pack = datapack_.Header();
 
-                // данные получены - нужно их пересылать
+                // данные получены - нужно их пересылать (через механизм отложенной передачи)
 
-                rc = pipe_.Write((const char*)pack, pack->header.length);
+                rc = deffered_writer_.Write((const char*)pack, pack->header.length);
 
                 // ошибка передачи...
 
                 if (rc < 0)
                 {
-                    if (rc == EWOULDBLOCK || rc == EAGAIN)
+                    switch (rc)
                     {
-                        // ситуация нормальная, но опять спорная! почему сработал select????
-                        // нужно распечатать
+                        case -EWOULDBLOCK:
 
-                        mmx::logs::logW("[%p] Listener::writeData() non-blocket forced reading pipe = %s. rc = %d", this, pipe_.Name(), rc);
+                            // ситуация нормальная, но опять спорная! почему сработал select????
+                            // нужно распечатать
+
+                            mmx::logs::logW("[%p] Listener::writeData() non-blocket forced writing pipe = \'%s\'. rc = %d", this, pipe_.Name(), rc);
+
+                            break;
+
+                        case -ENOBUFS:
+                        case -EINTR:
+
+                            mmx::logs::logW("[%p] Listener::writeData() writing pipe = \'%s\' interrupted. rc = %d", this, pipe_.Name(), rc);
+
+                            break;
+                        default:
+
+                            mmx::logs::logE("[%p] Listener::writeData() writing pipe = \'%s\' error!! rc = %d", this, pipe_.Name(), rc);
+
+                            select_.Set(pipe_.Handle());
+
+                            pipe_.Close();
+
+                            deffered_writer_.Drop();
+
+                            break;
                     }
-                    else
-                    {
-                        mmx::logs::logE("[%p] Listener::writeData() pipe %s read error! rc = %d", this, pipe_.Name(), rc);
 
-                        select_.Set(pipe_.Handle());
-
-                        pipe_.Close();
-                    }
                 }
                 else
                 {
@@ -317,7 +346,7 @@ namespace mmxlst
 
                     // dir.Next();
 
-                    datapack_.Init(++pack_id_);
+                    datapack_.BuildPacket(++pack_id_);
                 }
             }
 
@@ -355,6 +384,7 @@ namespace mmxlst
             {
                 mmx::headers::UDPHEADER& udp = *(mmx::headers::PUDPHEADER)pyload;
 
+                unsigned int addr_dst = ::htonl(ip_header.dest);
                 unsigned short port_dst = ::htons(udp.port_dst);
 
                 rc = -EBADMSG;
@@ -366,11 +396,11 @@ namespace mmxlst
 
                     rc= -EADDRNOTAVAIL;
 
-                    if (ports_[port_dst])
+                    if (ports_[port_dst] && (address_ == INADDR_ANY || address_ == addr_dst))
                     {
                         rc = -ENOMEM;
 
-                        auto block = datapack_.QueryData(size + sizeof(mmx::headers::MEDIA_HEADER));
+                        auto block = datapack_.QueryBlock(size + sizeof(mmx::headers::MEDIA_HEADER));
 
                         if(block != nullptr)
                         {
@@ -379,7 +409,7 @@ namespace mmxlst
                             media.header.magic = mmx::headers::MEDIA_MAGIC;
                             media.header.length = size + sizeof(mmx::headers::MEDIA_HEADER);
                             media.header.addr_src = ::htonl(ip_header.src);
-                            media.header.addr_dst = ::htonl(ip_header.dest);
+                            media.header.addr_dst = addr_dst;
                             media.header.port_src = ::htons(udp.port_src);
                             media.header.port_dst = port_dst;
 
@@ -394,10 +424,12 @@ namespace mmxlst
 
                             rc = size;
 
+                            datapack_.Commit();
+
                         }
                         else
                         {
-                            datapack_.Init(pack_id_);
+                            datapack_.BuildPacket(pack_id_);
                         }
                     }
 

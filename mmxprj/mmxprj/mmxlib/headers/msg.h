@@ -9,7 +9,7 @@ namespace mmx
         const unsigned short    MSG_MAGIC = 0x1200;
         const unsigned char     VER = 1;
 
-#pragma pack(push,1)
+#pragma pack(push, 1)
 
         typedef struct _MSG_HEADER
         {

@@ -3,32 +3,38 @@
 
 #include <vector>
 
-#include "channel.h"
+#include "mmxlib/ipc/ichannel.h"
+#include "mmxlib/data/datapacket.h"
+#include "mmxlib/net/portset.h"
+#include "mmxlib/headers/ip.h"
+
+
 
 namespace mmxlst
 {
-    class Direction
+    class Direction : public mmx::staff::IStaffer
     {
-        int direction_id_;
-        int begin_;
-        int end_;
-        int step_;
-        //std::vector<Channel> channels_;
+        mmx::net::PortSet& ports_;
+        // std::vector<char> data_;
 
-        //static std::vector<Direction*> s_directions_;
+        mmx::staff::DataPacket& data_;
 
-        int port2idx(unsigned short port) const;
+
     public:
-        Direction(unsigned short begin, unsigned short end, int step, int direction_id);
+        Direction(mmx::staff::DataPacket& datapack, mmx::net::PortSet& ports);
         ~Direction();
-        /*static int BuildDirection(unsigned short begin, unsigned short end, int step = 1);
-        static int DestroyDirection(int direction_id);
-        static Direction& GetDirection(int direction_id);*/
-        int Dispatch(int sock);
-        //int Process(void(*call)(unsigned short, mmx::staff::Packet&&, void*), void* context = nullptr);
-        int Count(unsigned short port) const;
-        //int Pop(unsigned short port, mmx::staff::Packet&& packet);
+
+        virtual int Dispatch(const char* stream, int size, mmx::staff::PPROTOCOL_INFO pinfo = nullptr);
+        virtual void Reset();
+
+        int Sniffer(const char* pyload, int size, const mmx::headers::IP4HEADER& ip_header);
+
+        //mmx::headers::PDATA_PACK GetPacket();
+        //void Next();
+        //bool IsEmpty() const;
+
     };
 }
 
 #endif
+

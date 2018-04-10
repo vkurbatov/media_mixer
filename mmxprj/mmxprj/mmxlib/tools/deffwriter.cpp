@@ -10,12 +10,14 @@ namespace mmx
     {
         DeferredWriter::DeferredWriter(ipc::IIO& io, int limit) :
             io_(io),
-            limit_(limit > 0 ? limit : 1)
+            limit_(limit),
+            last_result_(0),
+            lost_(0)
         {
 
         }
 
-        int DeferredWriter::Write(const char* data, int size, int flags)
+        int DeferredWriter::Write(const void* data, int size, int flags)
         {
 
             // для начала проверим выходную очередь
@@ -25,13 +27,18 @@ namespace mmx
 
             bool f_write = !IsEmpty();
 
+            // признак успешности передачи отложенных данных
+
+            bool f_deff_complete = !f_write;
+
             // общее количество реально отправленных байт
 
-            int w_total = 0;
+            last_result_ = 0;
 
             // код возврата операции ввода-вывода
 
             int w_ret = 0;
+
 
             // Этап 1. Пробуем передать непереданные ранее данные из очереди (если они есть)
 
@@ -42,9 +49,13 @@ namespace mmx
 
                 f_write = false;
 
+
                 // если сюда попали, то очередь уже не пуста
 
                 auto& p = q_write_.front();
+
+                int sz = p.Size();
+                int ps = p.Position();
 
                 // пробуем передать данные в канал
 
@@ -69,19 +80,21 @@ namespace mmx
                         // если в очереди есть данные, то пытаемся их передать в следующей транзакции
 
                         f_write = !q_write_.empty();
+
+                        f_deff_complete = !f_write;
                     }
                     else
                     {
                         // данные передали частично
 
-                        // просто смещаем позицию непереданного пакета на w_ret байт
+                        // просто смещаем позицию недопереданного пакета на w_ret байт
 
                         p.Seek(p.Position() + w_ret);
                     }
 
                     // сформируем общай счетчик переданных байт
 
-                    w_total += w_ret;
+                    last_result_ += w_ret;
                 }
 
             }//while
@@ -91,10 +104,14 @@ namespace mmx
             if (data != nullptr && size > 0)
             {
 
-                if (w_ret >= 0)
+                // тут останется количество переданных в канал транзитных данных
+
+                int drop = 0;
+
+                if (f_deff_complete)
                 {
 
-                    // сюда попадаем только если отложенные данные не передавали,
+                    // сюда попадаем только если отложенных данных не было,
 
                     // или передали их полностью синхронно
 
@@ -104,27 +121,28 @@ namespace mmx
 
                     if (w_ret > 0)
                     {
-                        w_total += w_ret;
+                        last_result_ += w_ret;
+                        drop = w_ret;
                     }
 
                 }
 
-                // в этом месте в w_ret останется результат первого или второго этапа
+                // ситуация когда нужно положить непереданые остатки транзитных данных
+                // в отложенную очередь на передачу
 
-                // ситуаия когда положить остатки в отложенную очередь на передачу
-
-                if (w_ret < size)
+                if (drop < size)
                 {
-                    int off = w_ret < 0 ? 0 : w_ret;
-                    pushData(data + off, size - off);
+
+                    pushData((const char*)data + drop, size - drop);
+
                 }
 
-            }
+            }          
 
-            return w_ret >= 0 ? w_total : w_ret;
+            return w_ret >= 0 ? last_result_ : w_ret;
         }
 
-        int DeferredWriter::Read(char* data, int size, int flags)
+        int DeferredWriter::Read(void* data, int size, int flags)
         {
             return io_.Read(data, size, flags);
         }
@@ -137,6 +155,16 @@ namespace mmx
         int DeferredWriter::Count() const
         {
             return q_write_.size();
+        }
+
+        int DeferredWriter::LastResult() const
+        {
+            return last_result_;
+        }
+
+        int DeferredWriter::Lost() const
+        {
+            return lost_;
         }
 
         int DeferredWriter::Drop(int count)
@@ -154,16 +182,34 @@ namespace mmx
             return rc;
         }
 
-        staff::Packet* DeferredWriter::getPacket(int size)
+        void DeferredWriter::Reset()
         {
-            staff::Packet* rc = nullptr;
-
-            if (q_write_.size() > limit_)
+            while (!q_write_.empty())
             {
-                // привысили лимит
-                // потеря данных!!
+                q_write_.pop();
+            }
 
-                q_write_.push(std::move(q_write_.front()));
+            while (!q_free_.empty())
+            {
+                q_free_.pop();
+            }
+
+            lost_ = 0;
+            last_result_ = 0;
+        }
+
+        data::Packet* DeferredWriter::getPacket(int size)
+        {
+            data::Packet* rc = nullptr;
+
+            if (limit_>0 && q_write_.size() > limit_)
+            {
+                // превысили лимит
+                // потеря данных!!
+                auto& p = q_write_.front();
+                lost_ += p.Size();
+
+                q_write_.push(std::move(p));
                 q_write_.pop();
 
             }
@@ -181,13 +227,13 @@ namespace mmx
                 {
                     // будет создан пакет с запрашиваемым размеров
 
-                    q_write_.push(staff::Packet(size));
+                    q_write_.push(data::Packet(size));
                 }
             }
 
             //
 
-            rc = &q_write_.front();
+            rc = &q_write_.back();
             rc->Reset();
             rc ->Resize(size);
 

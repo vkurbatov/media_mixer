@@ -9,6 +9,8 @@
 #include <iostream>
 #include <cstring>
 
+#include <netdb.h>  // INADDR_ANY
+
 #include "mmxlib/logs/log.h"
 #include "listener.h"
 
@@ -211,6 +213,23 @@ int parse_args(int argc, char* argv[], mmx::net::address_t& address, unsigned ch
 
                 }
                 break;
+                case 'n':
+                {
+                    mmx::net::address_t a = mmx::net::Socket::StoA(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                    if (a != INADDR_NONE)
+                    {
+                        address = a;
+                    }
+                    else
+                    {
+                        std::cout << "Error input ip-address" << std::endl;
+                        rc = -EINVAL;
+                    }
+
+                }
+                break;
+
                 default:
                 {
                     std::cout << "Argument -" << *p << " wrong!" << std::endl;

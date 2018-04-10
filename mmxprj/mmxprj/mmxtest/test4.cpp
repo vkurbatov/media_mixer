@@ -127,7 +127,7 @@ namespace mmxtest
             {
                std::cout << "Error fragmen sniffer. rc = " << rc << std::endl;
 
-               sniffer_.Next();
+               sniffer_.Drop();
 
                if (++bad > 1)
                {
@@ -165,13 +165,13 @@ namespace mmxtest
 
                     std::cout << std::endl;
 
-                    sniffer_.Next();
+                    sniffer_.Drop();
                 }
 
                 if (sniffer_.IsBad())
                 {
                     std::cout << "ERROR!!! Bad packet!!" << std::endl;
-                    sniffer_.Next();
+                    sniffer_.Drop();
                 }
 
                 p += rc;

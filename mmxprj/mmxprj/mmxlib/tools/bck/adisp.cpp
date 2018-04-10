@@ -105,7 +105,7 @@ namespace mmx
 
                         // при любой ошибке сохраняем данные в очереди не передачу
 
-                        q_write_.push(staff::Packet(data, size));
+                        q_write_.push(data::Packet(data, size));
 
                     }
                     else
@@ -118,7 +118,7 @@ namespace mmx
 
                             // запишем остаток в очередь на передачу
 
-                            q_write_.push(staff::Packet(data + w_ret, size - w_ret));
+                            q_write_.push(data::Packet(data + w_ret, size - w_ret));
                         }
 
                         // сформируем общай счетчик переданных байт
@@ -153,7 +153,7 @@ namespace mmx
 
                     // выделяем пакет
 
-                    staff::Packet pack(size);
+                    data::Packet pack(size);
 
                     r_ret = getIO().Read(pack.Data(), size, flags);
 

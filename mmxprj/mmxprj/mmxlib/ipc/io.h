@@ -9,8 +9,8 @@ namespace mmx
 		{
 		public:
             virtual ~IIO() {};
-			virtual int Write(const char*, int, int = 0) = 0;
-			virtual int Read(char*, int, int = 0) = 0;
+            virtual int Write(const void*, int, int = 0) = 0;
+            virtual int Read(void*, int, int = 0) = 0;
         };
 	}
 }

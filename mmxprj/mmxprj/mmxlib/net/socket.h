@@ -35,8 +35,8 @@ namespace mmx
 
             static int Create(int type, int proto = 0);
             static int Close(int sock);
-            static int Send(int sock, const char* data, int size, int flags = 0, address_t r_address = 0, port_t r_port = 0);
-            static int Recv(int sock, char* data, int size, int flags = 0, address_t* r_address = nullptr, port_t* r_port = nullptr);
+            static int Send(int sock, const void* data, int size, int flags = 0, address_t r_address = 0, port_t r_port = 0);
+            static int Recv(int sock, void* data, int size, int flags = 0, address_t* r_address = nullptr, port_t* r_port = nullptr);
             static int Bind(int sock, address_t l_address, port_t l_port);
             static int Connect(int sock, address_t r_address, port_t r_port);
             static int Accept(int sock, address_t* r_address, port_t* r_port);
@@ -55,8 +55,8 @@ namespace mmx
 
             // методы ввода-вывода
 
-            int Send(const char* data, int size, int flags = 0, address_t r_address = 0, port_t r_port = 0);
-            int Recv(char* data, int size, int flags = 0, address_t* r_address = nullptr, port_t* r_port = nullptr);
+            int Send(const void* data, int size, int flags = 0, address_t r_address = 0, port_t r_port = 0);
+            int Recv(void* data, int size, int flags = 0, address_t* r_address = nullptr, port_t* r_port = nullptr);
 
             // мотоды манипуляции c аттрибутами
 

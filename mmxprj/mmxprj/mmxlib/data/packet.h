@@ -1,11 +1,11 @@
-#ifndef _MMX_STAFF_PACKET_H
-#define _MMX_STAFF_PACKET_H
+#ifndef _MMX_DATA_PACKET_H
+#define _MMX_DATA_PACKET_H
 
 #include <vector>
 
 namespace mmx
 {
-    namespace staff
+    namespace data
     {
         using packet_data_t = char;
 

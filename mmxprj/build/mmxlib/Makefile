@@ -125,6 +125,114 @@ mmx/fast:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/build
 .PHONY : mmx/fast
 
+data/datapacket.o: data/datapacket.cpp.o
+
+.PHONY : data/datapacket.o
+
+# target to build an object file
+data/datapacket.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o
+.PHONY : data/datapacket.cpp.o
+
+data/datapacket.i: data/datapacket.cpp.i
+
+.PHONY : data/datapacket.i
+
+# target to preprocess a source file
+data/datapacket.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.i
+.PHONY : data/datapacket.cpp.i
+
+data/datapacket.s: data/datapacket.cpp.s
+
+.PHONY : data/datapacket.s
+
+# target to generate assembly for a file
+data/datapacket.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.s
+.PHONY : data/datapacket.cpp.s
+
+data/dpreader.o: data/dpreader.cpp.o
+
+.PHONY : data/dpreader.o
+
+# target to build an object file
+data/dpreader.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o
+.PHONY : data/dpreader.cpp.o
+
+data/dpreader.i: data/dpreader.cpp.i
+
+.PHONY : data/dpreader.i
+
+# target to preprocess a source file
+data/dpreader.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.i
+.PHONY : data/dpreader.cpp.i
+
+data/dpreader.s: data/dpreader.cpp.s
+
+.PHONY : data/dpreader.s
+
+# target to generate assembly for a file
+data/dpreader.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.s
+.PHONY : data/dpreader.cpp.s
+
+data/dpwriter.o: data/dpwriter.cpp.o
+
+.PHONY : data/dpwriter.o
+
+# target to build an object file
+data/dpwriter.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o
+.PHONY : data/dpwriter.cpp.o
+
+data/dpwriter.i: data/dpwriter.cpp.i
+
+.PHONY : data/dpwriter.i
+
+# target to preprocess a source file
+data/dpwriter.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.i
+.PHONY : data/dpwriter.cpp.i
+
+data/dpwriter.s: data/dpwriter.cpp.s
+
+.PHONY : data/dpwriter.s
+
+# target to generate assembly for a file
+data/dpwriter.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.s
+.PHONY : data/dpwriter.cpp.s
+
+data/packet.o: data/packet.cpp.o
+
+.PHONY : data/packet.o
+
+# target to build an object file
+data/packet.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o
+.PHONY : data/packet.cpp.o
+
+data/packet.i: data/packet.cpp.i
+
+.PHONY : data/packet.i
+
+# target to preprocess a source file
+data/packet.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.i
+.PHONY : data/packet.cpp.i
+
+data/packet.s: data/packet.cpp.s
+
+.PHONY : data/packet.s
+
+# target to generate assembly for a file
+data/packet.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.s
+.PHONY : data/packet.cpp.s
+
 ipc/pchannel.o: ipc/pchannel.cpp.o
 
 .PHONY : ipc/pchannel.o
@@ -287,6 +395,33 @@ sniffers/bitset.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.s
 .PHONY : sniffers/bitset.cpp.s
 
+sniffers/dpsniffer.o: sniffers/dpsniffer.cpp.o
+
+.PHONY : sniffers/dpsniffer.o
+
+# target to build an object file
+sniffers/dpsniffer.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o
+.PHONY : sniffers/dpsniffer.cpp.o
+
+sniffers/dpsniffer.i: sniffers/dpsniffer.cpp.i
+
+.PHONY : sniffers/dpsniffer.i
+
+# target to preprocess a source file
+sniffers/dpsniffer.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.i
+.PHONY : sniffers/dpsniffer.cpp.i
+
+sniffers/dpsniffer.s: sniffers/dpsniffer.cpp.s
+
+.PHONY : sniffers/dpsniffer.s
+
+# target to generate assembly for a file
+sniffers/dpsniffer.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.s
+.PHONY : sniffers/dpsniffer.cpp.s
+
 sniffers/ippacket.o: sniffers/ippacket.cpp.o
 
 .PHONY : sniffers/ippacket.o
@@ -395,167 +530,32 @@ sniffers/ipsniffer.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.s
 .PHONY : sniffers/ipsniffer.cpp.s
 
-staff/datapacket.o: staff/datapacket.cpp.o
+sniffers/rtppacketwrapper.o: sniffers/rtppacketwrapper.cpp.o
 
-.PHONY : staff/datapacket.o
-
-# target to build an object file
-staff/datapacket.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/datapacket.cpp.o
-.PHONY : staff/datapacket.cpp.o
-
-staff/datapacket.i: staff/datapacket.cpp.i
-
-.PHONY : staff/datapacket.i
-
-# target to preprocess a source file
-staff/datapacket.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/datapacket.cpp.i
-.PHONY : staff/datapacket.cpp.i
-
-staff/datapacket.s: staff/datapacket.cpp.s
-
-.PHONY : staff/datapacket.s
-
-# target to generate assembly for a file
-staff/datapacket.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/datapacket.cpp.s
-.PHONY : staff/datapacket.cpp.s
-
-staff/ipstaffer.o: staff/ipstaffer.cpp.o
-
-.PHONY : staff/ipstaffer.o
+.PHONY : sniffers/rtppacketwrapper.o
 
 # target to build an object file
-staff/ipstaffer.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/ipstaffer.cpp.o
-.PHONY : staff/ipstaffer.cpp.o
+sniffers/rtppacketwrapper.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o
+.PHONY : sniffers/rtppacketwrapper.cpp.o
 
-staff/ipstaffer.i: staff/ipstaffer.cpp.i
+sniffers/rtppacketwrapper.i: sniffers/rtppacketwrapper.cpp.i
 
-.PHONY : staff/ipstaffer.i
-
-# target to preprocess a source file
-staff/ipstaffer.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/ipstaffer.cpp.i
-.PHONY : staff/ipstaffer.cpp.i
-
-staff/ipstaffer.s: staff/ipstaffer.cpp.s
-
-.PHONY : staff/ipstaffer.s
-
-# target to generate assembly for a file
-staff/ipstaffer.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/ipstaffer.cpp.s
-.PHONY : staff/ipstaffer.cpp.s
-
-staff/mediapool.o: staff/mediapool.cpp.o
-
-.PHONY : staff/mediapool.o
-
-# target to build an object file
-staff/mediapool.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/mediapool.cpp.o
-.PHONY : staff/mediapool.cpp.o
-
-staff/mediapool.i: staff/mediapool.cpp.i
-
-.PHONY : staff/mediapool.i
+.PHONY : sniffers/rtppacketwrapper.i
 
 # target to preprocess a source file
-staff/mediapool.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/mediapool.cpp.i
-.PHONY : staff/mediapool.cpp.i
+sniffers/rtppacketwrapper.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.i
+.PHONY : sniffers/rtppacketwrapper.cpp.i
 
-staff/mediapool.s: staff/mediapool.cpp.s
+sniffers/rtppacketwrapper.s: sniffers/rtppacketwrapper.cpp.s
 
-.PHONY : staff/mediapool.s
-
-# target to generate assembly for a file
-staff/mediapool.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/mediapool.cpp.s
-.PHONY : staff/mediapool.cpp.s
-
-staff/packet.o: staff/packet.cpp.o
-
-.PHONY : staff/packet.o
-
-# target to build an object file
-staff/packet.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/packet.cpp.o
-.PHONY : staff/packet.cpp.o
-
-staff/packet.i: staff/packet.cpp.i
-
-.PHONY : staff/packet.i
-
-# target to preprocess a source file
-staff/packet.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/packet.cpp.i
-.PHONY : staff/packet.cpp.i
-
-staff/packet.s: staff/packet.cpp.s
-
-.PHONY : staff/packet.s
+.PHONY : sniffers/rtppacketwrapper.s
 
 # target to generate assembly for a file
-staff/packet.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/packet.cpp.s
-.PHONY : staff/packet.cpp.s
-
-staff/udpstaffer.o: staff/udpstaffer.cpp.o
-
-.PHONY : staff/udpstaffer.o
-
-# target to build an object file
-staff/udpstaffer.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/udpstaffer.cpp.o
-.PHONY : staff/udpstaffer.cpp.o
-
-staff/udpstaffer.i: staff/udpstaffer.cpp.i
-
-.PHONY : staff/udpstaffer.i
-
-# target to preprocess a source file
-staff/udpstaffer.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/udpstaffer.cpp.i
-.PHONY : staff/udpstaffer.cpp.i
-
-staff/udpstaffer.s: staff/udpstaffer.cpp.s
-
-.PHONY : staff/udpstaffer.s
-
-# target to generate assembly for a file
-staff/udpstaffer.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/staff/udpstaffer.cpp.s
-.PHONY : staff/udpstaffer.cpp.s
-
-tools/adisp.o: tools/adisp.cpp.o
-
-.PHONY : tools/adisp.o
-
-# target to build an object file
-tools/adisp.cpp.o:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.o
-.PHONY : tools/adisp.cpp.o
-
-tools/adisp.i: tools/adisp.cpp.i
-
-.PHONY : tools/adisp.i
-
-# target to preprocess a source file
-tools/adisp.cpp.i:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.i
-.PHONY : tools/adisp.cpp.i
-
-tools/adisp.s: tools/adisp.cpp.s
-
-.PHONY : tools/adisp.s
-
-# target to generate assembly for a file
-tools/adisp.cpp.s:
-	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/adisp.cpp.s
-.PHONY : tools/adisp.cpp.s
+sniffers/rtppacketwrapper.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.s
+.PHONY : sniffers/rtppacketwrapper.cpp.s
 
 tools/deffwriter.o: tools/deffwriter.cpp.o
 
@@ -647,6 +647,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mmx"
+	@echo "... data/datapacket.o"
+	@echo "... data/datapacket.i"
+	@echo "... data/datapacket.s"
+	@echo "... data/dpreader.o"
+	@echo "... data/dpreader.i"
+	@echo "... data/dpreader.s"
+	@echo "... data/dpwriter.o"
+	@echo "... data/dpwriter.i"
+	@echo "... data/dpwriter.s"
+	@echo "... data/packet.o"
+	@echo "... data/packet.i"
+	@echo "... data/packet.s"
 	@echo "... ipc/pchannel.o"
 	@echo "... ipc/pchannel.i"
 	@echo "... ipc/pchannel.s"
@@ -665,6 +677,9 @@ help:
 	@echo "... sniffers/bitset.o"
 	@echo "... sniffers/bitset.i"
 	@echo "... sniffers/bitset.s"
+	@echo "... sniffers/dpsniffer.o"
+	@echo "... sniffers/dpsniffer.i"
+	@echo "... sniffers/dpsniffer.s"
 	@echo "... sniffers/ippacket.o"
 	@echo "... sniffers/ippacket.i"
 	@echo "... sniffers/ippacket.s"
@@ -677,24 +692,9 @@ help:
 	@echo "... sniffers/ipsniffer.o"
 	@echo "... sniffers/ipsniffer.i"
 	@echo "... sniffers/ipsniffer.s"
-	@echo "... staff/datapacket.o"
-	@echo "... staff/datapacket.i"
-	@echo "... staff/datapacket.s"
-	@echo "... staff/ipstaffer.o"
-	@echo "... staff/ipstaffer.i"
-	@echo "... staff/ipstaffer.s"
-	@echo "... staff/mediapool.o"
-	@echo "... staff/mediapool.i"
-	@echo "... staff/mediapool.s"
-	@echo "... staff/packet.o"
-	@echo "... staff/packet.i"
-	@echo "... staff/packet.s"
-	@echo "... staff/udpstaffer.o"
-	@echo "... staff/udpstaffer.i"
-	@echo "... staff/udpstaffer.s"
-	@echo "... tools/adisp.o"
-	@echo "... tools/adisp.i"
-	@echo "... tools/adisp.s"
+	@echo "... sniffers/rtppacketwrapper.o"
+	@echo "... sniffers/rtppacketwrapper.i"
+	@echo "... sniffers/rtppacketwrapper.s"
 	@echo "... tools/deffwriter.o"
 	@echo "... tools/deffwriter.i"
 	@echo "... tools/deffwriter.s"

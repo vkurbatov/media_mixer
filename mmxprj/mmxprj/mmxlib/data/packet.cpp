@@ -5,7 +5,7 @@
 
 namespace mmx
 {
-    namespace staff
+    namespace data
     {
         Packet::Packet(int size) :
             data_(size),
@@ -121,7 +121,7 @@ namespace mmx
 
         packet_data_t& Packet::operator[] (int idx)
         {
-            return data_[idx];
+            return data_[idx + idx_];
         }
 
         Packet::operator packet_data_t* ()
@@ -131,12 +131,12 @@ namespace mmx
 
         packet_data_t* Packet::Data(int idx)
         {
-            return data_.data() + idx;
+            return data_.data() + idx_ + idx;
         }
 
         const packet_data_t* Packet::Data(int idx) const
         {
-             return data_.data() + idx;
+             return data_.data() + idx_ + idx;
         }
 
         int Packet::Size() const

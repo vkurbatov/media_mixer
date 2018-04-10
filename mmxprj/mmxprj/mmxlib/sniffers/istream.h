@@ -10,7 +10,7 @@ namespace mmx
         public:
             virtual ~IStream(){}
             virtual int PutStream(void* stream, int size, void* hcontext = nullptr) = 0;
-            virtual int Next() = 0;
+            virtual int Drop() = 0;
             virtual int Reset() = 0;
             virtual bool IsComplete() const= 0;
             virtual bool IsBad() const= 0;

@@ -55,7 +55,7 @@ namespace mmx
 
             // IStream
             int PutStream(void* stream, int size, void* context) override;
-            int Next() override;
+            int Drop() override;
             int Reset() override;
             bool IsComplete() const override;
             bool IsBad() const override;

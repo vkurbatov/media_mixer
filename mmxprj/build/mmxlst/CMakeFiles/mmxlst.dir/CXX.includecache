@@ -6,13 +6,49 @@
 
 #IncludeRegexTransform: 
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+vector
+-
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/headers/ip.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/datapacket.h
+vector
+-
+dpreader.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/dpreader.h
+dpwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/dpwriter.h
+idpheader.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpheader.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/dpreader.h
+idpreader.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpreader.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/dpwriter.h
+idpwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpwriter.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpheader.h
+headers/datapack.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/headers/datapack.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpreader.h
+headers/datapack.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/headers/datapack.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpwriter.h
+headers/datapack.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/headers/datapack.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/headers/media.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/headers/udp.h
 headers/ip.h
@@ -90,39 +126,25 @@ ippacketpool.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/istream.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/staff/datapacket.h
-packet.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/staff/packet.h
-headers/media.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/staff/headers/media.h
-headers/datapack.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/staff/headers/datapack.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/staff/istaffer.h
-packet.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/staff/packet.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/staff/packet.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/deffwriter.h
 vector
 -
+queue
+-
+ipc/io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ipc/io.h
+data/packet.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/data/packet.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/iosockadp.h
+ipc/io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ipc/io.h
+net/socket.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/net/socket.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/timer.h
 chrono
 -
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.h
-vector
--
-mmxlib/staff/istaffer.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/staff/istaffer.h
-mmxlib/ipc/ichannel.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/ipc/ichannel.h
-mmxlib/staff/datapacket.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/staff/datapacket.h
-mmxlib/net/portset.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/portset.h
-mmxlib/headers/ip.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/headers/ip.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
 listener.h
@@ -141,6 +163,8 @@ mmxlib/logs/log.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/logs/log.h
 mmxlib/headers/udp.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/headers/udp.h
+mmxlib/headers/media.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/headers/media.h
 mmxlib/names.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/names.h
 
@@ -155,17 +179,21 @@ mmxlib/ipc/pchannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/ipc/pchannel.h
 mmxlib/tools/timer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/tools/timer.h
-mmxlib/staff/datapacket.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/staff/datapacket.h
+mmxlib/tools/iosockadp.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/tools/iosockadp.h
+mmxlib/tools/deffwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/tools/deffwriter.h
+mmxlib/data/datapacket.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/data/datapacket.h
 mmxlib/sniffers/ipsniffer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/sniffers/ipsniffer.h
-direction.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/direction.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/main.cpp
 iostream
 -
 cstring
+-
+netdb.h
 -
 mmxlib/logs/log.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/logs/log.h

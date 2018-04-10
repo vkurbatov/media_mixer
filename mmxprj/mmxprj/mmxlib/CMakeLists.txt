@@ -31,18 +31,23 @@ set ( SOURCE_FILES
 #	ipc/msgchannel.cpp
 #	ipc/mediachannel.cpp
 #	стафферы
-	staff/packet.cpp
-	staff/ipstaffer.cpp
-	staff/udpstaffer.cpp
-	staff/mediapool.cpp
-	staff/datapacket.cpp
+	data/packet.cpp
+#	staff/ipstaffer.cpp
+#	staff/udpstaffer.cpp
+#	staff/mediapool.cpp
+	data/dpwriter.cpp
+	data/dpreader.cpp
+	data/datapacket.cpp
+#	склейка пакетов
 	sniffers/ipsniffer.cpp
 	sniffers/ippacket.cpp
 	sniffers/ippacketwrapper.cpp
 	sniffers/ippacketpool.cpp
 	sniffers/bitset.cpp
+	sniffers/dpsniffer.cpp
+	sniffers/rtppacketwrapper.cpp
 #	плюшки
-	tools/adisp.cpp
+#	tools/adisp.cpp
 	tools/deffwriter.cpp
 	tools/timer.cpp
 	tools/iosockadp.cpp
@@ -62,18 +67,27 @@ set ( PRIVATE_HEADERS
 	headers/msg.h
 	headers/media.h
 	headers/datapack.h
+	headers/si.h
+	headers/p645.h
+	headers/rtp.h
 #	межпроцессное взаимодействие
 	ipc/io.h
 	ipc/ichannel.h
 	ipc/pchannel.h
 #	ipc/mediachannel.h
 #	стафферы
-	staff/packet.h
-	staff/istaffer.h
-	staff/ipstaffer.h
-	staff/udpstaffer.h
-	staff/mediapool.h
-	staff/datapacket.h
+	data/packet.h
+#	staff/istaffer.h
+#	staff/ipstaffer.h
+#	staff/udpstaffer.h
+#	staff/mediapool.h
+	data/idpheader.h
+	data/idpreader.h
+	data/idpwriter.h
+	data/dpwriter.h
+	data/dpreader.h
+	data/datapacket.h
+#	склейка пакетов
 	sniffers/istream.h
 	sniffers/iippacket.h
 	sniffers/ipsniffer.h
@@ -81,8 +95,11 @@ set ( PRIVATE_HEADERS
 	sniffers/ippacketwrapper.h
 	sniffers/ippacketpool.h
 	sniffers/bitset.h
+	sniffers/dpsniffer.h
+	sniffers/irtppacket.h
+	sniffers/rtppacketwrapper.h
 #	плюшки
-	tools/adisp.h
+#	tools/adisp.h
 	tools/deffwriter.h
 	tools/timer.h
 	tools/iosockadp.h

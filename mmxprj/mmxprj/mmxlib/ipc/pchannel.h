@@ -21,8 +21,8 @@ namespace mmx
             //PipeChannel(const PipeChannel& channel);
             PipeChannel(PipeChannel&& channel);
             // IIO
-            int Write(const char* msg, int size, int flags = 0) override;
-            int Read(char* msg, int size, int flags = 0) override;
+            int Write(const void* msg, int size, int flags = 0) override;
+            int Read(void* msg, int size, int flags = 0) override;
             // IChannel
             ~PipeChannel() override;
             int Open(const char* name, int mode, int access = 0) override;

@@ -5,7 +5,7 @@
 #include <queue>
 
 #include "ipc/io.h"
-#include "staff/packet.h"
+#include "data/packet.h"
 
 namespace mmx
 {
@@ -16,8 +16,8 @@ namespace mmx
 
         class ADispatcher : public ipc::IIO
         {
-            std::queue<staff::Packet>   q_write_;
-            std::queue<staff::Packet>   q_read_;
+            std::queue<data::Packet>   q_write_;
+            std::queue<data::Packet>   q_read_;
 
             //std::vector<char>           rd_buff_;
 

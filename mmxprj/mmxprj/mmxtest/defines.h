@@ -10,6 +10,8 @@ namespace mmxtest
     int test3();
     int test31();
     int test4();
+    int test5();
+    int test6();
 }
 
 #endif

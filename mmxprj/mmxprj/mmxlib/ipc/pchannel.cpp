@@ -135,7 +135,7 @@ namespace mmx
             return rc;
         }
 
-        int PipeChannel::Write(const char* msg, int size, int flags)
+        int PipeChannel::Write(const void* msg, int size, int flags)
         {
             int rc = -EBADF;
 
@@ -160,7 +160,7 @@ namespace mmx
             return rc;
         }
 
-        int PipeChannel::Read(char*msg, int size, int flags)
+        int PipeChannel::Read(void *msg, int size, int flags)
         {
             int rc = -EBADF;
 

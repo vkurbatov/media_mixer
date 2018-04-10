@@ -35,23 +35,18 @@ namespace mmx
             };
 
             IPPacketWrapper     wrapper_;
-            /*union
-            {
-                char                raw_header_[headers::MAX_HEADER_LEN * 4];
-                headers::IP4HEADER  header_;
-            };*/
 
         public:
 
             IPSniffer(IPPacketPool& packet_pool);
 
             // IStream
-            int PutStream(void* stream, int size, void* context = nullptr) override;
-            int Next() override;
-            int Reset() override;
 
-            virtual bool IsComplete() const override;
-            virtual bool IsBad() const override;
+            int PutStream(void* stream, int size, void* context = nullptr) override;
+            int Drop() override;
+            int Reset() override;
+            bool IsComplete() const override;
+            bool IsBad() const override;
 
             const IIPPacket* GetPacket() const;
 

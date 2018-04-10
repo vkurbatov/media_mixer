@@ -6,7 +6,6 @@ namespace mmx
     namespace headers
     {
     	
-        const unsigned short    DATA_PACK_MAGIC = 0x5555;
 
 #pragma pack(push,1)
 
@@ -25,7 +24,7 @@ namespace mmx
         typedef struct _DATA_BLOCK_HEADER
         {
 
-            unsigned short length;          // длина пакета + заголовок
+            unsigned short length;          // длина блока + заголовок
             unsigned short block_id;        // порядковый номер блока данных
 
         }DATA_BLOCK_HEADER, *PDATA_BLOCK_HEADER;
@@ -49,6 +48,12 @@ namespace mmx
         }DATA_PACK,*PDATA_PACK;
 
 #pragma pack(pop)
+
+        const unsigned short    DATA_PACK_MAGIC = 0x55AA;
+        const unsigned short    DATA_PACK_MAGIC2 = ~DATA_PACK_MAGIC;
+        const unsigned int      MAX_PACKET_SIZE = 0xFFFF;
+        const unsigned int      MIN_PACKET_SIZE = sizeof(DATA_PACK_HEADER) + sizeof(DATA_PACK_MAGIC2);
+        const unsigned int      MAX_PACKET_PYLOAD_SIZE = MAX_PACKET_SIZE - MIN_PACKET_SIZE;
 
     }
 }

@@ -8,12 +8,12 @@
 #include "mmxlib/ipc/pchannel.h"
 
 #include "mmxlib/tools/timer.h"
+#include "mmxlib/tools/iosockadp.h"
+#include "mmxlib/tools/deffwriter.h"
 
-#include "mmxlib/staff/datapacket.h"
+#include "mmxlib/data/datapacket.h"
 
 #include "mmxlib/sniffers/ipsniffer.h"
-
-#include "direction.h"
 
 
 namespace mmxlst
@@ -29,11 +29,13 @@ namespace mmxlst
         mmx::tools::Timer timers_[2];
         mmx::tools::Timer& sock_timer_ = timers_[0];
         mmx::tools::Timer& pipe_timer_ = timers_[1];
+        //mmx::tools::SocketIOAdapter sock_adp_;
+        mmx::tools::DeferredWriter deffered_writer_;
 
-        mmx::staff::DataPacket datapack_;
+        mmx::data::DataPacket datapack_;
 
         mmx::sniffers::IPPacketPool packet_pool_;
-        mmx::sniffers::IPSniffer ip_sniffer__;
+        mmx::sniffers::IPSniffer ip_sniffer_;
 
         mmx::net::timeout_t timeout_;
 
