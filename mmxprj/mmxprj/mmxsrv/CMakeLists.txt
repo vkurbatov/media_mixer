@@ -21,6 +21,7 @@ set ( SOURCE_FILES
 
 set ( PRIVATE_HEADERS
 	defines.h
+	server.h
 )
 
 set ( PUBLIC_HEADERS

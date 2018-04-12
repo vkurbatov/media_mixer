@@ -1,65 +1,70 @@
 #include "rtppacketwrapper.h"
 
+#include <netdb.h>  //htons,htonl...
+
 namespace mmx
 {
     namespace sniffers
     {
 
-        RTPPacketWrapper::RTPPacketWrapper(void* data, int size) :
-            data_(data),
-            size_(size)
-        {
+        RTPPacketWrapper::RTPPacketWrapper(const void* data, int size) :
+            size_(0),
+            header_(nullptr),
+            ext_header_(nullptr),
+            ext_data_(nullptr),
+            pyload_(nullptr),
+            pyload_size_(0)
 
+        {
+            Load(data, size);
         }
 
-        bool RTPPacketWrapper::Load(void* data, int size)
-        {
-
-        }
-
-        const headers::RTP_HEADER* RTPPacketWrapper::Header() const
-        {
-
-        }
-
-        const headers::RTP_EXTENSION_HEADER* RTPPacketWrapper::ExtensionHeader() const
-        {
-
-        }
-
-        const void* RTPPacketWrapper::ExtensionData() const
-        {
-
-        }
-
-        const void* RTPPacketWrapper::Pyload() const
-        {
-
-        }
-
-        int RTPPacketWrapper::Size() const
-        {
-
-        }
-
-        bool RTPPacketWrapper::check()
+        bool RTPPacketWrapper::Load(const void* data, int size)
         {
             bool rc = false;
 
-            if (data_ != nullptr && size_ >= sizeof(headers::RTP_HEADER))
+            if (data != nullptr && size >= sizeof(headers::RTP_HEADER))
             {
-                headers::RTP_HEADER &rtp = *(headers::PRTP_HEADER)(data_);
+                header_ = (headers::PRTP_HEADER)(data);
 
-                if (rtp.ver == headers::RTP_VERSION)
+                if (header_->ver == headers::RTP_VERSION)
                 {
-                    int len = sizeof(headers::PRTP_HEADER) + rtp.csrc_count * 4;
+                    // размер заголовка
+
+                    int len = (int)sizeof(headers::PRTP_HEADER) + header_->csrc_count * 4;
 
                     if (len <= size)
                     {
 
-                        if (rtp.extension)
+                        if (header_->extension)
                         {
-                            headers::RTP_EXTENSION_HEADER &ex_rtp = *(headers::PRTP_EXTENSION_HEADER)((char *)data_ + len);
+
+                            ext_header_ = (headers::PRTP_EXTENSION_HEADER)((const char *)data + len);
+                            len += sizeof(headers::RTP_EXTENSION_HEADER);
+                            ext_data_ = (const char*)(ext_header_) + len;
+                            len += ::ntohs(ext_header_->ehl) * 4;
+
+                        }
+
+                        if (len <= size)
+                        {
+                            pyload_size_ = size - len;
+
+                            if (header_->padding != 0)
+                            {
+                                unsigned short L = ::ntohs(*(unsigned short*)(((const char*)data) + size - 2));
+
+                                pyload_size_ -= L + 2;
+                            }
+
+
+                            if (rc = (pyload_size_ >= 0))
+                            {
+
+                                size_ = size;
+
+                            }
+
                         }
 
                     }
@@ -69,12 +74,43 @@ namespace mmx
 
             if (rc == false)
             {
-                data_ = nullptr;
-                size_ = 0;
+                header_ = nullptr;
+                ext_header_ = nullptr;
+                ext_data_ = nullptr;
+                size_ = pyload_size_ = 0;
             }
 
             return rc;
         }
 
+        const headers::RTP_HEADER* RTPPacketWrapper::Header() const
+        {
+            return header_;
+        }
+
+        const headers::RTP_EXTENSION_HEADER* RTPPacketWrapper::ExtensionHeader() const
+        {
+            return ext_header_;
+        }
+
+        const void* RTPPacketWrapper::ExtensionData() const
+        {
+            return ext_data_;
+        }
+
+        const void* RTPPacketWrapper::Pyload() const
+        {
+            return pyload_;
+        }
+
+        int RTPPacketWrapper::PyloadSize() const
+        {
+            return size_ - (int)((const char*)pyload_ - (const char*)header_);
+        }
+
+        int RTPPacketWrapper::Size() const
+        {
+            return size_;
+        }
     }
 }

@@ -1,5 +1,5 @@
-#ifndef _MMX_TOOLS_DEFFERED_WRITER_H
-#define _MMX_TOOLS_DEFFERED_WRITER_H
+#ifndef _MMX_TOOLS_DEFERRED_WRITER_H
+#define _MMX_TOOLS_DEFERRED_WRITER_H
 
 #include <vector>
 #include <queue>
@@ -18,8 +18,8 @@ namespace mmx
         {
 
             ipc::IIO&                   io_;
-            std::queue<data::Packet>   q_write_;
-            std::queue<data::Packet>   q_free_;
+            std::queue<data::Packet>    q_write_;
+            std::queue<data::Packet>    q_free_;
             int                         limit_;
             int                         last_result_;
             int                         lost_;

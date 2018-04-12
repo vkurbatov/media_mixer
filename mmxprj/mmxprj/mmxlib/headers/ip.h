@@ -21,9 +21,9 @@ namespace mmx
             unsigned short length;
             unsigned short id;
             unsigned short off_lo : 5;
-            unsigned short f_null : 1;
-            unsigned short f_D : 1;
             unsigned short f_M : 1;
+            unsigned short f_D : 1;
+            unsigned short f_null : 1;
             unsigned short off_hi: 8;
             unsigned char  ttl;
             unsigned char  protocol;
@@ -32,6 +32,7 @@ namespace mmx
             unsigned int  dest;
             //unsigned short params[4];
             //unsigned char  data[0];
+
         }IP4HEADER, *PIP4HEADER;
 
 

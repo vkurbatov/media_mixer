@@ -441,9 +441,33 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o.provides: mmxlib/CMake
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o
 
 
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
+
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp > CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp -o CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o
+
+
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/deffwriter.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp
 
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.i: cmake_force
@@ -467,7 +491,7 @@ mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o.provides.build: mmxlib/CMakeFil
 
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/timer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
 
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.i: cmake_force
@@ -491,7 +515,7 @@ mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o.provides.build: mmxlib/CMakeFiles/mm
 
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/iosockadp.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.i: cmake_force
@@ -513,6 +537,30 @@ mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o.provides: mmxlib/CMakeFiles/mmx.
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o
 
 
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/deffersock.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
+
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/tools/deffersock.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp > CMakeFiles/mmx.dir/tools/deffersock.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/tools/deffersock.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp -o CMakeFiles/mmx.dir/tools/deffersock.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o
+
+
 # Object files for target mmx
 mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/logs/log.cpp.o" \
@@ -531,9 +579,11 @@ mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/sniffers/bitset.cpp.o" \
 "CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o" \
 "CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o" \
+"CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o" \
 "CMakeFiles/mmx.dir/tools/deffwriter.cpp.o" \
 "CMakeFiles/mmx.dir/tools/timer.cpp.o" \
-"CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
+"CMakeFiles/mmx.dir/tools/iosockadp.cpp.o" \
+"CMakeFiles/mmx.dir/tools/deffersock.cpp.o"
 
 # External object files for target mmx
 mmx_EXTERNAL_OBJECTS =
@@ -554,12 +604,14 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -P CMakeFiles/mmx.dir/cmake_clean_target.cmake
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmx.dir/link.txt --verbose=$(VERBOSE)
 
@@ -584,9 +636,11 @@ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketp
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o.requires
 
 .PHONY : mmxlib/CMakeFiles/mmx.dir/requires
 

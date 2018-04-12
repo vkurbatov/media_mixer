@@ -374,7 +374,7 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/msg.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/p645.h">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h">
@@ -479,6 +479,18 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp">
          <Option target="mmx"/>
       </Unit>
@@ -518,6 +530,9 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp">
          <Option target="mmxsrv"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h">
+         <Option target="mmxsrv"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h">
          <Option target="mmxtest"/>
       </Unit>
@@ -540,6 +555,9 @@
          <Option target="mmxtest"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test6.cpp">
+         <Option target="mmxtest"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test7.cpp">
          <Option target="mmxtest"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/CMakeLists.txt">

@@ -119,7 +119,7 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/msg.h">
          <Option target="mmx"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/p645.h">
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h">
@@ -222,6 +222,18 @@
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp">

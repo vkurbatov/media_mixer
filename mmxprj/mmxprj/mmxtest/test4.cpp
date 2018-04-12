@@ -67,6 +67,20 @@ namespace mmxtest
         fragment1.header.protocol = IPPROTO_IP;
         fragment1.header.ttl = 64;
 
+        /*
+        raw1[6] = 0x21;
+        raw1[7] = 0x3A;
+
+        bool f_m = fragment1.header.f_M;
+        bool f_d = fragment1.header.f_D;
+        bool f_null = fragment1.header.f_null;
+        int off1 = fragment1.header.off_lo;
+        int off2 = fragment1.header.off_hi;
+
+        int offset = (fragment1.header.off_lo << 8 | fragment1.header.off_hi) << 3;
+        //offset = offset << 3;
+        */
+
         fragment2 = fragment1;
 
         fragment2.header.off_hi = TEST_DATA_SIZE >> 3;
@@ -89,6 +103,7 @@ namespace mmxtest
             fragment5.data[i] = -i;
 
         }
+
 
         mmx::sniffers::IPPacketPool packet_pool;
         mmx::sniffers::IPSniffer sniffer_(packet_pool);

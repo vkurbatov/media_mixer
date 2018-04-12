@@ -66,6 +66,10 @@ vector
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 io.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
@@ -262,9 +266,47 @@ ippacketwrapper.h
 ippacketpool.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
+headers/rtp.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/headers/rtp.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.cpp
+rtppacketwrapper.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
+netdb.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
+irtppacket.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
+sangomasniffer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h
+algorithm
+-
+cstring
+-
+errno.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h
+istream.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
+headers/si.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/headers/si.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
+deffersock.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.h
+deffwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+iosockadp.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp
 deffwriter.h

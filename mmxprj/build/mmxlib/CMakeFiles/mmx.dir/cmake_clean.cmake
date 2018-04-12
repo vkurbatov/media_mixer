@@ -15,9 +15,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/sniffers/bitset.cpp.o"
   "CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o"
   "CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o"
+  "CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o"
   "CMakeFiles/mmx.dir/tools/deffwriter.cpp.o"
   "CMakeFiles/mmx.dir/tools/timer.cpp.o"
   "CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
+  "CMakeFiles/mmx.dir/tools/deffersock.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.pdb"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 )

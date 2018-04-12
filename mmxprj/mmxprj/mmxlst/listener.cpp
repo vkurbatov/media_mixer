@@ -417,8 +417,7 @@ namespace mmxlst
 
                             gettimeofday(&tv, 0);
 
-                            media.header.sec = tv.tv_sec;
-                            media.header.usec = tv.tv_usec;
+                            media.header.timestamp = (tv.tv_sec % 86400) * 1000 + (tv.tv_usec / 1000);
 
                             std::copy(pyload, pyload + size, media.media);
 

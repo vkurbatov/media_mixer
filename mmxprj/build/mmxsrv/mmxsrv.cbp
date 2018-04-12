@@ -85,6 +85,9 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp">
          <Option target="mmxsrv"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h">
+         <Option target="mmxsrv"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>

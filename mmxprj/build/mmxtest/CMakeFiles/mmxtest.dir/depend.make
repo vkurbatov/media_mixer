@@ -64,3 +64,6 @@ mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
 mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test6.cpp
 
+mmxtest/CMakeFiles/mmxtest.dir/test7.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/headers/order645_2.h
+mmxtest/CMakeFiles/mmxtest.dir/test7.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test7.cpp
+

@@ -557,6 +557,60 @@ sniffers/rtppacketwrapper.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.s
 .PHONY : sniffers/rtppacketwrapper.cpp.s
 
+sniffers/sangomasniffer.o: sniffers/sangomasniffer.cpp.o
+
+.PHONY : sniffers/sangomasniffer.o
+
+# target to build an object file
+sniffers/sangomasniffer.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o
+.PHONY : sniffers/sangomasniffer.cpp.o
+
+sniffers/sangomasniffer.i: sniffers/sangomasniffer.cpp.i
+
+.PHONY : sniffers/sangomasniffer.i
+
+# target to preprocess a source file
+sniffers/sangomasniffer.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.i
+.PHONY : sniffers/sangomasniffer.cpp.i
+
+sniffers/sangomasniffer.s: sniffers/sangomasniffer.cpp.s
+
+.PHONY : sniffers/sangomasniffer.s
+
+# target to generate assembly for a file
+sniffers/sangomasniffer.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.s
+.PHONY : sniffers/sangomasniffer.cpp.s
+
+tools/deffersock.o: tools/deffersock.cpp.o
+
+.PHONY : tools/deffersock.o
+
+# target to build an object file
+tools/deffersock.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o
+.PHONY : tools/deffersock.cpp.o
+
+tools/deffersock.i: tools/deffersock.cpp.i
+
+.PHONY : tools/deffersock.i
+
+# target to preprocess a source file
+tools/deffersock.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.i
+.PHONY : tools/deffersock.cpp.i
+
+tools/deffersock.s: tools/deffersock.cpp.s
+
+.PHONY : tools/deffersock.s
+
+# target to generate assembly for a file
+tools/deffersock.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.s
+.PHONY : tools/deffersock.cpp.s
+
 tools/deffwriter.o: tools/deffwriter.cpp.o
 
 .PHONY : tools/deffwriter.o
@@ -695,6 +749,12 @@ help:
 	@echo "... sniffers/rtppacketwrapper.o"
 	@echo "... sniffers/rtppacketwrapper.i"
 	@echo "... sniffers/rtppacketwrapper.s"
+	@echo "... sniffers/sangomasniffer.o"
+	@echo "... sniffers/sangomasniffer.i"
+	@echo "... sniffers/sangomasniffer.s"
+	@echo "... tools/deffersock.o"
+	@echo "... tools/deffersock.i"
+	@echo "... tools/deffersock.s"
 	@echo "... tools/deffwriter.o"
 	@echo "... tools/deffwriter.i"
 	@echo "... tools/deffwriter.s"

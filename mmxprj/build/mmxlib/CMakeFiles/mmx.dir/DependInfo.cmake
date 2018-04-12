@@ -20,6 +20,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o"

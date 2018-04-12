@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 {
 
 
-    mmxtest::test6();
+    mmxtest::test7();
 
     return 0;
 }

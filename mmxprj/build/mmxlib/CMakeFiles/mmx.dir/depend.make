@@ -78,7 +78,23 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
 
+mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.cpp
+mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
+
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.h
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h

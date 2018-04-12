@@ -46,11 +46,13 @@ set ( SOURCE_FILES
 	sniffers/bitset.cpp
 	sniffers/dpsniffer.cpp
 	sniffers/rtppacketwrapper.cpp
+	sniffers/sangomasniffer.cpp
 #	плюшки
 #	tools/adisp.cpp
 	tools/deffwriter.cpp
 	tools/timer.cpp
 	tools/iosockadp.cpp
+	tools/deffersock.cpp
 )
 
 set ( PRIVATE_HEADERS
@@ -68,7 +70,7 @@ set ( PRIVATE_HEADERS
 	headers/media.h
 	headers/datapack.h
 	headers/si.h
-	headers/p645.h
+	headers/order645_2.h
 	headers/rtp.h
 #	межпроцессное взаимодействие
 	ipc/io.h
@@ -98,11 +100,13 @@ set ( PRIVATE_HEADERS
 	sniffers/dpsniffer.h
 	sniffers/irtppacket.h
 	sniffers/rtppacketwrapper.h
+	sniffers/sangomasniffer.h
 #	плюшки
 #	tools/adisp.h
 	tools/deffwriter.h
 	tools/timer.h
 	tools/iosockadp.h
+	tools/deffersock.h
 
 #	имена
 	names.h

@@ -16,6 +16,7 @@ namespace mmxtest
 {
     int test6()
     {
+
         union
         {
             mmx::headers::DATA_PACK packet1;

@@ -27,8 +27,7 @@ namespace mmx
             unsigned short	port_src;       // порт источника
             unsigned short	port_dst;       // порт получателя
 
-            unsigned int    sec;            // время формирования пакета (секунды)
-            unsigned int    usec;           // время формирования пакета (микросекунды)
+            unsigned int    timestamp;      // метка времени (количество микросекунд с начала суток)
 
             
         }MEDIA_HEADER,*PMEDIA_HEADER;
