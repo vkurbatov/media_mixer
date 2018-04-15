@@ -72,6 +72,10 @@ ichannel.h
 sys/socket.h
 -
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/select_ex.h
+select.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/select.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/socket.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/bitset.h
@@ -211,6 +215,8 @@ netdb.h
 -
 fcntl.h
 -
+mmxlib/net/select_ex.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/net/select_ex.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test3.cpp
 defines.h

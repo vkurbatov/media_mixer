@@ -8,5 +8,30 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/pchannel.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/names.h
+mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
+mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select_ex.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
+
+mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp
+
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
+
+mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.cpp
+mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
+mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
+
+mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/irtppacket.h
+mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/rtppacketwrapper.h
+mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.cpp
+mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
+mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
+
+mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp
 

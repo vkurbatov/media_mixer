@@ -129,9 +129,33 @@ mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/n
 mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o
 
 
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/net/select_ex.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp
+
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/net/select_ex.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp > CMakeFiles/mmx.dir/net/select_ex.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/net/select_ex.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp -o CMakeFiles/mmx.dir/net/select_ex.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o
+
+
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/net/portset.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp
 
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.i: cmake_force
@@ -155,7 +179,7 @@ mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o.provides.build: mmxlib/CMakeFiles/mm
 
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/ipc/pchannel.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp
 
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.i: cmake_force
@@ -179,7 +203,7 @@ mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o.provides.build: mmxlib/CMakeFiles/m
 
 mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/data/packet.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.cpp
 
 mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.i: cmake_force
@@ -203,7 +227,7 @@ mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o.provides.build: mmxlib/CMakeFiles/mm
 
 mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/data/dpwriter.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.cpp
 
 mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.i: cmake_force
@@ -227,7 +251,7 @@ mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o.provides.build: mmxlib/CMakeFiles/
 
 mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpreader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/data/dpreader.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpreader.cpp
 
 mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.i: cmake_force
@@ -251,7 +275,7 @@ mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o.provides.build: mmxlib/CMakeFiles/
 
 mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/datapacket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/data/datapacket.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/datapacket.cpp
 
 mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.i: cmake_force
@@ -275,7 +299,7 @@ mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o.provides.build: mmxlib/CMakeFile
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.cpp
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.i: cmake_force
@@ -299,7 +323,7 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o.provides.build: mmxlib/CMakeF
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.cpp
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.i: cmake_force
@@ -323,7 +347,7 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o.provides.build: mmxlib/CMakeFi
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.cpp
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.i: cmake_force
@@ -347,7 +371,7 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o.provides.build: mmxlib/
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.cpp
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.i: cmake_force
@@ -371,7 +395,7 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o.provides.build: mmxlib/CMa
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/bitset.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.cpp
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.i: cmake_force
@@ -395,7 +419,7 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o.provides.build: mmxlib/CMakeFile
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/dpsniffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/dpsniffer.cpp
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.i: cmake_force
@@ -419,7 +443,7 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o.provides.build: mmxlib/CMakeF
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.cpp
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.i: cmake_force
@@ -443,7 +467,7 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o.provides.build: mmxlib
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.i: cmake_force
@@ -467,7 +491,7 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o.provides.build: mmxlib/C
 
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/deffwriter.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp
 
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.i: cmake_force
@@ -491,7 +515,7 @@ mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o.provides.build: mmxlib/CMakeFil
 
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/timer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
 
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.i: cmake_force
@@ -515,7 +539,7 @@ mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o.provides.build: mmxlib/CMakeFiles/mm
 
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/iosockadp.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.i: cmake_force
@@ -539,7 +563,7 @@ mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o.provides.build: mmxlib/CMakeFile
 
 mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/deffersock.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
 
 mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.i: cmake_force
@@ -566,6 +590,7 @@ mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/logs/log.cpp.o" \
 "CMakeFiles/mmx.dir/net/socket.cpp.o" \
 "CMakeFiles/mmx.dir/net/select.cpp.o" \
+"CMakeFiles/mmx.dir/net/select_ex.cpp.o" \
 "CMakeFiles/mmx.dir/net/portset.cpp.o" \
 "CMakeFiles/mmx.dir/ipc/pchannel.cpp.o" \
 "CMakeFiles/mmx.dir/data/packet.cpp.o" \
@@ -591,6 +616,7 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o
@@ -611,7 +637,7 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -P CMakeFiles/mmx.dir/cmake_clean_target.cmake
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmx.dir/link.txt --verbose=$(VERBOSE)
 
@@ -623,6 +649,7 @@ mmxlib/CMakeFiles/mmx.dir/build: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o.requires

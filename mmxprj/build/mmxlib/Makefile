@@ -341,6 +341,33 @@ net/select.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/select.cpp.s
 .PHONY : net/select.cpp.s
 
+net/select_ex.o: net/select_ex.cpp.o
+
+.PHONY : net/select_ex.o
+
+# target to build an object file
+net/select_ex.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o
+.PHONY : net/select_ex.cpp.o
+
+net/select_ex.i: net/select_ex.cpp.i
+
+.PHONY : net/select_ex.i
+
+# target to preprocess a source file
+net/select_ex.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.i
+.PHONY : net/select_ex.cpp.i
+
+net/select_ex.s: net/select_ex.cpp.s
+
+.PHONY : net/select_ex.s
+
+# target to generate assembly for a file
+net/select_ex.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.s
+.PHONY : net/select_ex.cpp.s
+
 net/socket.o: net/socket.cpp.o
 
 .PHONY : net/socket.o
@@ -725,6 +752,9 @@ help:
 	@echo "... net/select.o"
 	@echo "... net/select.i"
 	@echo "... net/select.s"
+	@echo "... net/select_ex.o"
+	@echo "... net/select_ex.i"
+	@echo "... net/select_ex.s"
 	@echo "... net/socket.o"
 	@echo "... net/socket.i"
 	@echo "... net/socket.s"

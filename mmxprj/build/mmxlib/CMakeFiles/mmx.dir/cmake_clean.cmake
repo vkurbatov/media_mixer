@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/logs/log.cpp.o"
   "CMakeFiles/mmx.dir/net/socket.cpp.o"
   "CMakeFiles/mmx.dir/net/select.cpp.o"
+  "CMakeFiles/mmx.dir/net/select_ex.cpp.o"
   "CMakeFiles/mmx.dir/net/portset.cpp.o"
   "CMakeFiles/mmx.dir/ipc/pchannel.cpp.o"
   "CMakeFiles/mmx.dir/data/packet.cpp.o"

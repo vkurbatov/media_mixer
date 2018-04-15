@@ -9,4 +9,29 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/pchannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/names.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
+mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
+mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
+mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/irtppacket.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/rtppacketwrapper.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
+mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp

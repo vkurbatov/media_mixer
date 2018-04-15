@@ -339,10 +339,10 @@ namespace mmxtest
         if (client.Handle() >= 0)
         {
             media.header.magic = mmx::headers::MEDIA_MAGIC;
-            media.header.addr_dst = client.RemoteAddress();
-            media.header.addr_src = tcp.LocalAddress();
-            media.header.port_dst = client.RemoteAddress();
-            media.header.port_src = tcp.LocalPort();
+            media.header.net_points.source.address = client.RemoteAddress();
+            media.header.net_points.destination.address = tcp.LocalAddress();
+            media.header.net_points.source.port = client.RemotePort();
+            media.header.net_points.destination.port = tcp.LocalPort();
             media.header.length = 1400;
 
             auto start = std::chrono::system_clock::now();
@@ -397,11 +397,13 @@ namespace mmxtest
 
         if (udp.Handle() >= 0)
         {
-            media.header.magic = mmx::headers::MEDIA_MAGIC;
-            media.header.addr_dst = srv_addr;
-            media.header.addr_src = 0;
-            media.header.port_dst = 6000;
-            media.header.port_src = 0;
+
+
+            media.header.net_points.source.address = srv_addr;
+            media.header.net_points.destination.address = 0;
+            media.header.net_points.source.port = 6000;
+            media.header.net_points.destination.port = 0;
+
             media.header.length = 1400;
 
             auto start = std::chrono::system_clock::now();

@@ -36,21 +36,32 @@ namespace mmx
             fd_set  result_[3];          
 
             int fd_max_;
+            int fd_min_;
 
             static event_mask_t set2mask(int fd, const fd_set* fds, int fd_cnt);
 
         public:
 
             Select();
-            ~Select();
+            virtual ~Select();
             int Wait(timeout_t timeout = INFINITE_TIMEOUT);
             int Set(int fd, event_mask_t mask = S_EV_NONE, ev_callback callback = nullptr, void* context = nullptr);
             event_mask_t Get(int fd) const;
             event_mask_t Result(int fd) const;
 
+            /*
             bool IsRead(int fd) const;
             bool IsWrite(int fd) const;
             bool IsExcept(int fd) const;
+
+            bool SetWrite(int fd);
+            bool SetRead(int fd);
+            bool SetExcept(int fd);
+
+            bool ClrWrite(int fd);
+            bool ClrRead(int fd);
+            bool ClrExcept(int fd);
+            */
 
             void Reset();
             bool IsEmpty() const;

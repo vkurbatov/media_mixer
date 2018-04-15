@@ -11,6 +11,22 @@ namespace mmx
 
 #pragma pack(push,1)
 
+        typedef struct _NET_POINT
+        {
+            unsigned int    address;        // IP-адрес
+            unsigned short  port;           // UDP/TCP порт
+
+        }NET_POINT,*PNET_POINT;
+
+        typedef struct _NET_PAIR
+        {
+
+            NET_POINT   source;             // точка подключения источника
+            NET_POINT   destination;        // точка подключения получателя
+
+        }NET_PAIR,*PNET_PAIR;
+
+
         typedef struct _MEDIA_HEADER
         {
         
@@ -20,14 +36,10 @@ namespace mmx
             unsigned short	length;         // длина медиаданных + размер заголовка
             unsigned char   ver;            // версия медиапакета
             unsigned char   reserved;       // зарезервировано
-        	
-            unsigned int	addr_src;       // IP-адрес источника
-            unsigned int	addr_dst;       // IP-адрес получателя
-         	
-            unsigned short	port_src;       // порт источника
-            unsigned short	port_dst;       // порт получателя
 
-            unsigned int    timestamp;      // метка времени (количество микросекунд с начала суток)
+            NET_PAIR        net_points;     // коммуникационная точка транзакции
+        	
+            unsigned int    timestamp;      // метка времени (количество миллисекунд с начала суток)
 
             
         }MEDIA_HEADER,*PMEDIA_HEADER;
@@ -39,6 +51,38 @@ namespace mmx
             char            media[1];
 
         }MEDIA_DATA,*PMEDIA_DATA;
+
+
+        const unsigned short    MEDIA_SAMPLE_MAGIC = 0x4441;
+        //
+
+        typedef struct _MEDIA_SAMPLE_HEADER
+        {
+
+            unsigned short  magic;          // сигнатура семпла
+            unsigned short  packet_id;      // порядковый номер пакета
+
+            unsigned short  length;         // длина медиапакета
+
+            NET_PAIR        net_points;     // коммуникационная точка транзакции
+
+            unsigned int    timestamp;      // метка времени (количество миллисекунд с начала суток)
+            unsigned int    rtp_timestamp;  // метка времени (метка времени RTP)
+
+            unsigned int    sample_id;      // ssrc RTP
+
+            unsigned short  media_type;     // тип медиаданных (PMCA, PMCU, G722 и т.д.)
+
+        }MEDIA_SAMPLE_HEADER, *PMEDIA_SAMPLE_HEADER;
+
+        typedef struct _MEDIA_SAMPLE
+        {
+            MEDIA_SAMPLE_HEADER header;
+            char                media[1];
+
+        }MEDIA_SAMPLE, *PMEDIA_SAMPLE;
+
+
 
 #pragma pack(pop)
 

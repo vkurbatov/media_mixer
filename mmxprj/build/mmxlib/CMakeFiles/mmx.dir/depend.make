@@ -37,6 +37,10 @@ mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/
 mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.cpp
 mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
 
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp
+mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+
 mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.cpp
 mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
 

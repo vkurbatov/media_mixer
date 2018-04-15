@@ -167,6 +167,12 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.cpp">
          <Option target="mmx"/>
       </Unit>

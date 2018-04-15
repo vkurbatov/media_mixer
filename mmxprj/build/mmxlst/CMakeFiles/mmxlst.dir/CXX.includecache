@@ -76,6 +76,10 @@ ichannel.h
 sys/socket.h
 -
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/select_ex.h
+select.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/select.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/socket.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/bitset.h
@@ -173,8 +177,8 @@ mmxlib/net/portset.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/portset.h
 mmxlib/net/socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/socket.h
-mmxlib/net/select.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/select.h
+mmxlib/net/select_ex.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/select_ex.h
 mmxlib/ipc/pchannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/ipc/pchannel.h
 mmxlib/tools/timer.h
@@ -192,6 +196,8 @@ mmxlib/sniffers/ipsniffer.h
 iostream
 -
 cstring
+-
+signal.h
 -
 netdb.h
 -

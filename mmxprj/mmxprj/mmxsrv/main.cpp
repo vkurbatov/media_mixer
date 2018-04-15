@@ -24,12 +24,21 @@ int main(int argc, char* argv[])
 
     unsigned char channel = 1;
 
+    auto tcp_address = mmx::net::Socket::StoA("127.0.0.1");
+    auto udp_address = mmx::net::Socket::StoA("127.0.0.1");
+    mmx::net::port_t tcp_port = 5500;
+    mmx::net::port_t udp_port = 5600;
+
     char log_file[256];
 
     std::sprintf(log_file, LOG_NAME_PATTERN, channel);
 
     mmx::logs::log_init(log_file, DEFAULT_LEVEL_LOG, false);
 
+
+    mmxsrv::Server server(channel, tcp_address, tcp_port, udp_address, udp_port);
+
+    server.Execute();
 
     // rc = mmxsrv::server("/tmp/mmx0002", mmx::net::Socket::StoA("127.0.0.1"), 6000);
 

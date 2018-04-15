@@ -329,6 +329,42 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp">
          <Option target="mmxcore"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.cpp">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.cpp">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.h">
+         <Option target="mmxcore"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/datapacket.cpp">
          <Option target="mmx"/>
       </Unit>
@@ -420,6 +456,12 @@
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.cpp">

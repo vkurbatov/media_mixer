@@ -65,7 +65,7 @@ namespace mmx
             return state_ == SS_BAD;
         }
 
-        const headers::SANGOMA_PACKET* SangomaSniffer::GetPacket()
+        const headers::SANGOMA_RAW_PACKET* SangomaSniffer::GetPacket()
         {
             return sangoma_;
         }
@@ -74,10 +74,10 @@ namespace mmx
         {
             int rc = -EBADMSG;
 
-            headers::PSANGOMA_PACKET p = (headers::PSANGOMA_PACKET)stream;
+            headers::PSANGOMA_RAW_PACKET p = (headers::PSANGOMA_RAW_PACKET)stream;
 
-            if (size >= sizeof(headers::SANGOMA_HEADER)
-                    && p->header.length > sizeof(headers::SANGOMA_HEADER)
+            if (size >= sizeof(headers::SANGOMA_RAW_HEADER)
+                    && p->header.length > sizeof(headers::SANGOMA_RAW_HEADER)
                     && p->header.length <= size )
             {
 
@@ -117,9 +117,9 @@ namespace mmx
                         break;
                     case SS_HEADER:
 
-                        process_bytes = std::min((int)sizeof(headers::SANGOMA_HEADER) - saved_bytes_, len);
+                        process_bytes = std::min((int)sizeof(headers::SANGOMA_RAW_HEADER) - saved_bytes_, len);
 
-                        if ((process_bytes + saved_bytes_) == sizeof(headers::SANGOMA_HEADER))
+                        if ((process_bytes + saved_bytes_) == sizeof(headers::SANGOMA_RAW_HEADER))
                         {
 
                             state_ = SS_PYLOAD;
@@ -131,9 +131,9 @@ namespace mmx
                     case SS_PYLOAD:
                         {
 
-                            if (saved_bytes_ == sizeof(headers::SANGOMA_HEADER)
-                                    && (sangoma_pack_.header.length < sizeof(headers::SANGOMA_HEADER)
-                                    || sangoma_pack_.header.length > headers::MAX_PYLOAD_SIZE))
+                            if (saved_bytes_ == sizeof(headers::SANGOMA_RAW_HEADER)
+                                    && (sangoma_pack_.header.length < sizeof(headers::SANGOMA_RAW_HEADER)
+                                    || sangoma_pack_.header.length > headers::SI_MAX_PYLOAD_SIZE))
                             {
 
                                     state_ = SS_BAD;

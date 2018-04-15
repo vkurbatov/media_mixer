@@ -7,6 +7,7 @@ namespace mmxtest
     int test1_1();
     int test1_2();
     int test2();
+    int test2_1();
     int test3();
     int test31();
     int test4();

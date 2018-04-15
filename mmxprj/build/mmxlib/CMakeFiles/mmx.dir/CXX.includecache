@@ -140,6 +140,14 @@ errno.h
 sys/socket.h
 -
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp
+select_ex.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+select.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.cpp
 socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h

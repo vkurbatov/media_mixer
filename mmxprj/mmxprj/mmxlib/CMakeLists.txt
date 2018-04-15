@@ -25,6 +25,7 @@ set ( SOURCE_FILES
 #	net/close_sock.cpp
 	net/socket.cpp
 	net/select.cpp
+	net/select_ex.cpp
 	net/portset.cpp
 #	межпроцессное взаимодействие
 	ipc/pchannel.cpp
@@ -62,6 +63,7 @@ set ( PRIVATE_HEADERS
 	net/net.h
 	net/socket.h
 	net/select.h
+	net/select_ex.h
 	net/portset.h
 #	заголовки
 	headers/ip.h

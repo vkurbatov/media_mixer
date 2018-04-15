@@ -16,9 +16,21 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE} )
 
 set ( SOURCE_FILES
     main.cpp
+	mux.cpp
+	mediastream.cpp
+	mediapool.cpp
+	mediachannel.cpp
+	mediachannelpool.cpp
+	sorm.cpp
 )
 
 set ( PRIVATE_HEADERS
+	mux.h
+	mediastream.h
+	mediachannel.h
+	mediapool.h
+	mediachannelpool.h
+	sorm.h
 )
 
 set ( PUBLIC_HEADERS

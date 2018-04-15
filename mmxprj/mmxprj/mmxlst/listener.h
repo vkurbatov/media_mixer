@@ -3,7 +3,7 @@
 
 #include "mmxlib/net/portset.h"
 #include "mmxlib/net/socket.h"
-#include "mmxlib/net/select.h"
+#include "mmxlib/net/select_ex.h"
 
 #include "mmxlib/ipc/pchannel.h"
 
@@ -22,7 +22,7 @@ namespace mmxlst
     {
         mmx::net::PortSet& ports_;
         mmx::net::Socket socket_;
-        mmx::net::Select select_;
+        mmx::net::SelectExtension select_;
 
         mmx::ipc::PipeChannel pipe_;
 
@@ -63,6 +63,7 @@ namespace mmxlst
         int checkWrite();
 
         int readData();
+        int checkPipe();
         int writeData();
         int clear();
 

@@ -150,18 +150,11 @@ namespace mmx
 
             static const char s_levels[] = {'T','D','I','W','E','C'};
 
-            // временная схема (первый символ @ в форматной строке игнорирует уровень ведения логов)
-
-            if (*format == '@')
-            {
-                level = L_TRACE;
-
-                format++;
-            }
-
             ::timeval tv;
 
-            if (g_init == true && level >= g_max_level)
+            // временная схема (первый символ @ в форматной строке игнорирует уровень ведения логов)
+
+            if (g_init == true && (level >= g_max_level || (*format == '@' && format++ != '\0')))
             {
                 bool l_mt = g_mt;
 

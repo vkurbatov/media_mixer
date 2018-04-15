@@ -21,6 +21,14 @@ namespace mmx
         {
 
         }
+
+        bool DeferredSocket::operator== (const DeferredSocket& defsock) const
+        {
+
+            return this == &defsock;
+
+        }
+
 /*
         DeferredSocket& DeferredSocket::operator=(DeferredSocket&& defsock)
         {

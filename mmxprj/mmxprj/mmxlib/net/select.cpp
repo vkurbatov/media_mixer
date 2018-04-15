@@ -8,7 +8,8 @@ namespace mmx
     namespace net
     {
         Select::Select() :
-            fd_max_(-1)
+            fd_max_(-1),
+            fd_min_(-1)
         {
             std::memset((void*)&sets_, 0, sizeof(sets_));
             std::memset((void*)&result_, 0, sizeof(result_));
@@ -41,7 +42,7 @@ namespace mmx
 
                 int signaled_sock = rc;
 
-                for (int i = 0; i < fd_max_ + 1 && signaled_sock > 0; i++)
+                for (int i = fd_min_; i < fd_max_ + 1 && signaled_sock > 0; i++)
                 {
                     event_mask_t mask_old = set2mask(i, result_, 3);
                     event_mask_t mask_new = mask_old;
@@ -59,7 +60,10 @@ namespace mmx
                             }
                         }
 
-                        signaled_sock--;
+                        const static int num_bit_tbl[] = { 0, 1, 1, 2, 1, 2, 2, 3};
+
+                        signaled_sock -= num_bit_tbl[ mask_old & 0x07];
+
                     }
 
                 }
@@ -95,6 +99,11 @@ namespace mmx
                         {
                             FD_SET(fd, &sets_[i]);
                         }
+                        else
+                        {
+                            FD_CLR(fd, &sets_[i]);
+                            FD_CLR(fd, &result_[i]);
+                        }
                     }
 
                     sock_table_[fd].callback = callback;
@@ -106,6 +115,11 @@ namespace mmx
                         fd_max_ = fd;
                     }
 
+                    if (fd_min_ > fd)
+                    {
+                        fd_min_ = fd;
+                    }
+
                 }
                 else
                 {
@@ -115,15 +129,34 @@ namespace mmx
                     FD_CLR(fd, &sets_[1]);
                     FD_CLR(fd, &sets_[2]);
 
+                    // результат тоже стираем
+
+                    FD_CLR(fd, &result_[0]);
+                    FD_CLR(fd, &result_[1]);
+                    FD_CLR(fd, &result_[2]);
+
                     sock_table_[fd].callback = nullptr;
                     sock_table_[fd].context = nullptr;
-
 
                     if (fd == fd_max_)
                     {
                         // ищем максимальный дескриптор
 
                         while (fd_max_-- >= 0 && set2mask(fd_max_, sets_, 3) == S_EV_NONE);
+                    }
+                    if (fd == fd_min_)
+                    {
+                        // ищем минимальный дескриптор
+
+                        while (fd_min_ < fd_max_ && set2mask(fd_min_, sets_, 3) == S_EV_NONE)
+                        {
+                            fd_min_++;
+                        }
+
+                        if (fd_min_ > fd_max_)
+                        {
+                            fd_min_ = fd_max_;
+                        }
                     }
                 }
             }
@@ -156,16 +189,7 @@ namespace mmx
         {
            return set2mask(fd, result_, 3);
         }
-
-        void Select::Reset()
-        {
-            std::memset(sets_, 0, sizeof(sets_));
-            std::memset(result_, 0, sizeof(result_));
-            std::memset((void*)&sock_table_, 0, sizeof(sock_table_));
-
-            fd_max_ = -1;
-        }
-
+/*
         bool Select::IsRead(int fd) const
         {
             return fd >= 0 && fd < FD_SETSIZE && FD_ISSET(fd,&result_[0]);
@@ -180,6 +204,47 @@ namespace mmx
         {
             return fd >= 0 && fd < FD_SETSIZE && FD_ISSET(fd,&result_[2]);
         }
+
+        bool Select::SetWrite(int fd)
+        {
+
+        }
+
+        bool Select::SetRead(int fd)
+        {
+
+        }
+
+        bool Select::SetExcept(int fd)
+        {
+
+        }
+
+        bool Select::ClrWrite(int fd)
+        {
+
+        }
+
+        bool Select::ClrRead(int fd)
+        {
+
+        }
+
+        bool Select::ClrExcept(int fd)
+        {
+
+        }
+*/
+        void Select::Reset()
+        {
+            std::memset(sets_, 0, sizeof(sets_));
+            std::memset(result_, 0, sizeof(result_));
+            std::memset((void*)&sock_table_, 0, sizeof(sock_table_));
+
+            fd_max_ = -1;
+        }
+
+
 
         bool Select::IsEmpty() const
         {

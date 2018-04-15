@@ -57,6 +57,7 @@ namespace mmxlst
             if (waitEvents() > 0)
             {
                 readData();
+                checkPipe();
                 writeData();
             }
         }
@@ -98,7 +99,8 @@ namespace mmxlst
                 if (rc >= 0)
                 {
                     mmx::logs::logI("[%p] Listener::checkConnection() socket %d open success!", this, rc);
-                    select_.Set(rc, mmx::net::S_EV_READ);
+                    //select_.Set(rc, mmx::net::S_EV_READ);
+                    select_.SetRead(rc);
                 }
                 else
                 {
@@ -115,12 +117,15 @@ namespace mmxlst
         {
             if (pipe_timer_.IsEnable())
             {
-                rc = pipe_.Open(pipe_name_, O_RDWR | O_NONBLOCK);
+                rc = pipe_.Open(pipe_name_, O_WRONLY | O_NONBLOCK);
 
                 if (rc >= 0)
                 {
                     mmx::logs::logI("[%p] Listener::checkConnection() pipe %d (%s) open success!", this, rc, pipe_name_);
 
+                    select_.SetRead(rc);
+                    /*rc = select_.Wait();
+                    bool f = select_.IsRead(pipe_.Handle());*/
                     checkWrite();
 
                 }
@@ -132,6 +137,8 @@ namespace mmxlst
                 pipe_timer_.Start(DEFAULT_TIMEOUT);
             }
         }
+
+        return rc;
 
     }
 
@@ -206,7 +213,8 @@ namespace mmxlst
     {
         if (!datapack_.IsEmpty())
         {
-            select_.Set(pipe_.Handle(), mmx::net::S_EV_WRITE);
+            //select_.Set(pipe_.Handle(), mmx::net::S_EV_WRITE);
+            select_.SetWrite(pipe_.Handle());
         }
 
         return 0;
@@ -279,6 +287,20 @@ namespace mmxlst
         }
 
         return rc;
+    }
+
+    int Listener::checkPipe()
+    {
+        if (select_.IsRead(pipe_.Handle()))
+        {
+            // закрыли вcе каналы на чтение
+
+            mmx::logs::logE("[%p] Listener::checkPipe() Channel fd=%d disconnect!", this, pipe_.Handle());
+
+
+            select_.Set(pipe_.Handle());
+            pipe_.Close();
+        }
     }
 
     int Listener::writeData()
@@ -354,7 +376,7 @@ namespace mmxlst
 
             if (datapack_.IsEmpty())
             {
-                select_.Set(pipe_.Handle());
+                select_.ClrWrite(pipe_.Handle());
             }
         }
 
@@ -408,10 +430,10 @@ namespace mmxlst
 
                             media.header.magic = mmx::headers::MEDIA_MAGIC;
                             media.header.length = size + sizeof(mmx::headers::MEDIA_HEADER);
-                            media.header.addr_src = ::htonl(ip_header.src);
-                            media.header.addr_dst = addr_dst;
-                            media.header.port_src = ::htons(udp.port_src);
-                            media.header.port_dst = port_dst;
+                            media.header.net_points.source.address = ::htonl(ip_header.src);
+                            media.header.net_points.destination.address = addr_dst;
+                            media.header.net_points.source.port = ::htons(udp.port_src);
+                            media.header.net_points.destination.port = port_dst;
 
                             timeval tv;
 

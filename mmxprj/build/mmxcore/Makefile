@@ -152,6 +152,168 @@ main.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+mediachannel.o: mediachannel.cpp.o
+
+.PHONY : mediachannel.o
+
+# target to build an object file
+mediachannel.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o
+.PHONY : mediachannel.cpp.o
+
+mediachannel.i: mediachannel.cpp.i
+
+.PHONY : mediachannel.i
+
+# target to preprocess a source file
+mediachannel.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.i
+.PHONY : mediachannel.cpp.i
+
+mediachannel.s: mediachannel.cpp.s
+
+.PHONY : mediachannel.s
+
+# target to generate assembly for a file
+mediachannel.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.s
+.PHONY : mediachannel.cpp.s
+
+mediachannelpool.o: mediachannelpool.cpp.o
+
+.PHONY : mediachannelpool.o
+
+# target to build an object file
+mediachannelpool.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o
+.PHONY : mediachannelpool.cpp.o
+
+mediachannelpool.i: mediachannelpool.cpp.i
+
+.PHONY : mediachannelpool.i
+
+# target to preprocess a source file
+mediachannelpool.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.i
+.PHONY : mediachannelpool.cpp.i
+
+mediachannelpool.s: mediachannelpool.cpp.s
+
+.PHONY : mediachannelpool.s
+
+# target to generate assembly for a file
+mediachannelpool.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.s
+.PHONY : mediachannelpool.cpp.s
+
+mediapool.o: mediapool.cpp.o
+
+.PHONY : mediapool.o
+
+# target to build an object file
+mediapool.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o
+.PHONY : mediapool.cpp.o
+
+mediapool.i: mediapool.cpp.i
+
+.PHONY : mediapool.i
+
+# target to preprocess a source file
+mediapool.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.i
+.PHONY : mediapool.cpp.i
+
+mediapool.s: mediapool.cpp.s
+
+.PHONY : mediapool.s
+
+# target to generate assembly for a file
+mediapool.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.s
+.PHONY : mediapool.cpp.s
+
+mediastream.o: mediastream.cpp.o
+
+.PHONY : mediastream.o
+
+# target to build an object file
+mediastream.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o
+.PHONY : mediastream.cpp.o
+
+mediastream.i: mediastream.cpp.i
+
+.PHONY : mediastream.i
+
+# target to preprocess a source file
+mediastream.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.i
+.PHONY : mediastream.cpp.i
+
+mediastream.s: mediastream.cpp.s
+
+.PHONY : mediastream.s
+
+# target to generate assembly for a file
+mediastream.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.s
+.PHONY : mediastream.cpp.s
+
+mux.o: mux.cpp.o
+
+.PHONY : mux.o
+
+# target to build an object file
+mux.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
+.PHONY : mux.cpp.o
+
+mux.i: mux.cpp.i
+
+.PHONY : mux.i
+
+# target to preprocess a source file
+mux.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.i
+.PHONY : mux.cpp.i
+
+mux.s: mux.cpp.s
+
+.PHONY : mux.s
+
+# target to generate assembly for a file
+mux.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.s
+.PHONY : mux.cpp.s
+
+sorm.o: sorm.cpp.o
+
+.PHONY : sorm.o
+
+# target to build an object file
+sorm.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o
+.PHONY : sorm.cpp.o
+
+sorm.i: sorm.cpp.i
+
+.PHONY : sorm.i
+
+# target to preprocess a source file
+sorm.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.i
+.PHONY : sorm.cpp.i
+
+sorm.s: sorm.cpp.s
+
+.PHONY : sorm.s
+
+# target to generate assembly for a file
+sorm.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.s
+.PHONY : sorm.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -164,6 +326,24 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... mediachannel.o"
+	@echo "... mediachannel.i"
+	@echo "... mediachannel.s"
+	@echo "... mediachannelpool.o"
+	@echo "... mediachannelpool.i"
+	@echo "... mediachannelpool.s"
+	@echo "... mediapool.o"
+	@echo "... mediapool.i"
+	@echo "... mediapool.s"
+	@echo "... mediastream.o"
+	@echo "... mediastream.i"
+	@echo "... mediastream.s"
+	@echo "... mux.o"
+	@echo "... mux.i"
+	@echo "... mux.s"
+	@echo "... sorm.o"
+	@echo "... sorm.i"
+	@echo "... sorm.s"
 .PHONY : help
 
 

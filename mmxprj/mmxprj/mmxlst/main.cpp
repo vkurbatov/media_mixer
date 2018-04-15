@@ -9,6 +9,7 @@
 #include <iostream>
 #include <cstring>
 
+#include <signal.h> // sigpipe
 #include <netdb.h>  // INADDR_ANY
 
 #include "mmxlib/logs/log.h"
@@ -27,9 +28,58 @@
 static int parse_ports(char* params, mmx::net::PortSet& ports);
 static int parse_args(int argc, char* argv[], mmx::net::address_t& address, unsigned char& channel, mmx::net::PortSet& ports, mmx::logs::log_level_t& log_level);
 
+void finish(int e_code)
+{
+    mmx::logs::logI("@\n%s Ver=%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, e_code);
+    mmx::logs::log_init();
+    exit(e_code);
+}
+
+void sig_handler(int sig)
+{
+    int e_code = -1;
+
+    switch (sig)
+    {
+        case SIGPIPE:
+
+            mmx::logs::logE("SIGPIPE");
+
+            break;
+        case SIGIO:
+
+            mmx::logs::logE("SIGIO");
+
+            break;
+        case SIGTERM:
+        case SIGQUIT:
+
+            e_code = 1;
+
+            break;
+
+        case SIGSEGV:
+
+            e_code = 2;
+
+            mmx::logs::logC("@SIGSEGV");
+
+            break;
+        default:
+
+            e_code = 3;
+
+            break;
+    }
+
+    if (e_code >= 0)
+    {
+        finish(e_code);
+    }
+}
+
 int main(int argc, char* argv[])
 {
-
 
     mmx::net::PortSet ports;
 

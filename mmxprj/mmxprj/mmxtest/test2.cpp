@@ -19,18 +19,10 @@
 
 #define CHANNEL_NAME "/tmp/testpipe01"
 
+#include "mmxlib/net/select_ex.h"
 
 namespace mmxtest
 {
-
-    static int g_send_packs = 0;
-    static int g_send_bytes = 0;
-    static int g_recv_packs = 0;
-    static int g_recv_bytes = 0;
-    static int g_sync_err_count = 0;
-    static int g_max_sync_err_window = 0;
-    static int g_first_rcv_id = 0;
-    static int g_last_rcv_id = 0;
     
     int test2()
     {
@@ -86,6 +78,60 @@ namespace mmxtest
         w_channel.Close();
         r_channel1.Close();
         r_channel2.Close();
+
+    }
+
+    int test2_1()
+    {
+
+        char w_buff[] = "Kurbatov";
+        char r_buff[100] = { 0 };
+
+        mmx::ipc::PipeChannel w_channel;
+
+        mmx::ipc::PipeChannel r_channel;
+
+        mmx::net::SelectExtension sel;
+
+        int rc = 0;
+
+        rc = r_channel.Open(CHANNEL_NAME, O_RDONLY | O_NONBLOCK, 0777);
+
+
+        rc = w_channel.Open(CHANNEL_NAME, O_WRONLY | O_NONBLOCK);
+
+        sel.Set(rc, mmx::net::S_EV_READ);
+
+        rc = w_channel.Write(w_buff, sizeof(w_buff));
+
+        r_channel.Close();
+
+        rc = sel.Wait();
+
+        if (rc > 0)
+        {
+            std::cout << "Channel write " << rc << " bytes" << std::endl;
+
+            rc = r_channel.Read(r_buff, sizeof(r_buff));
+
+            if (rc > 0)
+            {
+                std::cout << "Channel 1 read " << rc << " bytes:" << std::endl << r_buff << std::endl ;
+            }
+            else
+            {
+                std::cout << "Channel 1 read error " << rc << std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "Channel write error " << rc << std::endl;
+        }
+
+        std::cout.flush();
+
+        w_channel.Close();
+        r_channel.Close();
 
     }
 

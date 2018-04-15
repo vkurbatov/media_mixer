@@ -18,6 +18,7 @@ namespace mmx
         public:
             DeferredSocket(net::Socket&& socket, int limit = 0);
             DeferredSocket(DeferredSocket&& defsock);
+            bool operator== (const DeferredSocket& defsock) const;
             /*DeferredSocket& operator=(DeferredSocket&& defsock);
             DeferredSocket& operator=(net::Socket&& socket);*/
             DeferredWriter& Writter();

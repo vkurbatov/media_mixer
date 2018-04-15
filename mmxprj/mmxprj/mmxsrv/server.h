@@ -2,10 +2,11 @@
 #define _MMXSRV_SERVER_H
 
 #include <list>
+#include <vector>
 
 #include "mmxlib/net/portset.h"
 #include "mmxlib/net/socket.h"
-#include "mmxlib/net/select.h"
+#include "mmxlib/net/select_ex.h"
 
 #include "mmxlib/ipc/pchannel.h"
 
@@ -14,9 +15,9 @@
 #include "mmxlib/tools/deffwriter.h"
 #include "mmxlib/tools/deffersock.h"
 
-#include "mmxlib/data/datapacket.h"
 
 #include "mmxlib/headers/order645_2.h"
+#include "mmxlib/headers/si.h"
 
 #include "mmxlib/sniffers/dpsniffer.h"
 
@@ -28,17 +29,19 @@ namespace mmxsrv
 
         //mmx::net::Socket udp_socket_;
         mmx::net::Socket tcp_socket_;
-        mmx::net::Select select_;
+        mmx::net::Socket udp_socket_;
+        mmx::net::SelectExtension select_;
 
         mmx::ipc::PipeChannel pipe_;
 
-        mmx::tools::Timer timers_[2];
-        mmx::tools::Timer& sock_timer_ = timers_[0];
-        mmx::tools::Timer& pipe_timer_ = timers_[1];
+        mmx::tools::Timer timers_[3];
 
-        mmx::tools::DeferredSocket udp_socket_;
+        mmx::tools::Timer& tcp_timer_ = timers_[0];
+        mmx::tools::Timer& udp_timer_ = timers_[1];
+        mmx::tools::Timer& pipe_timer_ = timers_[2];
 
-        mmx::data::DataPacket datapack_;
+        mmx::tools::SocketIOAdapter udp_adapter_;
+        mmx::tools::DeferredWriter udp_writer_;
 
         mmx::net::timeout_t timeout_;
 
@@ -48,13 +51,22 @@ namespace mmxsrv
         mmx::net::address_t tcp_address_;
         mmx::net::port_t tcp_port_;
 
-        mmx::sniffers::DataPackSniffer dp_sniffer;
+        mmx::sniffers::DataPackSniffer dp_sniffer_;
 
         unsigned char   channel_;
 
         unsigned short pack_id_;
 
+        bool data_write_;
+
         std::list<mmx::tools::DeferredSocket>   clients_;
+        std::vector<mmx::tools::DeferredSocket*> remove_list_;
+
+        union
+        {
+            mmx::headers::DATA_PACK data_pack_;
+            char input_[mmx::headers::MAX_PACKET_SIZE + 1];
+        };
 
     public:
 
@@ -69,16 +81,22 @@ namespace mmxsrv
 
     private:
 
+        // методы конвеера
+
         int initialization();
         int checkConnection();
         int setTimeout();
         int waitEvents();
         int checkAccept();
         int checkClients();
-        int checkWrite();
+        int udpWrite(const mmx::headers::SANGOMA_PACKET* sangoma = nullptr);
+        int tcpWrite(const mmx::headers::MEDIA_INFO_PACKET* media = nullptr);
 
         int readData();
-        int writeData();
+        int processData(const mmx::headers::DATA_PACK* data_pack);
+
+        int writeData(const mmx::headers::MEDIA_INFO_PACKET* media = nullptr);
+        int removeClients();
         int clear();
 
     };

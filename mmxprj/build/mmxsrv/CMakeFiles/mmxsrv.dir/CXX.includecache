@@ -16,37 +16,17 @@ vector
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/datapacket.h
-vector
--
-dpreader.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/dpreader.h
-dpwriter.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/dpwriter.h
-idpheader.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpheader.h
-
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/dpreader.h
 idpreader.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpreader.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/dpwriter.h
-idpwriter.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpwriter.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpheader.h
-headers/datapack.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/headers/datapack.h
-
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpreader.h
 headers/datapack.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/headers/datapack.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpwriter.h
-headers/datapack.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/headers/datapack.h
-
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/order645_2.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/si.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/ichannel.h
 io.h
@@ -69,6 +49,10 @@ ichannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/select.h
 sys/socket.h
 -
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/select_ex.h
+select.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/select.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/socket.h
 
@@ -133,16 +117,20 @@ mmxlib/logs/log.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/logs/log.h
 mmxlib/names.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/names.h
+mmxlib/data/dpreader.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/data/dpreader.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
 list
+-
+vector
 -
 mmxlib/net/portset.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/net/portset.h
 mmxlib/net/socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/net/socket.h
-mmxlib/net/select.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/net/select.h
+mmxlib/net/select_ex.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/net/select_ex.h
 mmxlib/ipc/pchannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/ipc/pchannel.h
 mmxlib/tools/timer.h
@@ -153,10 +141,10 @@ mmxlib/tools/deffwriter.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/tools/deffwriter.h
 mmxlib/tools/deffersock.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/tools/deffersock.h
-mmxlib/data/datapacket.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/data/datapacket.h
 mmxlib/headers/order645_2.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/headers/order645_2.h
+mmxlib/headers/si.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/headers/si.h
 mmxlib/sniffers/dpsniffer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/sniffers/dpsniffer.h
 
