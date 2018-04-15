@@ -371,7 +371,7 @@ namespace mmxsrv
     }
 
 
-    int Server::tcpWrite(const mmx::headers::MEDIA_INFO_PACKET* media)
+    int Server::tcpWrite(const mmx::headers::ORM_INFO_PACKET* media)
     {
 
         int rc = 0;
@@ -425,12 +425,12 @@ namespace mmxsrv
 
     }
 
-    int Server::udpWrite(const mmx::headers::SANGOMA_PACKET* sangoma)
+    int Server::udpWrite(const mmx::headers::SANGOMA_RAW_PACKET* sangoma)
     {
 
         int rc = 0;
 
-        int len = sangoma == nullptr ? 0 : sizeof(mmx::headers::SANGOMA_PACKET);
+        int len = sangoma == nullptr ? 0 : sizeof(mmx::headers::SANGOMA_RAW_PACKET);
 
         int fd = udp_socket_.Handle();
 
@@ -552,7 +552,7 @@ namespace mmxsrv
         while (block != nullptr)
         {
 
-            writeData((const mmx::headers::MEDIA_INFO_PACKET*)block->data);
+            writeData((const mmx::headers::ORM_INFO_PACKET*)block->data);
 
             block = reader.GetBlock();
         }
@@ -561,13 +561,13 @@ namespace mmxsrv
 
     }
 
-    int Server::writeData(const mmx::headers::MEDIA_INFO_PACKET* media)
+    int Server::writeData(const mmx::headers::ORM_INFO_PACKET* media)
     {
 
         int rc = 0;
 
-        static mmx::headers::SANGOMA_PACKET sangoma_a = { 0 };
-        static mmx::headers::SANGOMA_PACKET sangoma_b = { 0 };
+        static mmx::headers::SANGOMA_RAW_PACKET sangoma_a = { 0 };
+        static mmx::headers::SANGOMA_RAW_PACKET sangoma_b = { 0 };
 
         if (media != nullptr)
         {

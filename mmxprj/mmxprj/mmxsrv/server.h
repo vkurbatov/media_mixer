@@ -89,13 +89,13 @@ namespace mmxsrv
         int waitEvents();
         int checkAccept();
         int checkClients();
-        int udpWrite(const mmx::headers::SANGOMA_PACKET* sangoma = nullptr);
-        int tcpWrite(const mmx::headers::MEDIA_INFO_PACKET* media = nullptr);
+        int udpWrite(const mmx::headers::SANGOMA_RAW_PACKET* sangoma = nullptr);
+        int tcpWrite(const mmx::headers::ORM_INFO_PACKET* media = nullptr);
 
         int readData();
         int processData(const mmx::headers::DATA_PACK* data_pack);
 
-        int writeData(const mmx::headers::MEDIA_INFO_PACKET* media = nullptr);
+        int writeData(const mmx::headers::ORM_INFO_PACKET* media = nullptr);
         int removeClients();
         int clear();
 

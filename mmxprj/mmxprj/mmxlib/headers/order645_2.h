@@ -38,21 +38,21 @@ namespace mmx
 
         }ORDER_645_2_PACKET,*PORDER_645_2_PACKET;
 
-        typedef struct _MEDIA_INFO_HEADER
+        typedef struct _ORM_INFO_HEADER
         {
             unsigned short      size_a;
             unsigned short      size_b;
             ORDER_645_2_HEADER  order_header;
 
-        }MEDIA_INFO_HEADER,*PMEDIA_INFO_HEADER;
+        }ORM_INFO_HEADER,*PORM_INFO_HEADER;
 
-        typedef struct _MEDIA_INFO_PACKET
+        typedef struct _ORM_INFO_PACKET
         {
 
-            MEDIA_INFO_HEADER   header;
+            ORM_INFO_HEADER     header;
             char                data[1];
 
-        }MEDIA_INFO_PACKET,*PMEDIA_INFO_PACKET;
+        }ORM_INFO_PACKET,*PORM_INFO_PACKET;
 
 #pragma pack(pop)
 

@@ -1,4 +1,4 @@
-#include "mediapool.h"
+#include "mediachannelpool.h"
 
 #include <chrono>
 
@@ -6,32 +6,20 @@
 
 namespace mmxmux
 {
-    MediaPool::MediaPool(int max_free_queue_size,
-                               int min_garbage_size,
-                               int garbage_time_life) :
-        max_free_queue_size_(max_free_queue_size),
-        min_garbage_size_(min_garbage_size),
-        garbage_time_life_(garbage_time_life)
+    MediaChannelPool::MediaChannelPool(MediaPool& media_pool, int max_free_queue_size) :
+        media_pool_(media_pool),
+        max_free_queue_size_(max_free_queue_size)
     {
 
     }
 
-    MediaStream* MediaPool::GetPacket(unsigned int address, unsigned short port)
+    MediaChannel* MediaChannelPool::GetChannel(const mmx::headers::SANGOMA_SORM_INFO& sorm, const mmx::headers::SANGOMA_PROXY_INFO& proxy)
     {
 
-        MediaStream* rc = nullptr;
+        MediaChannel* rc = nullptr;
 
-        std::uint64_t id = getKey(address, port);
+        std::uint64_t id = getKey(sorm);
 
-        // для начала проверим, не пора ли почистить мусор
-
-        if (min_garbage_size_ > 0)
-        {
-            if (pool_.size() >= min_garbage_size_)
-            {
-                ClearGarbage(garbage_time_life_);
-            }
-        }
 
         auto it = pool_.find(id);
 
@@ -59,24 +47,24 @@ namespace mmxmux
 
         if (rc != nullptr)
         {
-            rc->ref_count_++;
-            rc->port_ = port;
-            rc->address_ = address;
+            rc->setSorm(sorm);
+            rc->media_pool_ = &media_pool_;
+            rc->SetProxy(&proxy);
         }
 
         return rc;
 
     }
 
-    bool MediaPool::Release(MediaStream* stream, int count)
+    bool MediaChannelPool::Release(MediaChannel* channel)
     {
 
         bool rc = false;
 
-        if (stream != nullptr)
+        if (channel != nullptr)
         {
 
-            std::uint64_t id = getKey(stream->address_, stream->port_);
+            std::uint64_t id = getKey(channel->sorm_);
 
             auto it = pool_.find(id);
 
@@ -85,25 +73,9 @@ namespace mmxmux
             if (it != pool_.end())
             {
 
-                // уменьшаем счетчик ссылок (-1 - удалить все ссылки)
+                    // дропаем собраный пакет
 
-                if (it->second.ref_count_ < count || count < 0)
-                {
-                    it->second.ref_count_ = 0;
-                }
-                else
-                {
-                    it->second.ref_count_ -= count;
-                }
-
-                // если ссылок больше нет, то удаляем стрим
-
-                if (it->second.ref_count_ == 0)
-                {
-
-                    // сбрасываем стрим
-
-                    it->second.Clear();
+                    it->second.Drop();
 
                     // если разрешили кэш свободных
 
@@ -130,8 +102,6 @@ namespace mmxmux
 
                     pool_.erase(it);
 
-                }
-
                 rc = true;
             }
 
@@ -141,54 +111,19 @@ namespace mmxmux
 
     }
 
-    // очистка "мусора" (устаревший медиапотоков) по времени жизни (-1 удалит все)
-
-    int MediaPool::ClearGarbage(int time_life)
-    {
-        int rc = 0;
-
-        rm_list_.clear();
-
-        ::timeval tv;
-
-        ::gettimeofday(&tv,0);
-
-
-        unsigned int timestamp = (tv.tv_sec % 86400) * 1000 + (tv.tv_usec / 1000);
-
-        for (auto it = pool_.begin(); it != pool_.end(); it++)
-        {
-
-            auto smpl = it->second.GetSample();
-
-            if (smpl == nullptr || (int)((timestamp - smpl->header.timestamp) % 86400000) > time_life)
-            {
-                rm_list_.push_back(&it->second);
-            }
-
-        }
-
-        for (auto& p : rm_list_)
-        {
-            Release(p, -1);
-        }
-
-        rm_list_.clear();
-
-        return rc;
-    }
-
-    int MediaPool::Count() const
+    int MediaChannelPool::Count() const
     {
         return pool_.size();
     }
 
-    std::uint64_t MediaPool::getKey(unsigned int src_address, unsigned short pack_id)
+    std::uint64_t MediaChannelPool::getKey(const mmx::headers::SANGOMA_SORM_INFO& sorm)
     {
-        return (std::uint64_t)src_address << 16 | (std::uint64_t)pack_id;
+        return (std::uint64_t)sorm.call_id
+                | (std::uint64_t)sorm.object_id << 16
+                | (std::uint64_t)sorm.sorm_id << 32;
     }
 
-    void MediaPool::Reset()
+    void MediaChannelPool::Reset()
     {
         while (!q_free_.empty())
         {

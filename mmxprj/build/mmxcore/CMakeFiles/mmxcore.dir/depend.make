@@ -12,10 +12,20 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select_ex.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
 
+mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
 mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp
+mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
 
 mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
 mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp
+mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h
 mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
 mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
 

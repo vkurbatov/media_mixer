@@ -16,7 +16,7 @@ namespace mmxmux
 
     }
 
-    MediaStream* MediaPool::GetPacket(unsigned int address, unsigned short port)
+    MediaStream* MediaPool::GetStream(unsigned int address, unsigned short port)
     {
 
         MediaStream* rc = nullptr;
@@ -68,7 +68,7 @@ namespace mmxmux
 
     }
 
-    bool MediaPool::Release(MediaStream* stream, int count)
+    bool MediaPool::Release(const MediaStream* stream, int count)
     {
 
         bool rc = false;

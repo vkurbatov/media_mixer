@@ -16,17 +16,21 @@ namespace mmx
 
         enum sangoma_msg_t: unsigned char
         {
+
             SI_PASSWORD_STATUS,
             SI_LINK_STATUS,
             SI_START_PROXY,
             SI_END_PROXY
+
         };
 
         enum sangoma_link_t: unsigned char
         {
+
             SI_LINK_E1,
             SI_LINK_X25,
             SI_LINK_TCP
+
         };
 
 
@@ -35,7 +39,7 @@ namespace mmx
         {
 
             unsigned char   type;       // тип сообщения (sangoma_msg_t)
-            unsigned short  langth;     //
+            unsigned short  langth;     // значимая длина pyload
 
         }SANGOMA_HEADER, *PSANGOMA_HEADER;
 
@@ -67,31 +71,37 @@ namespace mmx
 
         typedef struct _SANGOMA_SORM_INFO
         {
+
           unsigned char     channel_id;         // канал обмена
           unsigned char     sorm_id;            // номер пульта ОРМ
           unsigned short    object_id;
           unsigned short    call_id;
-          unsigned char     communication_parameters;
+          unsigned char     conn_param;
           unsigned char     mcl_a;
           unsigned char     mcl_b;
+
         }SANGOMA_SORM_INFO, *PSANGOMA_SORM_INFO;
 
+        static const int SI_MAX_SORM_COUNT = (SI_PYLOAD_SIZE - sizeof(SANGOMA_PROXY_INFO)) / sizeof(SANGOMA_SORM_INFO);
 
-        typedef struct _SANGOMA_PACKET
+        typedef struct _SANGOMAN_PACKET
         {
-            SANGOMA_HEADER  header;
-            char data[SI_PYLOAD_SIZE];
-        }SANGOMA_PACKET,*PSANGOMA_PACKET;
 
-        typedef struct _SANGOMA_UNION_PACKET
-        {
             SANGOMA_HEADER  header;
             union
             {
+
                 char data[SI_PYLOAD_SIZE];
+                struct
+                {
+                    SANGOMA_PROXY_INFO proxy;
+                    SANGOMA_SORM_INFO  sorm[SI_MAX_SORM_COUNT];
+                }q_proxy;
+                SANGOMA_LINK_STATUS a_link_status;
 
             };
-        }SANGOMA_UNION_PACKET,*PSANGOMA_UNION_PACKET;
+
+        }SANGOMA_PACKET,*PSANGOMA_PACKET;
 
 
 
@@ -110,8 +120,10 @@ namespace mmx
 
         typedef struct _SANGOMA_RAW_PACKET
         {
+
             SANGOMA_RAW_HEADER header;
             char data[SI_MAX_PYLOAD_SIZE];
+
         }SANGOMA_RAW_PACKET,*PSANGOMA_RAW_PACKET;
 
 

@@ -10,6 +10,10 @@
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/ichannel.h
 io.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/io.h
@@ -61,13 +65,43 @@ fcntl.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/fcntl.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp
+mediachannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
+cstring
+-
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
 mediapool.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
+mmxlib/headers/si.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/si.h
+mmxlib/headers/media.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/media.h
+mmxlib/headers/order645_2.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/order645_2.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp
+mediachannelpool.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h
 chrono
 -
 sys/time.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h
+mediachannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
+mediapool.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
+unordered_map
+-
+list
+-
+queue
+-
+vector
+-
+typeinfo
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.cpp
