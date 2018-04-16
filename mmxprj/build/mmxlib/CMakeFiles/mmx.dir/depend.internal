@@ -110,6 +110,45 @@ mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_input_channel.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_input_channel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel_pool.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel_pool.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h

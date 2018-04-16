@@ -17,6 +17,19 @@ namespace mmx
 
         }
 
+        DataPackSniffer::DataPackSniffer(DataPackSniffer&& sniffer) :
+            state_(sniffer.state_),
+            saved_bytes_(sniffer.saved_bytes_),
+            data_pack_(sniffer.data_pack_),
+            work_data_pack_(sniffer.work_data_pack_ == &sniffer.data_pack_
+                            ? &data_pack_
+                            : sniffer.work_data_pack_)
+        {
+            saved_bytes_ = 0;
+            state_ = SS_START1;
+            sniffer.work_data_pack_ = nullptr;
+        }
+
         int DataPackSniffer::PutStream(void* stream, int size, void* hcontext)
         {
             int rc = -EINVAL;

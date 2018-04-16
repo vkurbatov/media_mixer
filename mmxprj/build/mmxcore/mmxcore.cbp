@@ -109,6 +109,12 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h">
          <Option target="mmxcore"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp">
+         <Option target="mmxcore"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.h">
+         <Option target="mmxcore"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp">
          <Option target="mmxcore"/>
       </Unit>

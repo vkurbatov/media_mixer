@@ -287,6 +287,33 @@ mux.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.s
 .PHONY : mux.cpp.s
 
+outputchannel.o: outputchannel.cpp.o
+
+.PHONY : outputchannel.o
+
+# target to build an object file
+outputchannel.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o
+.PHONY : outputchannel.cpp.o
+
+outputchannel.i: outputchannel.cpp.i
+
+.PHONY : outputchannel.i
+
+# target to preprocess a source file
+outputchannel.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.i
+.PHONY : outputchannel.cpp.i
+
+outputchannel.s: outputchannel.cpp.s
+
+.PHONY : outputchannel.s
+
+# target to generate assembly for a file
+outputchannel.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.s
+.PHONY : outputchannel.cpp.s
+
 sorm.o: sorm.cpp.o
 
 .PHONY : sorm.o
@@ -341,6 +368,9 @@ help:
 	@echo "... mux.o"
 	@echo "... mux.i"
 	@echo "... mux.s"
+	@echo "... outputchannel.o"
+	@echo "... outputchannel.i"
+	@echo "... outputchannel.s"
 	@echo "... sorm.o"
 	@echo "... sorm.i"
 	@echo "... sorm.s"

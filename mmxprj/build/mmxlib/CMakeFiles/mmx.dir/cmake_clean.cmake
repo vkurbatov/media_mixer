@@ -21,6 +21,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/tools/timer.cpp.o"
   "CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
   "CMakeFiles/mmx.dir/tools/deffersock.cpp.o"
+  "CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o"
+  "CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o"
+  "CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o"
+  "CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o"
+  "CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.pdb"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 )

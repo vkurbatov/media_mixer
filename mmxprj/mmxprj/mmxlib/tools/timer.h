@@ -19,6 +19,7 @@ namespace mmx
 
         public:
             Timer();
+            Timer(Timer&& timer);
             void Start(timer_interval_t interval);
             bool Stop();
             timer_interval_t Elapsed() const;

@@ -36,6 +36,7 @@ namespace mmx
 
         public:
             DataPackSniffer();
+            DataPackSniffer(DataPackSniffer&& sniffer);
 
 
             // IStream

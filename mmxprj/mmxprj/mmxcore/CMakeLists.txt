@@ -21,6 +21,8 @@ set ( SOURCE_FILES
 	mediapool.cpp
 	mediachannel.cpp
 	mediachannelpool.cpp
+#	inputchannel.cpp
+	outputchannel.cpp
 	sorm.cpp
 )
 
@@ -30,6 +32,8 @@ set ( PRIVATE_HEADERS
 	mediachannel.h
 	mediapool.h
 	mediachannelpool.h
+#	inputchannel.h
+	outputchannel.h
 	sorm.h
 )
 

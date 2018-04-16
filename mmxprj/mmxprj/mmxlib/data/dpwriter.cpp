@@ -69,7 +69,9 @@ namespace mmx
                 if (elapse_size >= size)
                 {
 
-                    rc = (headers::PDATA_BLOCK)((char*)data_ + data_->header.length - sizeof(headers::DATA_PACK_MAGIC2));
+                    rc = (headers::PDATA_BLOCK)((char*)data_
+                                                + data_->header.length
+                                                - sizeof(headers::DATA_PACK_MAGIC2));
 
                     rc->header.block_id = 0;
                     rc->header.length = size;
@@ -101,7 +103,9 @@ namespace mmx
             if (query_)
             {
 
-                headers::PDATA_BLOCK block = (headers::PDATA_BLOCK)((char*)data_ + data_->header.length - sizeof(headers::DATA_PACK_MAGIC2));
+                headers::PDATA_BLOCK block = (headers::PDATA_BLOCK)((char*)data_
+                                             + data_->header.length
+                                             - sizeof(headers::DATA_PACK_MAGIC2));
 
                 block->header.block_id = ++data_->header.block_count;
                 rc = block->header.length;

@@ -692,6 +692,141 @@ tools/iosockadp.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.s
 .PHONY : tools/iosockadp.cpp.s
 
+tools/pipe_input_channel.o: tools/pipe_input_channel.cpp.o
+
+.PHONY : tools/pipe_input_channel.o
+
+# target to build an object file
+tools/pipe_input_channel.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o
+.PHONY : tools/pipe_input_channel.cpp.o
+
+tools/pipe_input_channel.i: tools/pipe_input_channel.cpp.i
+
+.PHONY : tools/pipe_input_channel.i
+
+# target to preprocess a source file
+tools/pipe_input_channel.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.i
+.PHONY : tools/pipe_input_channel.cpp.i
+
+tools/pipe_input_channel.s: tools/pipe_input_channel.cpp.s
+
+.PHONY : tools/pipe_input_channel.s
+
+# target to generate assembly for a file
+tools/pipe_input_channel.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.s
+.PHONY : tools/pipe_input_channel.cpp.s
+
+tools/pipe_output_channel.o: tools/pipe_output_channel.cpp.o
+
+.PHONY : tools/pipe_output_channel.o
+
+# target to build an object file
+tools/pipe_output_channel.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o
+.PHONY : tools/pipe_output_channel.cpp.o
+
+tools/pipe_output_channel.i: tools/pipe_output_channel.cpp.i
+
+.PHONY : tools/pipe_output_channel.i
+
+# target to preprocess a source file
+tools/pipe_output_channel.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.i
+.PHONY : tools/pipe_output_channel.cpp.i
+
+tools/pipe_output_channel.s: tools/pipe_output_channel.cpp.s
+
+.PHONY : tools/pipe_output_channel.s
+
+# target to generate assembly for a file
+tools/pipe_output_channel.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.s
+.PHONY : tools/pipe_output_channel.cpp.s
+
+tools/pipe_output_channel_pool.o: tools/pipe_output_channel_pool.cpp.o
+
+.PHONY : tools/pipe_output_channel_pool.o
+
+# target to build an object file
+tools/pipe_output_channel_pool.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o
+.PHONY : tools/pipe_output_channel_pool.cpp.o
+
+tools/pipe_output_channel_pool.i: tools/pipe_output_channel_pool.cpp.i
+
+.PHONY : tools/pipe_output_channel_pool.i
+
+# target to preprocess a source file
+tools/pipe_output_channel_pool.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.i
+.PHONY : tools/pipe_output_channel_pool.cpp.i
+
+tools/pipe_output_channel_pool.s: tools/pipe_output_channel_pool.cpp.s
+
+.PHONY : tools/pipe_output_channel_pool.s
+
+# target to generate assembly for a file
+tools/pipe_output_channel_pool.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.s
+.PHONY : tools/pipe_output_channel_pool.cpp.s
+
+tools/sangoma_client.o: tools/sangoma_client.cpp.o
+
+.PHONY : tools/sangoma_client.o
+
+# target to build an object file
+tools/sangoma_client.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o
+.PHONY : tools/sangoma_client.cpp.o
+
+tools/sangoma_client.i: tools/sangoma_client.cpp.i
+
+.PHONY : tools/sangoma_client.i
+
+# target to preprocess a source file
+tools/sangoma_client.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.i
+.PHONY : tools/sangoma_client.cpp.i
+
+tools/sangoma_client.s: tools/sangoma_client.cpp.s
+
+.PHONY : tools/sangoma_client.s
+
+# target to generate assembly for a file
+tools/sangoma_client.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.s
+.PHONY : tools/sangoma_client.cpp.s
+
+tools/sangoma_server.o: tools/sangoma_server.cpp.o
+
+.PHONY : tools/sangoma_server.o
+
+# target to build an object file
+tools/sangoma_server.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o
+.PHONY : tools/sangoma_server.cpp.o
+
+tools/sangoma_server.i: tools/sangoma_server.cpp.i
+
+.PHONY : tools/sangoma_server.i
+
+# target to preprocess a source file
+tools/sangoma_server.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.i
+.PHONY : tools/sangoma_server.cpp.i
+
+tools/sangoma_server.s: tools/sangoma_server.cpp.s
+
+.PHONY : tools/sangoma_server.s
+
+# target to generate assembly for a file
+tools/sangoma_server.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.s
+.PHONY : tools/sangoma_server.cpp.s
+
 tools/timer.o: tools/timer.cpp.o
 
 .PHONY : tools/timer.o
@@ -791,6 +926,21 @@ help:
 	@echo "... tools/iosockadp.o"
 	@echo "... tools/iosockadp.i"
 	@echo "... tools/iosockadp.s"
+	@echo "... tools/pipe_input_channel.o"
+	@echo "... tools/pipe_input_channel.i"
+	@echo "... tools/pipe_input_channel.s"
+	@echo "... tools/pipe_output_channel.o"
+	@echo "... tools/pipe_output_channel.i"
+	@echo "... tools/pipe_output_channel.s"
+	@echo "... tools/pipe_output_channel_pool.o"
+	@echo "... tools/pipe_output_channel_pool.i"
+	@echo "... tools/pipe_output_channel_pool.s"
+	@echo "... tools/sangoma_client.o"
+	@echo "... tools/sangoma_client.i"
+	@echo "... tools/sangoma_client.s"
+	@echo "... tools/sangoma_server.o"
+	@echo "... tools/sangoma_server.i"
+	@echo "... tools/sangoma_server.s"
 	@echo "... tools/timer.o"
 	@echo "... tools/timer.i"
 	@echo "... tools/timer.s"

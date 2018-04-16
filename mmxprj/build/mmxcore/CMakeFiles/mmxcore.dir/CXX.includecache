@@ -144,6 +144,8 @@ mmxlib/headers/media.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h

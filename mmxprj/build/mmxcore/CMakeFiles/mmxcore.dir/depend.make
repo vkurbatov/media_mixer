@@ -43,5 +43,7 @@ mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mm
 
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
 
+mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp
+
 mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp
 

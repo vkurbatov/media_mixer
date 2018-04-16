@@ -17,12 +17,23 @@ namespace mmx
 
         }
 
+        Timer::Timer(Timer&& timer) :
+            tout_(timer.tout_),
+            run_(timer.run_),
+            start_(timer.start_)
+        {
+
+            timer.tout_ = -1;
+            timer.run_ = false;
+
+        }
+
         void Timer::Start(timer_interval_t interval)
         {
 
-                tout_ = interval;
-                start_ = std::chrono::system_clock::now();
-                run_ = true;
+            tout_ = interval;
+            start_ = std::chrono::system_clock::now();
+            run_ = true;
 
         }
 

@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

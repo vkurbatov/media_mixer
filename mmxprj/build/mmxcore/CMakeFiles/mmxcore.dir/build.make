@@ -201,9 +201,33 @@ mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o.provides: mmxcore/CMakeFil
 mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o.provides.build: mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o
 
 
+mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o: mmxcore/CMakeFiles/mmxcore.dir/flags.make
+mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxcore && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxcore.dir/outputchannel.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp
+
+mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxcore.dir/outputchannel.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp > CMakeFiles/mmxcore.dir/outputchannel.cpp.i
+
+mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxcore.dir/outputchannel.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp -o CMakeFiles/mmxcore.dir/outputchannel.cpp.s
+
+mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o.requires:
+
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o.requires
+
+mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o.provides: mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o.requires
+	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o.provides.build
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o.provides
+
+mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o.provides.build: mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o
+
+
 mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o: mmxcore/CMakeFiles/mmxcore.dir/flags.make
 mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/mmxcore && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxcore.dir/sorm.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp
 
 mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.i: cmake_force
@@ -233,6 +257,7 @@ mmxcore_OBJECTS = \
 "CMakeFiles/mmxcore.dir/mediapool.cpp.o" \
 "CMakeFiles/mmxcore.dir/mediachannel.cpp.o" \
 "CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o" \
+"CMakeFiles/mmxcore.dir/outputchannel.cpp.o" \
 "CMakeFiles/mmxcore.dir/sorm.cpp.o"
 
 # External object files for target mmxcore
@@ -244,11 +269,12 @@ mmxcore_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore"
 	cd /home/vkurbatov/work/mmxprj/build/mmxcore && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmxcore.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -262,6 +288,7 @@ mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/mediastr
 mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o.requires
 mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o.requires
 mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o.requires
+mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o.requires
 mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o.requires
 
 .PHONY : mmxcore/CMakeFiles/mmxcore.dir/requires

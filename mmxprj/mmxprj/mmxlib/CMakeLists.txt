@@ -54,6 +54,11 @@ set ( SOURCE_FILES
 	tools/timer.cpp
 	tools/iosockadp.cpp
 	tools/deffersock.cpp
+	tools/pipe_input_channel.cpp
+	tools/pipe_output_channel.cpp
+	tools/pipe_output_channel_pool.cpp
+	tools/sangoma_server.cpp
+	tools/sangoma_client.cpp
 )
 
 set ( PRIVATE_HEADERS
@@ -109,6 +114,12 @@ set ( PRIVATE_HEADERS
 	tools/timer.h
 	tools/iosockadp.h
 	tools/deffersock.h
+	tools/ichanneldispatcher.h
+	tools/pipe_input_channel.h
+	tools/pipe_output_channel.h
+	tools/pipe_output_channel_pool.h
+	tools/sangoma_server.h
+	tools/sangoma_client.h
 
 #	имена
 	names.h

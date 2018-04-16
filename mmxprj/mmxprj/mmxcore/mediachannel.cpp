@@ -127,14 +127,18 @@ namespace mmxmux
                 mmx::headers::ORM_INFO_PACKET& orm_info = *(mmx::headers::ORM_INFO_PACKET*)data;
                 orm_info.header.size_a = size_a;
                 orm_info.header.size_b = size_b;
+
                 orm_header_.order_header.block_number++;
-                orm_header_.order_header.packet_id++;
+                orm_header_.order_header.packet_id++;               
                 orm_header_.order_header.conn_flag = (int)(size_a == 0 && size_b == 0);
+
                 orm_info.header = orm_header_;
 
                 auto size_max = size_a > size_b ? size_a : size_b;
 
                 int i = 0;
+
+                // КСЛ A
 
                 for (i = 0;i < size_a; i++)
                 {
@@ -144,6 +148,8 @@ namespace mmxmux
                 {
                     orm_info.data[i++ << 1] = 0x7F;
                 }
+
+                // КСЛ B
 
                 for (i = 0;i < size_b; i++)
                 {

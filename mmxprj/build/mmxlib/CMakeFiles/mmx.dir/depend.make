@@ -110,6 +110,45 @@ mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmx
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_input_channel.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_input_channel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel_pool.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel_pool.h
+mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.cpp
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp
+
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
