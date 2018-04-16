@@ -21,9 +21,11 @@ namespace mmxmux
         friend class MediaPool;
 
     public:
+
         MediaStream(unsigned int address = 0, unsigned short port = 0);
         MediaStream(MediaStream&& mediastream);
         MediaStream& operator=(MediaStream&& mediastream);
+
         int PutSample(const mmx::headers::MEDIA_DATA& media);
         const mmx::headers::MEDIA_SAMPLE* GetSample() const;
         void Clear();

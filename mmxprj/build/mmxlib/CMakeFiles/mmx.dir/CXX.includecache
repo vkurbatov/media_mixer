@@ -403,6 +403,30 @@ list
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.cpp
+sangoma_client.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h
+errno.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h
+sangoma_client.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h
+ichanneldispatcher.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+net/socket.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/net/socket.h
+net/select_ex.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/net/select_ex.h
+tools/iosockadp.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/tools/iosockadp.h
+tools/deffwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/tools/deffwriter.h
+headers/si.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/headers/si.h
+list
+-
+vector
+-
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp
 

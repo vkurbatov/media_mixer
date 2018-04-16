@@ -117,11 +117,11 @@ namespace mmxmux
 
         // если не задан буффер, то просто возвращаем количество необходимых байт
 
-        int need_size = rc = size_a + size_b + (int)sizeof(mmx::headers::ORM_INFO_HEADER);
+        rc = size_a + size_b + (int)sizeof(mmx::headers::ORM_INFO_HEADER);
 
         if (data != nullptr)
         {
-            if (size >= need_size)
+            if (size >= rc)
             {
 
                 mmx::headers::ORM_INFO_PACKET& orm_info = *(mmx::headers::ORM_INFO_PACKET*)data;
@@ -161,10 +161,6 @@ namespace mmxmux
                 }
 
             }
-        }
-        else
-        {
-            rc = need_size;
         }
 
         return rc;

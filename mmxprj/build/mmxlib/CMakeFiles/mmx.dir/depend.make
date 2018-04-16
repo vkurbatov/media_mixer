@@ -145,7 +145,17 @@ mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/
 mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel_pool.h
 mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h
 
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp
 
