@@ -35,7 +35,7 @@ namespace mmx
         {
 
         }
-
+/*
         Socket::Socket(const Socket& socket, int flags) :
             type_(socket.type_),
             proto_(socket.proto_),
@@ -62,7 +62,7 @@ namespace mmx
 
             }
         }
-
+*/
         Socket::Socket(Socket&& socket) :
             type_(socket.type_),
             proto_(socket.proto_),
@@ -596,6 +596,36 @@ namespace mmx
 
                     }
                 }
+            }
+
+            return rc;
+        }
+
+        int Socket::Accept(const Socket& socket, int flags)
+        {
+            int rc = -EINVAL;
+
+            if (type_ == SOCK_STREAM && socket.type_ == SOCK_STREAM && socket.backlog_ > 0)
+            {
+
+                rc = -EBUSY;
+
+                if (handle_ < 0)
+                {
+                    rc = handle_ = Accept(socket.handle_, &r_address_, &r_port_);
+
+                    if (handle_ >= 0)
+                    {
+                        l_address_ = socket.l_address_;
+                        l_port_ = socket.l_port_;
+
+                        if (flags != 0)
+                        {
+                            SetFlags(handle_, flags);
+                        }
+                    }
+                }
+
             }
 
             return rc;

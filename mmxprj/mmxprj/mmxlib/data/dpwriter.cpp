@@ -39,7 +39,7 @@ namespace mmx
 
 
                 data_->header.magic = headers::DATA_PACK_MAGIC;
-                data_->header.pack_id = pack_id == 0 ? data_->header.pack_id + 1 : pack_id;
+                data_->header.pack_id = pack_id;
                 data_->header.pack_id += (unsigned short)(data_->header.pack_id == 0);
                 data_->header.reserved = 0;
                 data_->header.block_count = 0;

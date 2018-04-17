@@ -28,7 +28,7 @@ namespace mmx
             return ::ntohs(Header()->length) - Header()->hlen * 4;
         }
 
-        void* IPPacketWrapper::Reset(void* pointer)
+        void* IPPacketWrapper::Reset(const void* pointer)
         {
 
             pointer_ = pointer;

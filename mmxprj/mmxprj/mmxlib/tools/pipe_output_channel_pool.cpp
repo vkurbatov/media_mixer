@@ -13,8 +13,8 @@ namespace mmx
         PipeOutputChannelPool::PipeOutputChannelPool(const char* pipe_name_prefix)
         {
             std::memset(pipe_name_prefix_, 0, sizeof(pipe_name_prefix_));
-            std::memset(pipe_name_, 0, sizeof(pipe_name_));
             std::memset(channels_, 0, sizeof(channels_));
+
             if (pipe_name_prefix != nullptr && *pipe_name_prefix != '\0')
             {
                 std::strcpy(pipe_name_prefix_, pipe_name_prefix);
@@ -30,17 +30,20 @@ namespace mmx
         {
             PipeOutputChannel* rc = channels_[channel];
 
-
             if (rc == nullptr)
             {
-                std::sprintf(pipe_name_, pipe_name_prefix_, (int)channel);
+                channel_list_.push_back(std::move(PipeOutputChannel(pipe_name_prefix_, channel, select, interval)));
 
-                channel_list_.push_back(std::move(PipeOutputChannel(pipe_name_,select, interval)));
-
-                channels_[channel] = &channel_list_.back();
+                rc = channels_[channel] = &channel_list_.back();
             }
 
             return rc;
+        }
+
+        PipeOutputChannel* PipeOutputChannelPool::operator[] (unsigned char idx)
+        {
+            return channels_[idx];
+
         }
 
         int PipeOutputChannelPool::ReleaseChannel(unsigned char channel)
@@ -61,7 +64,7 @@ namespace mmx
             return rc;
         }
 
-        const std::list<PipeOutputChannel>& PipeOutputChannelPool::GetChannels()
+        std::list<PipeOutputChannel>& PipeOutputChannelPool::GetChannels()
         {
             return channel_list_;
         }

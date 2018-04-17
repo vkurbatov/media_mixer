@@ -39,7 +39,7 @@ namespace mmx
         {
 
             unsigned char   type;       // тип сообщения (sangoma_msg_t)
-            unsigned short  langth;     // значимая длина pyload
+            unsigned short  length;     // значимая длина pyload
 
         }SANGOMA_HEADER, *PSANGOMA_HEADER;
 
@@ -83,6 +83,7 @@ namespace mmx
         }SANGOMA_SORM_INFO, *PSANGOMA_SORM_INFO;
 
         static const int SI_MAX_SORM_COUNT = (SI_PYLOAD_SIZE - sizeof(SANGOMA_PROXY_INFO)) / sizeof(SANGOMA_SORM_INFO);
+        static const int SI_MAX_STATUS_LINK_COUNT = (SI_PYLOAD_SIZE - sizeof(SANGOMA_PROXY_INFO)) / sizeof(SANGOMA_LINK_STATUS);
 
         typedef struct _SANGOMAN_PACKET
         {
@@ -97,7 +98,7 @@ namespace mmx
                     SANGOMA_PROXY_INFO proxy;
                     SANGOMA_SORM_INFO  sorm[SI_MAX_SORM_COUNT];
                 }q_proxy;
-                SANGOMA_LINK_STATUS a_link_status;
+                SANGOMA_LINK_STATUS a_link_status[SI_MAX_STATUS_LINK_COUNT];
 
             };
 

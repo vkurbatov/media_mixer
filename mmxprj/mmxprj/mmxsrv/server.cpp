@@ -160,13 +160,13 @@ namespace mmxsrv
                     if (rc >= 0)
                     {
 
-                        mmx::logs::logI("[%p] Listener::checkConnection() tcp_server %s:%d create success fd = %d!", this, mmx::net::Socket::AtoS(udp_socket_), udp_socket_,rc);
+                        mmx::logs::logI("[%p] Listener::checkConnection() udp_server %s:%d create success fd = %d!", this, mmx::net::Socket::AtoS(udp_socket_.LocalAddress()), udp_socket_.LocalPort(),rc);
                         select_.SetRead(rc);
 
                     }
                     else
                     {
-                        mmx::logs::logE("[%p] Listener::checkConnection() tcp_server %s:%d create error = %d!", this, mmx::net::Socket::AtoS(udp_socket_), udp_socket_,rc);
+                        mmx::logs::logE("[%p] Listener::checkConnection() udp_server %s:%d create error = %d!", this, mmx::net::Socket::AtoS(udp_socket_.LocalAddress()), udp_socket_.LocalPort(),rc);
                     }
 
                     udp_timer_.Start(DEFAULT_TIMEOUT);

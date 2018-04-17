@@ -72,7 +72,7 @@ namespace mmx
             return this == &packet;
         }
 
-        int IPPacket::FindStart(void* stream, int size)
+        int IPPacket::FindStart(const void* stream, int size)
         {
             int rc = -EINVAL;
 
@@ -98,7 +98,7 @@ namespace mmx
 
         // проверяет IP-заголовок по указателю. В случае успеха, возвращает длину заголовка в байтах       
 
-        int IPPacket::CheckHeader(void* stream, int size)
+        int IPPacket::CheckHeader(const void* stream, int size)
         {
             int rc = -EINVAL;
 
@@ -138,7 +138,7 @@ namespace mmx
 
         // проверяет полный(!!) IP-пакет по указателю. В случае успеха, возвращает длину пакета в байтах
 
-        int IPPacket::CheckPacket(void* stream, int size)
+        int IPPacket::CheckPacket(const void* stream, int size)
         {
             int rc = -EINVAL;
 
@@ -166,7 +166,7 @@ namespace mmx
             return rc;
         }
 
-        unsigned short IPPacket::CheckSumm(void* header, int size)
+        unsigned short IPPacket::CheckSumm(const void* header, int size)
         {
             unsigned int rc = 0;
 
@@ -203,7 +203,7 @@ namespace mmx
             return (unsigned short)rc;
         }
 
-        int IPPacket::PutStream(void* stream, int size, void* context)
+        int IPPacket::PutStream(const void* stream, int size, void* context)
         {
             int rc = -EINVAL;
 
@@ -392,7 +392,7 @@ namespace mmx
             return IsComplete() ? saved_bytes_ : 0;
         }
 
-        int IPPacket::putData(void* stream, int size, int offset)
+        int IPPacket::putData(const void* stream, int size, int offset)
         {
 
             int total_size = offset + size;

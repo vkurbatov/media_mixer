@@ -9,17 +9,22 @@ namespace mmx
 {
     namespace tools
     {
-        PipeOutputChannel::PipeOutputChannel(const char* pipe_name, mmx::net::SelectExtension& select, int interval) :
+        PipeOutputChannel::PipeOutputChannel(const char* pipe_name_prefix, unsigned char channel, mmx::net::SelectExtension& select, int interval) :
             select_(select),
             writer_(pipe_, 10),
-            interval_(interval)
+            interval_(interval),
+            channel_(channel),
+            pack_id_(0),
+            data_(0x100000),
+            dp_writter_(data_.data(), data_.size())
         {
             std::memset(pipe_name_, 0, sizeof(pipe_name_));
 
-            if (pipe_name != nullptr && *pipe_name != '\0')
+            if (pipe_name_prefix != nullptr && *pipe_name_prefix != '\0')
             {
-                std::strcpy(pipe_name_, pipe_name);
+                std::sprintf(pipe_name_, pipe_name_prefix, channel);
             }
+
 
             timer_.Start(0);
         }
@@ -28,8 +33,12 @@ namespace mmx
             pipe_(std::move(channel.pipe_)),
             writer_(pipe_, 10),
             timer_(std::move(channel.timer_)),
+            data_(std::move(channel.data_)),
+            dp_writter_(std::move(channel.dp_writter_)),
             select_(channel.select_),
-            interval_(channel.interval_)
+            interval_(channel.interval_),
+            channel_(channel.channel_),
+            pack_id_(channel.pack_id_)
         {
 
             std::memcpy(pipe_name_, channel.pipe_name_, sizeof(pipe_name_));
@@ -76,32 +85,50 @@ namespace mmx
             writer_.Reset();
         }*/
 
+        data::DataPacketWriter& PipeOutputChannel::GetWritter()
+        {
+            return dp_writter_;
+        }
+
+        unsigned char PipeOutputChannel::GetChannelId() const
+        {
+            return channel_;
+        }
+
         bool PipeOutputChannel::IsDown() const
         {
             return pipe_.Handle() < 0;
         }
 
-        int PipeOutputChannel::PutData(const void* data, int size)
+
+        int PipeOutputChannel::Send()
         {
             int rc = 0;
 
-            rc = writer_.Write(data, size);
+            headers::DATA_PACK& dp = *(headers::DATA_PACK*)data_.data();
 
-            if (rc < 0 && rc != -EAGAIN)
+            if (dp.header.length > 0)
             {
-                Close();
-            }
-            else
-            {
-                if (!writer_.IsEmpty())
+                rc = writer_.Write(data_.data(), dp.header.length);
+
+                if (rc < 0 && rc != -EAGAIN)
                 {
-                    int fd = pipe_.Handle();
-
-                    if (fd >= 0)
+                    Close();
+                }
+                else
+                {
+                    if (!writer_.IsEmpty())
                     {
-                        select_.SetWrite(fd);
+                        int fd = pipe_.Handle();
+
+                        if (fd >= 0)
+                        {
+                            select_.SetWrite(fd);
+                        }
                     }
                 }
+
+                dp_writter_.BuildPacket(++pack_id_);
             }
 
             return rc;
@@ -109,7 +136,9 @@ namespace mmx
 
         void PipeOutputChannel::Drop()
         {
+
             writer_.Drop();
+
         }
 
         int PipeOutputChannel::checkConnect()

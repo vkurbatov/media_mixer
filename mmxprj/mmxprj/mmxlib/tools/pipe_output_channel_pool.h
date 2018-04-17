@@ -17,7 +17,6 @@ namespace mmx
 
 
             char                            pipe_name_prefix_[256];
-            char                            pipe_name_[256];
 
         public:
 
@@ -25,8 +24,9 @@ namespace mmx
             ~PipeOutputChannelPool();
 
             PipeOutputChannel* GetChannel(unsigned char channel, net::SelectExtension& select, int interval = 2000);
+            PipeOutputChannel* operator[] (unsigned char idx);
             int ReleaseChannel(unsigned char channel);
-            const std::list<PipeOutputChannel>& GetChannels();
+            std::list<PipeOutputChannel>& GetChannels();
 
             void Clear();
         };

@@ -334,7 +334,8 @@ namespace mmxtest
 
         std::thread th(client_thread);
 
-        mmx::net::Socket client(tcp);
+        mmx::net::Socket client(SOCK_STREAM, IPPROTO_TCP);
+        client.Accept(tcp);
 
         if (client.Handle() >= 0)
         {

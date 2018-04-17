@@ -27,7 +27,9 @@ namespace mmxmux
                      int garbage_time_life = 0);
 
         MediaStream* GetStream(unsigned int address, unsigned short port);
+        MediaStream* FindStream(unsigned int address, unsigned short port);
         bool Release(const MediaStream* stream, int count = 1);
+        bool Release(unsigned int address, unsigned short port, int count = 1);
         int ClearGarbage(int time_life = 0);
         int Count() const;
         void Reset();

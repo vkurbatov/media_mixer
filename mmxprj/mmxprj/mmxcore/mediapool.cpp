@@ -68,6 +68,20 @@ namespace mmxmux
 
     }
 
+    MediaStream* MediaPool::FindStream(unsigned int address, unsigned short port)
+    {
+        MediaStream* rc = nullptr;
+
+        auto it = pool_.find(getKey(address, port));
+
+        if (it != pool_.end())
+        {
+            rc = &it->second;
+        }
+
+        return rc;
+    }
+
     bool MediaPool::Release(const MediaStream* stream, int count)
     {
 
@@ -76,7 +90,19 @@ namespace mmxmux
         if (stream != nullptr)
         {
 
-            std::uint64_t id = getKey(stream->address_, stream->port_);
+            rc = Release(stream->address_, stream->port_, count);
+
+        }
+
+        return rc;
+
+    }
+
+    bool MediaPool::Release(unsigned int address, unsigned short port, int count)
+    {
+        bool rc = false;
+
+            std::uint64_t id = getKey(address, port);
 
             auto it = pool_.find(id);
 
@@ -87,58 +113,55 @@ namespace mmxmux
 
                 // уменьшаем счетчик ссылок (-1 - удалить все ссылки)
 
-                if (it->second.ref_count_ < count || count < 0)
-                {
-                    it->second.ref_count_ = 0;
-                }
-                else
-                {
-                    it->second.ref_count_ -= count;
-                }
-
-                // если ссылок больше нет, то удаляем стрим
-
-                if (it->second.ref_count_ == 0)
-                {
-
-                    // сбрасываем стрим
-
-                    it->second.Clear();
-
-                    // если разрешили кэш свободных
-
-                    if (max_free_queue_size_ != 0)
-                    {
-
-                        // отправляем пакет в список свободных
-
-                        q_free_.push(std::move(it->second));
-
-                    }
-
-                    // отрицательное значение символизирует о бесконечном кэше свободных
-
-                    else if (max_free_queue_size_ > 0)
-                    {
-                        while (q_free_.size() > max_free_queue_size_)
-                        {
-                            q_free_.pop();
-                        }
-                    }
-
-                    // из пула элемент удалим
-
-                    pool_.erase(it);
-
-                }
-
-                rc = true;
+            if (it->second.ref_count_ < count || count < 0)
+            {
+                it->second.ref_count_ = 0;
+            }
+            else
+            {
+                it->second.ref_count_ -= count;
             }
 
+            // если ссылок больше нет, то удаляем стрим
+
+            if (it->second.ref_count_ == 0)
+            {
+
+                // сбрасываем стрим
+
+                it->second.Clear();
+
+                // если разрешили кэш свободных
+
+                if (max_free_queue_size_ != 0)
+                {
+
+                    // отправляем пакет в список свободных
+
+                    q_free_.push(std::move(it->second));
+
+                }
+
+                // отрицательное значение символизирует о бесконечном кэше свободных
+
+                else if (max_free_queue_size_ > 0)
+                {
+                    while (q_free_.size() > max_free_queue_size_)
+                    {
+                        q_free_.pop();
+                    }
+                }
+
+                // из пула элемент удалим
+
+                pool_.erase(it);
+
+            }
+
+            rc = true;
         }
 
         return rc;
-
     }
 
     // очистка "мусора" (устаревший медиапотоков) по времени жизни (-1 удалит все)

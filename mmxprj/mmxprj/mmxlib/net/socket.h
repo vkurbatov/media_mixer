@@ -27,7 +27,7 @@ namespace mmx
 
             //Socket();
             Socket(Socket&& socket);
-            Socket(const Socket& socket, int flags = 0);
+            //Socket(const Socket& socket, int flags = 0);
             Socket(int type, int proto = 0);
             ~Socket();
 
@@ -51,6 +51,7 @@ namespace mmx
             // открыть/закрыть
 
             int Open(address_t l_address = 0, port_t l_port = 0, address_t r_address = 0, port_t r_port = 0, int backlog = 0, int flags = 0);
+            int Accept(const Socket& socket, int flags = 0);
             int Close();
 
             // методы ввода-вывода

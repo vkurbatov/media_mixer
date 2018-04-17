@@ -42,7 +42,7 @@ namespace mmx
 
             // IStream
 
-            int PutStream(void* stream, int size, void* context = nullptr) override;
+            int PutStream(const void* stream, int size, void* context = nullptr) override;
             int Drop() override;
             int Reset() override;
             bool IsComplete() const override;
@@ -51,8 +51,8 @@ namespace mmx
             const IIPPacket* GetPacket() const;
 
         private:
-            int forceSniffer(void* stream, int size);
-            int fragmentSniffer(void* stream, int size);
+            int forceSniffer(const void* stream, int size);
+            int fragmentSniffer(const void* stream, int size);
 
         };
     }

@@ -30,7 +30,7 @@ namespace mmx
             sniffer.work_data_pack_ = nullptr;
         }
 
-        int DataPackSniffer::PutStream(void* stream, int size, void* hcontext)
+        int DataPackSniffer::PutStream(const void* stream, int size, void* hcontext)
         {
             int rc = -EINVAL;
 
@@ -87,7 +87,7 @@ namespace mmx
             return work_data_pack_;
         }
 
-        int DataPackSniffer::forceSniffer(void* stream, int size)
+        int DataPackSniffer::forceSniffer(const void* stream, int size)
         {
             int rc = -EBADMSG;
 
@@ -114,7 +114,7 @@ namespace mmx
             return rc;
         }
 
-        int DataPackSniffer::fragmentSniffer(void* stream, int size)
+        int DataPackSniffer::fragmentSniffer(const void* stream, int size)
         {
             int rc = 0;
 

@@ -20,7 +20,7 @@ namespace mmx
         }
 
         // IStream
-        int SangomaSniffer::PutStream(void* stream, int size, void* hcontext)
+        int SangomaSniffer::PutStream(const void* stream, int size, void* hcontext)
         {
             int rc = -EINVAL;
 
@@ -70,7 +70,7 @@ namespace mmx
             return sangoma_;
         }
 
-        int SangomaSniffer::forceSniffer(void* stream, int size)
+        int SangomaSniffer::forceSniffer(const void* stream, int size)
         {
             int rc = -EBADMSG;
 
@@ -88,7 +88,7 @@ namespace mmx
             return rc;
         }
 
-        int SangomaSniffer::fragmentSniffer(void* stream, int size)
+        int SangomaSniffer::fragmentSniffer(const void* stream, int size)
         {
 
             int rc = 0;

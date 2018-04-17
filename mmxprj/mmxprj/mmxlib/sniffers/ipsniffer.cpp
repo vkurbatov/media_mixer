@@ -21,7 +21,7 @@ namespace mmx
 
         }
 
-        int IPSniffer::PutStream(void* stream, int size, void* context)
+        int IPSniffer::PutStream(const void* stream, int size, void* context)
         {
             int rc = -EINVAL;
 
@@ -89,7 +89,7 @@ namespace mmx
             return state_ == SS_BAD;
         }
 
-        int IPSniffer::forceSniffer(void* stream, int size)
+        int IPSniffer::forceSniffer(const void* stream, int size)
         {
             // быстрый разбор пакета
 
@@ -157,7 +157,7 @@ namespace mmx
 
         // фрагментный сниффер. Возвращает по факту обработаное количества байт
 
-        int IPSniffer::fragmentSniffer(void* stream, int size)
+        int IPSniffer::fragmentSniffer(const void* stream, int size)
         {
             int rc = 0;
 

@@ -59,7 +59,7 @@ namespace mmx
                     {
                         query_ = (const headers::SANGOMA_PACKET*)data_.data();
 
-                        if (query_->header.langth > rc)
+                        if (query_->header.length > rc)
                         {
                             query_ = nullptr;
                         }

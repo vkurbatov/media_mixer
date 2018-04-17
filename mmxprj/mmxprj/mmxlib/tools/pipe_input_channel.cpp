@@ -9,17 +9,19 @@ namespace mmx
 {
     namespace tools
     {
-        PipeInputChannel::PipeInputChannel(const char* pipe_name, mmx::net::SelectExtension& select, int interval) :
+        PipeInputChannel::PipeInputChannel(const char* pipe_name_prefix, unsigned char channel, mmx::net::SelectExtension& select, int interval) :
             select_(select),
             data_(0x10000),
             interval_(interval),
-            read_bytes_(0)
+            read_bytes_(0),
+            channel_(channel)
         {
             std::memset(pipe_name_, 0, sizeof(pipe_name_));
 
-            if (pipe_name != nullptr && *pipe_name != '\0')
+            if (pipe_name_prefix != nullptr && *pipe_name_prefix != '\0')
             {
-                std::strcpy(pipe_name_, pipe_name);
+                //std::strcpy(pipe_name_, pipe_name);
+                std::sprintf(pipe_name_, pipe_name_prefix, channel);
             }
 
             timer_.Start(0);
@@ -31,7 +33,8 @@ namespace mmx
             data_(std::move(channel.data_)),
             select_(channel.select_),
             interval_(channel.interval_),
-            read_bytes_(channel.read_bytes_)
+            read_bytes_(channel.read_bytes_),
+            channel_(channel.channel_)
         {
 
             std::memcpy(pipe_name_, channel.pipe_name_, sizeof(pipe_name_));

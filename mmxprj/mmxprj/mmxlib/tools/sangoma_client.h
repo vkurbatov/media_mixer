@@ -17,21 +17,25 @@ namespace mmx
 {
     namespace tools
     {
+        class SangomaServer;
+
         class SangomaClient : public IChannelDispatcher
         {
 
-            net::Socket                 socket_;
-            SocketIOAdapter             adapter_;
-            DeferredWriter              writer_;
+            net::Socket                     socket_;
+            SocketIOAdapter                 adapter_;
+            DeferredWriter                  writer_;
 
-            net::SelectExtension&       select_;
+            net::SelectExtension&           select_;
 
-            std::vector<char>           data_;
-            const headers::SANGOMA_PACKET*    query_;
+            std::vector<char>               data_;
+            const headers::SANGOMA_PACKET*  query_;
+
+            friend class SangomaServer;
+            SangomaClient(net::Socket&& socket, net::SelectExtension& select);
 
         public:
 
-            SangomaClient(net::Socket&& socket, net::SelectExtension& select);
             SangomaClient(SangomaClient&& channel);
 
             ~SangomaClient() override;

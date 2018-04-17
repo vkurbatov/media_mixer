@@ -1,13 +1,20 @@
 #include <iostream>
 
+#include <cstring>
+
 #include "mmxlib/logs/log.h"
-#include "mmxlib/ipc/pchannel.h"
-#include "mmxlib/headers/media.h"
-#include "mmxlib/headers/datapack.h"
-#include "mmxlib/names.h"
-#include "mmxlib/net/select_ex.h"
+
+#include "mux.h"
 
 #include "fcntl.h"
+
+#define SERVICE_GROUP "Media module"
+#define SERVICE_NAME "Media stream multiplexor (core)"
+#define SERVICE_MAJOR_VERSION 1
+#define SERVICE_MINOR_VERSION 0
+#define SERVICE_STATUS "debug"
+
+#define LOG_NAME_PATTERN "/var/log/mmx/mediamux-%d.log"
 
 #define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
 
@@ -16,8 +23,43 @@ static char buff[1600 * 10];
 
 int main(int argc, char* argv[])
 {
-    mmx::logs::log_init("/tmp/mmx_core", DEFAULT_LEVEL_LOG, false);
+    mmxmux::MUX_CONFIG config;
 
+    std::memset(&config, 0, sizeof(config));
+
+    config.channel_num = 2;
+    config.interval = 2000;
+    config.media_period = 160;
+    config.sgm_address = mmx::net::Socket::StoA("127.0.0.1");
+    config.sgm_port = 5000;
+    config.channels[0] |= 1 << 1;
+
+
+    int rc = 0;
+
+    if (rc == 0)
+    {
+
+        char log_file[256];
+
+        std::sprintf(log_file, LOG_NAME_PATTERN, config.channel_num);
+
+        mmx::logs::log_init(log_file, DEFAULT_LEVEL_LOG, false);
+
+        mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
+
+        mmxmux::Mux Mux(config);
+
+        rc = Mux.Execute();
+
+        mmx::logs::logI("@\n%s Ver=%d.%d.%s Stopped!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
+
+        mmx::logs::log_init();
+
+    }
+
+
+    /*
     mmx::ipc::PipeChannel channelIn;
 
     mmx::ipc::PipeChannel channelOut;
@@ -63,6 +105,8 @@ int main(int argc, char* argv[])
 
     channelIn.Close();
     channelOut.Close();
+
+    */
 
     mmx::logs::log_init();
 

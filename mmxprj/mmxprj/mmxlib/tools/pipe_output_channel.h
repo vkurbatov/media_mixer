@@ -7,6 +7,8 @@
 #include "ipc/pchannel.h"
 #include "net/select_ex.h"
 
+#include "data/dpwriter.h"
+
 #include <vector>
 
 namespace mmx
@@ -23,14 +25,22 @@ namespace mmx
 
             net::SelectExtension&       select_;
 
+            std::vector<char>           data_;
+            data::DataPacketWriter      dp_writter_;
+
 
             char                        pipe_name_[256];
 
             int                         interval_;
 
+            unsigned char               channel_;
+
+            unsigned short              pack_id_;
+
+
         public:
 
-            PipeOutputChannel(const char* pipe_name, mmx::net::SelectExtension& select, int interval = 2000);
+            PipeOutputChannel(const char* pipe_name_prefix, unsigned char channel, mmx::net::SelectExtension& select, int interval = 2000);
             PipeOutputChannel(PipeOutputChannel&& channel);
 
             ~PipeOutputChannel() override;
@@ -40,7 +50,10 @@ namespace mmx
            //void Reset() override;
             bool IsDown() const override;
 
-            int PutData(const void* data, int size);
+            data::DataPacketWriter& GetWritter();
+            unsigned char GetChannelId() const;
+
+            int Send();
             void Drop();
 
 

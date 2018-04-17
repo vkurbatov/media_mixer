@@ -64,46 +64,7 @@ namespace mmxmux
         if (channel != nullptr)
         {
 
-            std::uint64_t id = getKey(channel->sorm_);
-
-            auto it = pool_.find(id);
-
-            // элемент найден в пуле
-
-            if (it != pool_.end())
-            {
-
-                    // дропаем собраный пакет
-
-                    it->second.Drop();
-
-                    // если разрешили кэш свободных
-
-                    if (max_free_queue_size_ != 0)
-                    {
-
-                        // отправляем пакет в список свободных
-
-                        q_free_.push(std::move(it->second));
-
-                    }
-
-                    // отрицательное значение символизирует о бесконечном кэше свободных
-
-                    else if (max_free_queue_size_ > 0)
-                    {
-                        while (q_free_.size() > max_free_queue_size_)
-                        {
-                            q_free_.pop();
-                        }
-                    }
-
-                    // из пула элемент удалим
-
-                    pool_.erase(it);
-
-                rc = true;
-            }
+            rc = Release(channel->sorm_);
 
         }
 
@@ -111,9 +72,69 @@ namespace mmxmux
 
     }
 
+    bool MediaChannelPool::Release(const mmx::headers::SANGOMA_SORM_INFO& sorm)
+    {
+        bool rc = false;
+
+        std::uint64_t id = getKey(sorm);
+
+        auto it = pool_.find(id);
+
+        // элемент найден в пуле
+
+        if (it != pool_.end())
+        {
+
+                // дропаем собраный пакет
+
+                it->second.Drop();
+
+                // если разрешили кэш свободных
+
+                if (max_free_queue_size_ != 0)
+                {
+
+                    // отправляем пакет в список свободных
+
+                    q_free_.push(std::move(it->second));
+
+                }
+
+                // отрицательное значение символизирует о бесконечном кэше свободных
+
+                else if (max_free_queue_size_ > 0)
+                {
+                    while (q_free_.size() > max_free_queue_size_)
+                    {
+                        q_free_.pop();
+                    }
+                }
+
+                // из пула элемент удалим
+
+                pool_.erase(it);
+
+            rc = true;
+        }
+
+        return rc;
+    }
+
     int MediaChannelPool::Count() const
     {
         return pool_.size();
+    }
+
+    std::vector<MediaChannel*> MediaChannelPool::GetChannels()
+    {
+        channel_list_.clear();
+
+        for (auto& c : pool_)
+        {
+            channel_list_.push_back(&c.second);
+        }
+
+        return channel_list_;
     }
 
     std::uint64_t MediaChannelPool::getKey(const mmx::headers::SANGOMA_SORM_INFO& sorm)

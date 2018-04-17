@@ -26,10 +26,11 @@ namespace mmx
 
             int                         read_bytes_;
             int                         interval_;
+            unsigned char               channel_;
 
         public:
 
-            PipeInputChannel(const char* pipe_name, mmx::net::SelectExtension& select, int interval = 2000);
+            PipeInputChannel(const char* pipe_name_prefix, unsigned char channel, mmx::net::SelectExtension& select, int interval = 2000);
             PipeInputChannel(PipeInputChannel&& channel);
 
             ~PipeInputChannel() override;

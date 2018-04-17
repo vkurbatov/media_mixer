@@ -48,13 +48,13 @@ namespace mmx
 
             bool operator==(const IPPacket& packet);
 
-            static int FindStart(void* stream, int size);
-            static int CheckHeader(void* stream, int size);
-            static int CheckPacket(void* stream, int size);
-            static unsigned short CheckSumm(void* header, int size);
+            static int FindStart(const void* stream, int size);
+            static int CheckHeader(const void* stream, int size);
+            static int CheckPacket(const void* stream, int size);
+            static unsigned short CheckSumm(const void* header, int size);
 
             // IStream
-            int PutStream(void* stream, int size, void* context) override;
+            int PutStream(const void* stream, int size, void* context) override;
             int Drop() override;
             int Reset() override;
             bool IsComplete() const override;
@@ -66,7 +66,7 @@ namespace mmx
             int Size() const override;
 
         private:
-            int putData(void* stream, int size, int offset);
+            int putData(const void* stream, int size, int offset);
 
 
         };

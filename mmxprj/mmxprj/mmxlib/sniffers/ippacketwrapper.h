@@ -9,7 +9,7 @@ namespace mmx
     {
         class IPPacketWrapper : public IIPPacket
         {
-            void* pointer_;
+            const void* pointer_;
         public:
             IPPacketWrapper(void* pointer = nullptr);
 
@@ -18,7 +18,7 @@ namespace mmx
             const void* Pyload() const override;
             int Size() const override;
 
-            void* Reset(void* pointer = nullptr);
+            void* Reset(const void* pointer = nullptr);
         };
     }
 }

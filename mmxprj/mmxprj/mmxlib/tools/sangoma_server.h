@@ -17,18 +17,36 @@ namespace mmx
         class SangomaServer : public IChannelDispatcher
         {
 
+            std::list<SangomaClient>    clients_;
 
+            net::SelectExtension&       select_;
+            net::Socket                 socket_;
+
+            tools::Timer                timer_;
+
+            int                         interval_;
+
+            net::address_t              address_;
+            net::port_t                 port_;
 
         public:
 
-            SangomaServer(net::address_t address, net::port_t port, int interval = 2000);
+            SangomaServer(net::address_t address, net::port_t port, net::SelectExtension& select, int interval = 2000);
             SangomaServer(SangomaServer&& channel);
 
-            ~PipeOutputChannel() override;
+            ~SangomaServer() override;
             int Dispatch() override;
             int GetLeftTimeWork() const override;
             int Close() override;
             bool IsDown() const override;
+
+            std::list<SangomaClient>& GetClients();
+
+        private:
+
+            int checkConnect();
+            int checkClients();
+
         };
     }
 }

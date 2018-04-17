@@ -387,6 +387,8 @@ ipc/pchannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ipc/pchannel.h
 net/select_ex.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/net/select_ex.h
+data/dpwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/data/dpwriter.h
 vector
 -
 
@@ -429,6 +431,28 @@ vector
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp
+sangoma_server.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.h
+fcntl.h
+-
+netdb.h
+-
+errno.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.h
+sangoma_client.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h
+ichanneldispatcher.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+net/socket.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/net/socket.h
+net/select_ex.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/net/select_ex.h
+tools/timer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/tools/timer.h
+list
+-
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
 timer.h
