@@ -66,6 +66,7 @@ namespace mmxmux
         void timerWork();
         void processSangoma();
         void closeAll();
+        void test();
 
     };
 }

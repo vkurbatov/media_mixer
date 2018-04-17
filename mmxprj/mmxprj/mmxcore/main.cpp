@@ -30,8 +30,8 @@ int main(int argc, char* argv[])
     config.channel_num = 2;
     config.interval = 2000;
     config.media_period = 160;
-    config.sgm_address = mmx::net::Socket::StoA("127.0.0.1");
-    config.sgm_port = 5000;
+    config.sgm_address = mmx::net::Socket::StoA("10.2.16.21");
+    config.sgm_port = 5080;
     config.channels[0] |= 1 << 1;
 
 

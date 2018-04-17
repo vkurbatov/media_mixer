@@ -19,6 +19,11 @@ namespace mmxmux
         timer_.Start(config_.media_period);
     }
 
+    void Mux::test()
+    {
+
+    }
+
     int Mux::Execute()
     {
 
@@ -106,8 +111,6 @@ namespace mmxmux
             rc = to;
         }
 
-        if (rc > 0)
-            rc = rc;
         return rc;
 
     }
@@ -218,8 +221,10 @@ namespace mmxmux
     {
         mmx::headers::SANGOMA_PACKET answer;
 
+        std::memset(&answer, 0, sizeof(answer));
+
         answer.header.type = mmx::headers::SI_LINK_STATUS;
-        answer.header.length = sizeof(answer.header);
+        answer.header.length = 0;
 
         int i = 0;
 
@@ -228,7 +233,10 @@ namespace mmxmux
             answer.a_link_status[i].type = mmx::headers::SI_LINK_TCP;
             answer.a_link_status[i].num = o.GetChannelId();
             answer.a_link_status[i].status = 1;
+            i++;
         }
+
+        answer.header.length += i * sizeof(answer.a_link_status[0]);
 
         for (mmx::tools::SangomaClient& c : sangoma_.GetClients())
         {
@@ -267,7 +275,9 @@ namespace mmxmux
                 if (query != nullptr)
                 {
                     c.PutAnswer(answer);
+
                 }
+                c.Drop();
 
             }
         }

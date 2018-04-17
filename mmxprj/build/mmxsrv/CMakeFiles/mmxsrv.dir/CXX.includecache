@@ -105,6 +105,8 @@ server.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
 server.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
+iostream
+-
 netdb.h
 -
 fcntl.h

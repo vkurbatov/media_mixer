@@ -1,5 +1,7 @@
 #include "server.h"
 
+#include <iostream>
+
 #include <netdb.h>  // SOCK_RAW, IPPROTO_UDP
 #include <fcntl.h>  // O_NONBLOCK
 #include <errno.h>
@@ -573,6 +575,8 @@ namespace mmxsrv
         {
 
             bool comb = media->header.order_header.mcl_a != media->header.order_header.mcl_b;
+
+            std::cout << "Write data " << media->header.size_a + media->header.size_b << " bytes" << std::endl;
 
             sangoma_a.header.packet_id = ++sangoma_b.header.packet_id;
             sangoma_a.header.lid = media->header.order_header.mcl_a;

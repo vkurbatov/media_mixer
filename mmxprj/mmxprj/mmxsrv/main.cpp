@@ -24,8 +24,8 @@ int main(int argc, char* argv[])
 
     unsigned char channel = 1;
 
-    auto tcp_address = mmx::net::Socket::StoA("127.0.0.1");
-    auto udp_address = mmx::net::Socket::StoA("127.0.0.1");
+    auto tcp_address = mmx::net::Socket::StoA("10.2.16.21");
+    auto udp_address = mmx::net::Socket::StoA("10.2.16.21");
     mmx::net::port_t tcp_port = 5500;
     mmx::net::port_t udp_port = 5600;
 
