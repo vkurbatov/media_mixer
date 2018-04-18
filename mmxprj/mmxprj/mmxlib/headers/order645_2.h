@@ -46,6 +46,8 @@ namespace mmx
 
         }ORM_INFO_HEADER,*PORM_INFO_HEADER;
 
+        static const unsigned short ORDER_645_2_TOTAL_PACKET_SIZE = sizeof(ORM_INFO_HEADER) + ORDER_645_2_MAX_DATA_SIZE;
+
         typedef struct _ORM_INFO_PACKET
         {
 

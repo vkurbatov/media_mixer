@@ -54,6 +54,8 @@ void sig_handler(int sig)
         case SIGTERM:
         case SIGQUIT:
 
+            mmx::logs::logC("Close by terminal");
+
             e_code = 1;
 
             break;
@@ -102,6 +104,11 @@ int main(int argc, char* argv[])
 
         mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
 
+        signal(SIGPIPE, sig_handler);
+        signal(SIGTERM, sig_handler);
+        signal(SIGQUIT, sig_handler);
+        signal(SIGSEGV, sig_handler);
+
         mmxlst::Listener listener(address, channel, ports);
 
         rc = listener.Execute();
@@ -120,7 +127,7 @@ int parse_ports(char* params, mmx::net::PortSet& ports)
 
         int rc = 0;
 
-        short port = 0;
+        unsigned short port = 0;
         bool range = false;
         short step = 0;
 

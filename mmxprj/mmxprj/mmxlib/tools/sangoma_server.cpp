@@ -36,7 +36,7 @@ namespace mmx
             Close();
         }
 
-        int SangomaServer::Dispatch()
+        int SangomaServer::Dispatch(dispatch_flags_t dispatch, void* context)
         {
 
             checkConnect();
@@ -44,7 +44,7 @@ namespace mmx
 
         }
 
-        int SangomaServer::GetLeftTimeWork() const
+        int SangomaServer::QueryOrderTimeout() const
         {
             return socket_.Handle() < 0 && timer_.IsStarted()
                     ? timer_.Left()
@@ -60,6 +60,12 @@ namespace mmx
         {
             return socket_.Handle() < 0;
         }
+
+        bool SangomaServer::IsReadyData() const
+        {
+            return false;
+        }
+
 
         std::list<SangomaClient>& SangomaServer::GetClients()
         {

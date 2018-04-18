@@ -47,13 +47,13 @@ namespace mmx
             Close();
         }
 
-        int PipeInputChannel::Dispatch()
+        int PipeInputChannel::Dispatch(dispatch_flags_t dispatch, void* context)
         {
             checkConnect();
             readData();
         }
 
-        int PipeInputChannel::GetLeftTimeWork() const
+        int PipeInputChannel::QueryOrderTimeout() const
         {
             return pipe_.Handle() < 0 && timer_.IsStarted()
                     ? timer_.Left()
@@ -76,6 +76,12 @@ namespace mmx
         {
             return pipe_.Handle() < 0;
         }
+
+        bool PipeInputChannel::IsReadyData() const
+        {
+            return read_bytes_ > 0;
+        }
+
 
         const void* PipeInputChannel::Data() const
         {

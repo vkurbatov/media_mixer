@@ -107,7 +107,7 @@ namespace mmx
 
 
 
-        typedef struct _SANGOMA_RAW_HEADER
+        typedef struct _SANGOMA_MEDIA_STREAM_HEADER
         {
 
             unsigned short  packet_id;  // инкрементный счетчик кадров
@@ -117,15 +117,15 @@ namespace mmx
             unsigned int    pid;        // reserved
             unsigned int    lid;        // идентификатор соединения/слота
 
-        }SANGOMA_RAW_HEADER, *PSANGOMA_RAW_HEADER;
+        }SANGOMA_MEDIA_STREAM_HEADER, *PSANGOMA_MEDIA_STREAM_HEADER;
 
-        typedef struct _SANGOMA_RAW_PACKET
+        typedef struct _SANGOMA_MEDIA_STREAM_PACKET
         {
 
-            SANGOMA_RAW_HEADER header;
+            SANGOMA_MEDIA_STREAM_HEADER header;
             char data[SI_MAX_PYLOAD_SIZE];
 
-        }SANGOMA_RAW_PACKET,*PSANGOMA_RAW_PACKET;
+        }SANGOMA_MEDIA_STREAM_PACKET,*PSANGOMA_MEDIA_STREAM_PACKET;
 
 
 

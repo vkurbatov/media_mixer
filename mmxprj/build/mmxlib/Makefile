@@ -692,6 +692,60 @@ tools/iosockadp.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.s
 .PHONY : tools/iosockadp.cpp.s
 
+tools/orm_client.o: tools/orm_client.cpp.o
+
+.PHONY : tools/orm_client.o
+
+# target to build an object file
+tools/orm_client.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o
+.PHONY : tools/orm_client.cpp.o
+
+tools/orm_client.i: tools/orm_client.cpp.i
+
+.PHONY : tools/orm_client.i
+
+# target to preprocess a source file
+tools/orm_client.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.i
+.PHONY : tools/orm_client.cpp.i
+
+tools/orm_client.s: tools/orm_client.cpp.s
+
+.PHONY : tools/orm_client.s
+
+# target to generate assembly for a file
+tools/orm_client.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.s
+.PHONY : tools/orm_client.cpp.s
+
+tools/orm_server.o: tools/orm_server.cpp.o
+
+.PHONY : tools/orm_server.o
+
+# target to build an object file
+tools/orm_server.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o
+.PHONY : tools/orm_server.cpp.o
+
+tools/orm_server.i: tools/orm_server.cpp.i
+
+.PHONY : tools/orm_server.i
+
+# target to preprocess a source file
+tools/orm_server.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.i
+.PHONY : tools/orm_server.cpp.i
+
+tools/orm_server.s: tools/orm_server.cpp.s
+
+.PHONY : tools/orm_server.s
+
+# target to generate assembly for a file
+tools/orm_server.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.s
+.PHONY : tools/orm_server.cpp.s
+
 tools/pipe_input_channel.o: tools/pipe_input_channel.cpp.o
 
 .PHONY : tools/pipe_input_channel.o
@@ -799,6 +853,33 @@ tools/sangoma_client.s: tools/sangoma_client.cpp.s
 tools/sangoma_client.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.s
 .PHONY : tools/sangoma_client.cpp.s
+
+tools/sangoma_media_client.o: tools/sangoma_media_client.cpp.o
+
+.PHONY : tools/sangoma_media_client.o
+
+# target to build an object file
+tools/sangoma_media_client.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o
+.PHONY : tools/sangoma_media_client.cpp.o
+
+tools/sangoma_media_client.i: tools/sangoma_media_client.cpp.i
+
+.PHONY : tools/sangoma_media_client.i
+
+# target to preprocess a source file
+tools/sangoma_media_client.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.i
+.PHONY : tools/sangoma_media_client.cpp.i
+
+tools/sangoma_media_client.s: tools/sangoma_media_client.cpp.s
+
+.PHONY : tools/sangoma_media_client.s
+
+# target to generate assembly for a file
+tools/sangoma_media_client.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.s
+.PHONY : tools/sangoma_media_client.cpp.s
 
 tools/sangoma_server.o: tools/sangoma_server.cpp.o
 
@@ -926,6 +1007,12 @@ help:
 	@echo "... tools/iosockadp.o"
 	@echo "... tools/iosockadp.i"
 	@echo "... tools/iosockadp.s"
+	@echo "... tools/orm_client.o"
+	@echo "... tools/orm_client.i"
+	@echo "... tools/orm_client.s"
+	@echo "... tools/orm_server.o"
+	@echo "... tools/orm_server.i"
+	@echo "... tools/orm_server.s"
 	@echo "... tools/pipe_input_channel.o"
 	@echo "... tools/pipe_input_channel.i"
 	@echo "... tools/pipe_input_channel.s"
@@ -938,6 +1025,9 @@ help:
 	@echo "... tools/sangoma_client.o"
 	@echo "... tools/sangoma_client.i"
 	@echo "... tools/sangoma_client.s"
+	@echo "... tools/sangoma_media_client.o"
+	@echo "... tools/sangoma_media_client.i"
+	@echo "... tools/sangoma_media_client.s"
 	@echo "... tools/sangoma_server.o"
 	@echo "... tools/sangoma_server.i"
 	@echo "... tools/sangoma_server.s"

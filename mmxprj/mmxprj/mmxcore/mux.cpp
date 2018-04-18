@@ -3,8 +3,6 @@
 
 #include <cstring>
 
-#define MEDIA_PERIOD
-
 
 namespace mmxmux
 {
@@ -38,10 +36,18 @@ namespace mmxmux
 
             if (rc >= 0 || rc == -ETIMEDOUT)
             {
-                dispatchAll();
-                processInput();
-                timerWork();
-                processSangoma();
+                if (rc == -ETIMEDOUT)
+                {
+                    dispatchAll(mmx::tools::DISPATCH_TIMER);
+                    timerWork();
+                }
+                else
+                {
+
+                    dispatchAll(mmx::tools::DISPATCH_IO);
+                    processInput();
+                    processSangoma();
+                }
 
             }
             else
@@ -66,19 +72,19 @@ namespace mmxmux
         }
     }
 
-    void Mux::dispatchAll()
+    void Mux::dispatchAll(mmx::tools::dispatch_flags_t dispatch)
     {
-        input_channel_.Dispatch();
+        input_channel_.Dispatch(dispatch);
         for (auto& o : output_channel_pool_.GetChannels())
         {
-            o.Dispatch();
+            o.Dispatch(dispatch);
         }
 
-        sangoma_.Dispatch();
+        sangoma_.Dispatch(dispatch);
 
         for (auto& c : sangoma_.GetClients())
         {
-            c.Dispatch();
+            c.Dispatch(dispatch);
         }
 
         sangoma_.GetClients().remove_if([](mmx::tools::SangomaClient& c) { return c.IsDown(); });
@@ -88,7 +94,7 @@ namespace mmxmux
     {
         int rc = timer_.Left();
 
-        int to = input_channel_.GetLeftTimeWork();
+        int to = input_channel_.QueryOrderTimeout();
 
         if (to >= 0 && to < rc)
         {
@@ -97,14 +103,14 @@ namespace mmxmux
 
         for (auto& o : output_channel_pool_.GetChannels())
         {
-            to = o.GetLeftTimeWork();
+            to = o.QueryOrderTimeout();
             if (to >= 0 && to < rc)
             {
                 rc = to;
             }
         }
 
-        to = sangoma_.GetLeftTimeWork();
+        to = sangoma_.QueryOrderTimeout();
 
         if (to >= 0 && to < rc)
         {

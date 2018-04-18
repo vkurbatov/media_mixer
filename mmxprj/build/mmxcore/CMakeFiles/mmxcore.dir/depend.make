@@ -112,7 +112,3 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmx
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
-mmxcore/CMakeFiles/mmxcore.dir/outputchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp
-
-mmxcore/CMakeFiles/mmxcore.dir/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp
-

@@ -1,12 +1,15 @@
 #include <iostream>
 
 #include <cstring>
+#include <signal.h> // sigpipe
 
 #include "mmxlib/logs/log.h"
 
+
 #include "mux.h"
 
-#include "fcntl.h"
+#include <fcntl.h>
+#include <netdb.h>  //INADDR_NONE
 
 #define SERVICE_GROUP "Media module"
 #define SERVICE_NAME "Media stream multiplexor (core)"
@@ -18,24 +21,82 @@
 
 #define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
 
+#define DEFAULT_BASE_PORT       5200
+#define DEFAULT_INTERVAL        2000
+
 static char buff[1600 * 10];
 
+static int parse_channels(char* params, unsigned char* channels);
+static int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::log_level_t& log_level);
+
+void finish(int e_code)
+{
+    mmx::logs::logI("@\n%s Ver=%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, e_code);
+    mmx::logs::log_init();
+    exit(e_code);
+}
+
+void sig_handler(int sig)
+{
+    int e_code = -1;
+
+    switch (sig)
+    {
+        case SIGPIPE:
+
+            mmx::logs::logE("SIGPIPE");
+
+            break;
+        case SIGIO:
+
+            mmx::logs::logE("SIGIO");
+
+            break;
+        case SIGTERM:
+        case SIGQUIT:
+
+            mmx::logs::logC("Close by terminal");
+
+            e_code = 1;
+
+            break;
+
+        case SIGSEGV:
+
+            e_code = 2;
+
+            mmx::logs::logC("@SIGSEGV");
+
+            break;
+        default:
+
+            e_code = 3;
+
+            break;
+    }
+
+    if (e_code >= 0)
+    {
+        finish(e_code);
+    }
+}
 
 int main(int argc, char* argv[])
 {
     mmxmux::MUX_CONFIG config;
+    mmx::logs::log_level_t log_level = DEFAULT_LEVEL_LOG;
 
     std::memset(&config, 0, sizeof(config));
 
     config.channel_num = 2;
-    config.interval = 2000;
+    config.interval = DEFAULT_INTERVAL;
     config.media_period = 160;
-    config.sgm_address = mmx::net::Socket::StoA("10.2.16.21");
-    config.sgm_port = 5080;
-    config.channels[0] |= 1 << 1;
+    config.sgm_address = INADDR_ANY;
+    config.sgm_port = DEFAULT_BASE_PORT;
+    //config.channels[0] |= 1 << 1;
 
 
-    int rc = 0;
+    int rc = parse_args(argc, argv, config, log_level);
 
     if (rc == 0)
     {
@@ -48,6 +109,11 @@ int main(int argc, char* argv[])
 
         mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
 
+        signal(SIGPIPE, sig_handler);
+        signal(SIGTERM, sig_handler);
+        signal(SIGQUIT, sig_handler);
+        signal(SIGSEGV, sig_handler);
+
         mmxmux::Mux Mux(config);
 
         rc = Mux.Execute();
@@ -58,58 +124,237 @@ int main(int argc, char* argv[])
 
     }
 
-
-    /*
-    mmx::ipc::PipeChannel channelIn;
-
-    mmx::ipc::PipeChannel channelOut;
-
-    mmx::net::SelectExtension sel;
-
-    char in_channel_name[256];
-    char out_channel_name[256];
-
-    std::sprintf(in_channel_name, MMX_LISTENER_CHANNEL_PATTERN, 2);
-    std::sprintf(out_channel_name, MMX_SERVER_CHANNEL_PATTERN, 1);
-
-    int rc = channelIn.Open(in_channel_name, O_RDONLY | O_NONBLOCK, 0777);
-    rc = channelOut.Open(out_channel_name, O_WRONLY | O_NONBLOCK);
-
-    sel.Set(channelIn.Handle(), mmx::net::S_EV_READ);
-
-    while ((rc = sel.Wait()) > 0)
-    {
-        if (sel.IsRead(channelIn.Handle()))
-        {
-            rc = channelIn.Read(buff, sizeof(buff));
-
-            if (rc > 0)
-            {
-                mmx::headers::DATA_PACK &dpack = *(mmx::headers::PDATA_PACK)buff;
-
-                std::cout << "Recieved " << rc <<
-                             " bytes from pipe. Packet id = " << dpack.header.pack_id <<
-                             ", length = " << dpack.header.length <<
-                             ", blocks = " << dpack.header.block_count <<
-                             std::endl;
-                if (channelOut.Handle() >= 0)
-                {
-                    rc = channelOut.Write(buff, rc);
-                }
-
-                // channelIn.Close();
-                // break;
-            }
-        }
-    }
-
-    channelIn.Close();
-    channelOut.Close();
-
-    */
-
     mmx::logs::log_init();
 
     return 0;
 }
 
+
+int parse_channels(char* params, unsigned char* channels)
+{
+
+        int rc = 0;
+
+        unsigned char channel = 0;
+        bool range = false;
+        //short step = 0;
+
+        while (params != nullptr && *params != '\0')
+        {
+
+            int num = std::atoi(params);
+
+
+            if (num > 0 && num < 256)
+            {
+                // задали диапазон
+
+                if (range)
+                {
+
+                    do
+                    {
+
+                        channels[channel / 8] |= 1 << (channel % 8);
+
+                    }while(++channel <= num);
+
+                    channel = num;
+
+                    range = false;
+
+                }
+                else
+                {
+
+                    channel = num;
+
+                    channels[channel / 8] |= 1 << (channel % 8);
+
+                    rc++;
+
+                }
+
+                char* p1 = std::strchr(params, ',');
+                char* p2 = std::strchr(params, '-');
+
+                if (p1 == nullptr)
+                {
+                    p1 = p2;
+                }
+                else if (p2 == nullptr)
+                {
+                    p2 = p1;
+                }
+
+                params = std::min(p1, p2);
+
+                if (params != nullptr)
+                {
+
+                    range = *params++ == '-';
+
+                }
+
+            }
+            else
+            {
+                rc = -EINVAL;
+                break;
+            }
+        }
+
+
+    return rc;
+}
+
+int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::log_level_t& log_level)
+{
+    int rc = 0;
+
+    char* p;
+
+    for(int arg = 1; arg < argc && rc == 0; ++arg)
+    {
+        p = argv[arg];
+        if (*p == 0)
+        {
+            continue;
+        }
+        if (*p == '-')
+        {
+            switch(*++p)
+            {
+                case 'v':
+
+                    std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
+                            << "Service name: " << SERVICE_NAME << "." << std::endl
+                            << "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << SERVICE_STATUS << std::endl;
+                    rc = 1;
+
+                    break;
+                case 'h':
+
+                    std::cout << "!!!HELP!!!!" << std::endl;
+                    rc = 1;
+
+                    break;
+                case 'c':
+                    {
+
+                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                        if (n > 0 && n < 255)
+                        {
+                            config.channel_num = (unsigned char)n;
+                        }
+                        else
+                        {
+                            std::cout << "Error channel number \'c=" << n << "\'. Channel number must be range [1..255]" << std::endl;
+                            rc = -EINVAL;
+                        }
+
+                    }
+                    break;
+                case 'o':
+                    {
+                        if (parse_channels(*(p+1) != 0 ? p+1 : argv[++arg], config.channels) < 0)
+                        {
+                            rc = -EINVAL;
+                        }
+
+                    }
+                    break;
+                case 'i':
+                    {
+                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                        if (n > 0 && n < 60000)
+                        {
+                            config.interval = n;
+                        }
+                        else
+                        {
+                            std::cout << "Error interval period \'c=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
+                            rc = -EINVAL;
+                        }
+                    }
+                    break;
+                case 'm':
+                    {
+                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                        if (n > 0 && n < 60000)
+                        {
+                            config.media_period = n;
+                        }
+                        else
+                        {
+                            std::cout << "Error media period \'c=" << n << "\'. Media period must be range [1..60000]" << std::endl;
+                            rc = -EINVAL;
+                        }
+                    }
+                    break;
+                case 'p':
+                    {
+                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                        if (n > 0 && n < 65535)
+                        {
+                            config.sgm_port = (unsigned short)n;
+                        }
+                        else
+                        {
+                            std::cout << "Error port number \'c=" << n << "\'. Port number must be range [1..65534]" << std::endl;
+                            rc = -EINVAL;
+                        }
+                    }
+                    break;
+                case 'l':
+                {
+                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                    if (n >= mmx::logs::L_TRACE && n < mmx::logs::L_CRITICAL)
+                    {
+                        log_level = (mmx::logs::log_level_t)n;
+                    }
+                    else
+                    {
+                        std::cout << "Error log level \'l=" << n << "\'. Log level range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
+                        rc = -EINVAL;
+                    }
+
+                }
+                break;
+                case 'n':
+                {
+                    mmx::net::address_t a = mmx::net::Socket::StoA(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                    if (a != INADDR_NONE)
+                    {
+                        config.sgm_address = a;
+                    }
+                    else
+                    {
+                        std::cout << "Error input ip-address" << std::endl;
+                        rc = -EINVAL;
+                    }
+
+                }
+                break;
+                default:
+                {
+                    std::cout << "Argument -" << *p << " wrong!" << std::endl;
+                    rc = -EINVAL;
+                }
+            }
+        }
+        else
+        {
+            std::cout << "Arguments must begin with the prefix \'-\'" << std::endl;
+            rc = -EINVAL;
+        }
+    }
+
+    return rc;
+}

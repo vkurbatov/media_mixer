@@ -51,7 +51,7 @@ namespace mmx
             Close();
         }
 
-        int PipeOutputChannel::Dispatch()
+        int PipeOutputChannel::Dispatch(dispatch_flags_t dispatch, void* context)
         {
             checkConnect();
             checkRead();
@@ -60,7 +60,7 @@ namespace mmx
             return rc;
         }
 
-        int PipeOutputChannel::GetLeftTimeWork() const
+        int PipeOutputChannel::QueryOrderTimeout() const
         {
             return pipe_.Handle() < 0 && timer_.IsStarted()
                     ? timer_.Left()
@@ -98,6 +98,11 @@ namespace mmx
         bool PipeOutputChannel::IsDown() const
         {
             return pipe_.Handle() < 0;
+        }
+
+        bool PipeOutputChannel::IsReadyData() const
+        {
+            return false;
         }
 
 

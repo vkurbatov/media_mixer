@@ -59,6 +59,10 @@ set ( SOURCE_FILES
 	tools/pipe_output_channel_pool.cpp
 	tools/sangoma_server.cpp
 	tools/sangoma_client.cpp
+	tools/orm_server.cpp
+	tools/orm_client.cpp
+	tools/sangoma_media_client.cpp
+	tools/template_tcp_server.tpp
 )
 
 set ( PRIVATE_HEADERS
@@ -118,8 +122,10 @@ set ( PRIVATE_HEADERS
 	tools/pipe_input_channel.h
 	tools/pipe_output_channel.h
 	tools/pipe_output_channel_pool.h
-	tools/sangoma_server.h
-	tools/sangoma_client.h
+	tools/orm_server.h
+	tools/orm_client.h
+	tools/sangoma_media_client.h
+	tools/template_tcp_server.h
 
 #	имена
 	names.h

@@ -25,10 +25,13 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_input_channel.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel_pool.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o"
   )

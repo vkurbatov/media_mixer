@@ -35,10 +35,11 @@ namespace mmx
             SangomaServer(SangomaServer&& channel);
 
             ~SangomaServer() override;
-            int Dispatch() override;
-            int GetLeftTimeWork() const override;
+            int Dispatch(dispatch_flags_t dispatch, void* context = nullptr) override;
+            int QueryOrderTimeout() const override;
             int Close() override;
             bool IsDown() const override;
+            bool IsReadyData() const override;
 
             std::list<SangomaClient>& GetClients();
 

@@ -34,10 +34,11 @@ namespace mmx
             PipeInputChannel(PipeInputChannel&& channel);
 
             ~PipeInputChannel() override;
-            int Dispatch() override;
-            int GetLeftTimeWork() const override;
+            int Dispatch(dispatch_flags_t dispatch, void* context = nullptr) override;
+            int QueryOrderTimeout() const override;
             int Close() override;
             bool IsDown() const override;
+            bool IsReadyData() const override;
 
             const void* Data() const;
             int Size() const;

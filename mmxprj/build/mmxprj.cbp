@@ -359,18 +359,6 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h">
          <Option target="mmxcore"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.h">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.h">
-         <Option target="mmxcore"/>
-      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/datapacket.cpp">
          <Option target="mmx"/>
       </Unit>
@@ -554,6 +542,18 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_input_channel.cpp">
          <Option target="mmx"/>
       </Unit>
@@ -578,10 +578,22 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/template_tcp_server.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/template_tcp_server.tpp">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp">

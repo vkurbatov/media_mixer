@@ -705,6 +705,78 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o.provides: mmxlib/CMakeFiles
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o
 
 
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/orm_server.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.cpp
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/tools/orm_server.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.cpp > CMakeFiles/mmx.dir/tools/orm_server.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/tools/orm_server.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.cpp -o CMakeFiles/mmx.dir/tools/orm_server.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o
+
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/orm_client.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/tools/orm_client.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp > CMakeFiles/mmx.dir/tools/orm_client.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/tools/orm_client.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp -o CMakeFiles/mmx.dir/tools/orm_client.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o
+
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp > CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp -o CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o
+
+
 # Object files for target mmx
 mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/logs/log.cpp.o" \
@@ -733,7 +805,10 @@ mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o" \
 "CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o" \
 "CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o" \
-"CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o"
+"CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o" \
+"CMakeFiles/mmx.dir/tools/orm_server.cpp.o" \
+"CMakeFiles/mmx.dir/tools/orm_client.cpp.o" \
+"CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
 
 # External object files for target mmx
 mmx_EXTERNAL_OBJECTS =
@@ -765,9 +840,12 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -P CMakeFiles/mmx.dir/cmake_clean_target.cmake
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmx.dir/link.txt --verbose=$(VERBOSE)
 
@@ -803,6 +881,9 @@ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.requires
 
 .PHONY : mmxlib/CMakeFiles/mmx.dir/requires
 

@@ -1,321 +1,299 @@
-#include <thread>
-#include <chrono>
-#include <list>
-#include <memory>
-#include <vector>
-#include <algorithm>
+#include "server.h"
 
-#include "defines.h"
+#include <iostream>
+
+#include <netdb.h>  // SOCK_RAW, IPPROTO_UDP
+#include <fcntl.h>  // O_NONBLOCK
+#include <errno.h>
+#include <sys/time.h>   // gettimeofday
 
 #include "mmxlib/logs/log.h"
-#include "mmxlib/net/socket.h"
-#include "mmxlib/net/select.h"
-#include "mmxlib/ipc/pchannel.h"
-#include "mmxlib/headers/media.h"
+#include "mmxlib/names.h"
 
-#include <fcntl.h>
-#include <errno.h>
-#include <netdb.h>
+#include "mmxlib/data/dpreader.h"
 
-
-
+#define DEFAULT_TIMEOUT 2000
 
 namespace mmxsrv
 {
-    int server(const char* channel_name, unsigned int address, unsigned short port)
+    Server::Server(unsigned char channel,
+           mmx::net::address_t tcp_address,
+           mmx::net::port_t tcp_port,
+           mmx::net::address_t udp_address,
+           mmx::net::port_t udp_port) :
+        channel_(channel),
+        tcp_address_(tcp_address),
+        tcp_port_(tcp_port),
+        udp_address_(udp_address),
+        udp_port_(udp_port),
+        pack_id_(0),
+        tcp_socket_(SOCK_STREAM, IPPROTO_TCP),
+        udp_socket_(SOCK_DGRAM, IPPROTO_UDP),
+        udp_adapter_(udp_socket_),
+        udp_writer_(udp_adapter_),
+        data_write_(false)
+
     {
-        int rc = -1;
+        mmx::logs::logD("[%p] Server::Server(%d, %d:%d, %d:%d)", this, channel, tcp_address, tcp_port, udp_address, udp_port);
+    }
 
-        mmx::ipc::PipeChannel channel;
-        mmx::net::Socket sock(SOCK_STREAM, IPPROTO_TCP);
-        mmx::net::Select sel;
+    Server::~Server()
+    {
+        mmx::logs::logD("[%p] Server::~Server(begin)", this);
 
-        std::list<mmx::net::Socket> clients;
+        clear();
 
-        std::vector<char> buffer(1600);
+        mmx::logs::logD("[%p] Server::~Server(end)", this);
+    }
 
-        // открываем канал в неблокирующем режиме
+    int Server::Execute()
+    {
+        mmx::logs::logD("[%p] Server::Execute(begin)", this);
 
-        enum srv_state_t : int
+        int rc = initialization();
+
+        while(rc >= 0)
         {
-            S_INIT = 1,
-            S_OPEN = 2,
-            S_SELECT = 3,
-            S_ACCEPT = 4,
-            S_READ = 5,
-            S_CHECK = 6,
-            S_WRITE = 7,
-            S_WAIT = 8,
-            S_ERR = -1,
-            S_EXIT = 0
-
-        } state = S_INIT;
-
-        srv_state_t force_state = S_EXIT;
-        mmx::net::timeout_t tout = 0;
-
-        while (state != S_EXIT)
-        {
-
-            switch(state)
+            checkConnection();
+            setTimeout();
+            if (waitEvents() > 0)
             {
-                case S_INIT:
+                checkAccept();
+                readData();
+                checkClients();
 
-                    state = S_OPEN;
-                    if (channel.Handle() < 0)
+                if (!data_write_)
+                {
+                    writeData();
+                }
+
+            }
+        }
+        clear();
+
+        mmx::logs::logD("[%p] Server::Execute(stop)", this);
+    }
+
+    int Server::initialization()
+    {
+        mmx::logs::logD("[%p] Server::initialization(begin)", this);
+
+
+        tcp_timer_.Start(0);
+        udp_timer_.Start(0);
+        pipe_timer_.Start(0);
+
+        mmx::logs::logD("[%p] Server::initialization(stop)", this);
+
+    }
+
+    int Server::checkConnection()
+    {
+        int rc = 0;
+
+        char pipe_name_[sizeof(MMX_SERVER_CHANNEL_PATTERN)+4];
+
+        std::sprintf(pipe_name_, MMX_SERVER_CHANNEL_PATTERN, (int)channel_);
+
+        // сперва открываем канал
+
+        if (pipe_.Handle() <= 0)
+        {
+            if (pipe_timer_.IsEnable())
+            {
+
+                rc = pipe_.Open(pipe_name_, O_RDONLY | O_NONBLOCK, 0777);
+
+                if (rc >= 0)
+                {
+
+                    mmx::logs::logI("[%p] Server::checkConnection() pipe %d (%s) open success!", this, rc, pipe_name_);
+                    select_.SetRead(rc);
+
+                }
+                else
+                {
+
+                    mmx::logs::logE("[%p] Server::checkConnection() pipe %s open error = %d!", this, pipe_name_, rc);
+
+                }
+
+            }
+
+        }
+
+        // создаем tcp-соединение
+
+        if (tcp_address_ != INADDR_NONE && tcp_port_ != 0)
+        {
+            if (tcp_socket_.Handle() < 0)
+            {
+                if (tcp_timer_.IsEnable())
+                {
+                    rc = tcp_socket_.Open(tcp_address_, tcp_port_, 0, 0, 4, O_NONBLOCK);
+
+                    if (rc >= 0)
                     {
-                        rc = channel.Open(channel_name, O_RDONLY | O_NONBLOCK);
 
-                        if (rc < 0)
-                        {
-                            mmx::logs::logE("(server) channel [%s] open error! (rc = %d)!", channel_name, rc);
+                        mmx::logs::logI("[%p] Listener::checkConnection() tcp_server %s:%d create success fd = %d!", this, mmx::net::Socket::AtoS(tcp_address_), tcp_port_,rc);
+                        select_.SetRead(rc);
 
-                            force_state = S_INIT;
-                            tout = 1000;
-                            state = S_WAIT;
-                        }
-                        else
-                        {
-                            mmx::logs::logI("(server) open channel [%s] success (fd = %d)!", channel_name, rc);
-                            sel.Set(rc, mmx::net::S_EV_READ);
-                        }
-                    }
-
-                    break;
-
-                case S_OPEN:
-
-                    state = S_SELECT;
-
-                    if (sock.Handle() < 0)
-                    {
-                        rc = sock.Open(address, port, 0, 0, 4, O_NONBLOCK);
-
-                        if (rc < 0)
-                        {
-
-                            mmx::logs::logE("(server) socket [%s:%d] open error (rc = %d)!", mmx::net::Socket::AtoS(address), port, rc);
-
-                            force_state = S_OPEN;
-                            tout = 1000;
-                            state = S_WAIT;
-
-                        }
-                        else
-                        {
-                            mmx::logs::logI("(server) socket [%s:%d] open success (rc = %d)!", mmx::net::Socket::AtoS(address), port, rc);
-                            sel.Set(rc, mmx::net::S_EV_READ);
-                        }
-                    }
-
-                    break;
-
-                case S_SELECT:
-
-                    rc = sel.Wait();
-
-                    if (rc < 0)
-                    {
-
-                        tout = 1000;
-                        state = S_WAIT;
-
-                        if (rc != -ETIMEDOUT)
-                        {
-
-                            sel.Set(channel.Handle());
-                            sel.Set(sock.Handle());
-
-                            channel.Close();
-                            sock.Close();
-
-                            force_state = S_INIT;
-
-                            mmx::logs::logE("(server) select error (rc = %d)!", rc);
-
-                        }
-                        else
-                        {
-
-                            force_state = S_SELECT;
-
-                            mmx::logs::logW("(server) select timeout (rc = %d)!", rc);
-
-                        }
                     }
                     else
                     {
-                        state = S_ACCEPT;
+                        mmx::logs::logE("[%p] Listener::checkConnection() tcp_server %s:%d create error = %d!", this, mmx::net::Socket::AtoS(tcp_address_), tcp_port_,rc);
                     }
 
-
-                    break;
-
-                case S_ACCEPT:
-
-                    state = S_READ;
-
-                    if (sel.IsRead(sock.Handle()))
-                    {
-                        mmx::net::Socket cli(sock);
-
-                        if (cli.Handle() >= 0)
-                        {
-
-                            mmx::logs::logI("(server) client [%s:%d] accept success! (fd = %d)!", mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), cli.Handle());
-
-                            // sel.Set(cli.Handle(), mmx::net::S_EV_READ);
-
-                            clients.push_back(std::move(cli));
-
-                        }
-                        else
-                        {
-                            mmx::logs::logE("(server) client accept error! (rc = %d)!", cli.Handle());
-
-                            sock.Close();
-
-                            force_state = S_OPEN;
-                            tout = 1000;
-                            state = S_WAIT;
-                        }
-                    }
-
-                    break;
-
-                case S_READ:
-
-                    state = S_SELECT;
-
-                    if (sel.IsRead(channel.Handle()))
-                    {
-                        rc = channel.Read(buffer.data(), buffer.size());
-
-                        if (rc > 0)
-                        {
-                            mmx::logs::logI("(server) pipe %s read %d bytes!", channel_name, rc);
-                            state = S_WRITE;
-                        }
-                        else
-                        {
-                            mmx::logs::logE("(server) pipe %s read error! (rc = %d)!", channel_name, rc);
-
-                            channel.Close();
-
-                            force_state = S_INIT;
-                            tout = 1000;
-                            state = S_WAIT;
-                        }
-                    }
-
-                    break;
-
-                case S_CHECK: //проверка клиентов
-                {
-                            /*
-                    auto r_it = clients.end();
-                    const auto e_it = clients.end();
-
-                    for (auto it = clients.begin(); it != e_it; it++)
-                    {
-                        auto& c = *it;
-
-                        if(r_it != e_it)
-                        {
-                            clients.erase(r_it);
-                            r_it = e_it;
-                        }
-
-
-                    }
-
-                    if(r_it != e_it)
-                    {
-                        clients.erase(r_it);
-                    }*/
+                    tcp_timer_.Start(DEFAULT_TIMEOUT);
                 }
-                break;
+            }
+        }
 
-                case S_WRITE:
+        // создаем udp-соединение
 
-                    //mmx::logs::logD("(server) Write STATE!!!!");
+        if (udp_address_ != INADDR_NONE && udp_port_ != 0)
+        {
+            if (udp_socket_.Handle() < 0)
+            {
+                if (udp_timer_.IsEnable())
+                {
+                    rc = udp_socket_.Open(0, 0, udp_address_, udp_port_, 0, O_NONBLOCK);
 
+                    if (rc >= 0)
                     {
 
-                        auto r_it = clients.end();
-                        const auto e_it = clients.end();
-
-                        for (auto it = clients.begin(); it != e_it; it++)
-
-                        {
-
-                            if(r_it != e_it)
-                            {
-                                clients.erase(r_it);
-                                r_it = e_it;
-                            }
-
-                            auto& c = *it;
-
-                            rc = c.Send(buffer.data(), rc);
-
-
-                            if (rc < 0)
-                            {
-
-                                 mmx::logs::logE("(server) client [%s:%d] write error! (rc = %d)!", mmx::net::Socket::AtoS(c.RemoteAddress()), c.RemotePort(), rc);
-
-                                 r_it = it;
-
-                                 //c.Close();
-
-                            }
-                            else
-                            {
-
-                                mmx::logs::logI("(server) client [%s:%d] write %d bytes!", mmx::net::Socket::AtoS(c.RemoteAddress()), c.RemotePort(), rc);
-
-                            }
-                        }
-
-                        if(r_it != e_it)
-                        {
-                            clients.erase(r_it);
-                        }
+                        mmx::logs::logI("[%p] Listener::checkConnection() udp_server %s:%d create success fd = %d!", this, mmx::net::Socket::AtoS(udp_socket_.LocalAddress()), udp_socket_.LocalPort(),rc);
+                        select_.SetRead(rc);
 
                     }
+                    else
+                    {
+                        mmx::logs::logE("[%p] Listener::checkConnection() udp_server %s:%d create error = %d!", this, mmx::net::Socket::AtoS(udp_socket_.LocalAddress()), udp_socket_.LocalPort(),rc);
+                    }
 
-                    //std::remove_if(clients.begin(), clients.end(), [](const mmx::net::Socket& c){ return c->Handle() < 0; });
-                    //std::remove(clients.begin(), clients.end(), '');
+                    udp_timer_.Start(DEFAULT_TIMEOUT);
+                }
+            }
+        }
+
+        return rc;
+
+    }
+
+    int Server::setTimeout()
+    {
+        int tout = mmx::net::INFINITE_TIMEOUT;
+
+        // TODO: костыль... мне не нравится....
 
 
+        if (pipe_.Handle() < 0)
+        {
+            auto left = pipe_timer_.Left();
 
-                    state = S_SELECT;
+            if (tout < 0 || tout > left)
+            {
+                tout = left < 0 ? 0 : left;
+            }
+        }
 
-                    break;
+        if (tcp_address_ != INADDR_NONE && tcp_port_ != 0)
+        {
+            if (tcp_socket_.Handle() < 0)
+            {
+                auto left = tcp_timer_.Left();
 
-                case S_WAIT:
+                if (tout < 0 || tout > left)
+                {
+                    tout = left < 0 ? 0 : left;
+                }
+            }
+        }
 
-                    if (tout > 0)
-                        std::this_thread::sleep_for(std::chrono::milliseconds(tout));
+        if (udp_address_ != INADDR_NONE && udp_port_ != 0)
+        {
+            if (udp_socket_.Handle() < 0)
+            {
+                auto left = udp_timer_.Left();
 
-                    mmx::logs::logI("(server) wait. force_state = %d", force_state);
+                if (tout < 0 || tout > left)
+                {
+                    tout = left < 0 ? 0 : left;
+                }
+            }
+        }
 
-                    state = force_state;
+        timeout_ = tout;
 
-                    break;
+        return timeout_;
+    }
 
-                case S_ERR:
+    int Server::waitEvents()
+    {
+        int rc = 0;
 
-                    clients.clear();
+        if (select_.IsEmpty())
+        {
+            mmx::tools::Timer::Sleep(timeout_);
+        }
+        else
+        {
 
-                    sock.Close();
+            rc = select_.Wait(timeout_);
 
-                    channel.Close();
+            if (rc < 0)
+            {
+                if (rc == -ETIMEDOUT)
+                {
 
-                    state = S_EXIT;
+                    mmx::logs::logW("[%p] Listener::waitEvents() select timeout rc = %d", this, rc);
+                    rc = 0;
+                }
+                else
+                {
 
-                    break;
+                    mmx::logs::logE("[%p] Listener::waitEvents() select error rc = %d", this, rc);
+
+                    clear();
+                }
+            }
+        }
+
+        return rc;
+    }
+
+    int Server::checkAccept()
+    {
+
+        int rc = 0;
+
+        if (tcp_socket_.Handle() >= 0)
+        {
+            if (select_.IsRead(tcp_socket_.Handle()))
+            {
+                //  пришел запрос на подключение
+
+                mmx::net::Socket cli(tcp_socket_, O_NONBLOCK);
+
+                rc = cli.Handle();
+
+                if (rc >= 0)
+                {
+
+                    mmx::logs::logI("[%p] Server::checkAccept() new client %s:%d connected success, fd = %s!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+
+                    // селектируем чтение, это нужно для детекции факта отключения клиента
+
+                    select_.SetRead(rc);
+                    clients_.push_back(std::move(cli));
+
+                }
+                else
+                {
+
+                    mmx::logs::logE("[%p] Server::checkAccept() client connected error, rc = %d!", this, rc);
+
+                }
 
             }
         }
@@ -323,4 +301,357 @@ namespace mmxsrv
         return rc;
 
     }
+
+    int Server::checkClients()
+    {
+
+        int rc = 0;
+
+        remove_list_.clear();
+
+        for (auto& c : clients_)
+        {
+            mmx::net::Socket& cli = c.Socket();
+            int fd = cli.Handle();
+
+            if (select_.IsRead(fd))
+            {
+
+
+                static char dummy[1600];
+
+                // сработали по чтению, скорее всего это разрыв соединения
+
+                rc = cli.Recv(dummy, sizeof(dummy));
+
+                if (rc <= 0)
+                {
+                    // клиент разорвал соединение
+
+                    switch (rc)
+                    {
+
+                        case -EAGAIN:
+
+                            mmx::logs::logW("[%p] Server::checkClients() client %s:%d non blocked read, rc = %d!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), fd);
+
+                            break;
+                        default:
+
+                            if (rc == 0)
+                            {
+
+                                mmx::logs::logI("[%p] Server::checkClients() client %s:%d disconnect, fd = %d!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), cli.Handle());
+
+                            }
+                            else
+                            {
+
+                                mmx::logs::logI("[%p] Server::checkClients() client %s:%d read error, rc = %d!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+
+                            }
+
+                            remove_list_.push_back(&c);
+
+                            break;
+                    }
+
+                }
+                else
+                {
+                    mmx::logs::logI("[%p] Server::checkClients() read from client %s:%d %d dummy bytes!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+                }
+
+            }
+
+        }
+
+        removeClients();
+
+        return rc;
+
+    }
+
+
+    int Server::tcpWrite(const mmx::headers::ORM_INFO_PACKET* media)
+    {
+
+        int rc = 0;
+
+        static mmx::headers::ORDER_645_2_PACKET out;
+
+        const void *data = media == nullptr ? nullptr : &media->header.order_header;
+        int len = data == nullptr ? 0 : mmx::headers::ORDER_645_2_PACKET_SIZE;
+
+        for (auto& c : clients_)
+        {
+
+            mmx::net::Socket& cli = c.Socket();
+            mmx::tools::DeferredWriter& writer = c.Writter();
+
+            int fd = cli.Handle();
+
+            if (data != nullptr || select_.IsWrite(fd))
+            {
+
+                rc = writer.Write(data, len);
+
+                if (rc <= 0 && rc != -EAGAIN)
+                {
+                     mmx::logs::logI("[%p] Server::tcpWrite() write to client %s:%d error, rc = %d!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+
+                     remove_list_.push_back(&c);
+
+                }
+                else
+                {
+                    mmx::logs::logD("[%p] Server::tcpWrite() write to client %s:%d %d bytes", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+
+                    if (!writer.IsEmpty())
+                    {
+                        select_.SetWrite(fd);
+                    }
+                    else
+                    {
+                        select_.ClrWrite(fd);
+                    }
+                }
+
+            }
+
+        }
+
+        removeClients();
+
+        return rc;
+
+    }
+
+    int Server::udpWrite(const mmx::headers::SANGOMA_MEDIA_STREAM_PACKET* sangoma)
+    {
+
+        int rc = 0;
+
+        int len = sangoma == nullptr ? 0 : sizeof(mmx::headers::SANGOMA_MEDIA_STREAM_PACKET);
+
+        int fd = udp_socket_.Handle();
+
+        if (sangoma != nullptr || select_.IsWrite(fd))
+        {
+
+            rc = udp_writer_.Write(sangoma, len);
+
+            if (rc <= 0 && rc != -EAGAIN)
+            {
+                 mmx::logs::logI("[%p] Server::udpWrite() write to client %s:%d error, rc = %d!", this, mmx::net::Socket::AtoS(udp_socket_.RemoteAddress()), udp_socket_.RemotePort(), rc);
+
+                 select_.Set(fd);
+                 udp_socket_.Close(fd);
+
+            }
+            else
+            {
+                mmx::logs::logD("[%p] Server::udpWrite() write to client %s:%d %d bytes", this, mmx::net::Socket::AtoS(udp_socket_.RemoteAddress()), udp_socket_.RemotePort(), rc);
+
+                if (!udp_writer_.IsEmpty())
+                {
+                    select_.SetWrite(fd);
+                }
+                else
+                {
+                    select_.ClrWrite(fd);
+                }
+            }
+
+        }
+
+        return rc;
+
+    }
+
+
+    int Server::readData()
+    {
+
+        int rc = 0;
+
+        data_write_ = false;
+
+        if (select_.IsRead(pipe_.Handle()))
+        {
+
+            rc = pipe_.Read(input_, sizeof(input_));
+
+            if (rc < 0)
+            {
+
+                switch(rc)
+                {
+                    case -EWOULDBLOCK:
+
+                        mmx::logs::logW("[%p] Server::readData() non-blocket forced reading pipe %s. rc = %d", this, pipe_.Name(), rc);
+
+                        break;
+                    case -EINTR:
+
+                        mmx::logs::logE("[%p] Listener::readData() Reading pipe %s interrupted. rc = %d", this, pipe_.Name(), rc);
+
+                        break;
+                    default:
+
+                        mmx::logs::logE("[%p] Listener::readData() pipe %s read error! rc = %d", this, pipe_.Name(), rc);
+
+                        select_.Set(pipe_.Handle());
+                        pipe_.Close();
+
+                        break;
+                }
+
+            }
+            else
+            {
+
+                int ret = rc;
+
+                while (ret > 0)
+                {
+
+                    ret = dp_sniffer_.PutStream(input_, ret);
+
+
+                    if (dp_sniffer_.IsComplete())
+                    {
+
+                        processData(dp_sniffer_.GetDataPacket());
+
+                        dp_sniffer_.Drop();
+
+                    }
+
+                    if (ret > 0)
+                    {
+                        ret = rc - ret;
+                    }
+
+                }
+
+            }
+        }
+
+        return rc;
+
+    }
+
+    int Server::processData(const mmx::headers::DATA_PACK* data_pack)
+    {
+
+        int rc = 0;
+
+        mmx::data::DataPacketReader reader(&data_pack->header);
+
+        auto block = reader.GetBlock();
+
+        while (block != nullptr)
+        {
+
+            writeData((const mmx::headers::ORM_INFO_PACKET*)block->data);
+
+            block = reader.GetBlock();
+        }
+
+        return rc;
+
+    }
+
+    int Server::writeData(const mmx::headers::ORM_INFO_PACKET* media)
+    {
+
+        int rc = 0;
+
+        static mmx::headers::SANGOMA_MEDIA_STREAM_PACKET sangoma_a = { 0 };
+        static mmx::headers::SANGOMA_MEDIA_STREAM_PACKET sangoma_b = { 0 };
+
+        if (media != nullptr)
+        {
+
+            bool comb = media->header.order_header.mcl_a != media->header.order_header.mcl_b;
+
+            std::cout << "Write data " << media->header.size_a + media->header.size_b << " bytes" << std::endl;
+
+            sangoma_a.header.packet_id = ++sangoma_b.header.packet_id;
+            sangoma_a.header.lid = media->header.order_header.mcl_a;
+            sangoma_a.header.length = media->header.size_a;
+
+            if (comb)
+            {
+                sangoma_b.header.packet_id++;
+                sangoma_b.header.lid = media->header.order_header.mcl_b;
+                sangoma_b.header.length = media->header.size_b;
+            }
+
+            for (int i = 0; i < mmx::headers::SI_MAX_PYLOAD_SIZE; i++)
+            {
+
+                sangoma_a.data[i] = i < sangoma_a.header.length ? media->data[i << (int)comb] : 0;
+
+                if (comb)
+                {
+                    sangoma_b.data[i] = i < sangoma_b.header.length ? media->data[i * 2 + 1] : 0;
+                }
+
+            }
+
+            udpWrite(&sangoma_a);
+
+            if (comb)
+            {
+                udpWrite(&sangoma_b);
+            }
+
+        }
+        else
+        {
+            udpWrite(nullptr);
+        }
+
+        tcpWrite(media);
+
+        data_write_ = true;
+
+        return rc;
+
+    }
+
+    int Server::removeClients()
+    {
+        int rc = 0;
+
+        for (auto& p : remove_list_)
+        {
+
+            select_.Set(p->Socket().Handle());
+
+            clients_.remove(*p);
+
+            rc++;
+        }
+
+        remove_list_.clear();
+
+        return rc;
+    }
+
+    int Server::clear()
+    {
+        select_.Reset();
+
+
+        clients_.clear();
+
+        tcp_socket_.Close();
+        udp_socket_.Close();
+        pipe_.Close();
+    }
+
+
 }

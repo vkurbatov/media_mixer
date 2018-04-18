@@ -44,11 +44,12 @@ namespace mmx
             PipeOutputChannel(PipeOutputChannel&& channel);
 
             ~PipeOutputChannel() override;
-            int Dispatch() override;
-            int GetLeftTimeWork() const override;
+            int Dispatch(dispatch_flags_t dispatch, void* context = nullptr) override;
+            int QueryOrderTimeout() const override;
             int Close() override;
            //void Reset() override;
             bool IsDown() const override;
+            bool IsReadyData() const override;
 
             data::DataPacketWriter& GetWritter();
             unsigned char GetChannelId() const;

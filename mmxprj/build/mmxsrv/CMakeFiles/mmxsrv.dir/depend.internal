@@ -4,50 +4,53 @@
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/order645_2.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/si.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/ichannel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/io.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/portset.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/select.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/select_ex.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/socket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/dpsniffer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/istream.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/deffersock.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/deffwriter.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/iosockadp.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/timer.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/ichanneldispatcher.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/dpreader.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpreader.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/order645_2.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/si.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/ichannel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/io.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/pchannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/names.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/portset.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/select.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/select_ex.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/net/socket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/dpsniffer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/istream.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/deffersock.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/deffwriter.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/iosockadp.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/timer.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/ichanneldispatcher.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h

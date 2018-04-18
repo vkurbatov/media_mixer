@@ -61,7 +61,7 @@ namespace mmxmux
 
         void init();
         int getTimeouts();
-        void dispatchAll();
+        void dispatchAll(mmx::tools::dispatch_flags_t dispatch);
         void processInput();
         void timerWork();
         void processSangoma();

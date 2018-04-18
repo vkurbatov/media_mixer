@@ -7,6 +7,7 @@
 #include "logs/log.h"
 
 #include <sys/time.h>   // получение миллисекунд   
+#include <sys/stat.h>   // mkdir
 
 
 #define LOG_BUFFER_SIZE     8196L   // более чем достаточно
@@ -43,6 +44,7 @@ namespace mmx
 
             if (g_init)
             {
+
                 // проверим первый аргумент
 
                 if (filename == nullptr)
@@ -80,7 +82,9 @@ namespace mmx
                 {
                     // временно
 
-                    std::remove(g_filename);
+                    // std::remove(g_filename);
+
+                    mkdir("/var/log/mmx", 0777);
 
                     std::strcpy(g_filename, filename);
 

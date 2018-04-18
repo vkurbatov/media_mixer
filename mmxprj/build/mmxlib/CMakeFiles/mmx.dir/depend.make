@@ -110,6 +110,32 @@ mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmx
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+
 mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
@@ -162,6 +188,20 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxpr
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.h
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h

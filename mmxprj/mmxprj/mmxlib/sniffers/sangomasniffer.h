@@ -20,12 +20,12 @@ namespace mmx
                 SS_BAD
             }state_;
 
-            headers::SANGOMA_RAW_PACKET* sangoma_;
+            headers::SANGOMA_MEDIA_STREAM_PACKET* sangoma_;
 
             union
             {
-                headers::SANGOMA_RAW_PACKET  sangoma_pack_;
-                char raw_data[sizeof(headers::SANGOMA_RAW_PACKET)];
+                headers::SANGOMA_MEDIA_STREAM_PACKET  sangoma_pack_;
+                char raw_data[sizeof(headers::SANGOMA_MEDIA_STREAM_PACKET)];
             };
 
             int     saved_bytes_;
@@ -39,7 +39,7 @@ namespace mmx
             bool IsComplete() const override;
             bool IsBad() const override;
 
-            const headers::SANGOMA_RAW_PACKET* GetPacket();
+            const headers::SANGOMA_MEDIA_STREAM_PACKET* GetPacket();
 
         private:
 

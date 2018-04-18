@@ -107,8 +107,6 @@ list
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_client.h
-sangoma_client.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_client.h
 ichanneldispatcher.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/ichanneldispatcher.h
 net/socket.h
@@ -149,12 +147,16 @@ iostream
 -
 cstring
 -
+signal.h
+-
 mmxlib/logs/log.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
 mux.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
 fcntl.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/fcntl.h
+-
+netdb.h
+-
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp
 mediachannel.h
@@ -265,10 +267,6 @@ mediapool.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
 mediachannelpool.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/outputchannel.cpp
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sorm.cpp
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
 idpwriter.h

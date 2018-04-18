@@ -38,7 +38,7 @@ namespace mmx
             Close();
         }
 
-        int SangomaClient::Dispatch()
+        int SangomaClient::Dispatch(dispatch_flags_t dispatch, void* context)
         {
             int rc = 0;
 
@@ -82,7 +82,7 @@ namespace mmx
             return rc;
         }
 
-        int SangomaClient::GetLeftTimeWork() const
+        int SangomaClient::QueryOrderTimeout() const
         {
             return net::INFINITE_TIMEOUT;
         }
@@ -105,6 +105,12 @@ namespace mmx
         {
             return socket_.Handle() < 0;
         }
+
+        bool SangomaClient::IsReadyData() const
+        {
+            return query_ != nullptr;
+        }
+
 
         const headers::SANGOMA_PACKET* SangomaClient::GetQuery()
         {

@@ -1,8 +1,6 @@
 #ifndef _MMX_TOOLS_SANGOMA_CLIENT_H
 #define _MMX_TOOLS_SANGOMA_CLIENT_H
 
-#include "sangoma_client.h"
-
 #include "ichanneldispatcher.h"
 #include "net/socket.h"
 #include "net/select_ex.h"
@@ -39,10 +37,11 @@ namespace mmx
             SangomaClient(SangomaClient&& channel);
 
             ~SangomaClient() override;
-            int Dispatch() override;
-            int GetLeftTimeWork() const override;
+            int Dispatch(dispatch_flags_t dispatch, void* context = nullptr) override;
+            int QueryOrderTimeout() const override;
             int Close() override;
             bool IsDown() const override;
+            bool IsReadyData() const override;
 
             const headers::SANGOMA_PACKET* GetQuery();
             int PutAnswer(const headers::SANGOMA_PACKET& answer);
