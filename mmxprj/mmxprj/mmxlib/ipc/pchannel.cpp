@@ -17,10 +17,9 @@ namespace mmx
         PipeChannel::PipeChannel() :
             handle_(-1),
             mode_(0),
-            access_(0),
-            pipename_("\0")
+            access_(0)
         {
-
+            std::memset(pipename_, 0, sizeof(pipename_));
         }
 
         PipeChannel::PipeChannel(PipeChannel&& channel) :
