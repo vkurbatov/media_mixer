@@ -16,7 +16,7 @@ namespace mmx
             std::list<PipeOutputChannel>    channel_list_;
 
 
-            char                            pipe_name_prefix_[256];
+            char                            pipe_name_prefix_[MMX_PIPE_NAME_LEN];
 
         public:
 

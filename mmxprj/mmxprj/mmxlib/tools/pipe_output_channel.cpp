@@ -25,6 +25,7 @@ namespace mmx
                 std::sprintf(pipe_name_, pipe_name_prefix, channel);
             }
 
+            dp_writter_.BuildPacket(++pack_id_);
 
             timer_.Start(0);
         }

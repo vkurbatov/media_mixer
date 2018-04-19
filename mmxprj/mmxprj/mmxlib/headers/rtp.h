@@ -48,12 +48,15 @@ namespace mmx
         typedef struct _RTP_HEADER
         {
 
-            unsigned short  ver:2;              // версия протокола = 2
-            unsigned short  padding:1;          // применяется заполнение
-            unsigned short  extension:1;        // есть расширение заголовка
             unsigned short  csrc_count:4;       // количество CSRC
-            unsigned short  marker:1;           // маркировка прикладного профиля
+            unsigned short  extension:1;        // есть расширение заголовка
+            unsigned short  padding:1;          // применяется заполнение
+            unsigned short  ver:2;              // версия протокола = 2
+
             unsigned short  pyload_type:7;      // тип данных (PCMA = 0x08)
+            unsigned short  marker:1;           // маркировка прикладного профиля
+
+            unsigned short  packet_id;          // порядковый номер
             unsigned int    timestamp;          // метка времени (миллисекунды)
             unsigned int    ssrc;               // источник синхронизации
 

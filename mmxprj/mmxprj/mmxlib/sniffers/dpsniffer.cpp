@@ -98,7 +98,9 @@ namespace mmx
 
                 // проверяем по формальным признакам пакет
 
-                if (dp.header.magic == headers::DATA_PACK_MAGIC && dp.header.length <= size)
+                if (dp.header.magic == headers::DATA_PACK_MAGIC
+                        && dp.header.length <= size
+                        && DATA_PACK_TAIL(dp.header) == headers::DATA_PACK_MAGIC2)
                 {
 
                     //

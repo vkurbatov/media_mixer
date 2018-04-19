@@ -257,12 +257,14 @@ namespace mmxlst
             else
             {
 
-                int ret = rc;
+                int ret = 1;
 
-                while (ret > 0)
+                int off = 0;
+
+                while (ret > 0 && off < rc)
                 {
 
-                    ret = ip_sniffer_.PutStream(buffer_, ret);
+                    ret = ip_sniffer_.PutStream(buffer_ + off, rc - off);
 
 
                     if (ip_sniffer_.IsComplete())
@@ -274,10 +276,7 @@ namespace mmxlst
 
                     }
 
-                    if (ret > 0)
-                    {
-                        ret = rc - ret;
-                    }
+                    off += ret > 0 ? ret : 0;
 
                 }
 

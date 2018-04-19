@@ -29,7 +29,7 @@ namespace mmx
             data::DataPacketWriter      dp_writter_;
 
 
-            char                        pipe_name_[256];
+            char                        pipe_name_[MMX_PIPE_NAME_LEN];
 
             int                         interval_;
 

@@ -1,6 +1,8 @@
 #ifndef _MMX_HEADERS_DATA_PACK_H
 #define _MMX_HEADERS_DATA_PACK_H
 
+#define DATA_PACK_TAIL(dph)  (*(unsigned short*)((char*)(&dph) + (dph).length - 2))
+
 namespace mmx
 {
     namespace headers

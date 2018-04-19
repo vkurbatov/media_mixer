@@ -109,7 +109,9 @@ namespace mmx
 
                 block->header.block_id = ++data_->header.block_count;
                 rc = block->header.length;
-                data_->header.length += rc;               
+                data_->header.length += rc;
+
+                *(unsigned short*)((char*)block + block->header.length) = headers::DATA_PACK_MAGIC2;
 
                 query_ = false;
 

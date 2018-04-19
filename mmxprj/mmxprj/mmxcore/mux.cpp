@@ -19,7 +19,23 @@ namespace mmxmux
 
     void Mux::test()
     {
+        mmx::headers::SANGOMA_PROXY_INFO proxy;
+        mmx::headers::SANGOMA_SORM_INFO sorm;
 
+        proxy.source_a.address = config_.sgm_address;
+        proxy.source_a.port = 5062;
+
+        proxy.source_b = proxy.source_a;
+
+        sorm.call_id = 1;
+        sorm.channel_id = 3;
+        sorm.conn_param = 1;
+        sorm.mcl_a = 5;
+        sorm.mcl_b = 6;
+        sorm.object_id = 8;
+        sorm.sorm_id = 9;
+
+        media_channel_pool_.GetChannel(sorm, proxy);
     }
 
     int Mux::Execute()
@@ -28,6 +44,8 @@ namespace mmxmux
         int rc = 0;
 
         init();
+
+        test();
 
         while(1)
         {
@@ -70,6 +88,8 @@ namespace mmxmux
                 output_channel_pool_.GetChannel(i, select_, config_.interval);
             }
         }
+
+        dispatchAll(mmx::tools::DISPATCH_INIT);
     }
 
     void Mux::dispatchAll(mmx::tools::dispatch_flags_t dispatch)
@@ -156,7 +176,6 @@ namespace mmxmux
             for (auto& c : output_channel_pool_.GetChannels())
             {
                 c.Send();
-                c.GetWritter();
             }
 
             timer_.Start(config_.media_period);
@@ -165,18 +184,20 @@ namespace mmxmux
 
     void Mux::processInput()
     {
-        const void* data = input_channel_.Data();
+        const char* data = (const char*)input_channel_.Data();
         int size = input_channel_.Size();
 
         if (data != nullptr && size > 0)
         {
 
-            int ret = size;
+            int ret = 1;
 
-            while (ret > 0)
+            int off = 0;
+
+            while (ret > 0 && off < size)
             {
 
-                ret = dp_sniffer_.PutStream(data, ret);
+                ret = dp_sniffer_.PutStream(data + off, size - off);
 
 
                 if (dp_sniffer_.IsComplete())
@@ -213,12 +234,11 @@ namespace mmxmux
 
                 }
 
-                if (ret > 0)
-                {
-                    ret = size - ret;
-                }
+                off += ret > 0 ? ret : 0;
 
             }
+
+        input_channel_.Drop();
 
         }
     }

@@ -48,6 +48,8 @@ namespace mmx
 
                         if (len <= size)
                         {
+                            pyload_ = (char*)data + len;
+
                             pyload_size_ = size - len;
 
                             if (header_->padding != 0)
@@ -78,6 +80,7 @@ namespace mmx
                 ext_header_ = nullptr;
                 ext_data_ = nullptr;
                 size_ = pyload_size_ = 0;
+                pyload_ = nullptr;
             }
 
             return rc;

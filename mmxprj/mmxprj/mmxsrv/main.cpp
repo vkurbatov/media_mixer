@@ -25,7 +25,7 @@ static int parse_args(int argc, char* argv[], mmxsrv::SERVER_CONFIG& config, mmx
 
 void finish(int e_code)
 {
-    mmx::logs::logI("@\n%s Ver=%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, e_code);
+    mmx::logs::logI("@%s Ver=%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, e_code);
     mmx::logs::log_init();
     exit(e_code);
 }
@@ -101,7 +101,7 @@ int main(int argc, char* argv[])
 
         mmx::logs::log_init(log_file, DEFAULT_LEVEL_LOG, false);
 
-        mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
+        mmx::logs::logI("@%s Ver=%d.%d.%s Started!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
 
         mmxsrv::Server server(config);
 
@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
 
         rc = server.Execute();
 
-        mmx::logs::logI("@\n%s Ver=%d.%d.%s Stopped!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
+        mmx::logs::logI("@%s Ver=%d.%d.%s Stopped!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
 
         mmx::logs::log_init();
 
@@ -148,6 +148,7 @@ int parse_args(int argc, char* argv[], mmxsrv::SERVER_CONFIG& config, mmx::logs:
                 case 'h':
 
                     std::cout << "!!!HELP!!!!" << std::endl;
+
                     rc = 1;
 
                     break;
@@ -227,6 +228,12 @@ int parse_args(int argc, char* argv[], mmxsrv::SERVER_CONFIG& config, mmx::logs:
                         std::cout << "Error input ip-address" << std::endl;
                         rc = -EINVAL;
                     }
+
+                }
+                break;
+                case 's':
+                {
+                    config.pult = false;
 
                 }
                 break;

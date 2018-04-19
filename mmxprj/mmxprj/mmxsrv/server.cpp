@@ -2,10 +2,12 @@
 
 #include <cstring>
 
-#include <netdb.h>  // SOCK_RAW, IPPROTO_UDP
-#include <fcntl.h>  // O_NONBLOCK
+#include <iostream>
+
+#include <netdb.h>                  // SOCK_RAW, IPPROTO_UDP
+#include <fcntl.h>                  // O_NONBLOCK
 #include <errno.h>
-#include <sys/time.h>   // gettimeofday
+#include <sys/time.h>               // gettimeofday
 
 #include "mmxlib/logs/log.h"
 #include "mmxlib/names.h"
@@ -122,19 +124,20 @@ namespace mmxsrv
 
     void Server::processInput()
     {
-        const void* data = input_channel_.Data();
+        auto data = (const char*)input_channel_.Data();
         int size = input_channel_.Size();
 
         if (data != nullptr && size > 0)
         {
 
-            int ret = size;
+            int ret = 1;
 
-            while (ret > 0)
+            int off = 0;
+
+            while (ret > 0 && off < size)
             {
 
-                ret = dp_sniffer_.PutStream(data, ret);
-
+                ret = dp_sniffer_.PutStream(data + off, size - off);
 
                 if (dp_sniffer_.IsComplete())
                 {
@@ -152,6 +155,7 @@ namespace mmxsrv
                         while(block != nullptr)
                         {
 
+
                             if (block->header.length >= sizeof(mmx::headers::ORM_INFO_HEADER))
                             {
 
@@ -159,11 +163,14 @@ namespace mmxsrv
 
                                 if (config_.pult)
                                 {
-                                    std::memcpy(&orm_info_, &orm, block->header.length);
-                                    std::memset((char*)&orm_info_ + block->header.length,
+
+                                    int total_size = block->header.length - sizeof(block->header);
+
+                                    std::memcpy(&orm_info_, &orm, total_size);
+                                    std::memset((char*)&orm_info_ + total_size,
                                                 0x7F,
                                                 mmx::headers::ORDER_645_2_MAX_DATA_SIZE
-                                                - block->header.length);
+                                                - (total_size - sizeof(orm_info_.header)));
 
                                     for (auto& c : orm_server_.GetClients())
                                     {
@@ -174,8 +181,6 @@ namespace mmxsrv
                                 {
                                     sangoma_.PutData(orm);
                                 }
-
-
                             }
 
 
@@ -187,12 +192,11 @@ namespace mmxsrv
 
                 }
 
-                if (ret > 0)
-                {
-                    ret = size - ret;
-                }
+                off += ret > 0 ? ret : 0;
 
             }
+
+            input_channel_.Drop();
 
         }
     }

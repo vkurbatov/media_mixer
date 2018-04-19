@@ -92,7 +92,7 @@ namespace mmx
 
                             if (access_ != 0)
                             {
-                                ::unlink(name);
+                                //::unlink(name);
                                 access_ = 0;
                             }
                         }
@@ -173,7 +173,7 @@ namespace mmx
 
                     rc = ::read(handle_, msg, size);
 
-                    if (rc < 0)
+                    if (rc <= 0)
                     {
                         rc = -errno;
                     }

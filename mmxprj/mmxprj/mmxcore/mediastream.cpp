@@ -55,7 +55,7 @@ namespace mmxmux
     {
         int rc = 0;
 
-        mmx::sniffers::RTPPacketWrapper rtp(&media, media.header.length);
+        mmx::sniffers::RTPPacketWrapper rtp(&media.media, media.header.length);
 
         if (rtp.Header() != nullptr)
         {
@@ -77,6 +77,7 @@ namespace mmxmux
             sample.header.packet_id = ++pack_id_;
             sample.header.rtp_timestamp = rtp_header.timestamp;
             sample.header.timestamp = media.header.timestamp;
+
 
             std::memcpy(sample.media, rtp.Pyload(), rtp.PyloadSize());
 
