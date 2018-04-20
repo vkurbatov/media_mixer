@@ -63,6 +63,12 @@ set ( SOURCE_FILES
 	tools/orm_client.cpp
 	tools/sangoma_media_client.cpp
 	tools/template_tcp_server.tpp
+#	медиа
+	media/sorm.cpp
+	media/mediastream.cpp
+	media/sormpool.cpp
+	media/mediapool.cpp
+	media/jitterbuffer.cpp
 )
 
 set ( PRIVATE_HEADERS
@@ -126,6 +132,13 @@ set ( PRIVATE_HEADERS
 	tools/orm_client.h
 	tools/sangoma_media_client.h
 	tools/template_tcp_server.h
+#	медиа
+	media/ijitter.h
+	media/sorm.h
+	media/mediastream.h
+	media/sormpool.h
+	media/mediapool.h
+	media/jitterbuffer.h
 
 #	имена
 	names.h

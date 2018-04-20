@@ -329,30 +329,6 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp">
          <Option target="mmxcore"/>
       </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.cpp">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.cpp">
-         <Option target="mmxcore"/>
-      </Unit>
-      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h">
-         <Option target="mmxcore"/>
-      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp">
          <Option target="mmxcore"/>
       </Unit>
@@ -432,6 +408,39 @@
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/ijitter.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.h">
          <Option target="mmx"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/names.h">

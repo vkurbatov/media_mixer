@@ -8,10 +8,13 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpheader.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpreader.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sorm.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/dpsniffer.h
@@ -24,14 +27,13 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_server.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
@@ -42,35 +44,6 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
-mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
-mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
-mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.cpp
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
-mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/irtppacket.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/rtppacketwrapper.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.cpp
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/datapacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpreader.h
@@ -78,9 +51,12 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpheader.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpreader.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/media.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sorm.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/names.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select_ex.h
@@ -93,15 +69,14 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_client.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_server.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h

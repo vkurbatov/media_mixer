@@ -12,7 +12,7 @@ namespace mmxmux
         sangoma_(config.sgm_address, config.sgm_port, select_, config.interval),
         input_channel_(MMX_LISTENER_CHANNEL_PATTERN, config.channel_num, select_),
         output_channel_pool_(MMX_SERVER_CHANNEL_PATTERN),
-        media_channel_pool_(media_pool_, 10)
+        sorm_pool_(media_pool_, 10)
     {
         timer_.Start(config_.media_period);
     }
@@ -35,7 +35,7 @@ namespace mmxmux
         sorm.object_id = 8;
         sorm.sorm_id = 9;
 
-        media_channel_pool_.GetChannel(sorm, proxy);
+        sorm_pool_.GetChannel(sorm, proxy);
     }
 
     int Mux::Execute()
@@ -145,7 +145,7 @@ namespace mmxmux
     {
         if (timer_.IsEnable())
         {
-            for (auto& m : media_channel_pool_.GetChannels())
+            for (auto& m : sorm_pool_.GetChannels())
             {
                 auto channel = output_channel_pool_.GetChannel(m->GetOrmInfo().channel_id, select_, config_.interval);
 
@@ -285,11 +285,11 @@ namespace mmxmux
                             {
                                 if (query->header.type == mmx::headers::SI_START_PROXY)
                                 {
-                                    media_channel_pool_.GetChannel(query->q_proxy.sorm[i], query->q_proxy.proxy);
+                                    sorm_pool_.GetChannel(query->q_proxy.sorm[i], query->q_proxy.proxy);
                                 }
                                 else
                                 {
-                                    media_channel_pool_.Release(query->q_proxy.sorm[i]);
+                                    sorm_pool_.Release(query->q_proxy.sorm[i]);
                                 }
                             }
                         }

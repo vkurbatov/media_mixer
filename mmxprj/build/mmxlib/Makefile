@@ -287,6 +287,141 @@ logs/log.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.s
 .PHONY : logs/log.cpp.s
 
+media/jitterbuffer.o: media/jitterbuffer.cpp.o
+
+.PHONY : media/jitterbuffer.o
+
+# target to build an object file
+media/jitterbuffer.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o
+.PHONY : media/jitterbuffer.cpp.o
+
+media/jitterbuffer.i: media/jitterbuffer.cpp.i
+
+.PHONY : media/jitterbuffer.i
+
+# target to preprocess a source file
+media/jitterbuffer.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.i
+.PHONY : media/jitterbuffer.cpp.i
+
+media/jitterbuffer.s: media/jitterbuffer.cpp.s
+
+.PHONY : media/jitterbuffer.s
+
+# target to generate assembly for a file
+media/jitterbuffer.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.s
+.PHONY : media/jitterbuffer.cpp.s
+
+media/mediapool.o: media/mediapool.cpp.o
+
+.PHONY : media/mediapool.o
+
+# target to build an object file
+media/mediapool.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o
+.PHONY : media/mediapool.cpp.o
+
+media/mediapool.i: media/mediapool.cpp.i
+
+.PHONY : media/mediapool.i
+
+# target to preprocess a source file
+media/mediapool.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.i
+.PHONY : media/mediapool.cpp.i
+
+media/mediapool.s: media/mediapool.cpp.s
+
+.PHONY : media/mediapool.s
+
+# target to generate assembly for a file
+media/mediapool.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.s
+.PHONY : media/mediapool.cpp.s
+
+media/mediastream.o: media/mediastream.cpp.o
+
+.PHONY : media/mediastream.o
+
+# target to build an object file
+media/mediastream.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o
+.PHONY : media/mediastream.cpp.o
+
+media/mediastream.i: media/mediastream.cpp.i
+
+.PHONY : media/mediastream.i
+
+# target to preprocess a source file
+media/mediastream.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.i
+.PHONY : media/mediastream.cpp.i
+
+media/mediastream.s: media/mediastream.cpp.s
+
+.PHONY : media/mediastream.s
+
+# target to generate assembly for a file
+media/mediastream.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.s
+.PHONY : media/mediastream.cpp.s
+
+media/sorm.o: media/sorm.cpp.o
+
+.PHONY : media/sorm.o
+
+# target to build an object file
+media/sorm.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o
+.PHONY : media/sorm.cpp.o
+
+media/sorm.i: media/sorm.cpp.i
+
+.PHONY : media/sorm.i
+
+# target to preprocess a source file
+media/sorm.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.i
+.PHONY : media/sorm.cpp.i
+
+media/sorm.s: media/sorm.cpp.s
+
+.PHONY : media/sorm.s
+
+# target to generate assembly for a file
+media/sorm.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.s
+.PHONY : media/sorm.cpp.s
+
+media/sormpool.o: media/sormpool.cpp.o
+
+.PHONY : media/sormpool.o
+
+# target to build an object file
+media/sormpool.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o
+.PHONY : media/sormpool.cpp.o
+
+media/sormpool.i: media/sormpool.cpp.i
+
+.PHONY : media/sormpool.i
+
+# target to preprocess a source file
+media/sormpool.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.i
+.PHONY : media/sormpool.cpp.i
+
+media/sormpool.s: media/sormpool.cpp.s
+
+.PHONY : media/sormpool.s
+
+# target to generate assembly for a file
+media/sormpool.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.s
+.PHONY : media/sormpool.cpp.s
+
 net/portset.o: net/portset.cpp.o
 
 .PHONY : net/portset.o
@@ -962,6 +1097,21 @@ help:
 	@echo "... logs/log.o"
 	@echo "... logs/log.i"
 	@echo "... logs/log.s"
+	@echo "... media/jitterbuffer.o"
+	@echo "... media/jitterbuffer.i"
+	@echo "... media/jitterbuffer.s"
+	@echo "... media/mediapool.o"
+	@echo "... media/mediapool.i"
+	@echo "... media/mediapool.s"
+	@echo "... media/mediastream.o"
+	@echo "... media/mediastream.i"
+	@echo "... media/mediastream.s"
+	@echo "... media/sorm.o"
+	@echo "... media/sorm.i"
+	@echo "... media/sorm.s"
+	@echo "... media/sormpool.o"
+	@echo "... media/sormpool.i"
+	@echo "... media/sormpool.s"
 	@echo "... net/portset.o"
 	@echo "... net/portset.i"
 	@echo "... net/portset.s"

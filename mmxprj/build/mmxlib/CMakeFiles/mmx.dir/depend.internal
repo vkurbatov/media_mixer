@@ -31,6 +31,40 @@ mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o
 mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
+mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp
+mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.h
+mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
+mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.h
+mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.h
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h

@@ -15,8 +15,8 @@
 
 #include "mmxlib/sniffers/dpsniffer.h"
 
-#include "mediapool.h"
-#include "mediachannelpool.h"
+#include "mmxlib/media/mediapool.h"
+#include "mmxlib/media/sormpool.h"
 
 
 namespace mmxmux
@@ -38,8 +38,8 @@ namespace mmxmux
 
         MUX_CONFIG                          config_;
 
-        MediaPool                           media_pool_;
-        MediaChannelPool                    media_channel_pool_;
+        mmx::media::MediaPool               media_pool_;
+        mmx::media::SormPool                sorm_pool_;
 
         mmx::net::SelectExtension           select_;
 

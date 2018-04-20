@@ -29,6 +29,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/tools/orm_server.cpp.o"
   "CMakeFiles/mmx.dir/tools/orm_client.cpp.o"
   "CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
+  "CMakeFiles/mmx.dir/media/sorm.cpp.o"
+  "CMakeFiles/mmx.dir/media/mediastream.cpp.o"
+  "CMakeFiles/mmx.dir/media/sormpool.cpp.o"
+  "CMakeFiles/mmx.dir/media/mediapool.cpp.o"
+  "CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.pdb"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 )

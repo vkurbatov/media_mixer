@@ -5,10 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o"
-  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannel.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/mediachannel.cpp.o"
-  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediachannelpool.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/mediachannelpool.cpp.o"
-  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediapool.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/mediapool.cpp.o"
-  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mediastream.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/mediastream.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp" "/home/vkurbatov/work/mmxprj/build/mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -1,6 +1,8 @@
 #ifndef _MMX_HEADERS_MEDIA_H
 #define _MMX_HEADERS_MEDIA_H
 
+#include "rtp.h"
+
 namespace mmx
 {
     namespace headers
@@ -64,14 +66,10 @@ namespace mmx
 
             unsigned short  length;         // длина медиапакета
 
-            NET_PAIR        net_points;     // коммуникационная точка транзакции
+            //NET_PAIR        net_points;     // коммуникационная точка транзакции
 
             unsigned int    timestamp;      // метка времени (количество миллисекунд с начала суток)
-            unsigned int    rtp_timestamp;  // метка времени (метка времени RTP)
-
-            unsigned int    sample_id;      // ssrc RTP
-
-            unsigned short  media_type;     // тип медиаданных (PMCA, PMCU, G722 и т.д.)
+            RTP_HEADER      rtp_header;     // фиксированый заголовок rtp
 
         }MEDIA_SAMPLE_HEADER, *PMEDIA_SAMPLE_HEADER;
 
@@ -81,8 +79,6 @@ namespace mmx
             char                media[1];
 
         }MEDIA_SAMPLE, *PMEDIA_SAMPLE;
-
-
 
 #pragma pack(pop)
 
