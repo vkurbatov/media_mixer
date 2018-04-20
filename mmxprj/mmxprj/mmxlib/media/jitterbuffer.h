@@ -1,7 +1,9 @@
 #ifndef _MMX_MEDIA_JITTER_H
 #define _MMX_MEDIA_JITTER_H
 
-#include "headers/media.h"
+#include "sample.h"
+
+#include <vector>
 
 namespace mmx
 {
@@ -9,14 +11,20 @@ namespace mmx
     {
         class JitterBuffer
         {
-            int         width_;
+            int                     jitter_;
+            std::vector<Sample>     samples_;
+            int                     current_;
+
+
         public:
-            JitterBuffer(int width =  160);
+            JitterBuffer(int sample_width_ =  160);
+            JitterBuffer(JitterBuffer&& jitter_buffer);
             ~JitterBuffer();
 
-            int PutSample(const mmx::headers::MEDIA_DATA& media);
-            const mmx::headers::MEDIA_SAMPLE* GetSample() const;
+            int PutMedia(const headers::MEDIA_DATA& media);
+            const Sample* GetSample() const;
             void Clear();
+
         };
     }
 }

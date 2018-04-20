@@ -12,7 +12,7 @@ namespace mmx
         public:
             virtual ~IJitter() {}
 
-            virtual int PutSample(const mmx::headers::MEDIA_DATA& media) = 0;
+            virtual int PutSample(Sample&& sample) = 0;
             virtual const mmx::headers::MEDIA_SAMPLE* GetSample() const = 0;
             virtual void Clear() = 0;
         };

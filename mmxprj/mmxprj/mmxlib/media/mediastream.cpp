@@ -57,7 +57,7 @@ namespace mmx
         {
             int rc = 0;
 
-            mmx::sniffers::RTPPacketWrapper rtp(&media.media, media.header.length);
+            mmx::sniffers::RTPPacketWrapper rtp(&media.media, media.header.length - sizeof(media.header));
 
             if (rtp.Header() != nullptr)
             {

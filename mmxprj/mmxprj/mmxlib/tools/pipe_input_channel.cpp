@@ -146,7 +146,7 @@ namespace mmx
 
                         rc = pipe_.Read(data_.data() + read_bytes_, lost_bytes);
 
-                        if (rc >= 0)
+                        if (rc > 0)
                         {
                             read_bytes_ += rc;
                         }

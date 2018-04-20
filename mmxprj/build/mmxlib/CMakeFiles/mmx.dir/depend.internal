@@ -32,7 +32,12 @@ mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
@@ -44,6 +49,14 @@ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o

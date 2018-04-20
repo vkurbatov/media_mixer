@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o"

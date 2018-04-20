@@ -34,6 +34,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/media/sormpool.cpp.o"
   "CMakeFiles/mmx.dir/media/mediapool.cpp.o"
   "CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o"
+  "CMakeFiles/mmx.dir/media/sample.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.pdb"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 )

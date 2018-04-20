@@ -99,21 +99,21 @@ namespace mmxsrv
 
         int to = input_channel_.QueryOrderTimeout();
 
-        if (to >= 0 && to < rc)
+        if (to >= 0 && (to < rc || rc < 0))
         {
             rc = to;
         }
 
         to = orm_server_.QueryOrderTimeout();
 
-        if (to >= 0 && to < rc)
+        if (to >= 0 && (to < rc || rc < 0))
         {
             rc = to;
         }
 
         to = sangoma_.QueryOrderTimeout();
 
-        if (to >= 0 && to < rc)
+        if (to >= 0 && (to < rc || rc < 0))
         {
             rc = to;
         }

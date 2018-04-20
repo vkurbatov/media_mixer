@@ -28,7 +28,7 @@ namespace mmxmux
         proxy.source_b = proxy.source_a;
 
         sorm.call_id = 1;
-        sorm.channel_id = 3;
+        sorm.channel_id = 2;
         sorm.conn_param = 1;
         sorm.mcl_a = 5;
         sorm.mcl_b = 6;
@@ -116,7 +116,7 @@ namespace mmxmux
 
         int to = input_channel_.QueryOrderTimeout();
 
-        if (to >= 0 && to < rc)
+        if (to >= 0 && (to < rc || rc < 0))
         {
             rc = to;
         }
@@ -124,7 +124,7 @@ namespace mmxmux
         for (auto& o : output_channel_pool_.GetChannels())
         {
             to = o.QueryOrderTimeout();
-            if (to >= 0 && to < rc)
+            if (to >= 0 && (to < rc || rc < 0))
             {
                 rc = to;
             }
@@ -132,7 +132,7 @@ namespace mmxmux
 
         to = sangoma_.QueryOrderTimeout();
 
-        if (to >= 0 && to < rc)
+        if (to >= 0 && (to < rc || rc < 0))
         {
             rc = to;
         }
@@ -147,7 +147,7 @@ namespace mmxmux
         {
             for (auto& m : sorm_pool_.GetChannels())
             {
-                auto channel = output_channel_pool_.GetChannel(m->GetOrmInfo().channel_id, select_, config_.interval);
+                auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];//output_channel_pool_.GetChannel(m->GetOrmInfo().channel_id, select_, config_.interval);
 
                 if (channel != nullptr)
                 {

@@ -169,7 +169,6 @@ namespace mmx
 
                 if (msg != nullptr && size > 0)
                 {
-
                     rc = ::read(handle_, msg, size);
 
                     if (rc <= 0)

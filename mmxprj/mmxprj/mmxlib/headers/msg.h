@@ -16,18 +16,28 @@ namespace mmx
         
 			unsigned short	magic;			// обязательная сигнатура
 			unsigned short	msg;			// ID - сообщения (функции)
-			unsigned short	pac_lost;		// количество пакетов следующих за текущим 
+            unsigned short	pack_lost;		// количество пакетов следующих за текущим
 											// (0 - если однопакетная передача)
-			unsigned short	pac_id;			// уникальный идентификатор пакета в трансзакции 
+            unsigned short	pack_id;        // уникальный идентификатор пакета в трансзакции
 			unsigned short	ver:8;			// версия протокола
-			unsigned short	camp:8;			// совместимая версия для функции (0 - совпадает c ver)
-			unsigned short	length;			// размер данных пользователя
+            unsigned short	comp:8;			// совместимая версия для функции (0 - совпадает c ver)
+            unsigned short	length;			// размер данных пользователя + размер заголовка
 			unsigned char	reserved1[8];	// зарезервированно
-			int				any1;			// уточняющий параметр 1
-			int				any2;			// уточняющий параметр 2
+            union                           // уточняющие параметры
+            {
+                int         n_params[2];    //
+                short       s_params[4];	//
+                char        c_params[8];	//
+            };
 			
             
         }MSG_HEADER,*PMSG_HEADER;
+
+        typedef struct _MSG
+        {
+            MSG_HEADER  header;
+            char        data[1];
+        }MSG, *PMSG;
 
 #pragma pack(pop)
 

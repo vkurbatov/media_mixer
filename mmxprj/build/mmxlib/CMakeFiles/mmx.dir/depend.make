@@ -31,7 +31,12 @@ mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj
 mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp
 mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
+mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp
+mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
+mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
 
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
@@ -45,6 +50,14 @@ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/m
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.h
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
+
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
 
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h

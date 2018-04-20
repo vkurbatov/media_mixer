@@ -368,6 +368,33 @@ media/mediastream.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.s
 .PHONY : media/mediastream.cpp.s
 
+media/sample.o: media/sample.cpp.o
+
+.PHONY : media/sample.o
+
+# target to build an object file
+media/sample.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o
+.PHONY : media/sample.cpp.o
+
+media/sample.i: media/sample.cpp.i
+
+.PHONY : media/sample.i
+
+# target to preprocess a source file
+media/sample.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.i
+.PHONY : media/sample.cpp.i
+
+media/sample.s: media/sample.cpp.s
+
+.PHONY : media/sample.s
+
+# target to generate assembly for a file
+media/sample.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.s
+.PHONY : media/sample.cpp.s
+
 media/sorm.o: media/sorm.cpp.o
 
 .PHONY : media/sorm.o
@@ -1106,6 +1133,9 @@ help:
 	@echo "... media/mediastream.o"
 	@echo "... media/mediastream.i"
 	@echo "... media/mediastream.s"
+	@echo "... media/sample.o"
+	@echo "... media/sample.i"
+	@echo "... media/sample.s"
 	@echo "... media/sorm.o"
 	@echo "... media/sorm.i"
 	@echo "... media/sorm.s"

@@ -69,6 +69,7 @@ set ( SOURCE_FILES
 	media/sormpool.cpp
 	media/mediapool.cpp
 	media/jitterbuffer.cpp
+	media/sample.cpp
 )
 
 set ( PRIVATE_HEADERS
@@ -139,6 +140,8 @@ set ( PRIVATE_HEADERS
 	media/sormpool.h
 	media/mediapool.h
 	media/jitterbuffer.h
+	media/sample.h
+	media/isample.h
 
 #	имена
 	names.h
