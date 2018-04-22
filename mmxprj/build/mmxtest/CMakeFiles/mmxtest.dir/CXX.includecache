@@ -82,6 +82,16 @@ memory
 ichannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/ichannel.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/iaudiocodec.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/mixer.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/pcma.h
+iaudiocodec.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/iaudiocodec.h
+array
+-
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/isample.h
 headers/media.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/headers/media.h
@@ -332,6 +342,16 @@ cstring
 chrono
 -
 thread
+-
+iostream
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test9.cpp
+mmxlib/media/codecs/audio/pcma.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/media/codecs/audio/pcma.h
+mmxlib/media/codecs/audio/mixer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/media/codecs/audio/mixer.h
+cstring
 -
 iostream
 -

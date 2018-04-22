@@ -287,6 +287,60 @@ logs/log.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.s
 .PHONY : logs/log.cpp.s
 
+media/codecs/audio/mixer.o: media/codecs/audio/mixer.cpp.o
+
+.PHONY : media/codecs/audio/mixer.o
+
+# target to build an object file
+media/codecs/audio/mixer.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
+.PHONY : media/codecs/audio/mixer.cpp.o
+
+media/codecs/audio/mixer.i: media/codecs/audio/mixer.cpp.i
+
+.PHONY : media/codecs/audio/mixer.i
+
+# target to preprocess a source file
+media/codecs/audio/mixer.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.i
+.PHONY : media/codecs/audio/mixer.cpp.i
+
+media/codecs/audio/mixer.s: media/codecs/audio/mixer.cpp.s
+
+.PHONY : media/codecs/audio/mixer.s
+
+# target to generate assembly for a file
+media/codecs/audio/mixer.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.s
+.PHONY : media/codecs/audio/mixer.cpp.s
+
+media/codecs/audio/pcma.o: media/codecs/audio/pcma.cpp.o
+
+.PHONY : media/codecs/audio/pcma.o
+
+# target to build an object file
+media/codecs/audio/pcma.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o
+.PHONY : media/codecs/audio/pcma.cpp.o
+
+media/codecs/audio/pcma.i: media/codecs/audio/pcma.cpp.i
+
+.PHONY : media/codecs/audio/pcma.i
+
+# target to preprocess a source file
+media/codecs/audio/pcma.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.i
+.PHONY : media/codecs/audio/pcma.cpp.i
+
+media/codecs/audio/pcma.s: media/codecs/audio/pcma.cpp.s
+
+.PHONY : media/codecs/audio/pcma.s
+
+# target to generate assembly for a file
+media/codecs/audio/pcma.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.s
+.PHONY : media/codecs/audio/pcma.cpp.s
+
 media/jitterbuffer.o: media/jitterbuffer.cpp.o
 
 .PHONY : media/jitterbuffer.o
@@ -1124,6 +1178,12 @@ help:
 	@echo "... logs/log.o"
 	@echo "... logs/log.i"
 	@echo "... logs/log.s"
+	@echo "... media/codecs/audio/mixer.o"
+	@echo "... media/codecs/audio/mixer.i"
+	@echo "... media/codecs/audio/mixer.s"
+	@echo "... media/codecs/audio/pcma.o"
+	@echo "... media/codecs/audio/pcma.i"
+	@echo "... media/codecs/audio/pcma.s"
 	@echo "... media/jitterbuffer.o"
 	@echo "... media/jitterbuffer.i"
 	@echo "... media/jitterbuffer.s"

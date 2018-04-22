@@ -149,6 +149,21 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/iaudiocodec.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/ijitter.h">
          <Option target="mmx"/>
       </Unit>

@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmxtest.dir/test6.cpp.o"
   "CMakeFiles/mmxtest.dir/test7.cpp.o"
   "CMakeFiles/mmxtest.dir/test8.cpp.o"
+  "CMakeFiles/mmxtest.dir/test9.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/build/DEBUG/mmxtest.pdb"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/build/DEBUG/mmxtest"
 )

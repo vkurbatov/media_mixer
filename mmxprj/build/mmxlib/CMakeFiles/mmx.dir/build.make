@@ -921,6 +921,54 @@ mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o
 
 
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp > CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp -o CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o
+
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp > CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp -o CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
+
+
 # Object files for target mmx
 mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/logs/log.cpp.o" \
@@ -958,7 +1006,9 @@ mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/media/sormpool.cpp.o" \
 "CMakeFiles/mmx.dir/media/mediapool.cpp.o" \
 "CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o" \
-"CMakeFiles/mmx.dir/media/sample.cpp.o"
+"CMakeFiles/mmx.dir/media/sample.cpp.o" \
+"CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o" \
+"CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
 
 # External object files for target mmx
 mmx_EXTERNAL_OBJECTS =
@@ -999,9 +1049,11 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -P CMakeFiles/mmx.dir/cmake_clean_target.cmake
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmx.dir/link.txt --verbose=$(VERBOSE)
 
@@ -1046,6 +1098,8 @@ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.requires
 
 .PHONY : mmxlib/CMakeFiles/mmx.dir/requires
 

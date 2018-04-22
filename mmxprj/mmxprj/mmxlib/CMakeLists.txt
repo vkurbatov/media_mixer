@@ -70,6 +70,9 @@ set ( SOURCE_FILES
 	media/mediapool.cpp
 	media/jitterbuffer.cpp
 	media/sample.cpp
+	media/codecs/audio/pcma.cpp
+	media/codecs/audio/mixer.cpp
+#	media/codecs/audio/audiocodec.cpp
 )
 
 set ( PRIVATE_HEADERS
@@ -142,6 +145,10 @@ set ( PRIVATE_HEADERS
 	media/jitterbuffer.h
 	media/sample.h
 	media/isample.h
+	media/codecs/audio/pcma.h
+	media/codecs/audio/iaudiocodec.h
+	media/codecs/audio/mixer.h
+#	media/codecs/audio/audiocodec.cpp
 
 #	имена
 	names.h

@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp" "/home/vkurbatov/work/mmxprj/build/mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o"

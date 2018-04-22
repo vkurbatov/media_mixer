@@ -126,6 +126,26 @@ sys/stat.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/iaudiocodec.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
+mixer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp
+pcma.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.h
+errno.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.h
+iaudiocodec.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/iaudiocodec.h
+array
+-
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
 headers/media.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/headers/media.h
@@ -207,6 +227,10 @@ vector
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp
 sorm.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.h
+media/codecs/audio/mixer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/media/codecs/audio/mixer.h
+media/codecs/audio/pcma.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/media/codecs/audio/pcma.h
 cstring
 -
 

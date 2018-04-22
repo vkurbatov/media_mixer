@@ -80,3 +80,8 @@ mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/rtppacketwrapper.h
 mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test8.cpp
 
+mmxtest/CMakeFiles/mmxtest.dir/test9.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/iaudiocodec.h
+mmxtest/CMakeFiles/mmxtest.dir/test9.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/mixer.h
+mmxtest/CMakeFiles/mmxtest.dir/test9.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/pcma.h
+mmxtest/CMakeFiles/mmxtest.dir/test9.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test9.cpp
+

@@ -1,4 +1,6 @@
 #include "sorm.h"
+#include "media/codecs/audio/mixer.h"
+#include "media/codecs/audio/pcma.h"
 
 #include <cstring>
 
@@ -99,7 +101,7 @@ namespace mmx
 
             const mmx::headers::MEDIA_SAMPLE* media_samples[2] = { nullptr };
 
-            unsigned short sizes[2] = { 0 };
+            unsigned short size_arr[2] = { 0 };
 
             for (int i = 0; i < 2; i++) \
 
@@ -110,7 +112,7 @@ namespace mmx
 
                 if (media_samples[i] != nullptr)
                 {
-                    rc += sizes[i] = media_samples[i]->header.length;
+                    rc += size_arr[i] = media_samples[i]->header.length;
                 }
 
             }
@@ -125,29 +127,59 @@ namespace mmx
                 {
 
                     mmx::headers::ORM_INFO_PACKET& orm_info = *(mmx::headers::ORM_INFO_PACKET*)data;
-                    orm_info.header.size_a = sizes[0];
-                    orm_info.header.size_b = sizes[1];
+                    orm_info.header.size_a = size_arr[0];
+                    orm_info.header.size_b = size_arr[1];
 
                     orm_header_.order_header.block_number++;
                     orm_header_.order_header.packet_id++;
-                    orm_header_.order_header.conn_flag = (int)(sizes[0] == 0 && sizes[1] == 0);
+                    orm_header_.order_header.conn_flag = (int)(size_arr[0] == 0 && size_arr[1] == 0);
 
                     orm_info.header = orm_header_;
 
-                    auto size_max = sizes[0] > sizes[1] ? sizes[0] : sizes[1];
+                    auto size_max = size_arr[0] > size_arr[1] ? size_arr[0] : size_arr[1];
 
-                    for (int j = 0; j < 2; j++)
+                    if (orm_header_.order_header.mcl_a != orm_header_.order_header.mcl_b)
                     {
-                        int i = 0;
 
-                        for (i = 0;i < sizes[j]; i++)
+                        for (int j = 0; j < 2; j++)
                         {
-                            orm_info.data[i << 1 + j] = media_samples[j]->media[i];
+                            int i = 0;
+
+                            for (i = 0;i < size_arr[j]; i++)
+                            {
+                                orm_info.data[i << 1 + j] = media_samples[j]->media[i];
+                            }
+                            while (i < size_max)
+                            {
+                                orm_info.data[i++ << 1 + j] = 0x7F;
+                            }
                         }
+                    }
+                    else
+                    {
+                        auto size_min = size_arr[0] > size_arr[1] ? size_arr[1] : size_arr[0];
+
+                        int i = 0;
+                        for (;i < size_min; i++)
+                        {
+                            orm_info.data[i] = codecs::audio::PcmaCodec::Encode(
+                                codecs::audio::mixer(
+                                    codecs::audio::PcmaCodec::Decode(media_samples[0]->media[i]),
+                                    codecs::audio::PcmaCodec::Decode(media_samples[1]->media[i]),
+                                    70
+                                    )
+                                );
+                        }
+
+                        int j = (int)(size_arr[0] < size_arr[1]);
+
                         while (i < size_max)
                         {
-                            orm_info.data[i++ << 1 + j] = 0x7F;
+                            orm_info.data[i++] = media_samples[j]->media[i];
                         }
+
+                        orm_info.header.size_a = size_max;
+                        orm_info.header.size_b = 0;
                     }
 
                 }
