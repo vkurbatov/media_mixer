@@ -11,8 +11,11 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sample.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sorm.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
@@ -40,6 +43,7 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
@@ -53,8 +57,11 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediastream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sample.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sorm.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/names.h
@@ -83,6 +90,7 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h

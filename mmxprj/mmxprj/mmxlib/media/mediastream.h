@@ -5,6 +5,8 @@
 #include <vector>
 
 #include "headers/media.h"
+#include "sample.h"
+#include "jitterbuffer.h"
 
 namespace mmx
 {
@@ -13,7 +15,9 @@ namespace mmx
         class MediaPool;
         class MediaStream
         {
-            std::vector<char*> data_;
+
+            JitterBuffer    jitter_;
+
             unsigned short pack_id_;
             int ref_count_;
 
@@ -29,7 +33,7 @@ namespace mmx
             MediaStream& operator=(MediaStream&& mediastream);
 
             int PutSample(const mmx::headers::MEDIA_DATA& media);
-            const mmx::headers::MEDIA_SAMPLE* GetSample() const;
+            const headers::MEDIA_SAMPLE* GetSample() const;
             void Clear();
 
         };

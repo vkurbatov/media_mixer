@@ -70,3 +70,13 @@ mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o
 mmxtest/CMakeFiles/mmxtest.dir/test7.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test7.cpp
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/isample.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/jitterbuffer.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/sample.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/irtppacket.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/rtppacketwrapper.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test8.cpp

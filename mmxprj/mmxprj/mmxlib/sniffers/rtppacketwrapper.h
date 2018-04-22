@@ -7,7 +7,7 @@ namespace mmx
 {
     namespace sniffers
     {
-        class RTPPacketWrapper
+        class RTPPacketWrapper : public IRTPPacket
         {
             int     size_;
 
@@ -19,15 +19,15 @@ namespace mmx
 
         public:
 
-            RTPPacketWrapper(const void* data, int size);
+            RTPPacketWrapper(const void* data = nullptr, int size = 0);
             bool Load(const void* data, int size);
 
-            const headers::RTP_HEADER* Header() const;
-            const headers::RTP_EXTENSION_HEADER* ExtensionHeader() const;
-            const void* ExtensionData() const;
-            const void* Pyload() const;
-            int PyloadSize() const;
-            int Size() const;
+            const headers::RTP_HEADER* Header() const override;
+            const headers::RTP_EXTENSION_HEADER* ExtensionHeader() const override;
+            const void* ExtensionData() const override;
+            const void* Pyload() const override;
+            int PyloadSize() const override;
+            int Size() const override;
 
         };
     }

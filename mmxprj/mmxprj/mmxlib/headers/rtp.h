@@ -8,7 +8,7 @@ namespace mmx
 
         static const unsigned short RTP_VERSION = 2;
 
-        enum MEDIA_TYPES : unsigned char
+        enum media_profile_t : unsigned char
         {
 
             MA_PCMU     = 0,
@@ -43,7 +43,36 @@ namespace mmx
         };
 
 
+
 #pragma pack(push, 1)
+
+        typedef struct _MEDIA_PROFILE_INFO
+        {
+            int             frequency;
+            unsigned char   cnannels;
+            short           frame_size;
+            short           default_frame_size;
+        }MEDIA_PROFILE_INFO, *PMEDIA_PROFILE_INFO;
+
+        static const MEDIA_PROFILE_INFO media_profiles_info_table[] =
+        {
+/* 0  */    { 8000,     1,      -1,     20},
+/* 1  */    { 8000,     1,      -1,     20},
+/* 2  */    { 8000,     1,      -1,     20},
+/* 3  */    { 8000,     1,      -1,     20},
+/* 4  */    { 8000,     1,      30,     30},
+/* 5  */    { 8000,     1,      -1,     20},
+/* 6  */    {16000,     1,      -1,     20},
+/* 7  */    { 8000,     1,      -1,     20},
+/* 8  */    { 8000,     1,      -1,     20},
+/* 9  */    { 8000,     1,      -1,     20},
+/* 10 */    {44100,     2,      -1,     20},
+/* 11 */    {44100,     1,      -1,     20},
+/* 12 */    { 8000,     2,      20,     20},
+/* 13 */    {   -1,     0,      -1,     01},
+        };
+
+        static const int MEDIA_PROFILE_COUNT = sizeof(media_profiles_info_table) / sizeof(MEDIA_PROFILE_INFO) - 1;
 
         typedef struct _RTP_HEADER
         {

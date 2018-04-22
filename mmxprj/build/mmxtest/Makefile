@@ -341,6 +341,33 @@ test7.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/test7.cpp.s
 .PHONY : test7.cpp.s
 
+test8.o: test8.cpp.o
+
+.PHONY : test8.o
+
+# target to build an object file
+test8.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o
+.PHONY : test8.cpp.o
+
+test8.i: test8.cpp.i
+
+.PHONY : test8.i
+
+# target to preprocess a source file
+test8.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.i
+.PHONY : test8.cpp.i
+
+test8.s: test8.cpp.s
+
+.PHONY : test8.s
+
+# target to generate assembly for a file
+test8.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.s
+.PHONY : test8.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -374,6 +401,9 @@ help:
 	@echo "... test7.o"
 	@echo "... test7.i"
 	@echo "... test7.s"
+	@echo "... test8.o"
+	@echo "... test8.i"
+	@echo "... test8.s"
 .PHONY : help
 
 

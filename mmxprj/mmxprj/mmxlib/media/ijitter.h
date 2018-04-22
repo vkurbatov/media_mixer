@@ -14,7 +14,7 @@ namespace mmx
 
             virtual int PutSample(Sample&& sample) = 0;
             virtual const mmx::headers::MEDIA_SAMPLE* GetSample() const = 0;
-            virtual void Clear() = 0;
+            virtual void Drop() = 0;
         };
     }
 }

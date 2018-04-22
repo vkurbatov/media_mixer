@@ -10,21 +10,21 @@ namespace mmx
     namespace media
     {
         MediaStream::MediaStream(unsigned int address, unsigned short port) :
-            data_(0),
             pack_id_(0),
             ref_count_(0),
             address_(address),
-            port_(port)
+            port_(port),
+            jitter_(20,8000,6)
         {
 
         }
 
         MediaStream::MediaStream(MediaStream&& mediastream) :
-            data_(std::move(mediastream.data_)),
             pack_id_(mediastream.pack_id_),
             ref_count_(mediastream.ref_count_),
             address_(mediastream.address_),
-            port_(mediastream.port_)
+            port_(mediastream.port_),
+            jitter_(std::move(mediastream.jitter_))
         {
 
             mediastream.pack_id_ = 0;
@@ -38,11 +38,11 @@ namespace mmx
         {
             if (this != &mediastream)
             {
-                data_ = std::move(mediastream.data_);
                 pack_id_ = mediastream.pack_id_;
                 ref_count_ = mediastream.ref_count_;
                 address_ = mediastream.address_;
                 port_ = mediastream.port_;
+                jitter_ = std::move(mediastream.jitter_);
 
                 mediastream.pack_id_ = 0;
                 mediastream.ref_count_ = 0;
@@ -61,59 +61,25 @@ namespace mmx
 
             if (rtp.Header() != nullptr)
             {
-                int total_size = rtp.PyloadSize() + sizeof(mmx::headers::MEDIA_SAMPLE_HEADER);
 
-                const mmx::headers::RTP_HEADER& rtp_header = *rtp.Header();
-
-                if (total_size > data_.size())
-                {
-                    data_.resize(total_size);
-                }
-
-                mmx::headers::MEDIA_SAMPLE& sample = *(mmx::headers::MEDIA_SAMPLE*)data_.data();
-
-                sample.header.magic = mmx::headers::MEDIA_SAMPLE_MAGIC;
-                sample.header.length = (unsigned short)total_size;
-                sample.header.rtp_header = rtp_header;
-                //sample.header.net_points = media.header.net_points;
-                sample.header.packet_id = ++pack_id_;
-                sample.header.timestamp = media.header.timestamp;
-
-
-                std::memcpy(sample.media, rtp.Pyload(), rtp.PyloadSize());
-
-                rc = total_size;
+                rc = jitter_.PutMedia(rtp, ++pack_id_, media.header.timestamp);
 
             }
 
             return rc;
         }
 
-        const mmx::headers::MEDIA_SAMPLE* MediaStream::GetSample() const
+        const headers::MEDIA_SAMPLE* MediaStream::GetSample() const
         {
 
-            const mmx::headers::MEDIA_SAMPLE* rc = nullptr;
-
-            if (data_.size() >= sizeof(mmx::headers::MEDIA_SAMPLE))
-            {
-                rc = (const mmx::headers::MEDIA_SAMPLE*)data_.data();
-
-                if (rc->header.length > data_.size())
-                {
-
-                    rc = nullptr;
-
-                }
-
-            }
-
-            return rc;
+            auto smpl = jitter_.GetSample();
+            return smpl != nullptr ? smpl->GetSample() : nullptr;
 
         }
 
         void MediaStream::Clear()
         {
-            data_.clear();
+            jitter_.Drop();
         }
     }
 }

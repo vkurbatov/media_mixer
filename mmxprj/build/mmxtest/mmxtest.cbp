@@ -103,6 +103,9 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test7.cpp">
          <Option target="mmxtest"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test8.cpp">
+         <Option target="mmxtest"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>

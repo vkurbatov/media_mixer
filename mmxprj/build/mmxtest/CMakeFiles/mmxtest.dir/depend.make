@@ -70,3 +70,13 @@ mmxtest/CMakeFiles/mmxtest.dir/test6.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxtest/CMakeFiles/mmxtest.dir/test7.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/headers/order645_2.h
 mmxtest/CMakeFiles/mmxtest.dir/test7.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test7.cpp
 
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/isample.h
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/jitterbuffer.h
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/sample.h
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/irtppacket.h
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/rtppacketwrapper.h
+mmxtest/CMakeFiles/mmxtest.dir/test8.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test8.cpp
+

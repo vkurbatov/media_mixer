@@ -10,8 +10,11 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
+mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
+mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediastream.h
+mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sample.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sorm.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
@@ -39,6 +42,7 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
@@ -52,8 +56,11 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmx
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediastream.h
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sample.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sorm.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/names.h
@@ -82,6 +89,7 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmx
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h

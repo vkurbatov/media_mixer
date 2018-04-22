@@ -16,6 +16,7 @@ namespace mmx
             virtual const void* ExtensionData() const = 0;
             virtual const void* Pyload() const = 0;
             virtual int Size() const = 0;
+            virtual int PyloadSize() const = 0;
 
         };
     }

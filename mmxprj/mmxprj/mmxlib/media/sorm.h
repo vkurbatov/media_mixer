@@ -18,8 +18,7 @@ namespace mmx
 
             mmx::headers::ORM_INFO_HEADER orm_header_;
 
-            const MediaStream* stream_a_;
-            const MediaStream* stream_b_;
+            const MediaStream* streams_[2];
 
             MediaPool* media_pool_;
 

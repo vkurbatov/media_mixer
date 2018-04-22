@@ -9,6 +9,7 @@ namespace mmx
 {
     namespace media
     {
+
         class Sample : public ISample
         {
 
@@ -19,14 +20,17 @@ namespace mmx
             Sample();
             Sample(Sample&& sample);
             Sample& operator= (Sample&& sample);
-            ~Sample() override;
+            ~Sample();
 
             Sample& Swap(Sample& sample);
+            static int GetCurrentTimestamp();
+            static int GetDeltaTime(int timestamp);
+            static const headers::MEDIA_PROFILE_INFO& GetMediaInfo(headers::media_profile_t media_profile);
 
             // ISample
-            int PutSample(const void* rtp_packet, int size, unsigned short pack_id, int timestamp = -1) override;
-            const headers::MEDIA_SAMPLE* GetSample() override;
-            void Drop() override;
+            int PutSample(const sniffers::IRTPPacket& rtp, unsigned short pack_id, int timestamp = -1) override;
+            const headers::MEDIA_SAMPLE* GetSample() const override;
+            void Drop(int timestamp = -1) override;
         };
     }
 }

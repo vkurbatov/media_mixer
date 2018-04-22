@@ -7,26 +7,24 @@ namespace mmx
     namespace media
     {
         Sorm::Sorm() :
-            media_pool_(nullptr),
-            stream_a_(nullptr),
-            stream_b_(nullptr)
+            media_pool_(nullptr)
         {
             std::memset(&sorm_, 0, sizeof(sorm_));
             std::memset(&orm_header_, 0, sizeof(orm_header_));
-
+            streams_[0] = nullptr;
+            streams_[1] = nullptr;
         }
 
         Sorm::Sorm(Sorm&& channel) :
             media_pool_(channel.media_pool_),
-            stream_a_(channel.stream_a_),
-            stream_b_(channel.stream_b_),
             sorm_(channel.sorm_),
             orm_header_(channel.orm_header_)
         {
-
+            streams_[0] = channel.streams_[0];
+            streams_[1] = channel.streams_[1];
             channel.media_pool_ = nullptr;
-            channel.stream_a_ = nullptr;
-            channel.stream_b_ = nullptr;
+            channel.streams_[0] = nullptr;
+            channel.streams_[1] = nullptr;
             std::memset(&sorm_, 0, sizeof(sorm_));
             std::memset(&orm_header_, 0, sizeof(orm_header_));
 
@@ -35,14 +33,14 @@ namespace mmx
         Sorm& Sorm::operator=(Sorm&& channel)
         {
             media_pool_ = channel.media_pool_;
-            stream_a_ = channel.stream_a_;
-            stream_b_ = channel.stream_b_;
+            streams_[0] = channel.streams_[0];
+            streams_[1] = channel.streams_[1];
             sorm_ = channel.sorm_;
             orm_header_ = channel.orm_header_;
 
             channel.media_pool_ = nullptr;
-            channel.stream_a_ = nullptr;
-            channel.stream_b_ = nullptr;
+            channel.streams_[0] = nullptr;
+            channel.streams_[1] = nullptr;
             std::memset(&sorm_, 0, sizeof(sorm_));
             std::memset(&orm_header_, 0, sizeof(orm_header_));
         }
@@ -65,26 +63,23 @@ namespace mmx
 
                 // сперва освободим имеющиеся медиапотоки
 
-                if (stream_a_ != nullptr)
+                for (auto& s : streams_)
                 {
-                    media_pool_->Release(stream_a_);
-                    stream_a_ = nullptr;
-                }
-
-                if (stream_b_ != nullptr)
-                {
-                    media_pool_->Release(stream_b_);
-                    stream_b_ = nullptr;
+                    if (s != nullptr)
+                    {
+                        media_pool_->Release(s);
+                        s = nullptr;
+                    }
                 }
 
                 // если проксирование не задано, то вызов был для освобождения ресурсов
 
                 if (proxy != nullptr)
                 {
-                    stream_a_ = media_pool_->GetStream(proxy->source_a.address, proxy->source_a.port);
-                    stream_b_ = media_pool_->GetStream(proxy->source_a.address, proxy->source_b.port);
+                    streams_[0] = media_pool_->GetStream(proxy->source_a.address, proxy->source_a.port);
+                    streams_[1] = media_pool_->GetStream(proxy->source_a.address, proxy->source_b.port);
 
-                    rc = (int)(stream_a_ != nullptr) + (stream_b_ != nullptr);
+                    rc = (int)(streams_[0] != nullptr) + (streams_[1] != nullptr);
                 }
             }
 
@@ -102,24 +97,27 @@ namespace mmx
         {
             int rc = 0;
 
-            const mmx::headers::MEDIA_SAMPLE* sample_a = nullptr;
-            const mmx::headers::MEDIA_SAMPLE* sample_b = nullptr;
+            const mmx::headers::MEDIA_SAMPLE* media_samples[2] = { nullptr };
 
-            unsigned short size_a = 0, size_b = 0;
+            unsigned short sizes[2] = { 0 };
 
-            if (stream_a_ != nullptr && (sample_a = stream_a_->GetSample()) != nullptr)
+            for (int i = 0; i < 2; i++) \
+
             {
-                size_a = sample_a->header.length;
-            }
 
-            if (stream_b_ != nullptr && (sample_b = stream_b_->GetSample()) != nullptr)
-            {
-                size_b = sample_b->header.length;
+                media_samples[i] = (streams_[i] != nullptr) ?
+                            streams_[i]->GetSample() : nullptr;
+
+                if (media_samples[i] != nullptr)
+                {
+                    rc += sizes[i] = media_samples[i]->header.length;
+                }
+
             }
 
             // если не задан буффер, то просто возвращаем количество необходимых байт
 
-            rc = size_a + size_b + (int)sizeof(mmx::headers::ORM_INFO_HEADER);
+            rc += (int)sizeof(mmx::headers::ORM_INFO_HEADER);
 
             if (data != nullptr)
             {
@@ -127,39 +125,29 @@ namespace mmx
                 {
 
                     mmx::headers::ORM_INFO_PACKET& orm_info = *(mmx::headers::ORM_INFO_PACKET*)data;
-                    orm_info.header.size_a = size_a;
-                    orm_info.header.size_b = size_b;
+                    orm_info.header.size_a = sizes[0];
+                    orm_info.header.size_b = sizes[1];
 
                     orm_header_.order_header.block_number++;
                     orm_header_.order_header.packet_id++;
-                    orm_header_.order_header.conn_flag = (int)(size_a == 0 && size_b == 0);
+                    orm_header_.order_header.conn_flag = (int)(sizes[0] == 0 && sizes[1] == 0);
 
                     orm_info.header = orm_header_;
 
-                    auto size_max = size_a > size_b ? size_a : size_b;
+                    auto size_max = sizes[0] > sizes[1] ? sizes[0] : sizes[1];
 
-                    int i = 0;
-
-                    // КСЛ A
-
-                    for (i = 0;i < size_a; i++)
+                    for (int j = 0; j < 2; j++)
                     {
-                        orm_info.data[i << 1] = sample_a->media[i];
-                    }
-                    while (i < size_max)
-                    {
-                        orm_info.data[i++ << 1] = 0x7F;
-                    }
+                        int i = 0;
 
-                    // КСЛ B
-
-                    for (i = 0;i < size_b; i++)
-                    {
-                        orm_info.data[i << 1 + 1] = sample_b->media[i];
-                    }
-                    while (i < size_max)
-                    {
-                        orm_info.data[i++ << 1 + 1] = 0x7F;
+                        for (i = 0;i < sizes[j]; i++)
+                        {
+                            orm_info.data[i << 1 + j] = media_samples[j]->media[i];
+                        }
+                        while (i < size_max)
+                        {
+                            orm_info.data[i++ << 1 + j] = 0x7F;
+                        }
                     }
 
                 }

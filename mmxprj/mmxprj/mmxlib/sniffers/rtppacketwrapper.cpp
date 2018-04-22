@@ -31,7 +31,7 @@ namespace mmx
                 {
                     // размер заголовка
 
-                    int len = (int)sizeof(headers::PRTP_HEADER) + header_->csrc_count * 4;
+                    int len = (int)sizeof(headers::RTP_HEADER) + header_->csrc_count * 4;
 
                     if (len <= size)
                     {
