@@ -24,6 +24,7 @@ namespace mmxmux
         mmx::headers::SANGOMA_PROXY_INFO proxy;
         mmx::headers::SANGOMA_SORM_INFO sorm;
 
+
         proxy.source_a.address = config_.sgm_address;
         proxy.source_a.port = 5062;
 
@@ -47,7 +48,7 @@ namespace mmxmux
 
         init();
 
-        test();
+        //test();
 
         while(1)
         {
