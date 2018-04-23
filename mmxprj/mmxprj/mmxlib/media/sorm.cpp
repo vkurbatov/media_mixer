@@ -79,14 +79,14 @@ namespace mmx
                 if (proxy != nullptr)
                 {
                     streams_[0] = media_pool_->GetStream(proxy->source_a.address, proxy->source_a.port);
-                    streams_[1] = media_pool_->GetStream(proxy->source_a.address, proxy->source_b.port);
+                    streams_[1] = media_pool_->GetStream(proxy->source_b.address, proxy->source_b.port);
 
                     rc = (int)(streams_[0] != nullptr) + (streams_[1] != nullptr);
                 }
             }
 
 
-            return 0;
+            return rc;
         }
 
         const mmx::headers::SANGOMA_SORM_INFO& Sorm::GetOrmInfo() const
@@ -97,6 +97,9 @@ namespace mmx
 
         int Sorm::OrmInfoPack(void* data, int size)
         {
+
+            static int err_counter = 0;
+
             int rc = 0;
 
             const mmx::headers::MEDIA_SAMPLE* media_samples[2] = { nullptr };
@@ -137,6 +140,11 @@ namespace mmx
                     orm_info.header = orm_header_;
 
                     auto size_max = size_arr[0] > size_arr[1] ? size_arr[0] : size_arr[1];
+
+                    if (size_arr[0] != size_arr[1] || size_max == 0)
+                    {
+                           err_counter++;
+                    }
 
                     if (orm_header_.order_header.mcl_a != orm_header_.order_header.mcl_b)
                     {

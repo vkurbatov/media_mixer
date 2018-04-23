@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
 
     config.channel_num = 2;
     config.interval = DEFAULT_INTERVAL;
-    config.media_period = 160;
+    config.media_period = 20;
     config.sgm_address = INADDR_ANY;
     config.sgm_port = DEFAULT_BASE_PORT;
     //config.channels[0] |= 1 << 1;

@@ -28,7 +28,7 @@ namespace mmxmux
         proxy.source_b = proxy.source_a;
 
         sorm.call_id = 1;
-        sorm.channel_id = 2;
+        sorm.channel_id = 1;
         sorm.conn_param = 1;
         sorm.mcl_a = 5;
         sorm.mcl_b = 6;

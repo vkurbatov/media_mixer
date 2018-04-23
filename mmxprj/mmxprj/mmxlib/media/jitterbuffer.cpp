@@ -71,8 +71,10 @@ namespace mmx
                 {
                     Drop();
                     ssrc_ = rtp_header.ssrc;
-                    ts_bias_ = (idx - ((timestamp / frame_size_) % size) + size) % size;
+
                 }
+
+                ts_bias_ = (idx - ((timestamp / frame_size_) % size) + size) % size;
 
                 rc = samples_[idx].PutSample(rtp, pack_id, timestamp);
 
@@ -88,7 +90,7 @@ namespace mmx
 
             if (timestamp < 0)
             {
-                timestamp = (Sample::GetCurrentTimestamp() - (frame_size_ * samples_.size())) % 86400000;
+                timestamp = (Sample::GetCurrentTimestamp() - (frame_size_ * (samples_.size() + 1))) % 86400000;
             }
 
             if (ts_bias_ >= 0)

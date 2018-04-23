@@ -53,16 +53,16 @@ namespace mmxtest
         for (int i = 0; i < SAMPLE_COUNT; i++)
         {
 
-            int j = i % 2 == 0 ? i + 1 : i - 1;
+            //int j = i % 2 == 0 ? i + 1 : i - 1;
 
-            //int j = i;
+            int j = i;
 
             mmx::sniffers::RTPPacketWrapper rtp(rtp_packets[j].raw, sizeof(rtp_packets[j].raw));
 
             jitter.PutMedia(rtp, 1001 + j, timestamp + i * 20);
         }
 
-        jitter.Drop(timestamp + 20);
+        //jitter.Drop(timestamp + 20);
 
         for (int i = 0; i < SAMPLE_COUNT; i++)
         {
