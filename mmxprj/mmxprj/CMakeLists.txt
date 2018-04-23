@@ -27,3 +27,9 @@ add_subdirectory(
 add_subdirectory(
 		mmxtest
 )
+
+#add_custom_target(${PROJECT_NAME}_copy_bin
+#				COMMAND ${CMAKE_COMMAND} -E copy /home/vkurbatov/1.txt /home/vkurbatov/2.txt
+#				)
+
+#)

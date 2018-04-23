@@ -167,6 +167,5 @@ add_library( ${PROJECT_NAME}
 	${PRIVATE_HEADERS} 
 	${SOURCE_FILES} )
 
-
 target_link_libraries(${PROJECT_NAME} ${ADDITIONAL_LIBRARIES})
 
