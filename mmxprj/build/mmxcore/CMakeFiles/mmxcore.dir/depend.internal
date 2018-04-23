@@ -57,6 +57,7 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h

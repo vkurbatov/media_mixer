@@ -72,6 +72,7 @@ namespace mmx
         // ISample
         int Sample::PutSample(const sniffers::IRTPPacket& rtp, unsigned short pack_id, int timestamp)
         {
+
             int rc = -EBADMSG;
 
             if (rtp.Header() != nullptr && rtp.Pyload() != nullptr)
@@ -102,6 +103,10 @@ namespace mmx
                 std::memcpy(sample.media, rtp.Pyload(), rtp.PyloadSize());
 
             }
+            else
+            {
+                is_valid_ = false;
+            }
             is_valid_ = rc > 0;
 
             return rc;
@@ -109,6 +114,13 @@ namespace mmx
 
         const headers::MEDIA_SAMPLE* Sample::GetSample() const
         {
+            static int cnt = 0;
+
+            if (is_valid_ == false)
+            {
+                 cnt++;
+            }
+
             return is_valid_
                     ? (const headers::MEDIA_SAMPLE*)data_.data()
                     : nullptr;

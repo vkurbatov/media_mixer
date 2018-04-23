@@ -43,6 +43,7 @@ namespace mmxlst
         unsigned char   channel_;
 
         unsigned short pack_id_;
+        unsigned short media_pack_id_;
 
         char buffer_[mmx::sniffers::DEFAULT_MTU_SIZE * 10];
 

@@ -1,6 +1,8 @@
 #include "mux.h"
 #include "mmxlib/names.h"
 
+#include "mmxlib/logs/log.h"
+
 #include <cstring>
 
 
@@ -187,6 +189,8 @@ namespace mmxmux
         const char* data = (const char*)input_channel_.Data();
         int size = input_channel_.Size();
 
+
+
         if (data != nullptr && size > 0)
         {
 
@@ -216,8 +220,9 @@ namespace mmxmux
                         while(block != nullptr)
                         {
 
-                            mmx::headers::MEDIA_DATA& media = *(mmx::headers::MEDIA_DATA*)block->data;
+                            //mmx::logs::logI("@Recieved %d bytes from [%d:%d]", block->header.length - sizeof(block->header), dp->header.pack_id, block->header.block_id);
 
+                            mmx::headers::MEDIA_DATA& media = *(mmx::headers::MEDIA_DATA*)block->data;
 
                             auto stream = media_pool_.FindStream(media.header.net_points.destination.address, media.header.net_points.destination.port);
 

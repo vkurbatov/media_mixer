@@ -1,6 +1,7 @@
 #include "jitterbuffer.h"
 
 #include <cstring>
+#include <netdb.h>  // ::htonl
 
 namespace mmx
 {
@@ -56,11 +57,12 @@ namespace mmx
             if (rtp.Header()!= nullptr)
             {
                 const headers::RTP_HEADER& rtp_header = *rtp.Header();
+
                 int size = samples_.size();
 
                 int dts = ((int)frame_size_ * (int)freq_) / 1000;
 
-                int idx = (rtp_header.timestamp / dts) % size;
+                int idx = (::htonl(rtp_header.timestamp) / dts) % size;
 
                 if (timestamp < 0)
                 {

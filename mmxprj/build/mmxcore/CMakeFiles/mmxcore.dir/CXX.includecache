@@ -223,6 +223,8 @@ mux.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
 mmxlib/names.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/names.h
+mmxlib/logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
 cstring
 -
 

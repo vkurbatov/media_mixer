@@ -115,7 +115,7 @@ namespace mmx
 
                 if (media_samples[i] != nullptr)
                 {
-                    rc += size_arr[i] = media_samples[i]->header.length;
+                    rc += size_arr[i] = media_samples[i]->header.length - sizeof(media_samples[i]->header);
                 }
 
             }
@@ -155,11 +155,11 @@ namespace mmx
 
                             for (i = 0;i < size_arr[j]; i++)
                             {
-                                orm_info.data[i << 1 + j] = media_samples[j]->media[i];
+                                orm_info.data[(i << 1) + j] = media_samples[j]->media[i];
                             }
                             while (i < size_max)
                             {
-                                orm_info.data[i++ << 1 + j] = 0x7F;
+                                orm_info.data[(i++ << 1) + j] = 0x7F;
                             }
                         }
                     }

@@ -28,6 +28,7 @@ namespace mmxlst
         datapack_(0x10000),
         ip_sniffer_(packet_pool_),
         pack_id_(0),
+        media_pack_id_(0),
         //sock_adp_(socket_),
         deffered_writer_(pipe_, MAX_DEFFERED_SIZE)
     {
@@ -433,6 +434,7 @@ namespace mmxlst
                             media.header.net_points.destination.address = addr_dst;
                             media.header.net_points.source.port = ::htons(udp.port_src);
                             media.header.net_points.destination.port = port_dst;
+                            media.header.packet_id = ++media_pack_id_;
 
                             timeval tv;
 

@@ -24,6 +24,7 @@ namespace mmx
             unsigned int address_;
             unsigned short port_;
 
+
             friend class MediaPool;
 
         public:

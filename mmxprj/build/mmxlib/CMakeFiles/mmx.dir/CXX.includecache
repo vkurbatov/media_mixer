@@ -157,6 +157,8 @@ jitterbuffer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
 cstring
 -
+netdb.h
+-
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
 sample.h
