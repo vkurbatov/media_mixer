@@ -28,6 +28,12 @@ mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
 
+mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.cpp
+mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.h
+
+mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.cpp
+mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.h
+
 mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp
 mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 

@@ -404,6 +404,18 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.h">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.cpp">
+         <Option target="mmx"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp">
          <Option target="mmx"/>
       </Unit>
@@ -666,6 +678,9 @@
          <Option target="mmxtest"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test1.cpp">
+         <Option target="mmxtest"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test10.cpp">
          <Option target="mmxtest"/>
       </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test2.cpp">

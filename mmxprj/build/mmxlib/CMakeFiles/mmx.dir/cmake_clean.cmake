@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/net/select_ex.cpp.o"
   "CMakeFiles/mmx.dir/net/portset.cpp.o"
   "CMakeFiles/mmx.dir/ipc/pchannel.cpp.o"
+  "CMakeFiles/mmx.dir/ipc/sem.cpp.o"
+  "CMakeFiles/mmx.dir/ipc/shmem.cpp.o"
   "CMakeFiles/mmx.dir/data/packet.cpp.o"
   "CMakeFiles/mmx.dir/data/dpwriter.cpp.o"
   "CMakeFiles/mmx.dir/data/dpreader.cpp.o"

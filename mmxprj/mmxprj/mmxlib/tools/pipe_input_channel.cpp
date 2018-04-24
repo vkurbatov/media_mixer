@@ -113,7 +113,7 @@ namespace mmx
 
                 if (pipe_.Handle() < 0)
                 {
-                    rc = pipe_.Open(pipe_name_, O_RDONLY | O_NONBLOCK, 0777);
+                    rc = pipe_.Open(pipe_name_, O_RDONLY | O_NONBLOCK | O_CREAT, 0777);
 
                     if (rc > 0)
                     {

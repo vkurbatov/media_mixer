@@ -29,6 +29,8 @@ set ( SOURCE_FILES
 	net/portset.cpp
 #	межпроцессное взаимодействие
 	ipc/pchannel.cpp
+	ipc/sem.cpp
+	ipc/shmem.cpp
 #	ipc/msgchannel.cpp
 #	ipc/mediachannel.cpp
 #	стафферы
@@ -97,6 +99,8 @@ set ( PRIVATE_HEADERS
 	ipc/io.h
 	ipc/ichannel.h
 	ipc/pchannel.h
+	ipc/sem.h
+	ipc/shmem.h
 #	ipc/mediachannel.h
 #	стафферы
 	data/packet.h
@@ -160,6 +164,7 @@ set ( PUBLIC_HEADERS
 
 set( ADDITIONAL_LIBRARIES
 	pthread
+	rt
 )
 
 add_library( ${PROJECT_NAME} 

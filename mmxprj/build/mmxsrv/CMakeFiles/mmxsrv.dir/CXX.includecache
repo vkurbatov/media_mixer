@@ -68,6 +68,10 @@ idpreader.h
 headers/datapack.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/headers/datapack.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/sem.h
+memory
+-
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/names.h
@@ -183,6 +187,8 @@ mmxlib/names.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/names.h
 mmxlib/data/dpreader.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/data/dpreader.h
+mmxlib/ipc/sem.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/ipc/sem.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
 list

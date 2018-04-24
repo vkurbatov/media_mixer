@@ -260,6 +260,60 @@ ipc/pchannel.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.s
 .PHONY : ipc/pchannel.cpp.s
 
+ipc/sem.o: ipc/sem.cpp.o
+
+.PHONY : ipc/sem.o
+
+# target to build an object file
+ipc/sem.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o
+.PHONY : ipc/sem.cpp.o
+
+ipc/sem.i: ipc/sem.cpp.i
+
+.PHONY : ipc/sem.i
+
+# target to preprocess a source file
+ipc/sem.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.i
+.PHONY : ipc/sem.cpp.i
+
+ipc/sem.s: ipc/sem.cpp.s
+
+.PHONY : ipc/sem.s
+
+# target to generate assembly for a file
+ipc/sem.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.s
+.PHONY : ipc/sem.cpp.s
+
+ipc/shmem.o: ipc/shmem.cpp.o
+
+.PHONY : ipc/shmem.o
+
+# target to build an object file
+ipc/shmem.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o
+.PHONY : ipc/shmem.cpp.o
+
+ipc/shmem.i: ipc/shmem.cpp.i
+
+.PHONY : ipc/shmem.i
+
+# target to preprocess a source file
+ipc/shmem.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.i
+.PHONY : ipc/shmem.cpp.i
+
+ipc/shmem.s: ipc/shmem.cpp.s
+
+.PHONY : ipc/shmem.s
+
+# target to generate assembly for a file
+ipc/shmem.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.s
+.PHONY : ipc/shmem.cpp.s
+
 logs/log.o: logs/log.cpp.o
 
 .PHONY : logs/log.o
@@ -1175,6 +1229,12 @@ help:
 	@echo "... ipc/pchannel.o"
 	@echo "... ipc/pchannel.i"
 	@echo "... ipc/pchannel.s"
+	@echo "... ipc/sem.o"
+	@echo "... ipc/sem.i"
+	@echo "... ipc/sem.s"
+	@echo "... ipc/shmem.o"
+	@echo "... ipc/shmem.i"
+	@echo "... ipc/shmem.s"
 	@echo "... logs/log.o"
 	@echo "... logs/log.i"
 	@echo "... logs/log.s"

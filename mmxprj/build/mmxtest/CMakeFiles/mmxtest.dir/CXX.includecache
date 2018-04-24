@@ -82,6 +82,14 @@ memory
 ichannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/ichannel.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/sem.h
+memory
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/shmem.h
+memory
+-
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/iaudiocodec.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/mixer.h
@@ -234,6 +242,18 @@ mmxlib/headers/udp.h
 sys/socket.h
 -
 netdb.h
+-
+fcntl.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test10.cpp
+mmxlib/ipc/sem.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/ipc/sem.h
+mmxlib/ipc/shmem.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/ipc/shmem.h
+cstring
+-
+iostream
 -
 fcntl.h
 -

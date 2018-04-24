@@ -179,6 +179,33 @@ test1.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/test1.cpp.s
 .PHONY : test1.cpp.s
 
+test10.o: test10.cpp.o
+
+.PHONY : test10.o
+
+# target to build an object file
+test10.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o
+.PHONY : test10.cpp.o
+
+test10.i: test10.cpp.i
+
+.PHONY : test10.i
+
+# target to preprocess a source file
+test10.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.i
+.PHONY : test10.cpp.i
+
+test10.s: test10.cpp.s
+
+.PHONY : test10.s
+
+# target to generate assembly for a file
+test10.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.s
+.PHONY : test10.cpp.s
+
 test2.o: test2.cpp.o
 
 .PHONY : test2.o
@@ -410,6 +437,9 @@ help:
 	@echo "... test1.o"
 	@echo "... test1.i"
 	@echo "... test1.s"
+	@echo "... test10.o"
+	@echo "... test10.i"
+	@echo "... test10.s"
 	@echo "... test2.o"
 	@echo "... test2.i"
 	@echo "... test2.s"

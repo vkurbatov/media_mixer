@@ -7,7 +7,7 @@
 #include <stdio.h>      // remove
 #include <fcntl.h>      // open
 #include <unistd.h>     // close
-
+#include <cstdarg>      // работа с переменнам количеством аргументов
 #include <cstring>      // strcpy
 
 namespace mmx
@@ -42,9 +42,16 @@ namespace mmx
             }
         }
 
-        int PipeChannel::Open(const char* name, int mode, int access)
+        int PipeChannel::Open(const char* name, ...)
         {
             int rc = -EEXIST;
+
+            std::va_list     vl;
+
+            va_start (vl, name);
+
+            int mode = va_arg(vl, int);
+
 
             if (handle_ < 0)
             {
@@ -52,11 +59,15 @@ namespace mmx
 
                 if (name != nullptr && *name != '\0' && std::strlen(name) < MMX_PIPE_NAME_LEN)
                 {
+
                     rc = 0;
 
-                    if (access != 0)
+                    if ((mode & O_CREAT) != 0)
                     {
 
+                        mode ^= O_CREAT;
+
+                        int access = va_arg(vl, int);
                         //::unlink(name);
 
                         rc = ::mkfifo(name, access);
@@ -99,6 +110,8 @@ namespace mmx
 
                 }
             }
+
+            va_end(vl);
 
             return rc;
         }
@@ -193,14 +206,5 @@ namespace mmx
             return handle_ < 0 ? nullptr : pipename_;
         }
 
-        int PipeChannel::Mode() const
-        {
-            return mode_;
-        }
-
-        int PipeChannel::Access() const
-        {
-            return access_;
-        }
     }
 }

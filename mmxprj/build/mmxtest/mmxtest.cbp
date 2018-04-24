@@ -85,6 +85,9 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test1.cpp">
          <Option target="mmxtest"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test10.cpp">
+         <Option target="mmxtest"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test2.cpp">
          <Option target="mmxtest"/>
       </Unit>

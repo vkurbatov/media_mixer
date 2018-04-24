@@ -14,6 +14,9 @@
 
 #include "mmxlib/data/dpreader.h"
 
+#include "mmxlib/ipc/sem.h"
+
+#define SRV_UNIQUE_BASE_KEY 50000
 
 #define DEFAULT_TIMEOUT 2000
 
@@ -32,6 +35,15 @@ namespace mmxsrv
     {
 
         int rc = 0;
+
+        mmx::ipc::Semaphore sem;
+
+        if (sem.Open(SRV_UNIQUE_BASE_KEY + config_.channel, 0666) < 0 || sem.Get() > 0)
+        {
+            return -EBUSY;
+        }
+
+        sem.Set();
 
         init();
 

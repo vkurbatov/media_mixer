@@ -13,12 +13,10 @@ namespace mmx
         public:
 
             virtual ~IChannel() {};
-            virtual int Open(const char*, int, int) = 0;
+            virtual int Open(const char*, ...) = 0;
             virtual int Close() = 0;
             virtual int Handle() const = 0;
             virtual const char* Name() const = 0;
-            virtual int Mode() const = 0;
-            virtual int Access() const = 0;
 
         };
     }

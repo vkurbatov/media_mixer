@@ -40,6 +40,10 @@ headers/datapack.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/sem.h
+memory
+-
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
@@ -225,6 +229,8 @@ mmxlib/names.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/names.h
 mmxlib/logs/log.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
+mmxlib/ipc/sem.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/ipc/sem.h
 cstring
 -
 

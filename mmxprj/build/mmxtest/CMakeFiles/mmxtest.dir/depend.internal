@@ -13,6 +13,10 @@ mmxtest/CMakeFiles/mmxtest.dir/test1.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/socket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test1.cpp
+mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/sem.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/shmem.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test10.cpp
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/headers/media.h

@@ -10,8 +10,33 @@
 
 namespace mmxtest
 {
+
+    class A{
+        int val_;
+    public:
+        int get() { return val_; }
+    };
+
+    class B{
+        int val_;
+    public:
+        B(int val = 0) : val_(val) {}
+        //B& operator = (B&& b) { val_ = b.val_; return *this; }
+        int get() { return val_; }
+    };
+
     int test9()
     {     
+
+        A a1, a2;
+
+        a1 = a2;
+
+        B b1;
+        B b2(b1);
+
+        b1 = b2;
+
         std::cout << "PCMA codec table:" << std::endl;
         mmx::media::codecs::audio::PcmaCodec pcma;
         int errors = 0;

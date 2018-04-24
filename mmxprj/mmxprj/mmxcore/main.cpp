@@ -98,6 +98,9 @@ int main(int argc, char* argv[])
 
     int rc = parse_args(argc, argv, config, log_level);
 
+    //int fl = open("/tmp/mmx1", O_CREAT | O_RDWR | O_TMPFILE, 0777);
+
+
     if (rc == 0)
     {
 

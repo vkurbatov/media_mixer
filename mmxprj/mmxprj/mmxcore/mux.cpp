@@ -3,7 +3,11 @@
 
 #include "mmxlib/logs/log.h"
 
+#include "mmxlib/ipc/sem.h"
+
 #include <cstring>
+
+#define MUX_UNIQUE_BASE_KEY
 
 
 namespace mmxmux
@@ -29,6 +33,7 @@ namespace mmxmux
         proxy.source_a.port = 5062;
 
         proxy.source_b = proxy.source_a;
+        proxy.source_b.port = 5063;
 
         sorm.call_id = 1;
         sorm.channel_id = 1;
@@ -46,9 +51,19 @@ namespace mmxmux
 
         int rc = 0;
 
+        mmx::ipc::Semaphore sem;
+
+        if (sem.Open(MUX_UNIQUE_BASE_KEY + config_.channel_num, 0666) < 0 || sem.Get() > 0)
+        {
+            return -EBUSY;
+        }
+
+        sem.Set();
+
         init();
 
         test();
+
 
         while(1)
         {
