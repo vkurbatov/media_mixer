@@ -112,7 +112,7 @@ namespace mmx
             return rc;
         }
 
-        const headers::MEDIA_SAMPLE* Sample::GetSample() const
+        const headers::MEDIA_SAMPLE* Sample::GetMediaSample() const
         {
             static int cnt = 0;
 

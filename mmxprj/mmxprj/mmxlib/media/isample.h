@@ -14,7 +14,7 @@ namespace mmx
         public:
             virtual ~ISample() {};
             virtual int PutSample(const sniffers::IRTPPacket& rtp, unsigned short pack_id, int timestamp = -1) = 0;
-            virtual const headers::MEDIA_SAMPLE* GetSample() const= 0;
+            virtual const headers::MEDIA_SAMPLE* GetMediaSample() const= 0;
             virtual void Drop(int timestamp = -1) = 0;
         };
     }

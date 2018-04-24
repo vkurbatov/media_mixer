@@ -16,7 +16,7 @@ namespace mmx
         {
             mmx::headers::SANGOMA_SORM_INFO sorm_;
 
-            mmx::headers::ORM_INFO_HEADER orm_header_;
+            mmx::headers::ORDER_645_2_HEADER order_header_;
 
             const MediaStream* streams_[2];
 

@@ -73,11 +73,7 @@ namespace mmx
         {
 
             auto smpl = jitter_.GetSample();
-            if (smpl)
-            {
-
-            }
-            return smpl != nullptr ? smpl->GetSample() : nullptr;
+            return smpl != nullptr ? smpl->GetMediaSample() : nullptr;
 
         }
 

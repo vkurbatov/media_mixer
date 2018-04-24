@@ -34,7 +34,7 @@ namespace mmxmux
         sorm.channel_id = 1;
         sorm.conn_param = 1;
         sorm.mcl_a = 5;
-        sorm.mcl_b = 6;
+        sorm.mcl_b = 5;
         sorm.object_id = 8;
         sorm.sorm_id = 9;
 
@@ -48,7 +48,7 @@ namespace mmxmux
 
         init();
 
-        //test();
+        test();
 
         while(1)
         {

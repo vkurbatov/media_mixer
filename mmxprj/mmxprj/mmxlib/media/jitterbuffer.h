@@ -16,7 +16,9 @@ namespace mmx
             unsigned short              freq_;
             std::vector<Sample>         samples_;
             unsigned int                ssrc_;
+            unsigned int                ts_rtp_;
             int                         ts_bias_;
+
 
 
         public:
@@ -29,6 +31,10 @@ namespace mmx
             const Sample* GetSample(int timestamp = -1) const;
             void Drop(int timestamp = -1);
             bool IsEmpty() const;
+
+        private:
+
+            const Sample* checkSample(const Sample& sample) const;
 
 
         };

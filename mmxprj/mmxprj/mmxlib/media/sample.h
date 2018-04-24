@@ -29,7 +29,7 @@ namespace mmx
 
             // ISample
             int PutSample(const sniffers::IRTPPacket& rtp, unsigned short pack_id, int timestamp = -1) override;
-            const headers::MEDIA_SAMPLE* GetSample() const override;
+            const headers::MEDIA_SAMPLE* GetMediaSample() const override;
             void Drop(int timestamp = -1) override;
         };
     }

@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
 
     std::memset(&config, 0, sizeof(config));
 
-    config.channel_num = 2;
+    config.channel_num = 1;
     config.interval = DEFAULT_INTERVAL;
     config.media_period = 20;
     config.sgm_address = INADDR_ANY;

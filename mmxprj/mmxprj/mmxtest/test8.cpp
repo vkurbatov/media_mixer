@@ -77,7 +77,7 @@ namespace mmxtest
             else
             {
 
-                const mmx::headers::MEDIA_SAMPLE* media = smpl->GetSample();
+                const mmx::headers::MEDIA_SAMPLE* media = smpl->GetMediaSample();
 
                 if (media == nullptr)
                 {
