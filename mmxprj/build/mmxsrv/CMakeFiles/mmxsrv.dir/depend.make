@@ -15,6 +15,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxl
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/pultstat.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/dpsniffer.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/istream.h
@@ -42,7 +43,9 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/dpreader.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpreader.h
+mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/pultstat.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/sem.h
+mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/shmem.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/names.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/dpsniffer.h

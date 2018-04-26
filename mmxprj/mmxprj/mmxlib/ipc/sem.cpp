@@ -40,7 +40,7 @@ namespace mmx
 
             va_start (vl, key);
 
-            int access = va_arg(vl, int) & 0x1FF;
+            int mode = va_arg(vl, int) & 0x1FF;
 
             if (handle_ < 0)
             {
@@ -48,9 +48,9 @@ namespace mmx
                 if (key > 0)
                 {
 
-                    if (access != 0)
+                    if (mode != 0)
                     {
-                        rc = semget(key, 1, access | IPC_CREAT);
+                        rc = semget(key, 1, mode | IPC_CREAT);
                     }
                     else
                     {

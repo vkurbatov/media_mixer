@@ -35,8 +35,7 @@ namespace mmx
 
             unsigned char               channel_;
 
-            unsigned short              pack_id_;
-
+            unsigned short              pack_id_;         
 
         public:
 

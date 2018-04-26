@@ -9,6 +9,7 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
+mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/shmem.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
@@ -55,8 +56,10 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmx
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpreader.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/pultstat.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/sem.h
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/shmem.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h

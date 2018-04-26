@@ -17,6 +17,7 @@
 
 #include "mmxlib/media/mediapool.h"
 #include "mmxlib/media/sormpool.h"
+#include "mmxlib/ipc/shmem.h"
 
 
 namespace mmxmux
@@ -50,6 +51,9 @@ namespace mmxmux
         mmx::tools::PipeOutputChannelPool   output_channel_pool_;
 
         mmx::sniffers::DataPackSniffer      dp_sniffer_;
+
+        std::vector<mmx::ipc::SharedMemory> shmem_servers_;
+        int                                 channel_indexes_[256];
 
 
     public:

@@ -1,1 +1,1 @@
-/usr/bin/c++   -g   CMakeFiles/mmxsrv.dir/main.cpp.o CMakeFiles/mmxsrv.dir/server.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread -lrt 
+/usr/bin/c++   -g   CMakeFiles/mmxsrv.dir/main.cpp.o CMakeFiles/mmxsrv.dir/server.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 

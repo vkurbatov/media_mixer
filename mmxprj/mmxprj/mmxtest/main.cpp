@@ -13,7 +13,6 @@ static char buff[1600];
 int main(int argc, char* argv[])
 {
 
-
     mmxtest::test10();
 
     return 0;

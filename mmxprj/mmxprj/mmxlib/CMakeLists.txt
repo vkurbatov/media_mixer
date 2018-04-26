@@ -95,6 +95,7 @@ set ( PRIVATE_HEADERS
 	headers/si.h
 	headers/order645_2.h
 	headers/rtp.h
+	headers/pultstat.h
 #	межпроцессное взаимодействие
 	ipc/io.h
 	ipc/ichannel.h
@@ -164,7 +165,7 @@ set ( PUBLIC_HEADERS
 
 set( ADDITIONAL_LIBRARIES
 	pthread
-	rt
+#	rt
 )
 
 add_library( ${PROJECT_NAME} 

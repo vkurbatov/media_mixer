@@ -38,9 +38,15 @@ headers/datapack.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/pultstat.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/sem.h
+memory
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/shmem.h
 memory
 -
 
@@ -231,6 +237,8 @@ mmxlib/logs/log.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
 mmxlib/ipc/sem.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/ipc/sem.h
+mmxlib/headers/pultstat.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/pultstat.h
 cstring
 -
 
@@ -257,6 +265,8 @@ mmxlib/media/mediapool.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/media/mediapool.h
 mmxlib/media/sormpool.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/media/sormpool.h
+mmxlib/ipc/shmem.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/ipc/shmem.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
 idpwriter.h

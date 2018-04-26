@@ -9,7 +9,7 @@
 #include "mmxlib/tools/pipe_input_channel.h"
 
 #include "mmxlib/sniffers/dpsniffer.h"
-
+#include "mmxlib/headers/pultstat.h"
 
 namespace mmxsrv
 {
@@ -32,8 +32,8 @@ namespace mmxsrv
 
         mmx::sniffers::DataPackSniffer      dp_sniffer_;
 
+        mmx::headers::PULT_STAT             stat_;
         mmx::net::timeout_t                 timeout_;
-
 
         SERVER_CONFIG                       config_;
 
@@ -60,6 +60,7 @@ namespace mmxsrv
         void dispatchAll(mmx::tools::dispatch_flags_t dispatch);
         void processInput();
         void closeAll();
+        void updateStatistic(void* data);
 
     };
 }

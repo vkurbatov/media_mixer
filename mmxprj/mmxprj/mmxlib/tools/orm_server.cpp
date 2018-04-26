@@ -40,7 +40,7 @@ namespace mmx
         {
 
             checkConnect();
-            checkClients();
+            return checkClients();
 
         }
 

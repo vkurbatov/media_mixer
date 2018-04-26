@@ -1,1 +1,1 @@
-/usr/bin/c++   -g   CMakeFiles/mmxcore.dir/main.cpp.o CMakeFiles/mmxcore.dir/mux.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread -lrt 
+/usr/bin/c++   -g   CMakeFiles/mmxcore.dir/main.cpp.o CMakeFiles/mmxcore.dir/mux.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 

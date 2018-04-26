@@ -122,6 +122,9 @@
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h">
          <Option target="mmx"/>
       </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/pultstat.h">
+         <Option target="mmx"/>
+      </Unit>
       <Unit filename="/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h">
          <Option target="mmx"/>
       </Unit>

@@ -15,10 +15,12 @@
 #include "mmxlib/data/dpreader.h"
 
 #include "mmxlib/ipc/sem.h"
+#include "mmxlib/ipc/shmem.h"
 
-#define SRV_UNIQUE_BASE_KEY 50000
+#define SRV_SEM_UNIQUE_BASE_KEY 50000
+#define SRV_SHMEM_UNIQUE_BASE_KEY   1200
 
-#define DEFAULT_TIMEOUT 2000
+//#define DEFAULT_TIMEOUT 2000
 
 namespace mmxsrv
 {
@@ -28,7 +30,8 @@ namespace mmxsrv
         sangoma_(config.pult ? 0 : config.address, config.pult ? 0 : config.address, select_, config.interval),
         config_(config)
     {
-
+        std::memset(&stat_, 0, sizeof(stat_));
+        stat_.magic = mmx::headers::PULT_STAT_MAGIC;
     }
 
     int Server::Execute()
@@ -37,13 +40,16 @@ namespace mmxsrv
         int rc = 0;
 
         mmx::ipc::Semaphore sem;
+        mmx::ipc::SharedMemory shmem;
 
-        if (sem.Open(SRV_UNIQUE_BASE_KEY + config_.channel, 0666) < 0 || sem.Get() > 0)
+        if (sem.Open(SRV_SEM_UNIQUE_BASE_KEY + config_.channel, 0666) < 0 || sem.Get() > 0)
         {
             return -EBUSY;
         }
 
         sem.Set();
+
+        shmem.Open(SRV_SHMEM_UNIQUE_BASE_KEY + config_.channel, sizeof(stat_), 0666);
 
         init();
 
@@ -65,13 +71,14 @@ namespace mmxsrv
                     processInput();
                 }
 
+                updateStatistic(shmem.Data());
+
             }
             else
             {
                 closeAll();
             }
         }
-
 
         return rc;
 
@@ -89,11 +96,11 @@ namespace mmxsrv
         if (config_.pult)
         {
 
-            orm_server_.Dispatch(dispatch);
+            stat_.total_conn += (unsigned short)(orm_server_.Dispatch(dispatch) >= 0);
 
             for (auto& c : orm_server_.GetClients())
             {
-                c.Dispatch(dispatch);
+                stat_.errors += (c.Dispatch(dispatch) < 0);
             }
 
             orm_server_.GetClients().remove_if([](mmx::tools::OrmClient& c) { return c.IsDown(); });
@@ -159,6 +166,8 @@ namespace mmxsrv
                     if (dp != nullptr)
                     {
 
+                        stat_.recv_packets++;
+
                         mmx::data::DataPacketReader reader(&dp->header);
 
 
@@ -186,7 +195,8 @@ namespace mmxsrv
 
                                     for (auto& c : orm_server_.GetClients())
                                     {
-                                        c.PutData(orm_info_);
+                                        stat_.send_packets += (unsigned int)c.PutData(orm_info_) > 0;
+
                                     }
                                 }
                                 else
@@ -225,6 +235,18 @@ namespace mmxsrv
 
         orm_server_.Close();
 
+    }
+
+    void Server::updateStatistic(void* data)
+    {
+        mmx::headers::PULT_STAT* plt_stat = (mmx::headers::PULT_STAT* )data;
+
+        if (plt_stat != nullptr)
+        {
+            stat_.online_conn = orm_server_.GetClients().size();
+
+            *plt_stat = stat_;
+        }
     }
 
 

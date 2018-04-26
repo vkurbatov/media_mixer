@@ -131,7 +131,7 @@ memory
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.cpp
 shmem.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.h
-sys/mman.h
+sys/shm.h
 -
 cstdarg
 -

@@ -1,7 +1,7 @@
 
 #include "shmem.h"
 
-#include <sys/mman.h>
+#include <sys/shm.h>
 
 #include <cstdarg>      // работа с переменнам количеством аргументов
 #include <cstring>
@@ -21,7 +21,7 @@ namespace mmx
             data_(nullptr),
             mode_(0)
         {
-            std::memset(name_, 0, sizeof(name_));
+
         }
 
         SharedMemory::SharedMemory(SharedMemory&& shmem) :
@@ -33,8 +33,6 @@ namespace mmx
             shmem.handle_ = -1;
             shmem.size_ = 0;
             shmem.data_ = nullptr;
-            shmem.name_[0] = 0;
-            std::strcpy(name_,shmem.name_);
             shmem.mode_ = 0;
         }
 
@@ -43,56 +41,54 @@ namespace mmx
             Close();
         }
 
-        int SharedMemory::Open(const char *name, ...)
+        int SharedMemory::Open(int key, int size, int mode)
         {
             int rc = -EEXIST;
 
             std::va_list    vl;
 
-            va_start (vl, name);
-
-            int mode = va_arg(vl, int);
-            int size = va_arg(vl, int);
-
 
             if (handle_ < 0)
             {
+                //shmget()
 
-                rc = shm_open(name, mode, 0666);
+                rc = -EINVAL;
 
-                if (rc > 0)
+                if (size > 0 || (size == 0 & mode == 0))
                 {
-                    if ((mode & O_CREAT) != 0)
+
+                    rc = shmget(key, size, mode != 0 ? mode | IPC_CREAT : IPC_EXCL);
+
+                    if (rc >= 0)
                     {
-                        if (ftruncate(rc, size + 1) >= 0)
+                        handle_ = rc;
+
+                        data_ = shmat(rc, NULL, 0);
+
+                        if (data_ != nullptr)
                         {
+                            struct shmid_ds ds;
+
+                            shmctl(handle_, IPC_STAT, &ds);
+                            size_ = ds.shm_segsz;
+
+                            mode_ = mode;
 
                         }
                         else
                         {
-                            close(rc);
-                            shm_unlink(name);
+
                             rc = -errno;
+                            shmctl(handle_, IPC_RMID, NULL);
+                            handle_ = -1;
+
                         }
                     }
-
-                    if (rc > 0)
+                    else
                     {
-                        void* m = mmap(0, size + 1, PROT_WRITE | PROT_READ, MAP_SHARED, rc, 0);
-
-                        if (m != nullptr)
-                        {
-                            data_ = m;
-                            size_ = size;
-                            mode_ = mode;
-                            handle_ = rc;
-                            std::strcpy(name_, name);
-                        }
+                        rc =-errno;
                     }
-                }
-                else
-                {
-                    rc = -errno;
+
                 }
 
             }
@@ -108,27 +104,24 @@ namespace mmx
             int rc =-EBADF;
 
 
-            if (handle_ >= 0)
+            if (data_ != nullptr)
             {
-                rc = handle_;
 
-                if (data_ != nullptr)
-                {
-                    munmap(data_, size_);
-                }
-
-                close(handle_);
-
-                if (mode_ & O_CREAT)
-                {
-                    shm_unlink(name_);
-                }
-
-                name_[0] = 0;
+                rc = shmdt(data_);
                 data_ = nullptr;
                 size_ = 0;
-                handle_ = -1;
+
             }
+
+            if (handle_ >= 0)
+            {
+
+                rc = shmctl( handle_, IPC_RMID, NULL);
+                handle_ = 0;
+
+            }
+
+            mode_ = 0;
 
             return rc;
         }

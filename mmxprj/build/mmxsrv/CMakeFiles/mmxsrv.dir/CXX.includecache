@@ -68,7 +68,13 @@ idpreader.h
 headers/datapack.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/headers/datapack.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/pultstat.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/sem.h
+memory
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/shmem.h
 memory
 -
 
@@ -189,6 +195,8 @@ mmxlib/data/dpreader.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/data/dpreader.h
 mmxlib/ipc/sem.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/ipc/sem.h
+mmxlib/ipc/shmem.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/ipc/shmem.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
 list
@@ -203,4 +211,6 @@ mmxlib/tools/pipe_input_channel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/tools/pipe_input_channel.h
 mmxlib/sniffers/dpsniffer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/sniffers/dpsniffer.h
+mmxlib/headers/pultstat.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/headers/pultstat.h
 

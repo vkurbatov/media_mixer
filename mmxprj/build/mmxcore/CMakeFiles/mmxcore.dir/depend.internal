@@ -10,6 +10,7 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/shmem.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
@@ -56,8 +57,10 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpreader.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/pultstat.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/sem.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/shmem.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h

@@ -14,14 +14,13 @@ namespace mmx
             int     handle_;
             int     size_;
             void*   data_;
-            char    name_[MMX_SHMEM_NAME_LEN];
             int     mode_;
 
         public:
             SharedMemory();
             SharedMemory(SharedMemory&& semaphore);
             ~SharedMemory();
-            int Open(const char *name, ...);
+            int Open(int key, int size = 0, int mode = 0);
             int Close();
             int Handle() const;
             void* Data();

@@ -5,9 +5,12 @@
 
 #include "mmxlib/ipc/sem.h"
 
+#include "mmxlib/headers/pultstat.h"
+
 #include <cstring>
 
 #define MUX_UNIQUE_BASE_KEY
+#define SRV_SHMEM_UNIQUE_BASE_KEY   1200
 
 
 namespace mmxmux
@@ -21,6 +24,7 @@ namespace mmxmux
         sorm_pool_(media_pool_, 10)
     {
         timer_.Start(config_.media_period);
+        std::memset(channel_indexes_, -1, sizeof(channel_indexes_));
     }
 
     void Mux::test()
@@ -62,7 +66,7 @@ namespace mmxmux
 
         init();
 
-        test();
+        //test();
 
 
         while(1)
@@ -99,12 +103,23 @@ namespace mmxmux
 
     void Mux::init()
     {
+
+        int ch_num = 0;
+
         for (int i = 1; i < 256; i++)
         {
             if ((config_.channels[i / 8] & (1 << (i % 8))) != 0)
             {
                 output_channel_pool_.GetChannel(i, select_, config_.interval);
+                channel_indexes_[i] = ch_num++;
             }
+            else
+            {
+                channel_indexes_[i] = -1;
+            }
+
+            shmem_servers_.resize(ch_num);
+
         }
 
         dispatchAll(mmx::tools::DISPATCH_INIT);
@@ -112,10 +127,23 @@ namespace mmxmux
 
     void Mux::dispatchAll(mmx::tools::dispatch_flags_t dispatch)
     {
+
         input_channel_.Dispatch(dispatch);
+
         for (auto& o : output_channel_pool_.GetChannels())
         {
+            bool fconn = o.IsDown();
+
             o.Dispatch(dispatch);
+
+            if (fconn == true && !o.IsDown())
+            {
+
+                int idx = channel_indexes_[o.GetChannelId()];
+                shmem_servers_[idx].Close();
+                shmem_servers_[idx].Open(SRV_SHMEM_UNIQUE_BASE_KEY + o.GetChannelId());
+
+            }
         }
 
         sangoma_.Dispatch(dispatch);
@@ -205,8 +233,6 @@ namespace mmxmux
         const char* data = (const char*)input_channel_.Data();
         int size = input_channel_.Size();
 
-
-
         if (data != nullptr && size > 0)
         {
 
@@ -279,7 +305,11 @@ namespace mmxmux
         {
             answer.a_link_status[i].type = mmx::headers::SI_LINK_TCP;
             answer.a_link_status[i].num = o.GetChannelId();
-            answer.a_link_status[i].status = 1;
+
+            mmx::headers::PULT_STAT* plt_stat = (mmx::headers::PULT_STAT*)shmem_servers_[channel_indexes_[answer.a_link_status[i].num]].Data();
+
+            answer.a_link_status[i].status = !o.IsDown() && plt_stat != nullptr && plt_stat->online_conn > 0;
+
             i++;
         }
 
@@ -300,7 +330,7 @@ namespace mmxmux
                     case mmx::headers::SI_START_PROXY:
                     case mmx::headers::SI_END_PROXY:
                         {
-                            int sorms = query->header.length - sizeof(query->header) / sizeof(query->a_link_status[0]);
+                            int sorms = (query->header.length - sizeof(query->q_proxy.proxy)) / sizeof(query->q_proxy.sorm[0]);
 
                             for (int i = 0; i < sorms; i++)
                             {
@@ -338,6 +368,11 @@ namespace mmxmux
         for (auto& o : output_channel_pool_.GetChannels())
         {
             o.Close();
+        }
+
+        for (auto& s : shmem_servers_)
+        {
+            s.Close();
         }
 
         sangoma_.Close();
