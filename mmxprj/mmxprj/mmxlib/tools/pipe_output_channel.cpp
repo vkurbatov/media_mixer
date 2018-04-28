@@ -15,7 +15,7 @@ namespace mmx
             interval_(interval),
             channel_(channel),
             pack_id_(0),
-            data_(0x100000),
+            data_(0x10000),
             dp_writter_(data_.data(), data_.size())
         {
             std::memset(pipe_name_, 0, sizeof(pipe_name_));

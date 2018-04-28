@@ -65,6 +65,8 @@ set ( SOURCE_FILES
 	tools/orm_client.cpp
 	tools/sangoma_media_client.cpp
 	tools/template_tcp_server.tpp
+	tools/udp_listener.cpp
+	tools/mediamarshaler.cpp
 #	медиа
 	media/sorm.cpp
 	media/mediastream.cpp
@@ -80,6 +82,7 @@ set ( SOURCE_FILES
 set ( PRIVATE_HEADERS
 #	логи
 	logs/log.h
+	logs/dlog.h
 #	сеть
 	net/net.h
 	net/socket.h
@@ -141,6 +144,9 @@ set ( PRIVATE_HEADERS
 	tools/orm_client.h
 	tools/sangoma_media_client.h
 	tools/template_tcp_server.h
+	tools/udp_listener.h
+	tools/mediamarshaler.h
+	tools/imarshaler.h
 #	медиа
 	media/ijitter.h
 	media/sorm.h

@@ -32,6 +32,7 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
 mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
@@ -83,6 +84,7 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmx
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h

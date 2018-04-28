@@ -1,5 +1,10 @@
 #include "datapacket.h"
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("DataPacket", msg)
+
+
 namespace mmx
 {
     namespace data
@@ -10,7 +15,7 @@ namespace mmx
             dp_writer_(data_.data(),data_.size()),
             dp_reader_((headers::PDATA_PACK_HEADER)data_.data())
         {
-
+            DLOGT(LOG_BEGIN("DataPacket(%x)"), size);
         }
 
         DataPacket::DataPacket(DataPacket&& dp) :
@@ -18,9 +23,13 @@ namespace mmx
             dp_writer_(std::move(dp.dp_writer_)),
             dp_reader_(std::move(dp.dp_reader_))
         {
-
+             DLOGT(LOG_BEGIN("DataPacket(&&%x)" ), DLOG_POINTER(&dp));
         }
 
+        DataPacket::~DataPacket()
+        {
+            DLOGT(LOG_BEGIN("~DataPacket()" ));
+        }
 
         // IDataPacketHeader
 

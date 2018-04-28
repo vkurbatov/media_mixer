@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/tools/orm_server.cpp.o"
   "CMakeFiles/mmx.dir/tools/orm_client.cpp.o"
   "CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
+  "CMakeFiles/mmx.dir/tools/udp_listener.cpp.o"
+  "CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o"
   "CMakeFiles/mmx.dir/media/sorm.cpp.o"
   "CMakeFiles/mmx.dir/media/mediastream.cpp.o"
   "CMakeFiles/mmx.dir/media/sormpool.cpp.o"

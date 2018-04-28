@@ -33,6 +33,7 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
@@ -84,6 +85,7 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h

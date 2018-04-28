@@ -23,10 +23,10 @@
 
 #define LOG_NAME_PATTERN "/var/log/mmx/listener-%d.log"
 
-#define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
+mmx::logs::log_level_t  g_log_level = mmx::logs::L_DEBUG;
 
 static int parse_ports(char* params, mmx::net::PortSet& ports);
-static int parse_args(int argc, char* argv[], mmx::net::address_t& address, unsigned char& channel, mmx::net::PortSet& ports, mmx::logs::log_level_t& log_level);
+static int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net::PortSet& ports, mmx::logs::log_level_t& log_level);
 
 void finish(int e_code)
 {
@@ -83,24 +83,24 @@ void sig_handler(int sig)
 int main(int argc, char* argv[])
 {
 
+    mmxlst::LISTENER_CONFIG lst_config;
+
     mmx::net::PortSet ports;
 
-    mmx::logs::log_level_t log_level = DEFAULT_LEVEL_LOG;
+    lst_config.address = 0;
+    lst_config.channel = 1;
+    lst_config.interval = 2000;
 
-    mmx::net::address_t address = 0;
-
-    unsigned char channel = 1;
-
-    int rc = parse_args(argc, argv, address, channel, ports, log_level);
+    int rc = parse_args(argc, argv, lst_config, ports, g_log_level);
 
     if (rc == 0)
     {
 
         char log_file[256];
 
-        std::sprintf(log_file, LOG_NAME_PATTERN, channel);
+        std::sprintf(log_file, LOG_NAME_PATTERN, lst_config.channel);
 
-        mmx::logs::log_init(log_file, log_level, false);
+        mmx::logs::log_init(log_file, g_log_level, false);
 
         mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
 
@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
         signal(SIGQUIT, sig_handler);
         signal(SIGSEGV, sig_handler);
 
-        mmxlst::Listener listener(address, channel, ports);
+        mmxlst::Listener listener(lst_config, ports);
 
         rc = listener.Execute();
 
@@ -197,7 +197,7 @@ int parse_ports(char* params, mmx::net::PortSet& ports)
     return rc;
 }
 
-int parse_args(int argc, char* argv[], mmx::net::address_t& address, unsigned char& channel, mmx::net::PortSet& ports, mmx::logs::log_level_t& log_level)
+int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net::PortSet& ports, mmx::logs::log_level_t& log_level)
 {
     int rc = 0;
 
@@ -235,7 +235,7 @@ int parse_args(int argc, char* argv[], mmx::net::address_t& address, unsigned ch
 
                         if (n > 0 && n < 255)
                         {
-                            channel = (unsigned char)n;
+                            config.channel = (unsigned char)n;
                         }
                         else
                         {
@@ -276,7 +276,7 @@ int parse_args(int argc, char* argv[], mmx::net::address_t& address, unsigned ch
 
                     if (a != INADDR_NONE)
                     {
-                        address = a;
+                        config.address = a;
                     }
                     else
                     {

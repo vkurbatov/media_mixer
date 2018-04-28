@@ -5,49 +5,19 @@
 #include "mmxlib/net/socket.h"
 #include "mmxlib/net/select_ex.h"
 
+#include "mmxlib/ipc/pchannel.h"
+
+#include "mmxlib/tools/timer.h"
+#include "mmxlib/tools/iosockadp.h"
+#include "mmxlib/tools/deffwriter.h"
+
 #include "mmxlib/data/datapacket.h"
 
 #include "mmxlib/sniffers/ipsniffer.h"
 
-#include "mmxlib/tools/pipe_output_channel.h"
-#include "mmxlib/tools/udp_listener.h"
-
 
 namespace mmxlst
 {
-    typedef struct _LISTENER_CONFIG
-    {
-        mmx::net::address_t address;
-        unsigned char       channel;
-        int                 interval;
-    }LISTENER_CONFIG, *PLISTENER_CONFIG;
-
-    class Listener
-    {
-        mmx::net::SelectExtension           select_;
-        //mmx::data::DataPacket               data_packet_;
-        mmx::sniffers::IPPacketPool         packet_pool_;
-        mmx::tools::PipeOutputChannel       output_channel_;
-        mmx::tools::UdpListener             udp_listener_;
-
-        LISTENER_CONFIG                     config_;
-
-    public:
-
-        Listener(const LISTENER_CONFIG& config, const mmx::net::PortSet& ports);
-        ~Listener();
-        int Execute();
-
-    private:
-        void init();
-        int getTimeouts();
-        void dispatchAll(mmx::tools::dispatch_flags_t dispatch);
-        void processData();
-        void closeAll();
-
-    };
-
-    /*
     class Listener
     {
         mmx::net::PortSet& ports_;
@@ -101,7 +71,6 @@ namespace mmxlst
         int putPacket(const mmx::sniffers::IIPPacket& packet);
 
     };
-    */
 }
 
 #endif

@@ -17,8 +17,8 @@ g_alive = True
 start_proxy="\
 \x02\
 \x1e\x00\
-\x02\x10\x02\x0a\x32\x75\
-\x02\x10\x02\x0a\x34\x75\
+\x15\x10\x02\x0a\xC6\x13\
+\x15\x10\x02\x0a\xC7\x13\
 \x01\x0d\x03\x00\x10\x00\x01\x01\x02\
 \x01\x0d\x0f\x00\x48\x00\x01\x03\x04\
 \xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\
@@ -75,6 +75,7 @@ class TcpClient():
                             break
                         else:
                             self.__on_recv(data)
+			    g_Alive = False
                     except Exception as ex:
                         logging.debug("run(): catch exception: " + str(ex))
                         self.__on_disconnect()

@@ -1,5 +1,9 @@
 #include "dpreader.h"
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("DataPacketReader", msg)
+
 namespace mmx
 {
     namespace data
@@ -9,7 +13,7 @@ namespace mmx
             data_((const headers::DATA_PACK*)data),
             pos_(0)
         {
-
+            DLOGT(LOG_BEGIN("DataPacketReader(%d)"), DLOG_POINTER(data));
         }
 
         DataPacketReader::DataPacketReader(DataPacketReader&& dpreader) :
@@ -18,6 +22,12 @@ namespace mmx
         {
             dpreader.data_ = nullptr;
             dpreader.pos_ = 0;
+            DLOGT(LOG_BEGIN("DataPacketReader(&&%d)"), DLOG_POINTER(&dpreader));
+        }
+
+        DataPacketReader::~DataPacketReader()
+        {
+            DLOGT(LOG_BEGIN("~DataPacketReader()"));
         }
 
         // IDataPacketReader
@@ -35,6 +45,7 @@ namespace mmx
 
                 rc = (headers::PDATA_BLOCK)(data_->data + pos_);
                 pos_ += rc->header.length;
+                DLOGT(LOG_BEGIN("GetBlock(): return PDATA_BLOCK{%x}, length = %d)"), DLOG_POINTER(rc), rc->header.length);
 
             }
 
@@ -43,6 +54,7 @@ namespace mmx
 
         void DataPacketReader::Reset()
         {
+            DLOGT(LOG_BEGIN("Reset(): pos_ = %d -> 0"), pos_);
             pos_ = 0;
         }
     }

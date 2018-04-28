@@ -9,30 +9,44 @@ mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o: /home/vkurbatov/work/mmxprj/mmx
 mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpreader.h
 mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
 mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/data/datapacket.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
 mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpreader.cpp
 mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpreader.h
 mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpreader.h
 mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/data/dpreader.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
 mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.cpp
 mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
 mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
 mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/data/dpwriter.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
 mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.cpp
 mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/data/packet.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
 mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.cpp
 mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.h
+mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
 mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.cpp
 mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.h
+mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
 mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp
 mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
@@ -46,6 +60,8 @@ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o: /home/vkurbatov/work/mm
 
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
@@ -54,6 +70,8 @@ mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/
 
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp
@@ -64,6 +82,8 @@ mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmx
 
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp
@@ -79,6 +99,8 @@ mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 
+mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
@@ -95,6 +117,8 @@ mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 
+mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
@@ -187,6 +211,17 @@ mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmx
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/udp.h
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/imarshaler.h
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.h
 
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
@@ -297,4 +332,26 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxpr
 
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/udp.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/udp_listener.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/udp_listener.h
 

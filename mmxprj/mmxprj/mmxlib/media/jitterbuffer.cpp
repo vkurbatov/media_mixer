@@ -2,6 +2,13 @@
 
 #include <cstring>
 #include <netdb.h>  // ::htonl
+#include <errno.h>
+
+
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("JitterBuffer", msg)
+
 
 namespace mmx
 {
@@ -16,6 +23,7 @@ namespace mmx
             ts_rtp_(0)
         {
 
+            DLOGT(LOG_BEGIN("JitterBuffer(%d, %d, %d)"), frame_size, freq, size);
             //std::memset(&rtp_header_, 0, sizeof(rtp_header_));
         }
 
@@ -28,19 +36,26 @@ namespace mmx
             ts_rtp_(jitter_buffer.ts_rtp_)
 
         {
+            DLOGT(LOG_BEGIN("JitterBuffer(%x)"), DLOG_POINTER(&jitter_buffer));
             jitter_buffer.Drop();
         }
 
         JitterBuffer& JitterBuffer::operator=(JitterBuffer&& jitter_buffer)
         {
-            frame_size_= jitter_buffer.frame_size_;
-            freq_ = jitter_buffer.freq_;
-            samples_= std::move(jitter_buffer.samples_);
-            ssrc_= jitter_buffer.ssrc_;
-            ts_bias_= jitter_buffer.ts_bias_;
-            ts_rtp_ = jitter_buffer.ts_rtp_;
 
-            jitter_buffer.Drop();
+            DLOGT(LOG_BEGIN("operator=(%x)"), DLOG_POINTER(&jitter_buffer));
+
+            if (this != & jitter_buffer)
+            {
+                frame_size_= jitter_buffer.frame_size_;
+                freq_ = jitter_buffer.freq_;
+                samples_= std::move(jitter_buffer.samples_);
+                ssrc_= jitter_buffer.ssrc_;
+                ts_bias_= jitter_buffer.ts_bias_;
+                ts_rtp_ = jitter_buffer.ts_rtp_;
+
+                jitter_buffer.Drop();
+            }
 
             return *this;
 
@@ -48,7 +63,7 @@ namespace mmx
 
         JitterBuffer::~JitterBuffer()
         {
-
+            DLOGT(LOG_BEGIN("~JitterBuffer()"));
         }
 
         int JitterBuffer::PutMedia(sniffers::IRTPPacket& rtp, unsigned short pack_id, int timestamp)
@@ -56,6 +71,8 @@ namespace mmx
             int rc = 0;
 
             //const headers::MEDIA_SAMPLE* smpl = nullptr
+
+            DLOGT(LOG_BEGIN("PutMedia(%x, %d, %d)"), DLOG_POINTER(&rtp), pack_id, timestamp);
 
             if (rtp.Header()!= nullptr)
             {
@@ -82,8 +99,21 @@ namespace mmx
 
                 rc = samples_[idx].PutSample(rtp, pack_id, timestamp);
 
-            }
+                if (rc >= 0)
+                {
+                    DLOGD(LOG_BEGIN("PutMedia(%x, %d, %d): samples_[%d] put media success, rc = %d"), DLOG_POINTER(&rtp), pack_id, timestamp, idx, rc);
+                }
+                else
+                {
+                    DLOGE(LOG_BEGIN("PutMedia(%x, %d, %d): samples_[%d] put media error, rc = %d"), DLOG_POINTER(&rtp), pack_id, timestamp, idx, rc);
+                }
 
+            }
+            else
+            {
+                rc = -EBADMSG;
+                DLOGE(LOG_BEGIN("PutMedia(%x, %d, %d) Bad rtp header, rc = %d"), DLOG_POINTER(&rtp), pack_id, timestamp, rc);
+            }
 
             return rc;
         }
@@ -94,7 +124,9 @@ namespace mmx
 
             if (timestamp < 0)
             {
-                timestamp = (Sample::GetCurrentTimestamp() - (frame_size_ * (samples_.size() + 1))) % 86400000;
+                timestamp = (Sample::GetCurrentTimestamp() - (frame_size_ * (samples_.size() + 2))) % 86400000;
+
+                DLOGT(LOG_BEGIN("GetSample(): calculate timestamp = %d"), timestamp);
             }
 
             if (ts_bias_ >= 0)
@@ -103,6 +135,11 @@ namespace mmx
 
                 rc = checkSample(samples_[idx]);
 
+                DLOGT(LOG_BEGIN("GetSample(): samples_[%d], rc = %x)"), idx, DLOG_POINTER(rc));
+            }
+            else
+            {
+                DLOGW(LOG_BEGIN("GetSample(): jitter buffer is empty"));
             }
 
             return rc;
@@ -133,15 +170,22 @@ namespace mmx
 
             auto smpl = sample.GetMediaSample();
 
-            if (smpl != nullptr
-                    && smpl->header.rtp_header.ssrc == ssrc_)
+            if (smpl != nullptr)
             {
-                unsigned int ts_delta = ts_rtp_ - ::htonl(smpl->header.rtp_header.timestamp);
-
-                if (ts_delta < frame_size_ * (samples_.size() + 1))
+                if (smpl->header.rtp_header.ssrc == ssrc_)
                 {
+
                     rc = &sample;
+
                 }
+                else
+                {
+                    DLOGI(LOG_BEGIN("checkSample(%x): drop sample, different ssrc %d != %d"), DLOG_POINTER(&sample), smpl->header.rtp_header.ssrc, ssrc_);
+                }
+            }
+            else
+            {
+                DLOGI(LOG_BEGIN("checkSample(%x): sample is empty"), DLOG_POINTER(&sample));
             }
 
             return rc;

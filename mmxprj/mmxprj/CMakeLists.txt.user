@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.5.1, 2018-04-25T15:53:40. -->
+<!-- Written by QtCreator 3.5.1, 2018-04-28T15:45:01. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -157,7 +157,7 @@
      <value type="int">14</value>
     </valuelist>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">mmxcore</value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-n10.2.16.21 -p6080 -l3 -c1 -i2050 -o1</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-n10.2.16.21 -p6080 -l0 -c1 -i2050 -o1</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
@@ -207,7 +207,7 @@
      <value type="int">14</value>
     </valuelist>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">mmxlst</value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-c2 -p5062,5063 -l3 -n0.0.0.0</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-c1 -p5062,5063 -l3 -n0.0.0.0</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>

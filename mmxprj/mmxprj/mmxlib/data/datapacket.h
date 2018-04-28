@@ -20,6 +20,7 @@ namespace mmx
         public:
             DataPacket(int size = 0x10000);
             DataPacket(DataPacket&& dp);
+            ~DataPacket() override;
 
 
             // IDataPacketHeader

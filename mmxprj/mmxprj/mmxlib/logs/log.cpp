@@ -11,7 +11,7 @@
 
 
 #define LOG_BUFFER_SIZE     8196L   // более чем достаточно
-#define LOG_HEADER_FORMAT   "%02d.%02d.%02d %02d:%02d:%02d.%06d [ %c ] "
+#define LOG_HEADER_FORMAT   "%02d.%02d.%02d %02d:%02d:%02d.%06d [%c] "
 #define LOG_MAX_FILENAME    256L
 
 
@@ -19,12 +19,16 @@ namespace mmx
 {
     namespace logs
     {
-        static std::FILE*   g_file = nullptr;
-        static char         g_filename[LOG_MAX_FILENAME] = { '\0' };
-        static bool         g_init = false;
-        static bool         g_mt = false;
-        static log_level_t  g_max_level = L_DEBUG;
-        static std::mutex   g_mutex;
+        static std::FILE*       g_file = nullptr;
+        static char             g_filename[LOG_MAX_FILENAME] = { '\0' };
+        static char             g_dir[LOG_MAX_FILENAME] = { '\0' };
+        static char             g_log[LOG_MAX_FILENAME] = { '\0' };
+        static bool             g_init = false;
+        static bool             g_mt = false;
+        static log_level_t      g_max_level = L_DEBUG;
+        static std::mutex       g_mutex;
+        static unsigned char    g_day;
+
 
         int log_init(const char* filename, log_level_t max_level, bool mt)
         {
@@ -62,9 +66,15 @@ namespace mmx
 
                     *g_filename = '\0';
 
+                    *g_log = '\0';
+
+                    *g_dir = '\0';
+
                     g_mt = false;
 
                     g_init = false;
+
+                    g_day = 0;
 
                     // признак деинициализации
 
@@ -78,15 +88,30 @@ namespace mmx
             {
                 // если путь задан, то поступил запрос на инициализацию
 
-                if (filename != nullptr)
+                if (filename != nullptr && *filename != '\0')
                 {
-                    // временно
+                    int l = strlen(filename);
 
-                    // std::remove(g_filename);
+                    std::time_t tim = std::time(nullptr);
+                    std::tm* tim_str = std::localtime(&tim);
 
-                    mkdir("/var/log/mmx", 0777);
+                    while(l > 0 && filename[l] != '/') l--;
 
-                    std::strcpy(g_filename, filename);
+                    if (l > 0)
+                    {
+                        std::strncpy(g_dir,filename, ++l);
+
+                        g_dir[l] = '\0';
+
+                        mkdir(g_dir, 0666);
+
+                    }
+
+                    std::strcpy(g_log,filename + l);
+
+                    std::sprintf(g_filename, "%s%02d%02d-%s", g_dir, tim_str->tm_mon+1, tim_str->tm_mday, g_log);
+
+                    // std::strcpy(g_filename, filename);
 
                     g_mt = mt;
 
@@ -113,6 +138,21 @@ namespace mmx
 
         void __out(const char* log_message)
         {
+            std::time_t tim = std::time(nullptr);
+            std::tm* tim_str = std::localtime(&tim);
+
+            if (g_day != tim_str->tm_mday)
+            {
+                std::sprintf(g_filename, "%s%02d%02d-%s", g_dir, tim_str->tm_mon+1, tim_str->tm_mday, g_log);
+                g_day = tim_str->tm_mday;
+
+                if (g_file != nullptr)
+                {
+                    std::fflush(g_file);
+                    std::fclose(g_file);
+                }
+            }
+
             // дескриптор файла пуст, либо открываем первый раз
             // либо предыдущая попытка была неуспешной
 

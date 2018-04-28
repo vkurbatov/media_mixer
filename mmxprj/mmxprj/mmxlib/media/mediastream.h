@@ -18,12 +18,11 @@ namespace mmx
 
             JitterBuffer    jitter_;
 
-            unsigned short pack_id_;
-            int ref_count_;
+            unsigned short  pack_id_;
+            int             ref_count_;
 
-            unsigned int address_;
-            unsigned short port_;
-
+            unsigned int    address_;
+            unsigned short  port_;
 
             friend class MediaPool;
 
@@ -32,9 +31,10 @@ namespace mmx
             MediaStream(unsigned int address = 0, unsigned short port = 0);
             MediaStream(MediaStream&& mediastream);
             MediaStream& operator=(MediaStream&& mediastream);
+            ~MediaStream();
 
             int PutSample(const mmx::headers::MEDIA_DATA& media);
-            const headers::MEDIA_SAMPLE* GetSample() const;
+            const headers::MEDIA_SAMPLE* GetMediaSample() const;
             void Clear();
 
         };

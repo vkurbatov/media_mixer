@@ -5,6 +5,11 @@
 
 #include "errno.h"
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("MediaStream", msg)
+
+
 namespace mmx
 {
     namespace media
@@ -16,7 +21,7 @@ namespace mmx
             port_(port),
             jitter_(20,8000,6)
         {
-
+            DLOGT(LOG_BEGIN("MediaStream(%d, %d)"), address, port);
         }
 
         MediaStream::MediaStream(MediaStream&& mediastream) :
@@ -25,7 +30,10 @@ namespace mmx
             address_(mediastream.address_),
             port_(mediastream.port_),
             jitter_(std::move(mediastream.jitter_))
+
         {
+
+            DLOGT(LOG_BEGIN("MediaStream(&&%x)"), DLOG_POINTER(&mediastream));
 
             mediastream.pack_id_ = 0;
             mediastream.ref_count_ = 0;
@@ -44,6 +52,8 @@ namespace mmx
                 port_ = mediastream.port_;
                 jitter_ = std::move(mediastream.jitter_);
 
+                DLOGT(LOG_BEGIN("operator=(&&%x)"), DLOG_POINTER(&mediastream));
+
                 mediastream.pack_id_ = 0;
                 mediastream.ref_count_ = 0;
                 mediastream.address_ = 0;
@@ -51,6 +61,12 @@ namespace mmx
             }
 
             return *this;
+        }
+
+
+        MediaStream::~MediaStream()
+        {
+            DLOGT(LOG_BEGIN("~MediaStream()"));
         }
 
         int MediaStream::PutSample(const mmx::headers::MEDIA_DATA& media)
@@ -65,15 +81,20 @@ namespace mmx
                 rc = jitter_.PutMedia(rtp, ++pack_id_, media.header.timestamp);
 
             }
+            else
+            {
+                DLOGW(LOG_BEGIN("PutSample(&%x): media data is not rtp"), DLOG_POINTER(&media));
+            }
 
             return rc;
         }
 
-        const headers::MEDIA_SAMPLE* MediaStream::GetSample() const
+        const headers::MEDIA_SAMPLE* MediaStream::GetMediaSample() const
         {
 
-            auto smpl = jitter_.GetSample();
-            return smpl != nullptr ? smpl->GetMediaSample() : nullptr;
+            auto smpl = jitter_.GetSample(Sample::GetCurrentTimestamp() - 60);
+
+            return smpl != nullptr  ? smpl->GetMediaSample() : nullptr;
 
         }
 

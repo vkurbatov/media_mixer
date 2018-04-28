@@ -17,6 +17,7 @@ namespace mmx
 
             DataPacketReader(const headers::DATA_PACK_HEADER* data);
             DataPacketReader(DataPacketReader&& dpreader);
+            ~DataPacketReader();
 
             // IDataPacketReader
 

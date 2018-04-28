@@ -23,6 +23,8 @@ namespace mmx
         void logW(const char* format, ...);
         void logE(const char* format, ...);
         void logC(const char* format, ...);
+
+        //inline int ptr2id(void* p) { return ((long)(p) / 8) % 0x10000; };
 	}
 }
 

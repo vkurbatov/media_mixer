@@ -8,8 +8,7 @@ import random, string
 import sys
 
 
-logging.basicConfig(filename='stop_proxy.log',
-                    level=logging.DEBUG,
+logging.basicConfig(level=logging.DEBUG,
                     format='%(filename)s(%(lineno)s) [%(asctime)s] (%(threadName)-4s) %(message)s',
                     )
 
@@ -18,8 +17,8 @@ g_alive = True
 start_proxy="\
 \x03\
 \x1e\x00\
-\x02\x10\x02\x0a\x32\x75\
-\x02\x10\x02\x0a\x34\x75\
+\x15\x10\x02\x0a\xC6\x13\
+\x15\x10\x02\x0a\xC7\x13\
 \x01\x0d\x03\x00\x10\x00\x01\x01\x02\
 \x01\x0d\x0f\x00\x48\x00\x01\x03\x04\
 \xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\
@@ -35,7 +34,7 @@ start_proxy="\
 \xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\
 \xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\
 \xff\xff\xff\xff\xff\xff\xff\xff\xff\
-\xff
+\xff\
 "
 
 def hex_to_str(byteStr):
@@ -44,8 +43,8 @@ def hex_to_str(byteStr):
 
 
 class TcpClient():
-    __poll_timeout = 0.5
-    __buffer_size = 2048
+    __poll_timeout = 3
+    __buffer_size = 1039
     __reconnect_timeout = 0.2
 
     def __init__(self, remote_address):
@@ -64,7 +63,9 @@ class TcpClient():
                 if self.__connect() == False:
                     time.sleep(self.__reconnect_timeout)
             else:
+		self.send(start_proxy)
                 readable, writable, exceptional = select.select([self.__client], [], [])
+		time.sleep(self.__poll_timeout)
                 for self.socket in readable:
                     try:
                         data = self.socket.recv(self.__buffer_size)
@@ -74,6 +75,7 @@ class TcpClient():
                             break
                         else:
                             self.__on_recv(data)
+			    g_Alive = False
                     except Exception as ex:
                         logging.debug("run(): catch exception: " + str(ex))
                         self.__on_disconnect()
@@ -107,7 +109,7 @@ class TcpClient():
     
     def __on_recv(self, data):
         logging.debug(" <-- (" + str(len(data)) + ") " + hex_to_str(data))
-        self.send(status)
+#        self.send(status)
     
     def send(self, data):
         if self.__is_connected() == True:
@@ -125,14 +127,15 @@ class TcpClient():
 
 if __name__ == '__main__':
     logging.debug("start!")
-    remote_address = "10.2.16.21:5080"
+    remote_address = "10.2.16.21:6080"
     tcp_client = TcpClient(remote_address)
     
     try:
         while g_alive == True:
             tcp_client.run()
-            time.sleep(1)
-            tcp_client.send(start_proxy)
+#            time.sleep(1)
+#            tcp_client.send(start_proxy)
+#	     logginng.debug("sending start_proxy");
     except KeyboardInterrupt:
         g_alive = False
     except Exception as ex:

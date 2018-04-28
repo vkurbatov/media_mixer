@@ -66,7 +66,7 @@ namespace mmxmux
 
         init();
 
-        //test();
+        // test();
 
 
         while(1)
@@ -197,6 +197,9 @@ namespace mmxmux
 
                 if (channel != nullptr)
                 {
+                    m->OrmInfoPack(channel->GetWritter());
+
+                    /*
                     int size = m->OrmInfoPack(nullptr, 0);
 
                     if (size > 0)
@@ -215,6 +218,7 @@ namespace mmxmux
                         }
 
                     }
+                    */
                 }
 
             }
@@ -262,7 +266,7 @@ namespace mmxmux
                         while(block != nullptr)
                         {
 
-                            //mmx::logs::logI("@Recieved %d bytes from [%d:%d]", block->header.length - sizeof(block->header), dp->header.pack_id, block->header.block_id);
+                            // mmx::logs::logI("@Recieved %d bytes from [%d:%d]", block->header.length - sizeof(block->header), dp->header.pack_id, block->header.block_id);
 
                             mmx::headers::MEDIA_DATA& media = *(mmx::headers::MEDIA_DATA*)block->data;
 

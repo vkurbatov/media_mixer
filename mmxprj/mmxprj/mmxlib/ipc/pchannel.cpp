@@ -10,6 +10,10 @@
 #include <cstdarg>      // работа с переменнам количеством аргументов
 #include <cstring>      // strcpy
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("PipeChannel", msg)
+
 namespace mmx
 {
     namespace ipc
@@ -19,6 +23,7 @@ namespace mmx
             mode_(0),
             access_(0)
         {
+            DLOGT(LOG_BEGIN("PipeChannel()"));
             std::memset(pipename_, 0, sizeof(pipename_));
         }
 
@@ -27,6 +32,7 @@ namespace mmx
             mode_(channel.mode_),
             access_(channel.access_)
         {
+            DLOGT(LOG_BEGIN("PipeChannel(&%x)"), DLOG_POINTER(&channel));
             channel.handle_ = -1;
             channel.mode_ = 0;
             channel.access_ = 0;
@@ -36,6 +42,7 @@ namespace mmx
 
         PipeChannel::~PipeChannel()
         {
+            DLOGT(LOG_BEGIN("~PipeChannel(): handle_ = %d"), handle_);
             if (handle_ >= 0)
             {
                 Close();
@@ -52,6 +59,7 @@ namespace mmx
 
             int mode = va_arg(vl, int);
 
+            DLOGT(LOG_BEGIN("Open(%s, %d)"), name, mode);
 
             if (handle_ < 0)
             {
@@ -70,14 +78,21 @@ namespace mmx
                         int access = va_arg(vl, int);
                         //::unlink(name);
 
+                        DLOGT(LOG_BEGIN("Open(): create new pipe access = %d"), access);
+
                         rc = ::mkfifo(name, access);
 
                         if (rc < 0 && errno != EEXIST)
                         {
+
                             rc = -errno;
+                            DLOGW(LOG_BEGIN("Open(): pipe create error, rc = %d"), rc);
+
                         }
                         else
                         {
+                            DLOGI(LOG_BEGIN("Open(): pipe create success, rc = %d"), rc);
+
                             access_ = access;
 
                             rc = 0;
@@ -95,6 +110,8 @@ namespace mmx
                             std::strcpy(pipename_,name);
 
                             handle_ = rc;
+
+                            DLOGI(LOG_BEGIN("Open(): pipe open success, rc = %d"), rc);
                         }
                         else
                         {
@@ -105,10 +122,20 @@ namespace mmx
                                 //::unlink(name);
                                 access_ = 0;
                             }
+
+                            DLOGE(LOG_BEGIN("Open(): pipe open error, rc = %d"), rc);
                         }
                     }
 
                 }
+                else
+                {
+                    DLOGW(LOG_BEGIN("Open(): invalid argument, name = %s"), name);
+                }
+            }
+            else
+            {
+                DLOGW(LOG_BEGIN("Open(): pipe already open, handle_ = %d"), handle_);
             }
 
             va_end(vl);
@@ -126,6 +153,7 @@ namespace mmx
 
                 if (rc >= 0)
                 {
+
                     rc = handle_;
 
                     handle_ = -1;
@@ -137,11 +165,18 @@ namespace mmx
                         //::unlink(pipename_);
                         access_ = 0;
                     }
+
+                    DLOGI(LOG_BEGIN("Close(): pipe close success, handle_ = %d"), rc);
                 }
                 else
                 {
                     rc = -errno;
+                    DLOGE(LOG_BEGIN("Close(): Error close pipe, handle_ = %d, rc = %d"), handle_, rc);
                 }
+            }
+            else
+            {
+                DLOGD(LOG_BEGIN("Close(): pipe already close, handle_ = %d"), handle_);
             }
 
             return rc;
@@ -163,10 +198,23 @@ namespace mmx
                     if (rc < 0)
                     {
                         rc = -errno;
+                        DLOGW(LOG_BEGIN("Write(%x, %d): write error rc = %d"), DLOG_POINTER(msg), size, rc);
+                    }
+                    else
+                    {
+                        DLOGT(LOG_BEGIN("Write(%x, %d): write success %d bytes"), DLOG_POINTER(msg), size, rc);
                     }
 
                 }
+                else
+                {
+                    DLOGW(LOG_BEGIN("Write(%x, %d): invalid arguments"), DLOG_POINTER(msg), size);
+                }
 
+            }
+            else
+            {
+                DLOGW(LOG_BEGIN("Write(): pipe not open handle_ = %d"), handle_);
             }
 
             return rc;
@@ -187,10 +235,24 @@ namespace mmx
                     if (rc <= 0)
                     {
                         rc = -errno;
+                        DLOGW(LOG_BEGIN("Read(%x, %d): read error rc = %d"), DLOG_POINTER(msg), size, rc);
+                    }
+                    else
+                    {
+                        DLOGT(LOG_BEGIN("Read(%x, %d): read success %d bytes"), DLOG_POINTER(msg), size, rc);
                     }
 
+
+                }
+                else
+                {
+                    DLOGW(LOG_BEGIN("Read(%x, %d): invalid arguments"), DLOG_POINTER(msg), size);
                 }
 
+            }
+            else
+            {
+                DLOGW(LOG_BEGIN("Read(): pipe not open handle_ = %d"), handle_);
             }
 
             return rc;

@@ -962,6 +962,33 @@ tools/iosockadp.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.s
 .PHONY : tools/iosockadp.cpp.s
 
+tools/mediamarshaler.o: tools/mediamarshaler.cpp.o
+
+.PHONY : tools/mediamarshaler.o
+
+# target to build an object file
+tools/mediamarshaler.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o
+.PHONY : tools/mediamarshaler.cpp.o
+
+tools/mediamarshaler.i: tools/mediamarshaler.cpp.i
+
+.PHONY : tools/mediamarshaler.i
+
+# target to preprocess a source file
+tools/mediamarshaler.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.i
+.PHONY : tools/mediamarshaler.cpp.i
+
+tools/mediamarshaler.s: tools/mediamarshaler.cpp.s
+
+.PHONY : tools/mediamarshaler.s
+
+# target to generate assembly for a file
+tools/mediamarshaler.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.s
+.PHONY : tools/mediamarshaler.cpp.s
+
 tools/orm_client.o: tools/orm_client.cpp.o
 
 .PHONY : tools/orm_client.o
@@ -1205,6 +1232,33 @@ tools/timer.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.s
 .PHONY : tools/timer.cpp.s
 
+tools/udp_listener.o: tools/udp_listener.cpp.o
+
+.PHONY : tools/udp_listener.o
+
+# target to build an object file
+tools/udp_listener.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o
+.PHONY : tools/udp_listener.cpp.o
+
+tools/udp_listener.i: tools/udp_listener.cpp.i
+
+.PHONY : tools/udp_listener.i
+
+# target to preprocess a source file
+tools/udp_listener.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.i
+.PHONY : tools/udp_listener.cpp.i
+
+tools/udp_listener.s: tools/udp_listener.cpp.s
+
+.PHONY : tools/udp_listener.s
+
+# target to generate assembly for a file
+tools/udp_listener.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.s
+.PHONY : tools/udp_listener.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1307,6 +1361,9 @@ help:
 	@echo "... tools/iosockadp.o"
 	@echo "... tools/iosockadp.i"
 	@echo "... tools/iosockadp.s"
+	@echo "... tools/mediamarshaler.o"
+	@echo "... tools/mediamarshaler.i"
+	@echo "... tools/mediamarshaler.s"
 	@echo "... tools/orm_client.o"
 	@echo "... tools/orm_client.i"
 	@echo "... tools/orm_client.s"
@@ -1334,6 +1391,9 @@ help:
 	@echo "... tools/timer.o"
 	@echo "... tools/timer.i"
 	@echo "... tools/timer.s"
+	@echo "... tools/udp_listener.o"
+	@echo "... tools/udp_listener.i"
+	@echo "... tools/udp_listener.s"
 .PHONY : help
 
 

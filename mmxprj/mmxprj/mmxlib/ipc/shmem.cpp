@@ -11,6 +11,10 @@
 #include <unistd.h>
 
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("SharedMemory", msg)
+
 namespace mmx
 {
     namespace ipc
@@ -21,7 +25,7 @@ namespace mmx
             data_(nullptr),
             mode_(0)
         {
-
+            DLOGT(LOG_BEGIN("SharedMemory()"));
         }
 
         SharedMemory::SharedMemory(SharedMemory&& shmem) :
@@ -34,10 +38,13 @@ namespace mmx
             shmem.size_ = 0;
             shmem.data_ = nullptr;
             shmem.mode_ = 0;
+
+            DLOGT(LOG_BEGIN("SharedMemory(&&%d)"), DLOG_POINTER(&shmem));
         }
 
         SharedMemory::~SharedMemory()
         {
+            DLOGT(LOG_BEGIN("~SharedMemory()"));
             Close();
         }
 
@@ -45,8 +52,8 @@ namespace mmx
         {
             int rc = -EEXIST;
 
-            std::va_list    vl;
 
+            DLOGT(LOG_BEGIN("SharedMemory(%d, %d, %d)"), key, size, mode);
 
             if (handle_ < 0)
             {
@@ -74,6 +81,8 @@ namespace mmx
 
                             mode_ = mode;
 
+                            DLOGI(LOG_BEGIN("Open(%d, %d, %d): shemm open success, data_ = %x, size_ = %d,  rc = %d"), key, size, mode, DLOG_POINTER(data_), size_, rc);
+
                         }
                         else
                         {
@@ -81,19 +90,28 @@ namespace mmx
                             rc = -errno;
                             shmctl(handle_, IPC_RMID, NULL);
                             handle_ = -1;
+                            DLOGE(LOG_BEGIN("Open(%d, %d, %d): get shmem pointer error, rc = %d"), key, size, mode, rc);
 
                         }
                     }
                     else
                     {
                         rc =-errno;
+                        DLOGE(LOG_BEGIN("Open(%d, %d, %d): open shmem error, rc = %d"), key, size, mode, rc);
                     }
 
                 }
+                else
+                {
+                    DLOGE(LOG_BEGIN("Open(%d, %d, %d): invalid argument"), key, size, mode);
+                }
 
             }
+            else
+            {
+                DLOGW(LOG_BEGIN("Open(): already open, handle_ = %d"), handle_);
+            }
 
-            va_end (vl);
 
             return rc;
 
@@ -108,6 +126,17 @@ namespace mmx
             {
 
                 rc = shmdt(data_);
+
+                if (rc >= 0)
+                {
+                    DLOGD(LOG_BEGIN("Close() release data = %x success)"), DLOG_POINTER(data_));
+                }
+                else
+                {
+                    rc = -errno;
+                    DLOGD(LOG_BEGIN("Close() release data = %x error, rc = %d)"), DLOG_POINTER(data_), rc);
+                }
+
                 data_ = nullptr;
                 size_ = 0;
 
@@ -117,7 +146,18 @@ namespace mmx
             {
 
                 rc = shmctl( handle_, IPC_RMID, NULL);
-                handle_ = 0;
+
+                if (rc >= 0)
+                {
+                    DLOGD(LOG_BEGIN("Close() close shmem %d success)"), handle_);
+                }
+                else
+                {
+                    rc = -errno;
+                    DLOGD(LOG_BEGIN("Close() close shmem %d error, rc = %d)"), handle_, rc);
+                }
+
+                handle_ = -1;
 
             }
 

@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+idpwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+headers/datapack.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/headers/datapack.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 vector
 -
@@ -14,9 +22,51 @@ vector
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+io.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+memory
+-
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
+select.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.h
+istream.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
+iippacket.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
+ippacketwrapper.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.h
+ippacketpool.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
+vector
+-
+queue
+-
+ipc/io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ipc/io.h
+data/packet.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/data/packet.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+chrono
+-
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/datapacket.h
 vector
@@ -57,18 +107,6 @@ rtp.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/headers/udp.h
 headers/ip.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/headers/headers/ip.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/ipc/ichannel.h
-io.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/ipc/io.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/ipc/io.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/ipc/pchannel.h
-memory
--
-ichannel.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/ipc/ichannel.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/logs/log.h
 
@@ -134,25 +172,43 @@ ippacketpool.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/istream.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/deffwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ichanneldispatcher.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/pipe_output_channel.h
+tools/ichanneldispatcher.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/tools/ichanneldispatcher.h
+tools/timer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/tools/timer.h
+tools/deffwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/tools/deffwriter.h
+ipc/pchannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ipc/pchannel.h
+net/select_ex.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/net/select_ex.h
+data/dpwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/data/dpwriter.h
 vector
 -
-queue
--
-ipc/io.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ipc/io.h
-data/packet.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/data/packet.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/iosockadp.h
-ipc/io.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ipc/io.h
-net/socket.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/net/socket.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/timer.h
 chrono
 -
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/udp_listener.h
+ichanneldispatcher.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ichanneldispatcher.h
+data/idpwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/data/idpwriter.h
+net/portset.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/net/portset.h
+net/socket.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/net/socket.h
+net/select_ex.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/net/select_ex.h
+sniffers/ipsniffer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/sniffers/ipsniffer.h
+timer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/timer.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
 listener.h
@@ -166,6 +222,8 @@ fcntl.h
 errno.h
 -
 sys/time.h
+-
+errno.h
 -
 mmxlib/logs/log.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/logs/log.h
@@ -183,18 +241,14 @@ mmxlib/net/socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/socket.h
 mmxlib/net/select_ex.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/select_ex.h
-mmxlib/ipc/pchannel.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/ipc/pchannel.h
-mmxlib/tools/timer.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/tools/timer.h
-mmxlib/tools/iosockadp.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/tools/iosockadp.h
-mmxlib/tools/deffwriter.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/tools/deffwriter.h
 mmxlib/data/datapacket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/data/datapacket.h
 mmxlib/sniffers/ipsniffer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/sniffers/ipsniffer.h
+mmxlib/tools/pipe_output_channel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/tools/pipe_output_channel.h
+mmxlib/tools/udp_listener.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/tools/udp_listener.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/main.cpp
 iostream

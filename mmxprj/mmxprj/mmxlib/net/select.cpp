@@ -109,7 +109,6 @@ namespace mmx
                     sock_table_[fd].callback = callback;
                     sock_table_[fd].context = context;
 
-
                     if (fd_max_ < fd)
                     {
                         fd_max_ = fd;

@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 
         std::sprintf(log_file, LOG_NAME_PATTERN, config.channel_num);
 
-        mmx::logs::log_init(log_file, DEFAULT_LEVEL_LOG, false);
+        mmx::logs::log_init(log_file, log_level, false);
 
         mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
 

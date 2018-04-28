@@ -105,6 +105,8 @@ headers/media.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/headers/media.h
 headers/order645_2.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/headers/order645_2.h
+data/idpwriter.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/data/idpwriter.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
 sorm.h
@@ -271,6 +273,10 @@ mmxlib/ipc/shmem.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
 idpwriter.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+headers/datapack.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/headers/datapack.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 vector

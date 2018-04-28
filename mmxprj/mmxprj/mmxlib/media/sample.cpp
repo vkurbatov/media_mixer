@@ -114,13 +114,6 @@ namespace mmx
 
         const headers::MEDIA_SAMPLE* Sample::GetMediaSample() const
         {
-            static int cnt = 0;
-
-            if (is_valid_ == false)
-            {
-                 cnt++;
-            }
-
             return is_valid_
                     ? (const headers::MEDIA_SAMPLE*)data_.data()
                     : nullptr;
