@@ -30,7 +30,7 @@ namespace mmx
 
             std::uint64_t id = getKey(address, port);
 
-            DLOGT(LOG_BEGIN("GetStream(%d, %d), key = "), address, port, id);
+            DLOGT(LOG_BEGIN("GetStream(%d, %d), key = %d"), address, port, id);
 
             // для начала проверим, не пора ли почистить мусор
 
@@ -38,7 +38,7 @@ namespace mmx
             {
                 if (pool_.size() >= min_garbage_size_)
                 {
-                    DLOGT(LOG_BEGIN("GetStream(%d, %d): garbage collector start"), address, port);
+                    DLOGT(LOG_BEGIN("GetStream(): garbage collector start"));
 
                     ClearGarbage(garbage_time_life_);
                 }
@@ -51,7 +51,7 @@ namespace mmx
             if (it == pool_.end())
             {
 
-                DLOGT(LOG_BEGIN("GetStream(): key &d not found"), id);
+                DLOGT(LOG_BEGIN("GetStream(): stream not found in pool"));
 
                 // проверим очередь свободных
 
@@ -61,7 +61,7 @@ namespace mmx
                     pool_[id] = std::move(q_free_.front());
                     q_free_.pop();
 
-                    DLOGT(LOG_BEGIN("GetStream(): stream get from the queue of free"), id);
+                    DLOGT(LOG_BEGIN("GetStream(): stream get from the queue (%d) of free"), q_free_.size());
 
                 }
 
@@ -71,7 +71,7 @@ namespace mmx
             else
             {
                 rc = &it->second;
-                DLOGT(LOG_BEGIN("GetStream(): key %d found in pool"), id);
+                DLOGT(LOG_BEGIN("GetStream(): stream found in pool"));
             }
 
             if (rc != nullptr)
@@ -80,11 +80,12 @@ namespace mmx
                 rc->port_ = port;
                 rc->address_ = address;
 
-                DLOGT(LOG_BEGIN("GetStream(): get stream %d success: ref_count_ = %d"), id, rc->ref_count_);
+                DLOGT(LOG_BEGIN("GetStream(): get stream success: ref_count_ = %d"), rc->ref_count_);
             }
             else
             {
-                DLOGE(LOG_BEGIN("GetStream(): get stream %d error"), id);
+                errno = ENOMEM;
+                DLOGE(LOG_BEGIN("GetStream(%d, %d): get stream error"),address ,port, id);
             }
 
             return rc;
@@ -203,10 +204,11 @@ namespace mmx
             return rc;
         }
 
-        // очистка "мусора" (устаревший медиапотоков) по времени жизни (-1 удалит все)
+        // очистка "мусора" (устаревших медиапотоков) по времени жизни (-1 удалит все)
 
         int MediaPool::ClearGarbage(int time_life)
         {
+
             int rc = 0;
 
             rm_list_.clear();
@@ -217,6 +219,9 @@ namespace mmx
 
 
             unsigned int timestamp = (tv.tv_sec % 86400) * 1000 + (tv.tv_usec / 1000);
+
+            DLOGT(LOG_BEGIN("ClearGarbage(%d): ts = %d"), time_life, timestamp);
+
 
             for (auto it = pool_.begin(); it != pool_.end(); it++)
             {
@@ -230,10 +235,14 @@ namespace mmx
 
             }
 
+            DLOGT(LOG_BEGIN("ClearGarbage(): found for remove %d streams"), rc);
+
             for (auto& p : rm_list_)
             {
                 Release(p, -1);
             }
+
+            rc = rm_list_.size();
 
             rm_list_.clear();
 

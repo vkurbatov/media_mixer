@@ -3,6 +3,10 @@
 #include <cstring> // memset
 #include "errno.h"
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("Select", msg)
+
 namespace mmx
 {
     namespace net
@@ -11,6 +15,9 @@ namespace mmx
             fd_max_(-1),
             fd_min_(-1)
         {
+
+            DLOGT(LOG_BEGIN("Select()"));
+
             std::memset((void*)&sets_, 0, sizeof(sets_));
             std::memset((void*)&result_, 0, sizeof(result_));
             std::memset((void*)&sock_table_, 0, sizeof(sock_table_));
@@ -18,7 +25,7 @@ namespace mmx
 
         Select::~Select()
         {
-
+            DLOGT(LOG_BEGIN("~Select()"));
         }
 
         // главный метод
@@ -26,6 +33,8 @@ namespace mmx
         int Select::Wait(timeout_t timeout)
         {
             timeval tv = { timeout/ 1000, 1000 * (timeout % 1000) };
+
+            DLOGT(LOG_BEGIN("Wait(%d)"), timeout);
 
             std::memcpy(result_, sets_, sizeof(sets_));
 
@@ -40,6 +49,8 @@ namespace mmx
             if (rc > 0)
             {
 
+                DLOGD(LOG_BEGIN("Wait(%d): select[%d..%d] return %d"), timeout, fd_min_, fd_max_ + 1, rc);
+
                 int signaled_sock = rc;
 
                 for (int i = fd_min_; i < fd_max_ + 1 && signaled_sock > 0; i++)
@@ -49,6 +60,7 @@ namespace mmx
 
                     if (mask_old != S_EV_NONE)
                     {
+                        DLOGD(LOG_BEGIN("Wait(): fd %d mask = %x"), i, mask_old);
 
                         if (sock_table_[i].callback != nullptr)
                         {
@@ -75,6 +87,15 @@ namespace mmx
 
                 rc = rc == 0 ? -ETIMEDOUT : -errno;
 
+                if (rc == -ETIMEDOUT)
+                {
+                    DLOGD(LOG_BEGIN("Wait(%d): timeout"), timeout);
+                }
+                else
+                {
+                    DLOGE(LOG_BEGIN("Wait(%d): select error = %d"), rc);
+                }
+
             }
 
             return rc;
@@ -84,12 +105,14 @@ namespace mmx
         {
             int rc = -EBADF;
 
+            DLOGT(LOG_BEGIN("Set(%d, %x, %x, %x)"), fd, mask, DLOG_POINTER(callback), DLOG_POINTER(context));
+
             if (fd >= 0 && fd < FD_SETSIZE)
             {
 
                 if ((mask & S_EV_EIO_MASK) != S_EV_NONE)
                 {
-                    // добавление маскок в наблюдение
+                    // добавление масок в наблюдение
 
                     rc = Get(fd);
 
@@ -158,6 +181,12 @@ namespace mmx
                         }
                     }
                 }
+
+                DLOGT(LOG_BEGIN("Set(): set[%d..%d]"), fd_min_, fd_max_);
+            }
+            else
+            {
+                 DLOGT(LOG_BEGIN("Set(): invalid fd value = %d"), fd);
             }
 
             return rc;
@@ -188,54 +217,12 @@ namespace mmx
         {
            return set2mask(fd, result_, 3);
         }
-/*
-        bool Select::IsRead(int fd) const
-        {
-            return fd >= 0 && fd < FD_SETSIZE && FD_ISSET(fd,&result_[0]);
-        }
 
-        bool Select::IsWrite(int fd) const
-        {
-            return fd >= 0 && fd < FD_SETSIZE && FD_ISSET(fd,&result_[1]);
-        }
-
-        bool Select::IsExcept(int fd) const
-        {
-            return fd >= 0 && fd < FD_SETSIZE && FD_ISSET(fd,&result_[2]);
-        }
-
-        bool Select::SetWrite(int fd)
-        {
-
-        }
-
-        bool Select::SetRead(int fd)
-        {
-
-        }
-
-        bool Select::SetExcept(int fd)
-        {
-
-        }
-
-        bool Select::ClrWrite(int fd)
-        {
-
-        }
-
-        bool Select::ClrRead(int fd)
-        {
-
-        }
-
-        bool Select::ClrExcept(int fd)
-        {
-
-        }
-*/
         void Select::Reset()
         {
+
+            DLOGT(LOG_BEGIN("Reset()"));
+
             std::memset(sets_, 0, sizeof(sets_));
             std::memset(result_, 0, sizeof(result_));
             std::memset((void*)&sock_table_, 0, sizeof(sock_table_));

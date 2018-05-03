@@ -14,14 +14,15 @@ namespace mmx
 {
     namespace media
     {
-        MediaStream::MediaStream(unsigned int address, unsigned short port) :
+        MediaStream::MediaStream(unsigned int address, unsigned short port, int jitter_flashback) :
             pack_id_(0),
             ref_count_(0),
             address_(address),
             port_(port),
-            jitter_(20,8000,6)
+            jitter_(DEFAULT_SAMPLE_WIDTH, DEFAULT_SAMPLE_FREQ, DEFAULT_JITTER_SIZE),
+            jitter_flashback_(jitter_flashback)
         {
-            DLOGT(LOG_BEGIN("MediaStream(%d, %d)"), address, port);
+            DLOGT(LOG_BEGIN("MediaStream(%d, %d, %d)"), address, port, jitter_flashback);
         }
 
         MediaStream::MediaStream(MediaStream&& mediastream) :
@@ -29,7 +30,8 @@ namespace mmx
             ref_count_(mediastream.ref_count_),
             address_(mediastream.address_),
             port_(mediastream.port_),
-            jitter_(std::move(mediastream.jitter_))
+            jitter_(std::move(mediastream.jitter_)),
+            jitter_flashback_(mediastream.jitter_flashback_)
 
         {
 
@@ -39,6 +41,7 @@ namespace mmx
             mediastream.ref_count_ = 0;
             mediastream.address_ = 0;
             mediastream.port_ = 0;
+            mediastream.jitter_flashback_ = 0;
 
         }
 
@@ -51,6 +54,7 @@ namespace mmx
                 address_ = mediastream.address_;
                 port_ = mediastream.port_;
                 jitter_ = std::move(mediastream.jitter_);
+                jitter_flashback_ = mediastream.jitter_flashback_;
 
                 DLOGT(LOG_BEGIN("operator=(&&%x)"), DLOG_POINTER(&mediastream));
 
@@ -58,6 +62,7 @@ namespace mmx
                 mediastream.ref_count_ = 0;
                 mediastream.address_ = 0;
                 mediastream.port_ = 0;
+                mediastream.jitter_flashback_ = 0;
             }
 
             return *this;
@@ -78,6 +83,8 @@ namespace mmx
             if (rtp.Header() != nullptr)
             {
 
+                DLOGT(LOG_BEGIN("PutSample(&%x): rtp packet put into jitter buffer"), DLOG_POINTER(&media));
+
                 rc = jitter_.PutMedia(rtp, ++pack_id_, media.header.timestamp);
 
             }
@@ -92,7 +99,7 @@ namespace mmx
         const headers::MEDIA_SAMPLE* MediaStream::GetMediaSample() const
         {
 
-            auto smpl = jitter_.GetSample(Sample::GetCurrentTimestamp() - 60);
+            auto smpl = jitter_.GetSample(Sample::GetCurrentTimestamp() - jitter_flashback_);
 
             return smpl != nullptr  ? smpl->GetMediaSample() : nullptr;
 

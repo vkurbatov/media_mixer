@@ -9,6 +9,10 @@
 #include <fcntl.h>      // fcntl
 #include <arpa/inet.h>  // inet_ntoa....
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("Socket", msg)
+
 namespace mmx
 {
     namespace net
@@ -33,7 +37,7 @@ namespace mmx
             r_address_(0),r_port_(0),
             backlog_(0)
         {
-
+            DLOGT(LOG_BEGIN("Socket(%d, %d)"), type, proto);
         }
 /*
         Socket::Socket(const Socket& socket, int flags) :
@@ -71,6 +75,8 @@ namespace mmx
             r_address_(socket.r_address_),r_port_(socket.r_port_),
             backlog_(socket.backlog_)
         {
+            DLOGT(LOG_BEGIN("Socket(&&%x)"), DLOG_POINTER(&socket));
+
             socket.type_ = -1;
             socket.proto_ = -1;
             socket.handle_ = -1;
@@ -83,6 +89,8 @@ namespace mmx
 
         Socket::~Socket()
         {
+            DLOGT(LOG_BEGIN("~Socket(): handle_ = %d"), handle_);
+
             if (handle_ >= 0)
             {
                 Close();
@@ -93,6 +101,8 @@ namespace mmx
 
             int rc = -EINVAL;
 
+            DLOGT("Socket::Create(%d, %d)", type, proto);
+
             if (type >= 0 && proto >= 0)
             {
 
@@ -101,7 +111,16 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc = -errno;
+                    DLOGE("Socket::Create(%d, %d): create socket error = rc", type, proto, rc);
                 }
+                else
+                {
+                    DLOGD("Socket::Create(%d, %d): create socket success =%d", type, proto, rc);
+                }
+            }
+            else
+            {
+                DLOGE("Socket::Create(%d, %d): invalid argument!", type, proto);
             }
 
             return rc;
@@ -113,6 +132,8 @@ namespace mmx
 
             int rc = -EINVAL;
 
+            DLOGT("Socket::Close(%d)", sock);
+
             if (sock >= 0)
             {
 
@@ -121,7 +142,16 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc = -errno;
+                    DLOGD("Socket::Close(%d): close error = %d!", sock, rc);
                 }
+                else
+                {
+                    DLOGD("Socket::Close(%d): success!", sock);
+                }
+            }
+            else
+            {
+                DLOGD("Socket::Close(%d): invalid argument!", sock);
             }
 
             return rc;
@@ -132,6 +162,8 @@ namespace mmx
         int Socket::Send(int sock, const void* data, int size, int flags, address_t r_address, port_t r_port)
         {
             int rc = -EINVAL;
+
+            DLOGT("Socket::Send(%d, %x, %d, %d, %d, %d)", sock, DLOG_POINTER(data), flags, r_address, r_port);
 
             if (sock >= 0 && data != nullptr && size > 0)
             {
@@ -153,8 +185,23 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc = -errno;
+                    if (rc == -EWOULDBLOCK)
+                    {
+                        DLOGD("Socket::Send(%d, %x, %d, %d, %d, %d): Nonblocked send!", sock, DLOG_POINTER(data), flags, r_address, r_port);
+                    }
+                    else
+                    {
+                        DLOGE("Socket::Send(%d, %x, %d, %d, %d, %d): error = %d!", sock, DLOG_POINTER(data), flags, r_address, r_port, rc);
+                    }
                 }
-
+                else
+                {
+                    DLOGT("Socket::Send(): sending %d bytes", rc);
+                }
+            }
+            else
+            {
+                DLOGD("Socket::Send(%d, %x, %d, %d, %d, %d): Invalid arguments!", sock, DLOG_POINTER(data), flags, r_address, r_port);
             }
 
             return rc;
@@ -164,6 +211,8 @@ namespace mmx
         {
 
             int rc = -EINVAL;
+
+            DLOGT("Socket::Recv(%d, %x, %d, %d, %x, %x)", sock, DLOG_POINTER(data), flags, DLOG_POINTER(r_address), DLOG_POINTER(r_port));
 
             if (sock >= 0 && data != nullptr && size > 0)
             {
@@ -198,8 +247,24 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc = -errno;
+                    if (rc == -EWOULDBLOCK)
+                    {
+                        DLOGD("Socket::Recv(%d, %x, %d, %d, %x, %x): Nonblocked recv!", sock, DLOG_POINTER(data), flags, DLOG_POINTER(r_address), DLOG_POINTER(r_port));
+                    }
+                    else
+                    {
+                        DLOGE("Socket::Recv(%d, %x, %d, %d, %x, %x): error = %d!", sock, DLOG_POINTER(data), flags, DLOG_POINTER(r_address), DLOG_POINTER(r_port), rc);
+                    }
+                }
+                else
+                {
+                    DLOGT("Socket::Recv(): recieving %d bytes", rc);
                 }
 
+            }
+            else
+            {
+                DLOGD("Socket::recv(%d, %x, %d, %d, %x, %x): Invalid arguments!", sock, DLOG_POINTER(data), flags, DLOG_POINTER(r_address), DLOG_POINTER(r_port));
             }
 
             return rc;
@@ -210,8 +275,12 @@ namespace mmx
 
             int rc = -EINVAL;
 
+            DLOGT("Socket::Bind(%d, %d, %d)", sock, l_address, l_port);
+
             if (sock >= 0)
             {
+
+
                 if (l_address == 0 && l_port == 0)
                 {
                     sockaddr sa = { 0 };
@@ -234,8 +303,19 @@ namespace mmx
                 if (rc < 0 )
                 {
                     rc = -errno;
+
+                    DLOGW("Socket::Bind(%d, %d, %d): error = %d", sock, l_address, l_port, rc);
+
+                }
+                else
+                {
+                    DLOGD("Socket::Bind(%d, %d, %d): success", sock, l_address, l_port);
                 }
 
+            }
+            else
+            {
+                DLOGD("Socket::Bind(%d, %d, %d): Invalid argument", sock, l_address, l_port);
             }
 
             return rc;
@@ -244,6 +324,8 @@ namespace mmx
         int Socket::Connect(int sock, address_t r_address, port_t r_port)
         {
             int rc = -EINVAL;
+
+            DLOGT("Socket::Connect(%d, %d, %d)", sock, r_address, r_port);
 
             if (sock >= 0)
             {
@@ -269,8 +351,24 @@ namespace mmx
                 if (rc < 0 )
                 {
                     rc = -errno;
+                    if (rc == -EWOULDBLOCK)
+                    {
+                        DLOGD("Socket::Connect(%d, %d, %d): Nonblocked connect!", sock, r_address, r_port);
+                    }
+                    else
+                    {
+                        DLOGE("Socket::Connect(%d, %d, %d): error = %d!", sock, r_address, r_port, rc);
+                    }
+                }
+                else
+                {
+                    DLOGI("Socket::Connect(%d, %d, %d): success", sock, r_address, r_port);
                 }
 
+            }
+            else
+            {
+                DLOGD("Socket::Connect(%d, %d, %d): Invalid arguments", sock, r_address, r_port);
             }
 
             return rc;
@@ -279,6 +377,8 @@ namespace mmx
         int Socket::Accept(int sock, address_t* r_address, port_t* r_port)
         {
             int rc = -EINVAL;
+
+            DLOGT("Socket::Accept(%d, %x, %x)", sock, DLOG_POINTER(r_address), DLOG_POINTER(r_port));
 
             if (sock >= 0)
             {
@@ -292,7 +392,11 @@ namespace mmx
 
                 if (rc < 0 )
                 {
+
                     rc = -errno;
+
+                    DLOGE("Socket::Accept(%d, %x, %x): error = %d", sock, DLOG_POINTER(r_address), DLOG_POINTER(r_port), rc);
+
                 }
                 else
                 {
@@ -305,8 +409,13 @@ namespace mmx
                     {
                         *r_port = ::ntohs(sin.sin_port);
                     }
-                }
 
+                    DLOGI("Socket::Accept(%d, %x, %x): success = %d", sock, DLOG_POINTER(r_address), DLOG_POINTER(r_port), rc);
+                }
+            }
+            else
+            {
+                DLOGD("Socket::Accept(%d, %x, %x): Invalid arguments", sock, DLOG_POINTER(r_address), DLOG_POINTER(r_port));
             }
 
             return rc;
@@ -316,6 +425,8 @@ namespace mmx
         {
             int rc = -EINVAL;
 
+            DLOGT("Socket::Listen(%d, %d)", sock, backlog);
+
             if (sock >= 0)
             {
                 rc = ::listen(sock, backlog);
@@ -323,7 +434,16 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc = -errno;
+                    DLOGE("Socket::Listen(%d, %d): error = %d", sock, backlog, rc);
                 }
+                else
+                {
+                    DLOGD("Socket::Listen(%d, %d): success", sock, backlog);
+                }
+            }
+            else
+            {
+                DLOGD("Socket::Listen(%d, %d): Invalid arguments", sock, backlog);
             }
 
             return rc;
@@ -333,6 +453,8 @@ namespace mmx
         {
             int rc = -EINVAL;
 
+            DLOGT("Socket::SetOption(%d, %d, %d, %x, %d)", sock, level, option, DLOG_POINTER(value), size);
+
             if (sock >= 0 && size>0 && value != nullptr)
             {
                 rc = ::setsockopt(sock, level, option, value, size);
@@ -340,7 +462,16 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc = -errno;
+                    DLOGE("Socket::SetOption(%d, %d, %d, %x, %d): error = %d", sock, level, option, DLOG_POINTER(value), size, rc);
                 }
+                else
+                {
+                    DLOGD("Socket::SetOption(%d, %d, %d, %x, %d): success", sock, level, option, DLOG_POINTER(value), size);
+                }
+            }
+            else
+            {
+                DLOGD("Socket::SetOption(%d, %d, %d, %x, %d): Invalid arguments", sock, level, option, DLOG_POINTER(value), size);
             }
 
             return rc;
@@ -351,6 +482,8 @@ namespace mmx
         {
             int rc = -EINVAL;
 
+            DLOGT("Socket::GetOption(%d, %d, %d, %x, %d)", sock, level, option, DLOG_POINTER(value), size);
+
             if (sock >= 0 && size>0 && value != nullptr)
             {
                 socklen_t len = size;
@@ -360,12 +493,18 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc -= errno;
+                    DLOGE("Socket::GetOption(%d, %d, %d, %x, %d): error = %d", sock, level, option, DLOG_POINTER(value), size, rc);
                 }
                 else
                 {
                     rc = len;
+                    DLOGD("Socket::GetOption(%d, %d, %d, %x, %d): success = %d", sock, level, option, DLOG_POINTER(value), size, rc);
                 }
 
+            }
+            else
+            {
+                DLOGD("Socket::GetOption(%d, %d, %d, %x, %d): Invalid arguments", sock, level, option, DLOG_POINTER(value), size);
             }
 
             return rc;
@@ -374,6 +513,8 @@ namespace mmx
         int Socket::SetFlags(int sock, int flags)
         {
             int rc = -EINVAL;
+
+            DLOGT("Socket::SetFlags(%d, %d)", sock, flags);
 
             if (sock >= 0)
             {
@@ -387,7 +528,17 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc = -errno;
+
+                    DLOGE("Socket::SetFlags(%d, %d) error = %d", sock, flags, rc);
                 }
+                else
+                {
+                    DLOGT("Socket::SetFlags(%d, %d) success", sock, flags);
+                }
+            }
+            else
+            {
+                DLOGD("Socket::SetFlags(%d, %d) Invalid arguments", sock, flags);
             }
 
             return rc;
@@ -396,6 +547,8 @@ namespace mmx
         int  Socket::ClrFlags(int sock, int flags)
         {
             int rc = -EINVAL;
+
+            DLOGT("Socket::ClrFlags(%d, %d)", sock, flags);
 
             if (sock >= 0)
             {
@@ -409,7 +562,16 @@ namespace mmx
                 if (rc < 0)
                 {
                     rc = -errno;
+                    DLOGE("Socket::ClrFlags(%d, %d) error = %d", sock, flags, rc);
                 }
+                else
+                {
+                    DLOGT("Socket::ClrFlags(%d, %d) success", sock, flags);
+                }
+            }
+            else
+            {
+                DLOGD("Socket::ClrFlags(%d, %d) Invalid arguments", sock, flags);
             }
 
             return rc;

@@ -291,6 +291,8 @@ errno.h
 -
 sys/time.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
 isample.h
@@ -309,6 +311,8 @@ cstring
 -
 netdb.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.h
 mediapool.h
@@ -329,6 +333,8 @@ chrono
 -
 sys/time.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.h
 sorm.h
@@ -353,6 +359,8 @@ cstring
 -
 cstdlib
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
 
@@ -363,6 +371,8 @@ cstring
 -
 errno.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/errno.h
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
 sys/socket.h

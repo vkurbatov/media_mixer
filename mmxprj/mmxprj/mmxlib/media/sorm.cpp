@@ -5,14 +5,22 @@
 #include <cstring>
 #include <netdb.h>
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("Sorm", msg)
+
 namespace mmx
 {
     namespace media
     {
-        Sorm::Sorm() :
-            media_pool_(nullptr)
+        Sorm::Sorm(MediaPool& media_pool, unsigned char mixer_gain) :
+            mixer_gain_(mixer_gain),
+            media_pool_(media_pool)
         {
-            std::memset(&sorm_, 0, sizeof(sorm_));
+
+            DLOGT(LOG_BEGIN("Sorm(%d)"), mixer_gain);
+
+            std::memset(&sorm_info_, 0, sizeof(sorm_info_));
             std::memset(&order_header_, 0, sizeof(order_header_));
             streams_[0] = nullptr;
             streams_[1] = nullptr;
@@ -20,47 +28,51 @@ namespace mmx
             rtp_pack_ids_[0] = rtp_pack_ids_[1] = 0;
         }
 
-        Sorm::Sorm(Sorm&& channel) :
-            media_pool_(channel.media_pool_),
-            sorm_(channel.sorm_),
-            order_header_(channel.order_header_)
+        Sorm::Sorm(Sorm&& sorm) :
+            mixer_gain_(sorm.mixer_gain_),
+            media_pool_(sorm.media_pool_),
+            sorm_info_(sorm.sorm_info_),
+            order_header_(sorm.order_header_)
         {
-            streams_[0] = channel.streams_[0];
-            streams_[1] = channel.streams_[1];
-            rtp_ssrcs_[0] = channel.rtp_ssrcs_[0] ;
-            rtp_ssrcs_[1] = channel.rtp_ssrcs_[1];
-            rtp_pack_ids_[0] = channel.rtp_pack_ids_[0];
-            rtp_pack_ids_[1] = channel.rtp_pack_ids_[1];
 
-            channel.media_pool_ = nullptr;
-            channel.streams_[0] = nullptr;
-            channel.streams_[1] = nullptr;
+            DLOGT(LOG_BEGIN("Sorm(&&%x)"), DLOG_POINTER(&sorm));
 
-            std::memset(&sorm_, 0, sizeof(sorm_));
+            streams_[0] = sorm.streams_[0];
+            streams_[1] = sorm.streams_[1];
+            rtp_ssrcs_[0] = sorm.rtp_ssrcs_[0] ;
+            rtp_ssrcs_[1] = sorm.rtp_ssrcs_[1];
+            rtp_pack_ids_[0] = sorm.rtp_pack_ids_[0];
+            rtp_pack_ids_[1] = sorm.rtp_pack_ids_[1];
+
+            sorm.streams_[0] = nullptr;
+            sorm.streams_[1] = nullptr;
+
+            std::memset(&sorm_info_, 0, sizeof(sorm_info_));
             std::memset(&order_header_, 0, sizeof(order_header_));
 
         }
 
-        Sorm& Sorm::operator=(Sorm&& channel)
+        Sorm& Sorm::operator=(Sorm&& sorm)
         {
-            if (this != & channel)
+            if (this != &sorm)
             {
+                DLOGT(LOG_BEGIN("operator=(&&%x)"), DLOG_POINTER(&sorm));
 
-                media_pool_ = channel.media_pool_;
-                streams_[0] = channel.streams_[0];
-                streams_[1] = channel.streams_[1];
-                rtp_ssrcs_[0] = channel.rtp_ssrcs_[0] ;
-                rtp_ssrcs_[1] = channel.rtp_ssrcs_[1];
-                rtp_pack_ids_[0] = channel.rtp_pack_ids_[0];
-                rtp_pack_ids_[1] = channel.rtp_pack_ids_[1];
+                mixer_gain_ = sorm.mixer_gain_;
+                //media_pool_ = channel.media_pool_;
+                streams_[0] = sorm.streams_[0];
+                streams_[1] = sorm.streams_[1];
+                rtp_ssrcs_[0] = sorm.rtp_ssrcs_[0] ;
+                rtp_ssrcs_[1] = sorm.rtp_ssrcs_[1];
+                rtp_pack_ids_[0] = sorm.rtp_pack_ids_[0];
+                rtp_pack_ids_[1] = sorm.rtp_pack_ids_[1];
 
-                sorm_ = channel.sorm_;
-                order_header_ = channel.order_header_;
+                sorm_info_ = sorm.sorm_info_;
+                order_header_ = sorm.order_header_;
 
-                channel.media_pool_ = nullptr;
-                channel.streams_[0] = nullptr;
-                channel.streams_[1] = nullptr;
-                std::memset(&sorm_, 0, sizeof(sorm_));
+                sorm.streams_[0] = nullptr;
+                sorm.streams_[1] = nullptr;
+                std::memset(&sorm_info_, 0, sizeof(sorm_info_));
                 std::memset(&order_header_, 0, sizeof(order_header_));
 
             }
@@ -68,6 +80,8 @@ namespace mmx
 
         Sorm::~Sorm()
         {
+
+            DLOGT(LOG_BEGIN("~Sorm()"));
 
             Drop();
             SetProxy();
@@ -79,38 +93,37 @@ namespace mmx
 
             int rc = 0;
 
-            if (media_pool_ != nullptr)
+            DLOGT(LOG_BEGIN("SetProxy(%x)"), DLOG_POINTER(proxy));
+
+            // сперва освободим имеющиеся медиапотоки
+
+            for (auto& s : streams_)
             {
-
-                // сперва освободим имеющиеся медиапотоки
-
-                for (auto& s : streams_)
+                if (s != nullptr)
                 {
-                    if (s != nullptr)
-                    {
-                        media_pool_->Release(s);
-                        s = nullptr;
-                    }
-                }
-
-                // если проксирование не задано, то вызов был для освобождения ресурсов
-
-                if (proxy != nullptr)
-                {
-                    streams_[0] = media_pool_->GetStream(proxy->source_a.address, proxy->source_a.port);
-                    streams_[1] = media_pool_->GetStream(proxy->source_b.address, proxy->source_b.port);
-
-                    rc = (int)(streams_[0] != nullptr) + (streams_[1] != nullptr);
+                    media_pool_.Release(s);
+                    s = nullptr;
                 }
             }
 
+            // если проксирование не задано, то вызов был для освобождения ресурсов
+
+            if (proxy != nullptr)
+            {
+                DLOGT(LOG_BEGIN("SetProxy(): new binding"));
+
+                streams_[0] = media_pool_.GetStream(proxy->source_a.address, proxy->source_a.port);
+                streams_[1] = media_pool_.GetStream(proxy->source_b.address, proxy->source_b.port);
+
+                rc = (int)(streams_[0] != nullptr) + (streams_[1] != nullptr);
+            }
 
             return rc;
         }
 
         const mmx::headers::SANGOMA_SORM_INFO& Sorm::GetOrmInfo() const
         {
-            return sorm_;
+            return sorm_info_;
         }
 
         int Sorm::OrmInfoPack(data::IDataPacketWriter& writer)
@@ -120,6 +133,8 @@ namespace mmx
             const mmx::headers::MEDIA_SAMPLE* media_samples[STREAM_COUNT] = { nullptr };
 
             unsigned short size_arr[STREAM_COUNT] = { 0 };
+
+            DLOGT(LOG_BEGIN("OrmInfoPack(%x)"), DLOG_POINTER(&writer));
 
             for (int i = 0; i < STREAM_COUNT; i++)
             {
@@ -143,6 +158,23 @@ namespace mmx
                         rtp_pack_ids_[i] = pack_id;// media_samples[i]->header.rtp_header.packet_id;
 
                         size_arr[i] = media_samples[i]->header.length - sizeof(media_samples[i]->header);
+
+                        DLOGT(LOG_BEGIN("OrmInfoPack(): get sample success {i:%d, ssrc:%d, pack_id:%d, size:%d}"),
+                              i,
+                              rtp_ssrcs_[i],
+                              rtp_pack_ids_[i],
+                              size_arr[i]);
+                    }
+                    else
+                    {
+                        DLOGD(LOG_BEGIN("OrmInfoPack(%x): drop stream %x {i:%d, ssrc:{%d <-> %d}, pack_id:{%d <-> %d}}"),
+                              DLOG_POINTER(&writer),
+                              DLOG_POINTER(media_samples[i]),
+                              i,
+                              rtp_ssrcs_[i],
+                              media_samples[i]->header.rtp_header.ssrc,
+                              pack_id,
+                              rtp_pack_ids_[i]);
                     }
 
                 }
@@ -151,10 +183,10 @@ namespace mmx
 
             auto size_max = size_arr[0] > size_arr[1] ? size_arr[0] : size_arr[1];
 
-            // если не задан буффер, то просто возвращаем количество необходимых байт
-
             rc = (int)sizeof(mmx::headers::ORM_INFO_HEADER);
             rc += order_header_.mcl_a == order_header_.mcl_b ? size_max : size_arr[0] + size_arr[1];
+
+            DLOGT(LOG_BEGIN("OrmInfoPack(): Before writing {%d, %d}"), size_max, rc);
 
             auto block = writer.QueryBlock(rc);
 
@@ -169,10 +201,20 @@ namespace mmx
 
                 orm_info.header.order_header = order_header_;
 
+
                 if (order_header_.mcl_a != order_header_.mcl_b)
                 {
                     orm_info.header.size_a = size_arr[0];
                     orm_info.header.size_b = size_arr[1];
+
+                    DLOGT(LOG_BEGIN("OrmInfoPack(): Build separated frame {%d, %d, %d, %d, %d, %d, %d}"),
+                          order_header_.block_number,
+                          order_header_.packet_id,
+                          order_header_.conn_flag,
+                          order_header_.mcl_a,
+                          order_header_.mcl_b,
+                          orm_info.header.size_a,
+                          orm_info.header.size_b);
 
                     for (int j = 0; j < 2; j++)
                     {
@@ -182,9 +224,10 @@ namespace mmx
                         {
                             orm_info.data[(i << 1) + j] = media_samples[j]->media[i];
                         }
+
                         while (i < size_max)
                         {
-                            orm_info.data[(i++ << 1) + j] = 0x7F;
+                            orm_info.data[(i++ << 1) + j] = 0x7E;
                         }
                     }
                 }
@@ -196,6 +239,15 @@ namespace mmx
                     orm_info.header.size_a = size_max;
                     orm_info.header.size_b = 0;
 
+                    DLOGT(LOG_BEGIN("OrmInfoPack(): Build separated frame {%d, %d, %d, %d, %d, %d, %d}"),
+                          order_header_.block_number,
+                          order_header_.packet_id,
+                          order_header_.conn_flag,
+                          order_header_.mcl_a,
+                          order_header_.mcl_b,
+                          orm_info.header.size_a,
+                          orm_info.header.size_b);
+
                     int i = 0;
                     for (;i < size_min; i++)
                     {
@@ -203,7 +255,7 @@ namespace mmx
                             codecs::audio::mixer(
                                 codecs::audio::PcmaCodec::Decode(media_samples[0]->media[i]),
                                 codecs::audio::PcmaCodec::Decode(media_samples[1]->media[i]),
-                                70
+                                mixer_gain_
                                 )
                             );
                     }
@@ -219,6 +271,11 @@ namespace mmx
 
                 writer.Commit();
             }
+            else
+            {
+                DLOGW(LOG_BEGIN("OrmInfoPack(&%x): Can't get block size = %d"), DLOG_POINTER(&writer), rc);
+                rc = -ENOMEM;
+            }
 
             return rc;
         }
@@ -230,9 +287,9 @@ namespace mmx
 
         void Sorm::setSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm)
         {
-            if (&sorm != &sorm_)
+            if (&sorm != &sorm_info_)
             {
-                sorm_ = sorm;
+                sorm_info_ = sorm;
             }
 
             order_header_.sorm_id = sorm.sorm_id;
@@ -241,9 +298,15 @@ namespace mmx
             order_header_.mcl_a = sorm.mcl_a;
             order_header_.mcl_b = sorm.mcl_b;
             order_header_.conn_param = sorm.conn_param;
-            order_header_.block_number = 0;
-            order_header_.packet_id = 0;
-            order_header_.magic = mmx::headers::ORDER_645_2_MAGIC;
+
+            DLOGT(LOG_BEGIN("setSorm(&%x): {%d, %d, %d, %d, %d, %d, %d, %d, %d}"), DLOG_POINTER(&sorm),
+                  order_header_.sorm_id,
+                  order_header_.object_id,
+                  order_header_.call_id,
+                  order_header_.mcl_a,
+                  order_header_.mcl_b,
+                  order_header_.conn_param
+                  );
 
         }
     }

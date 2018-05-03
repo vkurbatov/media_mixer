@@ -94,6 +94,8 @@ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/m
 
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
@@ -105,6 +107,8 @@ mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/iaudiocodec.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.h
@@ -123,6 +127,8 @@ mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxp
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/isample.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.h
@@ -133,9 +139,13 @@ mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxp
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 
+mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
 
+mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.cpp
 mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
 

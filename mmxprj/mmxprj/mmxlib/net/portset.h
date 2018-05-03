@@ -25,7 +25,6 @@ namespace mmx
             int ClrRange(unsigned short begin, unsigned short end, short step = 1);
             bool operator[] (unsigned short port) const;
             void Clear();
-            int Count() const;
         };
 	}
 }

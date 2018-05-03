@@ -16,6 +16,11 @@ namespace mmx
         class MediaStream
         {
 
+            static const int DEFAULT_JITTER_FLASHBACK = 60;
+            static const int DEFAULT_JITTER_SIZE = 6;
+            static const int DEFAULT_SAMPLE_FREQ = 8000;
+            static const int DEFAULT_SAMPLE_WIDTH = 20;
+
             JitterBuffer    jitter_;
 
             unsigned short  pack_id_;
@@ -24,11 +29,13 @@ namespace mmx
             unsigned int    address_;
             unsigned short  port_;
 
+            int             jitter_flashback_;
+
             friend class MediaPool;
 
         public:
 
-            MediaStream(unsigned int address = 0, unsigned short port = 0);
+            MediaStream(unsigned int address = 0, unsigned short port = 0, int jitter_flashback = DEFAULT_JITTER_FLASHBACK);
             MediaStream(MediaStream&& mediastream);
             MediaStream& operator=(MediaStream&& mediastream);
             ~MediaStream();

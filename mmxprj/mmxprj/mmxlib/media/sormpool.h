@@ -30,9 +30,9 @@ namespace mmx
 
             SormPool(MediaPool& media_pool, int max_free_queue_size = -1);
 
-            Sorm* GetChannel(const mmx::headers::SANGOMA_SORM_INFO& sorm, const mmx::headers::SANGOMA_PROXY_INFO& proxy);
+            Sorm* GetChannel(const mmx::headers::SANGOMA_SORM_INFO& sorm_info, const mmx::headers::SANGOMA_PROXY_INFO& proxy);
             bool Release(Sorm* channel);
-            bool Release(const mmx::headers::SANGOMA_SORM_INFO& sorm);
+            bool Release(const mmx::headers::SANGOMA_SORM_INFO& sorm_info);
             int Count() const;
             void Reset();
 
@@ -40,7 +40,7 @@ namespace mmx
 
 
         private:
-            std::uint64_t getKey(const mmx::headers::SANGOMA_SORM_INFO& sorm);
+            std::uint64_t getKey(const mmx::headers::SANGOMA_SORM_INFO& sorm_info);
         };
     }
 

@@ -18,8 +18,9 @@ namespace mmx
         {
 
             const static int STREAM_COUNT = 2;
+            const static int DEFAULT_MIXER_GAIN = 70;
 
-            mmx::headers::SANGOMA_SORM_INFO sorm_;
+            mmx::headers::SANGOMA_SORM_INFO sorm_info_;
 
             mmx::headers::ORDER_645_2_HEADER order_header_;
 
@@ -28,13 +29,16 @@ namespace mmx
             unsigned int        rtp_ssrcs_[STREAM_COUNT];
             unsigned int        rtp_pack_ids_[STREAM_COUNT];
 
-            MediaPool* media_pool_;
+            unsigned char       mixer_gain_;
+
+            MediaPool&          media_pool_;
+
 
 
             friend class SormPool;
         public:
 
-            Sorm();
+            Sorm(MediaPool& media_pool, unsigned char mixer_gain = DEFAULT_MIXER_GAIN);
             ~Sorm();
             Sorm(Sorm&& channel);
             Sorm& operator=(Sorm&& channel);
