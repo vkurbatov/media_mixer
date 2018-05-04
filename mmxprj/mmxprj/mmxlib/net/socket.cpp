@@ -611,6 +611,8 @@ namespace mmx
         {
             int rc = -EPROTOTYPE;
 
+            DLOGT(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)"), l_address, l_port, r_address, r_port, backlog, flags);
+
             if (type_ >= 0 && proto_ >= 0)
             {
                 rc = -EBUSY;
@@ -645,6 +647,10 @@ namespace mmx
                             {
                                 handle_ = rc;
                             }
+                            else
+                            {
+                                 DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::INIT: error create socket, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                            }
 
                             state = S_SETF;
 
@@ -652,7 +658,15 @@ namespace mmx
 
                         case S_SETF:
 
-                            rc = SetFlags(handle_, flags);
+                            if (flags != 0)
+                            {
+                                rc = SetFlags(handle_, flags);
+
+                                if(rc < 0)
+                                {
+                                    DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_SETF: error set flags, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                }
+                            }
 
                             state = S_BIND;
 
@@ -665,11 +679,22 @@ namespace mmx
                                 if (type_ == SOCK_STREAM)
                                 {
                                     int en = 1;
-                                    SetOption(handle_, SOL_SOCKET, SO_REUSEADDR, &en, sizeof(int));
-                                    SetOption(handle_, SOL_SOCKET, SO_REUSEPORT, &en, sizeof(int));
+                                    if ((rc = SetOption(handle_, SOL_SOCKET, SO_REUSEADDR, &en, sizeof(int))) < 0)
+                                    {
+                                        DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_BIND: error set option %d, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, SO_REUSEADDR, rc);
+                                    }
+                                    if ((rc = SetOption(handle_, SOL_SOCKET, SO_REUSEPORT, &en, sizeof(int))) < 0)
+                                    {
+                                        DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_BIND: error set option %d, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, SO_REUSEPORT, rc);
+                                    }
                                 }
 
                                 rc = Bind(handle_, l_address, l_port);
+
+                                if (rc < 0)
+                                {
+                                    DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_BIND: binding error, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                }
                             }
 
                             state = S_CONN;
@@ -689,7 +714,13 @@ namespace mmx
                                 {
                                     state = S_EXIT;
                                 }
-
+                                else
+                                {
+                                    if (rc != EWOULDBLOCK)
+                                    {
+                                        DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_CONN: connect error, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                    }
+                                }
                             }
                             else
                             {
@@ -703,6 +734,11 @@ namespace mmx
                             if (backlog > 0)
                             {
                                 rc = Listen(handle_, backlog);
+
+                                if (rc < 0)
+                                {
+                                    DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_LIST: listen error, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                }
                             }
 
                             if (rc >= 0)
@@ -717,11 +753,15 @@ namespace mmx
                             if (handle_ >= 0)
                             {
 
+                                DLOGI(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_ERR: close handle_ %d"), l_address, l_port, r_address, r_port, backlog, flags, handle_);
+
                                 close(handle_);
 
                                 handle_ = -1;
 
                                 state = S_EXIT;
+
+
 
                             }
 
@@ -746,6 +786,9 @@ namespace mmx
 
                     if (handle_ >= 0)
                     {
+
+                        DLOGI(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d) success, handle_ = %d"), l_address, l_port, r_address, r_port, backlog, flags, handle_);
+
                         rc = handle_;
 
                         l_address_ = l_address;
@@ -767,6 +810,8 @@ namespace mmx
         {
             int rc = -EINVAL;
 
+            DLOGT(LOG_BEGIN("Accept(&%x, %d)"), DLOG_POINTER(&socket), flags);
+
             if (type_ == SOCK_STREAM && socket.type_ == SOCK_STREAM && socket.backlog_ > 0)
             {
 
@@ -786,8 +831,20 @@ namespace mmx
                             SetFlags(handle_, flags);
                         }
                     }
+                    else
+                    {
+                        DLOGE(LOG_BEGIN("Accept(&%x, %d): accept error, rc = %d"), DLOG_POINTER(&socket), flags, rc);
+                    }
+                }
+                else
+                {
+                    DLOGE(LOG_BEGIN("Accept(&%x, %d): socket already opened, handle_ = %d"), DLOG_POINTER(&socket), flags, handle_);
                 }
 
+            }
+            else
+            {
+                DLOGE(LOG_BEGIN("Accept(&%x, %d): invalid arguments"), DLOG_POINTER(&socket), flags);
             }
 
             return rc;
@@ -797,16 +854,23 @@ namespace mmx
         {
             int rc = -EBADF;
 
+            DLOGT(LOG_BEGIN("Close()"));
+
             if (handle_ >= 0)
             {
-                rc = close(handle_);
-
-                handle_ = -1;
+                rc = Close(handle_);
 
                 if (rc < 0)
                 {
-                    rc = -errno;
+                    DLOGE(LOG_BEGIN("Close(): close error, handle_ = %d, rc = d%"), handle_, rc);
                 }
+
+                handle_ = -1;
+
+            }
+            else
+            {
+                DLOGE(LOG_BEGIN("Close(): socket already close, handle_ = %d"), handle_);
             }
 
             return rc;
@@ -814,41 +878,49 @@ namespace mmx
 
         int Socket::Send(const void* data, int size, int flags, address_t r_address, port_t r_port)
         {
+            DLOGT(LOG_BEGIN("Send()"));
             return Send(handle_, data, size, flags, r_address, r_port);
         }
 
         int Socket::Recv(void* data, int size, int flags, address_t* r_address, port_t* r_port)
         {
+            DLOGT(LOG_BEGIN("Recv()"));
             return Recv(handle_, data, size, flags, r_address, r_port);
         }
 
         int Socket::SetOption(int level, int option, long value)
         {
-            return SetOption(handle_, level, option, &value, sizeof(long));
+            DLOGT(LOG_BEGIN("SetOption64()"));
+            return SetOption<long>(level, option, value);
         }
 
         int Socket::GetOption(int level, int option, long* value)
         {
-            return GetOption(handle_, level, option, value, sizeof(long));
+            DLOGT(LOG_BEGIN("GetOption64()"));
+            return GetOption<long>(level, option, value);
         }
 
         int Socket::SetOption(int level, int option, int value)
         {
-            return SetOption(handle_, level, option, &value, sizeof(int));
+            DLOGT(LOG_BEGIN("SetOption32()"));
+            return SetOption<int>(level, option, value);
         }
 
         int Socket::GetOption(int level, int option, int* value)
         {
-            return GetOption(handle_, level, option, value, sizeof(int));
+            DLOGT(LOG_BEGIN("GetOption32()"));
+            return GetOption<int>(level, option, value);
         }
 
         int Socket::ClrFlags(int flags)
         {
+            DLOGT(LOG_BEGIN("ClrFlags()"));
             return ClrFlags(handle_, flags);
         }
 
         int Socket::SetFlags(int flags)
         {
+            DLOGT(LOG_BEGIN("SetFlags()"));
             return SetFlags(handle_, flags);
         }
 

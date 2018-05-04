@@ -25,11 +25,11 @@ namespace mmx
 
             // флаг управления порционными посылками
 
-            bool f_write = !IsEmpty();
+            bool f_write = !IsEmpty() && io_.IsCanWrite();
 
             // признак успешности передачи отложенных данных
 
-            bool f_deff_complete = !f_write;
+            bool f_deff_complete = !f_write && io_.IsCanWrite();
 
             // общее количество реально отправленных байт
 
@@ -53,9 +53,6 @@ namespace mmx
                 // если сюда попали, то очередь уже не пуста
 
                 auto& p = q_write_.front();
-
-                int sz = p.Size();
-                int ps = p.Position();
 
                 // пробуем передать данные в канал
 
@@ -145,6 +142,16 @@ namespace mmx
         int DeferredWriter::Read(void* data, int size, int flags)
         {
             return io_.Read(data, size, flags);
+        }
+
+        bool DeferredWriter::IsCanWrite()
+        {
+            return true;
+        }
+
+        bool DeferredWriter::IsCanRead()
+        {
+            return io_.IsCanRead();
         }
 
         bool DeferredWriter::IsEmpty() const

@@ -2,6 +2,10 @@
 
 #include <netdb.h>
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("IPPacketWrapper", msg)
+
 namespace mmx
 {
     namespace sniffers
@@ -9,7 +13,12 @@ namespace mmx
         IPPacketWrapper::IPPacketWrapper(void* pointer) :
             pointer_(pointer)
         {
+            DLOGT(LOG_BEGIN("IPPacketWrapper(%x)"), DLOG_POINTER(pointer));
+        }
 
+        IPPacketWrapper::~IPPacketWrapper()
+        {
+            DLOGT(LOG_BEGIN("~IPPacketWrapper()"));
         }
 
         const headers::IP4HEADER* IPPacketWrapper::Header() const
@@ -30,7 +39,7 @@ namespace mmx
 
         void* IPPacketWrapper::Reset(const void* pointer)
         {
-
+            DLOGT(LOG_BEGIN("Reset(%x)"), DLOG_POINTER(pointer));
             pointer_ = pointer;
 
         }

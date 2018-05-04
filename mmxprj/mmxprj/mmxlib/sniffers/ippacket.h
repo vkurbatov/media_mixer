@@ -7,8 +7,6 @@
 
 #include "iippacket.h"
 
-#include <chrono>
-
 namespace mmx
 {
     namespace sniffers
@@ -34,15 +32,18 @@ namespace mmx
 
             headers::IP4HEADER header_;
 
-            std::chrono::time_point<std::chrono::system_clock> t_stamp_;
+            //std::chrono::time_point<std::chrono::system_clock> t_stamp_;
+
+            unsigned int t_stamp_;
 
 
             friend class IPPacketPool;
 
-
+            IPPacket(unsigned int src_address = 0, unsigned short packet_id = -1);
         public:
-            IPPacket();
+            //IPPacket();
             IPPacket(IPPacket&& packet);
+            ~IPPacket();
 
             IPPacket& operator=(IPPacket&& packet);
 

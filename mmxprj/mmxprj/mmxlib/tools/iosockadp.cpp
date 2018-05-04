@@ -37,6 +37,16 @@ namespace mmx
                                 port_from_);
         }
 
+        bool SocketIOAdapter::IsCanWrite()
+        {
+            return socket_.Handle() >= 0;
+        }
+
+        bool SocketIOAdapter::IsCanRead()
+        {
+            return socket_.Handle() >= 0;
+        }
+
     }
 }
 

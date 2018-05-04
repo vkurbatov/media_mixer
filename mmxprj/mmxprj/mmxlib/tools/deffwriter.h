@@ -32,6 +32,8 @@ namespace mmx
             // IIO
             int Write(const void* data, int size, int flags = 0);
             int Read(void* data, int size, int flags = 0);
+            bool IsCanWrite() override;
+            bool IsCanRead() override;
 
             bool IsEmpty() const;
             int Count() const;
@@ -46,6 +48,7 @@ namespace mmx
             data::Packet* getPacket(int size = 0);
             void pushData(const char* data, int size);
             void pop();
+
 
         };
     }

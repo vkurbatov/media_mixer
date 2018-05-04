@@ -1,7 +1,9 @@
 #include "timer.h"
 
-#include <thread>
 #include <climits>
+
+#include <unistd.h>
+#include <time.h>
 
 namespace mmx
 {
@@ -12,7 +14,7 @@ namespace mmx
         Timer::Timer() :
             tout_(-1),
             run_(false),
-            start_(std::chrono::system_clock::now())
+            start_(GetTicks())
         {
 
         }
@@ -28,11 +30,21 @@ namespace mmx
 
         }
 
+        unsigned int Timer::GetTicks()
+        {
+
+            struct ::timespec ts;
+
+            clock_gettime(CLOCK_REALTIME, &ts );
+
+            return ts.tv_sec * 1000 + ts.tv_nsec / 1000000;
+        }
+
         void Timer::Start(timer_interval_t interval)
         {
 
             tout_ = interval;
-            start_ = std::chrono::system_clock::now();
+            start_ = GetTicks();
             run_ = true;
 
         }
@@ -70,7 +82,7 @@ namespace mmx
 
             if (IsStarted())
             {
-                rc = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_).count();
+                rc = GetTicks() - start_;
             }
 
             return rc;
@@ -89,7 +101,7 @@ namespace mmx
         void Timer::Sleep(timer_interval_t interval)
         {
 
-            std::this_thread::sleep_for(std::chrono::milliseconds(interval));
+            ::usleep(interval * 1000);
 
         }
     }

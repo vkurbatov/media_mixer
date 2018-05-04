@@ -150,35 +150,49 @@ mmxlib/CMakeFiles/mmx.dir/net/select.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
 mmxlib/CMakeFiles/mmx.dir/net/select_ex.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
 mmxlib/CMakeFiles/mmx.dir/net/socket.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/bitset.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/dpsniffer.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/dpsniffer.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketpool.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h

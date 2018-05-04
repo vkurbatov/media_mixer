@@ -24,9 +24,10 @@ namespace mmx
                             net::port_t* port_from = nullptr);
 
             // IIO
-            virtual int Write(const void* data, int size, int flags = 0) override;
-            virtual int Read(void* data, int size, int flags = 0) override;
-
+            int Write(const void* data, int size, int flags = 0) override;
+            int Read(void* data, int size, int flags = 0) override;
+            bool IsCanWrite() override;
+            bool IsCanRead() override;
         };
     }
 }

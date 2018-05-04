@@ -53,7 +53,7 @@ namespace mmx
 
                     DLOGT(LOG_BEGIN("GetChannel(): sorm get from new instance"));
 
-                    pool_.insert(std::move(std::pair<std::uint64_t, Sorm>(std::move(id), Sorm(media_pool_))));
+                    pool_.insert(std::move(std::pair<std::uint64_t, Sorm>(std::move(id), std::move(Sorm(media_pool_)))));
                 }
 
                 it = pool_.find(id);

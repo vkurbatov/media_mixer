@@ -37,7 +37,7 @@ namespace mmx
         public:
             DataPackSniffer();
             DataPackSniffer(DataPackSniffer&& sniffer);
-
+            ~DataPackSniffer() override;
 
             // IStream
             int PutStream(const void* stream, int size, void* hcontext = nullptr) override;

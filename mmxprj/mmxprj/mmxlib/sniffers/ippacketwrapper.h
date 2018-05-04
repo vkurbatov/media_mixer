@@ -12,7 +12,7 @@ namespace mmx
             const void* pointer_;
         public:
             IPPacketWrapper(void* pointer = nullptr);
-
+            ~IPPacketWrapper();
             // IIPPacket
             const headers::IP4HEADER* Header() const override;
             const void* Pyload() const override;

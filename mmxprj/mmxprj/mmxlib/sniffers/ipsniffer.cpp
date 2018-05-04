@@ -7,6 +7,10 @@
 #include <netdb.h>
 #include <errno.h>
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("IPSniffer", msg)
+
 namespace mmx
 {
     namespace sniffers
@@ -18,12 +22,19 @@ namespace mmx
             state_(SS_START),
             wrapper_()
         {
+            DLOGT(LOG_BEGIN("IPSniffer(&%x)"), DLOG_POINTER(&packet_pool));
+        }
 
+        IPSniffer::~IPSniffer()
+        {
+            DLOGT(LOG_BEGIN("~IPSniffer()"));
         }
 
         int IPSniffer::PutStream(const void* stream, int size, void* context)
         {
             int rc = -EINVAL;
+
+            DLOGT(LOG_BEGIN("PutStream(%x, %d, %x)"), DLOG_POINTER(stream), size, DLOG_POINTER(context));
 
             if (stream != nullptr && size > 0)
             {
@@ -39,6 +50,10 @@ namespace mmx
                     rc = fragmentSniffer(stream, size);
                 }
             }
+            else
+            {
+                DLOGE(LOG_BEGIN("PutStream(%x, %d, %x): invalid argument"), DLOG_POINTER(stream), size, DLOG_POINTER(context));
+            }
 
             return rc;
         }
@@ -46,7 +61,10 @@ namespace mmx
 
         int IPSniffer::Drop()
         {
+
             int rc = saved_bytes_;
+
+            DLOGT(LOG_BEGIN("Drop(): state_ = %d, sb = %d, packet_ = %x"), state_, saved_bytes_, DLOG_POINTER(packet_));
 
             state_ = SS_START;
 
@@ -93,7 +111,7 @@ namespace mmx
         {
             // быстрый разбор пакета
 
-            // отсутсвует копирование и автоматы... ожидаем > 90% нефрагментированного трафика
+            // отсутсвует копирование и автоматы... ожидаем > 99% нефрагментированного трафика
 
             // попробуем искать начало заголовка, но не более MAX_HEADER_LEN
 
@@ -112,7 +130,7 @@ namespace mmx
 
                 rc = IPPacket::CheckPacket(stream, size);
 
-                // в rc должен вернуться размер пакета в байтах или -EINVAL
+                // в rc должен вернуться размер пакета в байтах или -EBADMSG
 
                 if (rc > 0)
                 {

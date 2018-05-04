@@ -139,7 +139,7 @@ namespace mmx
             }
             else
             {
-                DLOGW(LOG_BEGIN("GetSample(): jitter buffer is empty"));
+                DLOGD(LOG_BEGIN("GetSample(): jitter buffer is empty"));
             }
 
             return rc;

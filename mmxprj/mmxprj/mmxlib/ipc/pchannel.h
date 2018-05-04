@@ -24,6 +24,8 @@ namespace mmx
             // IIO
             int Write(const void* msg, int size, int flags = 0) override;
             int Read(void* msg, int size, int flags = 0) override;
+            bool IsCanWrite() override;
+            bool IsCanRead() override;
 
             // IChannel
             ~PipeChannel() override;
@@ -31,6 +33,8 @@ namespace mmx
             int Close() override;
             int Handle() const override;
             const char* Name() const override;
+
+            // IIO interface
         };
     }
 }

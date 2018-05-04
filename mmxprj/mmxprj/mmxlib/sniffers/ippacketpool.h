@@ -31,6 +31,7 @@ namespace mmx
             IPPacketPool(int max_free_queue_size = -1,
                          int min_garbage_size = 0,
                          int garbage_time_life = 0);
+            ~IPPacketPool();
 
             IPPacket* GetPacket(unsigned int src_address, unsigned short pack_id);
             bool Release(IPPacket* packet);

@@ -1,7 +1,7 @@
 #ifndef _MMX_TOOLS_TIMER_H
 #define _MMX_TOOLS_TIMER_H
 
-#include <chrono>
+//#include <chrono>
 
 namespace mmx
 {
@@ -15,9 +15,12 @@ namespace mmx
             timer_interval_t tout_;
             bool run_;
 
-            std::chrono::time_point<std::chrono::system_clock> start_;
+            unsigned int start_;
+
+            //std::chrono::time_point<std::chrono::system_clock> start_;
 
         public:
+            static unsigned int GetTicks();
             Timer();
             Timer(Timer&& timer);
             void Start(timer_interval_t interval);

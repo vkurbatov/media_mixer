@@ -20,6 +20,7 @@ namespace mmx
             BitSet(BitSet&& bitset);
             BitSet& operator= (const BitSet& bitset);
             BitSet& operator= (BitSet&& bitset);
+            ~BitSet();
             void Set(index_t idx);
             void Clr(index_t idx);
             bool IsSet(index_t idx);

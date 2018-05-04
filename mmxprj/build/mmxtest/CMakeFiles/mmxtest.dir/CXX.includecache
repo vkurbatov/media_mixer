@@ -153,8 +153,6 @@ istream.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/istream.h
 iippacket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/iippacket.h
-chrono
--
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/sniffers/ippacketpool.h
 ippacket.h
@@ -209,8 +207,6 @@ net/socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/net/socket.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/timer.h
-chrono
--
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
 

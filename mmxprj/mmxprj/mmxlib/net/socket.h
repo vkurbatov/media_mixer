@@ -65,6 +65,14 @@ namespace mmx
             int GetOption(int level, int option, long* value);
             int SetOption(int level, int option, int value);
             int GetOption(int level, int option, int* value);
+
+            template<typename T>
+            inline auto SetOption(int level, int option, T value) -> int { return SetOption(handle_, level, option, &value, sizeof(T)); }
+
+            template<typename T>
+            inline auto GetOption(int level, int option, T* value) -> int { return GetOption(handle_, level, option, value, sizeof(T)); }
+
+
             int SetFlags(int flags);
             int ClrFlags(int flags);
 

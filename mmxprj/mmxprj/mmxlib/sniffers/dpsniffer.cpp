@@ -5,6 +5,10 @@
 
 #include <errno.h>
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("DataPackSniffer", msg)
+
 namespace mmx
 {
     namespace sniffers
@@ -14,7 +18,7 @@ namespace mmx
             saved_bytes_(0),
             work_data_pack_(nullptr)
         {
-
+            DLOGT(LOG_BEGIN("DataPackSniffer()"));
         }
 
         DataPackSniffer::DataPackSniffer(DataPackSniffer&& sniffer) :
@@ -25,14 +29,23 @@ namespace mmx
                             ? &data_pack_
                             : sniffer.work_data_pack_)
         {
+            DLOGT(LOG_BEGIN("DataPackSniffer(&&%x)"), DLOG_POINTER(&sniffer));
+
             saved_bytes_ = 0;
             state_ = SS_START1;
             sniffer.work_data_pack_ = nullptr;
         }
 
+        DataPackSniffer::~DataPackSniffer()
+        {
+            DLOGT(LOG_BEGIN("~DataPackSniffer()"));
+        }
+
         int DataPackSniffer::PutStream(const void* stream, int size, void* hcontext)
         {
             int rc = -EINVAL;
+
+            DLOGT(LOG_BEGIN("PutStream(%x, %d, %x): state_ = %d"), DLOG_POINTER(stream), size, DLOG_POINTER(hcontext), state_);
 
             if (stream != nullptr && size > 0)
             {
@@ -47,6 +60,11 @@ namespace mmx
                 {
                     rc = fragmentSniffer(stream, size);
                 }
+
+            }
+            else
+            {
+                DLOGE(LOG_BEGIN("PutStream(%x, %d, %x): invalid arguments"), DLOG_POINTER(stream), size, DLOG_POINTER(hcontext));
             }
 
             return rc;
@@ -54,6 +72,9 @@ namespace mmx
 
         int DataPackSniffer::Drop()
         {
+
+            DLOGT(LOG_BEGIN("Drop(): state_ = %d, wdp = %x, sb = %d"), state_, DLOG_POINTER(work_data_pack_), saved_bytes_);
+
             int rc = saved_bytes_;
 
             state_ = SS_START1;
@@ -68,6 +89,7 @@ namespace mmx
         int DataPackSniffer::Reset()
         {
 
+            DLOGT(LOG_BEGIN("Reset(): state_ = %d, wdp = %x, sb = %d"), state_, DLOG_POINTER(work_data_pack_), saved_bytes_);
             return Drop();
 
         }
@@ -91,6 +113,8 @@ namespace mmx
         {
             int rc = -EBADMSG;
 
+            DLOGT(LOG_BEGIN("forceSniffer(%x, %d)"), DLOG_POINTER(stream), size);
+
             if (size >= sizeof(headers::DATA_PACK_HEADER))
             {
 
@@ -103,14 +127,22 @@ namespace mmx
                         && DATA_PACK_TAIL(dp.header) == headers::DATA_PACK_MAGIC2)
                 {
 
-                    //
-
                     rc = dp.header.length;
                     work_data_pack_ = (headers::PDATA_PACK)stream;
 
                     state_ = SS_NEXT;
 
+                    DLOGT(LOG_BEGIN("forceSniffer(): packet(%d) is good"), rc);
+
                 }
+                else
+                {
+                    DLOGD(LOG_BEGIN("forceSniffer(%x, %d): error format of stream"), DLOG_POINTER(stream), size);
+                }
+            }
+            else
+            {
+                DLOGD(LOG_BEGIN("forceSniffer(%x, %d): error stream size"), DLOG_POINTER(stream), size);
             }
 
             return rc;
@@ -132,12 +164,16 @@ namespace mmx
             static const unsigned short LO_MAGIC2 = headers::DATA_PACK_MAGIC2 & 0xFF;
             static const unsigned short HI_MAGIC2 = headers::DATA_PACK_MAGIC2 >> 8;
 
+            DLOGT(LOG_BEGIN("fragmentSniffer(%x, %d)"), DLOG_POINTER(stream), size);
+
             while (!f_stop)
             {
 
                 int process_bytes = 0;
 
                 //unsigned short s = *p_src;
+
+                DLOGT(LOG_BEGIN("fragmentSniffer(): state_ = %d, len = %d, pb = %d, sb = %d"), state_, len, process_bytes, saved_bytes_);
 
                 switch(state_)
                 {
@@ -207,6 +243,7 @@ namespace mmx
                                 }
                                 else
                                 {
+                                    DLOGE(LOG_BEGIN("fragmentSniffer(%x, %d): error data pack length (%d)"), DLOG_POINTER(stream), size, data_pack_.header.length);
                                     state_ = SS_BAD;
                                 }
 
@@ -227,6 +264,10 @@ namespace mmx
 
                                 process_bytes = 2;
                             }
+                            else
+                            {
+                                DLOGE(LOG_BEGIN("fragmentSniffer(%x, %d): error stop magic word (%x)"), DLOG_POINTER(stream), size, *(unsigned short*)p_src);
+                            }
                         }
                         else
                         {
@@ -237,6 +278,10 @@ namespace mmx
 
                                 process_bytes = 1;
 
+                            }
+                            else
+                            {
+                                DLOGE(LOG_BEGIN("fragmentSniffer(%x, %d): error stop magic lo byte (%x)"), DLOG_POINTER(stream), size, *p_src);
                             }
                         }
 
@@ -254,6 +299,10 @@ namespace mmx
 
                             process_bytes = 1;
 
+                        }
+                        else
+                        {
+                            DLOGE(LOG_BEGIN("fragmentSniffer(%x, %d): error stop magic hi byte (%x)"), DLOG_POINTER(stream), size, *p_src);
                         }
 
 
@@ -282,16 +331,22 @@ namespace mmx
                         }
 
                         saved_bytes_ += process_bytes;
-                    }
 
+                        if (state_ == SS_NEXT)
+                        {
+                            DLOGT(LOG_BEGIN("fragmentSniffer(): fragment succes assemble"));
+                        }
+                    }
 
                     p_src += process_bytes;
                     len -= process_bytes;
+
 
                 }
                 else if (process_bytes < 0 || process_bytes > len)
                 {
                     state_ = SS_BAD;
+                    DLOGC(LOG_BEGIN("fragmentSniffer(%x, %d): desync stream!!!"), DLOG_POINTER(stream), size, *p_src);
                 }
 
 
@@ -299,6 +354,8 @@ namespace mmx
             }
 
             rc = size - len;
+
+            DLOGT(LOG_BEGIN("fragmentSniffer(): process %d bytes of %d"), len, size);
 
             return rc;
         }

@@ -211,8 +211,6 @@ list
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
-chrono
--
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
 iostream
@@ -335,6 +333,4 @@ net/socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/net/socket.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
-chrono
--
 

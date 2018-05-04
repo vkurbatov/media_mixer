@@ -258,6 +258,16 @@ namespace mmx
             return rc;
         }
 
+        bool PipeChannel::IsCanWrite()
+        {
+            return handle_ >= 0;
+        }
+
+        bool PipeChannel::IsCanRead()
+        {
+            return handle_ >= 0;
+        }
+
         int PipeChannel::Handle() const
         {
             return handle_;

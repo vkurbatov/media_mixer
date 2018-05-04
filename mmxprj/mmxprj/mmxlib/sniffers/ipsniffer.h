@@ -39,6 +39,7 @@ namespace mmx
         public:
 
             IPSniffer(IPPacketPool& packet_pool);
+            ~IPSniffer();
 
             // IStream
 
