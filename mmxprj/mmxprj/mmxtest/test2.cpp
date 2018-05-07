@@ -35,10 +35,13 @@ namespace mmxtest
         mmx::ipc::PipeChannel r_channel1;
         mmx::ipc::PipeChannel r_channel2;
 
+        w_channel.Config(3, CHANNEL_NAME, O_RDWR, 0777);
+        r_channel1.Config(2, CHANNEL_NAME, O_RDONLY);
+        r_channel2.Config(2, CHANNEL_NAME, O_RDONLY);
 
-        w_channel.Open(CHANNEL_NAME, O_RDWR, 0777);
-        r_channel1.Open(CHANNEL_NAME, O_RDONLY);
-        r_channel2.Open(CHANNEL_NAME, O_RDONLY);
+        w_channel.Open();
+        r_channel1.Open();
+        r_channel2.Open();
 
         int rc = w_channel.Write(w_buff, sizeof(w_buff));
 
@@ -93,12 +96,16 @@ namespace mmxtest
 
         mmx::net::SelectExtension sel;
 
+        r_channel.Config(3, CHANNEL_NAME, O_RDONLY | O_NONBLOCK, 0777);
+        w_channel.Config(2, CHANNEL_NAME, O_WRONLY | O_NONBLOCK);
+
+
         int rc = 0;
 
-        rc = r_channel.Open(CHANNEL_NAME, O_RDONLY | O_NONBLOCK, 0777);
+        rc = r_channel.Open();
 
 
-        rc = w_channel.Open(CHANNEL_NAME, O_WRONLY | O_NONBLOCK);
+        rc = w_channel.Open();
 
         sel.Set(rc, mmx::net::S_EV_READ);
 

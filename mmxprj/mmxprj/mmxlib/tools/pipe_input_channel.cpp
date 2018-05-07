@@ -22,6 +22,7 @@ namespace mmx
             {
                 //std::strcpy(pipe_name_, pipe_name);
                 std::sprintf(pipe_name_, pipe_name_prefix, channel);
+                pipe_.Config(3, pipe_name_, O_RDONLY | O_NONBLOCK | O_CREAT, 0666);
             }
 
             timer_.Start(0);
@@ -113,7 +114,8 @@ namespace mmx
 
                 if (pipe_.Handle() < 0)
                 {
-                    rc = pipe_.Open(pipe_name_, O_RDONLY | O_NONBLOCK | O_CREAT, 0777);
+
+                    rc = pipe_.Open();
 
                     if (rc > 0)
                     {

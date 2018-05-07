@@ -1,6 +1,11 @@
 #include "rtppacketwrapper.h"
 
 #include <netdb.h>  //htons,htonl...
+#include <errno.h>
+
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("RTPPacketWrapper", msg)
 
 namespace mmx
 {
@@ -16,12 +21,20 @@ namespace mmx
             pyload_size_(0)
 
         {
+            DLOGT(LOG_BEGIN("RTPPacketWrapper(%x, %d)"), DLOG_POINTER(data), size);
             Load(data, size);
+        }
+
+        RTPPacketWrapper::~RTPPacketWrapper()
+        {
+            DLOGT(LOG_BEGIN("~RTPPacketWrapper()"));
         }
 
         bool RTPPacketWrapper::Load(const void* data, int size)
         {
             bool rc = false;
+
+            DLOGT(LOG_BEGIN("Load(%x, %d)"), DLOG_POINTER(data), size);
 
             if (data != nullptr && size >= sizeof(headers::RTP_HEADER))
             {
@@ -57,6 +70,8 @@ namespace mmx
                                 unsigned short L = ::ntohs(*(unsigned short*)(((const char*)data) + size - 2));
 
                                 pyload_size_ -= L + 2;
+
+                                DLOGT(LOG_BEGIN("Load(): packet with padding, L = %d"), L);
                             }
 
 
@@ -65,13 +80,33 @@ namespace mmx
 
                                 size_ = size;
 
+                                DLOGT(LOG_BEGIN("Load(): rtp packet is good, size = %d, p_size = %"), size_, pyload_size_);
+
                             }
 
                         }
-
+                        else
+                        {
+                            errno = -EBADMSG;
+                            DLOGD(LOG_BEGIN("Load(%x, %d): packet with extension is too long, len = %d"), DLOG_POINTER(data), size, len);
+                        }
                     }
-
+                    else
+                    {
+                        errno = -EBADMSG;
+                        DLOGD(LOG_BEGIN("Load(%x, %d): packet is too long, len = %d"), DLOG_POINTER(data), size, len);
+                    }
                 }
+                else
+                {
+                    errno = -EBADMSG;
+                    DLOGD(LOG_BEGIN("Load(%x, %d): deffered version = %d"), DLOG_POINTER(data), size, header_->ver);
+                }
+            }
+            else
+            {
+                errno = -EINVAL;
+                DLOGE(LOG_BEGIN("Load(%x, %d): invalid arguments"), DLOG_POINTER(data), size);
             }
 
             if (rc == false)

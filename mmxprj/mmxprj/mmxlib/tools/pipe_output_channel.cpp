@@ -23,6 +23,7 @@ namespace mmx
             if (pipe_name_prefix != nullptr && *pipe_name_prefix != '\0')
             {
                 std::sprintf(pipe_name_, pipe_name_prefix, channel);
+                pipe_.Config(2, pipe_name_, O_WRONLY | O_NONBLOCK);
             }
 
             dp_writter_.BuildPacket(++pack_id_);
@@ -156,7 +157,7 @@ namespace mmx
 
                 if (pipe_.Handle() < 0)
                 {
-                    rc = pipe_.Open(pipe_name_, O_WRONLY | O_NONBLOCK);
+                    rc = pipe_.Open();
 
                     if (rc > 0)
                     {

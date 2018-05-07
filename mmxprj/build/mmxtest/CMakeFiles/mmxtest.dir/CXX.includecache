@@ -71,8 +71,6 @@ headers/ip.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/headers/headers/ip.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/ichannel.h
-io.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/io.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/io.h
 
@@ -81,6 +79,8 @@ memory
 -
 ichannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/ichannel.h
+io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/io.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/sem.h
 memory

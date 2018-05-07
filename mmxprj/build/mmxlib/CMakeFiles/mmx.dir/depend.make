@@ -139,6 +139,10 @@ mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxp
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 
+mmxlib/CMakeFiles/mmx.dir/net/epoll.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/epoll.cpp
+mmxlib/CMakeFiles/mmx.dir/net/epoll.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/epoll.h
+mmxlib/CMakeFiles/mmx.dir/net/epoll.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/iepoll_dispatcher.h
+
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/net/portset.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp
@@ -194,11 +198,15 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o: /home/vkurbatov/work/mmxp
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.cpp
 mmxlib/CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.h
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/bitset.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacket.h
@@ -209,14 +217,24 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/
 mmxlib/CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.cpp
 mmxlib/CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
 
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h
+
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.cpp
+
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/iasyncunit.h
 
 mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h

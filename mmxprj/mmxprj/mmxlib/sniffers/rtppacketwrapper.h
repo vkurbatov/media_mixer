@@ -20,6 +20,7 @@ namespace mmx
         public:
 
             RTPPacketWrapper(const void* data = nullptr, int size = 0);
+            ~RTPPacketWrapper();
             bool Load(const void* data, int size);
 
             const headers::RTP_HEADER* Header() const override;

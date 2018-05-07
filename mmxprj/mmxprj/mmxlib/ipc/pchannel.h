@@ -5,21 +5,24 @@
 
 #include <memory>
 #include "ichannel.h"
+#include "io.h"
 
 namespace mmx
 {
     namespace ipc
     {
-        class PipeChannel : public IChannel
+        class PipeChannel : public IChannel, public IIO
         {
             int handle_;
             char pipename_[MMX_PIPE_NAME_LEN];
             int mode_;
             int access_;
+
         public:
             PipeChannel();
             //PipeChannel(const PipeChannel& channel);
             PipeChannel(PipeChannel&& channel);
+            const char* Name() const;
 
             // IIO
             int Write(const void* msg, int size, int flags = 0) override;
@@ -29,12 +32,11 @@ namespace mmx
 
             // IChannel
             ~PipeChannel() override;
-            int Open(const char* name, ...) override;
+            int Config(int argn, ...) override;
+            int Open() override;
             int Close() override;
             int Handle() const override;
-            const char* Name() const override;
 
-            // IIO interface
         };
     }
 }

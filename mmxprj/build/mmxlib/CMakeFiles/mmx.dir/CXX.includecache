@@ -89,8 +89,6 @@ headers/ip.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/headers/ip.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
-io.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
@@ -121,6 +119,8 @@ memory
 -
 ichannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.cpp
 sem.h
@@ -352,6 +352,28 @@ vector
 typeinfo
 -
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/epoll.cpp
+epoll.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/epoll.h
+cstring
+-
+errno.h
+-
+unistd.h
+-
+fcntl.h
+-
+sys/epoll.h
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/epoll.h
+iepoll_dispatcher.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/iepoll_dispatcher.h
+vector
+-
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/iepoll_dispatcher.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.cpp
 portset.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
@@ -499,6 +521,8 @@ ippacketwrapper.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.h
 netdb.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ippacketwrapper.h
 iippacket.h
@@ -515,6 +539,8 @@ netdb.h
 -
 errno.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.h
 istream.h
@@ -537,6 +563,10 @@ rtppacketwrapper.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
 netdb.h
 -
+errno.h
+-
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
 irtppacket.h
@@ -551,12 +581,26 @@ cstring
 -
 errno.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h
 istream.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/istream.h
 headers/si.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/headers/si.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.cpp
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.cpp
+asyncunit.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
+iasyncunit.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/iasyncunit.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/iasyncunit.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
 deffersock.h

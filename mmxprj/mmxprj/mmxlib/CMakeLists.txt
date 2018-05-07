@@ -27,6 +27,7 @@ set ( SOURCE_FILES
 	net/select.cpp
 	net/select_ex.cpp
 	net/portset.cpp
+	net/epoll.cpp
 #	межпроцессное взаимодействие
 	ipc/pchannel.cpp
 	ipc/sem.cpp
@@ -67,6 +68,8 @@ set ( SOURCE_FILES
 	tools/template_tcp_server.tpp
 	tools/udp_listener.cpp
 	tools/mediamarshaler.cpp
+	tools/async/asyncdispatcher.cpp
+	tools/async/asyncunit.cpp
 #	медиа
 	media/sorm.cpp
 	media/mediastream.cpp
@@ -89,6 +92,8 @@ set ( PRIVATE_HEADERS
 	net/select.h
 	net/select_ex.h
 	net/portset.h
+	net/epoll.h
+	net/iepoll_dispatcher.h
 #	заголовки
 	headers/ip.h
 	headers/udp.h
@@ -147,6 +152,9 @@ set ( PRIVATE_HEADERS
 	tools/udp_listener.h
 	tools/mediamarshaler.h
 	tools/imarshaler.h
+	tools/async/asyncdispatcher.h
+	tools/async/iasyncunit.h
+	tools/async/asyncunit.h
 #	медиа
 	media/ijitter.h
 	media/sorm.h

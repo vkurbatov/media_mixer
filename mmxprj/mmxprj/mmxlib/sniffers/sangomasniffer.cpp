@@ -6,6 +6,10 @@
 
 #include <errno.h>
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("SangomaSniffer", msg)
+
 namespace mmx
 {
     namespace sniffers
@@ -16,13 +20,20 @@ namespace mmx
             sangoma_(nullptr),
             state_(SS_START)
         {
+            DLOGT(LOG_BEGIN("SangomaSniffer()"));
+        }
 
+        SangomaSniffer::~SangomaSniffer()
+        {
+            DLOGT(LOG_BEGIN("~SangomaSniffer()"));
         }
 
         // IStream
         int SangomaSniffer::PutStream(const void* stream, int size, void* hcontext)
         {
             int rc = -EINVAL;
+
+            DLOGT(LOG_BEGIN("PutStream(%x, %d, %x)"), DLOG_POINTER(stream), size, DLOG_POINTER(hcontext));
 
             if (stream != nullptr && size > 0)
             {
@@ -39,12 +50,18 @@ namespace mmx
                 }
 
             }
+            else
+            {
+                DLOGE(LOG_BEGIN("PutStream(%x, %d, %x): invalid argument"), DLOG_POINTER(stream), size, DLOG_POINTER(hcontext));
+            }
 
             return rc;
         }
 
         int SangomaSniffer::Drop()
         {
+
+            DLOGT(LOG_BEGIN("Drop(): state_ = %d, sb = %d, sangoma = %x"), state_, saved_bytes_, DLOG_POINTER(sangoma_));
             sangoma_ = nullptr;
             saved_bytes_ = 0;
             state_ = SS_START;
@@ -52,6 +69,7 @@ namespace mmx
 
         int SangomaSniffer::Reset()
         {
+            DLOGT(LOG_BEGIN("Reset()"));
             Drop();
         }
 
@@ -76,13 +94,20 @@ namespace mmx
 
             headers::PSANGOMA_MEDIA_STREAM_PACKET p = (headers::PSANGOMA_MEDIA_STREAM_PACKET)stream;
 
+            DLOGT(LOG_BEGIN("forceSniffer(%x, %d)"), DLOG_POINTER(stream), size);
+
             if (size >= sizeof(headers::SANGOMA_MEDIA_STREAM_HEADER)
                     && p->header.length > sizeof(headers::SANGOMA_MEDIA_STREAM_HEADER)
                     && p->header.length <= size )
             {
 
                 rc = (sangoma_ = p)->header.length;
+                DLOGT(LOG_BEGIN("forceSniffer(%x, %d): packet is good, rc = %d"), DLOG_POINTER(stream), size, rc);
 
+            }
+            else
+            {
+                DLOGD(LOG_BEGIN("forceSniffer(%x, %d): packet is bad"), DLOG_POINTER(stream), size);
             }
 
             return rc;
@@ -99,6 +124,7 @@ namespace mmx
 
             bool f_stop = false;
 
+            DLOGT(LOG_BEGIN("fragmentSniffer(%x, %d): state_ = %d, sb = %d"), DLOG_POINTER(stream), size, state_, saved_bytes_);
 
             while (!f_stop)
             {
@@ -194,6 +220,8 @@ namespace mmx
 
 
                 f_stop |= len <= 0;
+
+                DLOGT(LOG_BEGIN("fragmentSniffer(%x, %d): state_ = %d, sb = %d, pb = %d, len = %d, stop = %d"), state_, saved_bytes_, process_bytes, len, f_stop);
             }
 
             rc = size - len;

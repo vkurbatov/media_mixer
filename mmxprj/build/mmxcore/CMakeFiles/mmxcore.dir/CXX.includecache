@@ -293,8 +293,6 @@ rtp.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
-io.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
@@ -303,6 +301,8 @@ memory
 -
 ichannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
 select.h

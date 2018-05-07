@@ -557,6 +557,33 @@ media/sormpool.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.s
 .PHONY : media/sormpool.cpp.s
 
+net/epoll.o: net/epoll.cpp.o
+
+.PHONY : net/epoll.o
+
+# target to build an object file
+net/epoll.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/epoll.cpp.o
+.PHONY : net/epoll.cpp.o
+
+net/epoll.i: net/epoll.cpp.i
+
+.PHONY : net/epoll.i
+
+# target to preprocess a source file
+net/epoll.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/epoll.cpp.i
+.PHONY : net/epoll.cpp.i
+
+net/epoll.s: net/epoll.cpp.s
+
+.PHONY : net/epoll.s
+
+# target to generate assembly for a file
+net/epoll.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/net/epoll.cpp.s
+.PHONY : net/epoll.cpp.s
+
 net/portset.o: net/portset.cpp.o
 
 .PHONY : net/portset.o
@@ -880,6 +907,60 @@ sniffers/sangomasniffer.s: sniffers/sangomasniffer.cpp.s
 sniffers/sangomasniffer.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.s
 .PHONY : sniffers/sangomasniffer.cpp.s
+
+tools/async/asyncdispatcher.o: tools/async/asyncdispatcher.cpp.o
+
+.PHONY : tools/async/asyncdispatcher.o
+
+# target to build an object file
+tools/async/asyncdispatcher.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o
+.PHONY : tools/async/asyncdispatcher.cpp.o
+
+tools/async/asyncdispatcher.i: tools/async/asyncdispatcher.cpp.i
+
+.PHONY : tools/async/asyncdispatcher.i
+
+# target to preprocess a source file
+tools/async/asyncdispatcher.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.i
+.PHONY : tools/async/asyncdispatcher.cpp.i
+
+tools/async/asyncdispatcher.s: tools/async/asyncdispatcher.cpp.s
+
+.PHONY : tools/async/asyncdispatcher.s
+
+# target to generate assembly for a file
+tools/async/asyncdispatcher.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.s
+.PHONY : tools/async/asyncdispatcher.cpp.s
+
+tools/async/asyncunit.o: tools/async/asyncunit.cpp.o
+
+.PHONY : tools/async/asyncunit.o
+
+# target to build an object file
+tools/async/asyncunit.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o
+.PHONY : tools/async/asyncunit.cpp.o
+
+tools/async/asyncunit.i: tools/async/asyncunit.cpp.i
+
+.PHONY : tools/async/asyncunit.i
+
+# target to preprocess a source file
+tools/async/asyncunit.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.i
+.PHONY : tools/async/asyncunit.cpp.i
+
+tools/async/asyncunit.s: tools/async/asyncunit.cpp.s
+
+.PHONY : tools/async/asyncunit.s
+
+# target to generate assembly for a file
+tools/async/asyncunit.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.s
+.PHONY : tools/async/asyncunit.cpp.s
 
 tools/deffersock.o: tools/deffersock.cpp.o
 
@@ -1316,6 +1397,9 @@ help:
 	@echo "... media/sormpool.o"
 	@echo "... media/sormpool.i"
 	@echo "... media/sormpool.s"
+	@echo "... net/epoll.o"
+	@echo "... net/epoll.i"
+	@echo "... net/epoll.s"
 	@echo "... net/portset.o"
 	@echo "... net/portset.i"
 	@echo "... net/portset.s"
@@ -1352,6 +1436,12 @@ help:
 	@echo "... sniffers/sangomasniffer.o"
 	@echo "... sniffers/sangomasniffer.i"
 	@echo "... sniffers/sangomasniffer.s"
+	@echo "... tools/async/asyncdispatcher.o"
+	@echo "... tools/async/asyncdispatcher.i"
+	@echo "... tools/async/asyncdispatcher.s"
+	@echo "... tools/async/asyncunit.o"
+	@echo "... tools/async/asyncunit.i"
+	@echo "... tools/async/asyncunit.s"
 	@echo "... tools/deffersock.o"
 	@echo "... tools/deffersock.i"
 	@echo "... tools/deffersock.s"

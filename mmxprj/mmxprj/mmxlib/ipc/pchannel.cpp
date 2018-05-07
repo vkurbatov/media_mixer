@@ -49,38 +49,55 @@ namespace mmx
             }
         }
 
-        int PipeChannel::Open(const char* name, ...)
+        int PipeChannel::Config(int argn, ...)
         {
-            int rc = -EEXIST;
+            int rc = -EINVAL;
 
             std::va_list     vl;
 
-            va_start (vl, name);
+            va_start (vl, argn);
 
-            int mode = va_arg(vl, int);
+            if (argn > 0)
+            {
+                const char* name = va_arg(vl, const char*);
 
-            DLOGT(LOG_BEGIN("Open(%s, %d)"), name, mode);
+                if (name != nullptr && std::strlen(pipename_) < MMX_PIPE_NAME_LEN)
+                {
+                    std::strcpy(pipename_,name);
+                }
+
+                mode_ = argn > 1 ? va_arg(vl, int) : 0;
+
+                access_ = argn > 2 ? va_arg(vl, int) : 0;
+            }
+
+            va_end(vl);
+
+            return rc;
+        }
+
+        int PipeChannel::Open()
+        {
+            int rc = -EEXIST;
+
+            DLOGT(LOG_BEGIN("Open(%s, %d, %d)"), pipename_, mode_, access_);
 
             if (handle_ < 0)
             {
                 rc = -EINVAL;
 
-                if (name != nullptr && *name != '\0' && std::strlen(name) < MMX_PIPE_NAME_LEN)
+                if (pipename_ != '\0')
                 {
 
                     rc = 0;
 
-                    if ((mode & O_CREAT) != 0)
+                    if ((mode_ & O_CREAT) != 0)
                     {
-
-                        mode ^= O_CREAT;
-
-                        int access = va_arg(vl, int);
                         //::unlink(name);
 
-                        DLOGT(LOG_BEGIN("Open(): create new pipe access = %d"), access);
+                        DLOGT(LOG_BEGIN("Open(): create new pipe access_ = %d"), access_);
 
-                        rc = ::mkfifo(name, access);
+                        rc = ::mkfifo(pipename_, access_);
 
                         if (rc < 0 && errno != EEXIST)
                         {
@@ -93,21 +110,16 @@ namespace mmx
                         {
                             DLOGI(LOG_BEGIN("Open(): pipe create success, rc = %d"), rc);
 
-                            access_ = access;
-
                             rc = 0;
                         }
                     }
 
                     if (rc >= 0)
                     {
-                        rc = ::open(name, mode);
+                        rc = ::open(pipename_, mode_ & ~O_CREAT);
 
                         if (rc >= 0)
                         {
-                            mode_ = mode;
-
-                            std::strcpy(pipename_,name);
 
                             handle_ = rc;
 
@@ -117,12 +129,6 @@ namespace mmx
                         {
                             rc = -errno;
 
-                            if (access_ != 0)
-                            {
-                                //::unlink(name);
-                                access_ = 0;
-                            }
-
                             DLOGE(LOG_BEGIN("Open(): pipe open error, rc = %d"), rc);
                         }
                     }
@@ -130,15 +136,13 @@ namespace mmx
                 }
                 else
                 {
-                    DLOGW(LOG_BEGIN("Open(): invalid argument, name = %s"), name);
+                    DLOGW(LOG_BEGIN("Open(): invalid argument, name = %s"), pipename_);
                 }
             }
             else
             {
                 DLOGW(LOG_BEGIN("Open(): pipe already open, handle_ = %d"), handle_);
             }
-
-            va_end(vl);
 
             return rc;
         }
@@ -157,14 +161,6 @@ namespace mmx
                     rc = handle_;
 
                     handle_ = -1;
-
-                    mode_ = 0;
-
-                    if (access_ != 0)
-                    {
-                        //::unlink(pipename_);
-                        access_ = 0;
-                    }
 
                     DLOGI(LOG_BEGIN("Close(): pipe close success, handle_ = %d"), rc);
                 }
@@ -277,6 +273,7 @@ namespace mmx
         {
             return handle_ < 0 ? nullptr : pipename_;
         }
+
 
     }
 }

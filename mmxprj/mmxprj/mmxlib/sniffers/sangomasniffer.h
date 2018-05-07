@@ -32,6 +32,7 @@ namespace mmx
 
         public:
             SangomaSniffer();
+            ~SangomaSniffer() override;
             // IStream
             int PutStream(const void* stream, int size, void* hcontext = nullptr) override;
             int Drop() override;

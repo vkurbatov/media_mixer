@@ -86,6 +86,8 @@ namespace mmx
 
         int IPSniffer::Reset()
         {
+            DLOGT(LOG_BEGIN("Reset(): packet_pool_(%d)"), packet_pool_.Count());
+
             int rc = packet_pool_.Count();
 
             Drop();
@@ -115,11 +117,14 @@ namespace mmx
 
             // попробуем искать начало заголовка, но не более MAX_HEADER_LEN
 
-            int rc = 0;
+            int rc = -EBADMSG;
 
-            int drop = std::min(size, headers::MAX_HEADER_LEN * 4);
+            int drop = std::min(size, headers::MAX_HEADER_LEN);
+
 
             drop = IPPacket::FindStart(stream, drop);
+
+            DLOGT(LOG_BEGIN("forceSniffer(%x, %d): drop = %d"), DLOG_POINTER(stream), size, drop);
 
             if (size != drop)
             {
@@ -136,20 +141,20 @@ namespace mmx
                 {
                     rc += drop;
 
-                    headers::IP4HEADER &ip = *(headers::PIP4HEADER)stream;
+                    headers::IP4HEADER &ip_header = *(headers::PIP4HEADER)stream;
 
                     // смещение в октетах (раскидано по разным байтам)
 
-                    unsigned short offset = ip.off_lo;
+                    unsigned short offset = ip_header.off_lo;
 
-                    offset = ip.off_hi | (offset << 8);
+                    offset = ip_header.off_hi | (offset << 8);
 
                     // в счет идут только нефрагментированые пакеты
 
-                    if (ip.f_M == 0 && offset == 0)
+                    if (ip_header.f_M == 0 && offset == 0)
                     {
 
-                        unsigned short hlen = (ip.hlen << 2);
+                        unsigned short hlen = (ip_header.hlen << 2);
 
                         //force_stream_ = (char*)stream + hlen;
 
@@ -157,7 +162,10 @@ namespace mmx
 
                         saved_bytes_ = rc - hlen;
 
+                        DLOGT(LOG_BEGIN("forceSniffer(): packet is good, sb = %d!"), saved_bytes_);
+
                         state_ = SS_NEXT;
+
 
                     }
 
@@ -184,6 +192,8 @@ namespace mmx
             int len = size;
 
             bool f_stop = false;
+
+            DLOGT(LOG_BEGIN("fragmentSniffer(%x, %d): state_ = %d, sb = %d"), DLOG_POINTER(stream), size, state_, saved_bytes_);
 
             while (!f_stop)
             {
@@ -243,9 +253,7 @@ namespace mmx
 
                                     if (packet_ != nullptr)
                                     {
-
                                         state_ = SS_PYLOAD;
-
                                     }
                                 }
 
@@ -255,7 +263,7 @@ namespace mmx
                         break;
                     case SS_PYLOAD:
 
-                        state_ = SS_START;
+                        state_ = SS_BAD;
 
                         if (packet_ != nullptr)
                         {
@@ -265,17 +273,15 @@ namespace mmx
                             {
                                 saved_bytes_ += (process_bytes = ret);
 
-
                                 if (saved_bytes_ == ::ntohs(header_.length))
                                 {
-
                                     if (packet_->IsComplete())
                                     {
                                         state_ = SS_NEXT;
                                     }
                                     else
                                     {
-                                        Drop();
+                                        // Drop();
                                     }
 
                                 }
@@ -287,6 +293,7 @@ namespace mmx
                         }
 
                         break;
+
                     case SS_NEXT:
                     case SS_BAD:
 
@@ -303,6 +310,8 @@ namespace mmx
                 len -= process_bytes;
 
                 f_stop |= len <= 0;
+
+                DLOGT(LOG_BEGIN("fragmentSniffer(): state_ = %d, sb = %d, pb = %d, len = %d, stop = %d"), state_, saved_bytes_, process_bytes, len, f_stop);
 
             }   // while
 

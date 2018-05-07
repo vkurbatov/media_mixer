@@ -84,7 +84,7 @@ mmxlst/preinstall:
 mmxlst/CMakeFiles/mmxlst.dir/all: mmxlib/CMakeFiles/mmx.dir/all
 	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/depend
 	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=47,48,49 "Built target mmxlst"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=50,51,52 "Built target mmxlst"
 .PHONY : mmxlst/CMakeFiles/mmxlst.dir/all
 
 # Include target in all.
@@ -94,7 +94,7 @@ all: mmxlst/CMakeFiles/mmxlst.dir/all
 
 # Build rule for subdir invocation for target.
 mmxlst/CMakeFiles/mmxlst.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 46
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 49
 	$(MAKE) -f CMakeFiles/Makefile2 mmxlst/CMakeFiles/mmxlst.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
 .PHONY : mmxlst/CMakeFiles/mmxlst.dir/rule
@@ -139,7 +139,7 @@ mmxcore/preinstall:
 mmxcore/CMakeFiles/mmxcore.dir/all: mmxlib/CMakeFiles/mmx.dir/all
 	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/depend
 	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=44,45,46 "Built target mmxcore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=47,48,49 "Built target mmxcore"
 .PHONY : mmxcore/CMakeFiles/mmxcore.dir/all
 
 # Include target in all.
@@ -149,7 +149,7 @@ all: mmxcore/CMakeFiles/mmxcore.dir/all
 
 # Build rule for subdir invocation for target.
 mmxcore/CMakeFiles/mmxcore.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 46
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 49
 	$(MAKE) -f CMakeFiles/Makefile2 mmxcore/CMakeFiles/mmxcore.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
 .PHONY : mmxcore/CMakeFiles/mmxcore.dir/rule
@@ -194,7 +194,7 @@ mmxlib/preinstall:
 mmxlib/CMakeFiles/mmx.dir/all:
 	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/depend
 	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43 "Built target mmx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46 "Built target mmx"
 .PHONY : mmxlib/CMakeFiles/mmx.dir/all
 
 # Include target in all.
@@ -204,7 +204,7 @@ all: mmxlib/CMakeFiles/mmx.dir/all
 
 # Build rule for subdir invocation for target.
 mmxlib/CMakeFiles/mmx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 46
 	$(MAKE) -f CMakeFiles/Makefile2 mmxlib/CMakeFiles/mmx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
 .PHONY : mmxlib/CMakeFiles/mmx.dir/rule
@@ -249,7 +249,7 @@ mmxsrv/preinstall:
 mmxsrv/CMakeFiles/mmxsrv.dir/all: mmxlib/CMakeFiles/mmx.dir/all
 	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/depend
 	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=50,51,52 "Built target mmxsrv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=53,54,55 "Built target mmxsrv"
 .PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/all
 
 # Include target in all.
@@ -259,7 +259,7 @@ all: mmxsrv/CMakeFiles/mmxsrv.dir/all
 
 # Build rule for subdir invocation for target.
 mmxsrv/CMakeFiles/mmxsrv.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 46
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 49
 	$(MAKE) -f CMakeFiles/Makefile2 mmxsrv/CMakeFiles/mmxsrv.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
 .PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/rule
@@ -304,7 +304,7 @@ mmxtest/preinstall:
 mmxtest/CMakeFiles/mmxtest.dir/all: mmxlib/CMakeFiles/mmx.dir/all
 	$(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/depend
 	$(MAKE) -f mmxtest/CMakeFiles/mmxtest.dir/build.make mmxtest/CMakeFiles/mmxtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=53,54,55,56,57,58,59,60,61,62,63,64 "Built target mmxtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=56,57,58,59,60,61,62,63,64,65,66,67 "Built target mmxtest"
 .PHONY : mmxtest/CMakeFiles/mmxtest.dir/all
 
 # Include target in all.
@@ -314,7 +314,7 @@ all: mmxtest/CMakeFiles/mmxtest.dir/all
 
 # Build rule for subdir invocation for target.
 mmxtest/CMakeFiles/mmxtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 55
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 58
 	$(MAKE) -f CMakeFiles/Makefile2 mmxtest/CMakeFiles/mmxtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vkurbatov/work/mmxprj/build/CMakeFiles 0
 .PHONY : mmxtest/CMakeFiles/mmxtest.dir/rule
