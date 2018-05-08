@@ -144,12 +144,12 @@ namespace mmx
             return io_.Read(data, size, flags);
         }
 
-        bool DeferredWriter::IsCanWrite()
+        bool DeferredWriter::IsCanWrite() const
         {
             return true;
         }
 
-        bool DeferredWriter::IsCanRead()
+        bool DeferredWriter::IsCanRead() const
         {
             return io_.IsCanRead();
         }

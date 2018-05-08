@@ -5,6 +5,8 @@
 #include <fcntl.h>  // O_NONBLOCK, ORWRD
 #include <errno.h>
 
+#include <string>
+
 namespace mmx
 {
     namespace tools
@@ -16,15 +18,9 @@ namespace mmx
             channel_(channel),
             pack_id_(0),
             data_(0x10000),
-            dp_writter_(data_.data(), data_.size())
+            dp_writter_(data_.data(), data_.size()),
+            pipe_((std::string(pipe_name_prefix) + std::to_string((int)channel)).c_str(),O_WRONLY | O_NONBLOCK)
         {
-            std::memset(pipe_name_, 0, sizeof(pipe_name_));
-
-            if (pipe_name_prefix != nullptr && *pipe_name_prefix != '\0')
-            {
-                std::sprintf(pipe_name_, pipe_name_prefix, channel);
-                pipe_.Config(2, pipe_name_, O_WRONLY | O_NONBLOCK);
-            }
 
             dp_writter_.BuildPacket(++pack_id_);
 
@@ -43,8 +39,6 @@ namespace mmx
             pack_id_(channel.pack_id_)
         {
 
-            std::memcpy(pipe_name_, channel.pipe_name_, sizeof(pipe_name_));
-            std::memset(channel.pipe_name_, 0, sizeof(channel.pipe_name_));
 
         }
 

@@ -55,9 +55,9 @@ namespace mmxmux
 
         int rc = 0;
 
-        mmx::ipc::Semaphore sem;
+        mmx::ipc::Semaphore sem(MUX_UNIQUE_BASE_KEY + config_.channel_num, 0666);
 
-        if (sem.Open(MUX_UNIQUE_BASE_KEY + config_.channel_num, 0666) < 0 || sem.Get() > 0)
+        if (sem.Open() < 0 || sem.Get() > 0)
         {
             return -EBUSY;
         }
@@ -111,14 +111,13 @@ namespace mmxmux
             if ((config_.channels[i / 8] & (1 << (i % 8))) != 0)
             {
                 output_channel_pool_.GetChannel(i, select_, config_.interval);
+                shmem_servers_.push_back(std::move(mmx::ipc::SharedMemory(SRV_SHMEM_UNIQUE_BASE_KEY + i)));
                 channel_indexes_[i] = ch_num++;
             }
             else
             {
                 channel_indexes_[i] = -1;
             }
-
-            shmem_servers_.resize(ch_num);
 
         }
 
@@ -141,7 +140,7 @@ namespace mmxmux
 
                 int idx = channel_indexes_[o.GetChannelId()];
                 shmem_servers_[idx].Close();
-                shmem_servers_[idx].Open(SRV_SHMEM_UNIQUE_BASE_KEY + o.GetChannelId());
+                shmem_servers_[idx].Open();
 
             }
         }

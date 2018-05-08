@@ -18,13 +18,20 @@ namespace mmx
 {
     namespace ipc
     {
-        PipeChannel::PipeChannel() :
+        PipeChannel::PipeChannel(const char *pipe_name, int mode, int access) :
             handle_(-1),
-            mode_(0),
-            access_(0)
+            mode_(mode),
+            access_(access)
         {
-            DLOGT(LOG_BEGIN("PipeChannel()"));
-            std::memset(pipename_, 0, sizeof(pipename_));
+            DLOGT(LOG_BEGIN("PipeChannel(%s, %d, %d)"), pipe_name, mode, access);
+            if (pipe_name != nullptr && *pipe_name != '\0')
+            {
+                std::strcpy(pipename_, pipe_name);
+            }
+            else
+            {
+                std::memset(pipename_, 0, sizeof(pipename_));
+            }
         }
 
         PipeChannel::PipeChannel(PipeChannel&& channel) :
@@ -49,41 +56,16 @@ namespace mmx
             }
         }
 
-        int PipeChannel::Config(int argn, ...)
-        {
-            int rc = -EINVAL;
-
-            std::va_list     vl;
-
-            va_start (vl, argn);
-
-            if (argn > 0)
-            {
-                const char* name = va_arg(vl, const char*);
-
-                if (name != nullptr && std::strlen(pipename_) < MMX_PIPE_NAME_LEN)
-                {
-                    std::strcpy(pipename_,name);
-                }
-
-                mode_ = argn > 1 ? va_arg(vl, int) : 0;
-
-                access_ = argn > 2 ? va_arg(vl, int) : 0;
-            }
-
-            va_end(vl);
-
-            return rc;
-        }
-
         int PipeChannel::Open()
         {
             int rc = -EEXIST;
 
-            DLOGT(LOG_BEGIN("Open(%s, %d, %d)"), pipename_, mode_, access_);
+            DLOGT(LOG_BEGIN("Open()"));
+
 
             if (handle_ < 0)
             {
+
                 rc = -EINVAL;
 
                 if (pipename_ != '\0')
@@ -91,7 +73,7 @@ namespace mmx
 
                     rc = 0;
 
-                    if ((mode_ & O_CREAT) != 0)
+                    if (access_ != 0)
                     {
                         //::unlink(name);
 
@@ -254,12 +236,12 @@ namespace mmx
             return rc;
         }
 
-        bool PipeChannel::IsCanWrite()
+        bool PipeChannel::IsCanWrite() const
         {
             return handle_ >= 0;
         }
 
-        bool PipeChannel::IsCanRead()
+        bool PipeChannel::IsCanRead() const
         {
             return handle_ >= 0;
         }

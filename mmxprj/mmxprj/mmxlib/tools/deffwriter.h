@@ -32,8 +32,8 @@ namespace mmx
             // IIO
             int Write(const void* data, int size, int flags = 0);
             int Read(void* data, int size, int flags = 0);
-            bool IsCanWrite() override;
-            bool IsCanRead() override;
+            bool IsCanWrite() const override;
+            bool IsCanRead() const override;
 
             bool IsEmpty() const;
             int Count() const;

@@ -11,8 +11,8 @@ namespace mmx
             virtual ~IIO() {};
             virtual int Write(const void*, int, int = 0) = 0;
             virtual int Read(void*, int, int = 0) = 0;
-            virtual bool IsCanWrite() = 0;
-            virtual bool IsCanRead() = 0;
+            virtual bool IsCanWrite() const = 0;
+            virtual bool IsCanRead() const = 0;
         };
 	}
 }

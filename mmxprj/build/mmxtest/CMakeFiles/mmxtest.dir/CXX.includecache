@@ -83,10 +83,14 @@ io.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/io.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/sem.h
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/ichannel.h
 memory
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/shmem.h
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/ichannel.h
 memory
 -
 

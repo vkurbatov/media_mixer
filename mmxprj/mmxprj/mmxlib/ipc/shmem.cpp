@@ -19,11 +19,12 @@ namespace mmx
 {
     namespace ipc
     {
-        SharedMemory::SharedMemory() :
+        SharedMemory::SharedMemory(int key, int size) :
             handle_(-1),
-            size_(0),
+            size_(size),
+            rsize_(0),
             data_(nullptr),
-            mode_(0)
+            key_(key)
         {
             DLOGT(LOG_BEGIN("SharedMemory()"));
         }
@@ -31,13 +32,15 @@ namespace mmx
         SharedMemory::SharedMemory(SharedMemory&& shmem) :
             handle_(shmem.handle_),
             size_(shmem.size_),
+            rsize_(shmem.rsize_),
             data_(shmem.data_),
-            mode_(shmem.mode_)
+            key_(shmem.key_)
         {
             shmem.handle_ = -1;
             shmem.size_ = 0;
+            shmem.rsize_ = -1;
             shmem.data_ = nullptr;
-            shmem.mode_ = 0;
+            shmem.key_ = -1;
 
             DLOGT(LOG_BEGIN("SharedMemory(&&%d)"), DLOG_POINTER(&shmem));
         }
@@ -48,12 +51,11 @@ namespace mmx
             Close();
         }
 
-        int SharedMemory::Open(int key, int size, int mode)
+        int SharedMemory::Open()
         {
             int rc = -EEXIST;
 
-
-            DLOGT(LOG_BEGIN("SharedMemory(%d, %d, %d)"), key, size, mode);
+            DLOGT(LOG_BEGIN("SharedMemory(): key_ = %d, size_ = %d"), key_, size_);
 
             if (handle_ < 0)
             {
@@ -61,10 +63,10 @@ namespace mmx
 
                 rc = -EINVAL;
 
-                if (size > 0 || (size == 0 & mode == 0))
+                if (size_ >= 0 )
                 {
 
-                    rc = shmget(key, size, mode != 0 ? mode | IPC_CREAT : IPC_EXCL);
+                    rc = shmget(key_, size_, size_ != 0 ? IPC_CREAT : IPC_EXCL);
 
                     if (rc >= 0)
                     {
@@ -77,11 +79,9 @@ namespace mmx
                             struct shmid_ds ds;
 
                             shmctl(handle_, IPC_STAT, &ds);
-                            size_ = ds.shm_segsz;
+                            rsize_ = ds.shm_segsz;
 
-                            mode_ = mode;
-
-                            DLOGI(LOG_BEGIN("Open(%d, %d, %d): shemm open success, data_ = %x, size_ = %d,  rc = %d"), key, size, mode, DLOG_POINTER(data_), size_, rc);
+                            DLOGI(LOG_BEGIN("Open(%d, %d, %d): shemm open success, data_ = %x, size_ = %d,  rc = %d"), key_, size_, rsize_, DLOG_POINTER(data_), size_, rc);
 
                         }
                         else
@@ -90,20 +90,20 @@ namespace mmx
                             rc = -errno;
                             shmctl(handle_, IPC_RMID, NULL);
                             handle_ = -1;
-                            DLOGE(LOG_BEGIN("Open(%d, %d, %d): get shmem pointer error, rc = %d"), key, size, mode, rc);
+                            DLOGE(LOG_BEGIN("Open(%d, %d, %d): get shmem pointer error, rc = %d"), key_, size_, rsize_, rc);
 
                         }
                     }
                     else
                     {
                         rc =-errno;
-                        DLOGE(LOG_BEGIN("Open(%d, %d, %d): open shmem error, rc = %d"), key, size, mode, rc);
+                        DLOGE(LOG_BEGIN("Open(%d, %d, %d): open shmem error, rc = %d"), key_, size_, rsize_, rc);
                     }
 
                 }
                 else
                 {
-                    DLOGE(LOG_BEGIN("Open(%d, %d, %d): invalid argument"), key, size, mode);
+                    DLOGE(LOG_BEGIN("Open(%d, %d, %d): invalid argument"), key_, size_, rsize_);
                 }
 
             }
@@ -138,7 +138,7 @@ namespace mmx
                 }
 
                 data_ = nullptr;
-                size_ = 0;
+                rsize_ = 0;
 
             }
 
@@ -161,8 +161,6 @@ namespace mmx
 
             }
 
-            mode_ = 0;
-
             return rc;
         }
 
@@ -178,8 +176,10 @@ namespace mmx
 
         int SharedMemory::Size()
         {
-            return size_;
+            return rsize_;
         }
 
     }
 }
+
+

@@ -30,14 +30,10 @@ namespace mmxtest
         char w_buff[] = "Kurbatov";
         char r_buff[100] = { 0 };
 
-        mmx::ipc::PipeChannel w_channel;
+        mmx::ipc::PipeChannel w_channel(CHANNEL_NAME, O_RDWR, 0777);
 
-        mmx::ipc::PipeChannel r_channel1;
-        mmx::ipc::PipeChannel r_channel2;
-
-        w_channel.Config(3, CHANNEL_NAME, O_RDWR, 0777);
-        r_channel1.Config(2, CHANNEL_NAME, O_RDONLY);
-        r_channel2.Config(2, CHANNEL_NAME, O_RDONLY);
+        mmx::ipc::PipeChannel r_channel1(CHANNEL_NAME, O_RDONLY);
+        mmx::ipc::PipeChannel r_channel2(CHANNEL_NAME, O_RDONLY);
 
         w_channel.Open();
         r_channel1.Open();
@@ -90,14 +86,11 @@ namespace mmxtest
         char w_buff[] = "Kurbatov";
         char r_buff[100] = { 0 };
 
-        mmx::ipc::PipeChannel w_channel;
+        mmx::ipc::PipeChannel w_channel(CHANNEL_NAME, O_RDONLY | O_NONBLOCK, 0777);
 
-        mmx::ipc::PipeChannel r_channel;
+        mmx::ipc::PipeChannel r_channel(CHANNEL_NAME, O_WRONLY | O_NONBLOCK);
 
         mmx::net::SelectExtension sel;
-
-        r_channel.Config(3, CHANNEL_NAME, O_RDONLY | O_NONBLOCK, 0777);
-        w_channel.Config(2, CHANNEL_NAME, O_WRONLY | O_NONBLOCK);
 
 
         int rc = 0;

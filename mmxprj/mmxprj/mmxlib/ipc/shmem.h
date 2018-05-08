@@ -1,7 +1,7 @@
 #ifndef _MMX_IPC_SHMEM__H
 #define _MMX_IPC_SHMEM_H
 
-#define MMX_SHMEM_NAME_LEN   256
+#include "ichannel.h"
 
 #include <memory>
 
@@ -9,22 +9,28 @@ namespace mmx
 {
     namespace ipc
     {
-        class SharedMemory
+        class SharedMemory : public IChannel
         {
             int     handle_;
+            int     key_;
             int     size_;
             void*   data_;
-            int     mode_;
+            int     rsize_;
 
         public:
-            SharedMemory();
+            SharedMemory(int key, int size = 0);
             SharedMemory(SharedMemory&& semaphore);
             ~SharedMemory();
-            int Open(int key, int size = 0, int mode = 0);
-            int Close();
-            int Handle() const;
+
+            // IChannel interface
+            int Open() override;
+            int Close() override;
+            int Handle() const override;
+
             void* Data();
             int Size();
+
+
         };
     }
 }

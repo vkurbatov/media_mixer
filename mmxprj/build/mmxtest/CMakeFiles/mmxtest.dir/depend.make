@@ -13,6 +13,7 @@ mmxtest/CMakeFiles/mmxtest.dir/test1.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxtest/CMakeFiles/mmxtest.dir/test1.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
 mmxtest/CMakeFiles/mmxtest.dir/test1.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test1.cpp
 
+mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/ichannel.h
 mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/sem.h
 mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/shmem.h
 mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test10.cpp

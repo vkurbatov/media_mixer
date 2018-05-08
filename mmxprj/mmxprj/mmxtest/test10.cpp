@@ -16,11 +16,11 @@ namespace mmxtest
     int test10()
     {     
 
-        mmx::ipc::Semaphore sem1, sem2;
-        mmx::ipc::SharedMemory shmem1, shmem2;
+        mmx::ipc::Semaphore sem1(SHMEM_ID, 0666), sem2(SHMEM_ID,0);
+        mmx::ipc::SharedMemory shmem1(SHMEM_ID, 10), shmem2(SHMEM_ID, 0);
 
-        int rc = sem1.Open(SHMEM_ID, 0666);
-        rc = sem2.Open(SHMEM_ID,0);
+        int rc = sem1.Open();
+        rc = sem2.Open();
 
         rc = sem1.Set(1);
         rc = sem2.Set(1);
@@ -30,8 +30,8 @@ namespace mmxtest
 
         rc = sem1.Get();
 
-        rc = shmem1.Open(SHMEM_ID, 10, 0666);
-        rc = shmem2.Open(SHMEM_ID, 0);
+        rc = shmem1.Open();
+        rc = shmem2.Open();
 
         void* data = shmem1.Data();
 

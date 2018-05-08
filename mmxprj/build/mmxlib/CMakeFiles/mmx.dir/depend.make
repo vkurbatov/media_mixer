@@ -38,11 +38,13 @@ mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
 mmxlib/CMakeFiles/mmx.dir/ipc/pchannel.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
+mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.cpp
 mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.h
 mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
 mmxlib/CMakeFiles/mmx.dir/ipc/sem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
+mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.cpp
 mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.h
 mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
@@ -230,11 +232,17 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mm
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
 mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h
 
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/epoll.h
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/iepoll_dispatcher.h
 mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.h
 
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
 mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/iasyncunit.h
+mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
 mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h

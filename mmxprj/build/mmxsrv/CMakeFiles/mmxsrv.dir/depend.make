@@ -31,7 +31,6 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
-mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
@@ -44,6 +43,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/dpreader.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/data/idpreader.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/pultstat.h
+mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/ichannel.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/sem.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/shmem.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h

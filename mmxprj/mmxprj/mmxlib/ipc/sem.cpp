@@ -17,18 +17,26 @@ namespace mmx
 {
     namespace ipc
     {
-        Semaphore::Semaphore() :
+        Semaphore::Semaphore(int key, int mode) :
             handle_(-1),
-            entries_(0)
+            entries_(0),
+            mode_(mode),
+            key_(key)
         {
-            DLOGT(LOG_BEGIN("Semaphore()"));
+            DLOGT(LOG_BEGIN("Semaphore(%d, %d)"), key, mode);
         }
 
         Semaphore::Semaphore(Semaphore&& semaphore):
             handle_(semaphore.handle_),
-            entries_(semaphore.entries_)
+            entries_(semaphore.entries_),
+            mode_(semaphore.mode_),
+            key_(semaphore.key_)
         {
             DLOGT(LOG_BEGIN("Semaphore(&&%x)"), DLOG_POINTER(&semaphore));
+            semaphore.handle_ = -1;
+            semaphore.entries_ = 0;
+            semaphore.mode_ = 0;
+            semaphore.key_ = -1;
         }
 
         Semaphore::~Semaphore()
@@ -37,34 +45,28 @@ namespace mmx
             Close();
         }
 
-        int Semaphore::Open(int key, ...)
+        int Semaphore::Open()
         {
             int rc = -EEXIST;
 
-            std::va_list     vl;
-
-            va_start (vl, key);
-
-            int mode = va_arg(vl, int) & 0x1FF;
-
-            DLOGT(LOG_BEGIN("Open(%d, %d)"), key, mode);
+            DLOGT(LOG_BEGIN("Open(): key_ = %d, mode = %d"), key_, mode_);
 
             if (handle_ < 0)
             {
 
                 rc = -EINVAL;
 
-                if (key > 0)
+                if (key_ > 0)
                 {
 
-                    if (mode != 0)
+                    if (mode_ != 0)
                     {
-                        rc = semget(key, 1, mode | IPC_CREAT);
+                        rc = semget(key_, 1, mode_ | IPC_CREAT);
                         DLOGD(LOG_BEGIN("Open(): create semaphore, rc = %d"), rc);
                     }
                     else
                     {
-                        rc = semget(key, 1, IPC_EXCL);
+                        rc = semget(key_, 1, IPC_EXCL);
                         DLOGD(LOG_BEGIN("Open(): open semaphore, rc = %d"), rc);
                     }
 
@@ -82,7 +84,7 @@ namespace mmx
                 else
                 {
                     rc = -errno;
-                    DLOGW(LOG_BEGIN("Open(): invalid argument, key = %d"), key);
+                    DLOGW(LOG_BEGIN("Open(): invalid argument, key = %d"), key_);
                 }
             }
             else
@@ -187,3 +189,4 @@ namespace mmx
     }
 
 }
+

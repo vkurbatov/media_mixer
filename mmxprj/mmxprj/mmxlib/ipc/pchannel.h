@@ -19,7 +19,7 @@ namespace mmx
             int access_;
 
         public:
-            PipeChannel();
+            PipeChannel(const char *pipe_name, int mode = 0, int access = 0);
             //PipeChannel(const PipeChannel& channel);
             PipeChannel(PipeChannel&& channel);
             const char* Name() const;
@@ -27,12 +27,11 @@ namespace mmx
             // IIO
             int Write(const void* msg, int size, int flags = 0) override;
             int Read(void* msg, int size, int flags = 0) override;
-            bool IsCanWrite() override;
-            bool IsCanRead() override;
+            bool IsCanWrite() const override;
+            bool IsCanRead() const override;
 
             // IChannel
             ~PipeChannel() override;
-            int Config(int argn, ...) override;
             int Open() override;
             int Close() override;
             int Handle() const override;

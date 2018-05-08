@@ -42,11 +42,17 @@ headers/datapack.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/ichannel.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/sem.h
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/ichannel.h
 memory
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/shmem.h
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/ichannel.h
 memory
 -
 
@@ -291,8 +297,6 @@ rtp.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 

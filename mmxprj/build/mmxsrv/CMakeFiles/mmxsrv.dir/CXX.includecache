@@ -68,11 +68,17 @@ headers/datapack.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/pultstat.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/ichannel.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/sem.h
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/ichannel.h
 memory
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/shmem.h
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/ipc/ichannel.h
 memory
 -
 

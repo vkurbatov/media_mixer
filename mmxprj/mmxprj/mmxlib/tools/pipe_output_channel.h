@@ -28,9 +28,6 @@ namespace mmx
             std::vector<char>           data_;
             data::DataPacketWriter      dp_writter_;
 
-
-            char                        pipe_name_[MMX_PIPE_NAME_LEN];
-
             int                         interval_;
 
             unsigned char               channel_;

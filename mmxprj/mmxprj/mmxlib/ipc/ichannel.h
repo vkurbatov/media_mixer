@@ -11,7 +11,6 @@ namespace mmx
         public:
 
             virtual ~IChannel() {};
-            virtual int Config(int argn, ...) = 0;
             virtual int Open() = 0;
             virtual int Close() = 0;
             virtual int Handle() const = 0;

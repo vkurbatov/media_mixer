@@ -141,6 +141,8 @@ logs/dlog.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/sem.h
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 memory
 -
 
@@ -163,6 +165,8 @@ logs/dlog.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/shmem.h
+ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 memory
 -
 
@@ -591,6 +595,14 @@ headers/si.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/headers/si.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.cpp
+asyncdispatcher.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.h
+net/iepoll_dispatcher.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/net/iepoll_dispatcher.h
+net/epoll.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/net/epoll.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.cpp
 asyncunit.h
@@ -599,8 +611,14 @@ asyncunit.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
 iasyncunit.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/iasyncunit.h
+../timer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/iasyncunit.h
+ipc/ichannel.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/ipc/ichannel.h
+ipc/io.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/ipc/io.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
 deffersock.h
@@ -723,6 +741,8 @@ fcntl.h
 -
 errno.h
 -
+string
+-
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_input_channel.h
 tools/ichanneldispatcher.h
@@ -744,6 +764,8 @@ cstring
 fcntl.h
 -
 errno.h
+-
+string
 -
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.h

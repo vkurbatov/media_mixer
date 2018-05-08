@@ -39,17 +39,17 @@ namespace mmxsrv
 
         int rc = 0;
 
-        mmx::ipc::Semaphore sem;
-        mmx::ipc::SharedMemory shmem;
+        mmx::ipc::Semaphore sem(SRV_SEM_UNIQUE_BASE_KEY + config_.channel, 0666);
+        mmx::ipc::SharedMemory shmem(SRV_SHMEM_UNIQUE_BASE_KEY + config_.channel, sizeof(stat_));
 
-        if (sem.Open(SRV_SEM_UNIQUE_BASE_KEY + config_.channel, 0666) < 0 || sem.Get() > 0)
+        if (sem.Open() < 0 || sem.Get() > 0)
         {
             return -EBUSY;
         }
 
         sem.Set();
 
-        shmem.Open(SRV_SHMEM_UNIQUE_BASE_KEY + config_.channel, sizeof(stat_), 0666);
+        shmem.Open();
 
         init();
 

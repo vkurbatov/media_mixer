@@ -21,9 +21,6 @@ namespace mmx
 
             net::SelectExtension&       select_;
 
-
-            char                        pipe_name_[MMX_PIPE_NAME_LEN];
-
             int                         read_bytes_;
             int                         interval_;
             unsigned char               channel_;

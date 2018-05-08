@@ -37,12 +37,12 @@ namespace mmx
                                 port_from_);
         }
 
-        bool SocketIOAdapter::IsCanWrite()
+        bool SocketIOAdapter::IsCanWrite() const
         {
             return socket_.Handle() >= 0;
         }
 
-        bool SocketIOAdapter::IsCanRead()
+        bool SocketIOAdapter::IsCanRead() const
         {
             return socket_.Handle() >= 0;
         }

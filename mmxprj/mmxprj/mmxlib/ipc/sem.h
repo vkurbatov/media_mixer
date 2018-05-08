@@ -3,27 +3,36 @@
 
 #define MMX_SEM_NAME_LEN   256
 
+#include "ichannel.h"
+
 #include <memory>
 
 namespace mmx
 {
     namespace ipc
     {
-        class Semaphore
+        class Semaphore : public IChannel
         {
             int     handle_;
+            int     key_;
+            int     mode_;
             int     entries_;
 
         public:
-            Semaphore();
+            Semaphore(int key, int mode = 0);
             //PipeChannel(const PipeChannel& channel);
             Semaphore(Semaphore&& semaphore);
-            ~Semaphore();
-            int Open(int key, ...);
-            int Close();
-            int Handle() const;
+            ~Semaphore() override;
+
+            // IChannel interface
+            int Open() override;
+            int Close() override;
+            int Handle() const override;
+
+
             int Set(int val = 1);
             int Get() const;
+
         };
     }
 }
