@@ -1,2 +1,0 @@
-/usr/bin/ar qc /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmxlib.a  CMakeFiles/mmxlib.dir/logs/log.cpp.o CMakeFiles/mmxlib.dir/net/create_sock.cpp.o CMakeFiles/mmxlib.dir/net/write_sock.cpp.o CMakeFiles/mmxlib.dir/net/read_sock.cpp.o CMakeFiles/mmxlib.dir/net/sock_opt.cpp.o
-/usr/bin/ranlib /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmxlib.a

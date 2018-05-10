@@ -239,14 +239,14 @@ mux.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
 mmxlib/names.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/names.h
-mmxlib/logs/log.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
 mmxlib/ipc/sem.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/ipc/sem.h
 mmxlib/headers/pultstat.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/pultstat.h
 cstring
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
 mmxlib/net/select_ex.h
@@ -307,6 +307,12 @@ ichannel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 io.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
 select.h

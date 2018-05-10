@@ -202,7 +202,7 @@ namespace mmx
                     {
                         rc = len;
 
-                        DLOGI("IPPacket::CheckPacket(%x, %d): chech packet complete, len = %d", DLOG_POINTER(stream), size, len);
+                        DLOGT("IPPacket::CheckPacket(%x, %d): chech packet complete, len = %d", DLOG_POINTER(stream), size, len);
                     }
                     else
                     {

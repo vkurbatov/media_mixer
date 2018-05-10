@@ -8,6 +8,10 @@
 #include <netdb.h>  // SOCK_DGRAM
 #include <fcntl.h>  // O_NONBLOCK
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("SangomaMediaClient", msg)
+
 namespace mmx
 {
     namespace tools
@@ -117,10 +121,16 @@ namespace mmx
 
             if (rc < 0 && rc != -EAGAIN)
             {
+                DLOGE(LOG_BEGIN("putData(%x, %d): write error, rc = %d"), DLOG_POINTER(data), size, rc);
                 Close();
             }
             else
             {
+                if (rc == -EAGAIN)
+                {
+                    DLOGW(LOG_BEGIN("putData(%x, %d): would block write, rc = %d"), DLOG_POINTER(data), size, rc);
+                }
+
                 if (writer_.IsEmpty())
                 {
                     select_.ClrWrite(socket_.Handle());
@@ -143,9 +153,13 @@ namespace mmx
 
                     if (rc > 0)
                     {
-
+                        DLOGI(LOG_BEGIN("checkConnect(): sangoma media client %d:%d create success, sock = %d"), address_, port_, rc);
                         select_.SetRead(rc);
 
+                    }
+                    else
+                    {
+                        DLOGW(LOG_BEGIN("checkConnect(): sangoma media client %d:%d is not create, rc = %d"), address_, port_, rc);
                     }
                 }
 

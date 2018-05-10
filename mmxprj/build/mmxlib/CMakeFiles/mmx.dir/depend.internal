@@ -233,10 +233,15 @@ mmxlib/CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/sangomasniffer.h
 mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/epoll.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/iepoll_dispatcher.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncdispatcher.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/iasyncunit.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
@@ -247,6 +252,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o
 mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.h
@@ -255,10 +262,14 @@ mmxlib/CMakeFiles/mmx.dir/tools/deffersock.cpp.o
 mmxlib/CMakeFiles/mmx.dir/tools/deffwriter.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
@@ -277,6 +288,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
@@ -289,6 +302,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
@@ -303,6 +318,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
@@ -317,6 +334,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
@@ -344,6 +363,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
@@ -357,6 +378,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
@@ -370,6 +393,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
@@ -390,6 +415,8 @@ mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/udp.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h

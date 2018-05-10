@@ -9,6 +9,8 @@ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h

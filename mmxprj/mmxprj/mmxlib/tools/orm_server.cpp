@@ -4,6 +4,10 @@
 #include <netdb.h>
 #include <errno.h>
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("OrmServer", msg)
+
 namespace mmx
 {
     namespace tools
@@ -85,9 +89,13 @@ namespace mmx
 
                     if (rc > 0)
                     {
-
+                        DLOGI(LOG_BEGIN("checkConnect(): orm server %d:%d create success, sock = %d"), address_, port_, rc);
                         select_.SetRead(rc);
 
+                    }
+                    else
+                    {
+                        DLOGW(LOG_BEGIN("checkConnect(): orm server %d:%d is not create, rc = %d"), address_, port_, rc);
                     }
                 }
 
@@ -115,12 +123,17 @@ namespace mmx
 
                     if (rc >= 0)
                     {
+
+                        DLOGI(LOG_BEGIN("checkClients(): orm client %d:%d accept connection success, sock = %d"), client.RemoteAddress(), client.RemotePort(), rc);
+
                         clients_.push_back(OrmClient(std::move(client), select_));
                     }
                     else
                     {
-                        if (rc != EAGAIN)
-                        {
+                        DLOGE(LOG_BEGIN("checkClients(): orm client accept connection is failed, rc = %d"), rc);
+
+                        if (rc != -EAGAIN)
+                        {                
                             Close();
                         }
                     }

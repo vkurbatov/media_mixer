@@ -1,5 +1,9 @@
 #include "iosockadp.h"
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("SocketIOAdapter", msg)
+
 namespace mmx
 {
     namespace tools

@@ -7,7 +7,7 @@
 #define DLOG_POINTER(obj)  (((long)(obj)) & 0xFFFFFF)
 #define DLOG_CLASS_BEGIN(cname, msg) cname "{%.6x}::" msg, DLOG_POINTER(this)
 
-#define DLOG_LEVEL 0
+#define DLOG_LEVEL 1
 
 #if DLOG_LEVEL <= 0
     #define    DLOGT   mmx::logs::logT

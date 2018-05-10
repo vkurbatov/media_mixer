@@ -15,30 +15,41 @@ namespace mmx
             {
                 ipc::IChannel&          channel_;
                 ipc::IIO&               io_;
-                Timer                   timer_;
+                Timer                   work_timer_;
+                Timer                   conn_timer_;
+                bool                    removable_;
+
+
 
             public:
-                AsyncUnit(ipc::IChannel& channel, ipc::IIO& io);
+                AsyncUnit(ipc::IChannel& channel, ipc::IIO& io, int conn_time = 0, int work_time = 0, bool removable = false);
                 AsyncUnit(AsyncUnit&& unit);
                 ~AsyncUnit();
+
                 // IAsyncUnit interface
-                async_state_mask_t GetState() const override;
-                ipc::IChannel &GetChannel() override;
-                ipc::IIO &GetIO() override;
                 int QueryWrite(aio_info_t& aio_info) override;
                 int OnRead(const aio_info_t& aio_info) override;
                 int QueryTimerWork() const override;
+
+                // IChannel interface
+                int Open() override;
+                int Close() override;
+                int Handle() const override;
+
+                // IIO interface
+                int Write(const void *, int, int) override;
+                int Read(void *, int, int) override;
+                bool IsCanWrite() const override;
+                bool IsCanRead() const override;
+
             protected:
                 virtual int queryWrite(aio_info_t& aio_info) = 0;
                 virtual int onRead(const aio_info_t& aio_info) = 0;
 
-                virtual bool canOpen() const;
-                virtual bool canClose() const;
-                virtual bool canRead() const;
-                virtual bool canWrite() const;
-                virtual bool canTimer() const;
-                virtual bool canRemove() const;
-
+                // IAsyncUnit interface
+            public:
+                bool IsCanOpen() const override;
+                bool IsCanRemove() const override;
             };
         }
     }

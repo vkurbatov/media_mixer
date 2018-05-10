@@ -7,6 +7,10 @@
 
 #include <string>
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("PipeOutputChannel", msg)
+
 namespace mmx
 {
     namespace tools
@@ -155,13 +159,18 @@ namespace mmx
 
                     if (rc > 0)
                     {
-                        select_.SetRead(rc);
+                        DLOGI(LOG_BEGIN("checkConnect(): output pipe %s create success, fd = %d"), pipe_.Name(), rc);
 
+                        select_.SetRead(rc);
 
                         if (!writer_.IsEmpty())
                         {
                             select_.SetWrite(rc);
                         }
+                    }
+                    else
+                    {
+                        DLOGW(LOG_BEGIN("checkConnect(): output pipe %s is not create, rc = %d"), pipe_.Name(), rc);
                     }
                 }
 
@@ -206,6 +215,7 @@ namespace mmx
 
                         if (rc < 0 && rc != -EAGAIN)
                         {
+                            DLOGE(LOG_BEGIN("defferedWrite(): deffered write error, rc = %d"), rc);
                             Close();
                         }
                         else

@@ -1,5 +1,7 @@
 #include "asyncunit.h"
 
+#include <memory>
+
 namespace mmx
 {
     namespace tools
@@ -7,16 +9,22 @@ namespace mmx
         namespace async
         {
 
-            AsyncUnit::AsyncUnit(ipc::IChannel &channel, ipc::IIO &io) :
+            AsyncUnit::AsyncUnit(ipc::IChannel &channel, ipc::IIO &io, int conn_time, int work_time, bool removable) :
                 channel_(channel),
-                io_(io)
+                io_(io),
+                work_timer_(work_time, true),
+                conn_timer_(conn_time, true),
+                removable_(removable)
             {
 
             }
 
             AsyncUnit::AsyncUnit(AsyncUnit &&unit) :
                 channel_(unit.channel_),
-                io_(unit.io_)
+                io_(unit.io_),
+                work_timer_(std::move(unit.work_timer_)),
+                conn_timer_(std::move(unit.conn_timer_)),
+                removable_(unit.removable_)
             {
 
             }
@@ -26,27 +34,6 @@ namespace mmx
 
             }
 
-            async_state_mask_t AsyncUnit::GetState() const
-            {
-                return AU_CAN_CLOSE     * (int)canClose()   |
-                       AU_CAN_OPEN      * (int)canOpen()    |
-                       AU_CAN_READ      * (int)canRead()    |
-                       AU_CAN_WRITE     * (int)canWrite()   |
-                       AU_CAN_TIMER     * (int)canTimer()   |
-                       AU_CAN_REMOVE    * (int)canRemove();
-
-
-            }
-
-            ipc::IChannel &AsyncUnit::GetChannel()
-            {
-                return channel_;
-            }
-
-            ipc::IIO &AsyncUnit::GetIO()
-            {
-                return io_;
-            }
 
             int AsyncUnit::QueryWrite(aio_info_t &aio_info)
             {
@@ -59,40 +46,59 @@ namespace mmx
             }
 
             int AsyncUnit::QueryTimerWork() const
-            {
-                return timer_.IsStarted() ? timer_.Left() : -1;
+            {                
+                int to = -1;
+
+
+
             }
 
-            bool AsyncUnit::canOpen() const
+            int AsyncUnit::Open()
             {
-                return channel_.Handle() < 0 && timer_.IsEnable();
+                return channel_.Open();
             }
 
-            bool AsyncUnit::canClose() const
+            int AsyncUnit::Close()
             {
-                return channel_.Handle() >= 0;
+                return channel_.Close();
             }
 
-            bool AsyncUnit::canRead() const
+            int AsyncUnit::Handle() const
             {
-                return io_.IsCanRead();
+                return channel_.Handle();
             }
 
-            bool AsyncUnit::canWrite() const
+            bool mmx::tools::async::AsyncUnit::IsCanOpen() const
+            {
+                return channel_.Handle() < 0 && conn_timer_.IsEnable();
+            }
+
+            bool mmx::tools::async::AsyncUnit::IsCanRemove() const
+            {
+                return false;
+            }
+
+            int AsyncUnit::AsyncUnit::Write(const void* data, int size, int flags)
+            {
+                return io_.Write(data, size, flags);
+            }
+
+            int AsyncUnit::AsyncUnit::Read(void* data, int size, int flags)
+            {
+                return io_.Read(data, size, flags);
+            }
+
+            bool AsyncUnit::AsyncUnit::IsCanWrite() const
             {
                 return io_.IsCanWrite();
             }
 
-            bool AsyncUnit::canTimer() const
+            bool AsyncUnit::AsyncUnit::IsCanRead() const
             {
-                return channel_.Handle() < 0;
-            }
-
-            bool AsyncUnit::canRemove() const
-            {
-                return false;
+                return io_.IsCanRead();
             }
 
         }
     }
 }
+

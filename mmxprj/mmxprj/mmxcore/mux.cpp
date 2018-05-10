@@ -1,8 +1,6 @@
 #include "mux.h"
 #include "mmxlib/names.h"
 
-#include "mmxlib/logs/log.h"
-
 #include "mmxlib/ipc/sem.h"
 
 #include "mmxlib/headers/pultstat.h"
@@ -12,6 +10,9 @@
 #define MUX_UNIQUE_BASE_KEY
 #define SRV_SHMEM_UNIQUE_BASE_KEY   1200
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("Mux", msg)
 
 namespace mmxmux
 {
@@ -59,6 +60,7 @@ namespace mmxmux
 
         if (sem.Open() < 0 || sem.Get() > 0)
         {
+            DLOGE(LOG_BEGIN("Execute(): duplicate instance, channel = %d!!"), config_.channel_num);
             return -EBUSY;
         }
 
@@ -192,32 +194,11 @@ namespace mmxmux
         {
             for (auto& m : sorm_pool_.GetChannels())
             {
-                auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];//output_channel_pool_.GetChannel(m->GetOrmInfo().channel_id, select_, config_.interval);
+                auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];
 
                 if (channel != nullptr)
                 {
-                    m->OrmInfoPack(channel->GetWritter());
-
-                    /*
-                    int size = m->OrmInfoPack(nullptr, 0);
-
-                    if (size > 0)
-                    {
-                        auto block = channel->GetWritter().QueryBlock(size);
-
-                        if (block != nullptr)
-                        {
-                            size = m->OrmInfoPack(block->data, size);
-
-                            if (size > 0)
-                            {
-                                channel->GetWritter().Commit();
-                            }
-
-                        }
-
-                    }
-                    */
+                    m->OrmInfoPack(channel->GetWritter());                  
                 }
 
             }
@@ -349,11 +330,13 @@ namespace mmxmux
                         }
                         break;
                     default:
+                        DLOGW(LOG_BEGIN("processSangoma(): recieve unknown query %d, len = %d"), query->header.type, query->header.length);
                         query = nullptr;
 
                 }
                 if (query != nullptr)
                 {
+                    DLOGD(LOG_BEGIN("processSangoma(): recieve query %d, len = %d"), query->header.type, query->header.length);
                     c.PutAnswer(answer);
 
                 }

@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/mmxprj.dir/main.cpp.o  -o mmxprj -rdynamic 

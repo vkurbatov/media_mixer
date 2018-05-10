@@ -172,6 +172,7 @@ namespace mmx
                         }
                         i++;
                     }
+                    rc = -ETIMEDOUT;
                 }
                 else if (rc > 0)
                 {

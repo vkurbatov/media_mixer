@@ -4,6 +4,10 @@
 
 #define RECIVE_BUFFER_SIZE  1600     //MTU + запас
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("OrmClient", msg)
+
 namespace mmx
 {
     namespace tools
@@ -56,10 +60,16 @@ namespace mmx
 
                     if (rc <= 0 && rc != -EAGAIN)
                     {
+                        DLOGE(LOG_BEGIN("Dispatch(%d, %x): error read data, rc = %d"), dispatch, DLOG_POINTER(context), rc);
+
                         Close();
                     }
                     else
                     {
+                        if (rc == -EAGAIN)
+                        {
+                            DLOGW(LOG_BEGIN("Dispatch(%d, %x): would block read, rc = %d"), dispatch, DLOG_POINTER(context), rc);
+                        }
                         data_.resize(rc);
                     }
 
@@ -131,10 +141,15 @@ namespace mmx
 
             if (rc < 0 && rc != -EAGAIN)
             {
+                DLOGE(LOG_BEGIN("putData(%x, %d): write error, rc = %d"), DLOG_POINTER(data), size, rc);
                 Close();
             }
             else
             {
+                if (rc == -EAGAIN)
+                {
+                    DLOGW(LOG_BEGIN("putData(%x, %d): would block write, rc = %d"), DLOG_POINTER(data), size, rc);
+                }
                 if (writer_.IsEmpty())
                 {
                     select_.ClrWrite(socket_.Handle());

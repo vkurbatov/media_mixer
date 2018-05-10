@@ -53,7 +53,7 @@ namespace mmx
 
         BitSet::~BitSet()
         {
-            DLOGT(LOG_BEGIN("BitSet()"));
+            DLOGT(LOG_BEGIN("~BitSet()"));
         }
 
         void BitSet::Set(index_t idx)

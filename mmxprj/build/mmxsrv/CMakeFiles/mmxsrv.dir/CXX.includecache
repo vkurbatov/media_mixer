@@ -28,6 +28,12 @@ ichannel.h
 io.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
 sys/socket.h
 -
@@ -201,6 +207,8 @@ mmxlib/ipc/sem.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/ipc/sem.h
 mmxlib/ipc/shmem.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/ipc/shmem.h
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
 list

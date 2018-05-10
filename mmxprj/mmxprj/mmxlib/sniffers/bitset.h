@@ -14,6 +14,7 @@ namespace mmx
         class BitSet
         {
             std::vector<unsigned char> set_;
+
         public:
             BitSet(index_t bitsize);
             BitSet(const BitSet& bitset);

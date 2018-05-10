@@ -17,6 +17,12 @@
 #include "mmxlib/ipc/sem.h"
 #include "mmxlib/ipc/shmem.h"
 
+
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("Server", msg)
+
+
 #define SRV_SEM_UNIQUE_BASE_KEY 50000
 #define SRV_SHMEM_UNIQUE_BASE_KEY   1200
 
@@ -44,6 +50,7 @@ namespace mmxsrv
 
         if (sem.Open() < 0 || sem.Get() > 0)
         {
+            DLOGE(LOG_BEGIN("Execute(): duplicate instance, channel = %d!!"), config_.channel);
             return -EBUSY;
         }
 

@@ -10,6 +10,8 @@ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h

@@ -33,6 +33,8 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
+mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/dlog.h
+mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h

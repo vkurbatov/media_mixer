@@ -603,10 +603,14 @@ net/iepoll_dispatcher.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/net/iepoll_dispatcher.h
 net/epoll.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/net/epoll.h
+asyncunit.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.cpp
 asyncunit.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
+memory
+-
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/async/asyncunit.h
 iasyncunit.h
@@ -623,6 +627,8 @@ ipc/io.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.cpp
 deffersock.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.h
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffersock.h
 deffwriter.h
@@ -635,6 +641,8 @@ deffwriter.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
 cstring
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
 vector
@@ -655,6 +663,8 @@ sniffers/iippacket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 iosockadp.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 ipc/io.h
@@ -689,6 +699,8 @@ orm_client.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.h
 errno.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.h
 ichanneldispatcher.h
@@ -717,6 +729,8 @@ netdb.h
 -
 errno.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_server.h
 orm_client.h
@@ -743,6 +757,8 @@ errno.h
 -
 string
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_input_channel.h
 tools/ichanneldispatcher.h
@@ -767,6 +783,8 @@ errno.h
 -
 string
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/pipe_output_channel.h
 tools/ichanneldispatcher.h
@@ -801,6 +819,8 @@ sangoma_client.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h
 errno.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.h
 ichanneldispatcher.h
@@ -833,6 +853,8 @@ netdb.h
 -
 fcntl.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.h
 ichanneldispatcher.h
@@ -865,6 +887,8 @@ netdb.h
 -
 errno.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.h
 sangoma_client.h
@@ -907,6 +931,8 @@ fcntl.h
 -
 sys/time.h
 -
+logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/udp_listener.h
 ichanneldispatcher.h

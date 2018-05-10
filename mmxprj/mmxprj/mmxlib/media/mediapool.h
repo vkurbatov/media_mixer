@@ -14,7 +14,7 @@ namespace mmx
     {
         class MediaPool
         {
-            std::unordered_map<std::uint64_t, MediaStream> pool_;
+            std::unordered_map<std::uint64_t, MediaStream, std::hash<unsigned short>> pool_;
             std::queue<MediaStream> q_free_;
             std::vector<MediaStream*> rm_list_;
 

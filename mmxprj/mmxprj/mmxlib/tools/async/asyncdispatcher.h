@@ -4,6 +4,8 @@
 #include "net/iepoll_dispatcher.h"
 #include "net/epoll.h"
 
+#include "asyncunit.h"
+
 namespace mmx
 {
     namespace tools
@@ -14,7 +16,7 @@ namespace mmx
             {
                 net::EPoll epoll_;
 
-                std::vector<net::IEPollDispatcher*> clients_;
+                std::vector<AsyncUnit*> clients_;
 
             public:
                 AsyncDispatcher();

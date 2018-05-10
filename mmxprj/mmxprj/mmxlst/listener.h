@@ -25,7 +25,6 @@ namespace mmxlst
     class Listener
     {
         mmx::net::SelectExtension           select_;
-        //mmx::data::DataPacket               data_packet_;
         mmx::sniffers::IPPacketPool         packet_pool_;
         mmx::tools::PipeOutputChannel       output_channel_;
         mmx::tools::UdpListener             udp_listener_;

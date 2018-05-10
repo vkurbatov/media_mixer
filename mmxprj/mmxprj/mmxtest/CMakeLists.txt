@@ -26,6 +26,7 @@ set ( SOURCE_FILES
 	test8.cpp
 	test9.cpp
 	test10.cpp
+	test11.cpp
 )
 
 set ( PRIVATE_HEADERS

@@ -1,1 +1,1 @@
-sudo ./mmxcore -c1 -p6080 -o1
+sudo ./mmxcore -l1 -c1 -p6080 -o1

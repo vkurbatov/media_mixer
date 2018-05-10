@@ -2,6 +2,10 @@
 
 #include <cstring> // memcpy
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("DeferredWriter", msg)
+
 //#include <errno.h>
 
 namespace mmx
@@ -62,6 +66,7 @@ namespace mmx
 
                 if (w_ret < 0)
                 {
+                    DLOGD(LOG_BEGIN("Write(%x, %d, %x): deferred write error %d"),DLOG_POINTER(data), size, flags, w_ret);
                     // следующей транзакции не будет
                 }
                 else
@@ -82,6 +87,8 @@ namespace mmx
                     }
                     else
                     {
+                        DLOGD(LOG_BEGIN("Write(%x, %d, %x): deferred write only part %d "),DLOG_POINTER(data), size, flags, w_ret);
+
                         // данные передали частично
 
                         // просто смещаем позицию недопереданного пакета на w_ret байт
@@ -118,6 +125,7 @@ namespace mmx
 
                     if (w_ret > 0)
                     {
+
                         last_result_ += w_ret;
                         drop = w_ret;
                     }
@@ -129,7 +137,7 @@ namespace mmx
 
                 if (drop < size)
                 {
-
+                    DLOGD(LOG_BEGIN("Write(%x, %d, %x): push deffered data %d bytes"),DLOG_POINTER(data), size, flags, size - drop);
                     pushData((const char*)data + drop, size - drop);
 
                 }

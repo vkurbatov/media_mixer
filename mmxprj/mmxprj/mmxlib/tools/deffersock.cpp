@@ -1,5 +1,9 @@
 #include "deffersock.h"
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("DeferredSocket", msg)
+
 namespace mmx
 {
     namespace tools

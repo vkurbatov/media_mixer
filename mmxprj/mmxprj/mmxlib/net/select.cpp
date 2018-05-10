@@ -49,7 +49,7 @@ namespace mmx
             if (rc > 0)
             {
 
-                DLOGD(LOG_BEGIN("Wait(%d): select[%d..%d] return %d"), timeout, fd_min_, fd_max_ + 1, rc);
+                DLOGT(LOG_BEGIN("Wait(%d): select[%d..%d] return %d"), timeout, fd_min_, fd_max_ + 1, rc);
 
                 int signaled_sock = rc;
 
@@ -60,7 +60,7 @@ namespace mmx
 
                     if (mask_old != S_EV_NONE)
                     {
-                        DLOGD(LOG_BEGIN("Wait(): fd %d mask = %x"), i, mask_old);
+                        DLOGT(LOG_BEGIN("Wait(): fd %d mask = %x"), i, mask_old);
 
                         if (sock_table_[i].callback != nullptr)
                         {
@@ -89,7 +89,7 @@ namespace mmx
 
                 if (rc == -ETIMEDOUT)
                 {
-                    DLOGD(LOG_BEGIN("Wait(%d): timeout"), timeout);
+                    DLOGT(LOG_BEGIN("Wait(%d): timeout"), timeout);
                 }
                 else
                 {
@@ -137,7 +137,7 @@ namespace mmx
                         fd_max_ = fd;
                     }
 
-                    if (fd_min_ > fd)
+                    if (fd_min_ > fd || fd_min_ < 0)
                     {
                         fd_min_ = fd;
                     }

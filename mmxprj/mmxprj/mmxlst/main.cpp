@@ -102,7 +102,17 @@ int main(int argc, char* argv[])
 
         mmx::logs::log_init(log_file, g_log_level, false);
 
-        mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
+        log_file[0] = '\0';
+        for (int i = 1; i < argc; i++)
+        {
+            if (i > 0)
+            {
+                std::strcat(log_file, " ");
+            }
+            std::strcat(log_file, argv[i]);
+        }
+
+        mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\nArguments: %s\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, log_file);
 
         signal(SIGPIPE, sig_handler);
         signal(SIGTERM, sig_handler);

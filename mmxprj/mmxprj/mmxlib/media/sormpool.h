@@ -16,7 +16,7 @@ namespace mmx
     {
         class SormPool
         {
-            std::unordered_map<std::uint64_t, Sorm> pool_;
+            std::unordered_map<std::uint64_t, Sorm, std::hash<unsigned short>> pool_;
             //std::list<Sorm> pool_;
             std::queue<Sorm> q_free_;
             std::vector<Sorm*> rm_list_;

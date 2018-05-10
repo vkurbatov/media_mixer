@@ -19,7 +19,7 @@ namespace mmx
 
         class IPPacketPool
         {
-            std::unordered_map<std::uint64_t, IPPacket> pool_;
+            std::unordered_map<std::uint64_t, IPPacket, std::hash<unsigned short>> pool_;
             std::queue<IPPacket> q_free_;
             std::vector<IPPacket*> rm_list_;
 

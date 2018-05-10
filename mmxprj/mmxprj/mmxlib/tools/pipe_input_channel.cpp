@@ -7,6 +7,9 @@
 
 #include <string>
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("PipeInputChannel", msg)
 
 namespace mmx
 {
@@ -114,9 +117,15 @@ namespace mmx
 
                     if (rc > 0)
                     {
+                        DLOGI(LOG_BEGIN("checkConnect(): input pipe %s create success, fd = %d"), pipe_.Name(), rc);
+
                         if (read_bytes_ < data_.size())
                         {
                             select_.SetRead(rc);
+                        }
+                        else
+                        {
+                            DLOGW(LOG_BEGIN("checkConnect(): input pipe %s is not create, rc = %d"), pipe_.Name(), rc);
                         }
                     }
                 }
@@ -145,6 +154,7 @@ namespace mmx
 
                         if (rc > 0)
                         {
+
                             read_bytes_ += rc;
                         }
                         else
@@ -152,12 +162,12 @@ namespace mmx
                             switch (rc)
                             {
                                 case -EAGAIN:
-
+                                    DLOGW(LOG_BEGIN("readData(): would block read, rc = %d"), rc);
                                     // ничего не делаем
 
                                     break;
                                 default:
-
+                                    DLOGE(LOG_BEGIN("readData(): error read data, rc = %d"), rc);
                                     Close();
                                     fd = -1;
 

@@ -101,7 +101,7 @@ namespace mmx
 
                 if (rc >= 0)
                 {
-                    DLOGD(LOG_BEGIN("PutMedia(%x, %d, %d): samples_[%d] put media success, rc = %d"), DLOG_POINTER(&rtp), pack_id, timestamp, idx, rc);
+                    DLOGT(LOG_BEGIN("PutMedia(%x, %d, %d): samples_[%d] put media success, rc = %d"), DLOG_POINTER(&rtp), pack_id, timestamp, idx, rc);
                 }
                 else
                 {
@@ -174,9 +174,7 @@ namespace mmx
             {
                 if (smpl->header.rtp_header.ssrc == ssrc_)
                 {
-
                     rc = &sample;
-
                 }
                 else
                 {

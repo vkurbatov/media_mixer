@@ -198,7 +198,7 @@ namespace mmx
 
             // временная схема (первый символ @ в форматной строке игнорирует уровень ведения логов)
 
-            if (g_init == true && (level >= g_max_level || (*format == '@' && format++ != '\0')))
+            if (g_init == true && (level >= g_max_level || (*format == '@' && *(++format) != '\0')))
             {
                 bool l_mt = g_mt;
 

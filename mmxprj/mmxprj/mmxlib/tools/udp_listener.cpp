@@ -9,6 +9,9 @@
 #include <fcntl.h>      // O_NONBLOCK
 #include <sys/time.h>   // gettimeofday
 
+#include "logs/dlog.h"
+
+#define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("UdpListener", msg)
 
 namespace mmx
 {
@@ -154,12 +157,12 @@ namespace mmx
                         switch (rc)
                         {
                             case -EAGAIN:
-
+                                DLOGW(LOG_BEGIN("processData(): would block read"));
                                 // ничего не делаем
 
                                 break;
                             default:
-
+                                DLOGW(LOG_BEGIN("processData(): read error, rc = %d"), rc);
                                 Close();
                                 fd = -1;
 
@@ -257,14 +260,23 @@ namespace mmx
                             }
                             else
                             {
+                                DLOGW(LOG_BEGIN("putPacket(%x): overflow buffer, writter = %x!"), DLOG_POINTER(&packet), DLOG_POINTER(&dp_writer_));
                                 dp_writer_.BuildPacket(0);
                                 blocks_ = 0;
                             }
                         }
 
                     }
+                    else
+                    {
+                        DLOGE(LOG_BEGIN("putPacket(%x): error size of udp packet, udp.length = %d, size = %d"), DLOG_POINTER(&packet), ::ntohs(udp.length), size);
+                    }
 
                 }
+            }
+            else
+            {
+                DLOGE(LOG_BEGIN("putPacket(%x): invalid arguments"), DLOG_POINTER(&packet));
             }
 
             return rc;

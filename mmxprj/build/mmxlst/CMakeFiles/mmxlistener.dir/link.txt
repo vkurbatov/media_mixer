@@ -1,1 +1,0 @@
-/usr/bin/c++   -g   CMakeFiles/mmxlistener.dir/main.cpp.o CMakeFiles/mmxlistener.dir/listener.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlistener -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 

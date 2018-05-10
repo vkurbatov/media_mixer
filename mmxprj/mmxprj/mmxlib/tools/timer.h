@@ -12,7 +12,7 @@ namespace mmx
 
         class Timer
         {
-            timer_interval_t tout_;
+            timer_interval_t interval_;
             bool run_;
 
             unsigned int start_;
@@ -21,12 +21,14 @@ namespace mmx
 
         public:
             static unsigned int GetTicks();
-            Timer();
+            Timer(timer_interval_t interval = -1, bool start = false);
             Timer(Timer&& timer);
             void Start(timer_interval_t interval);
+            void Start();
             bool Stop();
             timer_interval_t Elapsed() const;
             timer_interval_t Left() const;
+            timer_interval_t Interval() const;
             bool IsEnable() const;
             bool IsStarted() const;
 
