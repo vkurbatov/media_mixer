@@ -95,13 +95,9 @@ int main(int argc, char* argv[])
     config.media_period = 20;
     config.sgm_address = INADDR_ANY;
     config.sgm_port = DEFAULT_BASE_PORT;
-    //config.channels[0] |= 1 << 1;
 
 
     int rc = parse_args(argc, argv, config, log_level);
-
-    //int fl = open("/tmp/mmx1", O_CREAT | O_RDWR | O_TMPFILE, 0777);
-
 
     if (rc == 0)
     {
@@ -119,6 +115,7 @@ int main(int argc, char* argv[])
             {
                 std::strcat(log_file, " ");
             }
+
             std::strcat(log_file, argv[i]);
         }
 
@@ -138,8 +135,6 @@ int main(int argc, char* argv[])
         mmx::logs::log_init();
 
     }
-
-    mmx::logs::log_init();
 
     return 0;
 }
@@ -250,7 +245,12 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                     break;
                 case 'h':
 
-                    std::cout << "!!!HELP!!!!" << std::endl;
+                    //std::cout << "!!!HELP!!!!" << std::endl;
+
+                    std::cout << std::endl << "usage: " << SERVICE_GROUP << "." << std::endl
+                            << "-v - output to screen version info" << std::endl
+                            << "-o<1,2-n> - set outpet channels, " << std::endl;
+
                     rc = 1;
 
                     break;

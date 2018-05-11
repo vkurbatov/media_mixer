@@ -5,7 +5,7 @@
 
 //#define DLOG_POINTER(obj)  (((long)(obj) / 8) % 0x10000)
 #define DLOG_POINTER(obj)  (((long)(obj)) & 0xFFFFFF)
-#define DLOG_CLASS_BEGIN(cname, msg) cname "{%.6x}::" msg, DLOG_POINTER(this)
+#define DLOG_CLASS_BEGIN(cname, msg) "[%.6x] " cname "::" msg, DLOG_POINTER(this)
 
 #define DLOG_LEVEL 1
 

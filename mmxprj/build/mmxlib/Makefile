@@ -341,6 +341,60 @@ logs/log.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.s
 .PHONY : logs/log.cpp.s
 
+media/alsa_player.o: media/alsa_player.cpp.o
+
+.PHONY : media/alsa_player.o
+
+# target to build an object file
+media/alsa_player.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o
+.PHONY : media/alsa_player.cpp.o
+
+media/alsa_player.i: media/alsa_player.cpp.i
+
+.PHONY : media/alsa_player.i
+
+# target to preprocess a source file
+media/alsa_player.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.i
+.PHONY : media/alsa_player.cpp.i
+
+media/alsa_player.s: media/alsa_player.cpp.s
+
+.PHONY : media/alsa_player.s
+
+# target to generate assembly for a file
+media/alsa_player.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.s
+.PHONY : media/alsa_player.cpp.s
+
+media/alsa_recorder.o: media/alsa_recorder.cpp.o
+
+.PHONY : media/alsa_recorder.o
+
+# target to build an object file
+media/alsa_recorder.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o
+.PHONY : media/alsa_recorder.cpp.o
+
+media/alsa_recorder.i: media/alsa_recorder.cpp.i
+
+.PHONY : media/alsa_recorder.i
+
+# target to preprocess a source file
+media/alsa_recorder.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.i
+.PHONY : media/alsa_recorder.cpp.i
+
+media/alsa_recorder.s: media/alsa_recorder.cpp.s
+
+.PHONY : media/alsa_recorder.s
+
+# target to generate assembly for a file
+media/alsa_recorder.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.s
+.PHONY : media/alsa_recorder.cpp.s
+
 media/codecs/audio/mixer.o: media/codecs/audio/mixer.cpp.o
 
 .PHONY : media/codecs/audio/mixer.o
@@ -475,6 +529,33 @@ media/mediastream.s: media/mediastream.cpp.s
 media/mediastream.cpp.s:
 	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.s
 .PHONY : media/mediastream.cpp.s
+
+media/pcm_device.o: media/pcm_device.cpp.o
+
+.PHONY : media/pcm_device.o
+
+# target to build an object file
+media/pcm_device.cpp.o:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o
+.PHONY : media/pcm_device.cpp.o
+
+media/pcm_device.i: media/pcm_device.cpp.i
+
+.PHONY : media/pcm_device.i
+
+# target to preprocess a source file
+media/pcm_device.cpp.i:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.i
+.PHONY : media/pcm_device.cpp.i
+
+media/pcm_device.s: media/pcm_device.cpp.s
+
+.PHONY : media/pcm_device.s
+
+# target to generate assembly for a file
+media/pcm_device.cpp.s:
+	cd /home/vkurbatov/work/mmxprj/build && $(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.s
+.PHONY : media/pcm_device.cpp.s
 
 media/sample.o: media/sample.cpp.o
 
@@ -1373,6 +1454,12 @@ help:
 	@echo "... logs/log.o"
 	@echo "... logs/log.i"
 	@echo "... logs/log.s"
+	@echo "... media/alsa_player.o"
+	@echo "... media/alsa_player.i"
+	@echo "... media/alsa_player.s"
+	@echo "... media/alsa_recorder.o"
+	@echo "... media/alsa_recorder.i"
+	@echo "... media/alsa_recorder.s"
 	@echo "... media/codecs/audio/mixer.o"
 	@echo "... media/codecs/audio/mixer.i"
 	@echo "... media/codecs/audio/mixer.s"
@@ -1388,6 +1475,9 @@ help:
 	@echo "... media/mediastream.o"
 	@echo "... media/mediastream.i"
 	@echo "... media/mediastream.s"
+	@echo "... media/pcm_device.o"
+	@echo "... media/pcm_device.i"
+	@echo "... media/pcm_device.s"
 	@echo "... media/sample.o"
 	@echo "... media/sample.i"
 	@echo "... media/sample.s"

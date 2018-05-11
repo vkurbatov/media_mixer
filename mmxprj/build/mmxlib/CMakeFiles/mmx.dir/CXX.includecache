@@ -194,6 +194,10 @@ sys/stat.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_player.cpp
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_recorder.cpp
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/iaudiocodec.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
@@ -285,6 +289,8 @@ sample.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
 jitterbuffer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/pcm_device.cpp
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp
 sample.h

@@ -53,6 +53,10 @@ mmxlib/CMakeFiles/mmx.dir/ipc/shmem.cpp.o
 mmxlib/CMakeFiles/mmx.dir/logs/log.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/log.h
+mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_player.cpp
+mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_recorder.cpp
 mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.h
@@ -94,6 +98,8 @@ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/rtppacketwrapper.h
+mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/pcm_device.cpp
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h

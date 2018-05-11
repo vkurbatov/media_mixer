@@ -1137,6 +1137,78 @@ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.provides: mmxlib/CMakeF
 mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
 
 
+mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_recorder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_recorder.cpp
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/media/alsa_recorder.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_recorder.cpp > CMakeFiles/mmx.dir/media/alsa_recorder.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/media/alsa_recorder.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_recorder.cpp -o CMakeFiles/mmx.dir/media/alsa_recorder.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o
+
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/alsa_player.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_player.cpp
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/media/alsa_player.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_player.cpp > CMakeFiles/mmx.dir/media/alsa_player.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/media/alsa_player.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/alsa_player.cpp -o CMakeFiles/mmx.dir/media/alsa_player.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o
+
+
+mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/pcm_device.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/pcm_device.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/pcm_device.cpp
+
+mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/media/pcm_device.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/pcm_device.cpp > CMakeFiles/mmx.dir/media/pcm_device.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/media/pcm_device.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/pcm_device.cpp -o CMakeFiles/mmx.dir/media/pcm_device.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o
+
+
 # Object files for target mmx
 mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/logs/log.cpp.o" \
@@ -1183,7 +1255,10 @@ mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o" \
 "CMakeFiles/mmx.dir/media/sample.cpp.o" \
 "CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o" \
-"CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
+"CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o" \
+"CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o" \
+"CMakeFiles/mmx.dir/media/alsa_player.cpp.o" \
+"CMakeFiles/mmx.dir/media/pcm_device.cpp.o"
 
 # External object files for target mmx
 mmx_EXTERNAL_OBJECTS =
@@ -1233,9 +1308,12 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -P CMakeFiles/mmx.dir/cmake_clean_target.cmake
 	cd /home/vkurbatov/work/mmxprj/build/mmxlib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmx.dir/link.txt --verbose=$(VERBOSE)
 
@@ -1289,6 +1367,9 @@ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/alsa_player.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/pcm_device.cpp.o.requires
 
 .PHONY : mmxlib/CMakeFiles/mmx.dir/requires
 
