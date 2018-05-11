@@ -47,6 +47,7 @@ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
 
+mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/build_number.h
 mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
 mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
 mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h

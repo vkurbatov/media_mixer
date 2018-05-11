@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/datapacket.h
 vector
 -
@@ -233,6 +235,8 @@ fcntl.h
 -
 netdb.h
 -
+../build_number.h
+/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
 mux.h

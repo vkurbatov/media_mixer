@@ -8,10 +8,12 @@
 #include <netdb.h>      // INADDR_ANY
 #include <signal.h>
 
+#include "../build_number.h"
+
 #define SERVICE_GROUP "Media module"
 #define SERVICE_NAME "Communication dispatcher"
 #define SERVICE_MAJOR_VERSION 1
-#define SERVICE_MINOR_VERSION 0
+#define SERVICE_MINOR_VERSION BUILD_NUMBER
 #define SERVICE_STATUS "debug"
 
 #define LOG_NAME_PATTERN "/var/log/mmx/server-%d.log"

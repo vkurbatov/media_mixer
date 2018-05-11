@@ -11,10 +11,12 @@
 #include <fcntl.h>
 #include <netdb.h>  //INADDR_NONE
 
+#include "../build_number.h"
+
 #define SERVICE_GROUP "Media module"
 #define SERVICE_NAME "Media stream multiplexor (core)"
 #define SERVICE_MAJOR_VERSION 1
-#define SERVICE_MINOR_VERSION 0
+#define SERVICE_MINOR_VERSION BUILD_NUMBER
 #define SERVICE_STATUS "debug"
 
 #define LOG_NAME_PATTERN "/var/log/mmx/mediamux-%d.log"
