@@ -79,9 +79,6 @@ set ( SOURCE_FILES
 	media/sample.cpp
 	media/codecs/audio/pcma.cpp
 	media/codecs/audio/mixer.cpp
-	media/alsa_recorder.cpp
-	media/alsa_player.cpp
-	media/pcm_device.cpp
 #	media/codecs/audio/audiocodec.cpp
 )
 
@@ -170,9 +167,6 @@ set ( PRIVATE_HEADERS
 	media/codecs/audio/pcma.h
 	media/codecs/audio/iaudiocodec.h
 	media/codecs/audio/mixer.h
-	media/alsa_recorder.h
-	media/alsa_player.h
-	media/pcm_device.h
 #	media/codecs/audio/audiocodec.cpp
 
 #	имена
