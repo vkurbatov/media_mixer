@@ -105,6 +105,7 @@ int main(int argc, char* argv[])
         mmx::logs::log_init(log_file, g_log_level, false);
 
         log_file[0] = '\0';
+
         for (int i = 1; i < argc; i++)
         {
             if (i > 0)
@@ -257,6 +258,7 @@ int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net
 
                     }
                     break;
+<<<<<<< HEAD
                     case 'i':
                     {
                         int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
@@ -272,6 +274,23 @@ int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net
                         }
                     }
                     break;
+=======
+                case 'i':
+                {
+                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                    if (n > 0 && n < 60000)
+                    {
+                        config.interval = n;
+                    }
+                    else
+                    {
+                        std::cout << "Error interval period \'c=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
+                        rc = -EINVAL;
+                    }
+                }
+                break;
+>>>>>>> a9fa8dc19b00d74ee2b8d601d0577343481d464a
                 case 'p':
                     {
                         if (parse_ports(*(p+1) != 0 ? p+1 : argv[++arg], ports) < 0)
