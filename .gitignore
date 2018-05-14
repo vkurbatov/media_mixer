@@ -19,6 +19,8 @@
 *.*#
 /mmxprj/build
 /mmxprj/bin
+/mmxprj/vtest/
+/mmxprj/vtest-build/
 core
 !core/
 tags
