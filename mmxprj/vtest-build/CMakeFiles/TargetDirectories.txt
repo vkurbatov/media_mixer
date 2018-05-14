@@ -1,0 +1,6 @@
+/home/vkurbatov/work/mmxprj/vtest-build/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/vtest-build/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/vtest-build/CMakeFiles/vtest.dir
+/home/vkurbatov/work/mmxprj/vtest-build/libpcm/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/vtest-build/libpcm/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/vtest-build/libpcm/CMakeFiles/pcm.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/vkurbatov/work/mmxprj/vtest/libpcm/build/DEBUG/libpcm.a  CMakeFiles/pcm.dir/alsa_recorder.cpp.o CMakeFiles/pcm.dir/alsa_player.cpp.o CMakeFiles/pcm.dir/pcm_device.cpp.o
+/usr/bin/ranlib /home/vkurbatov/work/mmxprj/vtest/libpcm/build/DEBUG/libpcm.a

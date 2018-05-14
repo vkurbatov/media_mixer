@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="pcm" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\libpcm\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/vkurbatov/work/mmxprj/vtest-build/libpcm" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="pcm">
+         <Option output="/home/vkurbatov/work/mmxprj/vtest/libpcm/build/DEBUG/libpcm.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/vtest-build/libpcm" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/vtest/libpcm/../../mmxprj" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 pcm" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="pcm/fast">
+         <Option output="/home/vkurbatov/work/mmxprj/vtest/libpcm/build/DEBUG/libpcm.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vkurbatov/work/mmxprj/vtest-build/libpcm" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/vkurbatov/work/mmxprj/vtest/libpcm/../../mmxprj" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 pcm/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vkurbatov/work/mmxprj/vtest-build/libpcm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/libpcm/alsa_player.cpp">
+         <Option target="pcm"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/libpcm/alsa_player.h">
+         <Option target="pcm"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/libpcm/alsa_recorder.cpp">
+         <Option target="pcm"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/libpcm/alsa_recorder.h">
+         <Option target="pcm"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/libpcm/pcm_device.cpp">
+         <Option target="pcm"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/libpcm/pcm_device.h">
+         <Option target="pcm"/>
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/libpcm/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\libpcm\" />
+      </Unit>
+      <Unit filename="/home/vkurbatov/work/mmxprj/vtest/libpcm/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\libpcm\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

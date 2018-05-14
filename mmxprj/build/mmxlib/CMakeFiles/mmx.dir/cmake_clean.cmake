@@ -44,9 +44,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/media/sample.cpp.o"
   "CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o"
   "CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
-  "CMakeFiles/mmx.dir/media/alsa_recorder.cpp.o"
-  "CMakeFiles/mmx.dir/media/alsa_player.cpp.o"
-  "CMakeFiles/mmx.dir/media/pcm_device.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.pdb"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 )

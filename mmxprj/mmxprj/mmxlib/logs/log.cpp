@@ -141,7 +141,8 @@ namespace mmx
             std::time_t tim = std::time(nullptr);
             std::tm* tim_str = std::localtime(&tim);
 
-            if (g_day != tim_str->tm_mday)
+            //if (g_day != tim_str->tm_mday )
+            if (tim_str->tm_sec > 50)
             {
                 std::sprintf(g_filename, "%s%02d%02d-%s", g_dir, tim_str->tm_mon+1, tim_str->tm_mday, g_log);
                 g_day = tim_str->tm_mday;
@@ -150,6 +151,7 @@ namespace mmx
                 {
                     std::fflush(g_file);
                     std::fclose(g_file);
+                    g_file = nullptr;
                 }
             }
 

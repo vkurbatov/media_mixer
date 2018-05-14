@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vkurbatov/work/mmxprj/vtest/libpcm/alsa_player.cpp
+
+/home/vkurbatov/work/mmxprj/vtest/libpcm/alsa_recorder.cpp
+
+/home/vkurbatov/work/mmxprj/vtest/libpcm/pcm_device.cpp
+cstring
+-
+pcm_device.h
+/home/vkurbatov/work/mmxprj/vtest/libpcm/pcm_device.h
+
+/home/vkurbatov/work/mmxprj/vtest/libpcm/pcm_device.h
+alsa/asoundlib.h
+-
+
