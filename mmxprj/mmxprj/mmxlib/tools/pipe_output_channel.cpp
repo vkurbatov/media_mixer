@@ -112,7 +112,7 @@ namespace mmx
 
             headers::DATA_PACK& dp = *(headers::DATA_PACK*)data_.data();
 
-            if (dp.header.length > 0)
+            if (dp.header.block_count > 0)
             {
                 rc = writer_.Write(data_.data(), dp.header.length);
 

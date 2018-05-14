@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.5.1, 2018-05-14T11:21:48. -->
+<!-- Written by QtCreator 3.5.1, 2018-05-14T13:05:07. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -63,7 +63,7 @@
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{b97dbdb0-31c7-4a04-bd11-9eb36947a269}</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
-   <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">1</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="bool" key="CMakeProjectManager.CMakeBuildConfiguration.UseNinja">false</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/vkurbatov/work/mmxprj/build</value>
@@ -207,7 +207,7 @@
      <value type="int">14</value>
     </valuelist>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">mmxlst</value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-c1 -p5062,5063 -l3 -n0.0.0.0</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-c1 -p5062,5063 -l1 -n0.0.0.0</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
