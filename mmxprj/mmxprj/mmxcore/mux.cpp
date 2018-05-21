@@ -6,6 +6,7 @@
 #include "mmxlib/headers/pultstat.h"
 
 #include <cstring>
+#include <cstdio>
 
 #define MUX_UNIQUE_BASE_KEY
 #define SRV_SHMEM_UNIQUE_BASE_KEY   1200
@@ -274,6 +275,32 @@ namespace mmxmux
         }
     }
 
+    int get_query_info(const mmx::headers::SANGOMA_PACKET& sp, char *out_buff, int sorms)
+    {
+        char ip_a[16], ip_b[16];
+        int rc = std::sprintf(out_buff,"proxy: \n\tsource_a = %s:%d;\n\tsource_b = %s:%d;\nsorm_count = %d;\n",
+                     mmx::net::Socket::AtoS(sp.q_proxy.proxy.source_a.address, ip_a),
+                     sp.q_proxy.proxy.source_a.port,
+                     mmx::net::Socket::AtoS(sp.q_proxy.proxy.source_b.address, ip_b),
+                     sp.q_proxy.proxy.source_b.port,
+                     sorms);
+        for (int i = 0; i < sorms; i++)
+        {
+            rc += std::sprintf(out_buff + rc,
+                               "Sorm[%d]\n\tcall_id = %d\n\tchannel_id = %d\n\tconn_param = %d\n\tmcl_a = %d\n\tmcl_b = %d\n\tobject_id=%d\tsorm_id = %d\n",
+                               i,
+                               (int)sp.q_proxy.sorm[i].call_id,
+                               (int)sp.q_proxy.sorm[i].channel_id,
+                               (int)sp.q_proxy.sorm[i].conn_param,
+                               (int)sp.q_proxy.sorm[i].mcl_a,
+                               (int)sp.q_proxy.sorm[i].mcl_b,
+                               (int)sp.q_proxy.sorm[i].object_id,
+                               (int)sp.q_proxy.sorm[i].sorm_id);
+        }
+
+        return rc;
+    }
+
     void Mux::processSangoma()
     {
         mmx::headers::SANGOMA_PACKET answer;
@@ -309,24 +336,36 @@ namespace mmxmux
                 {
                     case mmx::headers::SI_PASSWORD_STATUS:
                     case mmx::headers::SI_LINK_STATUS:
-
+                        DLOGD(LOG_BEGIN("processSangoma(): recieve query %d, len = %d"), query->header.type, query->header.length);
                         break;
                     case mmx::headers::SI_START_PROXY:
                     case mmx::headers::SI_END_PROXY:
                         {
                             int sorms = (query->header.length - sizeof(query->q_proxy.proxy)) / sizeof(query->q_proxy.sorm[0]);
 
+                            static char sbuf[512];
+
+                            get_query_info(*query, sbuf, sorms);
+
+
+
                             for (int i = 0; i < sorms; i++)
                             {
                                 if (query->header.type == mmx::headers::SI_START_PROXY)
-                                {
+                                {                                  
                                     sorm_pool_.GetChannel(query->q_proxy.sorm[i], query->q_proxy.proxy);
+                                    DLOGI(LOG_BEGIN("processSangoma(): recieve START_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
                                 }
                                 else
                                 {
+
                                     sorm_pool_.Release(query->q_proxy.sorm[i]);
+                                    DLOGI(LOG_BEGIN("processSangoma(): recieve STOP_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
                                 }
                             }
+
+
+
                         }
                         break;
                     default:
@@ -336,7 +375,7 @@ namespace mmxmux
                 }
                 if (query != nullptr)
                 {
-                    DLOGD(LOG_BEGIN("processSangoma(): recieve query %d, len = %d"), query->header.type, query->header.length);
+
                     c.PutAnswer(answer);
 
                 }

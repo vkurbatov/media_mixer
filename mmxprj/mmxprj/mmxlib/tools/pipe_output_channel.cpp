@@ -102,7 +102,7 @@ namespace mmx
 
         bool PipeOutputChannel::IsReadyData() const
         {
-            return false;
+            return dp_writter_.Blocks() > 0;
         }
 
 

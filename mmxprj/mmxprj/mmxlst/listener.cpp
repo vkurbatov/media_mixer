@@ -110,7 +110,7 @@ namespace mmxlst
 
     void Listener::processData()
     {
-        if (!output_channel_.IsReadyData())
+        if (output_channel_.IsReadyData())
         {
             output_channel_.Send();
         }

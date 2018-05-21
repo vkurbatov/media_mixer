@@ -34,12 +34,14 @@ namespace mmx
 
             int BuildPacket(int pack_id = 0) override;
             headers::PDATA_BLOCK QueryBlock(int size) override;
-            int Commit() override;
+            int Commit() override;            
+            int Blocks() const override;
 
             // IdataPacketReader
 
             headers::PDATA_BLOCK GetBlock() override;
             void Reset() override;
+
 
         };
     }

@@ -75,6 +75,11 @@ namespace mmx
             return dp_writer_.Commit();
         }
 
+        int DataPacket::Blocks() const
+        {
+            return dp_writer_.Blocks();
+        }
+
         // IdataPacketReader
 
         headers::PDATA_BLOCK DataPacket::GetBlock()

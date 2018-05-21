@@ -137,5 +137,18 @@ namespace mmx
             return rc;
         }
 
+        int DataPacketWriter::Blocks() const
+        {
+            int rc = -EBADMSG;
+
+            if (build_)
+            {
+                rc = data_->header.block_count;
+            }
+
+            return rc;
+        }
+
     }
 }
+

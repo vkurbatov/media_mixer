@@ -249,6 +249,8 @@ mmxlib/headers/pultstat.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/headers/pultstat.h
 cstring
 -
+cstdio
+-
 logs/dlog.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/logs/dlog.h
 
