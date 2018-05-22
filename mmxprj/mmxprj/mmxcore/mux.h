@@ -53,6 +53,7 @@ namespace mmxmux
         mmx::sniffers::DataPackSniffer      dp_sniffer_;
 
         std::vector<mmx::ipc::SharedMemory> shmem_servers_;
+        std::vector<mmx::media::Sorm*>      rm_sorms_;
         int                                 channel_indexes_[256];
 
 

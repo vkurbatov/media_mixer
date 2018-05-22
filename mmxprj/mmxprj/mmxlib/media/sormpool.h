@@ -31,6 +31,7 @@ namespace mmx
             SormPool(MediaPool& media_pool, int max_free_queue_size = -1);
 
             Sorm* GetChannel(const mmx::headers::SANGOMA_SORM_INFO& sorm_info, const mmx::headers::SANGOMA_PROXY_INFO& proxy);
+            Sorm* FindChannel(const mmx::headers::SANGOMA_SORM_INFO& sorm_info);
             bool Release(Sorm* channel);
             bool Release(const mmx::headers::SANGOMA_SORM_INFO& sorm_info);
             int Count() const;

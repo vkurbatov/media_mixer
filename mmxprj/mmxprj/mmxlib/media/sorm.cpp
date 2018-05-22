@@ -69,6 +69,7 @@ namespace mmx
                 rtp_pack_ids_[0] = sorm.rtp_pack_ids_[0];
                 rtp_pack_ids_[1] = sorm.rtp_pack_ids_[1];
 
+
                 sorm_info_ = sorm.sorm_info_;
                 order_header_ = sorm.order_header_;
 
@@ -84,9 +85,9 @@ namespace mmx
         {
 
             DLOGT(LOG_BEGIN("~Sorm()"));
-
             Drop();
             SetProxy();
+
 
         }
 
@@ -128,7 +129,7 @@ namespace mmx
             return sorm_info_;
         }
 
-        int Sorm::OrmInfoPack(data::IDataPacketWriter& writer)
+        int Sorm::OrmInfoPack(data::IDataPacketWriter& writer, unsigned char conn_flag)
         {
             int rc = 0;
 
@@ -195,15 +196,15 @@ namespace mmx
             if (block != nullptr)
             {
 
-                static unsigned char block_numbers[0xFF] = { 0 };
+                static unsigned char packet_ids[0x100] = { 0 };
 
                 mmx::headers::ORM_INFO_PACKET& orm_info = *(mmx::headers::ORM_INFO_PACKET*)block->data;
 
 
 
-                order_header_.block_number = block_numbers[sorm_info_.channel_id]++;
-                order_header_.packet_id++;
-                order_header_.conn_flag = (int)(size_arr[0] == 0 && size_arr[1] == 0);
+                order_header_.block_number++;
+                order_header_.packet_id = packet_ids[sorm_info_.channel_id]++;
+                order_header_.conn_flag = conn_flag;//(int)(size_arr[0] == 0 && size_arr[1] == 0);
 
                 orm_info.header.order_header = order_header_;
 
@@ -245,7 +246,7 @@ namespace mmx
                     orm_info.header.size_a = size_max;
                     orm_info.header.size_b = 0;
 
-                    DLOGT(LOG_BEGIN("OrmInfoPack(): Build separated frame {%d, %d, %d, %d, %d, %d, %d}"),
+                    DLOGT(LOG_BEGIN("OrmInfoPack(): Build mixed frame {%d, %d, %d, %d, %d, %d, %d}"),
                           order_header_.block_number,
                           order_header_.packet_id,
                           order_header_.conn_flag,
@@ -297,7 +298,7 @@ namespace mmx
             {
                 sorm_info_ = sorm;
             }
-
+            order_header_.magic = headers::ORDER_645_2_MAGIC;
             order_header_.sorm_id = sorm.sorm_id;
             order_header_.object_id = sorm.object_id;
             order_header_.call_id = sorm.call_id;

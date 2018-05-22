@@ -191,8 +191,26 @@ namespace mmxmux
 
     void Mux::timerWork()
     {
-        if (timer_.IsEnable())
+        if (timer_.IsEnable())        
         {
+            if (!rm_sorms_.empty())
+            {
+                for (auto& m : rm_sorms_)
+                {
+                    auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];
+
+                    if (channel != nullptr)
+                    {
+                        m->OrmInfoPack(channel->GetWritter(), 1);
+                    }
+
+                    sorm_pool_.Release(m);
+                }
+
+                rm_sorms_.clear();
+            }
+
+
             for (auto& m : sorm_pool_.GetChannels())
             {
                 auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];
@@ -200,9 +218,10 @@ namespace mmxmux
                 if (channel != nullptr)
                 {
                     m->OrmInfoPack(channel->GetWritter());
-                }
 
-            }
+                }                              
+
+            }                     
 
             for (auto& c : output_channel_pool_.GetChannels())
             {
@@ -287,7 +306,7 @@ namespace mmxmux
         for (int i = 0; i < sorms; i++)
         {
             rc += std::sprintf(out_buff + rc,
-                               "Sorm[%d]\n\tcall_id = %d\n\tchannel_id = %d\n\tconn_param = %d\n\tmcl_a = %d\n\tmcl_b = %d\n\tobject_id=%d\tsorm_id = %d\n",
+                               "Sorm[%d]\n\tcall_id = %d\n\tchannel_id = %d\n\tconn_param = %d\n\tmcl_a = %d\n\tmcl_b = %d\n\tobject_id=%d\n\tsorm_id = %d\n",
                                i,
                                (int)sp.q_proxy.sorm[i].call_id,
                                (int)sp.q_proxy.sorm[i].channel_id,
@@ -352,15 +371,23 @@ namespace mmxmux
                             for (int i = 0; i < sorms; i++)
                             {
                                 if (query->header.type == mmx::headers::SI_START_PROXY)
-                                {                                  
-                                    sorm_pool_.GetChannel(query->q_proxy.sorm[i], query->q_proxy.proxy);
-                                    DLOGI(LOG_BEGIN("processSangoma(): recieve START_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
-                                }
-                                else
                                 {
 
-                                    sorm_pool_.Release(query->q_proxy.sorm[i]);
+                                    DLOGI(LOG_BEGIN("processSangoma(): recieve START_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
+
+                                    sorm_pool_.GetChannel(query->q_proxy.sorm[i], query->q_proxy.proxy);
+
+                                }
+                                else
+                                {                                    
                                     DLOGI(LOG_BEGIN("processSangoma(): recieve STOP_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
+
+                                    auto m = sorm_pool_.FindChannel(query->q_proxy.sorm[i]);
+
+                                        if (m != nullptr)
+                                    {
+                                        rm_sorms_.push_back(m);
+                                    }
                                 }
                             }
 

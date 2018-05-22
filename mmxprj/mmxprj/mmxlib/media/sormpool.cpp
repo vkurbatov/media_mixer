@@ -78,12 +78,31 @@ namespace mmx
 
         }
 
+        Sorm *SormPool::FindChannel(const headers::SANGOMA_SORM_INFO &sorm_info)
+        {
+            Sorm* rc = nullptr;
+
+            auto it = pool_.find(getKey(sorm_info));
+
+            if (it != pool_.end())
+            {
+                rc = &it->second;
+                DLOGT(LOG_BEGIN("FindChannel(%x): found in pool"), DLOG_POINTER(&sorm_info));
+            }
+            else
+            {
+                DLOGT(LOG_BEGIN("FindChannel(%x): not found in pool"), DLOG_POINTER(&sorm_info));
+            }
+
+            return rc;
+        }
+
         bool SormPool::Release(Sorm* sorm)
         {
 
             bool rc = false;
 
-            DLOGT(LOG_BEGIN("Release(%x)"), DLOG_POINTER(sorm));
+            DLOGT(LOG_BEGIN("Release(%x, %d)"), DLOG_POINTER(sorm));
 
             if (sorm != nullptr)
             {
@@ -102,7 +121,7 @@ namespace mmx
 
             std::uint64_t id = getKey(sorm_info);
 
-            DLOGT(LOG_BEGIN("Release(%x): key = %d"), DLOG_POINTER(&sorm_info), id);
+            DLOGT(LOG_BEGIN("Release(%x, %d): key = %d"), DLOG_POINTER(&sorm_info), id );
 
             auto it = pool_.find(id);
 
@@ -187,6 +206,7 @@ namespace mmx
             }
 
             pool_.clear();
+            channel_list_.clear();
         }
     }
 }

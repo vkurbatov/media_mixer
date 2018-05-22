@@ -32,8 +32,6 @@ namespace mmx
 
             MediaPool&          media_pool_;
 
-
-
             friend class SormPool;
         public:
 
@@ -43,8 +41,9 @@ namespace mmx
             Sorm& operator=(Sorm&& channel);
             int SetProxy(const mmx::headers::SANGOMA_PROXY_INFO* proxy = nullptr);
             const mmx::headers::SANGOMA_SORM_INFO& GetOrmInfo() const;
-            int OrmInfoPack(data::IDataPacketWriter& writer);
+            int OrmInfoPack(data::IDataPacketWriter& writer, unsigned char conn_flag = 0);
             void Drop();
+
 
         private:
             void setSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm);
