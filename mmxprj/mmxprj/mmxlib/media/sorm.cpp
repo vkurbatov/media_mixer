@@ -11,8 +11,10 @@
 
 namespace mmx
 {
+
     namespace media
     {
+
         Sorm::Sorm(MediaPool& media_pool, unsigned char mixer_gain) :
             mixer_gain_(mixer_gain),
             media_pool_(media_pool)
@@ -193,9 +195,13 @@ namespace mmx
             if (block != nullptr)
             {
 
+                static unsigned char block_numbers[0xFF] = { 0 };
+
                 mmx::headers::ORM_INFO_PACKET& orm_info = *(mmx::headers::ORM_INFO_PACKET*)block->data;
 
-                order_header_.block_number++;
+
+
+                order_header_.block_number = block_numbers[sorm_info_.channel_id]++;
                 order_header_.packet_id++;
                 order_header_.conn_flag = (int)(size_arr[0] == 0 && size_arr[1] == 0);
 

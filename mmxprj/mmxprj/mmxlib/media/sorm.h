@@ -16,7 +16,6 @@ namespace mmx
         class SormPool;
         class Sorm
         {
-
             const static int STREAM_COUNT = 2;
             const static int DEFAULT_MIXER_GAIN = 70;
 

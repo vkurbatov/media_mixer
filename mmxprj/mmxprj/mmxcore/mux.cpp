@@ -199,7 +199,7 @@ namespace mmxmux
 
                 if (channel != nullptr)
                 {
-                    m->OrmInfoPack(channel->GetWritter());                  
+                    m->OrmInfoPack(channel->GetWritter());
                 }
 
             }
