@@ -254,8 +254,9 @@ namespace mmx
 
                                 rc = size;
 
-                                blocks_ += (int)(dp_writer_.Commit() > 0);
+                                DLOGW(LOG_BEGIN("putPacket(%x): put media block, size = %d"), DLOG_POINTER(&packet), size);
 
+                                blocks_ += (int)(dp_writer_.Commit() > 0);
 
                             }
                             else

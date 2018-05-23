@@ -97,10 +97,10 @@ int main(int argc, char* argv[])
     config.sgm_port = DEFAULT_BASE_PORT;
 
 
-    unsigned char b_a[] = { 0x15, 0x10, 0x02, 0x0A };
+   /* unsigned char b_a[] = { 0x15, 0x10, 0x02, 0x0A };
     unsigned char b_p[] = { 0xC6, 0x13 };
     auto a = mmx::net::Socket::AtoS(*(int*)b_a);
-    auto p = *(unsigned short*)b_p;
+    auto p = *(unsigned short*)b_p;*/
 
     int rc = parse_args(argc, argv, config, log_level);
 

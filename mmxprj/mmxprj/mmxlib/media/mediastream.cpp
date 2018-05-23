@@ -83,7 +83,7 @@ namespace mmx
             if (rtp.Header() != nullptr)
             {
 
-                DLOGT(LOG_BEGIN("PutSample(&%x): rtp packet put into jitter buffer"), DLOG_POINTER(&media));
+                DLOGD(LOG_BEGIN("PutSample(&%x): rtp packet [id = %d] put into jitter buffer"), DLOG_POINTER(&media),rtp.Header()->packet_id);
 
                 rc = jitter_.PutMedia(rtp, ++pack_id_, media.header.timestamp);
 

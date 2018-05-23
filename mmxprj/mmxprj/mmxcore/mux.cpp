@@ -265,6 +265,7 @@ namespace mmxmux
 
                         while(block != nullptr)
                         {
+                            DLOGD(LOG_BEGIN("processInput(): recieved %d bytes from %d block, pack_id = %d"), block->header.length - sizeof(block->header), block->header.block_id, dp->header.pack_id);
 
                             // mmx::logs::logI("@Recieved %d bytes from [%d:%d]", block->header.length - sizeof(block->header), dp->header.pack_id, block->header.block_id);
 
