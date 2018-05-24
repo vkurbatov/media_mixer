@@ -253,7 +253,7 @@ namespace mmx
 
         const char* PipeChannel::Name() const
         {
-            return handle_ < 0 ? nullptr : pipename_;
+            return pipename_;
         }
 
 

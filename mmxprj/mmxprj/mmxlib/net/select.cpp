@@ -38,6 +38,8 @@ namespace mmx
 
             std::memcpy(result_, sets_, sizeof(sets_));
 
+
+
             int rc = select(
                         fd_max_ + 1,
                         &result_[0], //readmask

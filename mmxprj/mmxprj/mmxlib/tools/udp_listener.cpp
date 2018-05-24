@@ -18,11 +18,13 @@ namespace mmx
     namespace tools
     {
         UdpListener::UdpListener(const net::PortSet& ports,
+                                 unsigned int address,
                                  data::IDataPacketWriter& dp_writer,
                                  sniffers::IPPacketPool& packet_pool,
                                  net::SelectExtension& select,
                                  int interval) :
             ports_(ports),
+            address_(address),
             dp_writer_(dp_writer),
             ip_sniffer_(packet_pool),
             select_(select),
@@ -39,6 +41,7 @@ namespace mmx
 
         UdpListener::UdpListener(UdpListener&& listener) :
            ports_(listener.ports_),
+           address_(listener.address_),
            dp_writer_(listener.dp_writer_),
            ip_sniffer_(std:: move(listener.ip_sniffer_)),
            timer_(std::move(listener.timer_)),
@@ -254,7 +257,7 @@ namespace mmx
 
                                 rc = size;
 
-                                DLOGW(LOG_BEGIN("putPacket(%x): put media block, size = %d"), DLOG_POINTER(&packet), size);
+                                DLOGD(LOG_BEGIN("putPacket(%x): put media block, size = %d"), DLOG_POINTER(&packet), size);
 
                                 blocks_ += (int)(dp_writer_.Commit() > 0);
 

@@ -23,7 +23,7 @@ namespace mmx
             sniffers::IPSniffer         ip_sniffer_;
             Timer                       timer_;
 
-            int                         address_;
+            unsigned int                address_;
             int                         interval_;
             std::vector<char>           data_;
             unsigned short              media_pack_id_;
@@ -32,7 +32,7 @@ namespace mmx
 
         public:
 
-            UdpListener(const net::PortSet& ports, data::IDataPacketWriter& dp_writer, sniffers::IPPacketPool& packet_pool, net::SelectExtension& select, int interval = 2000);
+            UdpListener(const net::PortSet& ports, unsigned int address, data::IDataPacketWriter& dp_writer, sniffers::IPPacketPool& packet_pool, net::SelectExtension& select, int interval = 2000);
             UdpListener(UdpListener&& listener);
             ~UdpListener();
 

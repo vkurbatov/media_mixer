@@ -28,7 +28,7 @@ namespace mmxlst
     Listener::Listener(const LISTENER_CONFIG& config, const mmx::net::PortSet& ports) :
         config_(config),
         output_channel_(MMX_LISTENER_CHANNEL_PATTERN, config.channel, select_, config.interval),
-        udp_listener_(ports, output_channel_.GetWritter(), packet_pool_, select_, config.interval)
+        udp_listener_(ports, config.address, output_channel_.GetWritter(), packet_pool_, select_, config.interval)
     {
 
     }
