@@ -25,6 +25,8 @@
 
 #define DEFAULT_BASE_PORT       5200
 #define DEFAULT_INTERVAL        2000
+#define DEFAULT_MIXED_GAIN      50
+#define DEFAULT_MEDIA_PERIOD    20
 
 static char buff[1600 * 10];
 
@@ -92,9 +94,10 @@ int main(int argc, char* argv[])
 
     config.channel_num = 1;
     config.interval = DEFAULT_INTERVAL;
-    config.media_period = 20;
+    config.media_period = DEFAULT_MEDIA_PERIOD;
     config.sgm_address = INADDR_ANY;
     config.sgm_port = DEFAULT_BASE_PORT;
+    config.mixed_gain = DEFAULT_MIXED_GAIN;
 
 
    /* unsigned char b_a[] = { 0x15, 0x10, 0x02, 0x0A };
