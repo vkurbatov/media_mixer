@@ -17,7 +17,7 @@ namespace mmx
         class Sorm
         {
             const static int STREAM_COUNT = 2;
-            const static int DEFAULT_MIXER_GAIN = 70;
+            const static int DEFAULT_MIXER_GAIN = 50;
 
             mmx::headers::SANGOMA_SORM_INFO sorm_info_;
 

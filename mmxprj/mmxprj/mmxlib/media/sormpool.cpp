@@ -12,14 +12,26 @@ namespace mmx
 {
     namespace media
     {
-        SormPool::SormPool(MediaPool& media_pool, int max_free_queue_size) :
+        SormPool::SormPool(MediaPool& media_pool, int max_free_queue_size, int mixed_gain_sorm) :
             media_pool_(media_pool),
-            max_free_queue_size_(max_free_queue_size)
+            max_free_queue_size_(max_free_queue_size),
+            mixed_gain_sorm_(mixed_gain_sorm)
         {
             DLOGT(LOG_BEGIN("SormPool(&%x, %d)"), DLOG_POINTER(&media_pool), max_free_queue_size);
         }
 
-        Sorm* SormPool::GetChannel(const mmx::headers::SANGOMA_SORM_INFO& sorm_info, const mmx::headers::SANGOMA_PROXY_INFO& proxy)
+        SormPool::SormPool(SormPool &&sormpool) :
+            media_pool_(sormpool.media_pool_),
+            max_free_queue_size_(sormpool.max_free_queue_size_),
+            mixed_gain_sorm_(sormpool.mixed_gain_sorm_),
+            q_free_(std::move(sormpool.q_free_)),
+            rm_list_(std::move(rm_list_)),
+            channel_list_(std::move(channel_list_))
+        {
+
+        }
+
+        Sorm* SormPool::GetSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm_info, const mmx::headers::SANGOMA_PROXY_INFO& proxy)
         {
 
             Sorm* rc = nullptr;
@@ -67,6 +79,7 @@ namespace mmx
                 rc = &it->second;
                 rc->setSorm(sorm_info);
                 rc->SetProxy(&proxy);
+                rc->mixer_gain_ = mixed_gain_sorm_;
             }
             else
             {
@@ -78,7 +91,7 @@ namespace mmx
 
         }
 
-        Sorm *SormPool::FindChannel(const headers::SANGOMA_SORM_INFO &sorm_info)
+        Sorm *SormPool::FindSorm(const headers::SANGOMA_SORM_INFO &sorm_info)
         {
             Sorm* rc = nullptr;
 
@@ -177,7 +190,7 @@ namespace mmx
             return pool_.size();
         }
 
-        std::vector<Sorm*> SormPool::GetChannels()
+        std::vector<Sorm*> SormPool::GetSorms()
         {
 
             if (channel_list_.empty())

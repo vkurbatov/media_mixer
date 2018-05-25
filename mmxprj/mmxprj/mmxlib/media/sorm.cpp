@@ -116,9 +116,16 @@ namespace mmx
                 DLOGT(LOG_BEGIN("SetProxy(): new binding"));
 
                 streams_[0] = media_pool_.GetStream(proxy->source_a.address, proxy->source_a.port);
-                streams_[1] = media_pool_.GetStream(proxy->source_b.address, proxy->source_b.port);
 
-                rc = (int)(streams_[0] != nullptr) + (streams_[1] != nullptr);
+                // если приходит совмещенный контроль, то медиапотоки идентичны
+
+                streams_[1] = (proxy->source_a.address != proxy->source_b.address ||
+                        proxy->source_a.port != proxy->source_b.port) ?
+                        media_pool_.GetStream(proxy->source_b.address, proxy->source_b.port) :
+                            nullptr;
+
+
+                rc = (int)(streams_[0] != nullptr) + (int)(streams_[1] != nullptr);
             }
 
             return rc;
@@ -204,10 +211,9 @@ namespace mmx
 
                 order_header_.block_number++;
                 order_header_.packet_id = packet_ids[sorm_info_.channel_id]++;
-                order_header_.conn_flag = conn_flag;//(int)(size_arr[0] == 0 && size_arr[1] == 0);
+                order_header_.conn_flag = conn_flag;    //(int)(size_arr[0] == 0 && size_arr[1] == 0);
 
                 orm_info.header.order_header = order_header_;
-
 
                 if (order_header_.mcl_a != order_header_.mcl_b)
                 {
@@ -256,6 +262,9 @@ namespace mmx
                           orm_info.header.size_b);
 
                     int i = 0;
+
+                    // смешиваем только значимые данные
+
                     for (;i < size_min; i++)
                     {
                         orm_info.data[i] = codecs::audio::PcmaCodec::Encode(

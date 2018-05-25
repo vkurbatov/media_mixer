@@ -340,7 +340,23 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                     }
                     else
                     {
-                        std::cout << "Error log level \'l=" << n << "\'. Log level range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
+                        std::cout << "Error log level \'l=" << n << "\'. Log level must be range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
+                        rc = -EINVAL;
+                    }
+
+                }
+                break;
+                case 'g':
+                {
+                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                    if (n >= 0 && n < 255)
+                    {
+                        config.mixed_gain = n;
+                    }
+                    else
+                    {
+                        std::cout << "Error log level \'l=" << n << "\'. Mixer gain must be range [0..255]." << std::endl;
                         rc = -EINVAL;
                     }
 

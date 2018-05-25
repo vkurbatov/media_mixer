@@ -25,19 +25,20 @@ namespace mmx
             MediaPool& media_pool_;
 
             int max_free_queue_size_;
+            int mixed_gain_sorm_;
 
         public:
 
-            SormPool(MediaPool& media_pool, int max_free_queue_size = -1);
-
-            Sorm* GetChannel(const mmx::headers::SANGOMA_SORM_INFO& sorm_info, const mmx::headers::SANGOMA_PROXY_INFO& proxy);
-            Sorm* FindChannel(const mmx::headers::SANGOMA_SORM_INFO& sorm_info);
+            SormPool(MediaPool& media_pool, int max_free_queue_size = -1, int mixed_gain_sorm = Sorm::DEFAULT_MIXER_GAIN);
+            SormPool(SormPool&& sormpool);
+            Sorm* GetSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm_info, const mmx::headers::SANGOMA_PROXY_INFO& proxy);
+            Sorm* FindSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm_info);
             bool Release(Sorm* channel);
             bool Release(const mmx::headers::SANGOMA_SORM_INFO& sorm_info);
             int Count() const;
             void Reset();
 
-            std::vector<Sorm*> GetChannels();
+            std::vector<Sorm*> GetSorms();
 
 
         private:

@@ -23,7 +23,7 @@ namespace mmxmux
         sangoma_(config.sgm_address, config.sgm_port, select_, config.interval),
         input_channel_(MMX_LISTENER_CHANNEL_PATTERN, config.channel_num, select_),
         output_channel_pool_(MMX_SERVER_CHANNEL_PATTERN),
-        sorm_pool_(media_pool_, 10)
+        sorm_pool_(media_pool_, 10, config.mixed_gain)
     {
         timer_.Start(config_.media_period);
         std::memset(channel_indexes_, -1, sizeof(channel_indexes_));
@@ -49,7 +49,7 @@ namespace mmxmux
         sorm.object_id = 8;
         sorm.sorm_id = 9;
 
-        sorm_pool_.GetChannel(sorm, proxy);
+        sorm_pool_.GetSorm(sorm, proxy);
     }
 
     int Mux::Execute()
@@ -211,7 +211,7 @@ namespace mmxmux
             }
 
 
-            for (auto& m : sorm_pool_.GetChannels())
+            for (auto& m : sorm_pool_.GetSorms())
             {
                 auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];
 
@@ -376,14 +376,14 @@ namespace mmxmux
 
                                     DLOGI(LOG_BEGIN("processSangoma(): recieve START_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
 
-                                    sorm_pool_.GetChannel(query->q_proxy.sorm[i], query->q_proxy.proxy);
+                                    sorm_pool_.GetSorm(query->q_proxy.sorm[i], query->q_proxy.proxy);
 
                                 }
                                 else
                                 {                                    
                                     DLOGI(LOG_BEGIN("processSangoma(): recieve STOP_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
 
-                                    auto m = sorm_pool_.FindChannel(query->q_proxy.sorm[i]);
+                                    auto m = sorm_pool_.FindSorm(query->q_proxy.sorm[i]);
 
                                         if (m != nullptr)
                                     {
