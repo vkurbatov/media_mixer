@@ -18,7 +18,7 @@
 
 #define LOG_NAME_PATTERN "/var/log/mmx/server-%d.log"
 
-#define DEFAULT_LEVEL_LOG mmx::logs::L_ERROR
+#define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
 
 #define DEFAULT_BASE_PORT       5400
 #define DEFAULT_INTERVAL        2000
@@ -101,7 +101,7 @@ int main(int argc, char* argv[])
 
         std::sprintf(log_file, LOG_NAME_PATTERN, config.channel);
 
-        mmx::logs::log_init(log_file, DEFAULT_LEVEL_LOG, false);
+        mmx::logs::log_init(log_file, log_level, false);
 
         log_file[0] = '\0';
         for (int i = 1; i < argc; i++)
@@ -113,7 +113,7 @@ int main(int argc, char* argv[])
             std::strcat(log_file, argv[i]);
         }
 
-        mmx::logs::logI("@%s Ver=%d.%d.%s Started!\nArguments: \n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, log_file);
+        mmx::logs::logI("@%s Ver=%d.%d.%s Started!\nArguments: %s\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, log_file);
 
         mmxsrv::Server server(config);
 
