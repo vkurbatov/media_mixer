@@ -238,7 +238,7 @@ namespace mmx
 
                         while (i < size_max)
                         {
-                            orm_info.data[(i++ << 1) + j] = 0xD5; //7E
+                            orm_info.data[(i++ << 1) + j] = headers::ORDER_645_SILENCE_SYMBOL;
                         }
                     }
                 }
