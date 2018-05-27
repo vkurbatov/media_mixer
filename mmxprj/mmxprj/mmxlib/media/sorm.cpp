@@ -207,8 +207,6 @@ namespace mmx
 
                 mmx::headers::ORM_INFO_PACKET& orm_info = *(mmx::headers::ORM_INFO_PACKET*)block->data;
 
-
-
                 order_header_.block_number++;
                 order_header_.packet_id = packet_ids[sorm_info_.channel_id]++;
                 order_header_.conn_flag = conn_flag;    //(int)(size_arr[0] == 0 && size_arr[1] == 0);
@@ -251,6 +249,7 @@ namespace mmx
 
                     orm_info.header.size_a = size_max;
                     orm_info.header.size_b = 0;
+                    orm_info.header.order_header.mcl_b = 0xFF;
 
                     DLOGT(LOG_BEGIN("OrmInfoPack(): Build mixed frame {%d, %d, %d, %d, %d, %d, %d}"),
                           order_header_.block_number,

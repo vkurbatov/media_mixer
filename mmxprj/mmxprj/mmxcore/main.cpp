@@ -17,7 +17,12 @@
 #define SERVICE_NAME "Media stream multiplexor (core)"
 #define SERVICE_MAJOR_VERSION 1
 #define SERVICE_MINOR_VERSION BUILD_NUMBER
+
+#ifdef DEBUG
 #define SERVICE_STATUS "debug"
+#else
+#define SERVICE_STATUS "release"
+#endif
 
 #define LOG_NAME_PATTERN "/var/log/mmx/mediamux-%d.log"
 

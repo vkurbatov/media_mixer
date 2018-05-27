@@ -62,8 +62,8 @@ namespace mmxtest
         fragment1.header.dest = ::htonl(2);;
         fragment1.header.ver = mmx::headers::IP4_VERSION;
         fragment1.header.hlen = mmx::headers::MIN_HEADER_LEN;
-        fragment1.header.length = ::htons(sizeof(mmx::headers::IP4HEADER) + TEST_DATA_SIZE);
-        fragment1.header.id = ::htons(1234);
+        fragment1.header.length = htons(sizeof(mmx::headers::IP4HEADER) + TEST_DATA_SIZE);
+        fragment1.header.id = htons(1234);
         fragment1.header.protocol = IPPROTO_IP;
         fragment1.header.ttl = 64;
 
@@ -89,8 +89,8 @@ namespace mmxtest
         fragment5 = fragment3 = fragment1;
         fragment4 = fragment2;      
 
-        fragment4.header.id = (fragment3.header.id += ::htons(1));
-        fragment5.header.id = (fragment4.header.id + ::htons(1));
+        fragment4.header.id = (fragment3.header.id += htons(1));
+        fragment5.header.id = (fragment4.header.id + htons(1));
         fragment5.header.f_M = 0;
 
         for (int i = 0; i < TEST_DATA_SIZE; i++)
@@ -119,7 +119,7 @@ namespace mmxtest
 
             f->header.xsum = mmx::sniffers::IPPacket::CheckSumm(f, f->header.hlen * 4);
 
-            int len = ::ntohs(f->header.length);
+            int len = ntohs(f->header.length);
             std::memcpy(p, f, len);
             p += len + 4;
             rc += len + 4;
@@ -166,8 +166,8 @@ namespace mmxtest
 
                     std::cout << "IP-Address source: " << ::ntohl(hdr->src) << std::endl;
                     std::cout << "IP-Address destination: " << ::ntohl(hdr->dest) << std::endl;
-                    std::cout << "Length (last packet): " << ::ntohs(hdr->length) << std::endl;
-                    std::cout << "Packet-id: " << ::ntohs(hdr->id) << std::endl;
+                    std::cout << "Length (last packet): " << ntohs(hdr->length) << std::endl;
+                    std::cout << "Packet-id: " << ntohs(hdr->id) << std::endl;
 
                     std::cout << "Total packet size: " << count <<  std::endl;
 

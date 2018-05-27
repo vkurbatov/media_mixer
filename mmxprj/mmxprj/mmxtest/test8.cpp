@@ -42,7 +42,7 @@ namespace mmxtest
         {
             for (int j = 0; j < MEDIA_SIZE; j++)
             {
-                rtp_packets[i].rtp.data[j] = i * MEDIA_SIZE + j;
+                rtp_packets[i].rtp.data[j] = (char)(i * MEDIA_SIZE + j);
             }
         }
 

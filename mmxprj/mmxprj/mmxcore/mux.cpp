@@ -355,18 +355,26 @@ namespace mmxmux
                 switch (query->header.type)
                 {
                     case mmx::headers::SI_PASSWORD_STATUS:
+                        DLOGD(LOG_BEGIN("processSangoma(): recieve PASSWORD_STATUS query, len = %d"), query->header.length);
+
+                        // LogIN
+
+                        for (auto& s : sorm_pool_.GetSorms())
+                        {
+                            rm_sorms_.push_back(s);
+                        }
+                        break;
                     case mmx::headers::SI_LINK_STATUS:
-                        DLOGD(LOG_BEGIN("processSangoma(): recieve query %d, len = %d"), query->header.type, query->header.length);
+                        DLOGD(LOG_BEGIN("processSangoma(): recieve LINK_STATUS query, len = %d"), query->header.length);
                         break;
                     case mmx::headers::SI_START_PROXY:
                     case mmx::headers::SI_END_PROXY:
                         {
                             int sorms = (query->header.length - sizeof(query->q_proxy.proxy)) / sizeof(query->q_proxy.sorm[0]);
 
-                            static char sbuf[512];
+                            static char sbuf[1024];
 
                             get_query_info(*query, sbuf, sorms);
-
 
 
                             for (int i = 0; i < sorms; i++)
@@ -391,8 +399,6 @@ namespace mmxmux
                                     }
                                 }
                             }
-
-
 
                         }
                         break;

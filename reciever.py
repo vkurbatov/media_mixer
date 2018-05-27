@@ -44,7 +44,7 @@ def hex_to_str(byteStr):
 
 class TcpClient():
     __poll_timeout = 0.5
-    __buffer_size = 1039
+    __buffer_size = 1038
     __reconnect_timeout = 0.2
 
     def __init__(self, remote_address):

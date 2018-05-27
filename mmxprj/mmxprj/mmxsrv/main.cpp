@@ -14,7 +14,12 @@
 #define SERVICE_NAME "Communication dispatcher"
 #define SERVICE_MAJOR_VERSION 1
 #define SERVICE_MINOR_VERSION BUILD_NUMBER
+
+#ifdef DEBUG
 #define SERVICE_STATUS "debug"
+#else
+#define SERVICE_STATUS "release"
+#endif
 
 #define LOG_NAME_PATTERN "/var/log/mmx/server-%d.log"
 

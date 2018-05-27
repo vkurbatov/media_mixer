@@ -9,7 +9,7 @@ namespace mmx
 #pragma pack(push, 1)
 
         static const unsigned char ORDER_645_2_MAGIC = 0xDD;
-        static const unsigned short ORDER_645_2_PACKET_SIZE = 1039;
+        static const unsigned short ORDER_645_2_PACKET_SIZE = 1038;
 
         typedef struct _ORDER_645_2_HEADER
         {
