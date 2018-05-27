@@ -183,7 +183,6 @@ namespace mmxsrv
                         while(block != nullptr)
                         {
 
-
                             if (block->header.length >= sizeof(mmx::headers::ORM_INFO_HEADER))
                             {
 
@@ -203,8 +202,11 @@ namespace mmxsrv
                                     for (auto& c : orm_server_.GetClients())
                                     {
                                         stat_.send_packets += (unsigned int)c.PutData(orm_info_) > 0;
-
                                     }
+
+                                    // hardcode
+                                    mmx::tools::Timer::Sleep(15);
+
                                 }
                                 else
                                 {
