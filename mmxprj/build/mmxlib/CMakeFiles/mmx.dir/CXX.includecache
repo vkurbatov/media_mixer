@@ -699,6 +699,10 @@ orm_client.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.h
 errno.h
 -
+netdb.h
+-
+netinet/tcp.h
+-
 logs/dlog.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 

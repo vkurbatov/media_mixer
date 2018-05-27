@@ -1,6 +1,8 @@
 #include "orm_client.h"
 
 #include <errno.h>
+#include <netdb.h>
+#include <netinet/tcp.h>
 
 #define RECIVE_BUFFER_SIZE  1600     //MTU + запас
 
@@ -25,7 +27,9 @@ namespace mmx
 
             if (fd >= 0)
             {
+                socket_.SetOption(IPPROTO_TCP, TCP_NODELAY, (int)1);
                 select_.SetRead(fd);
+
             }
         }
 
