@@ -119,7 +119,7 @@ namespace mmx
 
                     net::Socket client(SOCK_STREAM, IPPROTO_TCP);
 
-                    rc = client.Accept(socket_, O_NONBLOCK);
+                    rc = client.Accept(socket_);
 
                     if (rc >= 0)
                     {
