@@ -137,7 +137,9 @@ namespace mmx
 
         int OrmClient::putData(const void* data, int size)
         {
-            int rc = writer_.Write(data, size);
+            //int rc = writer_.Write(data, size);
+
+            int rc = socket_.Send(data, size);
 
             if (rc < 0 && rc != -EAGAIN)
             {
