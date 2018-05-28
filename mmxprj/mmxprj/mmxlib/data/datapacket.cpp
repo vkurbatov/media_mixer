@@ -70,6 +70,11 @@ namespace mmx
             return dp_writer_.QueryBlock(size);
         }
 
+        int DataPacket::Write(const void *data, int size)
+        {
+            return dp_writer_.Write(data, size);
+        }
+
         int DataPacket::Commit()
         {
             return dp_writer_.Commit();

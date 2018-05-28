@@ -37,6 +37,8 @@ dpwriter.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
 errno.h
 -
+cstring
+-
 logs/dlog.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/logs/dlog.h
 

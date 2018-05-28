@@ -92,22 +92,46 @@ namespace mmx
         int SangomaMediaClient::PutData(const mmx::headers::ORM_INFO_PACKET& orm_info)
         {
 
-            int comb = (int)(orm_info.header.order_header.mcl_a != orm_info.header.order_header.mcl_b);
 
-            for (int i = 0; i < 1 + comb; i++)
+            int comb = (int)(orm_info.header.order_header.mcl_b != 0xFF);
+
+            int total_size = orm_info.header.media_size;
+
+            while (total_size > 0)
             {
-                sangoma_.header.packet_id++;
-                sangoma_.header.lid = *(&orm_info.header.order_header.mcl_a + i);
-                sangoma_.header.length = *(&orm_info.header.size_a + i);
+                int idx = orm_info.header.media_size - total_size;
 
-                for (int j = 0; j < mmx::headers::SI_MAX_PYLOAD_SIZE; j++)
+                for (int i = 0; i < 1 + comb; i++)
                 {
+                    sangoma_.header.packet_id++;
+                    sangoma_.header.lid = *(&orm_info.header.order_header.mcl_a + i);
+                    sangoma_.header.length = total_size / (1 + comb);
 
-                    sangoma_.data[i] = i < sangoma_.header.length ? orm_info.data[(i << comb) + i] : 0;
+                    if (sangoma_.header.length > mmx::headers::SI_MAX_PYLOAD_SIZE)
+                    {
+                        sangoma_.header.length = mmx::headers::SI_MAX_PYLOAD_SIZE;
+                    }
+
+                    total_size -= sangoma_.header.length;
+
+                    int j = 0;
+
+                    for (j = 0; j < sangoma_.header.length; j++)
+                    {
+                        sangoma_.data[j] = orm_info.data[(j << comb) + i + idx];
+                    }
+
+                    while (j < mmx::headers::SI_MAX_PYLOAD_SIZE)
+                    {
+                        sangoma_.data[idx + j++] = 0;
+                    }
+
+                    putData(&sangoma_, sizeof(sangoma_));
 
                 }
-                putData(&sangoma_, sizeof(sangoma_));
+
             }
+
         }
 
         DeferredWriter& SangomaMediaClient::GetWritter()

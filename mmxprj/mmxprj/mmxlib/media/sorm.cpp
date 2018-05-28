@@ -23,7 +23,7 @@ namespace mmx
             DLOGT(LOG_BEGIN("Sorm(%d)"), mixer_gain);
 
             std::memset(&sorm_info_, 0, sizeof(sorm_info_));
-            std::memset(&order_header_, 0, sizeof(order_header_));
+            std::memset(&orm_info_, 0, sizeof(orm_info_));
             streams_[0] = nullptr;
             streams_[1] = nullptr;
             rtp_ssrcs_[0] = rtp_ssrcs_[1] = 0;
@@ -34,7 +34,7 @@ namespace mmx
             mixer_gain_(sorm.mixer_gain_),
             media_pool_(sorm.media_pool_),
             sorm_info_(sorm.sorm_info_),
-            order_header_(sorm.order_header_)
+            orm_info_(sorm.orm_info_)
         {
 
             DLOGT(LOG_BEGIN("Sorm(&&%x)"), DLOG_POINTER(&sorm));
@@ -49,8 +49,8 @@ namespace mmx
             sorm.streams_[0] = nullptr;
             sorm.streams_[1] = nullptr;
 
-            std::memset(&sorm_info_, 0, sizeof(sorm_info_));
-            std::memset(&order_header_, 0, sizeof(order_header_));
+            std::memset(&sorm.sorm_info_, 0, sizeof(sorm.sorm_info_));
+            std::memset(&sorm.orm_info_, 0, sizeof(sorm.orm_info_));
 
         }
 
@@ -71,12 +71,12 @@ namespace mmx
 
 
                 sorm_info_ = sorm.sorm_info_;
-                order_header_ = sorm.order_header_;
+                orm_info_ = sorm.orm_info_;
 
                 sorm.streams_[0] = nullptr;
                 sorm.streams_[1] = nullptr;
-                std::memset(&sorm_info_, 0, sizeof(sorm_info_));
-                std::memset(&order_header_, 0, sizeof(order_header_));
+                std::memset(&sorm.sorm_info_, 0, sizeof(sorm.sorm_info_));
+                std::memset(&sorm.orm_info_, 0, sizeof(sorm.orm_info_));
 
             }
         }
@@ -159,7 +159,6 @@ namespace mmx
 
                     short delta = pack_id - rtp_pack_ids_[i];
 
-
                     if (rtp_ssrcs_[i] == 0 || rtp_ssrcs_[i] != media_samples[i]->header.rtp_header.ssrc ||
                         delta > 0)
                     {
@@ -191,12 +190,90 @@ namespace mmx
 
             }
 
-            auto size_max = size_arr[0] > size_arr[1] ? size_arr[0] : size_arr[1];
+            //DLOGT(LOG_BEGIN("OrmInfoPack(): Before writing {%d, %d}"), size_max, rc);
 
             rc = (int)sizeof(mmx::headers::ORM_INFO_HEADER);
-            rc += order_header_.mcl_a == order_header_.mcl_b ? size_max : size_arr[0] + size_arr[1];
 
-            DLOGT(LOG_BEGIN("OrmInfoPack(): Before writing {%d, %d}"), size_max, rc);
+            rc += size_arr[0] + size_arr[1];
+
+            bool f_combined = orm_info_.header.order_header.mcl_b == 0xFF;
+
+            const char* samples[2] = { media_samples[0] != nullptr ? media_samples[0]->media : nullptr,
+                                 media_samples[1] != nullptr ? media_samples[1]->media : nullptr
+                               };
+
+            int need_size = 160 << (int)(!f_combined);
+
+            bool f_process = true;
+
+            while (f_process)
+            {
+
+                f_process = false;
+
+                int ret = fillOrder(samples[0], size_arr[0],
+                                        samples[1], size_arr[1],
+                                        need_size,
+                                        f_combined,
+                                        orm_info_
+                                );
+
+
+
+
+                if (ret > 0)
+                {
+
+                    orm_info_.header.media_size += ret;
+                    need_size -= ret;
+
+                    for (int j = 0; j < 2; j++)
+                    {
+                        if (samples[j] != nullptr && size_arr[j] > 0)
+                        {
+                            int off = f_combined ? ret : ret / 2;
+
+                            if (off > size_arr[j])
+                            {
+                                off = size_arr[j];
+                            }
+                            samples[j] += off;
+                            size_arr[j] -= off;
+                        }
+                    }
+
+                    if (orm_info_.header.media_size > headers::ORDER_645_2_MAX_DATA_SIZE)
+                    {
+                        DLOGC(LOG_BEGIN("OrmInfoPack(): Syncrinuze error: %d > %d"), orm_info_.header.media_size, headers::ORDER_645_2_MAX_DATA_SIZE);
+                        orm_info_.header.media_size = 0;
+                        break;
+
+                    }
+
+                    if ((orm_info_.header.media_size == headers::ORDER_645_2_MAX_DATA_SIZE) || (conn_flag != 0))
+                    {
+                        static unsigned char packet_ids[0x100] = { 0 };
+
+                        orm_info_.header.order_header.block_number++;
+                        orm_info_.header.order_header.packet_id = packet_ids[sorm_info_.channel_id]++;
+                        orm_info_.header.order_header.conn_flag = conn_flag;
+
+                        if (need_size > 0 && conn_flag == 0)
+                        {
+                            f_process = true;
+                        }
+
+                        writer.Write(&orm_info_, orm_info_.header.media_size + sizeof(headers::ORM_INFO_HEADER));
+
+                        orm_info_.header.media_size = 0;
+
+                    }
+                }
+
+            }
+
+
+            /*
 
             auto block = writer.QueryBlock(rc);
 
@@ -215,8 +292,8 @@ namespace mmx
 
                 if (order_header_.mcl_a != order_header_.mcl_b)
                 {
-                    orm_info.header.size_a = size_arr[0];
-                    orm_info.header.size_b = size_arr[1];
+                    orm_info.header.size_mcl[0] = size_arr[0];
+                    orm_info.header.size_mcl[1] = size_arr[1];
 
                     DLOGT(LOG_BEGIN("OrmInfoPack(): Build separated frame {%d, %d, %d, %d, %d, %d, %d}"),
                           order_header_.block_number,
@@ -224,8 +301,8 @@ namespace mmx
                           order_header_.conn_flag,
                           order_header_.mcl_a,
                           order_header_.mcl_b,
-                          orm_info.header.size_a,
-                          orm_info.header.size_b);
+                          orm_info.header.size_mcl[0],
+                          orm_info.header.size_mcl[1]);
 
                     for (int j = 0; j < 2; j++)
                     {
@@ -247,8 +324,8 @@ namespace mmx
                     auto size_min = size_arr[0] > size_arr[1] ? size_arr[1] : size_arr[0];
 
 
-                    orm_info.header.size_a = size_max;
-                    orm_info.header.size_b = 0;
+                    orm_info.header.size_mcl[0] = size_max;
+                    orm_info.header.size_mcl[1] = 0;
                     orm_info.header.order_header.mcl_b = 0xFF;
 
                     DLOGT(LOG_BEGIN("OrmInfoPack(): Build mixed frame {%d, %d, %d, %d, %d, %d, %d}"),
@@ -257,8 +334,8 @@ namespace mmx
                           order_header_.conn_flag,
                           order_header_.mcl_a,
                           order_header_.mcl_b,
-                          orm_info.header.size_a,
-                          orm_info.header.size_b);
+                          orm_info.header.size_mcl[0],
+                          orm_info.header.size_mcl[1]);
 
                     int i = 0;
 
@@ -292,6 +369,8 @@ namespace mmx
                 rc = -ENOMEM;
             }
 
+            */
+
             return rc;
         }
 
@@ -306,22 +385,136 @@ namespace mmx
             {
                 sorm_info_ = sorm;
             }
-            order_header_.magic = headers::ORDER_645_2_MAGIC;
-            order_header_.sorm_id = sorm.sorm_id;
-            order_header_.object_id = sorm.object_id;
-            order_header_.call_id = sorm.call_id;
-            order_header_.mcl_a = sorm.mcl_a;
-            order_header_.mcl_b = sorm.mcl_b;
-            order_header_.conn_param = sorm.conn_param;
+            orm_info_.header.media_size = 0;
+            orm_info_.header.order_header.magic = headers::ORDER_645_2_MAGIC;
+            orm_info_.header.order_header.block_number = 0;
+            orm_info_.header.order_header.sorm_id = sorm.sorm_id;
+            orm_info_.header.order_header.object_id = sorm.object_id;
+            orm_info_.header.order_header.call_id = sorm.call_id;
+            orm_info_.header.order_header.mcl_a = sorm.mcl_a;
+            orm_info_.header.order_header.mcl_b = sorm.mcl_a != sorm.mcl_b ? sorm.mcl_b : 0xFF;
+            orm_info_.header.order_header.conn_param = sorm.conn_param;
 
             DLOGT(LOG_BEGIN("setSorm(&%x): {%d, %d, %d, %d, %d, %d, %d, %d, %d}"), DLOG_POINTER(&sorm),
-                  order_header_.sorm_id,
-                  order_header_.object_id,
-                  order_header_.call_id,
-                  order_header_.mcl_a,
-                  order_header_.mcl_b,
-                  order_header_.conn_param
+                  orm_info_.header.order_header.sorm_id,
+                  orm_info_.header.order_header.object_id,
+                  orm_info_.header.order_header.call_id,
+                  orm_info_.header.order_header.mcl_a,
+                  orm_info_.header.order_header.mcl_b,
+                  orm_info_.header.order_header.conn_param
                   );
+
+        }
+
+
+        int Sorm::fillOrder(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, bool combined, headers::ORM_INFO_PACKET &orm_info)
+        {
+            int rc = 0;
+
+            int offset = orm_info.header.media_size;
+
+            if ((offset + need_size) > headers::ORDER_645_2_MAX_DATA_SIZE)
+            {
+                need_size = headers::ORDER_645_2_MAX_DATA_SIZE - offset;
+            }
+
+            rc = need_size;
+
+            if (!combined)
+            {
+                need_size /= 2;
+            }
+
+            if (size_a > need_size)
+            {
+                size_a = need_size;
+            }
+            if (size_b > need_size)
+            {
+                size_b = need_size;
+            }
+
+            auto p = &media_pool_;
+
+            int min_size = (size_a > size_b) ? size_b : size_a;
+            int max_size = (size_a < size_b) ? size_b : size_a;
+
+            if (need_size == 64)
+            {
+                need_size = 64;
+            }
+
+            int i = 0;
+            int idx = 0;
+
+            if (!combined)
+            {
+
+                // mcl_a
+                for (;i < size_a; i++)
+                {
+                    idx = offset + (i << 1);
+                    orm_info.data[idx] = ((char*)data_a)[i];
+                }
+
+                while (i < (need_size))
+                {
+                    idx = offset + (i++ << 1);
+                    orm_info.data[idx] = headers::ORDER_645_SILENCE_SYMBOL;
+
+                }
+
+                // mcl_b
+                i = 0;
+                for (;i < size_b; i++)
+                {
+                    idx = offset + (i << 1) + 1;
+                    orm_info.data[idx] =((char*)data_b)[i];
+                }
+
+                while (i < (need_size))
+                {
+                    idx = offset + (i++ << 1) + 1;
+                    orm_info.data[idx] = headers::ORDER_645_SILENCE_SYMBOL;
+
+                }
+            }
+            else
+            {
+                int i = 0;
+
+                for (;i < min_size; i++)
+                {
+                    orm_info.data[offset + i] = codecs::audio::PcmaCodec::Encode(
+                        codecs::audio::mixer(
+                            codecs::audio::PcmaCodec::Decode(((unsigned char*)data_a)[i]),
+                            codecs::audio::PcmaCodec::Decode(((unsigned char*)data_b)[i]),
+                            mixer_gain_
+                            )
+                        );
+                }
+
+                const void* media_data = size_a < size_b ? data_b : data_a;
+
+                while (i < max_size)
+                {
+                    orm_info.data[offset + i] = ((unsigned char*)media_data)[i];
+                    i++;
+                }
+
+                while (i < (need_size))
+                {
+                    orm_info.data[offset + i] = headers::ORDER_645_SILENCE_SYMBOL;
+                    i++;
+                }
+            }
+
+            if (p != &media_pool_)
+            {
+                rc = 0;
+            }
+
+            return rc;
 
         }
     }

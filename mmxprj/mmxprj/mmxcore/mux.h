@@ -40,16 +40,17 @@ namespace mmxmux
 
         MUX_CONFIG                          config_;
 
+        mmx::net::SelectExtension           select_;
+
         mmx::media::MediaPool               media_pool_;
         mmx::media::SormPool                sorm_pool_;
-
-        mmx::net::SelectExtension           select_;
 
         mmx::tools::SangomaServer           sangoma_;
         mmx::tools::Timer                   timer_;
 
         mmx::tools::PipeInputChannel        input_channel_;
         mmx::tools::PipeOutputChannelPool   output_channel_pool_;
+
 
         mmx::sniffers::DataPackSniffer      dp_sniffer_;
 

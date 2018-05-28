@@ -34,6 +34,7 @@ namespace mmx
 
             int BuildPacket(int pack_id = 0) override;
             headers::PDATA_BLOCK QueryBlock(int size) override;
+            int Write(const void* data, int size) override;
             int Commit() override;            
             int Blocks() const override;
 

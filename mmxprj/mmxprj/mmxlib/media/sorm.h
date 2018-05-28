@@ -21,7 +21,12 @@ namespace mmx
 
             mmx::headers::SANGOMA_SORM_INFO sorm_info_;
 
-            mmx::headers::ORDER_645_2_HEADER order_header_;
+            //mmx::headers::ORDER_645_2_HEADER order_header_;
+            union
+            {
+                mmx::headers::ORM_INFO_PACKET orm_info_;
+                unsigned char orm_info_raw_[headers::ORDER_645_2_TOTAL_PACKET_SIZE];
+            };
 
             const MediaStream* streams_[STREAM_COUNT];
 
@@ -47,7 +52,7 @@ namespace mmx
 
         private:
             void setSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm);
-
+            int fillOrder(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, bool combined, headers::ORM_INFO_PACKET &orm_info);
 
         };
     }

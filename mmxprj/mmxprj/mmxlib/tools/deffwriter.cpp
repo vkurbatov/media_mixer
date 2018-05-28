@@ -28,6 +28,9 @@ namespace mmx
             // если она пустая, то пробуем записать сперва то что в очереди
 
             // флаг управления порционными посылками
+            auto addr = &io_;
+
+            addr = addr;
 
             bool f_write = !IsEmpty() && io_.IsCanWrite();
 

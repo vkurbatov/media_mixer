@@ -1,6 +1,7 @@
 #include "dpwriter.h"
 
 #include <errno.h>
+#include <cstring>
 
 #include "logs/dlog.h"
 
@@ -109,6 +110,26 @@ namespace mmx
 
             return rc;
 
+        }
+
+        int DataPacketWriter::Write(const void *data, int size)
+        {
+            int rc = -EINVAL;
+
+            if (data != nullptr && size > 0)
+            {
+                rc = -ENOMEM;
+
+                auto block = QueryBlock(size);
+
+                if (block != nullptr)
+                {
+                    std::memcpy(block->data, data, block->header.length);
+                    rc = Commit();
+                }
+            }
+
+            return rc;
         }
 
         int DataPacketWriter::Commit()

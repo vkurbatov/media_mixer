@@ -15,6 +15,7 @@ namespace mmx
             virtual ~IDataPacketWriter(){};
             virtual int BuildPacket(int pack_id = 0) = 0;
             virtual headers::PDATA_BLOCK QueryBlock(int size) = 0;
+            virtual int Write(const void* data, int size) = 0;
             virtual int Commit() = 0;
             virtual int Blocks() const = 0;
 
