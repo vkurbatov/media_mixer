@@ -103,12 +103,11 @@ namespace mmx
             for (auto& s : streams_)
             {
                 if (s != nullptr)
-                {
-                    media_pool_.Release(s);
+                {                   
+                    media_pool_.Release(s);                    
                     s = nullptr;
                 }
             }
-
             // если проксирование не задано, то вызов был для освобождения ресурсов
 
             if (proxy != nullptr)
@@ -119,10 +118,7 @@ namespace mmx
 
                 // если приходит совмещенный контроль, то медиапотоки идентичны
 
-                streams_[1] = (proxy->source_a.address != proxy->source_b.address ||
-                        proxy->source_a.port != proxy->source_b.port) ?
-                        media_pool_.GetStream(proxy->source_b.address, proxy->source_b.port) :
-                            streams_[0];
+                streams_[1] = media_pool_.GetStream(proxy->source_b.address, proxy->source_b.port);
 
 
                 rc = (int)(streams_[0] != nullptr) + (int)(streams_[1] != nullptr);
@@ -245,6 +241,9 @@ namespace mmx
                 (media[0] == nullptr) ? 0 : (media_samples[0]->header.length - sizeof(media_samples[0]->header)),
                 (media[1] == nullptr) ? 0 : (media_samples[1]->header.length - sizeof(media_samples[1]->header))
             };
+
+            media[1] = nullptr;
+            size_arr[1] = 0;
 /*
             char media_a[160];
             char media_b[160];

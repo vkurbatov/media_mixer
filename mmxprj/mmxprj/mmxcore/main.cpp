@@ -24,7 +24,7 @@
 #define SERVICE_STATUS "release"
 #endif
 
-#define LOG_NAME_PATTERN "/var/log/mmx/mediamux-%d.log"
+#define LOG_NAME_PATTERN "/var/log/mmx/core-%d.log"
 
 #define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
 
