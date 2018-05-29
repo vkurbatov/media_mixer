@@ -18,12 +18,15 @@ namespace mmx
         Sorm::Sorm(MediaPool& media_pool, unsigned char mixer_gain) :
             mixer_gain_(mixer_gain),
             media_pool_(media_pool)
+
         {
 
             DLOGT(LOG_BEGIN("Sorm(%d)"), mixer_gain);
 
             std::memset(&sorm_info_, 0, sizeof(sorm_info_));
             std::memset(&orm_info_, 0, sizeof(orm_info_));
+            std::memset(&io_info_, 0, sizeof(io_info_));
+
             streams_[0] = nullptr;
             streams_[1] = nullptr;
             rtp_ssrcs_[0] = rtp_ssrcs_[1] = 0;
@@ -34,7 +37,8 @@ namespace mmx
             mixer_gain_(sorm.mixer_gain_),
             media_pool_(sorm.media_pool_),
             sorm_info_(sorm.sorm_info_),
-            orm_info_(sorm.orm_info_)
+            orm_info_(sorm.orm_info_),
+            io_info_(sorm.io_info_)
         {
 
             DLOGT(LOG_BEGIN("Sorm(&&%x)"), DLOG_POINTER(&sorm));
@@ -51,6 +55,7 @@ namespace mmx
 
             std::memset(&sorm.sorm_info_, 0, sizeof(sorm.sorm_info_));
             std::memset(&sorm.orm_info_, 0, sizeof(sorm.orm_info_));
+            std::memset(&sorm.io_info_, 0, sizeof(sorm.io_info_));
 
         }
 
@@ -72,11 +77,13 @@ namespace mmx
 
                 sorm_info_ = sorm.sorm_info_;
                 orm_info_ = sorm.orm_info_;
+                io_info_ = sorm.io_info_;
 
                 sorm.streams_[0] = nullptr;
                 sorm.streams_[1] = nullptr;
                 std::memset(&sorm.sorm_info_, 0, sizeof(sorm.sorm_info_));
                 std::memset(&sorm.orm_info_, 0, sizeof(sorm.orm_info_));
+                std::memset(&sorm.io_info_, 0, sizeof(sorm.io_info_));
 
             }
         }
@@ -164,6 +171,8 @@ namespace mmx
 
                         size_arr[i] = media_samples[i]->header.length - sizeof(media_samples[i]->header);
 
+
+
                         DLOGT(LOG_BEGIN("OrmInfoPack(): get sample success {i:%d, ssrc:%d, pack_id:%d, size:%d}"),
                               i,
                               rtp_ssrcs_[i],
@@ -198,6 +207,11 @@ namespace mmx
         void Sorm::Drop()
         {
             // пока не знаю что сюда написать
+        }
+
+        const Sorm::io_info_t& Sorm::GetDiagInfo() const
+        {
+            return io_info_;
         }
 
         void Sorm::setSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm)
@@ -242,8 +256,12 @@ namespace mmx
                 (media[1] == nullptr) ? 0 : (media_samples[1]->header.length - sizeof(media_samples[1]->header))
             };
 
-            media[1] = nullptr;
-            size_arr[1] = 0;
+
+            io_info_.rtp_packs[0]++;
+            io_info_.rtp_bytes[0] += size_arr[0];
+
+            io_info_.rtp_packs[1]++;
+            io_info_.rtp_bytes[1] += size_arr[1];
 /*
             char media_a[160];
             char media_b[160];
@@ -310,6 +328,9 @@ namespace mmx
                         {
                             f_process = true;
                         }
+
+                        io_info_.order645_packs ++;
+                        io_info_.order645_bytes += orm_info_.header.media_size;
 
                         writer.Write(&orm_info_, orm_info_.header.media_size + sizeof(headers::ORM_INFO_HEADER));
 

@@ -40,8 +40,17 @@ namespace mmx
             MediaPool&          media_pool_;
 
 
+
             friend class SormPool;
         public:
+
+            struct io_info_t
+            {
+                int rtp_packs[2];
+                int rtp_bytes[2];
+                int order645_packs;
+                int order645_bytes;
+            };
 
             Sorm(MediaPool& media_pool, unsigned char mixer_gain = DEFAULT_MIXER_GAIN);
             ~Sorm();
@@ -52,8 +61,12 @@ namespace mmx
             int OrmInfoPack(data::IDataPacketWriter& writer, unsigned char conn_flag = 0);
             void Drop();
 
+            const io_info_t& GetDiagInfo() const;
+
 
         private:
+
+            io_info_t io_info_;
             void setSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm);
             //int fillOrder(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, bool combined, headers::ORM_INFO_PACKET &orm_info);
             int fillOrder(data::IDataPacketWriter& writer, const mmx::headers::MEDIA_SAMPLE* media_samples[STREAM_COUNT], unsigned char conn_flag);

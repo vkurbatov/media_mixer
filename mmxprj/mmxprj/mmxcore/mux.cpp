@@ -393,9 +393,14 @@ namespace mmxmux
 
                                     auto m = sorm_pool_.FindSorm(query->q_proxy.sorm[i]);
 
-                                        if (m != nullptr)
+                                    if (m != nullptr)
                                     {
                                         rm_sorms_.push_back(m);
+
+                                        auto& diag = m->GetDiagInfo();
+
+                                        DLOGI(LOG_BEGIN("processSangoma(): proxy status: rtp1 = %d:%d, rtp2 = %d:%d, order645 = %d:%d"),
+                                              diag.rtp_packs[0], diag.rtp_bytes[0], diag.rtp_packs[1], diag.rtp_bytes[1], diag.order645_packs, diag.order645_bytes);
                                     }
                                 }
                             }
