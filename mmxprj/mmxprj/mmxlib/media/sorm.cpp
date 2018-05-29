@@ -189,6 +189,7 @@ namespace mmx
                               media_samples[i]->header.rtp_header.ssrc,
                               pack_id,
                               rtp_pack_ids_[i]);
+                        media_samples[i] = nullptr;
                     }
 
                 }
@@ -279,8 +280,10 @@ namespace mmx
 
             int need_size = 160 << (!combined);
 
-            while (need_size > 0)
+            while (f_process)
             {
+
+                f_process = false;
 
                 int ret = combined ? pushCombineMedia(media[0], size_arr[0], media[1], size_arr[1], need_size, orm_info_, mixer_gain_) :
                                pushSeparatedMedia(media[0], size_arr[0], media[1], size_arr[1], need_size, orm_info_);
@@ -373,10 +376,12 @@ namespace mmx
                     );
             }
 
+/*
             std::memcpy(orm_info.data + idx + i, data_a == nullptr ? data_b : data_a, size_max - size_min);
             i += size_max - size_min;
             std::memset(orm_info.data + idx + i, headers::ORDER_645_SILENCE_SYMBOL, need_size - i);
-
+            int s = idx + i + need_size - i;
+*/
             return rc;
         }
 
@@ -408,13 +413,23 @@ namespace mmx
 
                 for (;i < samples[j].size; i++)
                 {
-                    orm_info.data[idx + (i << 1) + j] = ((char*)data_a)[i];
+                    int r = idx + (i << 1) + j;
+                    orm_info.data[r] = ((char*)data_a)[i];
+                    if (r >= 1024)
+                    {
+                        rc = -1;
+                    }
                 }
 
                 while (i < need_size)
                 {
-                    orm_info.data[idx + (i << 1) + j] = headers::ORDER_645_SILENCE_SYMBOL;
+                    int r = idx + (i << 1) + j;
+                    orm_info.data[r] = headers::ORDER_645_SILENCE_SYMBOL;
                     i++;
+                    if (r >= 1024)
+                    {
+                        rc = -1;
+                    }
                 }
             }
 
