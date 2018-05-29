@@ -19,6 +19,8 @@ namespace mmx
             const static int STREAM_COUNT = 2;
             const static int DEFAULT_MIXER_GAIN = 50;
 
+            //unsigned char dummed = 0;
+
             mmx::headers::SANGOMA_SORM_INFO sorm_info_;
 
             //mmx::headers::ORDER_645_2_HEADER order_header_;

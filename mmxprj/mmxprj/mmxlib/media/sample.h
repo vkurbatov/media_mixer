@@ -27,6 +27,8 @@ namespace mmx
             static int GetDeltaTime(int timestamp);
             static const headers::MEDIA_PROFILE_INFO& GetMediaInfo(headers::media_profile_t media_profile);
 
+            unsigned char _dummed_;
+
             // ISample
             int PutSample(const sniffers::IRTPPacket& rtp, unsigned short pack_id, int timestamp = -1) override;
             const headers::MEDIA_SAMPLE* GetMediaSample() const override;
