@@ -344,7 +344,7 @@ namespace mmx
                         }
 
                         io_info_.order645_packs ++;
-                        io_info_.order645_bytes += orm_info_.header.media_size;
+                        // io_info_.order645_bytes += orm_info_.header.media_size;
 
                         writer.Write(&orm_info_, orm_info_.header.media_size + sizeof(headers::ORM_INFO_HEADER));
 
