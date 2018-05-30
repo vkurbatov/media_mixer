@@ -172,7 +172,7 @@ namespace mmx
 
 
 
-                        DLOGT(LOG_BEGIN("OrmInfoPack(): get sample success {i:%d, ssrc:%d, pack_id:%d, size:%d}"),
+                        DLOGT(LOG_BEGIN("OrmInfoPack(): get sample success {i:%d, ssrc:%x, pack_id:%x, size:%d}"),
                               i,
                               rtp_ssrcs_[i],
                               rtp_pack_ids_[i],
@@ -180,14 +180,15 @@ namespace mmx
                     }
                     else
                     {
-                        DLOGD(LOG_BEGIN("OrmInfoPack(%x): drop stream %x {i:%d, ssrc:{%d <-> %d}, pack_id:{%d <-> %d}}"),
+                        DLOGD(LOG_BEGIN("OrmInfoPack(%x): drop stream %x {i:%d, ssrc:{%x <-> %x}, pack_id:{%d <-> %d}}, delta = %d"),
                               DLOG_POINTER(&writer),
                               DLOG_POINTER(media_samples[i]),
                               i,
                               rtp_ssrcs_[i],
                               media_samples[i]->header.rtp_header.ssrc,
                               pack_id,
-                              rtp_pack_ids_[i]);
+                              rtp_pack_ids_[i],
+                              delta);
                         media_samples[i] = nullptr;
                     }
 
@@ -241,7 +242,7 @@ namespace mmx
 
         }
 
-        int Sorm::fillOrder(data::IDataPacketWriter& writer, const mmx::headers::MEDIA_SAMPLE* media_samples[Sorm::STREAM_COUNT], unsigned char conn_flag)
+        int Sorm::fillOrder(data::IDataPacketWriter& writer, const mmx::headers::MEDIA_SAMPLE* media_samples[], unsigned char conn_flag)
         {
             int rc = 0;
 
@@ -289,12 +290,14 @@ namespace mmx
                                         media[1], size_arr[1],
                                         need_size, orm_info_.data + orm_info_.header.media_size,
                                         headers::ORDER_645_2_MAX_DATA_SIZE - orm_info_.header.media_size,
-                                        mixer_gain_)
+                                        mixer_gain_,
+                                        io_info_.order645_bytes)
                         : pushSeparatedMedia(media[0], size_arr[0],
                                              media[1], size_arr[1],
                                              need_size,
                                              orm_info_.data + orm_info_.header.media_size,
-                                             headers::ORDER_645_2_MAX_DATA_SIZE - orm_info_.header.media_size);
+                                             headers::ORDER_645_2_MAX_DATA_SIZE - orm_info_.header.media_size,
+                                             io_info_.order645_bytes);
 
                 if (ret > 0)
                 {
@@ -356,7 +359,7 @@ namespace mmx
             return rc;
         }
 
-        int Sorm::pushCombineMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, void* out_data, int out_size, int mixer_gain)
+        int Sorm::pushCombineMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, void* out_data, int out_size, int mixer_gain, int& count)
         {
 
             int rc = need_size = need_size > out_size ?
@@ -390,8 +393,12 @@ namespace mmx
                             )
                         );
                 }
+
+                count += size_min * 2;
+
                 std::memcpy((char*)out_data + i, data_a == nullptr ? data_b : data_a, size_max - size_min);
                 i += size_max - size_min;
+                count += size_max - size_min;
             }
 
             std::memset((char*)out_data + i, headers::ORDER_645_SILENCE_SYMBOL, need_size - i);
@@ -401,7 +408,7 @@ namespace mmx
             return rc;
         }
 
-        int Sorm::pushSeparatedMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, void* out_data, int out_size)
+        int Sorm::pushSeparatedMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, void* out_data, int out_size, int& count)
         {
 
             int rc = need_size = need_size > out_size ?
@@ -425,6 +432,8 @@ namespace mmx
             for (int j = 0; j < STREAM_COUNT; j++)
             {
                 int i = 0;
+
+                count += samples[j].size;
 
                 for (;i < samples[j].size; i++)
                 {

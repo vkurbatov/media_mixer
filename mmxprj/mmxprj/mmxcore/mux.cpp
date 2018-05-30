@@ -365,7 +365,7 @@ namespace mmxmux
                         }
                         break;
                     case mmx::headers::SI_LINK_STATUS:
-                        DLOGD(LOG_BEGIN("processSangoma(): recieve LINK_STATUS query, len = %d"), query->header.length);
+                        DLOGT(LOG_BEGIN("processSangoma(): recieve LINK_STATUS query, len = %d"), query->header.length);
                         break;
                     case mmx::headers::SI_START_PROXY:
                     case mmx::headers::SI_END_PROXY:
