@@ -384,7 +384,11 @@ namespace mmxmux
 
                                     DLOGI(LOG_BEGIN("processSangoma(): recieve START_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
 
-                                    sorm_pool_.GetSorm(query->q_proxy.sorm[i], query->q_proxy.proxy);
+                                    auto s = sorm_pool_.GetSorm(query->q_proxy.sorm[i], query->q_proxy.proxy);
+                                    if (s != nullptr)
+                                    {
+                                        s->Reset();
+                                    }
 
                                 }
                                 else

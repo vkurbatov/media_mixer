@@ -147,7 +147,9 @@ namespace mmx
 
                 // дропаем собраный пакет
 
-                it->second.Drop();
+
+                it->second.Reset();
+                it->second.SetProxy();
 
                 // если разрешили кэш свободных
 

@@ -59,7 +59,7 @@ namespace mmx
             int SetProxy(const mmx::headers::SANGOMA_PROXY_INFO* proxy = nullptr);
             const mmx::headers::SANGOMA_SORM_INFO& GetOrmInfo() const;
             int OrmInfoPack(data::IDataPacketWriter& writer, unsigned char conn_flag = 0);
-            void Drop();
+            int Reset();
 
             const io_info_t& GetDiagInfo() const;
 
@@ -70,8 +70,8 @@ namespace mmx
             void setSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm);
             //int fillOrder(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, bool combined, headers::ORM_INFO_PACKET &orm_info);
             int fillOrder(data::IDataPacketWriter& writer, const mmx::headers::MEDIA_SAMPLE* media_samples[STREAM_COUNT], unsigned char conn_flag);
-            static int pushCombineMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, headers::ORM_INFO_PACKET &orm_info, unsigned char mixer_gain);
-            static int pushSeparatedMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, headers::ORM_INFO_PACKET &orm_info);
+            static int pushCombineMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, void* out_data, int out_size, int mixer_gain);
+            static int pushSeparatedMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, void* out_data, int out_size);
 
         };
     }

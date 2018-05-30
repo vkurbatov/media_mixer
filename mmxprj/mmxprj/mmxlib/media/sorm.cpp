@@ -92,9 +92,8 @@ namespace mmx
         {
 
             DLOGT(LOG_BEGIN("~Sorm()"));
-            Drop();
+            Reset();
             SetProxy();
-
 
         }
 
@@ -205,9 +204,10 @@ namespace mmx
             return rc;
         }
 
-        void Sorm::Drop()
+        int Sorm::Reset()
         {
-            // пока не знаю что сюда написать
+            orm_info_.header.order_header.block_number = 0;
+            std::memset(&io_info_,0, sizeof(io_info_));
         }
 
         const Sorm::io_info_t& Sorm::GetDiagInfo() const
@@ -223,7 +223,6 @@ namespace mmx
             }
             orm_info_.header.media_size = 0;
             orm_info_.header.order_header.magic = headers::ORDER_645_2_MAGIC;
-            orm_info_.header.order_header.block_number = 0;
             orm_info_.header.order_header.sorm_id = sorm.sorm_id;
             orm_info_.header.order_header.object_id = sorm.object_id;
             orm_info_.header.order_header.call_id = sorm.call_id;
@@ -248,21 +247,21 @@ namespace mmx
 
             bool f_process = true;
 
-            const char* media[2] ={ media_samples[0] == nullptr ? nullptr :  media_samples[0]->media,
-                                    media_samples[1] == nullptr ? nullptr :  media_samples[1]->media
-                                  };
+            const char* media[2] = { nullptr, nullptr};
+            int size_arr[2] = { 0, 0 };
 
-            int size_arr[] = {
-                (media[0] == nullptr) ? 0 : (media_samples[0]->header.length - sizeof(media_samples[0]->header)),
-                (media[1] == nullptr) ? 0 : (media_samples[1]->header.length - sizeof(media_samples[1]->header))
-            };
+            for (int j = 0; j < STREAM_COUNT; j++)
+            {
+                if (media_samples[j] != nullptr)
+                {
+                    media[j] = media_samples[j]->media;
+                    size_arr[j] = (media_samples[j]->header.length - sizeof(media_samples[j]->header));
 
+                    io_info_.rtp_packs[j]++;
+                    io_info_.rtp_bytes[j] += size_arr[j];
+                }
+            }
 
-            io_info_.rtp_packs[0]++;
-            io_info_.rtp_bytes[0] += size_arr[0];
-
-            io_info_.rtp_packs[1]++;
-            io_info_.rtp_bytes[1] += size_arr[1];
 /*
             char media_a[160];
             char media_b[160];
@@ -285,8 +284,17 @@ namespace mmx
 
                 f_process = false;
 
-                int ret = combined ? pushCombineMedia(media[0], size_arr[0], media[1], size_arr[1], need_size, orm_info_, mixer_gain_) :
-                               pushSeparatedMedia(media[0], size_arr[0], media[1], size_arr[1], need_size, orm_info_);
+                int ret = combined
+                        ? pushCombineMedia(media[0], size_arr[0],
+                                        media[1], size_arr[1],
+                                        need_size, orm_info_.data + orm_info_.header.media_size,
+                                        headers::ORDER_645_2_MAX_DATA_SIZE - orm_info_.header.media_size,
+                                        mixer_gain_)
+                        : pushSeparatedMedia(media[0], size_arr[0],
+                                             media[1], size_arr[1],
+                                             need_size,
+                                             orm_info_.data + orm_info_.header.media_size,
+                                             headers::ORDER_645_2_MAX_DATA_SIZE - orm_info_.header.media_size);
 
                 if (ret > 0)
                 {
@@ -348,12 +356,11 @@ namespace mmx
             return rc;
         }
 
-        int Sorm::pushCombineMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, headers::ORM_INFO_PACKET &orm_info, unsigned char mixer_gain)
+        int Sorm::pushCombineMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, void* out_data, int out_size, int mixer_gain)
         {
 
-            int idx = orm_info.header.media_size;
-            int rc = need_size = ((idx + need_size) > headers::ORDER_645_2_MAX_DATA_SIZE) ?
-                     headers::ORDER_645_2_MAX_DATA_SIZE - idx:
+            int rc = need_size = need_size > out_size ?
+                     out_size :
                      need_size;
 
 
@@ -365,32 +372,40 @@ namespace mmx
 
             int i = 0;
 
-            for(; i < size_min; i++)
+            if (data_a != nullptr && data_b != nullptr)
             {
-                orm_info.data[idx + i] = codecs::audio::PcmaCodec::Encode(
-                    codecs::audio::mixer(
-                        codecs::audio::PcmaCodec::Decode(((unsigned char*)data_a)[i]),
-                        codecs::audio::PcmaCodec::Decode(((unsigned char*)data_b)[i]),
-                        mixer_gain
-                        )
-                    );
+
+                if (data_a == data_b)
+                {
+                    size_min = 0;
+                }
+
+                for(; i < size_min; i++)
+                {
+                    ((char*)out_data)[i] = codecs::audio::PcmaCodec::Encode(
+                        codecs::audio::mixer(
+                            codecs::audio::PcmaCodec::Decode(((unsigned char*)data_a)[i]),
+                            codecs::audio::PcmaCodec::Decode(((unsigned char*)data_b)[i]),
+                            mixer_gain
+                            )
+                        );
+                }
+                std::memcpy((char*)out_data + i, data_a == nullptr ? data_b : data_a, size_max - size_min);
+                i += size_max - size_min;
             }
 
-/*
-            std::memcpy(orm_info.data + idx + i, data_a == nullptr ? data_b : data_a, size_max - size_min);
-            i += size_max - size_min;
-            std::memset(orm_info.data + idx + i, headers::ORDER_645_SILENCE_SYMBOL, need_size - i);
-            int s = idx + i + need_size - i;
-*/
+            std::memset((char*)out_data + i, headers::ORDER_645_SILENCE_SYMBOL, need_size - i);
+
+            //int s = idx + i + need_size - i;
+
             return rc;
         }
 
-        int Sorm::pushSeparatedMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, headers::ORM_INFO_PACKET &orm_info)
+        int Sorm::pushSeparatedMedia(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, void* out_data, int out_size)
         {
-            int idx = orm_info.header.media_size;
 
-            int rc = need_size = ((idx + need_size) > headers::ORDER_645_2_MAX_DATA_SIZE) ?
-                     headers::ORDER_645_2_MAX_DATA_SIZE - idx:
+            int rc = need_size = need_size > out_size ?
+                     out_size :
                      need_size;
 
             need_size /= 2;
@@ -400,39 +415,28 @@ namespace mmx
 
             struct
             {
-                const void* data;
+                const char* data;
                 int size;
             }samples[] = {
             {(const char*) data_a, size_a},
             {(const char*) data_b, size_b},
             };
 
-            for (int j = 0; j < 2; j++)
+            for (int j = 0; j < STREAM_COUNT; j++)
             {
                 int i = 0;
 
                 for (;i < samples[j].size; i++)
                 {
-                    int r = idx + (i << 1) + j;
-                    orm_info.data[r] = ((char*)data_a)[i];
-                    if (r >= 1024)
-                    {
-                        rc = -1;
-                    }
+                    ((char*)out_data)[(i << 1) + j] = (samples[j].data)[i];
                 }
 
                 while (i < need_size)
                 {
-                    int r = idx + (i << 1) + j;
-                    orm_info.data[r] = headers::ORDER_645_SILENCE_SYMBOL;
+                    ((char*)out_data)[(i << 1) + j] = headers::ORDER_645_SILENCE_SYMBOL;
                     i++;
-                    if (r >= 1024)
-                    {
-                        rc = -1;
-                    }
                 }
             }
-
 
             return rc;
         }
