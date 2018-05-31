@@ -1,4 +1,4 @@
-mkdir mmxprj/build/DEBUG
+pwd
 cd mmxprj/build/DEBUG
 rm -rf *
 cmake ../../mmxprj/
