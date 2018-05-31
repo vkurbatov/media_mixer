@@ -17,7 +17,7 @@
 *.qm
 .#*
 *.*#
-/mmxprj/build/DEBUG/*
+#/mmxprj/build/DEBUG/*
 /mmxprj/build/RELEASE/*
 /mmxprj/bin
 /mmxprj/vtest/

@@ -1,0 +1,17 @@
+/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxtest/CMakeFiles/edit_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxtest/CMakeFiles/rebuild_cache.dir
+/home/vkurbatov/work/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir
