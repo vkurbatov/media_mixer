@@ -55,7 +55,7 @@ namespace mmx
                             ext_header_ = (headers::PRTP_EXTENSION_HEADER)((const char *)data + len);
                             len += sizeof(headers::RTP_EXTENSION_HEADER);
                             ext_data_ = (const char*)(ext_header_) + len;
-                            len += ::ntohs(ext_header_->ehl) * 4;
+                            len += ntohs(ext_header_->ehl) * 4;
 
                         }
 
@@ -67,7 +67,7 @@ namespace mmx
 
                             if (header_->padding != 0)
                             {
-                                unsigned short L = ::ntohs(*(unsigned short*)(((const char*)data) + size - 2));
+                                unsigned short L = ntohs(*(unsigned short*)(((const char*)data) + size - 2));
 
                                 pyload_size_ -= L + 2;
 

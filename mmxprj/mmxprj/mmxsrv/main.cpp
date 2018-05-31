@@ -122,6 +122,7 @@ int main(int argc, char* argv[])
 
         mmxsrv::Server server(config);
 
+        signal(SIGHUP, sig_handler);
         signal(SIGPIPE, sig_handler);
         signal(SIGTERM, sig_handler);
         signal(SIGQUIT, sig_handler);

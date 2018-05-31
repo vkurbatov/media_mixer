@@ -194,7 +194,7 @@ namespace mmx
                 {
                     headers::IP4HEADER &ip = *(headers::PIP4HEADER)stream;
 
-                    int len = ::ntohs(ip.length);
+                    int len = ntohs(ip.length);
 
                     // 2-й этап, проверяем длину
 
@@ -290,9 +290,9 @@ namespace mmx
 
                 // размер pyload'а без заголовка
 
-                unsigned short len = ::ntohs(ip_header.length) - hlen;
+                unsigned short len = ntohs(ip_header.length) - hlen;
 
-                unsigned short pack_id = ::ntohs(ip_header.id);
+                unsigned short pack_id = ntohs(ip_header.id);
 
                 unsigned int src_addr = ::ntohl(ip_header.src);
 
@@ -333,7 +333,7 @@ namespace mmx
 
                             needs_bytes_ = len + (offset_ << 3);
 
-                            header_.length = ::htons(needs_bytes_);
+                            header_.length = htons(needs_bytes_);
 
                         }
 

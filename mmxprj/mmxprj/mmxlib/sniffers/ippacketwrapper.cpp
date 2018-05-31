@@ -34,7 +34,7 @@ namespace mmx
 
         int IPPacketWrapper::Size() const
         {
-            return ::ntohs(Header()->length) - Header()->hlen * 4;
+            return ntohs(Header()->length) - Header()->hlen * 4;
         }
 
         void* IPPacketWrapper::Reset(const void* pointer)

@@ -3,9 +3,11 @@ cmake_minimum_required(VERSION 2.8)
 # имя проекта
 project(mmx)
 
+set(LIB_NAME lib${PROJECT_NAME}.a)
+
 set(CMAKE_CXX_STANDARD 11)
 
-set(CMAKE_BUILD_TYPE DEBUG)
+#set(CMAKE_BUILD_TYPE DEBUG)
 
 # пути для получаемых бинарных модулей
 
@@ -187,5 +189,12 @@ add_library( ${PROJECT_NAME}
 	${PRIVATE_HEADERS} 
 	${SOURCE_FILES} )
 
+
 target_link_libraries(${PROJECT_NAME} ${ADDITIONAL_LIBRARIES})
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+					COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE}/${LIB_NAME} ${PROJECT_SOURCE_DIR}/../../bin/${CMAKE_BUILD_TYPE}/${LIB_NAME}
+					COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE}/${LIB_NAME} ${PROJECT_SOURCE_DIR}/../../bin/${LIB_NAME}
+					)
+
 

@@ -1,4 +1,4 @@
-cd mmxprj/build
+cd mmxprj/build/DEBUG
 rm -rf *
-cmake ../mmxprj/
+cmake ../../mmxprj/
 make

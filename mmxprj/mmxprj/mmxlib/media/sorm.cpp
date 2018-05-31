@@ -157,7 +157,7 @@ namespace mmx
                 if (media_samples[i] != nullptr)
                 {
 
-                    unsigned short pack_id = ::ntohs(media_samples[i]->header.rtp_header.packet_id);
+                    unsigned short pack_id = ntohs(media_samples[i]->header.rtp_header.packet_id);
 
                     short delta = pack_id - rtp_pack_ids_[i];
 

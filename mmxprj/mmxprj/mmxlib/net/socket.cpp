@@ -174,7 +174,7 @@ namespace mmx
                     sockaddr_in sin = {0};
                     sin.sin_family = PF_INET;
                     sin.sin_addr.s_addr = ::htonl(r_address);
-                    sin.sin_port = ::htons(r_port);
+                    sin.sin_port = htons(r_port);
                     rc = ::sendto(sock, data, size, flags, (sockaddr*)&sin, sizeof(sin));
                 }
                 else
@@ -224,7 +224,7 @@ namespace mmx
                     socklen_t sin_len = sizeof(sockaddr_in);
                     sin.sin_family = PF_INET;
                     sin.sin_addr.s_addr = r_address == nullptr ? 0 : ::htonl(*r_address);
-                    sin.sin_port = r_port == nullptr ? 0 : ::htons(*r_port);
+                    sin.sin_port = r_port == nullptr ? 0 : htons(*r_port);
 
                     rc = ::recvfrom(sock, data, size, flags, (sockaddr*)&sin, &sin_len);
 
@@ -235,7 +235,7 @@ namespace mmx
 
                     if (r_port != nullptr)
                     {
-                        *r_port = ::ntohs(sin.sin_port);
+                        *r_port = ntohs(sin.sin_port);
                     }
 
                 }
@@ -295,7 +295,7 @@ namespace mmx
 
                     sin.sin_family = PF_INET;
                     sin.sin_addr.s_addr = ::htonl(l_address);
-                    sin.sin_port = ::htons(l_port);
+                    sin.sin_port = htons(l_port);
 
                     rc = ::bind(sock, (sockaddr*)&sin, sizeof(sin));
                 }
@@ -343,7 +343,7 @@ namespace mmx
 
                     sin.sin_family = PF_INET;
                     sin.sin_addr.s_addr = ::htonl(r_address);
-                    sin.sin_port = ::htons(r_port);
+                    sin.sin_port = htons(r_port);
 
                     rc = ::connect(sock, (sockaddr*)&sin, sizeof(sin));
                 }
@@ -407,7 +407,7 @@ namespace mmx
 
                     if (r_port != nullptr)
                     {
-                        *r_port = ::ntohs(sin.sin_port);
+                        *r_port = ntohs(sin.sin_port);
                     }
 
                     DLOGI("Socket::Accept(%d, %x, %x): success = %d", sock, DLOG_POINTER(r_address), DLOG_POINTER(r_port), rc);

@@ -122,6 +122,7 @@ int main(int argc, char* argv[])
 
         mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\nArguments: %s\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, log_file);
 
+        signal(SIGHUP, sig_handler);
         signal(SIGPIPE, sig_handler);
         signal(SIGTERM, sig_handler);
         signal(SIGQUIT, sig_handler);

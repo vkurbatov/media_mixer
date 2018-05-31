@@ -218,11 +218,11 @@ namespace mmx
                     mmx::headers::UDPHEADER& udp = *(mmx::headers::PUDPHEADER)pyload;
 
                     unsigned int addr_dst = ::htonl(ip_header.dest);
-                    unsigned short port_dst = ::htons(udp.port_dst);
+                    unsigned short port_dst = htons(udp.port_dst);
 
                     rc = -EBADMSG;
 
-                    if (::ntohs(udp.length) == size)
+                    if (ntohs(udp.length) == size)
                     {
                         pyload += sizeof(mmx::headers::UDPHEADER);
                         size -= sizeof(mmx::headers::UDPHEADER);
@@ -243,7 +243,7 @@ namespace mmx
                                 media.header.length = size + sizeof(mmx::headers::MEDIA_HEADER);
                                 media.header.net_points.source.address = ::htonl(ip_header.src);
                                 media.header.net_points.destination.address = addr_dst;
-                                media.header.net_points.source.port = ::htons(udp.port_src);
+                                media.header.net_points.source.port = htons(udp.port_src);
                                 media.header.net_points.destination.port = port_dst;
                                 media.header.packet_id = ++media_pack_id_;
 
@@ -273,7 +273,7 @@ namespace mmx
                     }
                     else
                     {
-                        DLOGE(LOG_BEGIN("putPacket(%x): error size of udp packet, udp.length = %d, size = %d"), DLOG_POINTER(&packet), ::ntohs(udp.length), size);
+                        DLOGE(LOG_BEGIN("putPacket(%x): error size of udp packet, udp.length = %d, size = %d"), DLOG_POINTER(&packet), ntohs(udp.length), size);
                     }
 
                 }

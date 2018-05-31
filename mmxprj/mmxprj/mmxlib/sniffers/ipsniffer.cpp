@@ -249,7 +249,7 @@ namespace mmx
                                 {
                                     // заголовок получен корректный, надо запросить пакет для сохранения pyload
 
-                                    packet_ = packet_pool_.GetPacket(::ntohl(header_.src), ::ntohs(header_.id));
+                                    packet_ = packet_pool_.GetPacket(::ntohl(header_.src), ntohs(header_.id));
 
                                     if (packet_ != nullptr)
                                     {
@@ -273,7 +273,7 @@ namespace mmx
                             {
                                 saved_bytes_ += (process_bytes = ret);
 
-                                if (saved_bytes_ == ::ntohs(header_.length))
+                                if (saved_bytes_ == ntohs(header_.length))
                                 {
                                     if (packet_->IsComplete())
                                     {
