@@ -40,7 +40,7 @@ namespace mmxsrv
         union
         {
             mmx::headers::ORM_INFO_PACKET   orm_info_;
-            char orm_raw_[sizeof(mmx::headers::ORDER_645_2_HEADER) + mmx::headers::ORDER_645_2_MAX_DATA_SIZE];
+            char orm_raw_[sizeof(mmx::headers::ORDER_645_2_HEADER) + mmx::headers::ORDER_645_2_MAX_DATA_SIZE + 1];
         };
 
 

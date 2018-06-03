@@ -343,7 +343,7 @@ namespace mmx
                             f_process = true;
                         }
 
-                        orm_info_.data[headers::ORDER_645_2_MAX_DATA_SIZE - 1] = 0xFF;
+                        // orm_info_.data[headers::ORDER_645_2_MAX_DATA_SIZE] = 0xFF;
 
                         io_info_.order645_packs ++;
                         // io_info_.order645_bytes += orm_info_.header.media_size;
