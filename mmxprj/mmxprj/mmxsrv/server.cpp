@@ -195,7 +195,7 @@ namespace mmxsrv
 
                                     std::memcpy(&orm_info_, &orm, total_size);
                                     std::memset((char*)&orm_info_ + total_size,
-                                                mmx::headers::ORDER_645_SILENCE_SYMBOL,
+                                                mmx::headers::ORDER_645_NODATA_SYMBOL,
                                                 mmx::headers::ORDER_645_2_MAX_DATA_SIZE
                                                 - (total_size - sizeof(orm_info_.header)));
 

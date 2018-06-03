@@ -138,7 +138,7 @@ namespace mmx
             return sorm_info_;
         }
 
-        int Sorm::OrmInfoPack(data::IDataPacketWriter& writer, unsigned char conn_flag)
+        int Sorm::ProcessMediaStreams(data::IDataPacketWriter& writer, unsigned char conn_flag)
         {
             int rc = 0;
 
@@ -146,7 +146,7 @@ namespace mmx
 
             unsigned short size_arr[STREAM_COUNT] = { 0 };
 
-            DLOGT(LOG_BEGIN("OrmInfoPack(%x)"), DLOG_POINTER(&writer));
+            DLOGT(LOG_BEGIN("ProcessMediaStreams(%x)"), DLOG_POINTER(&writer));
 
             for (int i = 0; i < STREAM_COUNT; i++)
             {
@@ -172,7 +172,7 @@ namespace mmx
 
 
 
-                        DLOGT(LOG_BEGIN("OrmInfoPack(): get sample success {i:%d, ssrc:%x, pack_id:%x, size:%d}"),
+                        DLOGT(LOG_BEGIN("ProcessMediaStreams(): get sample success {i:%d, ssrc:%x, pack_id:%x, size:%d}"),
                               i,
                               rtp_ssrcs_[i],
                               rtp_pack_ids_[i],
@@ -180,7 +180,7 @@ namespace mmx
                     }
                     else
                     {
-                        DLOGD(LOG_BEGIN("OrmInfoPack(%x): drop stream %x {i:%d, ssrc:{%x <-> %x}, pack_id:{%d <-> %d}}, delta = %d"),
+                        DLOGD(LOG_BEGIN("ProcessMediaStreams(%x): drop stream %x {i:%d, ssrc:{%x <-> %x}, pack_id:{%d <-> %d}}, delta = %d"),
                               DLOG_POINTER(&writer),
                               DLOG_POINTER(media_samples[i]),
                               i,
@@ -196,7 +196,7 @@ namespace mmx
 
             }
 
-            //DLOGT(LOG_BEGIN("OrmInfoPack(): Before writing {%d, %d}"), size_max, rc);
+            //DLOGT(LOG_BEGIN("ProcessMediaStreams(): Before writing {%d, %d}"), size_max, rc);
 
             rc = (int)sizeof(mmx::headers::ORM_INFO_HEADER);
 
@@ -342,6 +342,8 @@ namespace mmx
                         {
                             f_process = true;
                         }
+
+                        orm_info_.data[headers::ORDER_645_2_MAX_DATA_SIZE - 1] = 0xFF;
 
                         io_info_.order645_packs ++;
                         // io_info_.order645_bytes += orm_info_.header.media_size;

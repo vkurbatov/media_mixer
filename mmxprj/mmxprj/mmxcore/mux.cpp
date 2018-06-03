@@ -203,7 +203,7 @@ namespace mmxmux
 
                     if (channel != nullptr)
                     {
-                        m->OrmInfoPack(channel->GetWritter(), 1);
+                        m->ProcessMediaStreams(channel->GetWritter(), 1);
                     }
 
                     sorm_pool_.Release(m);
@@ -219,7 +219,7 @@ namespace mmxmux
 
                 if (channel != nullptr)
                 {
-                    m->OrmInfoPack(channel->GetWritter());
+                    m->ProcessMediaStreams(channel->GetWritter());
 
                 }                              
 

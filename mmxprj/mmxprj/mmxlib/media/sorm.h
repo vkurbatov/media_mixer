@@ -27,7 +27,7 @@ namespace mmx
             union
             {
                 mmx::headers::ORM_INFO_PACKET orm_info_;
-                unsigned char orm_info_raw_[headers::ORDER_645_2_TOTAL_PACKET_SIZE];
+                unsigned char orm_info_raw_[headers::ORDER_645_2_TOTAL_PACKET_SIZE + 2];
             };
 
             const MediaStream* streams_[STREAM_COUNT];
@@ -58,7 +58,7 @@ namespace mmx
             Sorm& operator=(Sorm&& channel);
             int SetProxy(const mmx::headers::SANGOMA_PROXY_INFO* proxy = nullptr);
             const mmx::headers::SANGOMA_SORM_INFO& GetOrmInfo() const;
-            int OrmInfoPack(data::IDataPacketWriter& writer, unsigned char conn_flag = 0);
+            int ProcessMediaStreams(data::IDataPacketWriter& writer, unsigned char conn_flag = 0);
             int Reset();
 
             const io_info_t& GetDiagInfo() const;
