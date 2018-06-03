@@ -131,7 +131,7 @@ namespace mmx
 
         int OrmClient::PutData(const mmx::headers::ORM_INFO_PACKET& orm_info)
         {
-            return putData(&orm_info.header.order_header, mmx::headers::ORDER_645_2_PACKET_SIZE);
+            return putData(&orm_info.header.order_header, mmx::headers::ORDER_645_2_PACKET_SIZE + 1);
         }
 
         void OrmClient::Drop()
