@@ -273,17 +273,6 @@ mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/udp.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/imarshaler.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.cpp
- /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.h
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h

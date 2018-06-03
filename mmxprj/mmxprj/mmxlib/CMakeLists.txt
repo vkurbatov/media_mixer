@@ -69,7 +69,7 @@ set ( SOURCE_FILES
 	tools/sangoma_media_client.cpp
 	tools/template_tcp_server.tpp
 	tools/udp_listener.cpp
-	tools/mediamarshaler.cpp
+#	tools/mediamarshaler.cpp
 	tools/async/asyncdispatcher.cpp
 	tools/async/asyncunit.cpp
 #	медиа
@@ -152,7 +152,7 @@ set ( PRIVATE_HEADERS
 	tools/sangoma_media_client.h
 	tools/template_tcp_server.h
 	tools/udp_listener.h
-	tools/mediamarshaler.h
+#	tools/mediamarshaler.h
 	tools/imarshaler.h
 	tools/async/asyncdispatcher.h
 	tools/async/iasyncunit.h

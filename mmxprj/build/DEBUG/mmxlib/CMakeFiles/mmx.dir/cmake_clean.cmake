@@ -33,7 +33,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/tools/orm_client.cpp.o"
   "CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
   "CMakeFiles/mmx.dir/tools/udp_listener.cpp.o"
-  "CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o"
   "CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o"
   "CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o"
   "CMakeFiles/mmx.dir/media/sorm.cpp.o"

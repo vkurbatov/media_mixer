@@ -273,17 +273,6 @@ mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmx
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/iosockadp.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/udp.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/iippacket.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/imarshaler.h
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.cpp
-mmxlib/CMakeFiles/mmx.dir/tools/mediamarshaler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.h
-
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h

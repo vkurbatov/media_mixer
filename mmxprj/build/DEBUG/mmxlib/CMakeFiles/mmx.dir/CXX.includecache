@@ -658,10 +658,6 @@ data/packet.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/imarshaler.h
-sniffers/iippacket.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sniffers/iippacket.h
-
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.cpp
 iosockadp.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
@@ -673,28 +669,6 @@ ipc/io.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ipc/io.h
 net/socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/net/socket.h
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.cpp
-mediamarshaler.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.h
-headers/media.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/headers/media.h
-headers/udp.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/headers/udp.h
-memory
--
-sys/time.h
--
-errno.h
--
-netdb.h
--
-
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/mediamarshaler.h
-imarshaler.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/imarshaler.h
-data/idpwriter.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/data/idpwriter.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp
 orm_client.h

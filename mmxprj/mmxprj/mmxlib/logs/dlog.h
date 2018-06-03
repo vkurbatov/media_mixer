@@ -10,7 +10,9 @@
 #define DLOG_LEVEL 1
 
 #if DLOG_LEVEL <= 0
-    #define    DLOGT   mmx::logs::logT
+    #ifdef DEBUG
+        #define    DLOGT   mmx::logs::logT
+    #endif
 #else
     #define    DLOGT
 #endif
