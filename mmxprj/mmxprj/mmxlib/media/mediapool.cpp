@@ -14,13 +14,11 @@ namespace mmx
     namespace media
     {
         MediaPool::MediaPool(int max_free_queue_size,
-                                   int min_garbage_size,
-                                   int garbage_time_life) :
+                                   int jitter_flashback) :
             max_free_queue_size_(max_free_queue_size),
-            min_garbage_size_(min_garbage_size),
-            garbage_time_life_(garbage_time_life)
+            jitter_flashback_(jitter_flashback)
         {
-            DLOGT(LOG_BEGIN("MediaPool(%d, %d, %d)"), max_free_queue_size, min_garbage_size, garbage_time_life);
+            DLOGT(LOG_BEGIN("MediaPool(%d, %d)"), max_free_queue_size, jitter_flashback);
         }
 
         MediaStream* MediaPool::GetStream(unsigned int address, unsigned short port)
@@ -32,55 +30,54 @@ namespace mmx
 
             DLOGT(LOG_BEGIN("GetStream(%d, %d), key = %d"), address, port, id);
 
-            // для начала проверим, не пора ли почистить мусор
-
-            if (min_garbage_size_ > 0)
-            {
-                if (pool_.size() >= min_garbage_size_)
-                {
-                    DLOGT(LOG_BEGIN("GetStream(): garbage collector start"));
-
-                    ClearGarbage(garbage_time_life_);
-                }
-            }
 
             auto it = pool_.find(id);
+
 
             // элемента нет в map
 
             if (it == pool_.end())
             {
-
                 DLOGT(LOG_BEGIN("GetStream(): stream not found in pool"));
-
-                // проверим очередь свободных
 
                 if (!q_free_.empty())
                 {
 
-                    pool_[id] = std::move(q_free_.front());
-                    q_free_.pop();
-
                     DLOGT(LOG_BEGIN("GetStream(): stream get from the queue (%d) of free"), q_free_.size());
 
+                    pool_.insert(std::move(std::pair<std::uint64_t, MediaStream>(std::move(id), std::move(q_free_.front()))));
+
+                    q_free_.pop();
+
+                }
+                else
+                {
+
+                    DLOGT(LOG_BEGIN("GetChannel(): sorm get from new instance"));
+
+                    pool_.insert(std::move(std::pair<std::uint64_t, MediaStream>(std::move(id), std::move(MediaStream(address, port, jitter_flashback_)))));
                 }
 
-                rc = &pool_[id];
+                it = pool_.find(id);
 
             }
             else
             {
-                rc = &it->second;
                 DLOGT(LOG_BEGIN("GetStream(): stream found in pool"));
             }
 
-            if (rc != nullptr)
+            if (it != pool_.end())
             {
-                rc->ref_count_++;
-                rc->port_ = port;
-                rc->address_ = address;
+                rc = &it->second;
 
-                DLOGT(LOG_BEGIN("GetStream(): get stream success: ref_count_ = %d"), rc->ref_count_);
+                if (rc != nullptr)
+                {
+                    rc->ref_count_++;
+                    rc->port_ = port;
+                    rc->address_ = address;
+
+                    DLOGT(LOG_BEGIN("GetStream(): get stream success: ref_count_ = %d"), rc->ref_count_);
+                }
             }
             else
             {

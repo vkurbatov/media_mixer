@@ -180,7 +180,7 @@ namespace mmx
                     }
                     else
                     {
-                        DLOGD(LOG_BEGIN("ProcessMediaStreams(%x): drop stream %x {i:%d, ssrc:{%x <-> %x}, pack_id:{%d <-> %d}}, delta = %d"),
+                        DLOGI(LOG_BEGIN("ProcessMediaStreams(%x): drop stream %x {i:%d, ssrc:{%x <-> %x}, pack_id:{%d <-> %d}}, delta = %d"),
                               DLOG_POINTER(&writer),
                               DLOG_POINTER(media_samples[i]),
                               i,

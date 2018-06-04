@@ -19,7 +19,7 @@ namespace mmx
             ref_count_(0),
             address_(address),
             port_(port),
-            jitter_(DEFAULT_SAMPLE_WIDTH, DEFAULT_SAMPLE_FREQ, DEFAULT_JITTER_SIZE),
+            jitter_(DEFAULT_SAMPLE_WIDTH, DEFAULT_SAMPLE_FREQ, (jitter_flashback / DEFAULT_SAMPLE_WIDTH) + 2),
             jitter_flashback_(jitter_flashback)
         {
             DLOGT(LOG_BEGIN("MediaStream(%d, %d, %d)"), address, port, jitter_flashback);

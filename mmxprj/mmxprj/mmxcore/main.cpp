@@ -28,10 +28,13 @@
 
 #define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
 
-#define DEFAULT_BASE_PORT       5200
-#define DEFAULT_INTERVAL        2000
-#define DEFAULT_MIXED_GAIN      50
-#define DEFAULT_MEDIA_PERIOD    20
+#define DEFAULT_BASE_PORT           5200
+#define DEFAULT_INTERVAL            2000
+#define DEFAULT_MIXED_GAIN          50
+#define DEFAULT_MEDIA_PERIOD        20
+#define DEFAULT_JITTER_BUFFER_SIZE  60
+#define JITTER_BUFFER_MIN           20
+#define JITTER_BUFFER_MAX           (5 * 60 * 1000)
 
 static char buff[1600 * 10];
 
@@ -103,6 +106,7 @@ int main(int argc, char* argv[])
     config.sgm_address = INADDR_ANY;
     config.sgm_port = DEFAULT_BASE_PORT;
     config.mixed_gain = DEFAULT_MIXED_GAIN;
+    config.jitter_size = DEFAULT_JITTER_BUFFER_SIZE;
 
 
    /* unsigned char b_a[] = { 0x15, 0x10, 0x02, 0x0A };
@@ -355,6 +359,22 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
 
                 }
                 break;
+                case 'j':
+                {
+                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                    if (n >= JITTER_BUFFER_MIN && n < JITTER_BUFFER_MAX)
+                    {
+                        config.jitter_size = n;
+                    }
+                    else
+                    {
+                        std::cout << "Error jitter size \'j=" << n << "\'. Jitter size must be range [" << JITTER_BUFFER_MIN << ".." << JITTER_BUFFER_MAX << "]." << std::endl;
+                        rc = -EINVAL;
+                    }
+
+                }
+                break;
                 case 'g':
                 {
                     int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
@@ -365,7 +385,7 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                     }
                     else
                     {
-                        std::cout << "Error log level \'l=" << n << "\'. Mixer gain must be range [0..255]." << std::endl;
+                        std::cout << "Error mixer gain \'g=" << n << "\'. Mixer gain must be range [0..255]." << std::endl;
                         rc = -EINVAL;
                     }
 

@@ -42,6 +42,7 @@ namespace mmx
 
 
             friend class SormPool;
+            Sorm(MediaPool& media_pool, unsigned char mixer_gain = DEFAULT_MIXER_GAIN);
         public:
 
             struct io_info_t
@@ -52,7 +53,6 @@ namespace mmx
                 int order645_bytes;
             };
 
-            Sorm(MediaPool& media_pool, unsigned char mixer_gain = DEFAULT_MIXER_GAIN);
             ~Sorm();
             Sorm(Sorm&& channel);
             Sorm& operator=(Sorm&& channel);

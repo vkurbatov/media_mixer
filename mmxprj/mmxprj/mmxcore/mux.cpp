@@ -23,6 +23,7 @@ namespace mmxmux
         sangoma_(config.sgm_address, config.sgm_port, select_, config.interval),
         input_channel_(MMX_LISTENER_CHANNEL_PATTERN, config.channel_num, select_),
         output_channel_pool_(MMX_SERVER_CHANNEL_PATTERN),
+        media_pool_(-1, config.jitter_size),
         sorm_pool_(media_pool_, 10, config.mixed_gain)
     {
         timer_.Start(config_.media_period);

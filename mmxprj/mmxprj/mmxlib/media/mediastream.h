@@ -32,11 +32,11 @@ namespace mmx
             int             jitter_flashback_;
 
             friend class MediaPool;
+            MediaStream(unsigned int address = 0, unsigned short port = 0, int jitter_flashback = DEFAULT_JITTER_FLASHBACK);
 
         public:
-
-            MediaStream(unsigned int address = 0, unsigned short port = 0, int jitter_flashback = DEFAULT_JITTER_FLASHBACK);
             MediaStream(MediaStream&& mediastream);
+            //MediaStream(unsigned int address = 0, unsigned short port = 0, int jitter_flashback = DEFAULT_JITTER_FLASHBACK);
             MediaStream& operator=(MediaStream&& mediastream);
             ~MediaStream();
 

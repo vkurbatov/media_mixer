@@ -19,13 +19,11 @@ namespace mmx
             std::vector<MediaStream*> rm_list_;
 
             int max_free_queue_size_;
-            int min_garbage_size_;
-            int garbage_time_life_;
+            int jitter_flashback_;
 
         public:
             MediaPool(int max_free_queue_size = -1,
-                         int min_garbage_size = 0,
-                         int garbage_time_life = 0);
+                         int jitter_flashback = MediaStream::DEFAULT_JITTER_FLASHBACK);
 
             MediaStream* GetStream(unsigned int address, unsigned short port);
             MediaStream* FindStream(unsigned int address, unsigned short port);
