@@ -610,7 +610,7 @@ namespace mmx
         {
             int rc = -EPROTOTYPE;
 
-            DLOGT(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)"), l_address, l_port, r_address, r_port, backlog, flags);
+            DLOGT(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags);
 
             if (type_ >= 0 && proto_ >= 0)
             {
@@ -648,7 +648,7 @@ namespace mmx
                             }
                             else
                             {
-                                 DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::INIT: error create socket, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                 DLOGE(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)::INIT: error create socket, rc = %d"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, rc);
                             }
 
                             state = S_SETF;
@@ -663,7 +663,7 @@ namespace mmx
 
                                 if(rc < 0)
                                 {
-                                    DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_SETF: error set flags, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                    DLOGE(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)::S_SETF: error set flags, rc = %d"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, rc);
                                 }
                             }
 
@@ -680,11 +680,11 @@ namespace mmx
                                     int en = 1;
                                     if ((rc = SetOption(handle_, SOL_SOCKET, SO_REUSEADDR, &en, sizeof(int))) < 0)
                                     {
-                                        DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_BIND: error set option %d, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, SO_REUSEADDR, rc);
+                                        DLOGE(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)::S_BIND: error set option %d, rc = %d"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, SO_REUSEADDR, rc);
                                     }
                                     if ((rc = SetOption(handle_, SOL_SOCKET, SO_REUSEPORT, &en, sizeof(int))) < 0)
                                     {
-                                        DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_BIND: error set option %d, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, SO_REUSEPORT, rc);
+                                        DLOGE(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)::S_BIND: error set option %d, rc = %d"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, SO_REUSEPORT, rc);
                                     }
                                 }
 
@@ -692,7 +692,7 @@ namespace mmx
 
                                 if (rc < 0)
                                 {
-                                    DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_BIND: binding error, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                    DLOGE(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)::S_BIND: binding error, rc = %d"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, rc);
                                 }
                             }
 
@@ -717,7 +717,7 @@ namespace mmx
                                 {
                                     if (rc != EWOULDBLOCK)
                                     {
-                                        DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_CONN: connect error, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                        DLOGE(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)::S_CONN: connect error, rc = %d"),DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, rc);
                                     }
                                 }
                             }
@@ -736,7 +736,7 @@ namespace mmx
 
                                 if (rc < 0)
                                 {
-                                    DLOGE(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_LIST: listen error, rc = %d"), l_address, l_port, r_address, r_port, backlog, flags, rc);
+                                    DLOGE(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)::S_LIST: listen error, rc = %d"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, rc);
                                 }
                             }
 
@@ -752,7 +752,7 @@ namespace mmx
                             if (handle_ >= 0)
                             {
 
-                                DLOGI(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d)::S_ERR: close handle_ %d"), l_address, l_port, r_address, r_port, backlog, flags, handle_);
+                                DLOGI(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d)::S_ERR: close handle_ %d"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, handle_);
 
                                 close(handle_);
 
@@ -786,7 +786,7 @@ namespace mmx
                     if (handle_ >= 0)
                     {
 
-                        DLOGI(LOG_BEGIN("Open(%d, %d, %d, %d, %d, %d) success, handle_ = %d"), l_address, l_port, r_address, r_port, backlog, flags, handle_);
+                        DLOGI(LOG_BEGIN("Open(" DLOG_IP_FMT ",%d, " DLOG_IP_FMT ", %d, %d, %d) success, handle_ = %d"), DLOG_IP(l_address), l_port, DLOG_IP(r_address), r_port, backlog, flags, handle_);
 
                         rc = handle_;
 
@@ -824,6 +824,8 @@ namespace mmx
                     {
                         l_address_ = socket.l_address_;
                         l_port_ = socket.l_port_;
+
+                        DLOGI(LOG_BEGIN("Accept(&%x, %d): accept " DLOG_IP_FMT ":%d success, sock = %d"), DLOG_POINTER(&socket), flags, DLOG_IP(r_address_), r_port_, rc);
 
                         if (flags != 0)
                         {

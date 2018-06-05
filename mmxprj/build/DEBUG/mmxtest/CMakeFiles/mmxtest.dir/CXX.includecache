@@ -94,6 +94,12 @@ ichannel.h
 memory
 -
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/logs/dlog.h
+log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/logs/log.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/logs/log.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/iaudiocodec.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/media/codecs/audio/mixer.h
@@ -285,6 +291,8 @@ mmxlib/headers/media.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/headers/media.h
 mmxlib/headers/udp.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/headers/udp.h
+mmxlib/logs/dlog.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/logs/dlog.h
 sys/socket.h
 -
 netdb.h

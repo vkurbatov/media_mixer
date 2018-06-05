@@ -286,6 +286,7 @@ mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mm
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.h
+mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
 mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h

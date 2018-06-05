@@ -89,13 +89,13 @@ namespace mmx
 
                     if (rc > 0)
                     {
-                        DLOGI(LOG_BEGIN("checkConnect(): orm server %d:%d create success, sock = %d"), address_, port_, rc);
+                        DLOGI(LOG_BEGIN("checkConnect(): orm server " DLOG_IP_FMT ":%d create success, sock = %d"), DLOG_IP(address_), port_, rc);
                         select_.SetRead(rc);
 
                     }
                     else
                     {
-                        DLOGW(LOG_BEGIN("checkConnect(): orm server %d:%d is not create, rc = %d"), address_, port_, rc);
+                        DLOGW(LOG_BEGIN("checkConnect(): orm server " DLOG_IP_FMT ":%d is not create, rc = %d"), DLOG_IP(address_), port_, rc);
                     }
                 }
 
@@ -119,12 +119,13 @@ namespace mmx
 
                     net::Socket client(SOCK_STREAM, IPPROTO_TCP);
 
-                    rc = client.Accept(socket_, O_NONBLOCK);
+                    rc = client.Accept(socket_);
 
                     if (rc >= 0)
                     {
+                        auto address = client.RemoteAddress();
 
-                        DLOGI(LOG_BEGIN("checkClients(): orm client %d:%d accept connection success, sock = %d"), client.RemoteAddress(), client.RemotePort(), rc);
+                        DLOGI(LOG_BEGIN("checkClients(): orm client " DLOG_IP_FMT ":%d accept connection success, sock = %d"), DLOG_IP(address), client.RemotePort(), rc);
 
                         clients_.push_back(OrmClient(std::move(client), select_));
                     }

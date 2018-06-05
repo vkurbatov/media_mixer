@@ -7,6 +7,9 @@
 #define DLOG_POINTER(obj)  (((long)(obj)) & 0xFFFFFF)
 #define DLOG_CLASS_BEGIN(cname, msg) "[%.6x] " cname "::" msg, DLOG_POINTER(this)
 
+#define DLOG_IP(ip) ((ip) >> 24) & 0xFF, ((ip) >> 16) & 0xFF, ((ip) >> 8) & 0xFF, (ip) & 0xFF
+#define DLOG_IP_FMT "%d.%d.%d.%d"
+
 #define DLOG_LEVEL 1
 
 #if DLOG_LEVEL <= 0

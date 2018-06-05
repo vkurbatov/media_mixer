@@ -89,13 +89,13 @@ namespace mmx
 
                     if (rc > 0)
                     {
-                        DLOGI(LOG_BEGIN("checkConnect(): sangoma server %d:%d create success, sock = %d"), address_, port_, rc);
+                        DLOGI(LOG_BEGIN("checkConnect(): sangoma server " DLOG_IP_FMT ":%d create success, sock = %d"), DLOG_IP(address_), port_, rc);
                         select_.SetRead(rc);
 
                     }
                     else
                     {
-                        DLOGW(LOG_BEGIN("checkConnect(): sangoma server %d:%d is not create, rc = %d"), address_, port_, rc);
+                        DLOGW(LOG_BEGIN("checkConnect(): sangoma server " DLOG_IP_FMT ":%d is not create, rc = %d"), DLOG_IP(address_), port_, rc);
                     }
                 }
 
@@ -123,7 +123,10 @@ namespace mmx
 
                     if (rc >= 0)
                     {
-                        DLOGI(LOG_BEGIN("checkClients(): sangoma client %d:%d accept connection success, sock = %d"), client.RemoteAddress(), client.RemotePort(), rc);
+
+                        auto address = client.RemoteAddress();
+
+                        DLOGI(LOG_BEGIN("checkClients(): sangoma client " DLOG_IP_FMT ":%d accept connection success, sock = %d"), DLOG_IP(address), client.RemotePort(), rc);
                         clients_.push_back(SangomaClient(std::move(client), select_));
                     }
                     else

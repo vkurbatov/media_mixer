@@ -13,6 +13,8 @@
 #include "mmxlib/headers/media.h"
 #include "mmxlib/headers/udp.h"
 
+#include "mmxlib/logs/dlog.h"
+
 #include <sys/socket.h>
 #include <netdb.h>
 #include <fcntl.h>
@@ -27,8 +29,10 @@ namespace mmxtest
     int test2()
     {
 
-        char w_buff[] = "Kurbatov";
+        char w_buff[100];
         char r_buff[100] = { 0 };
+
+        std::sprintf(w_buff,"IP_Address: " DLOG_IP_FMT " nice",DLOG_IP(0x7F000001));
 
         mmx::ipc::PipeChannel w_channel(CHANNEL_NAME, O_RDWR, 0777);
 
@@ -39,7 +43,8 @@ namespace mmxtest
         r_channel1.Open();
         r_channel2.Open();
 
-        int rc = w_channel.Write(w_buff, sizeof(w_buff));
+
+        int rc = w_channel.Write(w_buff, strlen(w_buff) + 1);
 
         if (rc > 0)
         {

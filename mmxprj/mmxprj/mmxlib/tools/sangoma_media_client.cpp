@@ -177,13 +177,13 @@ namespace mmx
 
                     if (rc > 0)
                     {
-                        DLOGI(LOG_BEGIN("checkConnect(): sangoma media client %d:%d create success, sock = %d"), address_, port_, rc);
+                        DLOGI(LOG_BEGIN("checkConnect(): sangoma media client " DLOG_IP_FMT ":%d create success, sock = %d"), DLOG_IP(address_), port_, rc);
                         select_.SetRead(rc);
 
                     }
                     else
                     {
-                        DLOGW(LOG_BEGIN("checkConnect(): sangoma media client %d:%d is not create, rc = %d"), address_, port_, rc);
+                        DLOGW(LOG_BEGIN("checkConnect(): sangoma media client " DLOG_IP_FMT ":%d is not create, rc = %d"), DLOG_IP(address_), port_, rc);
                     }
                 }
 

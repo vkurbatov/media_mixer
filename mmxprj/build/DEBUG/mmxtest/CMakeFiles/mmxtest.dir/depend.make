@@ -27,6 +27,8 @@ mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/ichannel.h
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/io.h
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/ipc/pchannel.h
+mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/logs/dlog.h
+mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/logs/log.h
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/select.h
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/select_ex.h
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/socket.h

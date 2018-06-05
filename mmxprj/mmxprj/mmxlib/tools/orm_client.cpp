@@ -1,4 +1,5 @@
 #include "orm_client.h"
+#include "timer.h"
 
 #include <errno.h>
 #include <netdb.h>
@@ -147,9 +148,11 @@ namespace mmx
 
         int OrmClient::putData(const void* data, int size)
         {
-            int rc = writer_.Write(data, size);
+            //int rc = writer_.Write(data, size);
 
-            //int rc = socket_.Send(data, size);
+            int rc = socket_.Send(data, size);
+
+            tools::Timer::Sleep(10);
 
             if (rc < 0 && rc != -EAGAIN)
             {

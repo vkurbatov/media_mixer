@@ -675,6 +675,8 @@ net/socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.cpp
 orm_client.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/orm_client.h
+timer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 errno.h
 -
 netdb.h
