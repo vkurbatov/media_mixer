@@ -82,6 +82,8 @@ namespace mmx
 
                 int dts = ((int)frame_size_ * (int)freq_) / 1000;
 
+                int dt = ntohl(rtp_header.timestamp) - ts_rtp_;
+
                 ts_rtp_ = ::ntohl(rtp_header.timestamp);
 
                 int idx = (ts_rtp_ / dts) % size;
@@ -93,8 +95,18 @@ namespace mmx
 
                 if (ts_bias_ < 0 || ssrc_ != rtp_header.ssrc)
                 {
+                    DLOGI(LOG_BEGIN("PutMedia(%x, %d, %d): samples_[%d] new stream, cssrc = %d,  ssrc = %d, ts_bias_ = %d"), DLOG_POINTER(&rtp), pack_id, timestamp, idx, ssrc_, rtp_header.ssrc, ts_bias_);
+
                     ts_bias_ = (idx - ((timestamp / frame_size_) % size) + size) % size;
                     ssrc_ = rtp_header.ssrc;
+
+                }
+                else
+                {
+                    if (dt > 160)
+                    {
+                        DLOGI(LOG_BEGIN("PutMedia(%x, %d, %d): samples_[%d] rtp desync, old ts = %d, new ts =%d, dt = %d"), DLOG_POINTER(&rtp), pack_id, timestamp, idx, ts_rtp_ - dt, ts_rtp_, dt);
+                    }
                 }
 
                 rc = samples_[idx].PutSample(rtp, pack_id, timestamp);

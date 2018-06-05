@@ -27,7 +27,8 @@ namespace mmx
 
             if (fd >= 0)
             {
-                socket_.SetOption(IPPROTO_TCP, TCP_NODELAY, (int)1);
+                socket_.SetOption(SOL_TCP, TCP_NODELAY, (int)1);
+                socket_.SetOption(SOL_TCP, TCP_CORK, (int)0);
                 select_.SetRead(fd);
 
             }
@@ -73,8 +74,13 @@ namespace mmx
                         if (rc == -EAGAIN)
                         {
                             DLOGW(LOG_BEGIN("Dispatch(%d, %x): would block read, rc = %d"), dispatch, DLOG_POINTER(context), rc);
+                            Close();
+
                         }
-                        data_.resize(rc);
+                        else
+                        {
+                            data_.resize(rc);
+                        }
                     }
 
                 }
@@ -155,6 +161,7 @@ namespace mmx
                 if (rc == -EAGAIN)
                 {
                     DLOGW(LOG_BEGIN("putData(%x, %d): would block write, rc = %d"), DLOG_POINTER(data), size, rc);
+                    Close();
                 }
                 if (writer_.IsEmpty())
                 {

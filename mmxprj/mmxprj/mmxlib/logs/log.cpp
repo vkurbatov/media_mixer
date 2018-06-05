@@ -3,6 +3,7 @@
 #include <ctime>        // работа со временем
 #include <cstring>      // для strcpy
 #include <mutex>        // для случая многопоточного логирования
+#include <atomic>
 
 #include "logs/log.h"
 
@@ -28,6 +29,7 @@ namespace mmx
         static log_level_t      g_max_level = L_DEBUG;
         static std::mutex       g_mutex;
         static unsigned char    g_day;
+        static std::atomic<bool> g_lock(false);
 
 
         int log_init(const char* filename, log_level_t max_level, bool mt)
@@ -131,6 +133,8 @@ namespace mmx
                 g_mutex.unlock();
             }
 
+            g_lock = false;
+
             return rc;
         }
 
@@ -141,8 +145,7 @@ namespace mmx
             std::time_t tim = std::time(nullptr);
             std::tm* tim_str = std::localtime(&tim);
 
-            //if (g_day != tim_str->tm_mday )
-            if (tim_str->tm_sec > 50)
+            if (g_day != tim_str->tm_mday )
             {
                 std::sprintf(g_filename, "%s%02d%02d-%s", g_dir, tim_str->tm_mon+1, tim_str->tm_mday, g_log);
                 g_day = tim_str->tm_mday;
@@ -188,6 +191,14 @@ namespace mmx
 
         void __logV(log_level_t level, const char* format, va_list vl)
         {
+
+            if (g_lock)
+            {
+                return;
+            }
+
+            g_lock = true;
+
             // статический буффер для форматирования лог-сообщения
 
             static char buffer[LOG_BUFFER_SIZE];
@@ -200,9 +211,13 @@ namespace mmx
 
             // временная схема (первый символ @ в форматной строке игнорирует уровень ведения логов)
 
-            if (g_init == true && (level >= g_max_level || (*format == '@' && *(++format) != '\0')))
+            if (g_init == true && (level >= g_max_level || (*format == '@')))
             {
+
+
                 bool l_mt = g_mt;
+
+                format += *format == '@';
 
                 if (l_mt)
                 {
@@ -251,6 +266,8 @@ namespace mmx
                 }
 
             }
+
+            g_lock = false;
         }
 
         // функции-обертки для вывода форматируемых сообщений

@@ -10,7 +10,7 @@ namespace mmx
 
         static const unsigned char ORDER_645_2_MAGIC = 0xDD;
         static const unsigned short ORDER_645_2_PACKET_SIZE = 1038;
-        static const unsigned char ORDER_645_SILENCE_SYMBOL = 0xD5;//0x7E;
+        static const unsigned char ORDER_645_SILENCE_SYMBOL = 0xD5; //0x7E;
         static const unsigned char ORDER_645_NODATA_SYMBOL = 0x7E;
 
         typedef struct _ORDER_645_2_HEADER

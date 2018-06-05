@@ -280,7 +280,6 @@ namespace mmx
             if (sock >= 0)
             {
 
-
                 if (l_address == 0 && l_port == 0)
                 {
                     sockaddr sa = { 0 };

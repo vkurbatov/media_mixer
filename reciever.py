@@ -67,7 +67,8 @@ class TcpClient():
                 for self.socket in readable:
                     try:
                         data = self.socket.recv(self.__buffer_size)
-                        if len(data) == 0:
+                        #time.sleep(10)
+			if len(data) == 0:
                             logging.debug(str(self.__remote_addr) + " has closed connection")
                             self.__on_disconnect()
                             break

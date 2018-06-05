@@ -187,6 +187,8 @@ cstring
 -
 mutex
 -
+atomic
+-
 logs/log.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/logs/logs/log.h
 sys/time.h
