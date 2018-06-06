@@ -26,10 +26,12 @@ namespace mmx
 
             data_.reserve(RECIVE_BUFFER_SIZE);
 
+
             if (fd >= 0)
             {
                 socket_.SetOption(SOL_TCP, TCP_NODELAY, (int)1);
                 socket_.SetOption(SOL_TCP, TCP_CORK, (int)0);
+                socket_.SetOption(SOL_TCP, TCP_MAXSEG, (int)1039);
                 select_.SetRead(fd);
 
             }
@@ -148,11 +150,11 @@ namespace mmx
 
         int OrmClient::putData(const void* data, int size)
         {
-            //int rc = writer_.Write(data, size);
+            int rc = writer_.Write(data, size);
 
-            int rc = socket_.Send(data, size);
+            //int rc = socket_.Send(data, size);
 
-            tools::Timer::Sleep(10);
+            //tools::Timer::Sleep(10);
 
             if (rc < 0 && rc != -EAGAIN)
             {

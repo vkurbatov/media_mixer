@@ -163,8 +163,6 @@ namespace mmx
                             {
                                 case -EAGAIN:
                                     DLOGW(LOG_BEGIN("readData(): would block read, rc = %d"), rc);
-                                    Close();
-                                    fd = -1;
                                     // ничего не делаем
 
                                     break;

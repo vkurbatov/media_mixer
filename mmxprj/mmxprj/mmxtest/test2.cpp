@@ -91,9 +91,10 @@ namespace mmxtest
         char w_buff[] = "Kurbatov";
         char r_buff[100] = { 0 };
 
-        mmx::ipc::PipeChannel w_channel(CHANNEL_NAME, O_RDONLY | O_NONBLOCK, 0777);
+        mmx::ipc::PipeChannel r_channel(CHANNEL_NAME, O_RDONLY | O_NONBLOCK, 0777);
 
-        mmx::ipc::PipeChannel r_channel(CHANNEL_NAME, O_WRONLY | O_NONBLOCK);
+        mmx::ipc::PipeChannel w_channel1(CHANNEL_NAME, O_WRONLY | O_NONBLOCK);
+        mmx::ipc::PipeChannel w_channel2(CHANNEL_NAME, O_WRONLY | O_NONBLOCK);
 
         mmx::net::SelectExtension sel;
 
@@ -102,41 +103,85 @@ namespace mmxtest
 
         rc = r_channel.Open();
 
+        rc = w_channel1.Open();
+        rc = w_channel2.Open();
 
-        rc = w_channel.Open();
+        sel.Set(r_channel.Handle(), mmx::net::S_EV_READ);
+        sel.Set(w_channel1.Handle(), mmx::net::S_EV_WRITE);
+        sel.Set(w_channel2.Handle(), mmx::net::S_EV_WRITE);
 
-        sel.Set(rc, mmx::net::S_EV_READ);
+        int i = 0;
 
-        rc = w_channel.Write(w_buff, sizeof(w_buff));
-
-        r_channel.Close();
-
-        rc = sel.Wait();
-
-        if (rc > 0)
+        while ((rc = sel.Wait()) >= 0)
         {
-            std::cout << "Channel write " << rc << " bytes" << std::endl;
 
-            rc = r_channel.Read(r_buff, sizeof(r_buff));
-
-            if (rc > 0)
+            if (sel.IsRead(r_channel.Handle()))
             {
-                std::cout << "Channel 1 read " << rc << " bytes:" << std::endl << r_buff << std::endl ;
+                rc = r_channel.Read(r_buff, sizeof(r_buff));
+
+                if (rc > 0)
+                {
+                    std::cout << "[" << i << "] Input channel read " << rc << " bytes:" << std::endl << r_buff << std::endl ;
+                }
+                else
+                {
+                    std::cout << "[" << i << "] Input channel read error " << rc << std::endl;
+                }
+            }
+
+            if (i < 50)
+            {
+                if (sel.IsWrite(w_channel1.Handle()))
+                {
+                    rc = w_channel1.Write(w_buff, sizeof(w_buff));
+
+                    if (rc > 0)
+                    {
+                        std::cout << "[" << i << "] Ouput channel 1 write " << rc << " bytes:" << std::endl << w_buff << std::endl ;
+                    }
+                    else
+                    {
+                        std::cout << "[" << i << "] Ouput channel 1 write error " << rc << std::endl;
+                    }
+                }
+
+
+                if (sel.IsWrite(w_channel2.Handle()))
+                {
+                    rc = w_channel2.Write(w_buff, sizeof(w_buff));
+
+                    if (rc > 0)
+                    {
+                        std::cout << "[" << i << "] Ouput channel 2 write " << rc << " bytes:" << std::endl << w_buff << std::endl ;
+                    }
+                    else
+                    {
+                        std::cout << "[" << i << "] Ouput channel 2 write error " << rc << std::endl;
+                    }
+                }
             }
             else
             {
-                std::cout << "Channel 1 read error " << rc << std::endl;
+                if (i == 50)
+                {
+                    sel.Set(w_channel2.Handle());
+                    w_channel2.Close();
+                }
             }
-        }
-        else
-        {
-            std::cout << "Channel write error " << rc << std::endl;
+
+
+            i++;
+
+            if (i > 100)
+                break;
+
         }
 
         std::cout.flush();
 
-        w_channel.Close();
-        r_channel.Close();
+        r_channel.Close();        
+        w_channel1.Close();
+        w_channel2.Close();
 
     }
 

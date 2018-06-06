@@ -208,9 +208,13 @@ namespace mmx
 
                 if (msg != nullptr && size > 0)
                 {
-                    rc = ::read(handle_, msg, size);
+                    rc = ::read(handle_, msg, size);                   
 
-                    if (rc <= 0)
+                    if (rc == 0)
+                    {
+                        DLOGW(LOG_BEGIN("Read(%x, %d): client disconnect, rc = %d"), DLOG_POINTER(msg), size, rc);
+                    }
+                    else if (rc < 0)
                     {
                         rc = -errno;
                         DLOGW(LOG_BEGIN("Read(%x, %d): read error rc = %d"), DLOG_POINTER(msg), size, rc);
