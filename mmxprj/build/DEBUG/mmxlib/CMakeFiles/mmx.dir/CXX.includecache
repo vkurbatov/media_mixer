@@ -275,6 +275,8 @@ cstring
 -
 errno.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/errno.h
+netdb.h
+-
 logs/dlog.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/logs/dlog.h
 

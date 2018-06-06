@@ -190,7 +190,7 @@ namespace mmx
                 }
                 else
                 {
-                    DLOGI(LOG_BEGIN("checkSample(%x): drop sample, different ssrc %d != %d"), DLOG_POINTER(&sample), smpl->header.rtp_header.ssrc, ssrc_);
+                    DLOGI(LOG_BEGIN("checkSample(%x): drop sample, different ssrc %x != %x"), DLOG_POINTER(&sample), htonl(smpl->header.rtp_header.ssrc), htonl(ssrc_));
                 }
             }
             else

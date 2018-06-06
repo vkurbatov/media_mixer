@@ -16,7 +16,10 @@
 #define SERVICE_GROUP "Media module"
 #define SERVICE_NAME "Media stream multiplexor (core)"
 #define SERVICE_MAJOR_VERSION 1
-#define SERVICE_MINOR_VERSION BUILD_NUMBER
+#define SERVICE_MINOR_VERSION 0
+#define SERVICE_BUILD_VERSION BUILD_NUMBER
+
+#define BUILD_TIME  __TIMESTAMP__
 
 #ifdef DEBUG
 #define SERVICE_STATUS "debug"
@@ -43,7 +46,7 @@ static int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::l
 
 void finish(int e_code)
 {
-    mmx::logs::logI("@\n%s Ver=%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, e_code);
+    mmx::logs::logI("@%s Ver=%d.%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_STATUS, e_code);
     mmx::logs::log_init();
     exit(e_code);
 }
@@ -136,7 +139,7 @@ int main(int argc, char* argv[])
             std::strcat(log_file, argv[i]);
         }
 
-        mmx::logs::logI("@\n%s Ver=%d.%d.%s Started!\nArguments: %s\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS, log_file);
+        mmx::logs::logI("@%s Ver=%d.%d.%d.%s (%s) Started!\nArguments: %s\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_STATUS, BUILD_TIME, log_file);
 
         signal(SIGHUP, sig_handler);
         signal(SIGPIPE, sig_handler);
@@ -148,7 +151,7 @@ int main(int argc, char* argv[])
 
         rc = Mux.Execute();
 
-        mmx::logs::logI("@\n%s Ver=%d.%d.%s Stopped!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
+        mmx::logs::logI("@%s Ver=%d.%d.%d.%s Stopped!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_MINOR_VERSION, SERVICE_STATUS);
 
         mmx::logs::log_init();
 

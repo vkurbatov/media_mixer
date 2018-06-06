@@ -4,8 +4,10 @@
 #include <cstring>
 
 #include "errno.h"
+#include <netdb.h>
 
 #include "logs/dlog.h"
+
 
 #define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("MediaStream", msg)
 
@@ -83,7 +85,7 @@ namespace mmx
             if (rtp.Header() != nullptr)
             {
 
-                DLOGD(LOG_BEGIN("PutSample(&%x): rtp packet [id = %d] put into jitter buffer"), DLOG_POINTER(&media),rtp.Header()->packet_id);
+                DLOGD(LOG_BEGIN("PutSample(&%x): rtp packet [id = %d] put into jitter buffer"), DLOG_POINTER(&media),htons(rtp.Header()->packet_id));
 
                 rc = jitter_.PutMedia(rtp, ++pack_id_, media.header.timestamp);
 

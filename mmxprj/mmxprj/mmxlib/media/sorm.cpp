@@ -174,7 +174,7 @@ namespace mmx
 
                         DLOGT(LOG_BEGIN("ProcessMediaStreams(): get sample success {i:%d, ssrc:%x, pack_id:%x, size:%d}"),
                               i,
-                              rtp_ssrcs_[i],
+                              htonl(rtp_ssrcs_[i]),
                               rtp_pack_ids_[i],
                               size_arr[i]);
                     }
@@ -184,8 +184,8 @@ namespace mmx
                               DLOG_POINTER(&writer),
                               DLOG_POINTER(media_samples[i]),
                               i,
-                              rtp_ssrcs_[i],
-                              media_samples[i]->header.rtp_header.ssrc,
+                              htonl(rtp_ssrcs_[i]),
+                              htonl(media_samples[i]->header.rtp_header.ssrc),
                               pack_id,
                               rtp_pack_ids_[i],
                               delta);

@@ -31,7 +31,7 @@ namespace mmx
             {
                 socket_.SetOption(SOL_TCP, TCP_NODELAY, (int)1);
                 socket_.SetOption(SOL_TCP, TCP_CORK, (int)0);
-                socket_.SetOption(SOL_TCP, TCP_MAXSEG, (int)1039);
+                //socket_.SetOption(SOL_TCP, TCP_MAXSEG, (int)1039);
                 select_.SetRead(fd);
 
             }
