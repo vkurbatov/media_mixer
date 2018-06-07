@@ -240,7 +240,8 @@ int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net
 
                     std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
                             << "Service name: " << SERVICE_NAME << "." << std::endl
-                            << "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << SERVICE_STATUS << std::endl;
+                            << "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << "."
+                            << SERVICE_BUILD_VERSION << "." << SERVICE_STATUS << std::endl;
                     rc = 1;
 
                     break;
@@ -250,7 +251,7 @@ int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net
                     rc = 1;
 
                     break;
-                case 'c':
+                case 'w':
                     {
 
                         int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
@@ -261,7 +262,7 @@ int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net
                         }
                         else
                         {
-                            std::cout << "Error channel number \'c=" << n << "\'. Channel number range [1..255]" << std::endl;
+                            std::cout << "Error channel number \'w=" << n << "\'. Channel number range [1..255]" << std::endl;
                             rc = -EINVAL;
                         }
 
@@ -277,7 +278,7 @@ int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net
                     }
                     else
                     {
-                        std::cout << "Error interval period \'c=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
+                        std::cout << "Error interval period \'i=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
                         rc = -EINVAL;
                     }
                 }
@@ -291,7 +292,7 @@ int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net
 
                     }
                     break;
-                case 'l':
+                case 'd':
                 {
                     int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
 
@@ -301,7 +302,7 @@ int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net
                     }
                     else
                     {
-                        std::cout << "Error log level \'l=" << n << "\'. Log level range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
+                        std::cout << "Error log level \'d=" << n << "\'. Log level range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
                         rc = -EINVAL;
                     }
 

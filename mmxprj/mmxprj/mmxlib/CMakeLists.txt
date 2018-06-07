@@ -72,6 +72,7 @@ set ( SOURCE_FILES
 #	tools/mediamarshaler.cpp
 	tools/async/asyncdispatcher.cpp
 	tools/async/asyncunit.cpp
+	tools/string/string_token.cpp
 #	медиа
 	media/sorm.cpp
 	media/mediastream.cpp
@@ -157,6 +158,7 @@ set ( PRIVATE_HEADERS
 	tools/async/asyncdispatcher.h
 	tools/async/iasyncunit.h
 	tools/async/asyncunit.h
+	tools/string/string_token.h
 #	медиа
 	media/ijitter.h
 	media/sorm.h

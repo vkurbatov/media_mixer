@@ -216,6 +216,10 @@ ipc/io.h
 net/socket.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/net/socket.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/string/string_token.h
+vector
+-
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/timer.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/defines.h
@@ -267,6 +271,12 @@ fcntl.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test11.cpp
 vector
 -
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test12.cpp
+iostream
+-
+mmxlib/tools/string/string_token.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/tools/string/string_token.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test2.cpp
 iostream

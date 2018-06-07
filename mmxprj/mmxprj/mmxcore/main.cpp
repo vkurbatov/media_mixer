@@ -260,7 +260,8 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
 
                     std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
                             << "Service name: " << SERVICE_NAME << "." << std::endl
-                            << "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << SERVICE_STATUS << std::endl;
+                            << "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << "."
+                            << SERVICE_BUILD_VERSION << "." << SERVICE_STATUS << std::endl;
                     rc = 1;
 
                     break;
@@ -275,7 +276,7 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                     rc = 1;
 
                     break;
-                case 'c':
+                case 'r':
                     {
 
                         int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
@@ -286,13 +287,13 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                         }
                         else
                         {
-                            std::cout << "Error channel number \'c=" << n << "\'. Channel number must be range [1..255]" << std::endl;
+                            std::cout << "Error channel number \'r=" << n << "\'. Channel number must be range [1..255]" << std::endl;
                             rc = -EINVAL;
                         }
 
                     }
                     break;
-                case 'o':
+                case 'w':
                     {
                         if (parse_channels(*(p+1) != 0 ? p+1 : argv[++arg], config.channels) < 0)
                         {
@@ -311,7 +312,7 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                         }
                         else
                         {
-                            std::cout << "Error interval period \'c=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
+                            std::cout << "Error interval period \'i=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
                             rc = -EINVAL;
                         }
                     }
@@ -326,7 +327,7 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                         }
                         else
                         {
-                            std::cout << "Error media period \'c=" << n << "\'. Media period must be range [1..60000]" << std::endl;
+                            std::cout << "Error media period \'m=" << n << "\'. Media period must be range [1..60000]" << std::endl;
                             rc = -EINVAL;
                         }
                     }
@@ -341,12 +342,12 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                         }
                         else
                         {
-                            std::cout << "Error port number \'c=" << n << "\'. Port number must be range [1..65534]" << std::endl;
+                            std::cout << "Error port number \'p=" << n << "\'. Port number must be range [1..65534]" << std::endl;
                             rc = -EINVAL;
                         }
                     }
                     break;
-                case 'l':
+                case 'd':
                 {
                     int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
 
@@ -356,7 +357,7 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                     }
                     else
                     {
-                        std::cout << "Error log level \'l=" << n << "\'. Log level must be range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
+                        std::cout << "Error log level \'d=" << n << "\'. Log level must be range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
                         rc = -EINVAL;
                     }
 

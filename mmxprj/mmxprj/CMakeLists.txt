@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 #set(CMAKE_BUILD_TYPE DEBUG)
 
+
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3")
 SET(CMAKE_CXX_FLAGS_DEBUG  "-O0 -g")
 
@@ -26,6 +27,10 @@ endif()
 if (BUILD_DEBUG)
 	add_definitions(-DDEBUG)
 endif()
+
+# для логов
+string(LENGTH "${CMAKE_SOURCE_DIR}/" SOURCE_PATH_SIZE)
+add_definitions("-DSOURCE_PATH_SIZE=${SOURCE_PATH_SIZE}")
 
 INCLUDE_DIRECTORIES(
 		mmxlst

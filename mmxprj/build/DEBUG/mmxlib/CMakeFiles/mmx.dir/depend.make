@@ -395,6 +395,9 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxpr
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.h
 mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.h
+
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp
 mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 

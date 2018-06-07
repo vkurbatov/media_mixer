@@ -78,6 +78,7 @@ namespace mmx
 
                     if (w_ret == p.Size())
                     {
+
                         // просто перемещаем очередь и пробуем передать следующую порцию
 
                         pop();
@@ -86,11 +87,15 @@ namespace mmx
 
                         f_write = !q_write_.empty();
 
+
                         f_deff_complete = !f_write;
+
+                        DLOGD(LOG_BEGIN("Write(%x, %d, %x): deferred write completed %d bytes, deff_q = %d"),DLOG_POINTER(data), size, flags, w_ret, f_write);
+
                     }
                     else
                     {
-                        DLOGD(LOG_BEGIN("Write(%x, %d, %x): deferred write only part %d "),DLOG_POINTER(data), size, flags, w_ret);
+                        DLOGD(LOG_BEGIN("Write(%x, %d, %x): deferred write only part %d bytes of %d "),DLOG_POINTER(data), size, flags, w_ret, p.Size());
 
                         // данные передали частично
 
@@ -129,6 +134,8 @@ namespace mmx
                     if (w_ret > 0)
                     {
 
+                        DLOGD(LOG_BEGIN("Write(%x, %d, %x): transit data write %d bytes of %d"),DLOG_POINTER(data), size, flags, w_ret, size);
+
                         last_result_ += w_ret;
                         drop = w_ret;
                     }
@@ -140,7 +147,7 @@ namespace mmx
 
                 if (drop < size)
                 {
-                    DLOGD(LOG_BEGIN("Write(%x, %d, %x): push deffered data %d bytes"),DLOG_POINTER(data), size, flags, size - drop);
+                    DLOGD(LOG_BEGIN("Write(%x, %d, %x): push deffered data %d bytes of %d"),DLOG_POINTER(data), size, flags, size - drop, size);
                     pushData((const char*)data + drop, size - drop);
 
                 }

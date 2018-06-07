@@ -163,7 +163,7 @@ namespace mmx
         {
             int rc = -EINVAL;
 
-            DLOGT("Socket::Send(%d, %x, %d, %d, %d, %d)", sock, DLOG_POINTER(data), flags, r_address, r_port);
+            DLOGT("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT "%d)", sock, DLOG_POINTER(data), flags, DLOG_IP(r_address), r_port);
 
             if (sock >= 0 && data != nullptr && size > 0)
             {
@@ -187,11 +187,11 @@ namespace mmx
                     rc = -errno;
                     if (rc == -EWOULDBLOCK)
                     {
-                        DLOGD("Socket::Send(%d, %x, %d, %d, %d, %d): Nonblocked send!", sock, DLOG_POINTER(data), flags, r_address, r_port);
+                        DLOGD("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT "%d): Nonblocked send!", sock, DLOG_POINTER(data), flags, DLOG_IP(r_address), r_port);
                     }
                     else
                     {
-                        DLOGE("Socket::Send(%d, %x, %d, %d, %d, %d): error = %d!", sock, DLOG_POINTER(data), flags, r_address, r_port, rc);
+                        DLOGE("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT "%d): error = %d!", sock, DLOG_POINTER(data), flags, DLOG_IP(r_address), r_port, rc);
                     }
                 }
                 else
@@ -275,7 +275,7 @@ namespace mmx
 
             int rc = -EINVAL;
 
-            DLOGT("Socket::Bind(%d, %d, %d)", sock, l_address, l_port);
+            DLOGT("Socket::Bind(%d, " DLOG_IP_FMT "%d)", sock, DLOG_IP(l_address), l_port);
 
             if (sock >= 0)
             {
@@ -303,18 +303,18 @@ namespace mmx
                 {
                     rc = -errno;
 
-                    DLOGW("Socket::Bind(%d, %d, %d): error = %d", sock, l_address, l_port, rc);
+                    DLOGW("Socket::Bind(%d, " DLOG_IP_FMT "%d): error = %d", sock, DLOG_IP(l_address), l_port, rc);
 
                 }
                 else
                 {
-                    DLOGD("Socket::Bind(%d, %d, %d): success", sock, l_address, l_port);
+                    DLOGD("Socket::Bind(%d, " DLOG_IP_FMT "%d): success", sock, DLOG_IP(l_address), l_port);
                 }
 
             }
             else
             {
-                DLOGD("Socket::Bind(%d, %d, %d): Invalid argument", sock, l_address, l_port);
+                DLOGD("Socket::Bind(%d, " DLOG_IP_FMT "%d): Invalid argument", sock, DLOG_IP(l_address), l_port);
             }
 
             return rc;
@@ -324,7 +324,7 @@ namespace mmx
         {
             int rc = -EINVAL;
 
-            DLOGT("Socket::Connect(%d, %d, %d)", sock, r_address, r_port);
+            DLOGT("Socket::Connect(%d, " DLOG_IP_FMT "%d)", sock, DLOG_IP(r_address), r_port);
 
             if (sock >= 0)
             {
@@ -352,22 +352,22 @@ namespace mmx
                     rc = -errno;
                     if (rc == -EWOULDBLOCK)
                     {
-                        DLOGD("Socket::Connect(%d, %d, %d): Nonblocked connect!", sock, r_address, r_port);
+                        DLOGD("Socket::Connect(%d, " DLOG_IP_FMT "%d): Nonblocked connect!", sock, DLOG_IP(r_address), r_port);
                     }
                     else
                     {
-                        DLOGE("Socket::Connect(%d, %d, %d): error = %d!", sock, r_address, r_port, rc);
+                        DLOGE("Socket::Connect(%d, " DLOG_IP_FMT "%d): error = %d!", sock, DLOG_IP(r_address), r_port, rc);
                     }
                 }
                 else
                 {
-                    DLOGI("Socket::Connect(%d, %d, %d): success", sock, r_address, r_port);
+                    DLOGI("Socket::Connect(%d, " DLOG_IP_FMT "%d): success", sock, DLOG_IP(r_address), r_port);
                 }
 
             }
             else
             {
-                DLOGD("Socket::Connect(%d, %d, %d): Invalid arguments", sock, r_address, r_port);
+                DLOGD("Socket::Connect(%d, " DLOG_IP_FMT "%d): Invalid arguments", sock, DLOG_IP(r_address), r_port);
             }
 
             return rc;

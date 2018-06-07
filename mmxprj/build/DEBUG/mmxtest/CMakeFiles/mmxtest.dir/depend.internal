@@ -20,6 +20,9 @@ mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test10.cpp
 mmxtest/CMakeFiles/mmxtest.dir/test11.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test11.cpp
+mmxtest/CMakeFiles/mmxtest.dir/test12.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/string/string_token.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test12.cpp
 mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/headers/media.h

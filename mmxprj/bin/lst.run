@@ -1,1 +1,1 @@
-sudo ./mmxlst -l2 -c1 -p5062,5063
+sudo ./mmxlst -d2 -w1 -p5062,5063

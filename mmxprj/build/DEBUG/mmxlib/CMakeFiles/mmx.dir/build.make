@@ -921,9 +921,33 @@ mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o.provides: mmxlib/CMakeFile
 mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o
 
 
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/string/string_token.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp
+
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/tools/string/string_token.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp > CMakeFiles/mmx.dir/tools/string/string_token.cpp.i
+
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/tools/string/string_token.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp -o CMakeFiles/mmx.dir/tools/string/string_token.cpp.s
+
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.requires:
+
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.requires
+
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.provides
+
+mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o
+
+
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/sorm.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp
 
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.i: cmake_force
@@ -947,7 +971,7 @@ mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o.provides.build: mmxlib/CMakeFiles/mmx
 
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/mediastream.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp
 
 mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.i: cmake_force
@@ -971,7 +995,7 @@ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o.provides.build: mmxlib/CMakeFi
 
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/sormpool.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.cpp
 
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.i: cmake_force
@@ -995,7 +1019,7 @@ mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o.provides.build: mmxlib/CMakeFiles
 
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/mediapool.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp
 
 mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.i: cmake_force
@@ -1019,7 +1043,7 @@ mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o.provides.build: mmxlib/CMakeFile
 
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp
 
 mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.i: cmake_force
@@ -1043,7 +1067,7 @@ mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o.provides.build: mmxlib/CMakeF
 
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/sample.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp
 
 mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.i: cmake_force
@@ -1067,7 +1091,7 @@ mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o.provides.build: mmxlib/CMakeFiles/m
 
 mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp
 
 mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.i: cmake_force
@@ -1091,7 +1115,7 @@ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.provides.build: mmxlib/C
 
 mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
 mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
 
 mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.i: cmake_force
@@ -1151,6 +1175,7 @@ mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/tools/udp_listener.cpp.o" \
 "CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o" \
 "CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o" \
+"CMakeFiles/mmx.dir/tools/string/string_token.cpp.o" \
 "CMakeFiles/mmx.dir/media/sorm.cpp.o" \
 "CMakeFiles/mmx.dir/media/mediastream.cpp.o" \
 "CMakeFiles/mmx.dir/media/sormpool.cpp.o" \
@@ -1199,6 +1224,7 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o
@@ -1209,7 +1235,7 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && $(CMAKE_COMMAND) -P CMakeFiles/mmx.dir/cmake_clean_target.cmake
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmx.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/../../bin/DEBUG/libmmx.a
@@ -1256,6 +1282,7 @@ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_medi
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o.requires
