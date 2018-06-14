@@ -217,10 +217,17 @@ namespace mmxmux
             for (auto& m : sorm_pool_.GetSorms())
             {
                 auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];
+                auto& writer = channel->GetWritter();
 
                 if (channel != nullptr)
                 {
-                    m->ProcessMediaStreams(channel->GetWritter());
+
+                    auto& info = m->GetDiagInfo();
+                    if (info.order645_packs == 0)
+                    {
+                        m->PutSilence(writer, config_.mute_time * 8);
+                    }
+                    m->ProcessMediaStreams(writer);
 
                 }                              
 

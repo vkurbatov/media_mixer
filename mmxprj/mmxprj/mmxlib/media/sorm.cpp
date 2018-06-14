@@ -200,7 +200,29 @@ namespace mmx
 
             rc = (int)sizeof(mmx::headers::ORM_INFO_HEADER);
 
-            fillOrder(writer, media_samples, conn_flag);
+            rc += fillOrder(writer, media_samples, conn_flag);
+
+            return rc;
+        }
+
+        int Sorm::PutSilence(data::IDataPacketWriter &writer, int count)
+        {
+            int rc = 0;
+
+            int channels = 1 + int((sorm_info_.mcl_b != sorm_info_.mcl_a) && (sorm_info_.mcl_b != 0xFF));
+
+            while (count-- > 0)
+            {
+                for (int i = 0; i < channels; i++)
+                {
+                    orm_info_.data[orm_info_.header.media_size++] = headers::ORDER_645_SILENCE_SYMBOL;
+                    if (orm_info_.header.media_size >= headers::ORDER_645_2_MAX_DATA_SIZE)
+                    {
+                        orm_info_.header.order_header.conn_flag = 0;
+                        putPack(writer);
+                    }
+                }
+            }
 
             return rc;
         }
@@ -214,6 +236,18 @@ namespace mmx
         const Sorm::io_info_t& Sorm::GetDiagInfo() const
         {
             return io_info_;
+        }
+
+        int Sorm::putPack(data::IDataPacketWriter &writer)
+        {
+            static unsigned char packet_ids[0x100] = { 0 };
+            orm_info_.header.order_header.block_number++;
+            orm_info_.header.order_header.packet_id = packet_ids[sorm_info_.channel_id]++;
+            writer.Write(&orm_info_, orm_info_.header.media_size + sizeof(headers::ORM_INFO_HEADER));
+
+            io_info_.order645_packs ++;
+
+            orm_info_.header.media_size = 0;
         }
 
         void Sorm::setSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm)
@@ -332,25 +366,15 @@ namespace mmx
 
                     if ((orm_info_.header.media_size == headers::ORDER_645_2_MAX_DATA_SIZE) || (conn_flag != 0))
                     {
-                        static unsigned char packet_ids[0x100] = { 0 };
 
-                        orm_info_.header.order_header.block_number++;
-                        orm_info_.header.order_header.packet_id = packet_ids[sorm_info_.channel_id]++;
                         orm_info_.header.order_header.conn_flag = conn_flag;
+
+                        putPack(writer);
 
                         if (need_size > 0 && conn_flag == 0)
                         {
                             f_process = true;
-                        }
-
-                        // orm_info_.data[headers::ORDER_645_2_MAX_DATA_SIZE] = 0xFF;
-
-                        io_info_.order645_packs ++;
-                        // io_info_.order645_bytes += orm_info_.header.media_size;
-
-                        writer.Write(&orm_info_, orm_info_.header.media_size + sizeof(headers::ORM_INFO_HEADER));
-
-                        orm_info_.header.media_size = 0;
+                        }                     
 
                     }
                 }

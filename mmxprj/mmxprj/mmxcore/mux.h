@@ -32,6 +32,7 @@ namespace mmxmux
         char                                channel_num;
         unsigned char                       mixed_gain;
         unsigned int                        jitter_size;
+        unsigned int                        mute_time;
         unsigned char                       channels[32];
 
     }MUX_CONFIG,*PMUX_CONFIG;

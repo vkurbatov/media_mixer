@@ -13,9 +13,11 @@ namespace mmx
     namespace media
     {
 
+
         class SormPool;
         class Sorm
         {
+
             const static int STREAM_COUNT = 2;
             const static int DEFAULT_MIXER_GAIN = 50;
 
@@ -35,6 +37,7 @@ namespace mmx
             unsigned int        rtp_ssrcs_[STREAM_COUNT];
             unsigned int        rtp_pack_ids_[STREAM_COUNT];
 
+
             unsigned char       mixer_gain_;
 
             MediaPool&          media_pool_;
@@ -51,6 +54,7 @@ namespace mmx
                 int rtp_bytes[2];
                 int order645_packs;
                 int order645_bytes;
+
             };
 
             ~Sorm();
@@ -59,6 +63,7 @@ namespace mmx
             int SetProxy(const mmx::headers::SANGOMA_PROXY_INFO* proxy = nullptr);
             const mmx::headers::SANGOMA_SORM_INFO& GetOrmInfo() const;
             int ProcessMediaStreams(data::IDataPacketWriter& writer, unsigned char conn_flag = 0);
+            int PutSilence(data::IDataPacketWriter& writer, int count);
             int Reset();
 
             const io_info_t& GetDiagInfo() const;
@@ -67,6 +72,7 @@ namespace mmx
         private:
 
             io_info_t io_info_;
+            int putPack(data::IDataPacketWriter& writer);
             void setSorm(const mmx::headers::SANGOMA_SORM_INFO& sorm);
             //int fillOrder(const void *data_a, int size_a, const void *data_b, int size_b, int need_size, bool combined, headers::ORM_INFO_PACKET &orm_info);
             int fillOrder(data::IDataPacketWriter& writer, const mmx::headers::MEDIA_SAMPLE* media_samples[], unsigned char conn_flag);

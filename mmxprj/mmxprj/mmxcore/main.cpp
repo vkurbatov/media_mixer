@@ -35,6 +35,7 @@
 #define DEFAULT_INTERVAL            2000
 #define DEFAULT_MIXED_GAIN          50
 #define DEFAULT_MEDIA_PERIOD        20
+#define DEFAULT_MUTE_TIME           200
 #define DEFAULT_JITTER_BUFFER_SIZE  60
 #define JITTER_BUFFER_MIN           20
 #define JITTER_BUFFER_MAX           (5 * 60 * 1000)
@@ -110,6 +111,7 @@ int main(int argc, char* argv[])
     config.sgm_port = DEFAULT_BASE_PORT;
     config.mixed_gain = DEFAULT_MIXED_GAIN;
     config.jitter_size = DEFAULT_JITTER_BUFFER_SIZE;
+    config.mute_time = DEFAULT_MUTE_TIME;
 
 
    /* unsigned char b_a[] = { 0x15, 0x10, 0x02, 0x0A };
@@ -332,6 +334,21 @@ int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::lo
                         }
                     }
                     break;
+                case 's':
+                    {
+                            int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+                            if (n >= 0 && n <= 30000)
+                            {
+                                config.mute_time = (unsigned short)n;
+                            }
+                            else
+                            {
+                                std::cout << "Error silense time \'s=" << n << "\'. Silense must be range [0..30000] msec" << std::endl;
+                                rc = -EINVAL;
+                            }
+                    }
+                break;
                 case 'p':
                     {
                         int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
