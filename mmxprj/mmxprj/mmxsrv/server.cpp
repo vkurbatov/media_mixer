@@ -34,7 +34,7 @@ namespace mmxsrv
     Server::Server(const SERVER_CONFIG& config) :
         input_channel_(MMX_SERVER_CHANNEL_PATTERN, config.channel, select_, config.interval),
         orm_server_(config.pult ? config.address : 0, config.pult ? config.port : 0, select_, config.interval),
-        sangoma_(config.pult ? 0 : config.address, config.pult ? 0 : config.address, select_, config.interval),
+        sangoma_(config.pult ? 0 : config.address, config.pult ? 0 : config.port, select_, config.interval),
         config_(config)
     {
         std::memset(&stat_, 0, sizeof(stat_));

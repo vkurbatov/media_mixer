@@ -163,7 +163,7 @@ namespace mmx
         {
             int rc = -EINVAL;
 
-            DLOGT("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT "%d)", sock, DLOG_POINTER(data), flags, DLOG_IP(r_address), r_port);
+            DLOGT("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT ", %d)", sock, DLOG_POINTER(data), size, flags, DLOG_IP(r_address), r_port);
 
             if (sock >= 0 && data != nullptr && size > 0)
             {
@@ -187,11 +187,11 @@ namespace mmx
                     rc = -errno;
                     if (rc == -EWOULDBLOCK)
                     {
-                        DLOGD("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT "%d): Nonblocked send!", sock, DLOG_POINTER(data), flags, DLOG_IP(r_address), r_port);
+                        DLOGD("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT ", %d): Nonblocked send!", sock, DLOG_POINTER(data), size, flags, DLOG_IP(r_address), r_port);
                     }
                     else
                     {
-                        DLOGE("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT "%d): error = %d!", sock, DLOG_POINTER(data), flags, DLOG_IP(r_address), r_port, rc);
+                        DLOGE("Socket::Send(%d, %x, %d, %d, " DLOG_IP_FMT ", %d): error = %d!", sock, DLOG_POINTER(data), size, flags, DLOG_IP(r_address), r_port, rc);
                     }
                 }
                 else
@@ -201,7 +201,7 @@ namespace mmx
             }
             else
             {
-                DLOGD("Socket::Send(%d, %x, %d, %d, %d, %d): Invalid arguments!", sock, DLOG_POINTER(data), flags, r_address, r_port);
+                DLOGD("Socket::Send(%d, %x, %d, %d, %d, %d): Invalid arguments!", sock, DLOG_POINTER(data), size, flags, r_address, r_port);
             }
 
             return rc;
@@ -324,7 +324,7 @@ namespace mmx
         {
             int rc = -EINVAL;
 
-            DLOGT("Socket::Connect(%d, " DLOG_IP_FMT "%d)", sock, DLOG_IP(r_address), r_port);
+            DLOGT("Socket::Connect(%d, " DLOG_IP_FMT ", %d)", sock, DLOG_IP(r_address), r_port);
 
             if (sock >= 0)
             {
