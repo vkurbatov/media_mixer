@@ -113,7 +113,7 @@ namespace mmx
 
                     sangoma_.header.packet_id++;
                     sangoma_.header.lid = mcls[0];
-                    sangoma_.header.length = seg_size;
+                    sangoma_.header.length = seg_size + sizeof(sangoma_.header);
 
                     std::memcpy(sangoma_.data, data, seg_size);
 
@@ -149,7 +149,7 @@ namespace mmx
 
                         sangoma_.header.packet_id++;
                         sangoma_.header.lid = mcls[i];
-                        sangoma_.header.length = seg_size;
+                        sangoma_.header.length = seg_size + sizeof(sangoma_.header);
 
 
                         for (int j = 0; j < seg_size; j++)
