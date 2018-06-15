@@ -59,6 +59,9 @@ namespace mmx
 
             int putData(const void* data = nullptr, int size = 0);
 
+            int combineSend(const void* data, int size, const unsigned char mcls[]);
+            int separatedSend(const void* data, int size, const unsigned char mcls[]);
+
             int checkConnect();
             int checkData();
 

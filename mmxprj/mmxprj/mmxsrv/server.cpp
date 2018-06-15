@@ -25,6 +25,7 @@
 
 #define SRV_SEM_UNIQUE_BASE_KEY 50000
 #define SRV_SHMEM_UNIQUE_BASE_KEY   1200
+#define FRAME_PERIOD    64
 
 //#define DEFAULT_TIMEOUT 2000
 
@@ -38,6 +39,8 @@ namespace mmxsrv
     {
         std::memset(&stat_, 0, sizeof(stat_));
         stat_.magic = mmx::headers::PULT_STAT_MAGIC;
+
+        timer_.HStart(FRAME_PERIOD);
     }
 
     int Server::Execute()
@@ -70,12 +73,16 @@ namespace mmxsrv
                 if (rc == -ETIMEDOUT)
                 {
                     dispatchAll(mmx::tools::DISPATCH_TIMER);
+                    if (timer_.IsEnable())
+                    {
+                        processInput();
+                        timer_.HStart(FRAME_PERIOD);
+                    }
                 }
                 else
                 {
 
                     dispatchAll(mmx::tools::DISPATCH_IO);
-                    processInput();
                 }
 
                 updateStatistic(shmem.Data());
@@ -121,7 +128,7 @@ namespace mmxsrv
 
     int Server::getTimeouts()
     {
-        int rc = mmx::net::INFINITE_TIMEOUT;
+        int rc = timer_.Elapsed();
 
         int to = input_channel_.QueryOrderTimeout();
 

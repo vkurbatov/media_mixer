@@ -27,6 +27,7 @@ namespace mmx
             interval_(interval)
         {
 
+            timer_.Start(0);
             std::memset(&sangoma_, 0, sizeof(sangoma_));
 
         }
@@ -93,45 +94,83 @@ namespace mmx
         {
 
 
-            int comb = (int)(orm_info.header.order_header.mcl_b != 0xFF);
+            int comb = (int)(orm_info.header.order_header.mcl_b == 0xFF) || (orm_info.header.order_header.mcl_a == orm_info.header.order_header.mcl_b);
 
-            int total_size = orm_info.header.media_size;
+            return comb != 0 ?
+                      combineSend(orm_info.data, orm_info.header.media_size, &orm_info.header.order_header.mcl_a) :
+                      separatedSend(orm_info.data, orm_info.header.media_size, &orm_info.header.order_header.mcl_a);
+        }
 
-            while (total_size > 0)
+        int SangomaMediaClient::combineSend(const void* data, int size, const unsigned char mcls[])
+        {
+            int rc = -EINVAL;
+
+            if (data != nullptr && size > 0)
             {
-                int idx = orm_info.header.media_size - total_size;
-
-                for (int i = 0; i < 1 + comb; i++)
+                while (size > 0)
                 {
+                    int seg_size = size > mmx::headers::SI_MAX_PYLOAD_SIZE ? mmx::headers::SI_MAX_PYLOAD_SIZE : size;
+
                     sangoma_.header.packet_id++;
-                    sangoma_.header.lid = *(&orm_info.header.order_header.mcl_a + i);
-                    sangoma_.header.length = total_size / (1 + comb);
+                    sangoma_.header.lid = mcls[0];
+                    sangoma_.header.length = seg_size;
 
-                    if (sangoma_.header.length > mmx::headers::SI_MAX_PYLOAD_SIZE)
+                    std::memcpy(sangoma_.data, data, seg_size);
+
+                    if (seg_size < mmx::headers::SI_MAX_PYLOAD_SIZE)
                     {
-                        sangoma_.header.length = mmx::headers::SI_MAX_PYLOAD_SIZE;
-                    }
-
-                    total_size -= sangoma_.header.length;
-
-                    int j = 0;
-
-                    for (j = 0; j < sangoma_.header.length; j++)
-                    {
-                        sangoma_.data[j] = orm_info.data[(j << comb) + i + idx];
-                    }
-
-                    while (j < mmx::headers::SI_MAX_PYLOAD_SIZE)
-                    {
-                        sangoma_.data[idx + j++] = 0;
+                        std::memset(sangoma_.data  + seg_size, mmx::headers::SI_MAX_PYLOAD_SIZE - seg_size, 0);
                     }
 
                     putData(&sangoma_, sizeof(sangoma_));
 
+                    size -= seg_size;
+                    data = ((const char*)data) + seg_size;
                 }
-
             }
 
+            return rc;
+        }
+
+        int SangomaMediaClient::separatedSend(const void* data, int size, const unsigned char mcls[])
+        {
+            int rc = -EINVAL;
+
+            if (data != nullptr && size > 0)
+            {
+                size /= 2;
+
+                while (size > 0)
+                {
+                    int seg_size = size > mmx::headers::SI_MAX_PYLOAD_SIZE ? mmx::headers::SI_MAX_PYLOAD_SIZE : size;
+
+                    for (int i = 0; i < 2; i++)
+                    {
+
+                        sangoma_.header.packet_id++;
+                        sangoma_.header.lid = mcls[i];
+                        sangoma_.header.length = seg_size;
+
+
+                        for (int j = 0; j < seg_size; j++)
+                        {
+                            sangoma_.data[j] = ((const char*)data)[j * 2 + i];
+                        }
+
+                        if (seg_size < mmx::headers::SI_MAX_PYLOAD_SIZE)
+                        {
+                            std::memset(sangoma_.data + seg_size, mmx::headers::SI_MAX_PYLOAD_SIZE - seg_size, 0);
+                        }
+
+                        putData(&sangoma_, sizeof(sangoma_));
+                    }
+
+                    size -= seg_size;
+                    data = ((const char*)(data)) + seg_size;
+                }
+            }
+
+            return rc;
         }
 
         DeferredWriter& SangomaMediaClient::GetWritter()
@@ -153,6 +192,10 @@ namespace mmx
                 if (rc == -EAGAIN)
                 {
                     DLOGW(LOG_BEGIN("putData(%x, %d): would block write, rc = %d"), DLOG_POINTER(data), size, rc);
+                }
+                else
+                {
+                    DLOGD(LOG_BEGIN("putData(%x, %d): data write complete %d bytes"), DLOG_POINTER(data), size, rc);
                 }
 
                 if (writer_.IsEmpty())

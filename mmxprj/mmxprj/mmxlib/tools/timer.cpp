@@ -57,6 +57,17 @@ namespace mmx
             Start(interval_);
         }
 
+        void Timer::HStart(timer_interval_t interval)
+        {
+            interval_ = interval % GetTicks();
+            if (interval_ == 0)
+            {
+                interval_ = interval;
+            }
+            start_ = GetTicks();
+            run_ = true;
+        }
+
         bool Timer::Stop()
         {
             run_ = false;

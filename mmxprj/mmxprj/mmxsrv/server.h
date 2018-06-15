@@ -34,6 +34,7 @@ namespace mmxsrv
 
         mmx::headers::PULT_STAT             stat_;
         mmx::net::timeout_t                 timeout_;
+        mmx::tools::Timer                   timer_;
 
         SERVER_CONFIG                       config_;
 

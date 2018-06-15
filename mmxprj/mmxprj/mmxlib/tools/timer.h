@@ -25,6 +25,7 @@ namespace mmx
             Timer(Timer&& timer);
             void Start(timer_interval_t interval);
             void Start();
+            void HStart(timer_interval_t interval);
             bool Stop();
             timer_interval_t Elapsed() const;
             timer_interval_t Left() const;
