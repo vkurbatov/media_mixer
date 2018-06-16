@@ -214,7 +214,7 @@ namespace mmxsrv
                                 }
                                 else
                                 {
-                                    sangoma_.PutData(orm);
+                                    sangoma_.PutMedia(orm_info_.data, orm.header.media_size, &orm.header.order_header.mcl_a);
                                 }
                             }
 

@@ -90,15 +90,15 @@ namespace mmx
             return false;
         }
 
-        int SangomaMediaClient::PutData(const mmx::headers::ORM_INFO_PACKET& orm_info)
+        int SangomaMediaClient::PutMedia(const void* data, int size, const unsigned char mcls[])
         {
 
 
-            int comb = (int)(orm_info.header.order_header.mcl_b == 0xFF) || (orm_info.header.order_header.mcl_a == orm_info.header.order_header.mcl_b);
+            int comb = (int)(mcls[1] == 0xFF) || (mcls[0] == mcls[1]);
 
             return comb != 0 ?
-                      combineSend(orm_info.data, orm_info.header.media_size, &orm_info.header.order_header.mcl_a) :
-                      separatedSend(orm_info.data, orm_info.header.media_size, &orm_info.header.order_header.mcl_a);
+                      combineSend(data, size, mcls) :
+                      separatedSend(data, size, mcls);
         }
 
         int SangomaMediaClient::combineSend(const void* data, int size, const unsigned char mcls[])
@@ -113,6 +113,7 @@ namespace mmx
 
                     sangoma_.header.packet_id++;
                     sangoma_.header.lid = mcls[0];
+                    sangoma_.header.pid = 1;
                     sangoma_.header.length = seg_size + sizeof(sangoma_.header);
 
                     std::memcpy(sangoma_.data, data, seg_size);
@@ -149,6 +150,7 @@ namespace mmx
 
                         sangoma_.header.packet_id++;
                         sangoma_.header.lid = mcls[i];
+                        sangoma_.header.pid = 1;
                         sangoma_.header.length = seg_size + sizeof(sangoma_.header);
 
 

@@ -52,7 +52,7 @@ namespace mmx
             bool IsDown() const override;
             bool IsReadyData() const override;
 
-            int PutData(const mmx::headers::ORM_INFO_PACKET& orm_info);
+            int PutMedia(const void* data, int size, const unsigned char mcls[]);
             DeferredWriter& GetWritter();
 
         private:
