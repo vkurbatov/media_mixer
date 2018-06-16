@@ -214,7 +214,14 @@ namespace mmxsrv
                                 }
                                 else
                                 {
-                                    sangoma_.PutMedia(orm_info_.data, orm.header.media_size, &orm.header.order_header.mcl_a);
+                                    if (orm.header.order_header.block_number == 0)
+                                    {
+                                        static unsigned char data[512] = { 0xFF };
+                                        stat_.send_packets += (sangoma_.PutMedia(data, sizeof(data), &orm.header.order_header.mcl_a)) > 0;
+
+                                    }
+
+                                    stat_.send_packets += sangoma_.PutMedia(orm_info_.data, orm.header.media_size, &orm.header.order_header.mcl_a);
                                 }
                             }
 
@@ -256,7 +263,15 @@ namespace mmxsrv
 
         if (plt_stat != nullptr)
         {
-            stat_.online_conn = orm_server_.GetClients().size();
+            if (config_.pult)
+            {
+                stat_.online_conn = orm_server_.GetClients().size();
+
+            }
+            else
+            {
+                stat_.online_conn = !sangoma_.IsDown();
+            }
 
             *plt_stat = stat_;
         }
