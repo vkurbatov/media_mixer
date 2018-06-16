@@ -52,15 +52,15 @@ namespace mmx
             bool IsDown() const override;
             bool IsReadyData() const override;
 
-            int PutMedia(const void* data, int size, const unsigned char mcls[]);
+            int PutMedia(const void* data, int size, unsigned char mcl_a, unsigned char mcl_b);
             DeferredWriter& GetWritter();
 
         private:
 
             int putData(const void* data = nullptr, int size = 0);
 
-            int combineSend(const void* data, int size, const unsigned char mcls[]);
-            int separatedSend(const void* data, int size, const unsigned char mcls[]);
+            int combineSend(const void* data, int size, unsigned char mcl);
+            int separatedSend(const void* data, int size, unsigned char mcl_a, unsigned char mcl_b);
 
             int checkConnect();
             int checkData();

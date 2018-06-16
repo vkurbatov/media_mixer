@@ -224,7 +224,7 @@ namespace mmxmux
                     auto& info = m->GetDiagInfo();
                     if (info.order645_packs == 0)
                     {
-                        m->PutSilence(writer, config_.mute_time * 8);
+                        m->PutPreamble(writer, (config_.mute_time + 127) / 128);
                     }
                     m->ProcessMediaStreams(writer);
 

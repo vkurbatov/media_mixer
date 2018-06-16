@@ -215,9 +215,11 @@ namespace mmxsrv
 
                                     int total_size = block->header.length - sizeof(block->header);
 
+
                                     std::memcpy(&orm_info_, &orm, total_size);
+
                                     std::memset((char*)&orm_info_ + total_size,
-                                                mmx::headers::ORDER_645_NODATA_SYMBOL,
+                                                orm.header.media_size == 0 ? mmx::headers::ORDER_645_SILENCE_SYMBOL : mmx::headers::ORDER_645_NODATA_SYMBOL,
                                                 (mmx::headers::ORDER_645_2_MAX_DATA_SIZE + 1)
                                                 - (total_size - sizeof(orm_info_.header)));
 
@@ -229,32 +231,28 @@ namespace mmxsrv
                                 }
                                 else
                                 {
-                                    if (orm.header.order_header.block_number == 0)
+                                    static unsigned char preamble_block[1024] = { 0xFF };
+
+                                    // преамбула
+
+                                    if (orm.header.media_size == 0)
                                     {
-                                        static unsigned char fill_data[1024] = { 0xFF };
-                                        stat_.send_packets += (sangoma_.PutMedia(fill_data, sizeof(fill_data), &orm.header.order_header.mcl_a)) > 0;
-
-                                    }
-
-                                    if (config_.mode == ORM_LINK_E1_REVERSE)
-                                    {
-                                        static unsigned char reverse_data[1024] = { 0 };
-
-                                        for (int i = 0; i < orm.header.media_size; i++)
-                                        {
-                                            reverse_data[i] = bit_invert(orm.data[i]);
-                                        }
-
-                                        stat_.send_packets += sangoma_.PutMedia(orm.data, orm.header.media_size, &orm.header.order_header.mcl_a) > 0;
+                                        stat_.send_packets += sangoma_.PutMedia(preamble_block, sizeof(preamble_block), orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
                                     }
                                     else
                                     {
-                                        stat_.send_packets += sangoma_.PutMedia(orm.data, orm.header.media_size, &orm.header.order_header.mcl_a) > 0;
-                                    }
+                                        if (config_.mode == ORM_LINK_E1_REVERSE)
+                                        {
+                                            for (int i = 0; i < orm.header.media_size; i++)
+                                            {
+                                                orm.data[i] = bit_invert(orm.data[i]);
+                                            }
+                                        }
 
+                                        stat_.send_packets += sangoma_.PutMedia(orm.data, orm.header.media_size, orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
+                                    }
                                 }
                             }
-
 
                             block = reader.GetBlock();
                         }

@@ -205,10 +205,20 @@ namespace mmx
             return rc;
         }
 
-        int Sorm::PutSilence(data::IDataPacketWriter &writer, int count)
+        int Sorm::PutPreamble(data::IDataPacketWriter &writer, int packet_count)
         {
             int rc = 0;
 
+            while(packet_count-- > 0)
+            {
+
+                orm_info_.header.order_header.conn_flag = 0;
+                orm_info_.header.media_size = 0;
+                putPack(writer);
+
+            }
+
+            /*
             int channels = 1 + int((sorm_info_.mcl_b != sorm_info_.mcl_a) && (sorm_info_.mcl_b != 0xFF));
 
             while (count-- > 0)
@@ -222,7 +232,7 @@ namespace mmx
                         putPack(writer);
                     }
                 }
-            }
+            }*/
 
             return rc;
         }

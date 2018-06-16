@@ -63,7 +63,7 @@ namespace mmx
             int SetProxy(const mmx::headers::SANGOMA_PROXY_INFO* proxy = nullptr);
             const mmx::headers::SANGOMA_SORM_INFO& GetOrmInfo() const;
             int ProcessMediaStreams(data::IDataPacketWriter& writer, unsigned char conn_flag = 0);
-            int PutSilence(data::IDataPacketWriter& writer, int count);
+            int PutPreamble(data::IDataPacketWriter& writer, int packet_count);
             int Reset();
 
             const io_info_t& GetDiagInfo() const;

@@ -90,17 +90,17 @@ namespace mmx
             return false;
         }
 
-        int SangomaMediaClient::PutMedia(const void* data, int size, const unsigned char mcls[])
+        int SangomaMediaClient::PutMedia(const void* data, int size, unsigned char mcl_a, unsigned char mcl_b)
         {
 
-            int comb = (int)(mcls[1] == 0xFF) || (mcls[0] == mcls[1]);
+            int comb = (int)(mcl_b == 0xFF) || (mcl_a == mcl_b);
 
             return comb != 0 ?
-                      combineSend(data, size, mcls) :
-                      separatedSend(data, size, mcls);
+                      combineSend(data, size, mcl_a) :
+                      separatedSend(data, size, mcl_a, mcl_b);
         }
 
-        int SangomaMediaClient::combineSend(const void* data, int size, const unsigned char mcls[])
+        int SangomaMediaClient::combineSend(const void* data, int size, unsigned char mcl_a)
         {
             int rc = -EINVAL;
 
@@ -111,7 +111,7 @@ namespace mmx
                     int seg_size = size > mmx::headers::SI_MAX_PYLOAD_SIZE ? mmx::headers::SI_MAX_PYLOAD_SIZE : size;
 
                     sangoma_.header.packet_id++;
-                    sangoma_.header.lid = mcls[0];
+                    sangoma_.header.lid = mcl_a;
                     sangoma_.header.pid = 1;
                     sangoma_.header.length = seg_size + sizeof(sangoma_.header);
 
@@ -126,13 +126,16 @@ namespace mmx
 
                     size -= seg_size;
                     data = ((const char*)data) + seg_size;
+
+                    // Hardcode
+                    //tools::Timer::Sleep(64);
                 }
             }
 
             return rc;
         }
 
-        int SangomaMediaClient::separatedSend(const void* data, int size, const unsigned char mcls[])
+        int SangomaMediaClient::separatedSend(const void* data, int size, unsigned char mcl_a, unsigned char mcl_b)
         {
             int rc = -EINVAL;
 
@@ -148,7 +151,7 @@ namespace mmx
                     {
 
                         sangoma_.header.packet_id++;
-                        sangoma_.header.lid = mcls[i];
+                        sangoma_.header.lid = i == 0 ? mcl_a : mcl_b;
                         sangoma_.header.pid = 1;
                         sangoma_.header.length = seg_size + sizeof(sangoma_.header);
 
