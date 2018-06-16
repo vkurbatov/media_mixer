@@ -231,13 +231,19 @@ namespace mmxsrv
                                 }
                                 else
                                 {
-                                    static unsigned char preamble_block[1024] = { 0xFF };
 
                                     // преамбула
 
                                     if (orm.header.media_size == 0)
                                     {
-                                        stat_.send_packets += sangoma_.PutMedia(preamble_block, sizeof(preamble_block), orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
+                                        static unsigned char preamble_block[1024] = { 0 };
+
+                                        if (preamble_block[0] == 0)
+                                        {
+                                            std::memset(preamble_block, 0xFF, sizeof(preamble_block));
+                                        }
+
+                                        stat_.send_packets += (unsigned int)sangoma_.PutMedia(preamble_block, sizeof(preamble_block), orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
                                     }
                                     else
                                     {
@@ -249,7 +255,7 @@ namespace mmxsrv
                                             }
                                         }
 
-                                        stat_.send_packets += sangoma_.PutMedia(orm.data, orm.header.media_size, orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
+                                        stat_.send_packets += (unsigned int)sangoma_.PutMedia(orm.data, orm.header.media_size, orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
                                     }
                                 }
                             }
