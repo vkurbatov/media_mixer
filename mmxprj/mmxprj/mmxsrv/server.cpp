@@ -221,7 +221,20 @@ namespace mmxsrv
 
                                     }
 
-                                    stat_.send_packets += sangoma_.PutMedia(orm_info_.data, orm.header.media_size, &orm.header.order_header.mcl_a);
+                                    if (config_.mode == ORM_LINK_E1_REVERSE)
+                                    {
+                                        //static unsigned char data[1024] = { 0 };
+                                        /*for (int i = 0; i < orm_info_.header.media_size; i++)
+                                        {
+
+
+                                        }*/
+                                    }
+                                    else
+                                    {
+                                        stat_.send_packets += sangoma_.PutMedia(orm.data, orm.header.media_size, &orm.header.order_header.mcl_a) > 0;
+                                    }
+
                                 }
                             }
 
