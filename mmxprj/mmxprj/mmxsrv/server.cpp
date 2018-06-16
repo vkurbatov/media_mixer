@@ -31,10 +31,25 @@
 
 namespace mmxsrv
 {
+
+    unsigned char bit_invert(unsigned char x)
+    {
+        int base = 256;
+
+        unsigned char  res = 0;
+        while (x != 0)
+        {
+            res += (x & 1) * (base >>= 1);
+            x >>= 1;
+        }
+
+        return res;
+    }
+
     Server::Server(const SERVER_CONFIG& config) :
         input_channel_(MMX_SERVER_CHANNEL_PATTERN, config.channel, select_, config.interval),
-        orm_server_(config.mode ? config.address : 0, config.mode ? config.port : 0, select_, config.interval),
-        sangoma_(config.mode ? 0 : config.address, config.mode ? 0 : config.port, select_, config.interval),
+        orm_server_(config.mode == ORM_LINK_TCP ? config.address : 0, config.mode  == ORM_LINK_TCP ? config.port : 0, select_, config.interval),
+        sangoma_(config.mode != ORM_LINK_TCP ? config.address : 0, config.mode != ORM_LINK_TCP ? config.port : 0, select_, config.interval),
         config_(config)
     {
         std::memset(&stat_, 0, sizeof(stat_));
@@ -216,19 +231,21 @@ namespace mmxsrv
                                 {
                                     if (orm.header.order_header.block_number == 0)
                                     {
-                                        static unsigned char data[512] = { 0xFF };
-                                        stat_.send_packets += (sangoma_.PutMedia(data, sizeof(data), &orm.header.order_header.mcl_a)) > 0;
+                                        static unsigned char fill_data[1024] = { 0xFF };
+                                        stat_.send_packets += (sangoma_.PutMedia(fill_data, sizeof(fill_data), &orm.header.order_header.mcl_a)) > 0;
 
                                     }
 
                                     if (config_.mode == ORM_LINK_E1_REVERSE)
                                     {
-                                        //static unsigned char data[1024] = { 0 };
-                                        /*for (int i = 0; i < orm_info_.header.media_size; i++)
+                                        static unsigned char reverse_data[1024] = { 0 };
+
+                                        for (int i = 0; i < orm.header.media_size; i++)
                                         {
+                                            reverse_data[i] = bit_invert(orm.data[i]);
+                                        }
 
-
-                                        }*/
+                                        stat_.send_packets += sangoma_.PutMedia(orm.data, orm.header.media_size, &orm.header.order_header.mcl_a) > 0;
                                     }
                                     else
                                     {

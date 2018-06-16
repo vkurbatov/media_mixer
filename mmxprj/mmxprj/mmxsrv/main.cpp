@@ -255,7 +255,14 @@ int parse_args(int argc, char* argv[], mmxsrv::SERVER_CONFIG& config, mmx::logs:
                 break;
                 case 's':
                 {
-                    config.mode = mmxsrv::ORM_LINK_E1;
+                    if (*(p+1) == 'r')
+                    {
+                        config.mode = mmxsrv::ORM_LINK_E1_REVERSE;
+                    }
+                    else
+                    {
+                        config.mode = mmxsrv::ORM_LINK_E1;
+                    }
 
                 }
                 break;

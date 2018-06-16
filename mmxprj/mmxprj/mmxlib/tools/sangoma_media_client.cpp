@@ -93,7 +93,6 @@ namespace mmx
         int SangomaMediaClient::PutMedia(const void* data, int size, const unsigned char mcls[])
         {
 
-
             int comb = (int)(mcls[1] == 0xFF) || (mcls[0] == mcls[1]);
 
             return comb != 0 ?
