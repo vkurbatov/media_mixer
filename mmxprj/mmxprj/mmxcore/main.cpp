@@ -11,7 +11,7 @@
 #include <fcntl.h>
 #include <netdb.h>  //INADDR_NONE
 
-#include "../build_number.h"
+//#include "../build_number.h"
 
 #define SERVICE_GROUP "Media module"
 #define SERVICE_NAME "Media stream multiplexor (core)"

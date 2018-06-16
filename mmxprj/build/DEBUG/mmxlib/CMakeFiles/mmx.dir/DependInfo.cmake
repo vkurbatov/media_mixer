@@ -54,6 +54,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
+  "BUILD_NUMBER=1"
   "DEBUG"
   "SOURCE_PATH_SIZE=35"
   )

@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 #set(CMAKE_BUILD_TYPE DEBUG)
 
-
+SET(CMAKE_BUILD_NUMBER 1)
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3")
 SET(CMAKE_CXX_FLAGS_DEBUG  "-O0 -g")
 
@@ -23,6 +23,19 @@ else()
 	set(BUILD_DEBUG 0)
 
 endif()
+
+if ($ENV{BUILD_NUMBER})
+
+	SET(CMAKE_BUILD_NUMBER $ENV{BUILD_NUMBER})
+
+endif()
+
+add_definitions("-DBUILD_NUMBER=${CMAKE_BUILD_NUMBER}")
+
+#target_compile_definitions(${TARGET} PRIVATE -DJENKINS_INFO
+#    -DJENKINS_JOB_NAME="$ENV{JOB_NAME}"
+#    -DJENKINS_BUILD_NUMBER="$ENV{BUILD_NUMBER}"
+#  )
 
 if (BUILD_DEBUG)
 	add_definitions(-DDEBUG)
@@ -59,6 +72,7 @@ add_subdirectory(
 add_subdirectory(
 		mmxtest
 )
+
 
 
 #add_custom_target(${PROJECT_NAME}_copy_bin

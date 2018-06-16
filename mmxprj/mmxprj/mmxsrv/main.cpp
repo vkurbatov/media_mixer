@@ -8,7 +8,7 @@
 #include <netdb.h>      // INADDR_ANY
 #include <signal.h>
 
-#include "../build_number.h"
+//#include "../build_number.h"
 
 #define SERVICE_GROUP "Media module"
 #define SERVICE_NAME "Communication dispatcher"

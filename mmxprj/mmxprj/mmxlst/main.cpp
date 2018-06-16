@@ -15,7 +15,7 @@
 #include "mmxlib/logs/log.h"
 #include "listener.h"
 
-#include "../build_number.h"
+//#include "../build_number.h"
 
 #define SERVICE_GROUP "Media module"
 #define SERVICE_NAME "Udp media stream listener"

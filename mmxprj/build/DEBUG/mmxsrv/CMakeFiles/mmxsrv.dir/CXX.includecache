@@ -6,8 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
-
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
 vector
 -
@@ -183,8 +181,6 @@ netdb.h
 -
 signal.h
 -
-../build_number.h
-/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
 server.h
