@@ -11,15 +11,24 @@
 #include "mmxlib/sniffers/dpsniffer.h"
 #include "mmxlib/headers/pultstat.h"
 
+
+
 namespace mmxsrv
 {
+
+    enum orm_mode_t
+    {
+        ORM_LINK_TCP,
+        ORM_LINK_E1,
+        ORM_LINK_E1_REVERSE
+    };
 
     typedef struct _SERVER_CONFIG
     {
         unsigned char                       channel;
         mmx::net::address_t                 address;
         mmx::net::port_t                    port;
-        bool                                pult;
+        int                                 mode;
         int                                 interval;
     }SERVER_CONFIG, *PSERVER_CONFIG;
 

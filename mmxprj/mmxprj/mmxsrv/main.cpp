@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
     config.interval = DEFAULT_INTERVAL;
     config.address = INADDR_ANY;
     config.port = DEFAULT_BASE_PORT;
-    config.pult = true;
+    config.mode = mmxsrv::ORM_LINK_TCP;
 
     mmx::logs::log_level_t  log_level = DEFAULT_LEVEL_LOG;
 
@@ -255,7 +255,7 @@ int parse_args(int argc, char* argv[], mmxsrv::SERVER_CONFIG& config, mmx::logs:
                 break;
                 case 's':
                 {
-                    config.pult = false;
+                    config.mode = mmxsrv::ORM_LINK_E1;
 
                 }
                 break;

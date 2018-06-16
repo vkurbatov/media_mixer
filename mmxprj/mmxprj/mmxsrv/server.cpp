@@ -33,8 +33,8 @@ namespace mmxsrv
 {
     Server::Server(const SERVER_CONFIG& config) :
         input_channel_(MMX_SERVER_CHANNEL_PATTERN, config.channel, select_, config.interval),
-        orm_server_(config.pult ? config.address : 0, config.pult ? config.port : 0, select_, config.interval),
-        sangoma_(config.pult ? 0 : config.address, config.pult ? 0 : config.port, select_, config.interval),
+        orm_server_(config.mode ? config.address : 0, config.mode ? config.port : 0, select_, config.interval),
+        sangoma_(config.mode ? 0 : config.address, config.mode ? 0 : config.port, select_, config.interval),
         config_(config)
     {
         std::memset(&stat_, 0, sizeof(stat_));
@@ -107,7 +107,7 @@ namespace mmxsrv
     {
         input_channel_.Dispatch(dispatch);
 
-        if (config_.pult)
+        if (config_.mode == ORM_LINK_TCP)
         {
 
             stat_.total_conn += (unsigned short)(orm_server_.Dispatch(dispatch) >= 0);
@@ -195,7 +195,7 @@ namespace mmxsrv
 
                                 mmx::headers::ORM_INFO_PACKET& orm = *(mmx::headers::ORM_INFO_PACKET*)block->data;
 
-                                if (config_.pult)
+                                if (config_.mode == mmxsrv::ORM_LINK_TCP)
                                 {
 
                                     int total_size = block->header.length - sizeof(block->header);
@@ -263,7 +263,7 @@ namespace mmxsrv
 
         if (plt_stat != nullptr)
         {
-            if (config_.pult)
+            if (config_.mode == mmxsrv::ORM_LINK_TCP)
             {
                 stat_.online_conn = orm_server_.GetClients().size();
 
