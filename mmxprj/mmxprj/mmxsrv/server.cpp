@@ -172,6 +172,7 @@ namespace mmxsrv
 
     void Server::processInput()
     {
+
         auto data = (const char*)input_channel_.Data();
         int size = input_channel_.Size();
 
@@ -289,6 +290,8 @@ namespace mmxsrv
 
         orm_server_.Close();
 
+        select_.Reset();
+
     }
 
     void Server::updateStatistic(void* data)
@@ -309,6 +312,7 @@ namespace mmxsrv
 
             *plt_stat = stat_;
         }
+
     }
 
 

@@ -36,6 +36,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o"
   "CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o"
   "CMakeFiles/mmx.dir/tools/string/string_token.cpp.o"
+  "CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o"
   "CMakeFiles/mmx.dir/media/sorm.cpp.o"
   "CMakeFiles/mmx.dir/media/mediastream.cpp.o"
   "CMakeFiles/mmx.dir/media/sormpool.cpp.o"

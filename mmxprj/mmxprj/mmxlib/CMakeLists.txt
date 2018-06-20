@@ -73,6 +73,7 @@ set ( SOURCE_FILES
 	tools/async/asyncdispatcher.cpp
 	tools/async/asyncunit.cpp
 	tools/string/string_token.cpp
+	tools/string/arg_processor.cpp
 #	медиа
 	media/sorm.cpp
 	media/mediastream.cpp
@@ -159,6 +160,7 @@ set ( PRIVATE_HEADERS
 	tools/async/iasyncunit.h
 	tools/async/asyncunit.h
 	tools/string/string_token.h
+	tools/string/arg_processor.h
 #	медиа
 	media/ijitter.h
 	media/sorm.h

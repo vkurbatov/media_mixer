@@ -142,8 +142,6 @@ namespace mmx
 
                     rc = handle_;
 
-                    handle_ = -1;
-
                     DLOGI(LOG_BEGIN("Close(): pipe close success, handle_ = %d"), rc);
                 }
                 else
@@ -151,6 +149,8 @@ namespace mmx
                     rc = -errno;
                     DLOGE(LOG_BEGIN("Close(): Error close pipe, handle_ = %d, rc = %d"), handle_, rc);
                 }
+
+                handle_ = -1;
             }
             else
             {

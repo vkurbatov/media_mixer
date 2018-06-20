@@ -106,6 +106,8 @@ namespace mmxlst
         udp_listener_.Close();
         output_channel_.Close();
 
+        select_.Reset();
+
     }
 
     void Listener::processData()

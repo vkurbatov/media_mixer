@@ -456,6 +456,8 @@ namespace mmxmux
 
         sangoma_.GetClients().clear();
 
+        select_.Reset();
+
     }
 
 }

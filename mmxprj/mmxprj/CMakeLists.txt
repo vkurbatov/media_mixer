@@ -32,11 +32,6 @@ endif()
 
 add_definitions("-DBUILD_NUMBER=${CMAKE_BUILD_NUMBER}")
 
-#target_compile_definitions(${TARGET} PRIVATE -DJENKINS_INFO
-#    -DJENKINS_JOB_NAME="$ENV{JOB_NAME}"
-#    -DJENKINS_BUILD_NUMBER="$ENV{BUILD_NUMBER}"
-#  )
-
 if (BUILD_DEBUG)
 	add_definitions(-DDEBUG)
 endif()
@@ -73,10 +68,3 @@ add_subdirectory(
 		mmxtest
 )
 
-
-
-#add_custom_target(${PROJECT_NAME}_copy_bin
-#				COMMAND ${CMAKE_COMMAND} -E copy /home/vkurbatov/1.txt /home/vkurbatov/2.txt
-#				)
-
-#)

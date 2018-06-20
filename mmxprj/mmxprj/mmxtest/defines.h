@@ -19,6 +19,7 @@ namespace mmxtest
     int test10();
     int test11();
     int test12();
+    int test12_1();
 }
 
 #endif

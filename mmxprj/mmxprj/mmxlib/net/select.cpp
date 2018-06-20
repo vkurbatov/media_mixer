@@ -38,8 +38,6 @@ namespace mmx
 
             std::memcpy(result_, sets_, sizeof(sets_));
 
-
-
             int rc = select(
                         fd_max_ + 1,
                         &result_[0], //readmask
@@ -95,7 +93,7 @@ namespace mmx
                 }
                 else
                 {
-                    DLOGE(LOG_BEGIN("Wait(%d): select error = %d"), rc);
+                    DLOGE(LOG_BEGIN("Wait(%d): select[%d..%d] error = %d"), timeout, fd_min_, fd_max_, rc);
                 }
 
             }
@@ -229,7 +227,8 @@ namespace mmx
             std::memset(result_, 0, sizeof(result_));
             std::memset((void*)&sock_table_, 0, sizeof(sock_table_));
 
-            fd_max_ = -1;
+            fd_min_ = fd_max_ = -1;
+
         }
 
 

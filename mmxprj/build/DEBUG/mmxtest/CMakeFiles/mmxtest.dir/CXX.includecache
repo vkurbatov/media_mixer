@@ -277,6 +277,12 @@ iostream
 -
 mmxlib/tools/string/string_token.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/tools/string/string_token.h
+mmxlib/tools/timer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/tools/timer.h
+mmxlib/net/select.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/net/select.h
+string
+-
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test2.cpp
 iostream

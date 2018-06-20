@@ -46,6 +46,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/udp_listener.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o"
