@@ -59,14 +59,12 @@ namespace mmx
 
         void Timer::HStart(timer_interval_t interval)
         {
-            interval_ = (GetTicks()) % interval;
-            if (interval_ == 0)
+            int tim = interval - (GetTicks() % interval);
+            if (tim == 0)
             {
-                interval_ = interval;
+                tim = interval;
             }
-
-            start_ = GetTicks();
-            run_ = true;
+            Start(tim);
         }
 
         bool Timer::Stop()

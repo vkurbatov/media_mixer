@@ -1,6 +1,7 @@
 #ifndef _MMXMUX_MUX_H
 #define _MMXMUX_MUX_H
 
+
 #include "mmxlib/net/select_ex.h"
 
 #include "mmxlib/tools/timer.h"
@@ -59,6 +60,7 @@ namespace mmxmux
         std::vector<mmx::ipc::SharedMemory> shmem_servers_;
         std::vector<mmx::media::Sorm*>      rm_sorms_;
         int                                 channel_indexes_[256];
+
 
 
     public:

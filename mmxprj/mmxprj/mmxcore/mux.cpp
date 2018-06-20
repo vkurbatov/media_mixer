@@ -15,8 +15,11 @@
 
 #define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("Mux", msg)
 
+
 namespace mmxmux
 {
+
+    //const static pid_t  g_pid = getpid();
 
     Mux::Mux(const MUX_CONFIG& config) :
         config_(config),
@@ -344,7 +347,7 @@ namespace mmxmux
         for (mmx::tools::PipeOutputChannel& o : output_channel_pool_.GetChannels())
         {
             answer.a_link_status[i].type = mmx::headers::SI_LINK_TCP;
-            answer.a_link_status[i].num = o.GetChannelId();
+            answer.a_link_status[i].num = o.GetChannelId();          
 
             mmx::headers::PULT_STAT* plt_stat = (mmx::headers::PULT_STAT*)shmem_servers_[channel_indexes_[answer.a_link_status[i].num]].Data();
 
@@ -373,9 +376,12 @@ namespace mmxmux
                             rm_sorms_.push_back(s);
                         }
                         break;
+
                     case mmx::headers::SI_LINK_STATUS:
+
                         DLOGT(LOG_BEGIN("processSangoma(): recieve LINK_STATUS query, len = %d"), query->header.length);
                         break;
+
                     case mmx::headers::SI_START_PROXY:
                     case mmx::headers::SI_END_PROXY:
                         {

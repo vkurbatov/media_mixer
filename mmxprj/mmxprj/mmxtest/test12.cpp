@@ -39,23 +39,51 @@ namespace mmxtest
 
         mmx::tools::Timer tim;
 
-        tim.HStart(10);
+
+        const int delay = 50;
+
+        int cnt = 0;
+        int dti = 0;
+
+        int max_dt = 0;
+
+        tim.Start(delay);
+
+        unsigned int start = mmx::tools::Timer::GetTicks();
+        unsigned int tick = mmx::tools::Timer::GetTicks();
 
         while (1)
         {
-            auto el = tim.Elapsed();
-            auto lft = tim.Left();
+            //auto el = tim.Elapsed();
+            //auto lft = tim.Left();
 
-            std::cout << el << ", " << lft << std::endl;
+            //std::cout << el << ", " << lft << std::endl;
+
+            int rc = select.Wait(tim.Left());
 
             if (tim.IsEnable())
             {
-                tim.HStart(10);
-                std::cout << "Timer restart" << std::endl;
+
+                int dt = mmx::tools::Timer::GetTicks() - tick;
+
+                cnt ++;
+                dti = mmx::tools::Timer::GetTicks() - start;
+
+                if (dt > max_dt)
+                    max_dt = dt;
+
+                //if (dt != delay)
+                {
+                    std::cout << "Timer restart: " << mmx::tools::Timer::GetTicks() << ", dt = " << dt << ", " << max_dt << ", error = " << ((double)dti / (double)delay) - (double)cnt << std::endl;
+                }
+
+                tim.Start(delay);
+                tick = mmx::tools::Timer::GetTicks();
+                //std::cout << "Timer restart: " << mmx::tools::Timer::GetTicks() << std::endl;
             }
             else
             {
-                mmx::tools::Timer::Sleep(1);
+                //mmx::tools::Timer::Sleep(1);
             }
 
         }
