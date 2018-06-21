@@ -58,6 +58,10 @@ namespace mmxlst
             else
             {
                 closeAll();
+                if (rc == -EBADF)
+                {
+                    select_.Reset();
+                }
             }
         }
     }
@@ -105,8 +109,6 @@ namespace mmxlst
 
         udp_listener_.Close();
         output_channel_.Close();
-
-        select_.Reset();
 
     }
 
