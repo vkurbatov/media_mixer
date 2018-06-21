@@ -55,7 +55,7 @@ namespace mmxsrv
         std::memset(&stat_, 0, sizeof(stat_));
         stat_.magic = mmx::headers::PULT_STAT_MAGIC;
 
-        timer_.Start(FRAME_PERIOD);
+        timer_.HStart(FRAME_PERIOD);
     }
 
     int Server::Execute()
@@ -91,7 +91,7 @@ namespace mmxsrv
                     if (timer_.IsEnable())
                     {
                         processInput();
-                        timer_.Start(FRAME_PERIOD);
+                        timer_.HStart(FRAME_PERIOD);
                     }
                 }
                 else

@@ -29,7 +29,7 @@ namespace mmxmux
         media_pool_(-1, config.jitter_size),
         sorm_pool_(media_pool_, 10, config.mixed_gain)
     {
-        timer_.Start(config_.media_period);
+        timer_.HStart(config_.media_period);
         std::memset(channel_indexes_, -1, sizeof(channel_indexes_));
     }
 
@@ -245,7 +245,7 @@ namespace mmxmux
                 c.Send();
             }
 
-            timer_.Start(config_.media_period);
+            timer_.HStart(config_.media_period);
         }
     }
 
