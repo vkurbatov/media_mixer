@@ -33,7 +33,7 @@ namespace mmxmux
         std::memset(channel_indexes_, -1, sizeof(channel_indexes_));
     }
 
-    void Mux::test()
+    /*void Mux::test()
     {
         mmx::headers::SANGOMA_PROXY_INFO proxy;
         mmx::headers::SANGOMA_SORM_INFO sorm;
@@ -55,7 +55,7 @@ namespace mmxmux
 
         sorm_pool_.GetSorm(sorm, proxy);
 
-    }
+    }*/
 
     int Mux::Execute()
     {

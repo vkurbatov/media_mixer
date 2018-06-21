@@ -15,6 +15,8 @@ set ( SOURCE_FILES
     main.cpp
 #	_listener.cpp
 	listener.cpp
+	parsearg.cpp
+	sighandler.cpp
 #	direction.cpp
 #	create_dir.cpp
 #	destroy_dir.cpp

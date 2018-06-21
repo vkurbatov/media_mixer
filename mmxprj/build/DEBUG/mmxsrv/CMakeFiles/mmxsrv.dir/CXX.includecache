@@ -168,6 +168,10 @@ list
 vector
 -
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
+mmxlib/logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/logs/log.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp
 iostream
 -
@@ -181,6 +185,24 @@ netdb.h
 -
 signal.h
 -
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
+iostream
+-
+cstdio
+-
+cstring
+-
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
+netdb.h
+-
+errno.h
+-
+server.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
 server.h
@@ -225,4 +247,14 @@ mmxlib/sniffers/dpsniffer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/sniffers/dpsniffer.h
 mmxlib/headers/pultstat.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/headers/pultstat.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
+signal.h
+-
+stdlib.h
+-
+mmxlib/logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/logs/log.h
 

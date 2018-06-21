@@ -14,6 +14,8 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE} )
 set ( SOURCE_FILES
     main.cpp
 	server.cpp
+	sighandler.cpp
+	parsearg.cpp
 )
 
 set ( PRIVATE_HEADERS

@@ -105,20 +105,72 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o.provides: mmxsrv/CMakeFiles/mmxsrv.dir
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o.provides.build: mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o
 
 
+mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o: mmxsrv/CMakeFiles/mmxsrv.dir/flags.make
+mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxsrv.dir/sighandler.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp
+
+mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxsrv.dir/sighandler.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp > CMakeFiles/mmxsrv.dir/sighandler.cpp.i
+
+mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxsrv.dir/sighandler.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp -o CMakeFiles/mmxsrv.dir/sighandler.cpp.s
+
+mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.requires:
+
+.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.requires
+
+mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.provides: mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.requires
+	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.provides.build
+.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.provides
+
+mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.provides.build: mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o
+
+
+mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: mmxsrv/CMakeFiles/mmxsrv.dir/flags.make
+mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxsrv.dir/parsearg.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
+
+mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxsrv.dir/parsearg.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp > CMakeFiles/mmxsrv.dir/parsearg.cpp.i
+
+mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxsrv.dir/parsearg.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp -o CMakeFiles/mmxsrv.dir/parsearg.cpp.s
+
+mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.requires:
+
+.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.requires
+
+mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.provides: mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.requires
+	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.provides.build
+.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.provides
+
+mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.provides.build: mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o
+
+
 # Object files for target mmxsrv
 mmxsrv_OBJECTS = \
 "CMakeFiles/mmxsrv.dir/main.cpp.o" \
-"CMakeFiles/mmxsrv.dir/server.cpp.o"
+"CMakeFiles/mmxsrv.dir/server.cpp.o" \
+"CMakeFiles/mmxsrv.dir/sighandler.cpp.o" \
+"CMakeFiles/mmxsrv.dir/parsearg.cpp.o"
 
 # External object files for target mmxsrv
 mmxsrv_EXTERNAL_OBJECTS =
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmxsrv.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../../bin/DEBUG/mmxsrv
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../../bin/mmxsrv
@@ -130,6 +182,8 @@ mmxsrv/CMakeFiles/mmxsrv.dir/build: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/bu
 
 mmxsrv/CMakeFiles/mmxsrv.dir/requires: mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o.requires
 mmxsrv/CMakeFiles/mmxsrv.dir/requires: mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o.requires
+mmxsrv/CMakeFiles/mmxsrv.dir/requires: mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.requires
+mmxsrv/CMakeFiles/mmxsrv.dir/requires: mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.requires
 
 .PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/requires
 

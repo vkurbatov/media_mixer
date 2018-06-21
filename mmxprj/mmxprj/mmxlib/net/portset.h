@@ -12,7 +12,6 @@ namespace mmx
 		class PortSet
 		{
             unsigned char set_[PORT_SET_SIZE];
-            int count_;
 
         public:
             PortSet();
@@ -24,6 +23,9 @@ namespace mmx
             int SetRange(unsigned short begin, unsigned short end, short step = 1);
             int ClrRange(unsigned short begin, unsigned short end, short step = 1);
             bool operator[] (unsigned short port) const;
+            unsigned char *Data();
+            const unsigned char *Data() const;
+
             void Clear();
         };
 	}

@@ -132,6 +132,8 @@ typeinfo
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/names.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/portset.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
 sys/socket.h
 -
@@ -218,6 +220,10 @@ list
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
 
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
+mmxlib/logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
+
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
 iostream
 -
@@ -233,6 +239,8 @@ fcntl.h
 -
 netdb.h
 -
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
 mux.h
@@ -275,6 +283,34 @@ mmxlib/media/sormpool.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/media/sormpool.h
 mmxlib/ipc/shmem.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/ipc/shmem.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp
+iostream
+-
+cstdio
+-
+cstring
+-
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
+netdb.h
+-
+errno.h
+-
+mmxlib/net/portset.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/net/portset.h
+mux.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
+
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp
+defines.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
+signal.h
+-
+stdlib.h
+-
+mmxlib/logs/log.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
 idpwriter.h

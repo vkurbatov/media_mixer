@@ -105,20 +105,72 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o.provides: mmxcore/CMakeFiles/mmxcore.di
 mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o.provides.build: mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
 
 
+mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o: mmxcore/CMakeFiles/mmxcore.dir/flags.make
+mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxcore.dir/sighandler.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp
+
+mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxcore.dir/sighandler.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp > CMakeFiles/mmxcore.dir/sighandler.cpp.i
+
+mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxcore.dir/sighandler.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp -o CMakeFiles/mmxcore.dir/sighandler.cpp.s
+
+mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.requires:
+
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.requires
+
+mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.provides: mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.requires
+	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.provides.build
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.provides
+
+mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.provides.build: mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o
+
+
+mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: mmxcore/CMakeFiles/mmxcore.dir/flags.make
+mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxcore.dir/parsearg.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp
+
+mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxcore.dir/parsearg.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp > CMakeFiles/mmxcore.dir/parsearg.cpp.i
+
+mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxcore.dir/parsearg.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp -o CMakeFiles/mmxcore.dir/parsearg.cpp.s
+
+mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.requires:
+
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.requires
+
+mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.provides: mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.requires
+	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.provides.build
+.PHONY : mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.provides
+
+mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.provides.build: mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o
+
+
 # Object files for target mmxcore
 mmxcore_OBJECTS = \
 "CMakeFiles/mmxcore.dir/main.cpp.o" \
-"CMakeFiles/mmxcore.dir/mux.cpp.o"
+"CMakeFiles/mmxcore.dir/mux.cpp.o" \
+"CMakeFiles/mmxcore.dir/sighandler.cpp.o" \
+"CMakeFiles/mmxcore.dir/parsearg.cpp.o"
 
 # External object files for target mmxcore
 mmxcore_EXTERNAL_OBJECTS =
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
 /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmxcore.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../../bin/DEBUG/mmxcore
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../../bin/mmxcore
@@ -130,6 +182,8 @@ mmxcore/CMakeFiles/mmxcore.dir/build: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore
 
 mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o.requires
 mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o.requires
+mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.requires
+mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.requires
 
 .PHONY : mmxcore/CMakeFiles/mmxcore.dir/requires
 

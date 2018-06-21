@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/main.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

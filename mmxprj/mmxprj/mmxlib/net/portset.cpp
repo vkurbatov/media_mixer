@@ -103,6 +103,16 @@ namespace mmx
             return (set_[port / 8] & 1 << (port % 8)) != 0;
         }
 
+        unsigned char* PortSet::Data()
+        {
+            return set_;
+        }
+
+        const unsigned char *PortSet::Data() const
+        {
+            return set_;
+        }
+
         void PortSet::Clear()
         {
             DLOGT(LOG_BEGIN("Clear()"));

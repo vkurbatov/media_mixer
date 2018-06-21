@@ -13,6 +13,8 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE} )
 set ( SOURCE_FILES
     main.cpp
 	mux.cpp
+	sighandler.cpp
+	parsearg.cpp
 #	inputchannel.cpp
 #	outputchannel.cpp
 #	sorm.cpp
@@ -20,6 +22,7 @@ set ( SOURCE_FILES
 
 set ( PRIVATE_HEADERS
 	mux.h
+	defines.h
 #	inputchannel.h
 #	outputchannel.h
 #	sorm.h

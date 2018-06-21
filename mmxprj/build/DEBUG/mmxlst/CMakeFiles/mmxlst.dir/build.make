@@ -105,20 +105,72 @@ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.d
 mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o
 
 
+mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: mmxlst/CMakeFiles/mmxlst.dir/flags.make
+mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxlst.dir/parsearg.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp
+
+mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxlst.dir/parsearg.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp > CMakeFiles/mmxlst.dir/parsearg.cpp.i
+
+mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxlst.dir/parsearg.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp -o CMakeFiles/mmxlst.dir/parsearg.cpp.s
+
+mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.requires:
+
+.PHONY : mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.requires
+
+mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.requires
+	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.provides.build
+.PHONY : mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.provides
+
+mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o
+
+
+mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o: mmxlst/CMakeFiles/mmxlst.dir/flags.make
+mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxlst.dir/sighandler.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp
+
+mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxlst.dir/sighandler.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp > CMakeFiles/mmxlst.dir/sighandler.cpp.i
+
+mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxlst.dir/sighandler.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp -o CMakeFiles/mmxlst.dir/sighandler.cpp.s
+
+mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.requires:
+
+.PHONY : mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.requires
+
+mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.requires
+	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.provides.build
+.PHONY : mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.provides
+
+mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o
+
+
 # Object files for target mmxlst
 mmxlst_OBJECTS = \
 "CMakeFiles/mmxlst.dir/main.cpp.o" \
-"CMakeFiles/mmxlst.dir/listener.cpp.o"
+"CMakeFiles/mmxlst.dir/listener.cpp.o" \
+"CMakeFiles/mmxlst.dir/parsearg.cpp.o" \
+"CMakeFiles/mmxlst.dir/sighandler.cpp.o"
 
 # External object files for target mmxlst
 mmxlst_EXTERNAL_OBJECTS =
 
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/build.make
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst"
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmxlst.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../../bin/DEBUG/mmxlst
 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../../bin/mmxlst
@@ -130,6 +182,8 @@ mmxlst/CMakeFiles/mmxlst.dir/build: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/bu
 
 mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o.requires
 mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.requires
+mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.requires
+mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.requires
 
 .PHONY : mmxlst/CMakeFiles/mmxlst.dir/requires
 

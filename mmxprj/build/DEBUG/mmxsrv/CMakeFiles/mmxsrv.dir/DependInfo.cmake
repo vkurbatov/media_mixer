@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o"
   "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o"
+  "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
