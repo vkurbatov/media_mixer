@@ -172,7 +172,7 @@ namespace mmx
 
 
 
-                        DLOGT(LOG_BEGIN("ProcessMediaStreams(): get sample success {i:%d, ssrc:%x, pack_id:%x, size:%d}"),
+                        DLOGD(LOG_BEGIN("ProcessMediaStreams(): get sample success {i:%d, ssrc:%x, pack_id:%x, size:%d}"),
                               i,
                               htonl(rtp_ssrcs_[i]),
                               rtp_pack_ids_[i],

@@ -147,7 +147,7 @@ namespace mmxsrv
 
     int Server::getTimeouts()
     {
-        int rc = timer_.Elapsed();
+        int rc = timer_.Left();
 
         int to = input_channel_.QueryOrderTimeout();
 
@@ -156,18 +156,24 @@ namespace mmxsrv
             rc = to;
         }
 
-        to = orm_server_.QueryOrderTimeout();
-
-        if (to >= 0 && (to < rc || rc < 0))
+        if (config_.mode == ORM_LINK_TCP)
         {
-            rc = to;
+
+            to = orm_server_.QueryOrderTimeout();
+
+            if (to >= 0 && (to < rc || rc < 0))
+            {
+                rc = to;
+            }
         }
-
-        to = sangoma_.QueryOrderTimeout();
-
-        if (to >= 0 && (to < rc || rc < 0))
+        else
         {
-            rc = to;
+            to = sangoma_.QueryOrderTimeout();
+
+            if (to >= 0 && (to < rc || rc < 0))
+            {
+                rc = to;
+            }
         }
 
         return rc;
