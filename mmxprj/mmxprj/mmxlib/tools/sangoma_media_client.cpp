@@ -95,6 +95,9 @@ namespace mmx
 
             int comb = (int)(mcl_b == 0xFF) || (mcl_a == mcl_b);
 
+            mcl_a += (unsigned char)((mcl_a != 0xFF) && ((mcl_a & 0x1F) > 15));
+            mcl_b += (unsigned char)((mcl_b != 0xFF) && ((mcl_b & 0x1F) > 15));
+
             return comb != 0 ?
                       combineSend(data, size, mcl_a) :
                       separatedSend(data, size, mcl_a, mcl_b);
