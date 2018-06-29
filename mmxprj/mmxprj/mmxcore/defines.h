@@ -27,6 +27,7 @@
 #define DEFAULT_MEDIA_PERIOD        20
 #define DEFAULT_MUTE_TIME           200
 #define DEFAULT_JITTER_BUFFER_SIZE  60
+#define DEFAULT_MEDIA_HEALTH_TIME	0
 #define JITTER_BUFFER_MIN           20
 #define JITTER_BUFFER_MAX           (5 * 60 * 1000)
 

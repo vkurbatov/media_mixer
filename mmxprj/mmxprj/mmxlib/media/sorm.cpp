@@ -1,6 +1,7 @@
 #include "sorm.h"
 #include "media/codecs/audio/mixer.h"
 #include "media/codecs/audio/pcma.h"
+#include "tools/timer.h"
 
 #include <cstring>
 #include <netdb.h>
@@ -17,7 +18,8 @@ namespace mmx
 
         Sorm::Sorm(MediaPool& media_pool, unsigned char mixer_gain) :
             mixer_gain_(mixer_gain),
-            media_pool_(media_pool)
+            media_pool_(media_pool),
+            last_update_media_(tools::Timer::GetTicks())
 
         {
 
@@ -38,7 +40,8 @@ namespace mmx
             media_pool_(sorm.media_pool_),
             sorm_info_(sorm.sorm_info_),
             orm_info_(sorm.orm_info_),
-            io_info_(sorm.io_info_)
+            io_info_(sorm.io_info_),
+            last_update_media_(sorm.last_update_media_)
         {
 
             DLOGT(LOG_BEGIN("Sorm(&&%x)"), DLOG_POINTER(&sorm));
@@ -128,6 +131,8 @@ namespace mmx
 
 
                 rc = (int)(streams_[0] != nullptr) + (int)(streams_[1] != nullptr);
+
+                last_update_media_ = tools::Timer::GetTicks();
             }
 
             return rc;
@@ -177,6 +182,9 @@ namespace mmx
                               htonl(rtp_ssrcs_[i]),
                               rtp_pack_ids_[i],
                               size_arr[i]);
+
+                        last_update_media_ = tools::Timer::GetTicks();
+
                     }
                     else
                     {
@@ -241,6 +249,11 @@ namespace mmx
         {
             orm_info_.header.order_header.block_number = 0;
             std::memset(&io_info_,0, sizeof(io_info_));
+        }
+
+        unsigned int Sorm::GetMediaDelay() const
+        {
+            return tools::Timer::GetTicks() - last_update_media_;
         }
 
         const Sorm::io_info_t& Sorm::GetDiagInfo() const

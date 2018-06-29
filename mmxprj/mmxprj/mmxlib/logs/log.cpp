@@ -234,9 +234,9 @@ namespace mmx
                 // для форматирования пользовательских данных
 
                 auto n = std::sprintf(buffer, LOG_HEADER_FORMAT,
-                                      tim->tm_year % 100,
-                                      tim->tm_mon + 1,
                                       tim->tm_mday,
+                                      tim->tm_mon + 1,
+                                      tim->tm_year % 100,
                                       tim->tm_hour,
                                       tim->tm_min,
                                       tim->tm_sec,

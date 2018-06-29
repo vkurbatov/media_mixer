@@ -37,10 +37,11 @@ namespace mmx
             unsigned int        rtp_ssrcs_[STREAM_COUNT];
             unsigned int        rtp_pack_ids_[STREAM_COUNT];
 
-
+            unsigned int        last_update_media_;
             unsigned char       mixer_gain_;
 
             MediaPool&          media_pool_;
+
 
 
 
@@ -54,7 +55,6 @@ namespace mmx
                 int rtp_bytes[2];
                 int order645_packs;
                 int order645_bytes;
-
             };
 
             ~Sorm();
@@ -65,6 +65,8 @@ namespace mmx
             int ProcessMediaStreams(data::IDataPacketWriter& writer, unsigned char conn_flag = 0);
             int PutPreamble(data::IDataPacketWriter& writer, int packet_count);
             int Reset();
+
+            unsigned int GetMediaDelay() const;
 
             const io_info_t& GetDiagInfo() const;
 

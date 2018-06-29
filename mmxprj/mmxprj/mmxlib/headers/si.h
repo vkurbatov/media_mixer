@@ -111,10 +111,10 @@ namespace mmx
         {
 
             unsigned short  packet_id;  // инкрементный счетчик кадров
-            unsigned short  zero1;      // зарезервировано (0)
+            unsigned short  zero1;      // обязательный (0)
             unsigned short  length;     // размер pyload + длина заголовка
-            unsigned short  zero2;      // зарезервировано (0)
-            unsigned int    pid;        // reserved
+            unsigned short  zero2;      // обязательный (0)
+            unsigned int    pid;        // reserved (устанавливать в 1)
             unsigned int    lid;        // идентификатор соединения/слота
 
         }SANGOMA_MEDIA_STREAM_HEADER, *PSANGOMA_MEDIA_STREAM_HEADER;

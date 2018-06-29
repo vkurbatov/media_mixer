@@ -34,6 +34,7 @@ namespace mmxmux
         unsigned char                       mixed_gain;
         unsigned int                        jitter_size;
         unsigned int                        mute_time;
+        unsigned int                        media_health_time;
         unsigned char                       channels[32];
 
     }MUX_CONFIG,*PMUX_CONFIG;
@@ -76,6 +77,7 @@ namespace mmxmux
         void dispatchAll(mmx::tools::dispatch_flags_t dispatch);
         void processInput();
         void timerWork();
+        void checkRemovedSorms();
         void processSangoma();
         void closeAll();
         //void test();

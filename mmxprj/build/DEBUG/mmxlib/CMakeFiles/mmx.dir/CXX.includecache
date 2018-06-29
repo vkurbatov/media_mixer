@@ -317,6 +317,8 @@ media/codecs/audio/mixer.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/media/codecs/audio/mixer.h
 media/codecs/audio/pcma.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/media/codecs/audio/pcma.h
+tools/timer.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/tools/timer.h
 cstring
 -
 netdb.h

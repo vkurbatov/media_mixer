@@ -203,40 +203,37 @@ namespace mmxmux
     {
         if (timer_.IsEnable())        
         {
-            if (!rm_sorms_.empty())
-            {
-                for (auto& m : rm_sorms_)
-                {
-                    auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];
-
-                    if (channel != nullptr)
-                    {
-                        m->ProcessMediaStreams(channel->GetWritter(), 1);
-                    }
-
-                    sorm_pool_.Release(m);
-                }
-
-                rm_sorms_.clear();
-            }
-
+            checkRemovedSorms();
 
             for (auto& m : sorm_pool_.GetSorms())
             {
                 auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];
-                auto& writer = channel->GetWritter();
 
                 if (channel != nullptr)
                 {
-
+                    auto& writer = channel->GetWritter();
                     auto& info = m->GetDiagInfo();
+
+                    if (config_.media_health_time > 0)
+                    {
+                        if (m->GetMediaDelay() >= config_.media_health_time)
+                        {
+
+                            DLOGW(LOG_BEGIN("timerWork(): put sorm %x to remove list, media delay = %d"), DLOG_POINTER(&m), m->GetMediaDelay());
+
+                            rm_sorms_.push_back(m);
+
+                            continue;
+                        }
+                    }
+
                     if (info.order645_packs == 0)
                     {
                         m->PutPreamble(writer, (config_.mute_time + 127) / 128);
                     }
                     m->ProcessMediaStreams(writer);
 
-                }                              
+                }
 
             }                     
 
@@ -247,6 +244,32 @@ namespace mmxmux
 
             timer_.HStart(config_.media_period);
         }
+    }
+
+    void Mux::checkRemovedSorms()
+    {
+        if (!rm_sorms_.empty())
+        {
+            for (auto& m : rm_sorms_)
+            {
+                auto channel = output_channel_pool_[m->GetOrmInfo().channel_id];
+
+                if (channel != nullptr)
+                {
+                    m->ProcessMediaStreams(channel->GetWritter(), 1);
+                }
+
+                auto& diag = m->GetDiagInfo();
+
+                DLOGI(LOG_BEGIN("checkRemovedSorms(): proxy status: rtp1 = %d:%d, rtp2 = %d:%d, order645 = %d:%d"),
+                      diag.rtp_packs[0], diag.rtp_bytes[0], diag.rtp_packs[1], diag.rtp_bytes[1], diag.order645_packs, diag.order645_bytes);
+
+                sorm_pool_.Release(m);
+            }
+
+            rm_sorms_.clear();
+        }
+
     }
 
     void Mux::processInput()
@@ -312,8 +335,10 @@ namespace mmxmux
         }
     }
 
-    int get_query_info(const mmx::headers::SANGOMA_PACKET& sp, char *out_buff, int sorms)
+    const char* get_query_info(const mmx::headers::SANGOMA_PACKET& sp, int sorms)
     {
+        static char out_buff[4096];
+
         char ip_a[16], ip_b[16];
         int rc = std::sprintf(out_buff,"proxy: \n\tsource_a = %s:%d;\n\tsource_b = %s:%d;\nsorm_count = %d;\n",
                      mmx::net::Socket::AtoS(sp.q_proxy.proxy.source_a.address, ip_a),
@@ -335,7 +360,7 @@ namespace mmxmux
                                (int)sp.q_proxy.sorm[i].sorm_id);
         }
 
-        return rc;
+        return out_buff;
     }
 
     void Mux::processSangoma()
@@ -392,17 +417,13 @@ namespace mmxmux
                         {
                             int sorms = (query->header.length - sizeof(query->q_proxy.proxy)) / sizeof(query->q_proxy.sorm[0]);
 
-                            static char sbuf[1024];
-
-                            get_query_info(*query, sbuf, sorms);
-
 
                             for (int i = 0; i < sorms; i++)
                             {
                                 if (query->header.type == mmx::headers::SI_START_PROXY)
                                 {
 
-                                    DLOGI(LOG_BEGIN("processSangoma(): recieve START_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
+                                    DLOGI(LOG_BEGIN("processSangoma(): recieve START_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, get_query_info(*query, sorms));
 
                                     auto s = sorm_pool_.GetSorm(query->q_proxy.sorm[i], query->q_proxy.proxy);
                                     if (s != nullptr)
@@ -413,7 +434,7 @@ namespace mmxmux
                                 }
                                 else
                                 {                                    
-                                    DLOGI(LOG_BEGIN("processSangoma(): recieve STOP_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, sbuf);
+                                    DLOGI(LOG_BEGIN("processSangoma(): recieve STOP_PROXY query (%d), len = %d;\nquery_info:\n%s"), query->header.type, query->header.length, get_query_info(*query, sorms));
 
                                     auto m = sorm_pool_.FindSorm(query->q_proxy.sorm[i]);
 
@@ -421,10 +442,6 @@ namespace mmxmux
                                     {
                                         rm_sorms_.push_back(m);
 
-                                        auto& diag = m->GetDiagInfo();
-
-                                        DLOGI(LOG_BEGIN("processSangoma(): proxy status: rtp1 = %d:%d, rtp2 = %d:%d, order645 = %d:%d"),
-                                              diag.rtp_packs[0], diag.rtp_bytes[0], diag.rtp_packs[1], diag.rtp_bytes[1], diag.order645_packs, diag.order645_bytes);
                                     }
                                 }
                             }

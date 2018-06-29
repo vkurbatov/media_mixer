@@ -246,6 +246,22 @@ int parse_args(int argc, char* argv[], void *cfg1, void *cfg2, mmx::logs::log_le
 
 				}
 				break;
+				case 't':
+				{
+					int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+
+					if (n >= 0 && n < 300000)
+					{
+						config.media_health_time = n;
+					}
+					else
+					{
+						std::cout << "Error health media timeout \'j=" << n << "\'. Media timeout must be range [" << 0 << ".." << 300000 << "]." << std::endl;
+						rc = -EINVAL;
+					}
+
+				}
+				break;
 				case 'g':
 				{
 					int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);

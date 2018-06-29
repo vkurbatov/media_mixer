@@ -122,6 +122,7 @@ mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/m
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.h
 mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
+mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
 
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
 mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h

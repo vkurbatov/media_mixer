@@ -28,6 +28,7 @@ int main(int argc, char* argv[])
     config.mixed_gain = DEFAULT_MIXED_GAIN;
     config.jitter_size = DEFAULT_JITTER_BUFFER_SIZE;
     config.mute_time = DEFAULT_MUTE_TIME;
+    config.media_health_time = DEFAULT_MEDIA_HEALTH_TIME;
 
     int rc = parse_args(argc, argv, &config, nullptr, log_level);
 
