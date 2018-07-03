@@ -1,0 +1,4961 @@
+diff --git a/mmxprj/bin/mmxcore b/mmxprj/bin/mmxcore
+index dbf8f0f..9cb9fe4 100755
+Binary files a/mmxprj/bin/mmxcore and b/mmxprj/bin/mmxcore differ
+diff --git a/mmxprj/bin/mmxlst b/mmxprj/bin/mmxlst
+index 1e1b6ef..aeef9ce 100755
+Binary files a/mmxprj/bin/mmxlst and b/mmxprj/bin/mmxlst differ
+diff --git a/mmxprj/bin/mmxsrv b/mmxprj/bin/mmxsrv
+index 2ed36f4..071e4e2 100755
+Binary files a/mmxprj/bin/mmxsrv and b/mmxprj/bin/mmxsrv differ
+diff --git a/mmxprj/build/DEBUG/CMakeFiles/progress.marks b/mmxprj/build/DEBUG/CMakeFiles/progress.marks
+index b5489e5..dd47563 100644
+--- a/mmxprj/build/DEBUG/CMakeFiles/progress.marks
++++ b/mmxprj/build/DEBUG/CMakeFiles/progress.marks
+@@ -1 +1 @@
+-69
++76
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/CXX.includecache b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/CXX.includecache
+index f21836d..7af0dbe 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/CXX.includecache
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/CXX.includecache
+@@ -6,8 +6,6 @@
+ 
+ #IncludeRegexTransform: 
+ 
+-/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+-
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/datapacket.h
+ vector
+ -
+@@ -134,6 +132,8 @@ typeinfo
+ 
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/names.h
+ 
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/portset.h
++
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
+ sys/socket.h
+ -
+@@ -220,6 +220,10 @@ list
+ 
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
+ 
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
++mmxlib/logs/log.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
++
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
+ iostream
+ -
+@@ -235,8 +239,8 @@ fcntl.h
+ -
+ netdb.h
+ -
+-../build_number.h
+-/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
+ 
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp
+ mux.h
+@@ -280,6 +284,34 @@ mmxlib/media/sormpool.h
+ mmxlib/ipc/shmem.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/ipc/shmem.h
+ 
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp
++iostream
++-
++cstdio
++-
++cstring
++-
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
++netdb.h
++-
++errno.h
++-
++mmxlib/net/portset.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/net/portset.h
++mux.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
++
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
++signal.h
++-
++stdlib.h
++-
++mmxlib/logs/log.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mmxlib/logs/log.h
++
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+ idpwriter.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/DependInfo.cmake b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/DependInfo.cmake
+index 43bd1e7..4a0634e 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/DependInfo.cmake
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/DependInfo.cmake
+@@ -6,11 +6,14 @@ set(CMAKE_DEPENDS_LANGUAGES
+ set(CMAKE_DEPENDS_CHECK_CXX
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o"
++  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o"
++  "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o"
+   )
+ set(CMAKE_CXX_COMPILER_ID "GNU")
+ 
+ # Preprocessor definitions for this target.
+ set(CMAKE_TARGET_DEFINITIONS_CXX
++  "BUILD_NUMBER=1"
+   "DEBUG"
+   "SOURCE_PATH_SIZE=35"
+   )
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/build.make b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/build.make
+index 5c71750..3746bc1 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/build.make
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/build.make
+@@ -105,20 +105,72 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o.provides: mmxcore/CMakeFiles/mmxcore.di
+ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o.provides.build: mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
+ 
+ 
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o: mmxcore/CMakeFiles/mmxcore.dir/flags.make
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxcore.dir/sighandler.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp
++
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.i: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxcore.dir/sighandler.cpp.i"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp > CMakeFiles/mmxcore.dir/sighandler.cpp.i
++
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.s: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxcore.dir/sighandler.cpp.s"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp -o CMakeFiles/mmxcore.dir/sighandler.cpp.s
++
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.requires:
++
++.PHONY : mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.requires
++
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.provides: mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.requires
++	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.provides.build
++.PHONY : mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.provides
++
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.provides.build: mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o
++
++
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: mmxcore/CMakeFiles/mmxcore.dir/flags.make
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxcore.dir/parsearg.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp
++
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.i: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxcore.dir/parsearg.cpp.i"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp > CMakeFiles/mmxcore.dir/parsearg.cpp.i
++
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.s: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxcore.dir/parsearg.cpp.s"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp -o CMakeFiles/mmxcore.dir/parsearg.cpp.s
++
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.requires:
++
++.PHONY : mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.requires
++
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.provides: mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.requires
++	$(MAKE) -f mmxcore/CMakeFiles/mmxcore.dir/build.make mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.provides.build
++.PHONY : mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.provides
++
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.provides.build: mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o
++
++
+ # Object files for target mmxcore
+ mmxcore_OBJECTS = \
+ "CMakeFiles/mmxcore.dir/main.cpp.o" \
+-"CMakeFiles/mmxcore.dir/mux.cpp.o"
++"CMakeFiles/mmxcore.dir/mux.cpp.o" \
++"CMakeFiles/mmxcore.dir/sighandler.cpp.o" \
++"CMakeFiles/mmxcore.dir/parsearg.cpp.o"
+ 
+ # External object files for target mmxcore
+ mmxcore_EXTERNAL_OBJECTS =
+ 
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o
++/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/build.make
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore: mmxcore/CMakeFiles/mmxcore.dir/link.txt
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmxcore.dir/link.txt --verbose=$(VERBOSE)
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../../bin/DEBUG/mmxcore
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxcore && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../../bin/mmxcore
+@@ -130,6 +182,8 @@ mmxcore/CMakeFiles/mmxcore.dir/build: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore
+ 
+ mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o.requires
+ mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o.requires
++mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o.requires
++mmxcore/CMakeFiles/mmxcore.dir/requires: mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o.requires
+ 
+ .PHONY : mmxcore/CMakeFiles/mmxcore.dir/requires
+ 
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/cmake_clean.cmake b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/cmake_clean.cmake
+index 9410170..81625be 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/cmake_clean.cmake
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/cmake_clean.cmake
+@@ -1,6 +1,8 @@
+ file(REMOVE_RECURSE
+   "CMakeFiles/mmxcore.dir/main.cpp.o"
+   "CMakeFiles/mmxcore.dir/mux.cpp.o"
++  "CMakeFiles/mmxcore.dir/sighandler.cpp.o"
++  "CMakeFiles/mmxcore.dir/parsearg.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore.pdb"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore"
+ )
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/depend.internal b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/depend.internal
+index 1b24c22..d6394fb 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/depend.internal
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/depend.internal
+@@ -2,7 +2,6 @@
+ # Generated by "Unix Makefiles" Generator, CMake Version 3.5
+ 
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
+- /home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/datapacket.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpreader.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpwriter.h
+@@ -32,6 +31,7 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_client.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_server.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+@@ -104,3 +104,58 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/datapacket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpreader.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpheader.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpreader.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/ichannel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/shmem.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediastream.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sample.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sorm.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/portset.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select_ex.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/dpsniffer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/istream.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/ichanneldispatcher.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/pipe_input_channel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/pipe_output_channel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/pipe_output_channel_pool.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_client.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_server.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/depend.make b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/depend.make
+index 93245d3..9abc576 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/depend.make
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/depend.make
+@@ -1,7 +1,6 @@
+ # CMAKE generated file: DO NOT EDIT!
+ # Generated by "Unix Makefiles" Generator, CMake Version 3.5
+ 
+-mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/datapacket.h
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpreader.h
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpwriter.h
+@@ -31,6 +30,7 @@ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_client.h
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_server.h
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
++mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/main.cpp
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
+ mmxcore/CMakeFiles/mmxcore.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+@@ -104,3 +104,58 @@ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmx
+ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
+ mmxcore/CMakeFiles/mmxcore.dir/mux.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+ 
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/datapacket.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpreader.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/dpwriter.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpheader.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpreader.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/data/idpwriter.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/order645_2.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/headers/si.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/ichannel.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/ipc/shmem.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/isample.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/jitterbuffer.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediapool.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/mediastream.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sample.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sorm.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/media/sormpool.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/portset.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/net/select_ex.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/dpsniffer.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/sniffers/istream.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/ichanneldispatcher.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/pipe_input_channel.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/pipe_output_channel.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/pipe_output_channel_pool.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_client.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/sangoma_server.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/tools/timer.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/mux.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/parsearg.cpp
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/media.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/rtp.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/irtppacket.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
++mmxcore/CMakeFiles/mmxcore.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
++
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/../mmxlib/logs/log.h
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/defines.h
++mmxcore/CMakeFiles/mmxcore.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/sighandler.cpp
++
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/flags.make b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/flags.make
+index baeb853..00c3c38 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/flags.make
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/flags.make
+@@ -4,7 +4,7 @@
+ # compile CXX with /usr/bin/c++
+ CXX_FLAGS = -O0 -g   -std=gnu++11
+ 
+-CXX_DEFINES = -DDEBUG -DSOURCE_PATH_SIZE=35
++CXX_DEFINES = -DBUILD_NUMBER=1 -DDEBUG -DSOURCE_PATH_SIZE=35
+ 
+ CXX_INCLUDES = -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlst -I/home/vkurbatov/work/mmxprj/mmxprj/mmxcore -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlib -I/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv -I/home/vkurbatov/work/mmxprj/mmxprj/mmxtest -I/home/vkurbatov/work/mmxprj/mmxprj/mmxcore/.. 
+ 
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/link.txt b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/link.txt
+index 7adc2c8..eff2776 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/link.txt
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/link.txt
+@@ -1 +1 @@
+-/usr/bin/c++   -O0 -g   CMakeFiles/mmxcore.dir/main.cpp.o CMakeFiles/mmxcore.dir/mux.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 
++/usr/bin/c++   -O0 -g   CMakeFiles/mmxcore.dir/main.cpp.o CMakeFiles/mmxcore.dir/mux.cpp.o CMakeFiles/mmxcore.dir/sighandler.cpp.o CMakeFiles/mmxcore.dir/parsearg.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/progress.make b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/progress.make
+index 3575c37..3dbe7c6 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/progress.make
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/mmxcore.dir/progress.make
+@@ -1,4 +1,6 @@
+-CMAKE_PROGRESS_1 = 47
+-CMAKE_PROGRESS_2 = 48
+-CMAKE_PROGRESS_3 = 49
++CMAKE_PROGRESS_1 = 48
++CMAKE_PROGRESS_2 = 49
++CMAKE_PROGRESS_3 = 50
++CMAKE_PROGRESS_4 = 51
++CMAKE_PROGRESS_5 = 52
+ 
+diff --git a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/progress.marks b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/progress.marks
+index 95f9650..0691f67 100644
+--- a/mmxprj/build/DEBUG/mmxcore/CMakeFiles/progress.marks
++++ b/mmxprj/build/DEBUG/mmxcore/CMakeFiles/progress.marks
+@@ -1 +1 @@
+-49
++52
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/CXX.includecache b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/CXX.includecache
+index eec59db..d9c1fd5 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/CXX.includecache
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/CXX.includecache
+@@ -890,6 +890,16 @@ tools/timer.h
+ list
+ -
+ 
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp
++arg_processor.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.h
++
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.h
++vector
++-
++map
++-
++
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp
+ string_token.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.h
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/DependInfo.cmake b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/DependInfo.cmake
+index 8740c82..bd5ead6 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/DependInfo.cmake
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/DependInfo.cmake
+@@ -46,6 +46,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_client.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o"
++  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/timer.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/udp_listener.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o"
+@@ -54,6 +55,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
+ 
+ # Preprocessor definitions for this target.
+ set(CMAKE_TARGET_DEFINITIONS_CXX
++  "BUILD_NUMBER=1"
+   "DEBUG"
+   "SOURCE_PATH_SIZE=35"
+   )
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/build.make b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/build.make
+index 54452dc..118bc5c 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/build.make
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/build.make
+@@ -945,9 +945,33 @@ mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.provides: mmxlib/CMake
+ mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o
+ 
+ 
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp
++
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.i: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.i"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp > CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.i
++
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.s: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.s"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp -o CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.s
++
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o.requires:
++
++.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o.requires
++
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o.requires
++	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o.provides.build
++.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o.provides
++
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o
++
++
+ mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+ mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/sorm.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sorm.cpp
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.i: cmake_force
+@@ -971,7 +995,7 @@ mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o.provides.build: mmxlib/CMakeFiles/mmx
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/mediastream.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediastream.cpp
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.i: cmake_force
+@@ -995,7 +1019,7 @@ mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o.provides.build: mmxlib/CMakeFi
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+ mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.cpp
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/sormpool.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sormpool.cpp
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.i: cmake_force
+@@ -1019,7 +1043,7 @@ mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o.provides.build: mmxlib/CMakeFiles
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+ mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/mediapool.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/mediapool.cpp
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.i: cmake_force
+@@ -1043,7 +1067,7 @@ mmxlib/CMakeFiles/mmx.dir/media/mediapool.cpp.o.provides.build: mmxlib/CMakeFile
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+ mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/jitterbuffer.cpp
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.i: cmake_force
+@@ -1067,7 +1091,7 @@ mmxlib/CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o.provides.build: mmxlib/CMakeF
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+ mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/sample.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/sample.cpp
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.i: cmake_force
+@@ -1091,7 +1115,7 @@ mmxlib/CMakeFiles/mmx.dir/media/sample.cpp.o.provides.build: mmxlib/CMakeFiles/m
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/pcma.cpp
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.i: cmake_force
+@@ -1115,7 +1139,7 @@ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o.provides.build: mmxlib/C
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/media/codecs/audio/mixer.cpp
+ 
+ mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.i: cmake_force
+@@ -1176,6 +1200,7 @@ mmx_OBJECTS = \
+ "CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o" \
+ "CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o" \
+ "CMakeFiles/mmx.dir/tools/string/string_token.cpp.o" \
++"CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o" \
+ "CMakeFiles/mmx.dir/media/sorm.cpp.o" \
+ "CMakeFiles/mmx.dir/media/mediastream.cpp.o" \
+ "CMakeFiles/mmx.dir/media/sormpool.cpp.o" \
+@@ -1225,6 +1250,7 @@ mmx_EXTERNAL_OBJECTS =
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o
+@@ -1235,7 +1261,7 @@ mmx_EXTERNAL_OBJECTS =
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/build.make
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/link.txt
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking CXX static library /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && $(CMAKE_COMMAND) -P CMakeFiles/mmx.dir/cmake_clean_target.cmake
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmx.dir/link.txt --verbose=$(VERBOSE)
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/../../bin/DEBUG/libmmx.a
+@@ -1283,6 +1309,7 @@ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/udp_listener
+ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o.requires
+ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o.requires
+ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o.requires
++mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o.requires
+ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/sorm.cpp.o.requires
+ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/mediastream.cpp.o.requires
+ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/media/sormpool.cpp.o.requires
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/cmake_clean.cmake b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/cmake_clean.cmake
+index bbd814c..eada12c 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/cmake_clean.cmake
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/cmake_clean.cmake
+@@ -36,6 +36,7 @@ file(REMOVE_RECURSE
+   "CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o"
+   "CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o"
+   "CMakeFiles/mmx.dir/tools/string/string_token.cpp.o"
++  "CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o"
+   "CMakeFiles/mmx.dir/media/sorm.cpp.o"
+   "CMakeFiles/mmx.dir/media/mediastream.cpp.o"
+   "CMakeFiles/mmx.dir/media/sormpool.cpp.o"
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/depend.internal b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/depend.internal
+index 4c6c8d1..93f9646 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/depend.internal
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/depend.internal
+@@ -395,6 +395,9 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.cpp
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.h
+ mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.h
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/depend.make b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/depend.make
+index 87d68ce..b570003 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/depend.make
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/depend.make
+@@ -395,6 +395,9 @@ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxpr
+ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_server.h
+ mmxlib/CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
+ 
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp
++mmxlib/CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.h
++
+ mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.cpp
+ mmxlib/CMakeFiles/mmx.dir/tools/string/string_token.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/string/string_token.h
+ 
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/flags.make b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/flags.make
+index e032906..487567a 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/flags.make
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/flags.make
+@@ -4,7 +4,7 @@
+ # compile CXX with /usr/bin/c++
+ CXX_FLAGS = -O0 -g   -std=gnu++11
+ 
+-CXX_DEFINES = -DDEBUG -DSOURCE_PATH_SIZE=35
++CXX_DEFINES = -DBUILD_NUMBER=1 -DDEBUG -DSOURCE_PATH_SIZE=35
+ 
+ CXX_INCLUDES = -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlst -I/home/vkurbatov/work/mmxprj/mmxprj/mmxcore -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlib -I/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv -I/home/vkurbatov/work/mmxprj/mmxprj/mmxtest 
+ 
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/link.txt b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/link.txt
+index 0f11e20..4bddc8b 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/link.txt
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/link.txt
+@@ -1,2 +1,2 @@
+-/usr/bin/ar qc /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a  CMakeFiles/mmx.dir/logs/log.cpp.o CMakeFiles/mmx.dir/net/socket.cpp.o CMakeFiles/mmx.dir/net/select.cpp.o CMakeFiles/mmx.dir/net/select_ex.cpp.o CMakeFiles/mmx.dir/net/portset.cpp.o CMakeFiles/mmx.dir/net/epoll.cpp.o CMakeFiles/mmx.dir/ipc/pchannel.cpp.o CMakeFiles/mmx.dir/ipc/sem.cpp.o CMakeFiles/mmx.dir/ipc/shmem.cpp.o CMakeFiles/mmx.dir/data/packet.cpp.o CMakeFiles/mmx.dir/data/dpwriter.cpp.o CMakeFiles/mmx.dir/data/dpreader.cpp.o CMakeFiles/mmx.dir/data/datapacket.cpp.o CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o CMakeFiles/mmx.dir/sniffers/bitset.cpp.o CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o CMakeFiles/mmx.dir/tools/deffwriter.cpp.o CMakeFiles/mmx.dir/tools/timer.cpp.o CMakeFiles/mmx.dir/tools/iosockadp.cpp.o CMakeFiles/mmx.dir/tools/deffersock.cpp.o CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o CMakeFiles/mmx.dir/tools/orm_server.cpp.o CMakeFiles/mmx.dir/tools/orm_client.cpp.o CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o CMakeFiles/mmx.dir/tools/udp_listener.cpp.o CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o CMakeFiles/mmx.dir/tools/string/string_token.cpp.o CMakeFiles/mmx.dir/media/sorm.cpp.o CMakeFiles/mmx.dir/media/mediastream.cpp.o CMakeFiles/mmx.dir/media/sormpool.cpp.o CMakeFiles/mmx.dir/media/mediapool.cpp.o CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o CMakeFiles/mmx.dir/media/sample.cpp.o CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
++/usr/bin/ar qc /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a  CMakeFiles/mmx.dir/logs/log.cpp.o CMakeFiles/mmx.dir/net/socket.cpp.o CMakeFiles/mmx.dir/net/select.cpp.o CMakeFiles/mmx.dir/net/select_ex.cpp.o CMakeFiles/mmx.dir/net/portset.cpp.o CMakeFiles/mmx.dir/net/epoll.cpp.o CMakeFiles/mmx.dir/ipc/pchannel.cpp.o CMakeFiles/mmx.dir/ipc/sem.cpp.o CMakeFiles/mmx.dir/ipc/shmem.cpp.o CMakeFiles/mmx.dir/data/packet.cpp.o CMakeFiles/mmx.dir/data/dpwriter.cpp.o CMakeFiles/mmx.dir/data/dpreader.cpp.o CMakeFiles/mmx.dir/data/datapacket.cpp.o CMakeFiles/mmx.dir/sniffers/ipsniffer.cpp.o CMakeFiles/mmx.dir/sniffers/ippacket.cpp.o CMakeFiles/mmx.dir/sniffers/ippacketwrapper.cpp.o CMakeFiles/mmx.dir/sniffers/ippacketpool.cpp.o CMakeFiles/mmx.dir/sniffers/bitset.cpp.o CMakeFiles/mmx.dir/sniffers/dpsniffer.cpp.o CMakeFiles/mmx.dir/sniffers/rtppacketwrapper.cpp.o CMakeFiles/mmx.dir/sniffers/sangomasniffer.cpp.o CMakeFiles/mmx.dir/tools/deffwriter.cpp.o CMakeFiles/mmx.dir/tools/timer.cpp.o CMakeFiles/mmx.dir/tools/iosockadp.cpp.o CMakeFiles/mmx.dir/tools/deffersock.cpp.o CMakeFiles/mmx.dir/tools/pipe_input_channel.cpp.o CMakeFiles/mmx.dir/tools/pipe_output_channel.cpp.o CMakeFiles/mmx.dir/tools/pipe_output_channel_pool.cpp.o CMakeFiles/mmx.dir/tools/sangoma_server.cpp.o CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o CMakeFiles/mmx.dir/tools/orm_server.cpp.o CMakeFiles/mmx.dir/tools/orm_client.cpp.o CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o CMakeFiles/mmx.dir/tools/udp_listener.cpp.o CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o CMakeFiles/mmx.dir/tools/string/string_token.cpp.o CMakeFiles/mmx.dir/tools/string/arg_processor.cpp.o CMakeFiles/mmx.dir/media/sorm.cpp.o CMakeFiles/mmx.dir/media/mediastream.cpp.o CMakeFiles/mmx.dir/media/sormpool.cpp.o CMakeFiles/mmx.dir/media/mediapool.cpp.o CMakeFiles/mmx.dir/media/jitterbuffer.cpp.o CMakeFiles/mmx.dir/media/sample.cpp.o CMakeFiles/mmx.dir/media/codecs/audio/pcma.cpp.o CMakeFiles/mmx.dir/media/codecs/audio/mixer.cpp.o
+ /usr/bin/ranlib /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/progress.make b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/progress.make
+index 0b7cd19..8bb1097 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/progress.make
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/mmx.dir/progress.make
+@@ -44,4 +44,5 @@ CMAKE_PROGRESS_43 = 43
+ CMAKE_PROGRESS_44 = 44
+ CMAKE_PROGRESS_45 = 45
+ CMAKE_PROGRESS_46 = 46
++CMAKE_PROGRESS_47 = 47
+ 
+diff --git a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/progress.marks b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/progress.marks
+index 9e5feb5..abac1ea 100644
+--- a/mmxprj/build/DEBUG/mmxlib/CMakeFiles/progress.marks
++++ b/mmxprj/build/DEBUG/mmxlib/CMakeFiles/progress.marks
+@@ -1 +1 @@
+-46
++47
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/CXX.includecache b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/CXX.includecache
+index ce9ae60..7c04518 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/CXX.includecache
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/CXX.includecache
+@@ -6,8 +6,6 @@
+ 
+ #IncludeRegexTransform: 
+ 
+-/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+-
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+ idpwriter.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+@@ -212,6 +210,10 @@ sniffers/ipsniffer.h
+ timer.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/timer.h
+ 
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
++mmxlib/logs/log.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/logs/log.h
++
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
+ listener.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
+@@ -263,10 +265,36 @@ signal.h
+ -
+ netdb.h
+ -
+-mmxlib/logs/log.h
+-/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/logs/log.h
+ listener.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
+-../build_number.h
+-/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
++
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp
++iostream
++-
++cstdio
++-
++cstring
++-
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
++netdb.h
++-
++errno.h
++-
++mmxlib/net/portset.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/net/portset.h
++listener.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
++
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
++signal.h
++-
++stdlib.h
++-
++mmxlib/logs/log.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/mmxlib/logs/log.h
+ 
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/DependInfo.cmake b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/DependInfo.cmake
+index d5e9f92..a6b34bd 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/DependInfo.cmake
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/DependInfo.cmake
+@@ -6,11 +6,14 @@ set(CMAKE_DEPENDS_LANGUAGES
+ set(CMAKE_DEPENDS_CHECK_CXX
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/main.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o"
++  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o"
++  "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o"
+   )
+ set(CMAKE_CXX_COMPILER_ID "GNU")
+ 
+ # Preprocessor definitions for this target.
+ set(CMAKE_TARGET_DEFINITIONS_CXX
++  "BUILD_NUMBER=1"
+   "DEBUG"
+   "SOURCE_PATH_SIZE=35"
+   )
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/build.make b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/build.make
+index 322b01e..9f6d8c2 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/build.make
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/build.make
+@@ -105,20 +105,72 @@ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.d
+ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o
+ 
+ 
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: mmxlst/CMakeFiles/mmxlst.dir/flags.make
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxlst.dir/parsearg.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp
++
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.i: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxlst.dir/parsearg.cpp.i"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp > CMakeFiles/mmxlst.dir/parsearg.cpp.i
++
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.s: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxlst.dir/parsearg.cpp.s"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp -o CMakeFiles/mmxlst.dir/parsearg.cpp.s
++
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.requires:
++
++.PHONY : mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.requires
++
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.requires
++	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.provides.build
++.PHONY : mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.provides
++
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o
++
++
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o: mmxlst/CMakeFiles/mmxlst.dir/flags.make
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxlst.dir/sighandler.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp
++
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.i: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxlst.dir/sighandler.cpp.i"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp > CMakeFiles/mmxlst.dir/sighandler.cpp.i
++
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.s: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxlst.dir/sighandler.cpp.s"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp -o CMakeFiles/mmxlst.dir/sighandler.cpp.s
++
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.requires:
++
++.PHONY : mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.requires
++
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.provides: mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.requires
++	$(MAKE) -f mmxlst/CMakeFiles/mmxlst.dir/build.make mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.provides.build
++.PHONY : mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.provides
++
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.provides.build: mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o
++
++
+ # Object files for target mmxlst
+ mmxlst_OBJECTS = \
+ "CMakeFiles/mmxlst.dir/main.cpp.o" \
+-"CMakeFiles/mmxlst.dir/listener.cpp.o"
++"CMakeFiles/mmxlst.dir/listener.cpp.o" \
++"CMakeFiles/mmxlst.dir/parsearg.cpp.o" \
++"CMakeFiles/mmxlst.dir/sighandler.cpp.o"
+ 
+ # External object files for target mmxlst
+ mmxlst_EXTERNAL_OBJECTS =
+ 
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o
++/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/build.make
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst: mmxlst/CMakeFiles/mmxlst.dir/link.txt
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmxlst.dir/link.txt --verbose=$(VERBOSE)
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../../bin/DEBUG/mmxlst
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlst && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../../bin/mmxlst
+@@ -130,6 +182,8 @@ mmxlst/CMakeFiles/mmxlst.dir/build: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/bu
+ 
+ mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o.requires
+ mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o.requires
++mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o.requires
++mmxlst/CMakeFiles/mmxlst.dir/requires: mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o.requires
+ 
+ .PHONY : mmxlst/CMakeFiles/mmxlst.dir/requires
+ 
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/cmake_clean.cmake b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/cmake_clean.cmake
+index dd8b90b..142614a 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/cmake_clean.cmake
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/cmake_clean.cmake
+@@ -1,6 +1,8 @@
+ file(REMOVE_RECURSE
+   "CMakeFiles/mmxlst.dir/main.cpp.o"
+   "CMakeFiles/mmxlst.dir/listener.cpp.o"
++  "CMakeFiles/mmxlst.dir/parsearg.cpp.o"
++  "CMakeFiles/mmxlst.dir/sighandler.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst.pdb"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst"
+ )
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/depend.internal b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/depend.internal
+index 1b2627f..2645a32 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/depend.internal
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/depend.internal
+@@ -48,7 +48,6 @@ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o
+- /home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+@@ -86,5 +85,51 @@ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/pipe_output_channel.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/timer.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/udp_listener.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/main.cpp
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/datapacket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/dpreader.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/dpwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpheader.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpreader.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/logs/log.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/portset.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/select.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/select_ex.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/socket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/bitset.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/iippacket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/ippacket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/ippacketpool.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/ippacketwrapper.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/ipsniffer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/istream.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ichanneldispatcher.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/pipe_output_channel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/timer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/udp_listener.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/logs/log.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/depend.make b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/depend.make
+index 61e6b2f..1af0dab 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/depend.make
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/depend.make
+@@ -47,7 +47,6 @@ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/
+ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.cpp
+ mmxlst/CMakeFiles/mmxlst.dir/listener.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
+ 
+-mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+@@ -85,6 +84,52 @@ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxl
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/pipe_output_channel.h
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/timer.h
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/udp_listener.h
++mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
+ mmxlst/CMakeFiles/mmxlst.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/main.cpp
+ 
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/dpwriter.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/idpwriter.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/portset.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/sniffers/ipsniffer.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/datapacket.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/dpreader.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/dpwriter.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpheader.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpreader.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/data/idpwriter.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/logs/log.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/portset.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/select.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/select_ex.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/net/socket.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/bitset.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/iippacket.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/ippacket.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/ippacketpool.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/ippacketwrapper.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/ipsniffer.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/sniffers/istream.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/ichanneldispatcher.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/pipe_output_channel.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/timer.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/tools/udp_listener.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/listener.h
++mmxlst/CMakeFiles/mmxlst.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/parsearg.cpp
++
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/../mmxlib/logs/log.h
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/defines.h
++mmxlst/CMakeFiles/mmxlst.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/sighandler.cpp
++
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/flags.make b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/flags.make
+index 42f2cdb..001fdc2 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/flags.make
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/flags.make
+@@ -4,7 +4,7 @@
+ # compile CXX with /usr/bin/c++
+ CXX_FLAGS = -O0 -g   -std=gnu++11
+ 
+-CXX_DEFINES = -DDEBUG -DSOURCE_PATH_SIZE=35
++CXX_DEFINES = -DBUILD_NUMBER=1 -DDEBUG -DSOURCE_PATH_SIZE=35
+ 
+ CXX_INCLUDES = -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlst -I/home/vkurbatov/work/mmxprj/mmxprj/mmxcore -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlib -I/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv -I/home/vkurbatov/work/mmxprj/mmxprj/mmxtest -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlst/.. 
+ 
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/link.txt b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/link.txt
+index 8c608d0..22a42e4 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/link.txt
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/link.txt
+@@ -1 +1 @@
+-/usr/bin/c++   -O0 -g   CMakeFiles/mmxlst.dir/main.cpp.o CMakeFiles/mmxlst.dir/listener.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 
++/usr/bin/c++   -O0 -g   CMakeFiles/mmxlst.dir/main.cpp.o CMakeFiles/mmxlst.dir/listener.cpp.o CMakeFiles/mmxlst.dir/parsearg.cpp.o CMakeFiles/mmxlst.dir/sighandler.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/progress.make b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/progress.make
+index a9e1abb..3cd1473 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/progress.make
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/mmxlst.dir/progress.make
+@@ -1,4 +1,6 @@
+-CMAKE_PROGRESS_1 = 50
+-CMAKE_PROGRESS_2 = 51
+-CMAKE_PROGRESS_3 = 52
++CMAKE_PROGRESS_1 = 53
++CMAKE_PROGRESS_2 = 54
++CMAKE_PROGRESS_3 = 55
++CMAKE_PROGRESS_4 = 56
++CMAKE_PROGRESS_5 = 57
+ 
+diff --git a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/progress.marks b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/progress.marks
+index 95f9650..0691f67 100644
+--- a/mmxprj/build/DEBUG/mmxlst/CMakeFiles/progress.marks
++++ b/mmxprj/build/DEBUG/mmxlst/CMakeFiles/progress.marks
+@@ -1 +1 @@
+-49
++52
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/CXX.includecache b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/CXX.includecache
+index 5a6bd4d..53b4f9d 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/CXX.includecache
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/CXX.includecache
+@@ -6,8 +6,6 @@
+ 
+ #IncludeRegexTransform: 
+ 
+-/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+-
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+ vector
+ -
+@@ -170,6 +168,10 @@ list
+ vector
+ -
+ 
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
++mmxlib/logs/log.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/logs/log.h
++
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp
+ iostream
+ -
+@@ -183,8 +185,24 @@ netdb.h
+ -
+ signal.h
+ -
+-../build_number.h
+-/home/vkurbatov/work/mmxprj/mmxprj/build_number.h
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
++
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
++iostream
++-
++cstdio
++-
++cstring
++-
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
++netdb.h
++-
++errno.h
++-
++server.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
+ 
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
+ server.h
+@@ -230,3 +248,13 @@ mmxlib/sniffers/dpsniffer.h
+ mmxlib/headers/pultstat.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/headers/pultstat.h
+ 
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp
++defines.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
++signal.h
++-
++stdlib.h
++-
++mmxlib/logs/log.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/logs/log.h
++
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/DependInfo.cmake b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/DependInfo.cmake
+index ad22d99..38cd3a1 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/DependInfo.cmake
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/DependInfo.cmake
+@@ -5,12 +5,15 @@ set(CMAKE_DEPENDS_LANGUAGES
+ # The set of files for implicit dependencies of each language:
+ set(CMAKE_DEPENDS_CHECK_CXX
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o"
++  "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o"
++  "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp" "/home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o"
+   )
+ set(CMAKE_CXX_COMPILER_ID "GNU")
+ 
+ # Preprocessor definitions for this target.
+ set(CMAKE_TARGET_DEFINITIONS_CXX
++  "BUILD_NUMBER=1"
+   "DEBUG"
+   "SOURCE_PATH_SIZE=35"
+   )
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/build.make b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/build.make
+index df0d186..07916a4 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/build.make
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/build.make
+@@ -105,20 +105,72 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o.provides: mmxsrv/CMakeFiles/mmxsrv.dir
+ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o.provides.build: mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o
+ 
+ 
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o: mmxsrv/CMakeFiles/mmxsrv.dir/flags.make
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxsrv.dir/sighandler.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp
++
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.i: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxsrv.dir/sighandler.cpp.i"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp > CMakeFiles/mmxsrv.dir/sighandler.cpp.i
++
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.s: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxsrv.dir/sighandler.cpp.s"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp -o CMakeFiles/mmxsrv.dir/sighandler.cpp.s
++
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.requires:
++
++.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.requires
++
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.provides: mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.requires
++	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.provides.build
++.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.provides
++
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.provides.build: mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o
++
++
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: mmxsrv/CMakeFiles/mmxsrv.dir/flags.make
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmxsrv.dir/parsearg.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
++
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.i: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmxsrv.dir/parsearg.cpp.i"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp > CMakeFiles/mmxsrv.dir/parsearg.cpp.i
++
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.s: cmake_force
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmxsrv.dir/parsearg.cpp.s"
++	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp -o CMakeFiles/mmxsrv.dir/parsearg.cpp.s
++
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.requires:
++
++.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.requires
++
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.provides: mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.requires
++	$(MAKE) -f mmxsrv/CMakeFiles/mmxsrv.dir/build.make mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.provides.build
++.PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.provides
++
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.provides.build: mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o
++
++
+ # Object files for target mmxsrv
+ mmxsrv_OBJECTS = \
+ "CMakeFiles/mmxsrv.dir/main.cpp.o" \
+-"CMakeFiles/mmxsrv.dir/server.cpp.o"
++"CMakeFiles/mmxsrv.dir/server.cpp.o" \
++"CMakeFiles/mmxsrv.dir/sighandler.cpp.o" \
++"CMakeFiles/mmxsrv.dir/parsearg.cpp.o"
+ 
+ # External object files for target mmxsrv
+ mmxsrv_EXTERNAL_OBJECTS =
+ 
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o
++/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/build.make
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv: mmxsrv/CMakeFiles/mmxsrv.dir/link.txt
+-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv"
++	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv"
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmxsrv.dir/link.txt --verbose=$(VERBOSE)
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../../bin/DEBUG/mmxsrv
+ 	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxsrv && /usr/bin/cmake -E copy /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../../bin/mmxsrv
+@@ -130,6 +182,8 @@ mmxsrv/CMakeFiles/mmxsrv.dir/build: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/bu
+ 
+ mmxsrv/CMakeFiles/mmxsrv.dir/requires: mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o.requires
+ mmxsrv/CMakeFiles/mmxsrv.dir/requires: mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o.requires
++mmxsrv/CMakeFiles/mmxsrv.dir/requires: mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o.requires
++mmxsrv/CMakeFiles/mmxsrv.dir/requires: mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o.requires
+ 
+ .PHONY : mmxsrv/CMakeFiles/mmxsrv.dir/requires
+ 
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/cmake_clean.cmake b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/cmake_clean.cmake
+index 345f987..9422415 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/cmake_clean.cmake
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/cmake_clean.cmake
+@@ -1,6 +1,8 @@
+ file(REMOVE_RECURSE
+   "CMakeFiles/mmxsrv.dir/main.cpp.o"
+   "CMakeFiles/mmxsrv.dir/server.cpp.o"
++  "CMakeFiles/mmxsrv.dir/sighandler.cpp.o"
++  "CMakeFiles/mmxsrv.dir/parsearg.cpp.o"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv.pdb"
+   "/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv"
+ )
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/depend.internal b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/depend.internal
+index 197a6c0..65ca938 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/depend.internal
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/depend.internal
+@@ -2,7 +2,6 @@
+ # Generated by "Unix Makefiles" Generator, CMake Version 3.5
+ 
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o
+- /home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+@@ -26,8 +25,36 @@ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/pultstat.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/dpsniffer.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/istream.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/ichanneldispatcher.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+@@ -61,3 +88,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/depend.make b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/depend.make
+index 678e8b2..8196fcc 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/depend.make
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/depend.make
+@@ -1,7 +1,6 @@
+ # CMAKE generated file: DO NOT EDIT!
+ # Generated by "Unix Makefiles" Generator, CMake Version 3.5
+ 
+-mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/build_number.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+@@ -25,9 +24,37 @@ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxs
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
++mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp
+ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
+ 
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/si.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/ichannel.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/io.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/ipc/pchannel.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/select_ex.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/net/socket.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/deffwriter.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/iosockadp.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/timer.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/headers/pultstat.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/dpsniffer.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/sniffers/istream.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/ichanneldispatcher.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
++mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
++
+ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/data/packet.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/datapack.h
+ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/order645_2.h
+@@ -61,3 +88,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
+ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
+ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
+ 
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/logs/log.h
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
++mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/sighandler.cpp
++
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/flags.make b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/flags.make
+index a34c7bb..d061ee1 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/flags.make
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/flags.make
+@@ -4,7 +4,7 @@
+ # compile CXX with /usr/bin/c++
+ CXX_FLAGS = -O0 -g   -std=gnu++11
+ 
+-CXX_DEFINES = -DDEBUG -DSOURCE_PATH_SIZE=35
++CXX_DEFINES = -DBUILD_NUMBER=1 -DDEBUG -DSOURCE_PATH_SIZE=35
+ 
+ CXX_INCLUDES = -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlst -I/home/vkurbatov/work/mmxprj/mmxprj/mmxcore -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlib -I/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv -I/home/vkurbatov/work/mmxprj/mmxprj/mmxtest -I/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/.. 
+ 
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/link.txt b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/link.txt
+index 35d27d3..e04f66b 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/link.txt
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/link.txt
+@@ -1 +1 @@
+-/usr/bin/c++   -O0 -g   CMakeFiles/mmxsrv.dir/main.cpp.o CMakeFiles/mmxsrv.dir/server.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 
++/usr/bin/c++   -O0 -g   CMakeFiles/mmxsrv.dir/main.cpp.o CMakeFiles/mmxsrv.dir/server.cpp.o CMakeFiles/mmxsrv.dir/sighandler.cpp.o CMakeFiles/mmxsrv.dir/parsearg.cpp.o  -o /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv -rdynamic -lpthread /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a -lpthread 
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/progress.make b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/progress.make
+index 2811553..13aaef1 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/progress.make
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/mmxsrv.dir/progress.make
+@@ -1,4 +1,6 @@
+-CMAKE_PROGRESS_1 = 53
+-CMAKE_PROGRESS_2 = 54
+-CMAKE_PROGRESS_3 = 55
++CMAKE_PROGRESS_1 = 58
++CMAKE_PROGRESS_2 = 59
++CMAKE_PROGRESS_3 = 60
++CMAKE_PROGRESS_4 = 61
++CMAKE_PROGRESS_5 = 62
+ 
+diff --git a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/progress.marks b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/progress.marks
+index 95f9650..0691f67 100644
+--- a/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/progress.marks
++++ b/mmxprj/build/DEBUG/mmxsrv/CMakeFiles/progress.marks
+@@ -1 +1 @@
+-49
++52
+diff --git a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/CXX.includecache b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/CXX.includecache
+index cf8f98c..b48a92c 100644
+--- a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/CXX.includecache
++++ b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/CXX.includecache
+@@ -277,6 +277,12 @@ iostream
+ -
+ mmxlib/tools/string/string_token.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/tools/string/string_token.h
++mmxlib/tools/timer.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/tools/timer.h
++mmxlib/net/select.h
++/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/mmxlib/net/select.h
++string
++-
+ 
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test2.cpp
+ iostream
+diff --git a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/DependInfo.cmake b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/DependInfo.cmake
+index 52e158f..ec2f62b 100644
+--- a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/DependInfo.cmake
++++ b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/DependInfo.cmake
+@@ -22,6 +22,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
+ 
+ # Preprocessor definitions for this target.
+ set(CMAKE_TARGET_DEFINITIONS_CXX
++  "BUILD_NUMBER=1"
+   "DEBUG"
+   "SOURCE_PATH_SIZE=35"
+   )
+diff --git a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/depend.internal b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/depend.internal
+index 6c82620..e3f76be 100644
+--- a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/depend.internal
++++ b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/depend.internal
+@@ -21,7 +21,9 @@ mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o
+ mmxtest/CMakeFiles/mmxtest.dir/test11.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test11.cpp
+ mmxtest/CMakeFiles/mmxtest.dir/test12.cpp.o
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/select.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/string/string_token.h
++ /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/timer.h
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test12.cpp
+ mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o
+  /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+diff --git a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/depend.make b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/depend.make
+index ce4c7f0..9efe6c3 100644
+--- a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/depend.make
++++ b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/depend.make
+@@ -20,7 +20,9 @@ mmxtest/CMakeFiles/mmxtest.dir/test10.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/
+ 
+ mmxtest/CMakeFiles/mmxtest.dir/test11.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test11.cpp
+ 
++mmxtest/CMakeFiles/mmxtest.dir/test12.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/net/select.h
+ mmxtest/CMakeFiles/mmxtest.dir/test12.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/string/string_token.h
++mmxtest/CMakeFiles/mmxtest.dir/test12.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/../mmxlib/tools/timer.h
+ mmxtest/CMakeFiles/mmxtest.dir/test12.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxtest/test12.cpp
+ 
+ mmxtest/CMakeFiles/mmxtest.dir/test2.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/headers/ip.h
+diff --git a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/flags.make b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/flags.make
+index 22f6fa4..018574c 100644
+--- a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/flags.make
++++ b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/flags.make
+@@ -4,7 +4,7 @@
+ # compile CXX with /usr/bin/c++
+ CXX_FLAGS = -O0 -g   -std=gnu++11
+ 
+-CXX_DEFINES = -DDEBUG -DSOURCE_PATH_SIZE=35
++CXX_DEFINES = -DBUILD_NUMBER=1 -DDEBUG -DSOURCE_PATH_SIZE=35
+ 
+ CXX_INCLUDES = -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlst -I/home/vkurbatov/work/mmxprj/mmxprj/mmxcore -I/home/vkurbatov/work/mmxprj/mmxprj/mmxlib -I/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv -I/home/vkurbatov/work/mmxprj/mmxprj/mmxtest -I/home/vkurbatov/work/mmxprj/mmxprj/mmxtest/.. 
+ 
+diff --git a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/progress.make b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/progress.make
+index 9865ede..c3c0ea7 100644
+--- a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/progress.make
++++ b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/mmxtest.dir/progress.make
+@@ -1,15 +1,15 @@
+-CMAKE_PROGRESS_1 = 56
+-CMAKE_PROGRESS_2 = 57
+-CMAKE_PROGRESS_3 = 58
+-CMAKE_PROGRESS_4 = 59
+-CMAKE_PROGRESS_5 = 60
+-CMAKE_PROGRESS_6 = 61
+-CMAKE_PROGRESS_7 = 62
+-CMAKE_PROGRESS_8 = 63
+-CMAKE_PROGRESS_9 = 64
+-CMAKE_PROGRESS_10 = 65
+-CMAKE_PROGRESS_11 = 66
+-CMAKE_PROGRESS_12 = 67
+-CMAKE_PROGRESS_13 = 68
+-CMAKE_PROGRESS_14 = 69
++CMAKE_PROGRESS_1 = 63
++CMAKE_PROGRESS_2 = 64
++CMAKE_PROGRESS_3 = 65
++CMAKE_PROGRESS_4 = 66
++CMAKE_PROGRESS_5 = 67
++CMAKE_PROGRESS_6 = 68
++CMAKE_PROGRESS_7 = 69
++CMAKE_PROGRESS_8 = 70
++CMAKE_PROGRESS_9 = 71
++CMAKE_PROGRESS_10 = 72
++CMAKE_PROGRESS_11 = 73
++CMAKE_PROGRESS_12 = 74
++CMAKE_PROGRESS_13 = 75
++CMAKE_PROGRESS_14 = 76
+ 
+diff --git a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/progress.marks b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/progress.marks
+index abdfb05..b1e7d26 100644
+--- a/mmxprj/build/DEBUG/mmxtest/CMakeFiles/progress.marks
++++ b/mmxprj/build/DEBUG/mmxtest/CMakeFiles/progress.marks
+@@ -1 +1 @@
+-60
++61
+diff --git a/mmxprj/mmxprj/CMakeLists.txt b/mmxprj/mmxprj/CMakeLists.txt
+index 92abddc..cf3cb1c 100644
+--- a/mmxprj/mmxprj/CMakeLists.txt
++++ b/mmxprj/mmxprj/CMakeLists.txt
+@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
+ 
+ #set(CMAKE_BUILD_TYPE DEBUG)
+ 
+-
++SET(CMAKE_BUILD_NUMBER 1)
+ SET(CMAKE_CXX_FLAGS_RELEASE "-O3")
+ SET(CMAKE_CXX_FLAGS_DEBUG  "-O0 -g")
+ 
+@@ -24,6 +24,14 @@ else()
+ 
+ endif()
+ 
++if ($ENV{BUILD_NUMBER})
++
++	SET(CMAKE_BUILD_NUMBER $ENV{BUILD_NUMBER})
++
++endif()
++
++add_definitions("-DBUILD_NUMBER=${CMAKE_BUILD_NUMBER}")
++
+ if (BUILD_DEBUG)
+ 	add_definitions(-DDEBUG)
+ endif()
+@@ -60,9 +68,3 @@ add_subdirectory(
+ 		mmxtest
+ )
+ 
+-
+-#add_custom_target(${PROJECT_NAME}_copy_bin
+-#				COMMAND ${CMAKE_COMMAND} -E copy /home/vkurbatov/1.txt /home/vkurbatov/2.txt
+-#				)
+-
+-#)
+diff --git a/mmxprj/mmxprj/CMakeLists.txt.user b/mmxprj/mmxprj/CMakeLists.txt.user
+index 8b512ca..d4e0563 100644
+--- a/mmxprj/mmxprj/CMakeLists.txt.user
++++ b/mmxprj/mmxprj/CMakeLists.txt.user
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE QtCreatorProject>
+-<!-- Written by QtCreator 3.5.1, 2018-06-15T14:25:44. -->
++<!-- Written by QtCreator 3.5.1, 2018-06-21T13:52:06. -->
+ <qtcreator>
+  <data>
+   <variable>EnvironmentId</variable>
+@@ -63,7 +63,7 @@
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{b97dbdb0-31c7-4a04-bd11-9eb36947a269}</value>
+    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
+    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
+-   <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">2</value>
++   <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">1</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+     <value type="bool" key="CMakeProjectManager.CMakeBuildConfiguration.UseNinja">false</value>
+     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/vkurbatov/work/mmxprj/build</value>
+@@ -295,7 +295,7 @@
+      <value type="int">14</value>
+     </valuelist>
+     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">mmxlst</value>
+-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-r1 -p5062,5063 -d1 -n0.0.0.0</value>
++    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-w1 -p5062,5063 -d1 -n0.0.0.0</value>
+     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
+     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+@@ -345,7 +345,7 @@
+      <value type="int">14</value>
+     </valuelist>
+     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">mmxsrv</value>
+-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-n10.2.16.21 -s -p6040 -d1 -r1</value>
++    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">-n10.2.16.21 -p6040 -d1 -r1</value>
+     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
+     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+diff --git a/mmxprj/mmxprj/mmxcore/CMakeLists.txt b/mmxprj/mmxprj/mmxcore/CMakeLists.txt
+index 3cd94ec..984dd07 100644
+--- a/mmxprj/mmxprj/mmxcore/CMakeLists.txt
++++ b/mmxprj/mmxprj/mmxcore/CMakeLists.txt
+@@ -13,6 +13,8 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE} )
+ set ( SOURCE_FILES
+     main.cpp
+ 	mux.cpp
++	sighandler.cpp
++	parsearg.cpp
+ #	inputchannel.cpp
+ #	outputchannel.cpp
+ #	sorm.cpp
+@@ -20,6 +22,7 @@ set ( SOURCE_FILES
+ 
+ set ( PRIVATE_HEADERS
+ 	mux.h
++	defines.h
+ #	inputchannel.h
+ #	outputchannel.h
+ #	sorm.h
+diff --git a/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore b/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore
+index dbf8f0f..9cb9fe4 100755
+Binary files a/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore and b/mmxprj/mmxprj/mmxcore/build/DEBUG/mmxcore differ
+diff --git a/mmxprj/mmxprj/mmxcore/defines.h b/mmxprj/mmxprj/mmxcore/defines.h
+new file mode 100644
+index 0000000..733a6bc
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxcore/defines.h
+@@ -0,0 +1,37 @@
++#ifndef _MMXMUX_DEFINES_H
++#define _MMXMUX_DEFINES_H
++
++#include "mmxlib/logs/log.h"
++
++#define SERVICE_GROUP "Media module"
++#define SERVICE_NAME "Media stream multiplexor (core)"
++#define SERVICE_MAJOR_VERSION 1
++#define SERVICE_MINOR_VERSION 0
++#define SERVICE_BUILD_VERSION BUILD_NUMBER
++
++#define BUILD_TIME  __TIMESTAMP__
++
++#ifdef DEBUG
++#define SERVICE_STATUS "debug"
++#else
++#define SERVICE_STATUS "release"
++#endif
++
++#define LOG_NAME_PATTERN "/var/log/mmx/core-%d.log"
++
++#define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
++
++#define DEFAULT_BASE_PORT           5200
++#define DEFAULT_INTERVAL            2000
++#define DEFAULT_MIXED_GAIN          50
++#define DEFAULT_MEDIA_PERIOD        20
++#define DEFAULT_MUTE_TIME           200
++#define DEFAULT_JITTER_BUFFER_SIZE  60
++#define JITTER_BUFFER_MIN           20
++#define JITTER_BUFFER_MAX           (5 * 60 * 1000)
++
++void sig_set();
++
++int parse_args(int argc, char* argv[], void *cfg1, void *cfg2, mmx::logs::log_level_t &log_level);
++
++#endif
+diff --git a/mmxprj/mmxprj/mmxcore/main.cpp b/mmxprj/mmxprj/mmxcore/main.cpp
+index d833819..dfad353 100644
+--- a/mmxprj/mmxprj/mmxcore/main.cpp
++++ b/mmxprj/mmxprj/mmxcore/main.cpp
+@@ -11,91 +11,7 @@
+ #include <fcntl.h>
+ #include <netdb.h>  //INADDR_NONE
+ 
+-#include "../build_number.h"
+-
+-#define SERVICE_GROUP "Media module"
+-#define SERVICE_NAME "Media stream multiplexor (core)"
+-#define SERVICE_MAJOR_VERSION 1
+-#define SERVICE_MINOR_VERSION 0
+-#define SERVICE_BUILD_VERSION BUILD_NUMBER
+-
+-#define BUILD_TIME  __TIMESTAMP__
+-
+-#ifdef DEBUG
+-#define SERVICE_STATUS "debug"
+-#else
+-#define SERVICE_STATUS "release"
+-#endif
+-
+-#define LOG_NAME_PATTERN "/var/log/mmx/core-%d.log"
+-
+-#define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
+-
+-#define DEFAULT_BASE_PORT           5200
+-#define DEFAULT_INTERVAL            2000
+-#define DEFAULT_MIXED_GAIN          50
+-#define DEFAULT_MEDIA_PERIOD        20
+-#define DEFAULT_MUTE_TIME           200
+-#define DEFAULT_JITTER_BUFFER_SIZE  60
+-#define JITTER_BUFFER_MIN           20
+-#define JITTER_BUFFER_MAX           (5 * 60 * 1000)
+-
+-static char buff[1600 * 10];
+-
+-static int parse_channels(char* params, unsigned char* channels);
+-static int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::log_level_t& log_level);
+-
+-void finish(int e_code)
+-{
+-    mmx::logs::logI("@%s Ver=%d.%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_STATUS, e_code);
+-    mmx::logs::log_init();
+-    exit(e_code);
+-}
+-
+-void sig_handler(int sig)
+-{
+-    int e_code = -1;
+-
+-    switch (sig)
+-    {
+-        case SIGPIPE:
+-
+-            mmx::logs::logE("SIGPIPE");
+-
+-            break;
+-        case SIGIO:
+-
+-            mmx::logs::logE("SIGIO");
+-
+-            break;
+-        case SIGTERM:
+-        case SIGQUIT:
+-
+-            mmx::logs::logC("Close by terminal");
+-
+-            e_code = 1;
+-
+-            break;
+-
+-        case SIGSEGV:
+-
+-            e_code = 2;
+-
+-            mmx::logs::logC("@SIGSEGV");
+-
+-            break;
+-        default:
+-
+-            e_code = 3;
+-
+-            break;
+-    }
+-
+-    if (e_code >= 0)
+-    {
+-        finish(e_code);
+-    }
+-}
++#include "defines.h"
+ 
+ int main(int argc, char* argv[])
+ {
+@@ -113,13 +29,7 @@ int main(int argc, char* argv[])
+     config.jitter_size = DEFAULT_JITTER_BUFFER_SIZE;
+     config.mute_time = DEFAULT_MUTE_TIME;
+ 
+-
+-   /* unsigned char b_a[] = { 0x15, 0x10, 0x02, 0x0A };
+-    unsigned char b_p[] = { 0xC6, 0x13 };
+-    auto a = mmx::net::Socket::AtoS(*(int*)b_a);
+-    auto p = *(unsigned short*)b_p;*/
+-
+-    int rc = parse_args(argc, argv, config, log_level);
++    int rc = parse_args(argc, argv, &config, nullptr, log_level);
+ 
+     if (rc == 0)
+     {
+@@ -143,11 +53,7 @@ int main(int argc, char* argv[])
+ 
+         mmx::logs::logI("@%s Ver=%d.%d.%d.%s (%s) Started!\nArguments: %s\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_STATUS, BUILD_TIME, log_file);
+ 
+-        signal(SIGHUP, sig_handler);
+-        signal(SIGPIPE, sig_handler);
+-        signal(SIGTERM, sig_handler);
+-        signal(SIGQUIT, sig_handler);
+-        signal(SIGSEGV, sig_handler);
++        sig_set();
+ 
+         mmxmux::Mux Mux(config);
+ 
+@@ -163,284 +69,3 @@ int main(int argc, char* argv[])
+ }
+ 
+ 
+-int parse_channels(char* params, unsigned char* channels)
+-{
+-
+-        int rc = 0;
+-
+-        unsigned char channel = 0;
+-        bool range = false;
+-        //short step = 0;
+-
+-        while (params != nullptr && *params != '\0')
+-        {
+-
+-            int num = std::atoi(params);
+-
+-
+-            if (num > 0 && num < 256)
+-            {
+-                // задали диапазон
+-
+-                if (range)
+-                {
+-
+-                    do
+-                    {
+-
+-                        channels[channel / 8] |= 1 << (channel % 8);
+-
+-                    }while(++channel <= num);
+-
+-                    channel = num;
+-
+-                    range = false;
+-
+-                }
+-                else
+-                {
+-
+-                    channel = num;
+-
+-                    channels[channel / 8] |= 1 << (channel % 8);
+-
+-                    rc++;
+-
+-                }
+-
+-                char* p1 = std::strchr(params, ',');
+-                char* p2 = std::strchr(params, '-');
+-
+-                if (p1 == nullptr)
+-                {
+-                    p1 = p2;
+-                }
+-                else if (p2 == nullptr)
+-                {
+-                    p2 = p1;
+-                }
+-
+-                params = std::min(p1, p2);
+-
+-                if (params != nullptr)
+-                {
+-
+-                    range = *params++ == '-';
+-
+-                }
+-
+-            }
+-            else
+-            {
+-                rc = -EINVAL;
+-                break;
+-            }
+-        }
+-
+-
+-    return rc;
+-}
+-
+-int parse_args(int argc, char* argv[], mmxmux::MUX_CONFIG& config, mmx::logs::log_level_t& log_level)
+-{
+-    int rc = 0;
+-
+-    char* p;
+-
+-    for(int arg = 1; arg < argc && rc == 0; ++arg)
+-    {
+-        p = argv[arg];
+-        if (*p == 0)
+-        {
+-            continue;
+-        }
+-        if (*p == '-')
+-        {
+-            switch(*++p)
+-            {
+-                case 'v':
+-
+-                    std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
+-                            << "Service name: " << SERVICE_NAME << "." << std::endl
+-                            << "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << "."
+-                            << SERVICE_BUILD_VERSION << "." << SERVICE_STATUS << std::endl;
+-                    rc = 1;
+-
+-                    break;
+-                case 'h':
+-
+-                    //std::cout << "!!!HELP!!!!" << std::endl;
+-
+-                    std::cout << std::endl << "usage: " << SERVICE_GROUP << "." << std::endl
+-                            << "-v - output to screen version info" << std::endl
+-                            << "-o<1,2-n> - set outpet channels, " << std::endl;
+-
+-                    rc = 1;
+-
+-                    break;
+-                case 'r':
+-                    {
+-
+-                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                        if (n > 0 && n < 255)
+-                        {
+-                            config.channel_num = (unsigned char)n;
+-                        }
+-                        else
+-                        {
+-                            std::cout << "Error channel number \'r=" << n << "\'. Channel number must be range [1..255]" << std::endl;
+-                            rc = -EINVAL;
+-                        }
+-
+-                    }
+-                    break;
+-                case 'w':
+-                    {
+-                        if (parse_channels(*(p+1) != 0 ? p+1 : argv[++arg], config.channels) < 0)
+-                        {
+-                            rc = -EINVAL;
+-                        }
+-
+-                    }
+-                    break;
+-                case 'i':
+-                    {
+-                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                        if (n > 0 && n < 60000)
+-                        {
+-                            config.interval = n;
+-                        }
+-                        else
+-                        {
+-                            std::cout << "Error interval period \'i=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
+-                            rc = -EINVAL;
+-                        }
+-                    }
+-                    break;
+-                case 'm':
+-                    {
+-                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                        if (n > 0 && n < 60000)
+-                        {
+-                            config.media_period = n;
+-                        }
+-                        else
+-                        {
+-                            std::cout << "Error media period \'m=" << n << "\'. Media period must be range [1..60000]" << std::endl;
+-                            rc = -EINVAL;
+-                        }
+-                    }
+-                    break;
+-                case 's':
+-                    {
+-                            int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                            if (n >= 0 && n <= 30000)
+-                            {
+-                                config.mute_time = (unsigned short)n;
+-                            }
+-                            else
+-                            {
+-                                std::cout << "Error silense time \'s=" << n << "\'. Silense must be range [0..30000] msec" << std::endl;
+-                                rc = -EINVAL;
+-                            }
+-                    }
+-                break;
+-                case 'p':
+-                    {
+-                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                        if (n > 0 && n < 65535)
+-                        {
+-                            config.sgm_port = (unsigned short)n;
+-                        }
+-                        else
+-                        {
+-                            std::cout << "Error port number \'p=" << n << "\'. Port number must be range [1..65534]" << std::endl;
+-                            rc = -EINVAL;
+-                        }
+-                    }
+-                    break;
+-                case 'd':
+-                {
+-                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (n >= mmx::logs::L_TRACE && n < mmx::logs::L_CRITICAL)
+-                    {
+-                        log_level = (mmx::logs::log_level_t)n;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error log level \'d=" << n << "\'. Log level must be range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-
+-                }
+-                break;
+-                case 'j':
+-                {
+-                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (n >= JITTER_BUFFER_MIN && n < JITTER_BUFFER_MAX)
+-                    {
+-                        config.jitter_size = n;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error jitter size \'j=" << n << "\'. Jitter size must be range [" << JITTER_BUFFER_MIN << ".." << JITTER_BUFFER_MAX << "]." << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-
+-                }
+-                break;
+-                case 'g':
+-                {
+-                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (n >= 0 && n < 255)
+-                    {
+-                        config.mixed_gain = n;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error mixer gain \'g=" << n << "\'. Mixer gain must be range [0..255]." << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-
+-                }
+-                break;
+-                case 'n':
+-                {
+-                    mmx::net::address_t a = mmx::net::Socket::StoA(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (a != INADDR_NONE)
+-                    {
+-                        config.sgm_address = a;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error input ip-address" << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-
+-                }
+-                break;
+-                default:
+-                {
+-                    std::cout << "Argument -" << *p << " wrong!" << std::endl;
+-                    rc = -EINVAL;
+-                }
+-            }
+-        }
+-        else
+-        {
+-            std::cout << "Arguments must begin with the prefix \'-\'" << std::endl;
+-            rc = -EINVAL;
+-        }
+-    }
+-
+-    return rc;
+-}
+diff --git a/mmxprj/mmxprj/mmxcore/mux.cpp b/mmxprj/mmxprj/mmxcore/mux.cpp
+index d622e59..b8d1e94 100644
+--- a/mmxprj/mmxprj/mmxcore/mux.cpp
++++ b/mmxprj/mmxprj/mmxcore/mux.cpp
+@@ -15,9 +15,12 @@
+ 
+ #define LOG_BEGIN(msg) DLOG_CLASS_BEGIN("Mux", msg)
+ 
++
+ namespace mmxmux
+ {
+ 
++    //const static pid_t  g_pid = getpid();
++
+     Mux::Mux(const MUX_CONFIG& config) :
+         config_(config),
+         sangoma_(config.sgm_address, config.sgm_port, select_, config.interval),
+@@ -26,11 +29,11 @@ namespace mmxmux
+         media_pool_(-1, config.jitter_size),
+         sorm_pool_(media_pool_, 10, config.mixed_gain)
+     {
+-        timer_.HStart(config_.media_period);
++        timer_.Start(config_.media_period);
+         std::memset(channel_indexes_, -1, sizeof(channel_indexes_));
+     }
+ 
+-    void Mux::test()
++    /*void Mux::test()
+     {
+         mmx::headers::SANGOMA_PROXY_INFO proxy;
+         mmx::headers::SANGOMA_SORM_INFO sorm;
+@@ -52,7 +55,7 @@ namespace mmxmux
+ 
+         sorm_pool_.GetSorm(sorm, proxy);
+ 
+-    }
++    }*/
+ 
+     int Mux::Execute()
+     {
+@@ -98,6 +101,11 @@ namespace mmxmux
+             else
+             {
+                 closeAll();
++
++                if (rc == -EBADF)
++                {
++                    select_.Reset();
++                }
+             }
+         }
+ 
+@@ -237,7 +245,7 @@ namespace mmxmux
+                 c.Send();
+             }
+ 
+-            timer_.HStart(config_.media_period);
++            timer_.Start(config_.media_period);
+         }
+     }
+ 
+@@ -344,7 +352,7 @@ namespace mmxmux
+         for (mmx::tools::PipeOutputChannel& o : output_channel_pool_.GetChannels())
+         {
+             answer.a_link_status[i].type = mmx::headers::SI_LINK_TCP;
+-            answer.a_link_status[i].num = o.GetChannelId();
++            answer.a_link_status[i].num = o.GetChannelId();          
+ 
+             mmx::headers::PULT_STAT* plt_stat = (mmx::headers::PULT_STAT*)shmem_servers_[channel_indexes_[answer.a_link_status[i].num]].Data();
+ 
+@@ -373,9 +381,12 @@ namespace mmxmux
+                             rm_sorms_.push_back(s);
+                         }
+                         break;
++
+                     case mmx::headers::SI_LINK_STATUS:
++
+                         DLOGT(LOG_BEGIN("processSangoma(): recieve LINK_STATUS query, len = %d"), query->header.length);
+                         break;
++
+                     case mmx::headers::SI_START_PROXY:
+                     case mmx::headers::SI_END_PROXY:
+                         {
+diff --git a/mmxprj/mmxprj/mmxcore/mux.h b/mmxprj/mmxprj/mmxcore/mux.h
+index fa07452..2b2d7ea 100644
+--- a/mmxprj/mmxprj/mmxcore/mux.h
++++ b/mmxprj/mmxprj/mmxcore/mux.h
+@@ -1,6 +1,7 @@
+ #ifndef _MMXMUX_MUX_H
+ #define _MMXMUX_MUX_H
+ 
++
+ #include "mmxlib/net/select_ex.h"
+ 
+ #include "mmxlib/tools/timer.h"
+@@ -61,6 +62,7 @@ namespace mmxmux
+         int                                 channel_indexes_[256];
+ 
+ 
++
+     public:
+ 
+         Mux(const MUX_CONFIG& config);
+@@ -76,7 +78,7 @@ namespace mmxmux
+         void timerWork();
+         void processSangoma();
+         void closeAll();
+-        void test();
++        //void test();
+ 
+     };
+ }
+diff --git a/mmxprj/mmxprj/mmxcore/parsearg.cpp b/mmxprj/mmxprj/mmxcore/parsearg.cpp
+new file mode 100644
+index 0000000..48d29e3
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxcore/parsearg.cpp
+@@ -0,0 +1,296 @@
++#include <iostream>
++#include <cstdio>
++#include <cstring>
++#include "defines.h"
++
++#include <netdb.h>
++#include <errno.h>
++
++#include "mmxlib/net/portset.h"
++
++#include "mux.h"
++
++
++static int parse_channels(char* params, unsigned char* channels)
++{
++
++		int rc = 0;
++
++		unsigned char channel = 0;
++		bool range = false;
++		//short step = 0;
++
++		while (params != nullptr && *params != '\0')
++		{
++
++			int num = std::atoi(params);
++
++
++			if (num > 0 && num < 256)
++			{
++				// задали диапазон
++
++				if (range)
++				{
++
++					do
++					{
++
++						channels[channel / 8] |= 1 << (channel % 8);
++
++					}while(++channel <= num);
++
++					channel = num;
++
++					range = false;
++
++				}
++				else
++				{
++
++					channel = num;
++
++					channels[channel / 8] |= 1 << (channel % 8);
++
++					rc++;
++
++				}
++
++				char* p1 = std::strchr(params, ',');
++				char* p2 = std::strchr(params, '-');
++
++				if (p1 == nullptr)
++				{
++					p1 = p2;
++				}
++				else if (p2 == nullptr)
++				{
++					p2 = p1;
++				}
++
++				params = std::min(p1, p2);
++
++				if (params != nullptr)
++				{
++
++					range = *params++ == '-';
++
++				}
++
++			}
++			else
++			{
++				rc = -EINVAL;
++				break;
++			}
++		}
++
++
++	return rc;
++}
++
++int parse_args(int argc, char* argv[], void *cfg1, void *cfg2, mmx::logs::log_level_t &log_level)
++{
++	int rc = 0;
++
++	mmxmux::MUX_CONFIG& config = *(mmxmux::MUX_CONFIG*)cfg1;
++
++	char* p;
++
++	for(int arg = 1; arg < argc && rc == 0; ++arg)
++	{
++		p = argv[arg];
++		if (*p == 0)
++		{
++			continue;
++		}
++		if (*p == '-')
++		{
++			switch(*++p)
++			{
++				case 'v':
++
++					std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
++							<< "Service name: " << SERVICE_NAME << "." << std::endl
++							<< "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << "."
++							<< SERVICE_BUILD_VERSION << "." << SERVICE_STATUS << std::endl;
++					rc = 1;
++
++					break;
++				case 'h':
++
++					//std::cout << "!!!HELP!!!!" << std::endl;
++
++					std::cout << std::endl << "usage: " << SERVICE_GROUP << "." << std::endl
++							<< "-v - output to screen version info" << std::endl
++							<< "-o<1,2-n> - set outpet channels, " << std::endl;
++
++					rc = 1;
++
++					break;
++				case 'r':
++					{
++
++						int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++						if (n > 0 && n < 255)
++						{
++							config.channel_num = (unsigned char)n;
++						}
++						else
++						{
++							std::cout << "Error channel number \'r=" << n << "\'. Channel number must be range [1..255]" << std::endl;
++							rc = -EINVAL;
++						}
++
++					}
++					break;
++				case 'w':
++					{
++						if (parse_channels(*(p+1) != 0 ? p+1 : argv[++arg], config.channels) < 0)
++						{
++							rc = -EINVAL;
++						}
++
++					}
++					break;
++				case 'i':
++					{
++						int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++						if (n > 0 && n < 60000)
++						{
++							config.interval = n;
++						}
++						else
++						{
++							std::cout << "Error interval period \'i=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
++							rc = -EINVAL;
++						}
++					}
++					break;
++				case 'm':
++					{
++						int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++						if (n > 0 && n < 60000)
++						{
++							config.media_period = n;
++						}
++						else
++						{
++							std::cout << "Error media period \'m=" << n << "\'. Media period must be range [1..60000]" << std::endl;
++							rc = -EINVAL;
++						}
++					}
++					break;
++				case 's':
++					{
++							int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++							if (n >= 0 && n <= 30000)
++							{
++								config.mute_time = (unsigned short)n;
++							}
++							else
++							{
++								std::cout << "Error silense time \'s=" << n << "\'. Silense must be range [0..30000] msec" << std::endl;
++								rc = -EINVAL;
++							}
++					}
++				break;
++				case 'p':
++					{
++						int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++						if (n > 0 && n < 65535)
++						{
++							config.sgm_port = (unsigned short)n;
++						}
++						else
++						{
++							std::cout << "Error port number \'p=" << n << "\'. Port number must be range [1..65534]" << std::endl;
++							rc = -EINVAL;
++						}
++					}
++					break;
++				case 'd':
++				{
++					int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (n >= mmx::logs::L_TRACE && n < mmx::logs::L_CRITICAL)
++					{
++						log_level = (mmx::logs::log_level_t)n;
++					}
++					else
++					{
++						std::cout << "Error log level \'d=" << n << "\'. Log level must be range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
++						rc = -EINVAL;
++					}
++
++				}
++				break;
++				case 'j':
++				{
++					int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (n >= JITTER_BUFFER_MIN && n < JITTER_BUFFER_MAX)
++					{
++						config.jitter_size = n;
++					}
++					else
++					{
++						std::cout << "Error jitter size \'j=" << n << "\'. Jitter size must be range [" << JITTER_BUFFER_MIN << ".." << JITTER_BUFFER_MAX << "]." << std::endl;
++						rc = -EINVAL;
++					}
++
++				}
++				break;
++				case 'g':
++				{
++					int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (n >= 0 && n < 255)
++					{
++						config.mixed_gain = n;
++					}
++					else
++					{
++						std::cout << "Error mixer gain \'g=" << n << "\'. Mixer gain must be range [0..255]." << std::endl;
++						rc = -EINVAL;
++					}
++
++				}
++				break;
++				case 'n':
++				{
++					mmx::net::address_t a = mmx::net::Socket::StoA(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (a != INADDR_NONE)
++					{
++						config.sgm_address = a;
++					}
++					else
++					{
++						std::cout << "Error input ip-address" << std::endl;
++						rc = -EINVAL;
++					}
++
++				}
++				break;
++				default:
++				{
++					std::cout << "Argument -" << *p << " wrong!" << std::endl;
++					rc = -EINVAL;
++				}
++			}
++		}
++		else
++		{
++			std::cout << "Arguments must begin with the prefix \'-\'" << std::endl;
++			rc = -EINVAL;
++		}
++	}
++
++	return rc;
++}
+diff --git a/mmxprj/mmxprj/mmxcore/sighandler.cpp b/mmxprj/mmxprj/mmxcore/sighandler.cpp
+new file mode 100644
+index 0000000..99456d8
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxcore/sighandler.cpp
+@@ -0,0 +1,67 @@
++#include "defines.h"
++#include <signal.h>
++#include <stdlib.h>
++#include "mmxlib/logs/log.h"
++
++void finish(int e_code)
++{
++	mmx::logs::logI("@Exit with code = %d!\n\n", e_code);
++	mmx::logs::log_init();
++	exit(e_code);
++}
++
++void sig_handler(int sig)
++{
++	int e_code = -1;
++
++	switch (sig)
++	{
++		case SIGPIPE:
++
++			mmx::logs::logE("SIGPIPE");
++
++			break;
++		case SIGIO:
++
++			mmx::logs::logE("SIGIO");
++
++			break;
++		case SIGTERM:
++		case SIGQUIT:
++
++			mmx::logs::logC("Close by terminal");
++
++			e_code = 1;
++
++			break;
++
++		case SIGSEGV:
++
++			e_code = 2;
++
++			mmx::logs::logC("@SIGSEGV");
++
++			break;
++		default:
++
++			e_code = 3;
++
++			break;
++	}
++
++	if (e_code >= 0)
++	{
++		finish(e_code);
++	}
++}
++
++void sig_set()
++{
++
++	signal(SIGHUP, sig_handler);
++	signal(SIGPIPE, sig_handler);
++	signal(SIGTERM, sig_handler);
++	signal(SIGQUIT, sig_handler);
++	//signal(SIGSEGV, sig_handler);
++}
++
+diff --git a/mmxprj/mmxprj/mmxlib/CMakeLists.txt b/mmxprj/mmxprj/mmxlib/CMakeLists.txt
+index f133503..fc2ac29 100644
+--- a/mmxprj/mmxprj/mmxlib/CMakeLists.txt
++++ b/mmxprj/mmxprj/mmxlib/CMakeLists.txt
+@@ -73,6 +73,7 @@ set ( SOURCE_FILES
+ 	tools/async/asyncdispatcher.cpp
+ 	tools/async/asyncunit.cpp
+ 	tools/string/string_token.cpp
++	tools/string/arg_processor.cpp
+ #	медиа
+ 	media/sorm.cpp
+ 	media/mediastream.cpp
+@@ -159,6 +160,7 @@ set ( PRIVATE_HEADERS
+ 	tools/async/iasyncunit.h
+ 	tools/async/asyncunit.h
+ 	tools/string/string_token.h
++	tools/string/arg_processor.h
+ #	медиа
+ 	media/ijitter.h
+ 	media/sorm.h
+diff --git a/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp b/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp
+index 204cad3..87ddbec 100644
+--- a/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp
++++ b/mmxprj/mmxprj/mmxlib/ipc/pchannel.cpp
+@@ -142,8 +142,6 @@ namespace mmx
+ 
+                     rc = handle_;
+ 
+-                    handle_ = -1;
+-
+                     DLOGI(LOG_BEGIN("Close(): pipe close success, handle_ = %d"), rc);
+                 }
+                 else
+@@ -151,6 +149,8 @@ namespace mmx
+                     rc = -errno;
+                     DLOGE(LOG_BEGIN("Close(): Error close pipe, handle_ = %d, rc = %d"), handle_, rc);
+                 }
++
++                handle_ = -1;
+             }
+             else
+             {
+diff --git a/mmxprj/mmxprj/mmxlib/net/portset.cpp b/mmxprj/mmxprj/mmxlib/net/portset.cpp
+index 6cd3df6..a2890f1 100644
+--- a/mmxprj/mmxprj/mmxlib/net/portset.cpp
++++ b/mmxprj/mmxprj/mmxlib/net/portset.cpp
+@@ -103,6 +103,16 @@ namespace mmx
+             return (set_[port / 8] & 1 << (port % 8)) != 0;
+         }
+ 
++        unsigned char* PortSet::Data()
++        {
++            return set_;
++        }
++
++        const unsigned char *PortSet::Data() const
++        {
++            return set_;
++        }
++
+         void PortSet::Clear()
+         {
+             DLOGT(LOG_BEGIN("Clear()"));
+diff --git a/mmxprj/mmxprj/mmxlib/net/portset.h b/mmxprj/mmxprj/mmxlib/net/portset.h
+index 658f9a1..0d78e51 100644
+--- a/mmxprj/mmxprj/mmxlib/net/portset.h
++++ b/mmxprj/mmxprj/mmxlib/net/portset.h
+@@ -12,7 +12,6 @@ namespace mmx
+ 		class PortSet
+ 		{
+             unsigned char set_[PORT_SET_SIZE];
+-            int count_;
+ 
+         public:
+             PortSet();
+@@ -24,6 +23,9 @@ namespace mmx
+             int SetRange(unsigned short begin, unsigned short end, short step = 1);
+             int ClrRange(unsigned short begin, unsigned short end, short step = 1);
+             bool operator[] (unsigned short port) const;
++            unsigned char *Data();
++            const unsigned char *Data() const;
++
+             void Clear();
+         };
+ 	}
+diff --git a/mmxprj/mmxprj/mmxlib/net/select.cpp b/mmxprj/mmxprj/mmxlib/net/select.cpp
+index d259891..9ce0e10 100644
+--- a/mmxprj/mmxprj/mmxlib/net/select.cpp
++++ b/mmxprj/mmxprj/mmxlib/net/select.cpp
+@@ -38,8 +38,6 @@ namespace mmx
+ 
+             std::memcpy(result_, sets_, sizeof(sets_));
+ 
+-
+-
+             int rc = select(
+                         fd_max_ + 1,
+                         &result_[0], //readmask
+@@ -95,7 +93,7 @@ namespace mmx
+                 }
+                 else
+                 {
+-                    DLOGE(LOG_BEGIN("Wait(%d): select error = %d"), rc);
++                    DLOGE(LOG_BEGIN("Wait(%d): select[%d..%d] error = %d"), timeout, fd_min_, fd_max_, rc);
+                 }
+ 
+             }
+@@ -229,7 +227,8 @@ namespace mmx
+             std::memset(result_, 0, sizeof(result_));
+             std::memset((void*)&sock_table_, 0, sizeof(sock_table_));
+ 
+-            fd_max_ = -1;
++            fd_min_ = fd_max_ = -1;
++
+         }
+ 
+ 
+diff --git a/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp b/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp
+new file mode 100644
+index 0000000..8573c5a
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.cpp
+@@ -0,0 +1,19 @@
++#include "arg_processor.h"
++
++namespace mmx
++{
++	namespace tools
++	{
++		namespace string
++		{
++			ArgProcessor::ArgProcessor(int argc, char* argv[]) :
++				argc_(argc),
++				argv_(argv)
++			{
++
++			}
++		}
++	}
++}
++
++
+diff --git a/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.h b/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.h
+new file mode 100644
+index 0000000..6ea2af7
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxlib/tools/string/arg_processor.h
+@@ -0,0 +1,37 @@
++#ifndef ARG_PROCESSOR_H
++#define ARG_PROCESSOR_H
++
++#include <vector>
++#include <map>
++
++namespace mmx
++{
++	namespace tools
++	{
++		namespace string
++		{
++			enum
++			{
++				ARG_TYPE_NUMERIC,
++				ARG_TYPE_REAL,
++				ARG_TYPE_STRING,
++				ARG_TYPE_BOOL,
++				ARG_TYPE_FLAG,
++				ARG_TYPE_CUSTOM
++			}key_types_t;
++
++			class ArgProcessor
++			{
++
++				int		argc_;
++				char**	argv_;
++
++			public:
++				ArgProcessor(int argc, char* argv[]);
++			};
++		}
++	}
++}
++
++
++#endif // ARG_PROCESSOR_H
+diff --git a/mmxprj/mmxprj/mmxlib/tools/timer.cpp b/mmxprj/mmxprj/mmxlib/tools/timer.cpp
+index af42199..8c2fff1 100644
+--- a/mmxprj/mmxprj/mmxlib/tools/timer.cpp
++++ b/mmxprj/mmxprj/mmxlib/tools/timer.cpp
+@@ -59,13 +59,12 @@ namespace mmx
+ 
+         void Timer::HStart(timer_interval_t interval)
+         {
+-            interval_ = interval % GetTicks();
+-            if (interval_ == 0)
++            int tim = interval - (GetTicks() % interval);
++            if (tim == 0)
+             {
+-                interval_ = interval;
++                tim = interval;
+             }
+-            start_ = GetTicks();
+-            run_ = true;
++            Start(tim);
+         }
+ 
+         bool Timer::Stop()
+diff --git a/mmxprj/mmxprj/mmxlst/CMakeLists.txt b/mmxprj/mmxprj/mmxlst/CMakeLists.txt
+index 5947d47..3d95b7e 100644
+--- a/mmxprj/mmxprj/mmxlst/CMakeLists.txt
++++ b/mmxprj/mmxprj/mmxlst/CMakeLists.txt
+@@ -15,6 +15,8 @@ set ( SOURCE_FILES
+     main.cpp
+ #	_listener.cpp
+ 	listener.cpp
++	parsearg.cpp
++	sighandler.cpp
+ #	direction.cpp
+ #	create_dir.cpp
+ #	destroy_dir.cpp
+diff --git a/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst b/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst
+index 1e1b6ef..aeef9ce 100755
+Binary files a/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst and b/mmxprj/mmxprj/mmxlst/build/DEBUG/mmxlst differ
+diff --git a/mmxprj/mmxprj/mmxlst/defines.h b/mmxprj/mmxprj/mmxlst/defines.h
+index 7d8a164..dd0d008 100644
+--- a/mmxprj/mmxprj/mmxlst/defines.h
++++ b/mmxprj/mmxprj/mmxlst/defines.h
+@@ -1,16 +1,28 @@
+ #ifndef _MMXLST_DEFINES_H
+ #define _MMXLST_DEFINES_H
+ 
+-typedef void(*callback_routine)(unsigned short, char*, int);
++#include "mmxlib/logs/log.h"
+ 
+-int listener(unsigned int addr, unsigned short begin, unsigned short end, int step = 1);
+ 
+-int create_dir(unsigned short begin, unsigned short end, int step);
++#define SERVICE_GROUP "Media module"
++#define SERVICE_NAME "Udp media stream listener"
++#define SERVICE_MAJOR_VERSION 1
++#define SERVICE_MINOR_VERSION 0
++#define SERVICE_BUILD_VERSION BUILD_NUMBER
+ 
+-int dispatch(int sock, int dir_id);
++#define BUILD_TIME  __TIMESTAMP__
+ 
+-int process_dir(int dir_id, callback_routine call);
++#ifdef DEBUG
++#define SERVICE_STATUS "debug"
++#else
++#define SERVICE_STATUS "release"
++#endif
++
++#define LOG_NAME_PATTERN "/var/log/mmx/listener-%d.log"
++
++void sig_set();
++
++int parse_args(int argc, char* argv[], void *cfg1, void *cfg2, mmx::logs::log_level_t &log_level);
+ 
+-int destroy_dir(int dir_id);
+ 
+ #endif
+diff --git a/mmxprj/mmxprj/mmxlst/listener.cpp b/mmxprj/mmxprj/mmxlst/listener.cpp
+index 3cd80f3..a011c8f 100644
+--- a/mmxprj/mmxprj/mmxlst/listener.cpp
++++ b/mmxprj/mmxprj/mmxlst/listener.cpp
+@@ -58,6 +58,10 @@ namespace mmxlst
+             else
+             {
+                 closeAll();
++                if (rc == -EBADF)
++                {
++                    select_.Reset();
++                }
+             }
+         }
+     }
+diff --git a/mmxprj/mmxprj/mmxlst/main.cpp b/mmxprj/mmxprj/mmxlst/main.cpp
+index 5d35cc1..95c6db5 100644
+--- a/mmxprj/mmxprj/mmxlst/main.cpp
++++ b/mmxprj/mmxprj/mmxlst/main.cpp
+@@ -12,84 +12,17 @@
+ #include <signal.h> // sigpipe
+ #include <netdb.h>  // INADDR_ANY
+ 
+-#include "mmxlib/logs/log.h"
+ #include "listener.h"
+ 
+-#include "../build_number.h"
++#include "defines.h"
+ 
+-#define SERVICE_GROUP "Media module"
+-#define SERVICE_NAME "Udp media stream listener"
+-#define SERVICE_MAJOR_VERSION 1
+-#define SERVICE_MINOR_VERSION 0
+-#define SERVICE_BUILD_VERSION BUILD_NUMBER
+-
+-#define BUILD_TIME  __TIMESTAMP__
+-
+-#ifdef DEBUG
+-#define SERVICE_STATUS "debug"
+-#else
+-#define SERVICE_STATUS "release"
+-#endif
+-
+-#define LOG_NAME_PATTERN "/var/log/mmx/listener-%d.log"
++//#include "../build_number.h"
+ 
+ mmx::logs::log_level_t  g_log_level = mmx::logs::L_DEBUG;
+ 
+ static int parse_ports(char* params, mmx::net::PortSet& ports);
+ static int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net::PortSet& ports, mmx::logs::log_level_t& log_level);
+ 
+-void finish(int e_code)
+-{
+-    mmx::logs::logI("@%s Ver=%d.%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_STATUS, e_code);
+-    mmx::logs::log_init();
+-    exit(e_code);
+-}
+-
+-void sig_handler(int sig)
+-{
+-    int e_code = -1;
+-
+-    switch (sig)
+-    {
+-        case SIGPIPE:
+-
+-            mmx::logs::logE("SIGPIPE");
+-
+-            break;
+-        case SIGIO:
+-
+-            mmx::logs::logE("SIGIO");
+-
+-            break;
+-        case SIGTERM:
+-        case SIGQUIT:
+-
+-            mmx::logs::logC("Close by terminal");
+-
+-            e_code = 1;
+-
+-            break;
+-
+-        case SIGSEGV:
+-
+-            e_code = 2;
+-
+-            mmx::logs::logC("@SIGSEGV");
+-
+-            break;
+-        default:
+-
+-            e_code = 3;
+-
+-            break;
+-    }
+-
+-    if (e_code >= 0)
+-    {
+-        finish(e_code);
+-    }
+-}
+-
+ int main(int argc, char* argv[])
+ {
+ 
+@@ -101,7 +34,7 @@ int main(int argc, char* argv[])
+     lst_config.channel = 1;
+     lst_config.interval = 2000;
+ 
+-    int rc = parse_args(argc, argv, lst_config, ports, g_log_level);
++    int rc = parse_args(argc, argv, &lst_config, &ports, g_log_level);
+ 
+     if (rc == 0)
+     {
+@@ -125,14 +58,10 @@ int main(int argc, char* argv[])
+ 
+         mmx::logs::logI("@%s Ver=%d.%d.%d.%s (%d) Started!\nArguments: %s\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_STATUS, BUILD_TIME, log_file);
+ 
+-        signal(SIGHUP, sig_handler);
+-        signal(SIGPIPE, sig_handler);
+-        signal(SIGTERM, sig_handler);
+-        signal(SIGQUIT, sig_handler);
+-        signal(SIGSEGV, sig_handler);
+-
+         mmxlst::Listener listener(lst_config, ports);
+ 
++        sig_set();
++
+         rc = listener.Execute();
+ 
+         mmx::logs::logI("@%s Ver=%d.%d.%d.%s Stopped!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_STATUS);
+@@ -144,200 +73,3 @@ int main(int argc, char* argv[])
+     return rc;
+ }
+ 
+-int parse_ports(char* params, mmx::net::PortSet& ports)
+-{
+-
+-        int rc = 0;
+-
+-        unsigned short port = 0;
+-        bool range = false;
+-        short step = 0;
+-
+-        while (params != nullptr && *params != '\0')
+-        {
+-
+-            int num = std::atoi(params);
+-
+-
+-            if (num > 0 && num < 65536)
+-            {
+-                // задали диапазон
+-
+-                if (range)
+-                {
+-
+-                    rc += ports.SetRange(num, port, step);
+-
+-                    port = num;
+-
+-                    range = false;
+-
+-                }
+-                else
+-                {
+-                    if (rc > 0)
+-                    {
+-                        step = (short)(num - port);
+-                    }
+-
+-                    ports.Set((unsigned short)(port = num));
+-
+-                    rc++;
+-
+-                }
+-
+-                char* p1 = std::strchr(params, ',');
+-                char* p2 = std::strchr(params, '-');
+-
+-                if (p1 == nullptr)
+-                {
+-                    p1 = p2;
+-                }
+-                else if (p2 == nullptr)
+-                {
+-                    p2 = p1;
+-                }
+-
+-                params = std::min(p1, p2);
+-
+-                if (params != nullptr)
+-                {
+-
+-                    range = *params++ == '-';
+-
+-                }
+-
+-            }
+-            else
+-            {
+-                rc = -EINVAL;
+-                break;
+-            }
+-        }
+-
+-
+-    return rc;
+-}
+-
+-int parse_args(int argc, char* argv[], mmxlst::LISTENER_CONFIG& config, mmx::net::PortSet& ports, mmx::logs::log_level_t& log_level)
+-{
+-    int rc = 0;
+-
+-    char* p;
+-
+-    for(int arg = 1; arg < argc && rc == 0; ++arg)
+-    {
+-        p = argv[arg];
+-        if (*p == 0)
+-        {
+-            continue;
+-        }
+-        if (*p == '-')
+-        {
+-            switch(*++p)
+-            {
+-                case 'v':
+-
+-                    std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
+-                            << "Service name: " << SERVICE_NAME << "." << std::endl
+-                            << "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << "."
+-                            << SERVICE_BUILD_VERSION << "." << SERVICE_STATUS << std::endl;
+-                    rc = 1;
+-
+-                    break;
+-                case 'h':
+-
+-                    std::cout << "!!!HELP!!!!" << std::endl;
+-                    rc = 1;
+-
+-                    break;
+-                case 'w':
+-                    {
+-
+-                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                        if (n > 0 && n < 255)
+-                        {
+-                            config.channel = (unsigned char)n;
+-                        }
+-                        else
+-                        {
+-                            std::cout << "Error channel number \'w=" << n << "\'. Channel number range [1..255]" << std::endl;
+-                            rc = -EINVAL;
+-                        }
+-
+-                    }
+-                break;
+-                case 'i':
+-                {
+-                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (n > 0 && n < 60000)
+-                    {
+-                        config.interval = n;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error interval period \'i=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-                }
+-                break;
+-                case 'p':
+-                    {
+-                        if (parse_ports(*(p+1) != 0 ? p+1 : argv[++arg], ports) < 0)
+-                        {
+-                            rc = -EINVAL;
+-                        }
+-
+-                    }
+-                    break;
+-                case 'd':
+-                {
+-                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (n >= mmx::logs::L_TRACE && n < mmx::logs::L_CRITICAL)
+-                    {
+-                        log_level = (mmx::logs::log_level_t)n;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error log level \'d=" << n << "\'. Log level range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-
+-                }
+-                break;
+-                case 'n':
+-                {
+-                    mmx::net::address_t a = mmx::net::Socket::StoA(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (a != INADDR_NONE)
+-                    {
+-                        config.address = a;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error input ip-address" << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-
+-                }
+-                break;
+-
+-                default:
+-                {
+-                    std::cout << "Argument -" << *p << " wrong!" << std::endl;
+-                    rc = -EINVAL;
+-                }
+-            }
+-        }
+-        else
+-        {
+-            std::cout << "Arguments must begin with the prefix \'-\'" << std::endl;
+-            rc = -EINVAL;
+-        }
+-    }
+-
+-    return rc;
+-}
+diff --git a/mmxprj/mmxprj/mmxlst/parsearg.cpp b/mmxprj/mmxprj/mmxlst/parsearg.cpp
+new file mode 100644
+index 0000000..02ed1c8
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxlst/parsearg.cpp
+@@ -0,0 +1,238 @@
++#include <iostream>
++#include <cstdio>
++#include <cstring>
++#include "defines.h"
++
++#include <netdb.h>
++#include <errno.h>
++
++#include "mmxlib/net/portset.h"
++
++#include "listener.h"
++
++int set_range(mmx::net::PortSet& ports, int begin, int end, int step = 1)
++{
++	int rc = 0;
++
++	step += (short)(step == 0);
++
++	step = std::abs(step);
++
++	step = begin <= end ? step : -step;
++
++	// swap begin и end не прокатит, мы должны в люблом случае установить порт begin
++
++	while (step > 0 ? begin <= end : begin >= end)
++	{
++		rc++;
++
++		ports.Set(step);
++
++		begin += step;
++	}
++
++	return rc;
++}
++
++int parse_ports(char* params, mmx::net::PortSet& ports)
++{
++
++		int rc = 0;
++
++		unsigned short port = 0;
++		bool range = false;
++		short step = 0;
++
++		while (params != nullptr && *params != '\0')
++		{
++
++			int num = std::atoi(params);
++
++
++			if (num > 0 && num < 65536)
++			{
++				// задали диапазон
++
++				if (range)
++				{
++
++					rc += set_range(ports, num, port, step);
++					rc += ports.SetRange(num, port, step);
++
++					port = num;
++
++					range = false;
++
++				}
++				else
++				{
++					if (rc > 0)
++					{
++						step = (short)(num - port);
++					}
++
++
++					ports.Set((unsigned short)(port = num));
++
++					rc++;
++
++				}
++
++				char* p1 = std::strchr(params, ',');
++				char* p2 = std::strchr(params, '-');
++
++				if (p1 == nullptr)
++				{
++					p1 = p2;
++				}
++				else if (p2 == nullptr)
++				{
++					p2 = p1;
++				}
++
++				params = std::min(p1, p2);
++
++				if (params != nullptr)
++				{
++
++					range = *params++ == '-';
++
++				}
++
++			}
++			else
++			{
++				rc = -EINVAL;
++				break;
++			}
++		}
++
++
++	return rc;
++}
++
++int parse_args(int argc, char* argv[], void *cfg1, void *cfg2, mmx::logs::log_level_t &log_level)
++{
++	int rc = 0;
++
++	mmxlst::LISTENER_CONFIG& config = *(mmxlst::LISTENER_CONFIG*)cfg1;
++	mmx::net::PortSet& ports = *(mmx::net::PortSet*)cfg2;
++
++	char* p;
++
++	for(int arg = 1; arg < argc && rc == 0; ++arg)
++	{
++		p = argv[arg];
++		if (*p == 0)
++		{
++			continue;
++		}
++		if (*p == '-')
++		{
++			switch(*++p)
++			{
++				case 'v':
++
++					std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
++							<< "Service name: " << SERVICE_NAME << "." << std::endl
++							<< "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << "."
++							<< SERVICE_BUILD_VERSION << "." << SERVICE_STATUS << std::endl;
++					rc = 1;
++
++					break;
++				case 'h':
++
++					std::cout << "!!!HELP!!!!" << std::endl;
++					rc = 1;
++
++					break;
++				case 'w':
++					{
++
++						int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++						if (n > 0 && n < 255)
++						{
++							config.channel = (unsigned char)n;
++						}
++						else
++						{
++							std::cout << "Error channel number \'w=" << n << "\'. Channel number range [1..255]" << std::endl;
++							rc = -EINVAL;
++						}
++
++					}
++				break;
++				case 'i':
++				{
++					int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (n > 0 && n < 60000)
++					{
++						config.interval = n;
++					}
++					else
++					{
++						std::cout << "Error interval period \'i=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
++						rc = -EINVAL;
++					}
++				}
++				break;
++				case 'p':
++					{
++						if (parse_ports(*(p+1) != 0 ? p+1 : argv[++arg], ports) < 0)
++						{
++							rc = -EINVAL;
++						}
++
++					}
++					break;
++				case 'd':
++				{
++					int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (n >= mmx::logs::L_TRACE && n < mmx::logs::L_CRITICAL)
++					{
++						log_level = (mmx::logs::log_level_t)n;
++					}
++					else
++					{
++						std::cout << "Error log level \'d=" << n << "\'. Log level range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
++						rc = -EINVAL;
++					}
++
++				}
++				break;
++				case 'n':
++				{
++					mmx::net::address_t a = mmx::net::Socket::StoA(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (a != INADDR_NONE)
++					{
++						config.address = a;
++					}
++					else
++					{
++						std::cout << "Error input ip-address" << std::endl;
++						rc = -EINVAL;
++					}
++
++				}
++				break;
++
++				default:
++				{
++					std::cout << "Argument -" << *p << " wrong!" << std::endl;
++					rc = -EINVAL;
++				}
++			}
++		}
++		else
++		{
++			std::cout << "Arguments must begin with the prefix \'-\'" << std::endl;
++			rc = -EINVAL;
++		}
++	}
++
++	return rc;
++}
+diff --git a/mmxprj/mmxprj/mmxlst/sighandler.cpp b/mmxprj/mmxprj/mmxlst/sighandler.cpp
+new file mode 100644
+index 0000000..99456d8
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxlst/sighandler.cpp
+@@ -0,0 +1,67 @@
++#include "defines.h"
++#include <signal.h>
++#include <stdlib.h>
++#include "mmxlib/logs/log.h"
++
++void finish(int e_code)
++{
++	mmx::logs::logI("@Exit with code = %d!\n\n", e_code);
++	mmx::logs::log_init();
++	exit(e_code);
++}
++
++void sig_handler(int sig)
++{
++	int e_code = -1;
++
++	switch (sig)
++	{
++		case SIGPIPE:
++
++			mmx::logs::logE("SIGPIPE");
++
++			break;
++		case SIGIO:
++
++			mmx::logs::logE("SIGIO");
++
++			break;
++		case SIGTERM:
++		case SIGQUIT:
++
++			mmx::logs::logC("Close by terminal");
++
++			e_code = 1;
++
++			break;
++
++		case SIGSEGV:
++
++			e_code = 2;
++
++			mmx::logs::logC("@SIGSEGV");
++
++			break;
++		default:
++
++			e_code = 3;
++
++			break;
++	}
++
++	if (e_code >= 0)
++	{
++		finish(e_code);
++	}
++}
++
++void sig_set()
++{
++
++	signal(SIGHUP, sig_handler);
++	signal(SIGPIPE, sig_handler);
++	signal(SIGTERM, sig_handler);
++	signal(SIGQUIT, sig_handler);
++	//signal(SIGSEGV, sig_handler);
++}
++
+diff --git a/mmxprj/mmxprj/mmxsrv/CMakeLists.txt b/mmxprj/mmxprj/mmxsrv/CMakeLists.txt
+index d5f2bc9..b026501 100644
+--- a/mmxprj/mmxprj/mmxsrv/CMakeLists.txt
++++ b/mmxprj/mmxprj/mmxsrv/CMakeLists.txt
+@@ -14,6 +14,8 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE} )
+ set ( SOURCE_FILES
+     main.cpp
+ 	server.cpp
++	sighandler.cpp
++	parsearg.cpp
+ )
+ 
+ set ( PRIVATE_HEADERS
+diff --git a/mmxprj/mmxprj/mmxsrv/_server.cpp b/mmxprj/mmxprj/mmxsrv/_server.cpp
+deleted file mode 100644
+index 8fae9eb..0000000
+--- a/mmxprj/mmxprj/mmxsrv/_server.cpp
++++ /dev/null
+@@ -1,657 +0,0 @@
+-#include "server.h"
+-
+-#include <iostream>
+-
+-#include <netdb.h>  // SOCK_RAW, IPPROTO_UDP
+-#include <fcntl.h>  // O_NONBLOCK
+-#include <errno.h>
+-#include <sys/time.h>   // gettimeofday
+-
+-#include "mmxlib/logs/log.h"
+-#include "mmxlib/names.h"
+-
+-#include "mmxlib/data/dpreader.h"
+-
+-#define DEFAULT_TIMEOUT 2000
+-
+-namespace mmxsrv
+-{
+-    Server::Server(unsigned char channel,
+-           mmx::net::address_t tcp_address,
+-           mmx::net::port_t tcp_port,
+-           mmx::net::address_t udp_address,
+-           mmx::net::port_t udp_port) :
+-        channel_(channel),
+-        tcp_address_(tcp_address),
+-        tcp_port_(tcp_port),
+-        udp_address_(udp_address),
+-        udp_port_(udp_port),
+-        pack_id_(0),
+-        tcp_socket_(SOCK_STREAM, IPPROTO_TCP),
+-        udp_socket_(SOCK_DGRAM, IPPROTO_UDP),
+-        udp_adapter_(udp_socket_),
+-        udp_writer_(udp_adapter_),
+-        data_write_(false)
+-
+-    {
+-        mmx::logs::logD("[%p] Server::Server(%d, %d:%d, %d:%d)", this, channel, tcp_address, tcp_port, udp_address, udp_port);
+-    }
+-
+-    Server::~Server()
+-    {
+-        mmx::logs::logD("[%p] Server::~Server(begin)", this);
+-
+-        clear();
+-
+-        mmx::logs::logD("[%p] Server::~Server(end)", this);
+-    }
+-
+-    int Server::Execute()
+-    {
+-        mmx::logs::logD("[%p] Server::Execute(begin)", this);
+-
+-        int rc = initialization();
+-
+-        while(rc >= 0)
+-        {
+-            checkConnection();
+-            setTimeout();
+-            if (waitEvents() > 0)
+-            {
+-                checkAccept();
+-                readData();
+-                checkClients();
+-
+-                if (!data_write_)
+-                {
+-                    writeData();
+-                }
+-
+-            }
+-        }
+-        clear();
+-
+-        mmx::logs::logD("[%p] Server::Execute(stop)", this);
+-    }
+-
+-    int Server::initialization()
+-    {
+-        mmx::logs::logD("[%p] Server::initialization(begin)", this);
+-
+-
+-        tcp_timer_.Start(0);
+-        udp_timer_.Start(0);
+-        pipe_timer_.Start(0);
+-
+-        mmx::logs::logD("[%p] Server::initialization(stop)", this);
+-
+-    }
+-
+-    int Server::checkConnection()
+-    {
+-        int rc = 0;
+-
+-        char pipe_name_[sizeof(MMX_SERVER_CHANNEL_PATTERN)+4];
+-
+-        std::sprintf(pipe_name_, MMX_SERVER_CHANNEL_PATTERN, (int)channel_);
+-
+-        // сперва открываем канал
+-
+-        if (pipe_.Handle() <= 0)
+-        {
+-            if (pipe_timer_.IsEnable())
+-            {
+-
+-                rc = pipe_.Open(pipe_name_, O_RDONLY | O_NONBLOCK, 0777);
+-
+-                if (rc >= 0)
+-                {
+-
+-                    mmx::logs::logI("[%p] Server::checkConnection() pipe %d (%s) open success!", this, rc, pipe_name_);
+-                    select_.SetRead(rc);
+-
+-                }
+-                else
+-                {
+-
+-                    mmx::logs::logE("[%p] Server::checkConnection() pipe %s open error = %d!", this, pipe_name_, rc);
+-
+-                }
+-
+-            }
+-
+-        }
+-
+-        // создаем tcp-соединение
+-
+-        if (tcp_address_ != INADDR_NONE && tcp_port_ != 0)
+-        {
+-            if (tcp_socket_.Handle() < 0)
+-            {
+-                if (tcp_timer_.IsEnable())
+-                {
+-                    rc = tcp_socket_.Open(tcp_address_, tcp_port_, 0, 0, 4, O_NONBLOCK);
+-
+-                    if (rc >= 0)
+-                    {
+-
+-                        mmx::logs::logI("[%p] Listener::checkConnection() tcp_server %s:%d create success fd = %d!", this, mmx::net::Socket::AtoS(tcp_address_), tcp_port_,rc);
+-                        select_.SetRead(rc);
+-
+-                    }
+-                    else
+-                    {
+-                        mmx::logs::logE("[%p] Listener::checkConnection() tcp_server %s:%d create error = %d!", this, mmx::net::Socket::AtoS(tcp_address_), tcp_port_,rc);
+-                    }
+-
+-                    tcp_timer_.Start(DEFAULT_TIMEOUT);
+-                }
+-            }
+-        }
+-
+-        // создаем udp-соединение
+-
+-        if (udp_address_ != INADDR_NONE && udp_port_ != 0)
+-        {
+-            if (udp_socket_.Handle() < 0)
+-            {
+-                if (udp_timer_.IsEnable())
+-                {
+-                    rc = udp_socket_.Open(0, 0, udp_address_, udp_port_, 0, O_NONBLOCK);
+-
+-                    if (rc >= 0)
+-                    {
+-
+-                        mmx::logs::logI("[%p] Listener::checkConnection() udp_server %s:%d create success fd = %d!", this, mmx::net::Socket::AtoS(udp_socket_.LocalAddress()), udp_socket_.LocalPort(),rc);
+-                        select_.SetRead(rc);
+-
+-                    }
+-                    else
+-                    {
+-                        mmx::logs::logE("[%p] Listener::checkConnection() udp_server %s:%d create error = %d!", this, mmx::net::Socket::AtoS(udp_socket_.LocalAddress()), udp_socket_.LocalPort(),rc);
+-                    }
+-
+-                    udp_timer_.Start(DEFAULT_TIMEOUT);
+-                }
+-            }
+-        }
+-
+-        return rc;
+-
+-    }
+-
+-    int Server::setTimeout()
+-    {
+-        int tout = mmx::net::INFINITE_TIMEOUT;
+-
+-        // TODO: костыль... мне не нравится....
+-
+-
+-        if (pipe_.Handle() < 0)
+-        {
+-            auto left = pipe_timer_.Left();
+-
+-            if (tout < 0 || tout > left)
+-            {
+-                tout = left < 0 ? 0 : left;
+-            }
+-        }
+-
+-        if (tcp_address_ != INADDR_NONE && tcp_port_ != 0)
+-        {
+-            if (tcp_socket_.Handle() < 0)
+-            {
+-                auto left = tcp_timer_.Left();
+-
+-                if (tout < 0 || tout > left)
+-                {
+-                    tout = left < 0 ? 0 : left;
+-                }
+-            }
+-        }
+-
+-        if (udp_address_ != INADDR_NONE && udp_port_ != 0)
+-        {
+-            if (udp_socket_.Handle() < 0)
+-            {
+-                auto left = udp_timer_.Left();
+-
+-                if (tout < 0 || tout > left)
+-                {
+-                    tout = left < 0 ? 0 : left;
+-                }
+-            }
+-        }
+-
+-        timeout_ = tout;
+-
+-        return timeout_;
+-    }
+-
+-    int Server::waitEvents()
+-    {
+-        int rc = 0;
+-
+-        if (select_.IsEmpty())
+-        {
+-            mmx::tools::Timer::Sleep(timeout_);
+-        }
+-        else
+-        {
+-
+-            rc = select_.Wait(timeout_);
+-
+-            if (rc < 0)
+-            {
+-                if (rc == -ETIMEDOUT)
+-                {
+-
+-                    mmx::logs::logW("[%p] Listener::waitEvents() select timeout rc = %d", this, rc);
+-                    rc = 0;
+-                }
+-                else
+-                {
+-
+-                    mmx::logs::logE("[%p] Listener::waitEvents() select error rc = %d", this, rc);
+-
+-                    clear();
+-                }
+-            }
+-        }
+-
+-        return rc;
+-    }
+-
+-    int Server::checkAccept()
+-    {
+-
+-        int rc = 0;
+-
+-        if (tcp_socket_.Handle() >= 0)
+-        {
+-            if (select_.IsRead(tcp_socket_.Handle()))
+-            {
+-                //  пришел запрос на подключение
+-
+-                mmx::net::Socket cli(tcp_socket_, O_NONBLOCK);
+-
+-                rc = cli.Handle();
+-
+-                if (rc >= 0)
+-                {
+-
+-                    mmx::logs::logI("[%p] Server::checkAccept() new client %s:%d connected success, fd = %s!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+-
+-                    // селектируем чтение, это нужно для детекции факта отключения клиента
+-
+-                    select_.SetRead(rc);
+-                    clients_.push_back(std::move(cli));
+-
+-                }
+-                else
+-                {
+-
+-                    mmx::logs::logE("[%p] Server::checkAccept() client connected error, rc = %d!", this, rc);
+-
+-                }
+-
+-            }
+-        }
+-
+-        return rc;
+-
+-    }
+-
+-    int Server::checkClients()
+-    {
+-
+-        int rc = 0;
+-
+-        remove_list_.clear();
+-
+-        for (auto& c : clients_)
+-        {
+-            mmx::net::Socket& cli = c.Socket();
+-            int fd = cli.Handle();
+-
+-            if (select_.IsRead(fd))
+-            {
+-
+-
+-                static char dummy[1600];
+-
+-                // сработали по чтению, скорее всего это разрыв соединения
+-
+-                rc = cli.Recv(dummy, sizeof(dummy));
+-
+-                if (rc <= 0)
+-                {
+-                    // клиент разорвал соединение
+-
+-                    switch (rc)
+-                    {
+-
+-                        case -EAGAIN:
+-
+-                            mmx::logs::logW("[%p] Server::checkClients() client %s:%d non blocked read, rc = %d!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), fd);
+-
+-                            break;
+-                        default:
+-
+-                            if (rc == 0)
+-                            {
+-
+-                                mmx::logs::logI("[%p] Server::checkClients() client %s:%d disconnect, fd = %d!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), cli.Handle());
+-
+-                            }
+-                            else
+-                            {
+-
+-                                mmx::logs::logI("[%p] Server::checkClients() client %s:%d read error, rc = %d!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+-
+-                            }
+-
+-                            remove_list_.push_back(&c);
+-
+-                            break;
+-                    }
+-
+-                }
+-                else
+-                {
+-                    mmx::logs::logI("[%p] Server::checkClients() read from client %s:%d %d dummy bytes!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+-                }
+-
+-            }
+-
+-        }
+-
+-        removeClients();
+-
+-        return rc;
+-
+-    }
+-
+-
+-    int Server::tcpWrite(const mmx::headers::ORM_INFO_PACKET* media)
+-    {
+-
+-        int rc = 0;
+-
+-        static mmx::headers::ORDER_645_2_PACKET out;
+-
+-        const void *data = media == nullptr ? nullptr : &media->header.order_header;
+-        int len = data == nullptr ? 0 : mmx::headers::ORDER_645_2_PACKET_SIZE;
+-
+-        for (auto& c : clients_)
+-        {
+-
+-            mmx::net::Socket& cli = c.Socket();
+-            mmx::tools::DeferredWriter& writer = c.Writter();
+-
+-            int fd = cli.Handle();
+-
+-            if (data != nullptr || select_.IsWrite(fd))
+-            {
+-
+-                rc = writer.Write(data, len);
+-
+-                if (rc <= 0 && rc != -EAGAIN)
+-                {
+-                     mmx::logs::logI("[%p] Server::tcpWrite() write to client %s:%d error, rc = %d!", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+-
+-                     remove_list_.push_back(&c);
+-
+-                }
+-                else
+-                {
+-                    mmx::logs::logD("[%p] Server::tcpWrite() write to client %s:%d %d bytes", this, mmx::net::Socket::AtoS(cli.RemoteAddress()), cli.RemotePort(), rc);
+-
+-                    if (!writer.IsEmpty())
+-                    {
+-                        select_.SetWrite(fd);
+-                    }
+-                    else
+-                    {
+-                        select_.ClrWrite(fd);
+-                    }
+-                }
+-
+-            }
+-
+-        }
+-
+-        removeClients();
+-
+-        return rc;
+-
+-    }
+-
+-    int Server::udpWrite(const mmx::headers::SANGOMA_MEDIA_STREAM_PACKET* sangoma)
+-    {
+-
+-        int rc = 0;
+-
+-        int len = sangoma == nullptr ? 0 : sizeof(mmx::headers::SANGOMA_MEDIA_STREAM_PACKET);
+-
+-        int fd = udp_socket_.Handle();
+-
+-        if (sangoma != nullptr || select_.IsWrite(fd))
+-        {
+-
+-            rc = udp_writer_.Write(sangoma, len);
+-
+-            if (rc <= 0 && rc != -EAGAIN)
+-            {
+-                 mmx::logs::logI("[%p] Server::udpWrite() write to client %s:%d error, rc = %d!", this, mmx::net::Socket::AtoS(udp_socket_.RemoteAddress()), udp_socket_.RemotePort(), rc);
+-
+-                 select_.Set(fd);
+-                 udp_socket_.Close(fd);
+-
+-            }
+-            else
+-            {
+-                mmx::logs::logD("[%p] Server::udpWrite() write to client %s:%d %d bytes", this, mmx::net::Socket::AtoS(udp_socket_.RemoteAddress()), udp_socket_.RemotePort(), rc);
+-
+-                if (!udp_writer_.IsEmpty())
+-                {
+-                    select_.SetWrite(fd);
+-                }
+-                else
+-                {
+-                    select_.ClrWrite(fd);
+-                }
+-            }
+-
+-        }
+-
+-        return rc;
+-
+-    }
+-
+-
+-    int Server::readData()
+-    {
+-
+-        int rc = 0;
+-
+-        data_write_ = false;
+-
+-        if (select_.IsRead(pipe_.Handle()))
+-        {
+-
+-            rc = pipe_.Read(input_, sizeof(input_));
+-
+-            if (rc < 0)
+-            {
+-
+-                switch(rc)
+-                {
+-                    case -EWOULDBLOCK:
+-
+-                        mmx::logs::logW("[%p] Server::readData() non-blocket forced reading pipe %s. rc = %d", this, pipe_.Name(), rc);
+-
+-                        break;
+-                    case -EINTR:
+-
+-                        mmx::logs::logE("[%p] Listener::readData() Reading pipe %s interrupted. rc = %d", this, pipe_.Name(), rc);
+-
+-                        break;
+-                    default:
+-
+-                        mmx::logs::logE("[%p] Listener::readData() pipe %s read error! rc = %d", this, pipe_.Name(), rc);
+-
+-                        select_.Set(pipe_.Handle());
+-                        pipe_.Close();
+-
+-                        break;
+-                }
+-
+-            }
+-            else
+-            {
+-
+-                int ret = rc;
+-
+-                while (ret > 0)
+-                {
+-
+-                    ret = dp_sniffer_.PutStream(input_, ret);
+-
+-
+-                    if (dp_sniffer_.IsComplete())
+-                    {
+-
+-                        processData(dp_sniffer_.GetDataPacket());
+-
+-                        dp_sniffer_.Drop();
+-
+-                    }
+-
+-                    if (ret > 0)
+-                    {
+-                        ret = rc - ret;
+-                    }
+-
+-                }
+-
+-            }
+-        }
+-
+-        return rc;
+-
+-    }
+-
+-    int Server::processData(const mmx::headers::DATA_PACK* data_pack)
+-    {
+-
+-        int rc = 0;
+-
+-        mmx::data::DataPacketReader reader(&data_pack->header);
+-
+-        auto block = reader.GetBlock();
+-
+-        while (block != nullptr)
+-        {
+-
+-            writeData((const mmx::headers::ORM_INFO_PACKET*)block->data);
+-
+-            block = reader.GetBlock();
+-        }
+-
+-        return rc;
+-
+-    }
+-
+-    int Server::writeData(const mmx::headers::ORM_INFO_PACKET* media)
+-    {
+-
+-        int rc = 0;
+-
+-        static mmx::headers::SANGOMA_MEDIA_STREAM_PACKET sangoma_a = { 0 };
+-        static mmx::headers::SANGOMA_MEDIA_STREAM_PACKET sangoma_b = { 0 };
+-
+-        if (media != nullptr)
+-        {
+-
+-            bool comb = media->header.order_header.mcl_a != media->header.order_header.mcl_b;
+-
+-            std::cout << "Write data " << media->header.size_a + media->header.size_b << " bytes" << std::endl;
+-
+-            sangoma_a.header.packet_id = ++sangoma_b.header.packet_id;
+-            sangoma_a.header.lid = media->header.order_header.mcl_a;
+-            sangoma_a.header.length = media->header.size_a;
+-
+-            if (comb)
+-            {
+-                sangoma_b.header.packet_id++;
+-                sangoma_b.header.lid = media->header.order_header.mcl_b;
+-                sangoma_b.header.length = media->header.size_b;
+-            }
+-
+-            for (int i = 0; i < mmx::headers::SI_MAX_PYLOAD_SIZE; i++)
+-            {
+-
+-                sangoma_a.data[i] = i < sangoma_a.header.length ? media->data[i << (int)comb] : 0;
+-
+-                if (comb)
+-                {
+-                    sangoma_b.data[i] = i < sangoma_b.header.length ? media->data[i * 2 + 1] : 0;
+-                }
+-
+-            }
+-
+-            udpWrite(&sangoma_a);
+-
+-            if (comb)
+-            {
+-                udpWrite(&sangoma_b);
+-            }
+-
+-        }
+-        else
+-        {
+-            udpWrite(nullptr);
+-        }
+-
+-        tcpWrite(media);
+-
+-        data_write_ = true;
+-
+-        return rc;
+-
+-    }
+-
+-    int Server::removeClients()
+-    {
+-        int rc = 0;
+-
+-        for (auto& p : remove_list_)
+-        {
+-
+-            select_.Set(p->Socket().Handle());
+-
+-            clients_.remove(*p);
+-
+-            rc++;
+-        }
+-
+-        remove_list_.clear();
+-
+-        return rc;
+-    }
+-
+-    int Server::clear()
+-    {
+-        select_.Reset();
+-
+-
+-        clients_.clear();
+-
+-        tcp_socket_.Close();
+-        udp_socket_.Close();
+-        pipe_.Close();
+-    }
+-
+-
+-}
+diff --git a/mmxprj/mmxprj/mmxsrv/_server.h b/mmxprj/mmxprj/mmxsrv/_server.h
+deleted file mode 100644
+index 3f6cf83..0000000
+--- a/mmxprj/mmxprj/mmxsrv/_server.h
++++ /dev/null
+@@ -1,105 +0,0 @@
+-#ifndef _MMXSRV_SERVER_H
+-#define _MMXSRV_SERVER_H
+-
+-#include <list>
+-#include <vector>
+-
+-#include "mmxlib/net/portset.h"
+-#include "mmxlib/net/socket.h"
+-#include "mmxlib/net/select_ex.h"
+-
+-#include "mmxlib/ipc/pchannel.h"
+-
+-#include "mmxlib/tools/timer.h"
+-#include "mmxlib/tools/iosockadp.h"
+-#include "mmxlib/tools/deffwriter.h"
+-#include "mmxlib/tools/deffersock.h"
+-
+-
+-#include "mmxlib/headers/order645_2.h"
+-#include "mmxlib/headers/si.h"
+-
+-#include "mmxlib/sniffers/dpsniffer.h"
+-
+-
+-namespace mmxsrv
+-{
+-    class Server
+-    {
+-
+-        //mmx::net::Socket udp_socket_;
+-        mmx::net::Socket tcp_socket_;
+-        mmx::net::Socket udp_socket_;
+-        mmx::net::SelectExtension select_;
+-
+-        mmx::ipc::PipeChannel pipe_;
+-
+-        mmx::tools::Timer timers_[3];
+-
+-        mmx::tools::Timer& tcp_timer_ = timers_[0];
+-        mmx::tools::Timer& udp_timer_ = timers_[1];
+-        mmx::tools::Timer& pipe_timer_ = timers_[2];
+-
+-        mmx::tools::SocketIOAdapter udp_adapter_;
+-        mmx::tools::DeferredWriter udp_writer_;
+-
+-        mmx::net::timeout_t timeout_;
+-
+-        mmx::net::address_t udp_address_;
+-        mmx::net::port_t udp_port_;
+-
+-        mmx::net::address_t tcp_address_;
+-        mmx::net::port_t tcp_port_;
+-
+-        mmx::sniffers::DataPackSniffer dp_sniffer_;
+-
+-        unsigned char   channel_;
+-
+-        unsigned short pack_id_;
+-
+-        bool data_write_;
+-
+-        std::list<mmx::tools::DeferredSocket>   clients_;
+-        std::vector<mmx::tools::DeferredSocket*> remove_list_;
+-
+-        union
+-        {
+-            mmx::headers::DATA_PACK data_pack_;
+-            char input_[mmx::headers::MAX_PACKET_SIZE + 1];
+-        };
+-
+-    public:
+-
+-        Server(unsigned char channel = 1,
+-               mmx::net::address_t tcp_address = 0,
+-               mmx::net::port_t tcp_port = 0,
+-               mmx::net::address_t udp_address = 0,
+-               mmx::net::port_t udp_port = 0);
+-        ~Server();
+-
+-        int Execute();
+-
+-    private:
+-
+-        // методы конвеера
+-
+-        int initialization();
+-        int checkConnection();
+-        int setTimeout();
+-        int waitEvents();
+-        int checkAccept();
+-        int checkClients();
+-        int udpWrite(const mmx::headers::SANGOMA_MEDIA_STREAM_PACKET* sangoma = nullptr);
+-        int tcpWrite(const mmx::headers::ORM_INFO_PACKET* media = nullptr);
+-
+-        int readData();
+-        int processData(const mmx::headers::DATA_PACK* data_pack);
+-
+-        int writeData(const mmx::headers::ORM_INFO_PACKET* media = nullptr);
+-        int removeClients();
+-        int clear();
+-
+-    };
+-}
+-
+-#endif
+diff --git a/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv b/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv
+index 2ed36f4..071e4e2 100755
+Binary files a/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv and b/mmxprj/mmxprj/mmxsrv/build/DEBUG/mmxsrv differ
+diff --git a/mmxprj/mmxprj/mmxsrv/defines.h b/mmxprj/mmxprj/mmxsrv/defines.h
+index 8b55e56..cc6419e 100644
+--- a/mmxprj/mmxprj/mmxsrv/defines.h
++++ b/mmxprj/mmxprj/mmxsrv/defines.h
+@@ -1,9 +1,33 @@
+ #ifndef _MMXSRV_DEFINES_H
+ #define _MMXSRV_DEFINES_H
+ 
+-namespace mmxsrv
+-{
+-    int server(const char* channel_name, unsigned int address, unsigned short port);
+-}
++#include "mmxlib/logs/log.h"
++
++
++#define SERVICE_GROUP "Media module"
++#define SERVICE_NAME "Communication dispatcher"
++#define SERVICE_MAJOR_VERSION 1
++#define SERVICE_MINOR_VERSION 0
++#define SERVICE_BUILD_VERSION BUILD_NUMBER
++
++#define BUILD_TIME  __TIMESTAMP__
++
++#ifdef DEBUG
++#define SERVICE_STATUS "debug"
++#else
++#define SERVICE_STATUS "release"
++#endif
++
++#define LOG_NAME_PATTERN "/var/log/mmx/server-%d.log"
++
++#define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
++
++#define DEFAULT_BASE_PORT       5400
++#define DEFAULT_INTERVAL        2000
++
++void sig_set();
++
++int parse_args(int argc, char* argv[], void *cfg1, void *cfg2, mmx::logs::log_level_t &log_level);
++
+ 
+ #endif
+diff --git a/mmxprj/mmxprj/mmxsrv/main.cpp b/mmxprj/mmxprj/mmxsrv/main.cpp
+index 24aab33..27f2522 100644
+--- a/mmxprj/mmxprj/mmxsrv/main.cpp
++++ b/mmxprj/mmxprj/mmxsrv/main.cpp
+@@ -8,82 +8,10 @@
+ #include <netdb.h>      // INADDR_ANY
+ #include <signal.h>
+ 
+-#include "../build_number.h"
++#include "defines.h"
++//#include "../build_number.h"
+ 
+-#define SERVICE_GROUP "Media module"
+-#define SERVICE_NAME "Communication dispatcher"
+-#define SERVICE_MAJOR_VERSION 1
+-#define SERVICE_MINOR_VERSION 0
+-#define SERVICE_BUILD_VERSION BUILD_NUMBER
+ 
+-#define BUILD_TIME  __TIMESTAMP__
+-
+-#ifdef DEBUG
+-#define SERVICE_STATUS "debug"
+-#else
+-#define SERVICE_STATUS "release"
+-#endif
+-
+-#define LOG_NAME_PATTERN "/var/log/mmx/server-%d.log"
+-
+-#define DEFAULT_LEVEL_LOG mmx::logs::L_DEBUG
+-
+-#define DEFAULT_BASE_PORT       5400
+-#define DEFAULT_INTERVAL        2000
+-
+-static int parse_args(int argc, char* argv[], mmxsrv::SERVER_CONFIG& config, mmx::logs::log_level_t& log_level);
+-
+-void finish(int e_code)
+-{
+-    mmx::logs::logI("@%s Ver=%d.%d.%d.%s Exit with code = %d!\n\n", SERVICE_NAME, SERVICE_MAJOR_VERSION, SERVICE_MINOR_VERSION, SERVICE_BUILD_VERSION, SERVICE_STATUS, e_code);
+-    mmx::logs::log_init();
+-    exit(e_code);
+-}
+-
+-void sig_handler(int sig)
+-{
+-    int e_code = -1;
+-
+-    switch (sig)
+-    {
+-        case SIGPIPE:
+-
+-            mmx::logs::logE("SIGPIPE");
+-
+-            break;
+-        case SIGIO:
+-
+-            mmx::logs::logE("SIGIO");
+-
+-            break;
+-        case SIGTERM:
+-        case SIGQUIT:
+-
+-            mmx::logs::logC("Close by terminal");
+-
+-            e_code = 1;
+-
+-            break;
+-
+-        case SIGSEGV:
+-
+-            e_code = 2;
+-
+-            mmx::logs::logC("@SIGSEGV");
+-
+-            break;
+-        default:
+-
+-            e_code = 3;
+-
+-            break;
+-    }
+-
+-    if (e_code >= 0)
+-    {
+-        finish(e_code);
+-    }
+-}
+ 
+ int main(int argc, char* argv[])
+ {
+@@ -100,7 +28,7 @@ int main(int argc, char* argv[])
+ 
+     mmx::logs::log_level_t  log_level = DEFAULT_LEVEL_LOG;
+ 
+-    int rc = parse_args(argc, argv, config, log_level);
++    int rc = parse_args(argc, argv, &config, nullptr, log_level);
+ 
+     if (rc == 0)
+     {
+@@ -125,11 +53,7 @@ int main(int argc, char* argv[])
+ 
+         mmxsrv::Server server(config);
+ 
+-        signal(SIGHUP, sig_handler);
+-        signal(SIGPIPE, sig_handler);
+-        signal(SIGTERM, sig_handler);
+-        signal(SIGQUIT, sig_handler);
+-        signal(SIGSEGV, sig_handler);
++        sig_set();
+ 
+         rc = server.Execute();
+ 
+@@ -138,148 +62,6 @@ int main(int argc, char* argv[])
+         mmx::logs::log_init();
+ 
+     }
+-    return 0;
+-}
+ 
+-int parse_args(int argc, char* argv[], mmxsrv::SERVER_CONFIG& config, mmx::logs::log_level_t& log_level)
+-{
+-    int rc = 0;
+-
+-    char* p;
+-
+-    for(int arg = 1; arg < argc && rc == 0; ++arg)
+-    {
+-        p = argv[arg];
+-        if (*p == 0)
+-        {
+-            continue;
+-        }
+-        if (*p == '-')
+-        {
+-            switch(*++p)
+-            {
+-                case 'v':
+-
+-                    std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
+-                            << "Service name: " << SERVICE_NAME << "." << std::endl
+-                            << "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << "."
+-                            << SERVICE_BUILD_VERSION << "." << SERVICE_STATUS << std::endl;
+-                    rc = 1;
+-
+-                    break;
+-                case 'h':
+-
+-                    std::cout << "!!!HELP!!!!" << std::endl;
+-
+-                    rc = 1;
+-
+-                    break;
+-                case 'r':
+-                    {
+-
+-                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                        if (n > 0 && n < 255)
+-                        {
+-                            config.channel = (unsigned char)n;
+-                        }
+-                        else
+-                        {
+-                            std::cout << "Error channel number \'r=" << n << "\'. Channel number must be range [1..255]" << std::endl;
+-                            rc = -EINVAL;
+-                        }
+-
+-                    }
+-                    break;
+-                case 'i':
+-                    {
+-                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                        if (n > 0 && n < 60000)
+-                        {
+-                            config.interval = n;
+-                        }
+-                        else
+-                        {
+-                            std::cout << "Error interval period \'i=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
+-                            rc = -EINVAL;
+-                        }
+-                    }
+-                    break;
+-                case 'p':
+-                    {
+-                        int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                        if (n > 0 && n < 65535)
+-                        {
+-                            config.port = (unsigned short)n;
+-                        }
+-                        else
+-                        {
+-                            std::cout << "Error port number \'p=" << n << "\'. Port number must be range [1..65534]" << std::endl;
+-                            rc = -EINVAL;
+-                        }
+-                    }
+-                    break;
+-                case 'd':
+-                {
+-                    int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (n >= mmx::logs::L_TRACE && n < mmx::logs::L_CRITICAL)
+-                    {
+-                        log_level = (mmx::logs::log_level_t)n;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error log level \'d=" << n << "\'. Log level range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-
+-                }
+-                break;
+-                case 'n':
+-                {
+-                    mmx::net::address_t a = mmx::net::Socket::StoA(*(p+1) != 0 ? p+1 : argv[++arg]);
+-
+-                    if (a != INADDR_NONE)
+-                    {
+-                        config.address = a;
+-                    }
+-                    else
+-                    {
+-                        std::cout << "Error input ip-address" << std::endl;
+-                        rc = -EINVAL;
+-                    }
+-
+-                }
+-                break;
+-                case 's':
+-                {
+-                    if (*(p+1) == 'r')
+-                    {
+-                        config.mode = mmxsrv::ORM_LINK_E1_REVERSE;
+-                    }
+-                    else
+-                    {
+-                        config.mode = mmxsrv::ORM_LINK_E1;
+-                    }
+-
+-                }
+-                break;
+-                default:
+-                {
+-                    std::cout << "Argument -" << *p << " wrong!" << std::endl;
+-                    rc = -EINVAL;
+-                }
+-            }
+-        }
+-        else
+-        {
+-            std::cout << "Arguments must begin with the prefix \'-\'" << std::endl;
+-            rc = -EINVAL;
+-        }
+-    }
+-
+-    return rc;
++    return 0;
+ }
+-
+diff --git a/mmxprj/mmxprj/mmxsrv/parsearg.cpp b/mmxprj/mmxprj/mmxsrv/parsearg.cpp
+new file mode 100644
+index 0000000..883defb
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxsrv/parsearg.cpp
+@@ -0,0 +1,155 @@
++#include <iostream>
++#include <cstdio>
++#include <cstring>
++#include "defines.h"
++
++#include <netdb.h>
++#include <errno.h>
++
++
++#include "server.h"
++
++
++int parse_args(int argc, char* argv[], void *cfg1, void *cfg2, mmx::logs::log_level_t &log_level)
++{
++	int rc = 0;
++
++	char* p;
++
++	mmxsrv::SERVER_CONFIG& config = *(mmxsrv::SERVER_CONFIG*)cfg1;
++
++	for(int arg = 1; arg < argc && rc == 0; ++arg)
++	{
++		p = argv[arg];
++		if (*p == 0)
++		{
++			continue;
++		}
++		if (*p == '-')
++		{
++			switch(*++p)
++			{
++				case 'v':
++
++					std::cout << "Group service: " << SERVICE_GROUP << "." << std::endl
++							<< "Service name: " << SERVICE_NAME << "." << std::endl
++							<< "Version: " << SERVICE_MAJOR_VERSION << "." << SERVICE_MINOR_VERSION << "."
++							<< SERVICE_BUILD_VERSION << "." << SERVICE_STATUS << std::endl;
++					rc = 1;
++
++					break;
++				case 'h':
++
++					std::cout << "!!!HELP!!!!" << std::endl;
++
++					rc = 1;
++
++					break;
++				case 'r':
++					{
++
++						int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++						if (n > 0 && n < 255)
++						{
++							config.channel = (unsigned char)n;
++						}
++						else
++						{
++							std::cout << "Error channel number \'r=" << n << "\'. Channel number must be range [1..255]" << std::endl;
++							rc = -EINVAL;
++						}
++
++					}
++					break;
++				case 'i':
++					{
++						int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++						if (n > 0 && n < 60000)
++						{
++							config.interval = n;
++						}
++						else
++						{
++							std::cout << "Error interval period \'i=" << n << "\'. Interval period must be range [1..60000]" << std::endl;
++							rc = -EINVAL;
++						}
++					}
++					break;
++				case 'p':
++					{
++						int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++						if (n > 0 && n < 65535)
++						{
++							config.port = (unsigned short)n;
++						}
++						else
++						{
++							std::cout << "Error port number \'p=" << n << "\'. Port number must be range [1..65534]" << std::endl;
++							rc = -EINVAL;
++						}
++					}
++					break;
++				case 'd':
++				{
++					int n = atoi(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (n >= mmx::logs::L_TRACE && n < mmx::logs::L_CRITICAL)
++					{
++						log_level = (mmx::logs::log_level_t)n;
++					}
++					else
++					{
++						std::cout << "Error log level \'d=" << n << "\'. Log level range [" << mmx::logs::L_TRACE << ".." << mmx::logs::L_CRITICAL << "]." << std::endl;
++						rc = -EINVAL;
++					}
++
++				}
++				break;
++				case 'n':
++				{
++					mmx::net::address_t a = mmx::net::Socket::StoA(*(p+1) != 0 ? p+1 : argv[++arg]);
++
++					if (a != INADDR_NONE)
++					{
++						config.address = a;
++					}
++					else
++					{
++						std::cout << "Error input ip-address" << std::endl;
++						rc = -EINVAL;
++					}
++
++				}
++				break;
++				case 's':
++				{
++					if (*(p+1) == 'r')
++					{
++						config.mode = mmxsrv::ORM_LINK_E1_REVERSE;
++					}
++					else
++					{
++						config.mode = mmxsrv::ORM_LINK_E1;
++					}
++
++				}
++				break;
++				default:
++				{
++					std::cout << "Argument -" << *p << " wrong!" << std::endl;
++					rc = -EINVAL;
++				}
++			}
++		}
++		else
++		{
++			std::cout << "Arguments must begin with the prefix \'-\'" << std::endl;
++			rc = -EINVAL;
++		}
++	}
++
++	return rc;
++}
+diff --git a/mmxprj/mmxprj/mmxsrv/server.cpp b/mmxprj/mmxprj/mmxsrv/server.cpp
+index 1a72504..cfbc3a8 100644
+--- a/mmxprj/mmxprj/mmxsrv/server.cpp
++++ b/mmxprj/mmxprj/mmxsrv/server.cpp
+@@ -55,7 +55,7 @@ namespace mmxsrv
+         std::memset(&stat_, 0, sizeof(stat_));
+         stat_.magic = mmx::headers::PULT_STAT_MAGIC;
+ 
+-        timer_.HStart(FRAME_PERIOD);
++        timer_.Start(FRAME_PERIOD);
+     }
+ 
+     int Server::Execute()
+@@ -91,7 +91,7 @@ namespace mmxsrv
+                     if (timer_.IsEnable())
+                     {
+                         processInput();
+-                        timer_.HStart(FRAME_PERIOD);
++                        timer_.Start(FRAME_PERIOD);
+                     }
+                 }
+                 else
+@@ -106,6 +106,10 @@ namespace mmxsrv
+             else
+             {
+                 closeAll();
++                if (rc == -EBADF)
++                {
++                    select_.Reset();
++                }
+             }
+         }
+ 
+@@ -172,6 +176,7 @@ namespace mmxsrv
+ 
+     void Server::processInput()
+     {
++
+         auto data = (const char*)input_channel_.Data();
+         int size = input_channel_.Size();
+ 
+@@ -231,13 +236,19 @@ namespace mmxsrv
+                                 }
+                                 else
+                                 {
+-                                    static unsigned char preamble_block[1024] = { 0xFF };
+ 
+                                     // преамбула
+ 
+                                     if (orm.header.media_size == 0)
+                                     {
+-                                        stat_.send_packets += sangoma_.PutMedia(preamble_block, sizeof(preamble_block), orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
++                                        static unsigned char preamble_block[1024] = { 0 };
++
++                                        if (preamble_block[0] == 0)
++                                        {
++                                            std::memset(preamble_block, 0xFF, sizeof(preamble_block));
++                                        }
++
++                                        stat_.send_packets += (unsigned int)sangoma_.PutMedia(preamble_block, sizeof(preamble_block), orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
+                                     }
+                                     else
+                                     {
+@@ -249,7 +260,7 @@ namespace mmxsrv
+                                             }
+                                         }
+ 
+-                                        stat_.send_packets += sangoma_.PutMedia(orm.data, orm.header.media_size, orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
++                                        stat_.send_packets += (unsigned int)sangoma_.PutMedia(orm.data, orm.header.media_size, orm.header.order_header.mcl_a, orm.header.order_header.mcl_b) > 0;
+                                     }
+                                 }
+                             }
+@@ -303,6 +314,7 @@ namespace mmxsrv
+ 
+             *plt_stat = stat_;
+         }
++
+     }
+ 
+ 
+diff --git a/mmxprj/mmxprj/mmxsrv/sighandler.cpp b/mmxprj/mmxprj/mmxsrv/sighandler.cpp
+new file mode 100644
+index 0000000..c33b2f3
+--- /dev/null
++++ b/mmxprj/mmxprj/mmxsrv/sighandler.cpp
+@@ -0,0 +1,66 @@
++#include "defines.h"
++#include <signal.h>
++#include <stdlib.h>
++#include "mmxlib/logs/log.h"
++
++void finish(int e_code)
++{
++	mmx::logs::logI("@Exit with code = %d!\n\n", e_code);
++	mmx::logs::log_init();
++	exit(e_code);
++}
++
++void sig_handler(int sig)
++{
++	int e_code = -1;
++
++	switch (sig)
++	{
++		case SIGPIPE:
++
++			mmx::logs::logE("SIGPIPE");
++
++			break;
++		case SIGIO:
++
++			mmx::logs::logE("SIGIO");
++
++			break;
++		case SIGTERM:
++		case SIGQUIT:
++
++			mmx::logs::logC("Close by terminal");
++
++			e_code = 1;
++
++			break;
++
++		case SIGSEGV:
++
++			e_code = 2;
++
++			mmx::logs::logC("@SIGSEGV");
++
++			break;
++		default:
++
++			e_code = 3;
++
++			break;
++	}
++
++	if (e_code >= 0)
++	{
++		finish(e_code);
++	}
++}
++
++void sig_set()
++{
++
++	signal(SIGHUP, sig_handler);
++	signal(SIGPIPE, sig_handler);
++	signal(SIGTERM, sig_handler);
++	signal(SIGQUIT, sig_handler);
++}
++
+diff --git a/mmxprj/mmxprj/mmxtest/build/DEBUG/mmxtest b/mmxprj/mmxprj/mmxtest/build/DEBUG/mmxtest
+index cff6a92..2f40ea8 100755
+Binary files a/mmxprj/mmxprj/mmxtest/build/DEBUG/mmxtest and b/mmxprj/mmxprj/mmxtest/build/DEBUG/mmxtest differ
+diff --git a/mmxprj/mmxprj/mmxtest/defines.h b/mmxprj/mmxprj/mmxtest/defines.h
+index d0757eb..bbc131d 100644
+--- a/mmxprj/mmxprj/mmxtest/defines.h
++++ b/mmxprj/mmxprj/mmxtest/defines.h
+@@ -19,6 +19,7 @@ namespace mmxtest
+     int test10();
+     int test11();
+     int test12();
++    int test12_1();
+ }
+ 
+ #endif
+diff --git a/mmxprj/mmxprj/mmxtest/main.cpp b/mmxprj/mmxprj/mmxtest/main.cpp
+index 62271c1..42d7d5a 100644
+--- a/mmxprj/mmxprj/mmxtest/main.cpp
++++ b/mmxprj/mmxprj/mmxtest/main.cpp
+@@ -13,7 +13,7 @@ static char buff[1600];
+ int main(int argc, char* argv[])
+ {
+ 
+-    mmxtest::test12();
++    mmxtest::test12_1();
+ 
+     return 0;
+ }
+diff --git a/mmxprj/mmxprj/mmxtest/test12.cpp b/mmxprj/mmxprj/mmxtest/test12.cpp
+index fcd0ad1..4f482de 100644
+--- a/mmxprj/mmxprj/mmxtest/test12.cpp
++++ b/mmxprj/mmxprj/mmxtest/test12.cpp
+@@ -1,5 +1,9 @@
+ #include <iostream>
+ #include "mmxlib/tools/string/string_token.h"
++#include "mmxlib/tools/timer.h"
++#include "mmxlib/net/select.h"
++
++#include <string>
+ 
+ namespace mmxtest
+ {
+@@ -11,7 +15,7 @@ namespace mmxtest
+ 
+ 		const char* t = nullptr;
+ 
+-		while ((t = token.GetToken(" ,.:")) != nullptr)
++        while ((t = token.GetToken(" ,:")) != nullptr)
+ 		{
+ 			std::cout << t << std::endl;
+ 		}
+@@ -21,4 +25,74 @@ namespace mmxtest
+ 		std::cin.get();
+ 
+     }
++
++    int test12_1()
++    {
++
++        std::string s = std::string(3,'\xff');
++
++        std::cout << s << std::endl;
++
++        mmx::net::Select select;
++
++        //select.Set(4, mmx::net::S_EV_READ);
++
++        mmx::tools::Timer tim;
++
++
++        const int delay = 50;
++
++        int cnt = 0;
++        int dti = 0;
++
++        int max_dt = 0;
++
++        tim.Start(delay);
++
++        unsigned int start = mmx::tools::Timer::GetTicks();
++        unsigned int tick = mmx::tools::Timer::GetTicks();
++
++        while (1)
++        {
++            //auto el = tim.Elapsed();
++            //auto lft = tim.Left();
++
++            //std::cout << el << ", " << lft << std::endl;
++
++            int rc = select.Wait(tim.Left());
++
++            if (tim.IsEnable())
++            {
++
++                int dt = mmx::tools::Timer::GetTicks() - tick;
++
++                cnt ++;
++                dti = mmx::tools::Timer::GetTicks() - start;
++
++                if (dt > max_dt)
++                    max_dt = dt;
++
++                //if (dt != delay)
++                {
++                    std::cout << "Timer restart: " << mmx::tools::Timer::GetTicks() << ", dt = " << dt << ", " << max_dt << ", error = " << ((double)dti / (double)delay) - (double)cnt << std::endl;
++                }
++
++                tim.Start(delay);
++                tick = mmx::tools::Timer::GetTicks();
++                //std::cout << "Timer restart: " << mmx::tools::Timer::GetTicks() << std::endl;
++            }
++            else
++            {
++                //mmx::tools::Timer::Sleep(1);
++            }
++
++        }
++
++        std::cout.flush();
++
++        std::cin.get();
++
++    }
++
++
+ }
