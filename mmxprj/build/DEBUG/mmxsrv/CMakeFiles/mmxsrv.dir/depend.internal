@@ -24,7 +24,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_sender.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
@@ -51,7 +51,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_sender.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
@@ -85,7 +85,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
- /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
+ /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_sender.h
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
  /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
 mmxsrv/CMakeFiles/mmxsrv.dir/sighandler.cpp.o

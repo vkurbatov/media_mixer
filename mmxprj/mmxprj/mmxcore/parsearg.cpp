@@ -296,7 +296,7 @@ int parse_args(int argc, char* argv[], void *cfg1, void *cfg2, mmx::logs::log_le
 				break;
 				default:
 				{
-					std::cout << "Argument -" << *p << " wrong!" << std::endl;
+					std::cout << "Argument -" << *p << " is wrong!" << std::endl;
 					rc = -EINVAL;
 				}
 			}

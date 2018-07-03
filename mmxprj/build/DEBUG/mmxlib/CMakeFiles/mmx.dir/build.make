@@ -825,28 +825,28 @@ mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.provides: mmxlib/CMakeFiles/mmx
 mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o
 
 
-mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
-mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o"
-	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_sender.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vkurbatov/work/mmxprj/build/DEBUG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o -c /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_sender.cpp
 
-mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.i"
-	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp > CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.i
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.i"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_sender.cpp > CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.i
 
-mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.s"
-	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp -o CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.s
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.s"
+	cd /home/vkurbatov/work/mmxprj/build/DEBUG/mmxlib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_sender.cpp -o CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.s
 
-mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.requires:
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o.requires:
 
-.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.requires
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o.requires
 
-mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.requires
-	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.provides.build
-.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.provides
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o.provides: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o.requires
+	$(MAKE) -f mmxlib/CMakeFiles/mmx.dir/build.make mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o.provides.build
+.PHONY : mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o.provides
 
-mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o
+mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o.provides.build: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o
 
 
 mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o: mmxlib/CMakeFiles/mmx.dir/flags.make
@@ -1195,7 +1195,7 @@ mmx_OBJECTS = \
 "CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o" \
 "CMakeFiles/mmx.dir/tools/orm_server.cpp.o" \
 "CMakeFiles/mmx.dir/tools/orm_client.cpp.o" \
-"CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o" \
+"CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o" \
 "CMakeFiles/mmx.dir/tools/udp_listener.cpp.o" \
 "CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o" \
 "CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o" \
@@ -1245,7 +1245,7 @@ mmx_EXTERNAL_OBJECTS =
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/build/DEBUG/libmmx.a: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o
@@ -1304,7 +1304,7 @@ mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_serv
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_client.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/orm_server.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/orm_client.cpp.o.requires
-mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_client.cpp.o.requires
+mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/sangoma_media_sender.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/udp_listener.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncdispatcher.cpp.o.requires
 mmxlib/CMakeFiles/mmx.dir/requires: mmxlib/CMakeFiles/mmx.dir/tools/async/asyncunit.cpp.o.requires

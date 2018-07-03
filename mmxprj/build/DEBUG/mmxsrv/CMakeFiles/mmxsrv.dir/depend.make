@@ -23,7 +23,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxs
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
-mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
+mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_sender.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/main.cpp
 mmxsrv/CMakeFiles/mmxsrv.dir/main.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
@@ -50,7 +50,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/
 mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
 mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
 mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
-mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
+mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_sender.h
 mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/defines.h
 mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/parsearg.cpp
 mmxsrv/CMakeFiles/mmxsrv.dir/parsearg.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
@@ -84,7 +84,7 @@ mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mm
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_client.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/orm_server.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/pipe_input_channel.h
-mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
+mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_sender.h
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.cpp
 mmxsrv/CMakeFiles/mmxsrv.dir/server.cpp.o: /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/server.h
 

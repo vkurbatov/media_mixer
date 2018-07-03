@@ -375,15 +375,23 @@ namespace mmxmux
         int i = 0;
 
         for (mmx::tools::PipeOutputChannel& o : output_channel_pool_.GetChannels())
-        {
+        {                    
+
             answer.a_link_status[i].type = mmx::headers::SI_LINK_TCP;
-            answer.a_link_status[i].num = o.GetChannelId();          
+            answer.a_link_status[i].num = o.GetChannelId();
 
             mmx::headers::PULT_STAT* plt_stat = (mmx::headers::PULT_STAT*)shmem_servers_[channel_indexes_[answer.a_link_status[i].num]].Data();
 
-            answer.a_link_status[i].status = !o.IsDown() && plt_stat != nullptr && plt_stat->online_conn > 0;
+            answer.a_link_status[i].status = plt_stat != nullptr && !o.IsDown() && plt_stat->online_conn > 0;
 
-            i++;
+            // только неоткрытые каналы и TCP-линки
+            i += (int)((plt_stat == nullptr) || (plt_stat->type == 0));
+
+            if (i >= mmx::headers::SI_MAX_STATUS_LINK_COUNT)
+            {
+                break;
+            }
+
         }
 
         answer.header.length += i * sizeof(answer.a_link_status[0]);

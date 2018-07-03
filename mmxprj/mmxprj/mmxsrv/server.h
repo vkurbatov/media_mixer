@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "mmxlib/tools/orm_server.h"
-#include "mmxlib/tools/sangoma_media_client.h"
+#include "mmxlib/tools/sangoma_media_sender.h"
 #include "mmxlib/tools/pipe_input_channel.h"
 
 #include "mmxlib/sniffers/dpsniffer.h"
@@ -35,7 +35,7 @@ namespace mmxsrv
     class Server
     {
         mmx::net::SelectExtension           select_;
-        mmx::tools::SangomaMediaClient      sangoma_;
+        mmx::tools::SangomaMediaSender      sangoma_;
         mmx::tools::OrmServer               orm_server_;
         mmx::tools::PipeInputChannel        input_channel_;
 

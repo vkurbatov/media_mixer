@@ -66,7 +66,7 @@ set ( SOURCE_FILES
 	tools/sangoma_client.cpp
 	tools/orm_server.cpp
 	tools/orm_client.cpp
-	tools/sangoma_media_client.cpp
+	tools/sangoma_media_sender.cpp
 	tools/template_tcp_server.tpp
 	tools/udp_listener.cpp
 #	tools/mediamarshaler.cpp
@@ -151,7 +151,7 @@ set ( PRIVATE_HEADERS
 	tools/pipe_output_channel_pool.h
 	tools/orm_server.h
 	tools/orm_client.h
-	tools/sangoma_media_client.h
+	tools/sangoma_media_sender.h
 	tools/template_tcp_server.h
 	tools/udp_listener.h
 #	tools/mediamarshaler.h

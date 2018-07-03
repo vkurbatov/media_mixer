@@ -146,7 +146,7 @@ net/select_ex.h
 vector
 -
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_client.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/sangoma_media_sender.h
 ichanneldispatcher.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/../mmxlib/tools/ichanneldispatcher.h
 net/socket.h
@@ -239,8 +239,8 @@ vector
 -
 mmxlib/tools/orm_server.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/tools/orm_server.h
-mmxlib/tools/sangoma_media_client.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/tools/sangoma_media_client.h
+mmxlib/tools/sangoma_media_sender.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/tools/sangoma_media_sender.h
 mmxlib/tools/pipe_input_channel.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxsrv/mmxlib/tools/pipe_input_channel.h
 mmxlib/sniffers/dpsniffer.h

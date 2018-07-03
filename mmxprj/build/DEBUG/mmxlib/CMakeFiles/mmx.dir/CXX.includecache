@@ -828,9 +828,9 @@ list
 vector
 -
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.cpp
-sangoma_media_client.h
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_sender.cpp
+sangoma_media_sender.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_sender.h
 cstring
 -
 headers/si.h
@@ -844,7 +844,7 @@ fcntl.h
 logs/dlog.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/logs/dlog.h
 
-/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_client.h
+/home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/sangoma_media_sender.h
 ichanneldispatcher.h
 /home/vkurbatov/work/mmxprj/mmxprj/mmxlib/tools/ichanneldispatcher.h
 net/socket.h

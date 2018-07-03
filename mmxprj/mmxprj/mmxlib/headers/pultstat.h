@@ -19,6 +19,7 @@ namespace mmx
             unsigned short  errors;             // отключение клиентов с ошибкой
             unsigned int    send_packets;       // передано пакетов
             unsigned int    recv_packets;       // получено пакетов
+            unsigned char   type;               // тип подключения, 0 - TCP, 1 - E1
 
         }PULT_STAT,*PPULT_STAT;
 

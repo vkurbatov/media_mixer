@@ -308,6 +308,8 @@ namespace mmxsrv
 
         if (plt_stat != nullptr)
         {
+            plt_stat->type = (unsigned char)(config_.mode & 0xFF);
+
             if (config_.mode == mmxsrv::ORM_LINK_TCP)
             {
                 stat_.online_conn = orm_server_.GetClients().size();

@@ -12,46 +12,58 @@ void finish(int e_code)
 
 void sig_handler(int sig)
 {
-	int e_code = -1;
 
-	switch (sig)
+	static volatile int e_code = -1;
+
+	if (e_code < 0)
 	{
-		case SIGPIPE:
 
-			mmx::logs::logE("SIGPIPE");
+		switch (sig)
+		{
+			case SIGPIPE:
 
-			break;
-		case SIGIO:
+				mmx::logs::logE("SIGPIPE");
 
-			mmx::logs::logE("SIGIO");
+				break;
+			case SIGIO:
 
-			break;
-		case SIGTERM:
-		case SIGQUIT:
+				mmx::logs::logE("SIGIO");
 
-			mmx::logs::logC("Close by terminal");
+				break;
+			case SIGTERM:
+			case SIGQUIT:
 
-			e_code = 1;
+				mmx::logs::logC("Close by terminal");
 
-			break;
+				e_code = 1;
 
-		case SIGSEGV:
+				break;
 
-			e_code = 2;
+			case SIGSEGV:
 
-			mmx::logs::logC("@SIGSEGV");
+				e_code = 2;
 
-			break;
-		default:
+				mmx::logs::logC("@SIGSEGV");
 
-			e_code = 3;
+				break;
 
-			break;
-	}
+			case SIGHUP:
 
-	if (e_code >= 0)
-	{
-		finish(e_code);
+				mmx::logs::logE("SIGHUP");
+
+				break;
+
+			default:
+
+				e_code = 3;
+
+				break;
+		}
+
+		if (e_code >= 0)
+		{
+			finish(e_code);
+		}
 	}
 }
 
